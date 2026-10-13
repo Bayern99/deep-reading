@@ -1,0 +1,36 @@
+{
+ "article_id": "E1-007",
+ "narrative_outline": "陪审团赌注案例(p1-p3) → 伦理风险(p4-p8) → 学者/法庭视角(p9-p14) → 离岸与平台(p15-p18) → 法院反制(p19-p21)",
+ "decisions": [
+  {
+   "pattern": "L02",
+   "anchor": "p3",
+   "reason": "Polymarket 首次出现，正文未解释何为预测市场；边注给一句话定义",
+   "editorial_added": true
+  },
+  {
+   "pattern": "T11",
+   "count": 4,
+   "reason": "21 段长文，四个主题段需要路标"
+  },
+  {
+   "pattern": "T01",
+   "count": 2,
+   "reason": "核心论点与最直接风险点"
+  }
+ ],
+ "rejected": [
+  {
+   "pattern": "A04 timeline",
+   "reason": "日期零散（夏季/9月初/上个月/7月），无可靠年份链"
+  },
+  {
+   "pattern": "A03 key_figures",
+   "reason": "金额口径不一（10万/50万/30万/79.8万），拼凑无意义"
+  },
+  {
+   "pattern": "L03",
+   "reason": "无对等比较对象"
+  }
+ ]
+}

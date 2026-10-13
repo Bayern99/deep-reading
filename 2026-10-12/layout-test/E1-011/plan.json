@@ -1,0 +1,32 @@
+{
+ "article_id": "E1-011",
+ "narrative_outline": "工厂见闻(p1-p4) → 定价权(p5-p6) → 加息理由(p7-p10) → 节奏(p11-p13) → 中性利率(p14-p16) → 批评与分歧(p17-p19)",
+ "decisions": [
+  {
+   "pattern": "L02",
+   "anchor": "p1",
+   "reason": "哈马克首次出现；读者需知其身份与政策立场才能理解后文",
+   "editorial_added": true
+  },
+  {
+   "pattern": "T11",
+   "count": 5,
+   "reason": "19 段，五个议题段"
+  },
+  {
+   "pattern": "T01",
+   "count": 2,
+   "reason": "关键判断与直接表态"
+  }
+ ],
+ "rejected": [
+  {
+   "pattern": "A03 key_figures",
+   "reason": "数字分散（3.75%-4%/2%/2029年），无同口径比较价值"
+  },
+  {
+   "pattern": "L03",
+   "reason": "哈马克 vs 沃什只有立场差异，无对等维度数据"
+  }
+ ]
+}

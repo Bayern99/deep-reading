@@ -1,0 +1,39 @@
+{
+ "article_id": "E3-036",
+ "narrative_outline": "图表说明(p1) → 事件背景(p2) → 数据来源(p3)",
+ "decisions": [
+  {
+   "pattern": "L08",
+   "reason": "原始股价走势图（FactSet），小栏挤压图例；桌面跨栏，手机横滑",
+   "asset": "chart-shareprice.png",
+   "credit": "FactSet"
+  },
+  {
+   "pattern": "T01",
+   "count": 1,
+   "reason": "仅加粗核心事实句"
+  }
+ ],
+ "rejected": [
+  {
+   "pattern": "A12 数据图表",
+   "reason": "已有原始图表，不重绘"
+  },
+  {
+   "pattern": "T11",
+   "reason": "3 段短文，无需小标题"
+  }
+ ],
+ "component_plan": [
+  {
+   "component": "figure",
+   "data": {
+    "credit": "FactSet"
+   },
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   }
+  }
+ ]
+}

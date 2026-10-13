@@ -22,12 +22,14 @@ def _esc(s):
 # ---------------- L02 正文与边注 ----------------
 def render_margin_note(anchor_block_id, note_cn, note_en, uid,
                        editorial_added=True):
-    """桌面：右栏边注（CSS grid）；手机：锚点段落后 inline note。
-    DOM 顺序：锚点段 → note → 下一段（两端一致）。"""
-    tag = ''  # 内部审计标记只进 data-editorial-added，不渲染可见标签
+    """桌面≥1200px：右栏边注（相对锚点段 wrapper 绝对定位）；
+    <1200px：锚点段落后 inline 插入。
+    DOM 顺序：锚点段 → note → 下一段（两端一致）。
+    使用方式：builder 把锚点 <p> 与本 aside 包进
+    <div class="ed-block ly-anchor">，见 LAYOUT_CSS。"""
     return f'''<aside class="ly-note" data-anchor="{anchor_block_id}" id="note-{uid}"
       data-editorial-added="{'true' if editorial_added else 'false'}">
-  <p><span class="k-cn">{_esc(note_cn)}{tag}</span><span class="k-en" hidden>{_esc(note_en)}</span></p>
+  <p><span class="k-cn">{_esc(note_cn)}</span><span class="k-en" hidden>{_esc(note_en)}</span></p>
 </aside>'''
 
 
@@ -67,13 +69,15 @@ def render_wide_figure(inner_html, uid):
 
 LAYOUT_CSS = '''
 /* ---- Layout Grammar（布局层） ---- */
-/* L02 边注 */
-.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
   font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
 @media(min-width:1200px){
-  .has-margin-notes{position:relative}
-  .has-margin-notes .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
-    border-left:2px solid var(--orange);margin:0;padding-left:12px}
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
 }
 /* L03 平行双栏 */
 .ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
@@ -98,11 +102,17 @@ LAYOUT_CSS = '''
   .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
   .ly-ft-text p{margin:0}
 }
-/* L08 跨栏图 */
-.ly-wide{margin:1.8em calc(50% - 50vw + 12px);max-width:none}
-.ly-wide-scroll{overflow-x:auto}
-@media(max-width:767px){
-  .ly-wide{margin:1.5em -20px}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
 }
 @media(max-width:430px){
   .ly-note{font-size:13.5px}

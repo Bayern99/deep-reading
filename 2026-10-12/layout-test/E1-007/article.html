@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E1-007 布局测试 布局测试</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
+@media(min-width:1200px){
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · 布局测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E1-007" aria-label="E1-007">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">News · A1 版 · P2</span><span class="k-en" hidden>News · A1 版 · P2</span></div>
+    <h2 class="art-title"><span class="k-cn">预测市场投注蔓延至陪审团裁决</span><span class="k-en" hidden>Prediction-Market Bets Spread to Jury Verdicts</span></h2>
+<div class="byline">
+      <span class="who">BY MARIAH TIMMS</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A1 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A1</span>
+    </div>
+</header>
+  <div class="arule"></div>
+
+<p class="ed-block" data-block="p1"><span class="k-cn">在林赛·克兰西的夏季谋杀案审判期间，投注者对判决结果下了超过 10 万美元的赌注。由于陪审团僵持不下，案件于 9 月初被宣告审判无效，此后人们又下了超过 50 万美元的赌注，赌的是这位被指控杀害自己孩子的马萨诸塞州女性最终是否会被判有罪。</span><span class="k-en" hidden>During the summer murder trial of Lindsay Clancy, bettors wagered more than $100,000 on the verdict. Since a deadlocked jury forced a mistrial in early September, more than $500,000 in additional bets have been placed on whether the Massachusetts woman accused of killing her children will eventually be convicted.</span></p>
+<p class="ed-block" data-block="p2"><span class="k-cn">在犹他州，泰勒·罗宾逊的审判日期尚未确定，他被指控去年在一次大学活动中杀害了保守派评论员查理·柯克。但在罗宾逊上个月正式提出无罪辩护之前，人们就已经下了超过 30 万美元的赌注，赌的是案件的结果。</span><span class="k-en" hidden>In Utah, a trial date hasn't been set yet for Tyler Robinson, who stands accused of killing conservative commentator Charlie Kirk at a university event last year. But even before Robinson formally entered a not guilty plea last month, more than $300,000 had been wagered on the outcome.</span></p>
+<div class="ed-block ly-anchor">
+<p class="ed-block" data-block="p3"><span class="k-cn">在这两种情况下，这些赌注都可以在 Polymarket 运营的一个境外平台上进行。该网站还提供关于联邦政府起诉肖恩·“迪迪”·库姆斯以及政府目前对被罢免的委内瑞拉总统尼古拉斯·马杜罗的案件的赌注。</span><span class="k-en" hidden>In both cases, the bets were available on an offshore platform run by Polymarket. The site also has hosted bets on the federal prosecution of Sean "Diddy" Combs and the government's current case against ousted Venezuelan President Nicolás Maduro.</span></p>
+<aside class="ly-note" data-anchor="p3" id="note-e1007"
+      data-editorial-added="true">
+  <p><span class="k-cn">预测市场（prediction market）：对未来事件结果进行交易的平台。参与者买卖与"谁获胜""是否发生"等挂钩的合约，合约价格即群体对结果概率的集体判断。Polymarket 是其中最知名的境外平台。</span><span class="k-en" hidden>A prediction market lets people trade contracts tied to future events; prices reflect the crowd’s collective judgment of probabilities. Polymarket is one of the best-known offshore platforms.</span></p>
+</aside>
+</div>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">当法庭变成赌场</span><span class="k-en" hidden>When the Court Becomes a Casino</span></h3>
+<p class="ed-block" data-block="p4"><span class="k-cn">预测市场引发了新的伦理问题和内幕交易风险，涉及从公司审计到美国军事行动的各个方面。这些问题现在已经摆到了法院门口，给司法系统带来了特别不寻常的挑战。</span><span class="k-en" hidden>Prediction markets are raising novel ethical concerns and insider-trading risks on everything from corporate auditing to U.S. military operations. Those headaches are now at the courthouse door, presenting particularly unusual challenges for the justice system.</span></p>
+<p class="ed-block" data-block="p5"><span class="k-cn">“<strong class="tt-b">当公众将法庭视为赌场时，正当程序很容易受到腐败的影响</strong>，”全国刑事辩护律师协会主席 C·梅丽莎·欧文说道。</span><span class="k-en" hidden>"When the public treats a courtroom like a casino, due process is susceptible to corruption," said C. Melissa Owen, president of the National Association of Criminal Defense Lawyers.</span></p>
+<p class="ed-block" data-block="p6"><span class="k-cn">最直接和最明显的问题是，<strong class="tt-b">陪审员可能会对自己的审议过程进行赌博</strong>，从而产生经济激励，促使他们达成特定的结果，无论案件的事实如何。</span><span class="k-en" hidden>The most direct and obvious concern is the potential for jurors to bet on their own deliberations, creating financial incentives to reach particular outcomes, no matter the facts of the case.</span></p>
+<p class="ed-block" data-block="p7"><span class="k-cn">一些法院工作人员也可能掌握关于审议进展情况的内幕信息。</span><span class="k-en" hidden>Some court staffers are also potentially in positions to have inside knowledge of how deliberations are proceeding.</span></p>
+<p class="ed-block" data-block="p8"><span class="k-cn">[请见 A6 页：]</span><span class="k-en" hidden>[Continued on page A6:]</span></p>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">偏见如何渗入</span><span class="k-en" hidden>How Bias Creeps In</span></h3>
+<p class="ed-block" data-block="p9"><span class="k-cn">芝加哥大学法学教授 M·托德·亨德森表示，赌博平台的普及性和广泛性使得腐败陪审员的可能性成为一种真实的风险。</span><span class="k-en" hidden>The accessibility and pervasiveness of betting platforms makes the possibility of corrupting jurors a real risk, said University of Chicago law professor M. Todd Henderson.</span></p>
+<p class="ed-block" data-block="p10"><span class="k-cn">他说：“但还有一个更广泛的问题，即大量赌注的预测市场可能会影响陪审员对案件的思考方式。如果人们下了数百万美元的赌注，认为被告将被判无罪，这是否会使陪审团更不愿判有罪？”</span><span class="k-en" hidden>"But there is a broader concern," he said, "that prediction markets with heavy betting could influence how jurors think about a case. If millions are wagered on the belief that a defendant will be acquitted, could that make a jury more reluctant to convict?"</span></p>
+<p class="ed-block" data-block="p11"><span class="k-cn">“对于坐在家中的普通陪审员“Joe Q”（泛指）而言，”亨德森说，“问题是：如果他看到 Polymarket 上的赔率，如果他看到报纸或电视上有人谈论泰勒·罗宾逊是否有罪的可能性，他是否有可能产生偏见？”</span><span class="k-en" hidden>"For Joe Q Juror sitting at home," Henderson said, "the question is: Is he likely to be biased as a juror if he sees the odds on Polymarket and if he sees a pundit in the paper or on TV talking about what the chances are that Tyler Robinson did it?"</span></p>
+<p class="ed-block" data-block="p12"><span class="k-cn">罗宾逊的律师向审理法官指出了 Polymarket 上的投注，并认为这种投注是“在道德上站不住脚的勾当”，把死刑诉讼变成了商品。</span><span class="k-en" hidden>Robinson's lawyers flagged the Polymarket bets to the presiding judge, arguing the wagering was a "morally dubious enterprise" that commodified death-penalty litigation.</span></p>
+<p class="ed-block" data-block="p13"><span class="k-cn">辩方表示，在 7 月份的一次初步法庭听证会上，交易量非常活跃，并认为继续直播庭审程序会制造对罗宾逊不利的审前舆论。</span><span class="k-en" hidden>The defense said trading volume was active during a preliminary court hearing in July, and argued that continuing to broadcast the proceedings would create pretrial publicity that was unfair to Robinson.</span></p>
+<p class="ed-block" data-block="p14"><span class="k-cn">托尼·格拉夫法官在上个月的一份裁决中写道：“法庭认可被告关于陪审团受污染及预测市场活动的担忧是真诚的。”但他允许继续直播庭审程序，并建议可以通过陪审团的选择来解决任何担忧，包括询问潜在的陪审员是否接触过预测市场。</span><span class="k-en" hidden>"The Court credits Defendant's concerns regarding jury contamination and prediction-market activity as genuine," Judge Tony Graf wrote in a ruling last month. But he allowed continued livestreaming of the proceedings and suggested that any concerns could be addressed in jury selection, including by asking potential jurors about any exposure they had to prediction markets.</span></p>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">离岸赌局</span><span class="k-en" hidden>The Offshore Books</span></h3>
+<p class="ed-block" data-block="p15"><span class="k-cn">通常，关于刑事案件的投注市场都是在离岸平台上进行的，因为预测市场公司希望避免违反美国的相关规定，这些规定禁止对敏感话题进行赌博，包括战争、恐怖主义和暗杀。</span><span class="k-en" hidden>Typically, markets for betting on criminal cases have been hosted on offshore platforms because prediction-market companies have wanted to avoid running afoul of U.S. rules that prohibit gambling on sensitive topics including war, terrorism and assassination.</span></p>
+<p class="ed-block" data-block="p16"><span class="k-cn">尽管如此，市场观察人士表示，访问这些离岸平台并不困难。罗格斯大学的统计学教授哈里·克兰表示，大约有 20% 到 40% 的投注资金来自美国国内，用于在离岸 Polymarket 市场进行投注。克兰同时也是商品期货交易委员会的顾问委员会成员，该委员会负责监管预测市场。这项研究并未显示，这些资金是来自许多人进行小额投注，还是来自少数超级用户。</span><span class="k-en" hidden>Still, market observers say that accessing the offshore platforms isn't difficult. Rutgers University statistics professor Harry Crane said around 20% to 40% of the money bet on offshore Polymarket markets comes from inside the U.S. The study doesn't show whether that volume comes from many people making small bets or a small number of super-users, said Crane, who serves on an advisory committee to the Commodity Futures Trading Commission, which regulates prediction markets.</span></p>
+<p class="ed-block" data-block="p17"><span class="k-cn">Polymarket 的发言人表示，人们“对现实世界事件的结果进行交易，包括法律、政治和经济发展。这些市场不会影响结果——它们反映了市场参与者集体认为会发生什么。”</span><span class="k-en" hidden>A Polymarket spokesperson said people "trade on outcomes of real-world events including legal, political and economic developments. These markets do not impact the outcomes—they reflect what market participants collectively believe will happen."</span></p>
+<p class="ed-block" data-block="p18"><span class="k-cn">Polymarket 与《华尔街日报》的出版商道琼斯公司建立了数据合作关系。</span><span class="k-en" hidden>Polymarket has a data partnership with Dow Jones, the publisher of The Wall Street Journal.</span></p>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">法院的反制</span><span class="k-en" hidden>Courts Push Back</span></h3>
+<p class="ed-block" data-block="p19"><span class="k-cn">至少有几家法院开始关注这个问题。位于芝加哥的美国地区法院正在更新其内幕交易政策，以禁止员工利用工作中的信息进行投注。法院发言人肖恩·刘易斯表示，该地区的法官已经注意到了可能在陪审团审判中出现类似担忧的情况。“随着技术和社会的发展，法院将继续调整其政策，以确保公正和公平地进行司法审判。”</span><span class="k-en" hidden>At least a handful of courts are beginning to address the issue. The U.S. District Court in Chicago is updating its insider-trading policies to prohibit employees from using on-the-job information to make wagers. Judges in the district are on alert for similar concerns that might arise in jury trials, said Sean Lewis, a court spokesman. "As technology and society evolve, the court will continue to adapt its policies to safeguard the fair and impartial administration of justice," he said.</span></p>
+<p class="ed-block" data-block="p20"><span class="k-cn">位于曼哈顿的联邦地方法院吸引了至少两个值得关注的投注市场。在去年 5 月至 7 月期间，Polymarket 的用户对肖恩·“迪迪”·库姆斯性交易案件的判决结果进行了近 79.8 万美元的投注。库姆斯被判犯有敲诈勒索罪和性交易罪不成立，但被判犯有较轻的罪行。</span><span class="k-en" hidden>The federal trial court in Manhattan has attracted at least two notable betting markets. Between May and July of last year, Polymarket users bet nearly $798,000 on the verdict of the Diddy sex trafficking trial. Combs was found not guilty of racketeering and sex trafficking offenses but convicted of less serious charges.</span></p>
+<p class="ed-block" data-block="p21"><span class="k-cn">预计明年，马杜罗将在同一法庭接受审判，他面临的指控包括与毒品恐怖主义有关的罪名。Polymarket平台上关于马杜罗是否会被判有罪的预测，目前已吸引了约13.3万美元的交易量。另一个关于他是否会被判处监禁的预测，交易量已超过90万美元。</span><span class="k-en" hidden>Maduro is set to go on trial next year in the same court, on charges including narco-terrorism. A Polymarket offering on whether Maduro will be found guilty has attracted about $133,000 in trading volume so far. Another on whether he will serve prison time has seen more than $900,000 of activity.</span></p>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E2-005 布局测试 布局测试</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
+@media(min-width:1200px){
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · 布局测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E2-005" aria-label="E2-005">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">Personal Journal · A11 版 · P2</span><span class="k-en" hidden>Personal Journal · A11 版 · P2</span></div>
+    <h2 class="art-title"><span class="k-cn">想拿下明年夏天那份 5 万美元的实习？已经太晚了。</span><span class="k-en" hidden>Hoping to Land Next Summer’s $50,000 Internships? Too Late</span></h2>
+<p class="deck"><span class="k-cn">顶尖的金融公司开始更早地进行招聘，并为有潜力的优秀人才提供丰厚的报酬。</span><span class="k-en" hidden>Elite financial firms are recruiting earlier and paying handsomely for prospective talent</span></p>
+<div class="byline">
+      <span class="who">Callum Borchers (On the Clock)</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A11 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A11</span>
+    </div>
+</header>
+  <div class="arule"></div>
+
+<div class="tt-group ed-block">
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">起跑线提前了</span><span class="k-en" hidden>The Starting Line Moved Up</span></h3>
+<p class="ed-block" data-block="p1"><span class="k-cn">学年才刚开始一个月，但对于那些希望在明年夏天获得一份顶尖实习机会的大学生来说，<strong class="tt-b">可能已经太晚了</strong>。那些提供为期10周的实习，并支付约5万美元报酬的顶尖金融公司，已经开始招聘，甚至已经持续了数周或数月。当大多数学生还在装饰宿舍时，那些积极进取的大学生正在争夺这些令人垂涎的实习机会。有些人已经获得了2027年的实习机会，或者正在深入面试阶段。正如学生们彼此之间展开激烈竞争一样，城堡证券、Five Rings和简街资本等公司也在努力争取，希望在竞争对手之前锁定最有前途的人才。在这场人才争夺战中，20岁左右的年轻人获得的薪资水平，甚至超过了大多数美国人在职业生涯巅峰时期所获得的薪资，更不用说实习生的薪资了。</span><span class="k-en" hidden>The school year is barely a month old, but for college students hoping to land a primo internship next summer it might already be too late. Elite financial firms that pay around $50,000 for 10-week programs have been recruiting for weeks, if not months. While most of their peers are still decorating their dorm rooms, hard-charging undergrads are vying for these coveted seats. Some already have offers for 2027 or are deep in the interview process. And just as students are in a frenzied competition with one another, firms such as Citadel, Five Rings and Jane Street Capital are hustling to lock down the most promising talent before their rivals do. In this arms race, 20-year-olds now command pay rates that most Americans don't reach at the peaks of their careers, never mind as interns.</span></p>
+<p class="ed-block" data-block="p2"><span class="k-cn">卡尔蒂克·卡拉姆说：“当我接到实习机会的电话，他们告诉我薪资是多少时，我问了好几次，确认他们说的是正确的数字。”他刚刚在萨斯奎汉纳国际集团完成了量化交易实习。“我无法想象实习生应该获得这么多钱。”</span><span class="k-en" hidden>“When I got the offer call and they said how much the salary was, I asked a few times if they were saying the right number,” says Karthik Kallam, fresh off a quantitative-trading internship at Susquehanna International Group. “I can't fathom how an intern should be making that much money.”</span></p>
+</div>
+<div class="tt-group ed-block">
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">万里挑一</span><span class="k-en" hidden>One in a Hundred</span></h3>
+<p class="ed-block" data-block="p3"><span class="k-cn">顶尖的实习项目一直以来都竞争激烈，但现在那些提供超高薪酬的实习机会，<strong class="tt-b">录取率甚至低于1%</strong>。你可能比进入哈佛大学更容易。结果就是，申请周期越来越早。现在有些公司在当前的实习生还在工作时，就开始接受下一年夏季实习的申请。尽早开始，可以为多轮面试争取时间。这些面试最终会以现场的“超级面试日”结束，评估人员会判断候选人本人是否如屏幕上那般出色——现场可是用不了 AI 的。</span><span class="k-en" hidden>Top internship programs have long been competitive, but those dangling stratospheric compensation rates now have acceptance rates of less than 1%. You'd have a better chance of getting into Harvard. The result is that application cycles keep starting earlier. Some firms now open applications for the following summer's internships while the current cohort is still on the job. Starting early affords time for multiple rounds of interviews. These culminate in on-site “super-days” where evaluators gauge whether candidates are as impressive in person as they seemed on-screen—and don't have access to AI.</span></p>
+<p class="ed-block" data-block="p4"><span class="k-cn">最挑剔的金融公司通常在寻找一种无法在学生的成绩单上体现的原始智慧。他们有时会关注大学的国际象棋和扑克锦标赛，寻找那些在玩概率游戏和预测未来事件方面表现出惊人能力的人。卡拉姆在两项游戏中都表现出色。他说，他认为他在扑克牌桌上的能力，比他在俄亥俄州立大学获得的优异成绩，更能提升他的实习申请。他在那里学习计算机科学和统计学。此外，还有量化因素。在量化金融领域，许多薪酬最高的实习机会都集中于此，经验的重要性可能不如其他大多数学科。</span><span class="k-en" hidden>The most selective financial firms are often looking for a kind of raw intelligence that doesn't show up on students' transcripts. They sometimes scout collegiate chess and poker tournaments, looking for people who are uncannily good at playing the odds and anticipating what will happen next. Kallam plays both games competitively. He says he believes his prowess at the table did more to boost his internship application than his sparkling GPA at Ohio State, where he is studying computer science and statistics. Then there is the quant factor. In quantitative finance, where many of the highest-paying internships are concentrated, experience arguably matters less than in most other disciplines.</span></p>
+</div>
+<div class="tt-group ed-block">
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">为什么量化交易不一样</span><span class="k-en" hidden>Why Quant Is Different</span></h3>
+<p class="ed-block" data-block="p5"><span class="k-cn">如果你要选择一位个人理财顾问，你会希望他拥有数十年的判断力和直觉——一位经验丰富、处事沉稳的专业人士，因为他已经见识过各种情况。量化交易员不一定需要这些。他们使用数学模型来预测市场走向，并以在投资决策中消除情绪为荣。“他们可以因为他们的技术技能和我们给予他们的机会，而迅速变得非常出色，”千禧管理的全球人才招聘负责人约翰·塔拉里科说，但他补充说，经验也是一个优势。在这种情况下，为利基金融职位寻找有前途的人才，有点像寻找运动员。一位大学四分卫可能不知道如何解读 NFL 的防守策略，或者没有在职业球队的比赛风格中获得任何经验。然而，教练可能会看到他手臂力量和决策能力方面的潜力。同样，像千禧管理这样的公司，可能会看到那些从未上过金融课程的候选人身上存在的潜力。如果他们的逻辑思维、解决问题的能力和模式识别能力都非常出色，他们就可能成为大把赚钱的交易员。为了确定他们是否具备这些能力，值得为他们支付丰厚的报酬，让他们参加为期 10 周的“训练营”。在这个级别，实习生不是去端咖啡，而是为了获得全职工作机会，这些工作的基础工资约为 30 万美元。由于风险如此之大，不可避免地会出现一些不端行为。</span><span class="k-en" hidden>If you were choosing a personal-financial planner, you'd want someone with decades' worth of judgment and intuition—a pro with a steady demeanor that comes from having seen it all before. Quant traders don't necessarily need that. They use mathematical models to predict where markets are going and take pride in removing emotion from investment decisions. “They can become exceptional very quickly because of their technical skills and the opportunities we give them,” says John Talarico, global head of talent acquisition at Millennium Management, though he adds that experience is a plus. In this way, finding promising talent for niche finance roles is a bit like scouting athletes. A college quarterback may not know how to read an NFL defense or have any experience in a professional team's style of play. Yet coaches might see potential in his arm strength and decision-making. Similarly, firms like Millennium might see an upside in candidates who have never taken a finance course. If their logic, problem solving and pattern recognition are off the charts, then they could become major moneymakers. To find out whether they have what it takes, it's worth paying them handsomely for the 10-week equivalent of training camp. At this level, interns aren't fetching coffee; they are auditioning for full-time jobs with base salaries around $300,000. With so much at stake, shenanigans are inevitable.</span></p>
+</div>
+<div class="tt-group ed-block">
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">为了实习，他们说谎</span><span class="k-en" hidden>Lying for the Internship</span></h3>
+<p class="ed-block" data-block="p6"><span class="k-cn">一位前Arrowstreet资本的实习生告诉我，对于那些申请顶尖金融实习机会的学生来说，他们的非官方座右铭是“总是说你还是个大三学生”。原因是，三年级的大学生最有吸引力，因为他们即将毕业。大二和大一的学生有时会虚报年级，希望以此提高机会。</span><span class="k-en" hidden>“Always say you're a junior” is the unofficial motto of students applying for top-flight financial internships, a former Arrowstreet Capital intern told me. The thinking is that third-year college students are the most appealing because they are close to graduation. Sophomores and freshmen sometimes fudge their class years in hopes of improving their chances.</span></p>
+<p class="ed-block" data-block="p7"><span class="k-cn">我一直以为大学生只是为了去酒吧而撒谎。</span><span class="k-en" hidden>And I thought college students only lied about their ages to get into bars.</span></p>
+<p class="ed-block" data-block="p8"><span class="k-cn">他们的欺骗行为充满了绝望。许多成绩优异的学生对落后于人有着不健康的恐惧，达特茅斯职业设计中心的执行董事乔·卡特里诺说。“这对我们来说是一个令人担忧的问题，因为我们看到学生们有这种焦虑和压力，他们必须弄清楚自己想做什么，但他们才刚到这里，”他说。在常春藤和其他顶尖大学，这通常会导致学生们在一年级新生入学指导结束后，几乎立即开始努力争取进入校园内具有选择性的俱乐部。加入这些俱乐部可以为简历增添亮点，并可以接触到同行和校友网络。伊山·沙阿回忆说，他在宾夕法尼亚大学的第一学期，被量化交易俱乐部拒绝了。他在第二学期再次申请，但再次被拒绝。第三次，他终于成功了。加入量化交易俱乐部，帮助他获得了在萨斯奎汉纳的实习机会，当时他还是一个即将升入大四的学生。但他没有收到毕业后继续工作的邀请。“仅仅因为你获得了一个实习机会，并且看到了那笔丰厚的薪水，并不意味着你已经成功了，”他说。这种失望并没有持续太久；沙阿几周前从另一家公司获得了一份全职工作。尽管如此，他的大起大落凸显了这些超竞争实习项目有多么不稳定。即使是极擅长预测的人，最稳的赌注也是：你迟早会被教做人。</span><span class="k-en" hidden>Their deception is laced with desperation. A lot of high-achieving students have an unhealthy fear of falling behind, says Joe Catrino, executive director of the Dartmouth Center for Career Design. “It's a troubling thing for us because we see students that have this anxiety and stress that they have to figure out what they want to do, and they just got here,” he says. At Ivy and other top colleges, this often results in a frenzied effort to gain acceptance into selective clubs on campus almost as soon as first-year orientation wraps up. Membership promises a standout résumé line, as well as access to peer and alumni networks. Ishaan Shah recalls being rejected by the quantitative-trading club at Penn in his first semester of college. He applied again in the spring semester—and was turned down once more. The third time was the charm. Being in the quant club helped propel him to an internship at Susquehanna last summer as a rising senior. But he didn't receive an offer to return after graduation. “Just because you've got an internship offer at one place and have seen that big paycheck, it doesn't mean you've made it,” he says. The disappointment didn't last long; Shah landed a full-time job offer from another firm a couple of weeks ago. Still, his highs and lows underscore how precarious these ultracompetitive internship programs can be. Even for those who are highly skilled at making predictions, the surest bet is that you'll be humbled eventually.</span></p>
+</div>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

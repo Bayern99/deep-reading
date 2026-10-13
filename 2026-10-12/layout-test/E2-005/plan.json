@@ -1,0 +1,29 @@
+{
+ "article_id": "E2-005",
+ "narrative_outline": "开场(p1-p2) → 选拔(p3-p4) → 量化逻辑(p5) → 造假与焦虑(p6-p8)",
+ "decisions": [
+  {
+   "pattern": "T10+T11",
+   "reason": "8 段长段落，四组议题；分组留白 + 小标题给节奏"
+  },
+  {
+   "pattern": "T01",
+   "count": 2,
+   "reason": "开场钩子与核心数据"
+  }
+ ],
+ "rejected": [
+  {
+   "pattern": "L02",
+   "reason": "无需要解释的术语或人物"
+  },
+  {
+   "pattern": "A03 key_figures",
+   "reason": "5万美元/30万美元已在正文充分展开，重复无意义"
+  },
+  {
+   "pattern": "T09",
+   "reason": "长段落内部因果完整，拆分破坏节奏"
+  }
+ ]
+}
