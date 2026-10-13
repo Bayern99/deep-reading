@@ -12,7 +12,7 @@ def adapt_plan(auto_plan, article):
     out = {
         'component_plan': [],
         'treatments': auto_plan.get('text_treatment_plan', []),
-        'layouts': auto_plan.get('layout_plan', []),
+        'layouts': [_adapt_layout(l) for l in auto_plan.get('layout_plan', [])],
     }
 
     for aid in auto_plan.get('reading_aid_plan', []):
@@ -118,3 +118,23 @@ def _adapt_key_figures(aid):
             'note_en': it.get('note_en') or '',
         })
     return {'items': items}
+
+
+def _adapt_layout(l):
+    """L03 dimensions → render_compare 的 pairs/dim_labels。"""
+    if (l.get('pattern_id') == 'L03') and l.get('dimensions'):
+        pairs = []
+        dim_labels = []
+        for d in l['dimensions']:
+            # a/b 值的英文：尽量从原文找，找不到留空
+            pairs.append((
+                (d.get('a_value', ''), d.get('a_value_en', '')),
+                (d.get('b_value', ''), d.get('b_value_en', '')),
+            ))
+            dim_labels.append(d.get('name', ''))
+        l = dict(l)
+        l['pairs'] = pairs
+        l['dim_labels'] = dim_labels
+        l['col_a_title'] = l.get('column_a_title', '')
+        l['col_b_title'] = l.get('column_b_title', '')
+    return l
