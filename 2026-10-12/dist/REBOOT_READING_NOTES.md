@@ -22,6 +22,7 @@ Editorial plans with `schema_version: enhanced-v1` now drive the **same** `build
 - Editorial: bold only the thesis line; numbers keep 约/大约; Recorded Future explained once in L02, not restated in quote attribution beyond name.
 - Design: single column + margin note + pull quote; AJ×WIRED tokens unchanged.
 - Reading: long piece becomes scannable without component spam.
+- Extraction debt (disclosed): EN body contained a `[Continued on page A10.]` turn-page marker plus a column-break fragment (`...helped the farmer harden` / `the camera's security...`) that the CN translation had merged. Repaired pairing via `render/alignment_overrides.json` — drop the marker, join the fragment; body text itself verbatim. Baseline intentionally keeps the raw artifact. Without this, EN mode showed the marker mid-sentence and paragraphs paired wrong from p4 onward.
 
 ### E1-010
 - Content: compare cells are condensed labels over numbers that appear in p4–p5.
@@ -46,4 +47,4 @@ open 2026-10-12/dist/index.html
 # enhanced ↔ baseline links are in each enhanced article header
 ```
 
-Shots: `dist/shots/reboot-four-d.png`, `reboot-four-m.png`.
+Shots (`dist/shots/`): per article `{id}-head-{d|m}.png` (1440/390 CN) and `{id}-head-en-d.png` (1440 EN); `e1-010-compare-{d,m}.png` (L03 compare); `e2-002-subhead-en-d.png` (EN source-head pairing after alignment repair); `reboot-four-{d,m}.png` (four-article strip).

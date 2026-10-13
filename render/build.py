@@ -227,15 +227,16 @@ JS = '''
     document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
     document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
     document.documentElement.lang=en?'en':'zh-CN';
-    btn.setAttribute('aria-pressed',en?'true':'false');
+    if(btn)btn.setAttribute('aria-pressed',en?'true':'false');
   }
-  btn.addEventListener('click',function(){
+  if(btn)btn.addEventListener('click',function(){
     setLang(btn.getAttribute('aria-pressed')!=='true');
   });
   var toTop=document.getElementById('toTop');
   if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
   var bar=document.getElementById('pbar');
   function prog(){
+    if(!bar)return;
     var h=document.documentElement;
     var m=h.scrollHeight-h.clientHeight;
     bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';

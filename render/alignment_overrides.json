@@ -1,0 +1,13 @@
+{
+  "E2-002": {
+    "note": "EN extraction contains a turn-page marker and a column-break fragment (pdftotext column break split one sentence; CN translation merged it). Repair pairs CN<->EN paragraphs; body text itself stays verbatim. Baseline (plain path) intentionally keeps the raw extraction artifact.",
+    "drop_en": ["[Continued on page A10.]"],
+    "join_en": [
+      {
+        "first_prefix": "The cyber directorate said it helped the farmer harden",
+        "second_prefix": "the camera's security and adjust its viewing angle",
+        "joiner": " "
+      }
+    ]
+  }
+}

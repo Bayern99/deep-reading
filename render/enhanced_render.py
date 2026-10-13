@@ -42,10 +42,52 @@ def load_plans(plans_dir):
     return out
 
 
+_OVERRIDES = None
+
+
+def _alignment_overrides():
+    """Per-article CN<->EN pairing repairs for extraction debt (markers,
+    column-break fragments). Content text stays verbatim; only pairing
+    and obvious non-content markers are affected."""
+    global _OVERRIDES
+    if _OVERRIDES is None:
+        path = os.path.join(BASE, 'alignment_overrides.json')
+        _OVERRIDES = {}
+        if os.path.isfile(path):
+            with open(path, encoding='utf-8') as f:
+                _OVERRIDES = json.load(f)
+    return _OVERRIDES
+
+
+def _apply_en_repairs(aid, en):
+    ov = _alignment_overrides().get(aid)
+    if not ov:
+        return en
+    en = list(en)
+    for exact in ov.get('drop_en', []):
+        matches = [i for i, p in enumerate(en) if p.strip() == exact]
+        assert len(matches) == 1, f'{aid}: drop_en not found once: {exact!r}'
+        en.pop(matches[0])
+    for spec in ov.get('join_en', []):
+        fi = next((i for i, p in enumerate(en)
+                   if p.startswith(spec['first_prefix'])), None)
+        si = next((i for i, p in enumerate(en)
+                   if p.startswith(spec['second_prefix'])), None)
+        assert fi is not None and si is not None and fi != si, \
+            f'{aid}: join_en prefix not found: {spec}'
+        en[fi] = en[fi] + spec.get('joiner', ' ') + en[si]
+        en.pop(si)
+    return en
+
+
 def source_from_final(e):
     sm = SourceModel(e['id'])
     cn = [p.strip() for p in (e.get('body_cn') or '').split('\n\n') if p.strip()]
     en = [p.strip() for p in (e.get('body_en') or '').split('\n\n') if p.strip()]
+    en = _apply_en_repairs(e['id'], en)
+    if len(cn) != len(en):
+        print(f'warn: {e["id"]} cn/en para mismatch '
+              f'({len(cn)} vs {len(en)}), index pairing may desync')
     n = max(len(cn), len(en))
     for i in range(n):
         c = cn[i] if i < len(cn) else ''
@@ -275,10 +317,15 @@ def render_enhanced_article(e, plan, asset_loader=None):
                 f'</h3>')
 
         if b['role'] == 'source_head':
+            en_head = b['en']
+            if len(en_head) > 60 or re.search(r'[.!?。！？]', en_head):
+                en_head = ''  # not a real parallel head — never show prose as a heading
+            en_span = (f'<span class="k-en" hidden>{esc(en_head)}</span>'
+                       if en_head else '')
             h.append(
                 f'<h3 class="tt-subhead ed-block" data-source-head="true" data-block="{bid}">'
                 f'<span class="k-cn">{esc(b["cn"])}</span>'
-                f'<span class="k-en" hidden>{esc(b["en"])}</span>'
+                f'{en_span}'
                 f'</h3>')
         else:
             cn_h, en_h = render_block(b, ops_by_block.get(bid, []))
