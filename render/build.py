@@ -144,6 +144,20 @@ html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
 .fig{margin-top:2em;margin-bottom:2em}
 .fig img{display:block;width:100%;height:auto}
 .fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
 
 /* data tables */
 .tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;

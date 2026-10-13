@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · 测试页 E1-005 · 无Plan降级</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-clean" id="s-E1-005" aria-label="胡塞武装发动袭击，沙特王储重担加重">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">News · A1 版 · P1 必读</span><span class="k-en" hidden>News · A1 版 · P1 必读</span></div>
+    <h2 class="art-title"><span class="k-cn">胡塞武装发动袭击，沙特王储重担加重</span><span class="k-en" hidden>Saudi Crown Prince's Burden Grows Heavier as Houthis Strike</span></h2>
+<p class="deck"><span class="k-cn">沙特王国正面临着诸多困境，伊朗支持的反叛武装正在加剧对该国安全的袭击。</span><span class="k-en" hidden>Kingdom is facing myriad dilemmas as Iran-backed rebels intensify attacks on the kingdom's security and</span></p>
+<div class="byline">
+      <span class="who">BY SUMMER SAID AND GEORGI KANTCHEV</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A1 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A1</span>
+    </div>
+</header>
+  <div class="arule"></div>
+<p><span class="k-cn">迪拜——沙特王储穆罕默德·本·萨勒曼以积极的姿态开始了新的一年。他刚刚访问了白宫，并受到了特朗普总统的热情欢迎。即使在与伊朗的战争爆发后，沙特阿拉伯的处境也相对较好：它可以通过一条绕过受阻的霍尔木兹海峡的管道出口石油。</span><span class="k-en" hidden>DUBAI—Saudi Crown Prince Mohammed bin Salman started the year on a high note. He'd just visited the White House where he was embraced by President Trump. Even after the war with Iran kicked off, Saudi Arabia looked relatively well positioned: It could export oil through a pipeline that bypassed the blocked Strait of Hormuz.</span></p>
+<p><span class="k-cn">但沙特与伊朗支持的也门胡塞武装分子在邻国也门日益激烈的冲突，现在给该国的安全以及王储雄心勃勃但已面临困境的改造该国依赖石油的经济的计划带来了新的挑战。</span><span class="k-en" hidden>But the Saudis' escalating fight with Iran-backed Houthi militants in neighboring Yemen now piles new challenges on the kingdom's security and the crown prince's ambitious but already struggling plans to transform the country's oil-dependent economy.</span></p>
+<p><span class="k-cn">周六，一枚胡塞导弹击中了沙特首都的国际机场，造成至少 12 人死亡，数百人受伤，其中许多人伤势严重。这是伊朗战争相关冲突中，针对美国或其海湾盟友造成的单次伤亡最严重的袭击。</span><span class="k-en" hidden>On Saturday, a Houthi missile slammed into the Saudi capital's international airport, killing at least 12 people and injuring hundreds more, many seriously. It was the single deadliest attack on the U.S. or its Gulf allies in the conflicts related to the Iran war.</span></p>
+<p><span class="k-cn">据知情官员透露，一名 28 岁的埃及空姐在手臂被炸断后失血过多而死亡，她是袭击事件中失去肢体的一些受害者之一。</span><span class="k-en" hidden>A 28-year-old Egyptian flight attendant bled to death after her arm was blown off, one of several victims to lose limbs, officials briefed on the attack said.</span></p>
+<p><span class="k-cn">据熟悉情况的人士称，两座航站楼遭到袭击，屋顶部分坍塌。Storyful（一家视频验证机构）验证的视频显示，乘客在机场疏散时，拖着行李箱，从地面上一道血迹旁经过。Storyful 与《华尔街日报》一样，都由道琼斯公司所有。当局报告称，周日，关闭的机场再次遭到袭击，称一枚弹药在 4 号航站楼引发火灾，并造成人员受伤。</span><span class="k-en" hidden>Two terminals were struck and their roofs partially collapsed, people familiar with the damage said. Video verified by Storyful, which like The Wall Street Journal is owned by Dow Jones, showed passengers rolling suitcases past a trail of blood on the floor as the airport was evacuated. Authorities reported new attacks on the shuttered airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries.</span></p>
+<p><span class="k-cn">就在今年夏天，沙特官员曾向记者表示，胡塞武装的情况已经得到控制。但武装分子日益激烈的袭击，他们声称这是对沙特采取的行动的回应，袭击了机场和能源设施——包括该国的主要东西部管道和炼油厂——表明南部边境的威胁正在增加。</span><span class="k-en" hidden>As recently as this summer, Saudi officials briefed journalists that the Houthi situation was under control. But the militants' escalating attacks, which they say are retaliation for Saudi actions against them, have hit airports and energy facilities—including the kingdom's main east-west pipeline and refineries—showing the growing threat along the southern border.</span></p>
+<p><span class="k-cn">这场冲突正在危及沙特将旅游业发展成为经济支柱的努力，包括一项计划于本月底举行的备受瞩目的国际投资会议，而该会议能否如期举行如今越来越成疑。</span><span class="k-en" hidden>The conflict is jeopardizing Saudi efforts to build travel and tourism into a pillar of the economy, including with a marquee international investment conference scheduled for</span></p>
+<p><span class="k-cn">战争的成本已经扩大了预算赤字，并有可能导致经济萎缩。</span><span class="k-en" hidden>[Continued on page A7 under the headline &quot;Challenges Piling Up For Saudis&quot;:]</span></p>
+<p><span class="k-cn">王储如何应对这次考验，将对沙特王国以外的地区产生影响。沙特是全球科技产业和人工智能项目的重要资金来源，同时，它还为美国军队提供基地和空域通行权。</span><span class="k-en" hidden>the end of the month that looks increasingly in doubt.</span></p>
+<p><span class="k-cn">特朗普在周末告诉记者，美国正在与胡塞武装进行沟通，但可能会加入沙特对该武装组织的打击。</span><span class="k-en" hidden>The costs of the war have already widened the budget deficit and threaten to push the economy into contraction.</span></p>
+<p><span class="k-cn">周日，一名胡塞武装的军事发言人重申，沙特机场是该组织的袭击目标。沙特官员表示，他们的拦截导弹库存告急，难以防御进一步袭击。</span><span class="k-en" hidden>How the crown prince handles this test will have consequences beyond the kingdom. Saudi Arabia is a major source of funding for the global tech industry and artificial-intelligence projects. It also provides basing and overflight rights to the U.S. military.</span></p>
+<p><span class="k-cn">对利雅得的袭击——该市距离也门胡塞武装控制区约 500 英里——已将沙特首都的部分地区变成了战场，居民们在爆炸声中四处躲避。周四，一枚被拦截的弹道导弹的碎片击中了一所幼儿园和一座医疗诊所综合楼。该市金融区的工人、一些国际学校的学生和外交官被要求撤离或寻找避难所。</span><span class="k-en" hidden>Trump told reporters over the weekend that the U.S. was in communication with the Houthis but might join Saudi strikes on the militant group.</span></p>
+<p><span class="k-cn">据熟悉王储动向的官员透露，这位 41 岁的王储正在穿梭于配备有防空洞的宫殿之间，并由一支精选的安保团队保护。他最后一次公开露面是在周二。</span><span class="k-en" hidden>On Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets. Saudi officials said they are running low on interceptors needed to fend off further strikes.</span></p>
+<p><span class="k-cn">克里斯蒂安·库茨·乌尔里克森表示，这位王储几乎没有好的选项；他是波斯湾问题专家，同时也是莱斯大学贝克研究所的研究员。“任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。”</span><span class="k-en" hidden>Attacks on Riyadh—about 500 miles from Houthi territory in Yemen—have transformed parts of the Saudi capital into a battle zone, with residents taking cover as explosions ring out across the city. Debris from an intercepted ballistic missile hit a kindergarten and a medical clinic complex Thursday. Workers in the city's financial district, students at some international schools and diplomats were ordered to evacuate or take shelter.</span></p>
+<p><span class="k-cn">沙特新闻官员没有回应置评请求。</span><span class="k-en" hidden>The 41-year-old crown prince is shuttling between palaces equipped with bunkers and is guarded by a handpicked security team, officials familiar with his movements said. His last public appearance was Tuesday.</span></p>
+<p><span class="k-cn">在过去十年中，这位王储投入了大量资金，用于一系列具有未来感的项目，这些项目具有极其复杂的工程要求，旨在展示沙特王国的现代化进程，并吸引投资和旅游。这些项目包括未来之城 Neom、位于利雅得的一座巨大的立方体建筑以及一座沙漠滑雪胜地。总成本高达数万亿美元——对年度预算仅约 3500 亿美元的政府而言可谓野心勃勃。</span><span class="k-en" hidden>He has few good options, said Kristian Coates Ulrichsen, a Persian Gulf expert and fellow with Rice University's Baker Institute. &quot;Any military response risks getting drawn in deeper to an asymmetric conflict.&quot;</span></p>
+<p><span class="k-cn">与伊朗的战争所带来的成本和经济损失，使得原本就不太可能实现的目标更加难以实现。</span><span class="k-en" hidden>Saudi press officials didn't respond to a request for comment.</span></p>
+<p><span class="k-cn">今年前两个季度，外国投资有所下降，并且远低于王储设定的 2030 年目标。不断上升的国防和基础设施成本可能会挤占用于推动经济多元化的资金。即使是沙特王国努力成为人工智能中心，现在也面临新的风险，数据中心正逐渐成为袭击目标。</span><span class="k-en" hidden>The crown prince has plowed funds over the past decade into a slate of futuristic projects with extraordinarily complex engineering requirements aimed at signaling the kingdom's modernization and drawing investment and tourism. They include the futuristic city of Neom, an enormous cube-shaped building in Riyadh and a desert ski resort. The total cost ran to the trillions of dollars—aggressive for a government with an annual budget of around $350 billion.</span></p>
+<p><span class="k-cn">许多由王储推动的项目都已停滞或正在接受审查。</span><span class="k-en" hidden>The costs and economic damage of war with Iran are making that already unlikely math impossible to balance.</span></p>
+<p><span class="k-cn">根据凯投宏观的分析，该国经济中非石油领域的规模在第二季度低于第一季度。沙特财政部现在预计，2026年国内生产总值将下降3.6%。</span><span class="k-en" hidden>Foreign investment fell in the first two quarters of the year and is running well behind the crown prince's 2030 target. Rising defense and infrastructure costs threaten to siphon away money needed for the economic diversification push. Even the kingdom's push to become an AI hub now carries new risks, with data centers emerging as targets.</span></p>
+<p><span class="k-cn">今年年初，该国设法将石油通过管道输送到红海，以摆脱伊朗对霍尔木兹海峡的控制。但在7月，胡塞武装宣布对沙特阿拉伯实施海上封锁，使红海航运面临风险。9月，对东西管道的袭击直接威胁到该国从霍尔木兹海峡逃离的主要通道。</span><span class="k-en" hidden>Many of the projects pushed by the crown prince are stalled or under review.</span></p>
+<p><span class="k-cn">2015年，王储使沙特阿拉伯卷入了也门内战，支持该国得到国际承认的政府，与胡塞武装作战。沙特阿拉伯发动了空袭，加剧了冲突，但也招致了胡塞武装对其石油设施和包括利雅得在内的城市发动的袭击。双方陷入僵局，并在2022年达成了停火协议。</span><span class="k-en" hidden>The non-oil side of the country's economy was smaller in the second quarter than in the first, according to Capital Economics. The Saudi Finance Ministry now expects GDP to shrink by 3.6% in 2026.</span></p>
+<p><span class="k-cn">新一轮冲突爆发之际，王储正努力控制与伊朗的对抗。战争初期，德黑兰发动的袭击表明，海湾地区的能源设施和机场等经济资产面临风险。据了解沙特阿拉伯内部情况的人士称，沙特阿拉伯也在努力在广阔的国土上部署防空系统，并正在调动防空部队，以保护宫殿和重要的能源基础设施。这些人士表示，虽然王储支持继续对伊朗施加经济压力，但他也在指示他的顾问，要与伊朗保持外交沟通渠道畅通，并明确表示该国的意图并非对抗。</span><span class="k-en" hidden>The kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz.</span></p>
+<p><span class="k-cn">这些人士称，该国已向其军事盟友巴基斯坦寻求援助，并正在全球范围内寻找防空系统。他们还表示，该国也在寻求招募外国战士，以帮助其在也门的盟友。</span><span class="k-en" hidden>The crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a ceasefire in 2022.</span></p>
+<p><span class="k-cn"></span><span class="k-en" hidden>The new outbreak came as the crown prince was working to contain the confrontation with Iran. Attacks by Tehran early in the war demonstrated the risk to energy facilities and economic assets like airports across the Gulf. Saudi Arabia was also struggling to cover the vast country with air defense and was shifting batteries around to try to protect palaces and key energy infrastructure, people familiar with the kingdom's deliberations said. While supportive of continued economic pressure on Iran, the crown prince was telling his advisers to keep the diplomatic channel open with Iran and make clear the kingdom's intentions weren't confrontational, the people said.</span></p>
+<p><span class="k-cn"></span><span class="k-en" hidden>The kingdom has called for help from its military ally Pakistan and is scouring the globe for air defenses, the people said. It is also looking to recruit foreign fighters to help its Yemeni allies, they said.</span></p>
+<div class="story-end"><span class="endmark" aria-hidden="true">■</span></div>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

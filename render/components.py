@@ -185,3 +185,93 @@ def data_table(body_en):
         t.append('</tbody></table></div>')
         out.append('\n'.join(t))
     return '\n'.join(out)
+
+
+# ---------- 从 build_r3.py 移植的渲染原语（样式已适配 AJ×WIRED token） ----------
+
+def bargraph(title_cn, title_en, bars, note_cn='', note_en='', uid=''):
+    """横向柱状图：bars=[(label_cn,label_en,value_cn,value_en,pct)]。
+    移植自 build_r3.py::bargraph；填充色改用 --ink（结构色），服从四色纪律。"""
+    rows = []
+    for lc, le, v_cn, v_en, pct in bars:
+        rows.append(f'''<div class="bar-row">
+      <div class="bar-label"><span class="k-cn">{esc(lc)}</span><span class="k-en" hidden>{esc(le)}</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:{pct}%"></div></div>
+      <div class="bar-val"><span class="k-cn">{esc(v_cn)}</span><span class="k-en" hidden>{esc(v_en)}</span></div>
+    </div>''')
+    note = (f'<div class="bar-note"><span class="k-cn">{esc(note_cn)}</span>'
+            f'<span class="k-en" hidden>{esc(note_en)}</span></div>') if note_cn else ''
+    return f'''<section id="bargraph-{uid}" class="mod bargraph" aria-label="图表">
+    <div class="mtag"><span class="kbar-sm"></span><span class="k-cn">{esc(title_cn)}</span><span class="k-en" hidden>{esc(title_en)}</span></div>
+    {chr(10).join(rows)}
+    {note}
+  </section>'''
+
+
+def chart(img_b64, caption_cn, caption_en, source_note, uid):
+    """图表：原报图表的高清裁图 + 图注 + 数据来源行。OCR 识别出的图表文字不等于图表本身——图必须保留。"""
+    return f'''<figure id="chart-{uid}" class="mod fig chart">
+    <img src="data:image/png;base64,{img_b64}" alt="{esc(caption_cn)}">
+    <figcaption><span class="k-cn">{esc(caption_cn)}</span><span class="k-en" hidden>{esc(caption_en)}</span></figcaption>
+    <div class="fig-note"><span class="k-cn">数据来源：{esc(source_note)}</span><span class="k-en" hidden>Source: {esc(source_note)}</span></div>
+  </figure>'''
+
+
+def infographic(img_b64, caption_cn, caption_en, data_note, uid):
+    """信息图：原报信息图整体保留 + 说明文字 + 数据口径注。"""
+    return f'''<figure id="infographic-{uid}" class="mod fig infographic">
+    <img src="data:image/png;base64,{img_b64}" alt="{esc(caption_cn)}">
+    <figcaption><span class="k-cn">{esc(caption_cn)}</span><span class="k-en" hidden>{esc(caption_en)}</span></figcaption>
+    <div class="fig-note"><span class="k-cn">{esc(data_note)}</span><span class="k-en" hidden>{esc(data_note)}</span></div>
+  </figure>'''
+
+
+# ---------- 组件注册表 ----------
+# 名称 → 需要的数据 / 用途。Plan 的 component 字段只能取这里的 key。
+COMPONENT_REGISTRY = {
+    'key_figures': {
+        'needs': 'condensed 数据点列表（value/label/note，中英），来自 Plan data 或 data_ref',
+        'purpose': '导语后的数据总览；只收 condensed 数据点，不复述正文句子',
+        'fn': key_figures,
+    },
+    'timeline': {
+        'needs': '时间线条目（t/text，中英），来自 Plan data 或 data_ref',
+        'purpose': '提供叙事顺序之外的编年视角；单句 condensed',
+        'fn': timeline,
+    },
+    'quote': {
+        'needs': '直接引语一句 + 署名，来自 Plan data 或 data_ref',
+        'purpose': '人物观点点题；人物介绍与叙述留在正文',
+        'fn': quote,
+    },
+    'context_box': {
+        'needs': 'context_cn（final.json）',
+        'purpose': '背景资料，底部折叠，不打断叙事',
+        'fn': context_box,
+    },
+    'figure': {
+        'needs': '已验证真实图片（base64）+ 图注 + 来源',
+        'purpose': '新闻照片及图注',
+        'fn': figure,
+    },
+    'chart': {
+        'needs': '原报图表裁图（base64）+ 图注 + 数据来源',
+        'purpose': '金融图表等数据图形的原始视觉表达',
+        'fn': chart,
+    },
+    'infographic': {
+        'needs': '原报信息图裁图（base64）+ 说明 + 数据口径注',
+        'purpose': '信息图的原始视觉表达整体保留',
+        'fn': infographic,
+    },
+    'bargraph': {
+        'needs': 'bars=[(label,value,pct)]，数据逐字来自正文',
+        'purpose': '两组可比数据的等比横向对比',
+        'fn': bargraph,
+    },
+    'data_table': {
+        'needs': '| 分隔的源文本',
+        'purpose': '真数据表格，移动端横滑',
+        'fn': data_table,
+    },
+}
