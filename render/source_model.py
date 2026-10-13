@@ -110,8 +110,13 @@ class SourceModel:
         }
 
 
-def build_source(article_id, translation_path, plan=None, asset_manifest=None):
-    """从 translation.json 构建源模型；plan 用于注册图注。"""
+def build_source(article_id, translation_path, plan=None, asset_manifest=None,
+                 p1_is_title=True):
+    """从 translation.json 构建源模型；plan 用于注册图注。
+
+    p1_is_title：gen-test 约定 translation.json 的 p1 是标题块（跳过正文流）；
+    若 paragraphs 全为正文段（标题在 meta），传 False。
+    """
     t = json.load(open(translation_path, encoding='utf-8'))
     sm = SourceModel(article_id)
     # plan 中的图注先注册（用于重复检测）
@@ -123,8 +128,8 @@ def build_source(article_id, translation_path, plan=None, asset_manifest=None):
                                     d.get('caption_cn', ''),
                                     d.get('caption_en', ''))
     for p in t['paragraphs']:
-        # p1 通常是标题：role 标记为 title，不参与正文流
-        role = 'title' if p['id'] == 'p1' else 'body'
+        # p1 仅在 p1_is_title 约定时标为 title，不参与正文流
+        role = 'title' if (p['id'] == 'p1' and p1_is_title) else 'body'
         sm.add_block(p['id'], p.get('en', ''), p.get('cn', ''), role=role)
     marked = sm.detect_caption_duplicates()
     return sm, marked

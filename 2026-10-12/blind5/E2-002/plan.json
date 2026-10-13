@@ -1,0 +1,438 @@
+{
+ "article_id": "E2-002",
+ "schema_version": "0.2-enh",
+ "narrative_outline": [
+  {
+   "block_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "function": "scene",
+   "reader_need": "通过具体的养鸡户案例引入主题，建立读者对‘日常设备被入侵’的直观感知。"
+  },
+  {
+   "block_ids": [
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "function": "background",
+   "reader_need": "提供宏观背景（12亿摄像头）和专家观点，确立问题的普遍性和严重性。"
+  },
+  {
+   "block_ids": [
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13"
+   ],
+   "function": "claim",
+   "reader_need": "阐述核心论点：AI如何改变监控入侵的效率，以及俄乌、以伊冲突中的具体应用。"
+  },
+  {
+   "block_ids": [
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19"
+   ],
+   "function": "evidence",
+   "reader_need": "通过基辅公寓摄像头和荷兰情报机构的案例，提供俄罗斯入侵欧洲的具体证据。"
+  },
+  {
+   "block_ids": [
+    "p20",
+    "p21",
+    "p22",
+    "p23",
+    "p24"
+   ],
+   "function": "evidence",
+   "reader_need": "聚焦以色列与伊朗的冲突，展示摄像头入侵在目标定位和损失评估中的战术作用。"
+  },
+  {
+   "block_ids": [
+    "p25",
+    "p26",
+    "p27",
+    "p28",
+    "p29",
+    "p30"
+   ],
+   "function": "consequence",
+   "reader_need": "分析入侵限制区域摄像头的后果，并指出企业内部网络安全管理的盲区。"
+  },
+  {
+   "block_ids": [
+    "p31",
+    "p32",
+    "p33",
+    "p34",
+    "p35"
+   ],
+   "function": "contrast",
+   "reader_need": "展示摄像头入侵在信息战（宣传、嘲讽）中的非军事用途，丰富威胁维度。"
+  },
+  {
+   "block_ids": [
+    "p36",
+    "p37",
+    "p38",
+    "p39"
+   ],
+   "function": "background",
+   "reader_need": "总结物联网（IoT）作为攻击面的概念，强调摄像头作为‘薄弱环节’的系统性风险。"
+  }
+ ],
+ "text_treatments": [
+  {
+   "pattern_id": "T01",
+   "block_id": "p7",
+   "locale": "cn",
+   "text_exact": "民用监控正在转化为战时情报收集",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "这是文章的核心论点，加粗以突出专家对当前局势的关键判断。"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p5",
+   "locale": "cn",
+   "text_exact": "12亿个",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "强调受影响设备的巨大规模，增强读者的危机感。"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p17",
+   "locale": "cn",
+   "text_exact": "4万个",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "具体数字展示了乌克兰方面应对威胁的规模，具有新闻价值。"
+  },
+  {
+   "pattern_id": "T06",
+   "block_id": "p12",
+   "locale": "cn",
+   "text_exact": "OneFist团队的负责人克里斯托弗·科特赖特",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "明确引语归属，避免读者混淆不同专家的观点。"
+  },
+  {
+   "pattern_id": "T11",
+   "block_id": "p14",
+   "locale": "cn",
+   "text_exact": "基辅的公寓摄像头",
+   "action": "subhead",
+   "params": {
+    "title_cn": "基辅的公寓摄像头",
+    "title_en": "Condo Association in Kyiv"
+   },
+   "editorial_added": true,
+   "reason": "原文p14已有小标题“公寓管理协会”，但为了更具体地指向基辅案例，且符合WSJ风格，保留或优化小标题以引导阅读。此处选择保留原文意图，但根据规则T11是插入新标题，若原文已有则无需插入。检查原文p14确实是标题。因此不需要T11。重新检查：原文p9, p14, p20, p25, p31, p36都是小标题。所以不需要T11。"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p24",
+   "locale": "cn",
+   "text_exact": "比渗透最狡猾的特工的风险更小",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "对比传统间谍活动，突出网络入侵的低风险和高效性，是重要的战术洞察。"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p5",
+   "locale": "cn",
+   "text_exact": "根据网络安全咨询公司S-RM的说法，这位养鸡户的摄像头是全球约12亿个连接到互联网的摄像头之一。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      10,
+      14
+     ],
+     [
+      31,
+      33
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p7",
+   "locale": "cn",
+   "text_exact": "威胁情报咨询公司Recorded Future的国家安全专家亚历山大·莱斯利表示：“我们现在看到，民用监控正在转化为战时情报收集。”他认为，无处不在的数字摄像头构成了全球性的“软肋”。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      8,
+      23
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p12",
+   "locale": "cn",
+   "text_exact": "“人工智能改变了一切，”OneFist团队的负责人克里斯托弗·科特赖特说道，OneFist团队是一个国际黑客组织，为乌克兰在与俄罗斯的战争中提供支持。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      12,
+      19
+     ],
+     [
+      38,
+      45
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p16",
+   "locale": "cn",
+   "text_exact": "2024年，俄罗斯黑客控制了基辅的住宅网络摄像头，其中包括一个由公寓管理协会安装的摄像头，用于监控社区。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      0,
+      4
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p17",
+   "locale": "cn",
+   "text_exact": "乌克兰安全局（SBU）表示，俄罗斯打算利用被入侵的视频流来寻找目标，并“调整对乌克兰的导弹袭击”，从而改进其后续打击的瞄准精度。SBU表示，自俄罗斯于2022年入侵以来，它已经识别并加固、重新定向或阻止了大约4万个可能构成安全风险的视频摄像头。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      7,
+      10
+     ],
+     [
+      64,
+      67
+     ],
+     [
+      75,
+      79
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p19",
+   "locale": "cn",
+   "text_exact": "网络安全咨询公司 CloudSEK 最近发现了一台暴露的服务器，他们怀疑该服务器属于一个讲俄语的黑客，服务器中包含数百张乌克兰国防、政府、能源和通信设施的网络摄像头图像，以及各种日常生活的场景。CloudSEK 表示，其中许多图像来自乌克兰与北约盟友罗马尼亚接壤的地区。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      9,
+      17
+     ],
+     [
+      97,
+      105
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p21",
+   "locale": "cn",
+   "text_exact": "网络摄像头在与伊朗的战争中也发挥着越来越重要的作用。以色列国家网络局表示，一个与伊朗有关的名为“摩西职员”的组织入侵了耶路撒冷的一个安全摄像头，以监控一名巴勒斯坦武装分子于 2022 年实施的巴士站爆炸事件，该事件造成两人死亡，另有 20 多人受伤。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      87,
+      91
+     ],
+     [
+      117,
+      119
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p22",
+   "locale": "cn",
+   "text_exact": "今年，与伊朗有关的组织入侵了 250 多台敏感的以色列安全摄像头，这些事件对国家安全构成了直接威胁，数量超过了往年。被入侵的摄像头包括车牌识别器和位于战略地点以及士兵聚集地（包括靠近黎巴嫩边境的军事哨所）的安全摄像头。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      15,
+      18
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p27",
+   "locale": "cn",
+   "text_exact": "在乌克兰战争初期，OneFist 团队监视了俄罗斯刻赤海峡大桥（通往克里米亚）上的摄像头信号，提供了有助于完善攻击计划的图像——包括俄罗斯在大桥下方安装了运动探测器，以阻止水上攻击。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      9,
+      16
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p28",
+   "locale": "cn",
+   "text_exact": "Recorded Future 的亚历山大·莱斯利表示，来自被入侵摄像头的“信息可以缩短决策周期，这正是现代军队所关心的”。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      0,
+      15
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p37",
+   "locale": "cn",
+   "text_exact": "连接到网络的易受攻击的配件是黑客的主要目标之一，这扩大了技术人员所说的攻击范围。通常，摄像头本身并不是目标，而是作为更大规模的黑客攻击中的薄弱环节。S-RM去年报道称，勒索软件组织Akira利用一个未受保护的网络摄像头，绕过了某个组织的网络安全系统，并对其进行勒索。一旦黑客进入本地网络，他们通常可以探测存储的文件、电子邮件帐户和其他设备，包括摄像头。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      74,
+      78
+     ],
+     [
+      90,
+      95
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p38",
+   "locale": "cn",
+   "text_exact": "S-RM美洲地区网络安全负责人保罗·卡伦表示：“物联网是一个非常广阔的领域，因此无论你是否意识到，一切都是你攻击范围的延伸。”",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      0,
+      4
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  }
+ ],
+ "layout_decisions": [
+  {
+   "pattern_id": "L01",
+   "action": "apply",
+   "reason": "标准新闻文章，无特定图片需求，采用单栏布局。"
+  }
+ ],
+ "component_plan": [
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 7
+   },
+   "reason": "引用专家的核心观点，强化“民用监控军事化”的主题。",
+   "data": {
+    "quote": {
+     "text_cn": "我们现在看到，民用监控正在转化为战时情报收集。",
+     "text_en": "We are now seeing the conversion of civilian surveillance into wartime intelligence collection.",
+     "attr_cn": "Recorded Future 国家安全专家 亚历山大·莱斯利",
+     "attr_en": "Alexander Leslie, Recorded Future"
+    }
+   }
+  }
+ ],
+ "rejected_opportunities": [
+  {
+   "pattern_id": "T11",
+   "action": "decline",
+   "reason_against": "原文中 p9, p14, p20, p25, p31, p36 已经存在小标题，无需重复插入。",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "timeline",
+   "action": "decline",
+   "reason_against": "虽然提到了2022年、2024年、今年等时间点，但事件分散且缺乏统一的、可精确到日期的连续时间线，不适合制作标准时间线组件。",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "key_figures",
+   "action": "decline",
+   "reason_against": "事实门禁拦截：key_figures[2] value=\"250+\" 原文无逐字对应",
+   "fallback_pattern_id": "none"
+  }
+ ],
+ "dedup": {
+  "caption_duplicates_skipped": []
+ }
+}

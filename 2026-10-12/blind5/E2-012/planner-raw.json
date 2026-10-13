@@ -1,0 +1,98 @@
+{
+ "narrative_outline": [
+  {
+   "block_ids": [
+    "p1"
+   ],
+   "function": "evidence",
+   "reader_need": "理解图表所呈现的核心数据趋势及来源背景"
+  }
+ ],
+ "treatments": [],
+ "layouts": [
+  {
+   "pattern_id": "L01",
+   "action": "apply",
+   "reason": "文章类型为 data_table，且正文仅包含图表元数据，无复杂图文并置需求，采用默认单栏布局以清晰展示数据说明"
+  }
+ ],
+ "aids": [
+  {
+   "component": "data_table",
+   "slot": {
+    "at": "after_body"
+   },
+   "reason": "文章类型为 data_table，需结构化展示图表中的关键元数据（标题、图例、时间段、样本量、来源），以便读者快速提取核心信息",
+   "data": {
+    "title_cn": "周日工作时间占比图表元数据",
+    "title_en": "Metadata for 'Share of Sundays spent on...' Chart",
+    "columns": [
+     {
+      "key": "field",
+      "label_cn": "字段",
+      "label_en": "Field"
+     },
+     {
+      "key": "value",
+      "label_cn": "内容",
+      "label_en": "Content"
+     }
+    ],
+    "rows": [
+     {
+      "field": "图表标题",
+      "value": "Share of Sundays spent on..."
+     },
+     {
+      "field": "图例类别",
+      "value": "Chat and messaging; Admin and IT; Business management; Email; Research and reference"
+     },
+     {
+      "field": "统计周期",
+      "value": "2023–24; 2024–25; 2025–26"
+     },
+     {
+      "field": "数据来源",
+      "value": "ActivTrak"
+     },
+     {
+      "field": "样本说明",
+      "value": "Work activity data for employees at 336 companies. Data captures activity over a 24-hour period on monitored devices only."
+     }
+    ]
+   }
+  }
+ ],
+ "rejected_opportunities": [
+  {
+   "pattern_id": "T01",
+   "action": "decline",
+   "reason_against": "中文正文 p1 为空，无文本可供加粗",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "T03",
+   "action": "decline",
+   "reason_against": "中文正文 p1 为空，无数字可供强调",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "key_figures",
+   "action": "decline",
+   "reason_against": "原文未提供具体的百分比数值，仅提供了图表标题和元数据，无法提取具体的关键数字（如 336 是样本量而非趋势数据，且已包含在 data_table 中，避免重复）",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "timeline",
+   "action": "decline",
+   "reason_against": "原文仅列出统计周期（2023-24 等），并非按时间顺序排列的具体事件，不符合 timeline 组件要求",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "quote",
+   "action": "decline",
+   "reason_against": "原文无具名人物直接引语",
+   "fallback_pattern_id": "T00"
+  }
+ ]
+}

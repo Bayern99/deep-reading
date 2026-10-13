@@ -1,0 +1,37 @@
+{
+ "article_id": "E1-015",
+ "treatments_used": [
+  "T01",
+  "T03",
+  "T17"
+ ],
+ "layouts_used": [
+  "L01"
+ ],
+ "aids_used": [
+  [
+   "key_figures",
+   {
+    "at": "after_body"
+   }
+  ]
+ ],
+ "rejected": [
+  [
+   "T09",
+   "段落较短，无需拆分"
+  ],
+  [
+   "quote",
+   "原文为间接引语（said），无直接引语内容"
+  ],
+  [
+   "timeline",
+   "仅提及“周六”，缺乏具体日期且事件少于4个，不符合时间线组件要求"
+  ]
+ ],
+ "anomalies": [],
+ "n_blocks": 2,
+ "n_treatments": 5,
+ "plan_validate_ok": true
+}

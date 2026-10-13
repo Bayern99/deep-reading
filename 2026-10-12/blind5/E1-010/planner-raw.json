@@ -1,0 +1,178 @@
+{
+ "narrative_outline": [
+  {
+   "block_ids": [
+    "p1",
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "明确核心论点：高利率将是未来十年的常态，而非暂时波动。"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4",
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "提供具体数据支撑：10年期国债收益率预测大幅上调，及其对借贷成本的影响。"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7",
+    "p8",
+    "p9"
+   ],
+   "function": "background",
+   "reader_need": "解释驱动因素：通胀、财政担忧及美联储政策滞后，引用专家观点。"
+  },
+  {
+   "block_ids": [
+    "p10",
+    "p11",
+    "p12"
+   ],
+   "function": "evidence",
+   "reader_need": "细化宏观指标：油价、通胀率预测及除通胀外的其他推高收益率因素（债务、AI）。"
+  },
+  {
+   "block_ids": [
+    "p13",
+    "p14",
+    "p15",
+    "p16"
+   ],
+   "function": "consequence",
+   "reader_need": "展示宏观后果：联邦预算压力、GDP增长预期及劳动力市场稳定性。"
+  },
+  {
+   "block_ids": [
+    "p17",
+    "p18",
+    "p19"
+   ],
+   "function": "contrast",
+   "reader_need": "提供反方观点：劳动力市场脆弱性可能导致降息，从而降低收益率。"
+  }
+ ],
+ "treatments": [
+  {
+   "pattern": "T01",
+   "block_id": "p2",
+   "locale": "cn",
+   "snippet": "并非暂时的波动，而是会随着通货膨胀的降温而逐渐消失",
+   "reason": "强调核心论点：高利率是结构性变化，而非暂时现象。"
+  },
+  {
+   "pattern": "T03",
+   "block_id": "p4",
+   "locale": "cn",
+   "snippet": "5.1%",
+   "reason": "突出关键预测数字，体现收益率大幅上调。"
+  },
+  {
+   "pattern": "T03",
+   "block_id": "p4",
+   "locale": "cn",
+   "snippet": "4.4%",
+   "reason": "对比基准，显示预测变化的幅度。"
+  },
+  {
+   "pattern": "T06",
+   "block_id": "p7",
+   "locale": "cn",
+   "snippet": "艾伦·西奈",
+   "reason": "明确引语归属，增强专家观点的可信度。"
+  },
+  {
+   "pattern": "T11",
+   "before_block_id": "p13",
+   "title_cn": "财政与增长影响",
+   "title_en": "Fiscal and Growth Implications",
+   "reason": "在讨论具体宏观指标（GDP、失业、衰退概率）前插入小标题，帮助读者区分“原因”与“后果”。"
+  },
+  {
+   "pattern": "T11",
+   "before_block_id": "p17",
+   "title_cn": "反方观点：劳动力市场脆弱性",
+   "title_en": "Counterpoint: Labor Market Fragility",
+   "reason": "在引入持不同意见的经济学家前插入小标题，清晰标记观点转折。"
+  }
+ ],
+ "layouts": [
+  {
+   "pattern_id": "L01",
+   "action": "apply",
+   "reason": "标准新闻文章，无复杂图表需并置，单栏阅读体验最佳。"
+  }
+ ],
+ "aids": [
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "在文章开头后展示核心预测数据，让读者快速把握文章量级。",
+   "data": {
+    "items": [
+     {
+      "value_cn": "5.1%",
+      "value_en": "5.1%",
+      "label_cn": "2026年底10年期国债收益率预测",
+      "label_en": "10-year yield forecast for end-2026",
+      "note_cn": "高于7月预测的4.4%",
+      "note_en": "Up from 4.4% in July"
+     },
+     {
+      "value_cn": "24%",
+      "value_en": "24%",
+      "label_cn": "未来12个月经济衰退概率",
+      "label_en": "Probability of recession in next 12 months",
+      "note_cn": "与7月预测的25%基本持平",
+      "note_en": "Barely changed from 25% in July"
+     },
+     {
+      "value_cn": "2.4%",
+      "value_en": "2.4%",
+      "label_cn": "2026年GDP增长预期",
+      "label_en": "2026 GDP growth expectation",
+      "note_cn": "高于7月预测的2.1%",
+      "note_en": "Up from 2.1% in July"
+     }
+    ]
+   }
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 7
+   },
+   "reason": "提取最具代表性的专家引语，强调基本面发生“重大变化”。",
+   "data": {
+    "quote": {
+     "text_cn": "这标志着支撑固定收益市场和经济的基本面发生了重大变化。",
+     "text_en": "It has been a sea change in the fundamentals underlying the fixed-income market and the economy.",
+     "attr_cn": "艾伦·西奈，Decision Economics 总裁",
+     "attr_en": "Allen Sinai, President of Decision Economics"
+    }
+   }
+  }
+ ],
+ "rejected_opportunities": [
+  {
+   "pattern_id": "T09",
+   "action": "decline",
+   "reason_against": "p12 段落虽长，但逻辑连贯（通胀、债务、AI），拆分可能打断因果链条，且已有小标题辅助导航。",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "timeline",
+   "action": "decline",
+   "reason_against": "文章主要讨论预测区间（2026-2029），缺乏足够多具有明确日期的历史事件构成清晰时间线，且预测数据已在 key_figures 中体现。",
+   "fallback_pattern_id": "T00"
+  }
+ ]
+}

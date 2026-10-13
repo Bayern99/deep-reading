@@ -1,0 +1,210 @@
+{
+ "narrative_outline": [
+  {
+   "block_ids": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "function": "scene",
+   "reader_need": "通过具体的养鸡户案例引入主题，建立读者对‘日常设备被入侵’的直观感知。"
+  },
+  {
+   "block_ids": [
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "function": "background",
+   "reader_need": "提供宏观背景（12亿摄像头）和专家观点，确立问题的普遍性和严重性。"
+  },
+  {
+   "block_ids": [
+    "p9",
+    "p10",
+    "p11",
+    "p12",
+    "p13"
+   ],
+   "function": "claim",
+   "reader_need": "阐述核心论点：AI如何改变监控入侵的效率，以及俄乌、以伊冲突中的具体应用。"
+  },
+  {
+   "block_ids": [
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19"
+   ],
+   "function": "evidence",
+   "reader_need": "通过基辅公寓摄像头和荷兰情报机构的案例，提供俄罗斯入侵欧洲的具体证据。"
+  },
+  {
+   "block_ids": [
+    "p20",
+    "p21",
+    "p22",
+    "p23",
+    "p24"
+   ],
+   "function": "evidence",
+   "reader_need": "聚焦以色列与伊朗的冲突，展示摄像头入侵在目标定位和损失评估中的战术作用。"
+  },
+  {
+   "block_ids": [
+    "p25",
+    "p26",
+    "p27",
+    "p28",
+    "p29",
+    "p30"
+   ],
+   "function": "consequence",
+   "reader_need": "分析入侵限制区域摄像头的后果，并指出企业内部网络安全管理的盲区。"
+  },
+  {
+   "block_ids": [
+    "p31",
+    "p32",
+    "p33",
+    "p34",
+    "p35"
+   ],
+   "function": "contrast",
+   "reader_need": "展示摄像头入侵在信息战（宣传、嘲讽）中的非军事用途，丰富威胁维度。"
+  },
+  {
+   "block_ids": [
+    "p36",
+    "p37",
+    "p38",
+    "p39"
+   ],
+   "function": "background",
+   "reader_need": "总结物联网（IoT）作为攻击面的概念，强调摄像头作为‘薄弱环节’的系统性风险。"
+  }
+ ],
+ "treatments": [
+  {
+   "pattern": "T01",
+   "block_id": "p7",
+   "locale": "cn",
+   "snippet": "民用监控正在转化为战时情报收集",
+   "reason": "这是文章的核心论点，加粗以突出专家对当前局势的关键判断。"
+  },
+  {
+   "pattern": "T03",
+   "block_id": "p5",
+   "locale": "cn",
+   "snippet": "12亿个",
+   "reason": "强调受影响设备的巨大规模，增强读者的危机感。"
+  },
+  {
+   "pattern": "T03",
+   "block_id": "p17",
+   "locale": "cn",
+   "snippet": "4万个",
+   "reason": "具体数字展示了乌克兰方面应对威胁的规模，具有新闻价值。"
+  },
+  {
+   "pattern": "T06",
+   "block_id": "p12",
+   "locale": "cn",
+   "snippet": "OneFist团队的负责人克里斯托弗·科特赖特",
+   "reason": "明确引语归属，避免读者混淆不同专家的观点。"
+  },
+  {
+   "pattern": "T11",
+   "before_block_id": "p14",
+   "title_cn": "基辅的公寓摄像头",
+   "title_en": "Condo Association in Kyiv",
+   "reason": "原文p14已有小标题“公寓管理协会”，但为了更具体地指向基辅案例，且符合WSJ风格，保留或优化小标题以引导阅读。此处选择保留原文意图，但根据规则T11是插入新标题，若原文已有则无需插入。检查原文p14确实是标题。因此不需要T11。重新检查：原文p9, p14, p20, p25, p31, p36都是小标题。所以不需要T11。"
+  },
+  {
+   "pattern": "T01",
+   "block_id": "p24",
+   "locale": "cn",
+   "snippet": "比渗透最狡猾的特工的风险更小",
+   "reason": "对比传统间谍活动，突出网络入侵的低风险和高效性，是重要的战术洞察。"
+  }
+ ],
+ "layouts": [
+  {
+   "pattern_id": "L01",
+   "action": "apply",
+   "reason": "标准新闻文章，无特定图片需求，采用单栏布局。"
+  }
+ ],
+ "aids": [
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "在开头场景后提供关键数据，帮助读者快速把握文章涉及的规模和影响。",
+   "data": {
+    "items": [
+     {
+      "value_cn": "12亿",
+      "value_en": "1.2 billion",
+      "label_cn": "全球联网摄像头数量",
+      "label_en": "Global internet-connected cameras",
+      "note_cn": "S-RM估计",
+      "note_en": "Est. by S-RM"
+     },
+     {
+      "value_cn": "4万",
+      "value_en": "40,000",
+      "label_cn": "乌克兰加固/阻断的摄像头",
+      "label_en": "Cameras secured/blocked by Ukraine",
+      "note_cn": "自2022年入侵以来",
+      "note_en": "Since 2022 invasion"
+     },
+     {
+      "value_cn": "250+",
+      "value_en": "250+",
+      "label_cn": "今年被入侵的以色列敏感摄像头",
+      "label_en": "Sensitive Israeli cameras hacked this year",
+      "note_cn": "以色列国家网络局数据",
+      "note_en": "Israel's National Cyber Directorate"
+     }
+    ]
+   }
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 7
+   },
+   "reason": "引用专家的核心观点，强化“民用监控军事化”的主题。",
+   "data": {
+    "quote": {
+     "text_cn": "我们现在看到，民用监控正在转化为战时情报收集。",
+     "text_en": "We are now seeing the conversion of civilian surveillance into wartime intelligence collection.",
+     "attr_cn": "Recorded Future 国家安全专家 亚历山大·莱斯利",
+     "attr_en": "Alexander Leslie, Recorded Future"
+    }
+   }
+  }
+ ],
+ "rejected_opportunities": [
+  {
+   "pattern_id": "T11",
+   "action": "decline",
+   "reason_against": "原文中 p9, p14, p20, p25, p31, p36 已经存在小标题，无需重复插入。",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "timeline",
+   "action": "decline",
+   "reason_against": "虽然提到了2022年、2024年、今年等时间点，但事件分散且缺乏统一的、可精确到日期的连续时间线，不适合制作标准时间线组件。",
+   "fallback_pattern_id": "T00"
+  }
+ ]
+}

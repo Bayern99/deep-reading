@@ -1,0 +1,43 @@
+{
+ "article_id": "E1-010",
+ "treatments_used": [
+  "T01",
+  "T03",
+  "T06",
+  "T11",
+  "T17"
+ ],
+ "layouts_used": [
+  "L01"
+ ],
+ "aids_used": [
+  [
+   "key_figures",
+   {
+    "at": "after_para",
+    "para": 1
+   }
+  ],
+  [
+   "quote",
+   {
+    "at": "after_para",
+    "para": 7
+   }
+  ]
+ ],
+ "rejected": [
+  [
+   "T09",
+   "p12 段落虽长，但逻辑连贯（通胀、债务、AI），拆分可能打断因果链条，且已有小标题辅助导航。"
+  ],
+  [
+   "timeline",
+   "文章主要讨论预测区间（2026-2029），缺乏足够多具有明确日期的历史事件构成清晰时间线，且预测数据已在 key_fi"
+  ]
+ ],
+ "anomalies": [],
+ "n_blocks": 20,
+ "n_treatments": 20,
+ "plan_validate_ok": true
+}

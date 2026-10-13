@@ -1,0 +1,41 @@
+{
+ "article_id": "E2-012",
+ "treatments_used": [],
+ "layouts_used": [
+  "L01"
+ ],
+ "aids_used": [
+  [
+   "data_table",
+   {
+    "at": "after_body"
+   }
+  ]
+ ],
+ "rejected": [
+  [
+   "T01",
+   "中文正文 p1 为空，无文本可供加粗"
+  ],
+  [
+   "T03",
+   "中文正文 p1 为空，无数字可供强调"
+  ],
+  [
+   "key_figures",
+   "原文未提供具体的百分比数值，仅提供了图表标题和元数据，无法提取具体的关键数字（如 336 是样本量而非趋势数据，且已包含"
+  ],
+  [
+   "timeline",
+   "原文仅列出统计周期（2023-24 等），并非按时间顺序排列的具体事件，不符合 timeline 组件要求"
+  ],
+  [
+   "quote",
+   "原文无具名人物直接引语"
+  ]
+ ],
+ "anomalies": [],
+ "n_blocks": 1,
+ "n_treatments": 0,
+ "plan_validate_ok": true
+}

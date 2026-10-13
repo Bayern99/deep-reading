@@ -1,0 +1,685 @@
+{
+ "article_id": "E1-010",
+ "schema_version": "0.2-enh",
+ "narrative_outline": [
+  {
+   "block_ids": [
+    "p1",
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "明确核心论点：高利率将是未来十年的常态，而非暂时波动。"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4",
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "提供具体数据支撑：10年期国债收益率预测大幅上调，及其对借贷成本的影响。"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7",
+    "p8",
+    "p9"
+   ],
+   "function": "background",
+   "reader_need": "解释驱动因素：通胀、财政担忧及美联储政策滞后，引用专家观点。"
+  },
+  {
+   "block_ids": [
+    "p10",
+    "p11",
+    "p12"
+   ],
+   "function": "evidence",
+   "reader_need": "细化宏观指标：油价、通胀率预测及除通胀外的其他推高收益率因素（债务、AI）。"
+  },
+  {
+   "block_ids": [
+    "p13",
+    "p14",
+    "p15",
+    "p16"
+   ],
+   "function": "consequence",
+   "reader_need": "展示宏观后果：联邦预算压力、GDP增长预期及劳动力市场稳定性。"
+  },
+  {
+   "block_ids": [
+    "p17",
+    "p18",
+    "p19"
+   ],
+   "function": "contrast",
+   "reader_need": "提供反方观点：劳动力市场脆弱性可能导致降息，从而降低收益率。"
+  }
+ ],
+ "text_treatments": [
+  {
+   "pattern_id": "T01",
+   "block_id": "p2",
+   "locale": "cn",
+   "text_exact": "并非暂时的波动，而是会随着通货膨胀的降温而逐渐消失",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "强调核心论点：高利率是结构性变化，而非暂时现象。"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p4",
+   "locale": "cn",
+   "text_exact": "5.1%",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "突出关键预测数字，体现收益率大幅上调。"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p4",
+   "locale": "cn",
+   "text_exact": "4.4%",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "对比基准，显示预测变化的幅度。"
+  },
+  {
+   "pattern_id": "T06",
+   "block_id": "p7",
+   "locale": "cn",
+   "text_exact": "艾伦·西奈",
+   "action": "wrap",
+   "params": {},
+   "editorial_added": false,
+   "reason": "明确引语归属，增强专家观点的可信度。"
+  },
+  {
+   "pattern_id": "T11",
+   "block_id": "p13",
+   "locale": "cn",
+   "text_exact": "财政与增长影响",
+   "action": "subhead",
+   "params": {
+    "title_cn": "财政与增长影响",
+    "title_en": "Fiscal and Growth Implications"
+   },
+   "editorial_added": true,
+   "reason": "在讨论具体宏观指标（GDP、失业、衰退概率）前插入小标题，帮助读者区分“原因”与“后果”。"
+  },
+  {
+   "pattern_id": "T11",
+   "block_id": "p17",
+   "locale": "cn",
+   "text_exact": "反方观点：劳动力市场脆弱性",
+   "action": "subhead",
+   "params": {
+    "title_cn": "反方观点：劳动力市场脆弱性",
+    "title_en": "Counterpoint: Labor Market Fragility"
+   },
+   "editorial_added": true,
+   "reason": "在引入持不同意见的经济学家前插入小标题，清晰标记观点转折。"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p4",
+   "locale": "cn",
+   "text_exact": "在10月2日至7日进行的调查中，71位提交预测的分析师现在预计，基准10年期国债收益率将在2026年底达到5.1%，高于我们上次（7月）调查时的4.4%。并非所有受访者都回答了所有问题。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      1,
+      3
+     ],
+     [
+      16,
+      18
+     ],
+     [
+      34,
+      36
+     ],
+     [
+      45,
+      49
+     ],
+     [
+      53,
+      57
+     ],
+     [
+      72,
+      76
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p5",
+   "locale": "cn",
+   "text_exact": "预计更高的收益率将持续下去。预测者认为，到2027年中期，10年期国债收益率将达到4.96%，到2027年底将达到4.78%，高于7月份预测的4.3%和4.26%。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      21,
+      25
+     ],
+     [
+      29,
+      31
+     ],
+     [
+      41,
+      46
+     ],
+     [
+      48,
+      52
+     ],
+     [
+      57,
+      62
+     ],
+     [
+      71,
+      75
+     ],
+     [
+      76,
+      81
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p7",
+   "locale": "cn",
+   "text_exact": "咨询公司Decision Economics的总裁艾伦·西奈在接受采访时表示：“这标志着支撑固定收益市场和经济的基本面发生了重大变化。”",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      4,
+      22
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p8",
+   "locale": "cn",
+   "text_exact": "他表示，即使在美联储上个月加息之后，美联储在控制通货膨胀的斗争中也已经落后了。西奈表示，仅仅通过一次加息是无法控制通货膨胀的，美联储似乎也通过其9月份的预测承认了这一点。这些预测显示，美联储的短期利率目标——联邦基金利率——今年将超过4%，并保持到2027年。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      117,
+      119
+     ],
+     [
+      124,
+      128
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p9",
+   "locale": "cn",
+   "text_exact": "西奈预测，10年期国债收益率明年可能会升至近6%，并在2020年代保持在5%以上。美国国债收益率受到投资者对美联储未来几年将如何设定利率的预期的强烈影响。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      5,
+      7
+     ],
+     [
+      22,
+      24
+     ],
+     [
+      27,
+      31
+     ],
+     [
+      36,
+      38
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p10",
+   "locale": "cn",
+   "text_exact": "近期通货膨胀的大部分上升是由于油价上涨，经济学家预计油价将回落：他们预测，美国油价基准将以每桶88美元的价格结束今年，低于周五的91.85美元，并在7月份降至80美元以下。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      47,
+      49
+     ],
+     [
+      64,
+      69
+     ],
+     [
+      79,
+      81
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p11",
+   "locale": "cn",
+   "text_exact": "因此，他们预计按消费者物价指数衡量的通货膨胀率在 12 月为 3.5%，明年 6 月为 2.6%，到 2027 年底为 2.3%。与三个月前相比，这一数字几乎没有变化。美联储关注的通胀指标——个人消费支出价格指数，预计到 2027 年底将降至 2.4%，低于今年底的 3.5%。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      25,
+      27
+     ],
+     [
+      31,
+      35
+     ],
+     [
+      44,
+      48
+     ],
+     [
+      51,
+      55
+     ],
+     [
+      60,
+      64
+     ],
+     [
+      111,
+      115
+     ],
+     [
+      122,
+      126
+     ],
+     [
+      134,
+      138
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p12",
+   "locale": "cn",
+   "text_exact": "总部位于芝加哥的北方信托银行首席经济学家卡尔·坦嫩鲍姆表示，除了通胀预期之外，还有其他因素推高了预期收益率。他说，如果伊朗战争缓和，通胀压力可能会减轻，这将有助于降低收益率。但他表示，投资者仍然对庞大且不断增长的债务负担感到担忧，同时，人工智能基础设施的建设可能会提高增长预期和对资本的需求。他预计到 2028 年，10 年期收益率将保持在 5.2% 左右，然后在 2029 年底降至 5%。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      151,
+      155
+     ],
+     [
+      158,
+      160
+     ],
+     [
+      171,
+      175
+     ],
+     [
+      183,
+      187
+     ],
+     [
+      193,
+      195
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p13",
+   "locale": "cn",
+   "text_exact": "如果收益率达到这个水平，将给联邦预算带来压力。2 月，国会预算办公室预测，未来十年，10 年期美国国债收益率不会超过 4.3%。白宫行政管理和预算局更为乐观，预计本十年后期收益率将降至 3% 中段。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      42,
+      44
+     ],
+     [
+      59,
+      63
+     ],
+     [
+      93,
+      95
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p14",
+   "locale": "cn",
+   "text_exact": "经济学家们预测，今年的预期增长率将更高。他们预计 2026 年的 GDP 将增长 2.4%，高于 7 月份的 2.1%。这反映了对第二季度增长的向上修正，以及初步数据表明，经济在第三季度可能实现了超过 3%的年化增长率。受访者认为，此后增长将回落，未来十年剩余时间的增长率将为 2.1% 或 2.2%。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      25,
+      29
+     ],
+     [
+      33,
+      36
+     ],
+     [
+      41,
+      45
+     ],
+     [
+      55,
+      59
+     ],
+     [
+      101,
+      103
+     ],
+     [
+      139,
+      143
+     ],
+     [
+      146,
+      150
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p15",
+   "locale": "cn",
+   "text_exact": "同样，预测者们也不认为劳动力市场会出现重大变化。他们平均认为，失业率将在 2029 年之前保持在 4.2% 左右，与 9 月份的 4.2% 失业率几乎没有变化。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      37,
+      41
+     ],
+     [
+      49,
+      53
+     ],
+     [
+      65,
+      69
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p16",
+   "locale": "cn",
+   "text_exact": "他们将未来 12 个月内经济衰退的可能性定为 24%，与 7 月份的 25% 几乎没有变化。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      6,
+      8
+     ],
+     [
+      23,
+      26
+     ],
+     [
+      35,
+      38
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p18",
+   "locale": "cn",
+   "text_exact": "他说，在过去六个月里，经济平均每月新增了 66,000 个就业岗位，但其中很少是在最具盈利性的领域。",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      21,
+      27
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  },
+  {
+   "pattern_id": "T17",
+   "block_id": "p20",
+   "locale": "cn",
+   "text_exact": "[文章中的图表：（1）“未来 12 个月美国经济衰退的可能性，包括今天”，2015-2026；（2）“GDP（年化增长）”，与 2026 年 10 月的预测相比，2026 年 7 月的预测，2026 年第三季度至 2027 年第三季度；（3）“10 年期美国国债的收盘收益率”，与 2026 年 10 月、2026 年 7 月和 2026 年 4 月的预测相比，2026 年 12 月 31 日至 2029 年 12 月 31 日。注意：经济衰退的可能性是经济学家答案的平均值。GDP 预测是针对通货调整后的 GDP。来源：《华尔街日报》对经济学家的调查。]",
+   "action": "mix",
+   "params": {
+    "spans": [
+     [
+      15,
+      17
+     ],
+     [
+      37,
+      46
+     ],
+     [
+      51,
+      54
+     ],
+     [
+      64,
+      68
+     ],
+     [
+      71,
+      73
+     ],
+     [
+      81,
+      85
+     ],
+     [
+      95,
+      99
+     ],
+     [
+      107,
+      111
+     ],
+     [
+      122,
+      124
+     ],
+     [
+      141,
+      145
+     ],
+     [
+      148,
+      150
+     ],
+     [
+      153,
+      157
+     ],
+     [
+      165,
+      169
+     ],
+     [
+      181,
+      185
+     ],
+     [
+      188,
+      190
+     ],
+     [
+      193,
+      195
+     ],
+     [
+      199,
+      203
+     ],
+     [
+      206,
+      208
+     ],
+     [
+      211,
+      213
+     ],
+     [
+      239,
+      242
+     ],
+     [
+      255,
+      258
+     ]
+    ]
+   },
+   "editorial_added": false,
+   "reason": "英文专名/数字混排，加 tt-mix 保证不断行断裂"
+  }
+ ],
+ "layout_decisions": [
+  {
+   "pattern_id": "L01",
+   "action": "apply",
+   "reason": "标准新闻文章，无复杂图表需并置，单栏阅读体验最佳。"
+  }
+ ],
+ "component_plan": [
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "在文章开头后展示核心预测数据，让读者快速把握文章量级。",
+   "data": {
+    "items": [
+     {
+      "value_cn": "5.1%",
+      "value_en": "5.1%",
+      "label_cn": "2026年底10年期国债收益率预测",
+      "label_en": "10-year yield forecast for end-2026",
+      "note_cn": "高于7月预测的4.4%",
+      "note_en": "Up from 4.4% in July"
+     },
+     {
+      "value_cn": "24%",
+      "value_en": "24%",
+      "label_cn": "未来12个月经济衰退概率",
+      "label_en": "Probability of recession in next 12 months",
+      "note_cn": "与7月预测的25%基本持平",
+      "note_en": "Barely changed from 25% in July"
+     },
+     {
+      "value_cn": "2.4%",
+      "value_en": "2.4%",
+      "label_cn": "2026年GDP增长预期",
+      "label_en": "2026 GDP growth expectation",
+      "note_cn": "高于7月预测的2.1%",
+      "note_en": "Up from 2.1% in July"
+     }
+    ]
+   }
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 7
+   },
+   "reason": "提取最具代表性的专家引语，强调基本面发生“重大变化”。",
+   "data": {
+    "quote": {
+     "text_cn": "这标志着支撑固定收益市场和经济的基本面发生了重大变化。",
+     "text_en": "It has been a sea change in the fundamentals underlying the fixed-income market and the economy.",
+     "attr_cn": "艾伦·西奈，Decision Economics 总裁",
+     "attr_en": "Allen Sinai, President of Decision Economics"
+    }
+   }
+  }
+ ],
+ "rejected_opportunities": [
+  {
+   "pattern_id": "T09",
+   "action": "decline",
+   "reason_against": "p12 段落虽长，但逻辑连贯（通胀、债务、AI），拆分可能打断因果链条，且已有小标题辅助导航。",
+   "fallback_pattern_id": "T00"
+  },
+  {
+   "pattern_id": "timeline",
+   "action": "decline",
+   "reason_against": "文章主要讨论预测区间（2026-2029），缺乏足够多具有明确日期的历史事件构成清晰时间线，且预测数据已在 key_figures 中体现。",
+   "fallback_pattern_id": "T00"
+  }
+ ],
+ "dedup": {
+  "caption_duplicates_skipped": []
+ }
+}

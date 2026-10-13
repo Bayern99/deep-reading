@@ -1,0 +1,40 @@
+{
+ "article_id": "E2-002",
+ "treatments_used": [
+  "T01",
+  "T03",
+  "T06",
+  "T11",
+  "T17"
+ ],
+ "layouts_used": [
+  "L01"
+ ],
+ "aids_used": [
+  [
+   "quote",
+   {
+    "at": "after_para",
+    "para": 7
+   }
+  ]
+ ],
+ "rejected": [
+  [
+   "T11",
+   "原文中 p9, p14, p20, p25, p31, p36 已经存在小标题，无需重复插入。"
+  ],
+  [
+   "timeline",
+   "虽然提到了2022年、2024年、今年等时间点，但事件分散且缺乏统一的、可精确到日期的连续时间线，不适合制作标准时间线组"
+  ],
+  [
+   "key_figures",
+   "事实门禁拦截：key_figures[2] value=\"250+\" 原文无逐字对应"
+  ]
+ ],
+ "anomalies": [],
+ "n_blocks": 40,
+ "n_treatments": 18,
+ "plan_validate_ok": true
+}
