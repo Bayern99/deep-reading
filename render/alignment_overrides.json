@@ -9,5 +9,15 @@
         "joiner": " "
       }
     ]
+  },
+  "E1-005": {
+    "note": "EN column break split the tourism-conference sentence; CN merged it. Join fragments so CN/EN pair 24=24.",
+    "join_en": [
+      {
+        "first_prefix": "The conflict is jeopardizing Saudi efforts to build travel and tourism",
+        "second_prefix": "the end of the month that looks increasingly in doubt.",
+        "joiner": " "
+      }
+    ]
   }
 }

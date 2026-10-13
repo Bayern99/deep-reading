@@ -8,10 +8,27 @@ from enhanced_render import render_enhanced_article
 
 
 GROUP_DEFS = [
-    ('p1', 'P1 \u5fc5\u8bfb', 'P1 MUST READ'),
+    ('p1', 'P1 必读', 'P1 MUST READ'),
     ('p2', 'P2', 'P2'),
     ('p3', 'P3', 'P3'),
-    ('data', '\u6570\u636e\u9644\u5f55', 'DATA APPENDIX'),
+    ('data', '数据附录', 'DATA APPENDIX'),
+]
+
+SECTION_DEFS = [
+    ('front', '要闻', 'FRONT PAGE',
+     ('News',), ('A1',), False),
+    ('us', '美国', 'U.S.',
+     ('U.S. News',), (), False),
+    ('world', '世界', 'WORLD',
+     ('World News',), (), False),
+    ('life', '生活', 'LIFE',
+     ('Personal Journal', 'Arts in Review', 'Sports'), (), False),
+    ('opinion', '观点', 'OPINION',
+     ('Opinion',), (), False),
+    ('business', '商业与金融', 'BUSINESS & FINANCE',
+     ('Business & Finance', 'Technology', 'Business News', 'Heard on the Street', 'Money & Investing'), (), False),
+    ('data', '数据', 'DATA',
+     ('Data',), (), True),
 ]
 
 
@@ -21,31 +38,54 @@ def group_of(e):
     return {'P1': 'p1', 'P2': 'p2', 'P3': 'p3'}.get(e.get('priority'), 'p3')
 
 
+def section_of(e):
+    if e.get('type') == 'data_table':
+        return 'data'
+    page = e.get('page') or ''
+    sec = e.get('section') or ''
+    if page == 'A1':
+        return 'front'
+    for sid, _cn, _en, secs, pages, _open in SECTION_DEFS:
+        if sid == 'front':
+            continue
+        if pages and page in pages:
+            return sid
+        if sec in secs:
+            return sid
+    return 'life'
+
+
 def reading_order(articles):
     order = []
-    for gid, _, _ in GROUP_DEFS:
-        order.extend([e for e in articles if group_of(e) == gid])
+    for sid, *_rest in SECTION_DEFS:
+        order.extend([e for e in articles if section_of(e) == sid])
     return order
 
 
 def render_toc(order):
     h2 = ['<nav id="toc" class="toc" aria-label="toc">']
-    h2.append('<div class="toc-head"><span class="k-cn">\u672c\u671f\u76ee\u5f55</span><span class="k-en" hidden>IN THIS ISSUE</span></div>')
-    cur = None
+    h2.append('<div class="toc-head"><span class="k-cn">本期目录</span><span class="k-en" hidden>IN THIS ISSUE</span></div>')
+    buckets = {sid: [] for sid, *_ in SECTION_DEFS}
     for e in order:
-        g = group_of(e)
-        if g != cur:
-            if cur is not None:
-                h2.append('</ol>')
-            cur = g
-            label = dict((x[0], (x[1], x[2])) for x in GROUP_DEFS)[g]
-            h2.append(f'<div class="toc-group"><span class="k-cn">{label[0]}</span><span class="k-en" hidden>{label[1]}</span></div>')
-            h2.append('<ol class="toc-list">')
-        meta = ' \u00b7 '.join(x for x in [e.get('section') or '', (e.get('page') or '') + ' \u7248'] if x)
-        h2.append(f'''<li><a href="#s-{e["id"]}">
+        buckets[section_of(e)].append(e)
+    for sid, cn, en, _secs, _pages, default_open in SECTION_DEFS:
+        items = buckets[sid]
+        if not items:
+            continue
+        open_attr = ' open' if default_open or sid == 'front' else ''
+        h2.append(f'<details class="toc-sec"{open_attr}>')
+        h2.append(
+            f'<summary class="toc-group"><span class="k-cn">{cn}</span>'
+            f'<span class="k-en" hidden>{en}</span>'
+            f'<span class="toc-n">{len(items)}</span></summary>')
+        h2.append('<ol class="toc-list">')
+        for e in items:
+            meta = ' · '.join(x for x in [e.get('section') or '', (e.get('page') or '') + ' 版'] if x)
+            h2.append(f'''<li><a href="#s-{e["id"]}">
       <span class="toc-t"><span class="k-cn">{esc(e.get("title_cn") or e.get("title") or e["id"])}</span><span class="k-en" hidden>{esc(e.get("title") or "")}</span></span>
       <span class="toc-m">{esc(meta)}</span></a></li>''')
-    h2.append('</ol>')
+        h2.append('</ol>')
+        h2.append('</details>')
     h2.append('</nav>')
     return '\n'.join(h2)
 

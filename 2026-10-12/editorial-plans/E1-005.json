@@ -1,1 +1,149 @@
-{"analysis":{"duplication_check":"时间线条目为单句 condensed，不复述正文段落；关键数字 4 项均为 condensed 数据点（标签+数值+注释），与正文句子不重叠；引语只取直接引语一句（P13），人物介绍留在正文；背景资料（context_cn）只在底部折叠出现一次。","key_facts":["周六胡塞导弹击中利雅得国际机场，至少 12 人死亡、数百人受伤（P2）","此前夏天沙特官员曾称胡塞局势已得到控制（P5）——袭击直接证伪","7 月胡塞宣布海上封锁、9 月袭击东西管道（P20）","王储 2015 年主导介入也门内战，2022 年停火（P21）","沙特财政部预计 2026 年 GDP 下降 3.6%（P19）"],"key_numbers":["至少 12 人死亡（P2）","利雅得距胡塞控制区约 500 英里（P11）","沙特年度预算约 3500 亿美元（P15）","2026 年 GDP 预期下降 3.6%（P19）"],"needs_background":{"needed":true,"what":"也门内战背景：王储 2015 年主导介入、支持国际承认政府、2022 年停火。读者需要这段背景才能理解胡塞袭击的来龙去脉。context_cn 已有，底部折叠。"},"quotes":[{"para":13,"speaker":"克里斯蒂安·库茨·乌尔里克森 / 莱斯大学贝克研究所","text":"任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。","why":"全文唯一的专家级判断句，点出王储困境的本质（报复会越陷越深），且是直接引语。"}],"structure":["开篇：王储白宫之行，积极姿态（P0）","转折：胡塞冲突升级，安全与改革计划受威胁（P1）","袭击：周六机场导弹，伤亡（P2-P4）","升级链：夏天表态→7 月封锁→9 月管道（P5, P20）","代价：旅游业与投资会议受冲击（P6）","困境：专家判断报复风险（P13）","经济账：预算与 GDP（P15, P19）","历史：2015 介入→2022 停火（P21）","外交：各方反应（P22-P23）"],"timeline_events":[{"event":"王储主导沙特介入也门内战，支持国际承认政府打击胡塞","para":21,"t":"2015 年"},{"event":"双方僵持，达成停火协议","para":21,"t":"2022 年"},{"event":"胡塞宣布对沙特实施海上封锁，红海航运面临风险","para":20,"t":"7 月"},{"event":"东西管道遇袭，威胁霍尔木兹替代通道","para":20,"t":"9 月"},{"event":"被拦截导弹碎片击中幼儿园和诊所","para":11,"t":"周四"},{"event":"导弹击中利雅得国际机场，至少 12 死、数百伤","para":2,"t":"周六"},{"event":"胡塞发言人重申沙特机场是袭击目标","para":10,"t":"周日"}],"topic":"胡塞武装袭击升级（利雅得机场导弹致至少 12 死）之下，沙特王储面临的安全、经济与外交三重困境。","visual_assets":[]},"article_id":"E1-005","component_plan":[{"component":"key_figures","data_ref":"modules.json#E1-005.key_figures","reason":"导语后给出数据总览。4 个数字分别锚定全文四个维度——袭击伤亡（P2）、地理距离（P11）、财政规模（P15）、经济预期（P19），均为 condensed 数据点，不与正文句子重复。","slot":{"at":"after_para","para":1}},{"component":"timeline","data_ref":"modules.json#E1-005.timeline","reason":"P5-P6 进入升级叙事前，用编年视角把 2015 年介入→2022 停火→7 月封锁→9 月管道→本周袭击串成一条链。叙事是按主题组织的，时间线提供另一种阅读顺序。","slot":{"at":"after_para","para":6}},{"component":"quote","data_ref":"modules.json#E1-005.quote","reason":"P13 是全文唯一的专家级判断（报复会越陷越深），直接引语一句，点题王储困境。人物介绍留在正文段内。","slot":{"at":"after_para","para":13}},{"component":"context_box","reason":"context_cn 是也门内战背景（2015 介入/2022 停火），读者理解袭击来龙去脉需要它。放底部折叠，不打断叙事流。","slot":{"at":"after_body"}}],"created":"2026-10-13","created_by":"Juno（人工分析正文 24 段；模块数据沿用 modules.json 人工策展）","version":"1.0"}
+{
+  "article_id": "E1-005",
+  "version": "reboot-1",
+  "created": "2026-10-13",
+  "created_by": "Principal Engineer reboot — migrate legacy modules.json to enhanced-v1",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "胡塞导弹击中利雅得机场后，沙特王储同时面对安全、经济多元化和与伊朗战争的三重压力。",
+    "structure": [
+      "开场：白宫之行的积极姿态",
+      "转折：胡塞冲突升级",
+      "核心事件：周六机场袭击",
+      "后果：旅游、投资、GDP",
+      "背景：2015 年介入也门、2022 停火、今年封锁与管道",
+      "收束：求援防空与外籍战士"
+    ],
+    "reader_need": "需要时间线把冲突升级看清，需要四个关键数字从长文里拎出来；保留一句专家判断。不要再叠一层与正文重复的主张对照。"
+  },
+  "narrative_outline": [
+    {"block_ids": ["p1"], "function": "scene", "reader_need": "进入白宫之行的开场"},
+    {"block_ids": ["p2", "p3", "p4", "p5"], "function": "claim", "reader_need": "看清机场袭击的规模"},
+    {"block_ids": ["p6", "p7", "p8", "p9", "p10", "p11", "p12", "p13"], "function": "evidence", "reader_need": "安全与王储处境"},
+    {"block_ids": ["p14"], "function": "claim", "reader_need": "专家判断：没有好选项"},
+    {"block_ids": ["p16", "p17", "p18", "p19", "p20"], "function": "consequence", "reader_need": "经济项目与 GDP 收缩"},
+    {"block_ids": ["p21", "p22", "p23", "p24"], "function": "background", "reader_need": "也门内战与当前求援"}
+  ],
+  "text_treatments": [
+    {
+      "pattern_id": "T01",
+      "block_id": "p3",
+      "locale": "cn",
+      "text_exact": "造成至少 12 人死亡",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "全文核心伤亡数字，只加粗一次。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p6",
+      "locale": "cn",
+      "text_exact": "安全与防御",
+      "action": "subhead",
+      "params": {"title_cn": "安全与防御", "title_en": "Security and Defense"},
+      "editorial_added": true,
+      "reason": "从袭击现场切到防御告急与王储处境。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p16",
+      "locale": "cn",
+      "text_exact": "经济赌注",
+      "action": "subhead",
+      "params": {"title_cn": "经济赌注", "title_en": "The Economic Bet"},
+      "editorial_added": true,
+      "reason": "进入 Neom、投资与 GDP 收缩。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p21",
+      "locale": "cn",
+      "text_exact": "也门的旧账",
+      "action": "subhead",
+      "params": {"title_cn": "也门的旧账", "title_en": "The Yemen Ledger"},
+      "editorial_added": true,
+      "reason": "2015 介入与今年封锁是独立背景单元。"
+    },
+    {
+      "pattern_id": "T10",
+      "block_id": "p3",
+      "locale": "cn",
+      "text_exact": "",
+      "action": "group",
+      "params": {"blocks": ["p3", "p4", "p5"]},
+      "editorial_added": false,
+      "reason": "机场袭击三连证据同一事件。"
+    }
+  ],
+  "layout_decisions": [
+    {
+      "pattern_id": "L02",
+      "action": "apply",
+      "params": {
+        "anchor_block_id": "p22",
+        "note_cn": "胡塞武装：伊朗支持的也门武装，2014 年起控制萨那及北部大部；沙特 2015 年主导联军介入。",
+        "note_en": "Houthis: Iran-backed Yemeni movement that seized Sanaa in 2014; Saudi-led intervention began in 2015."
+      },
+      "reason": "也门内战背景只在边注补一次，不复述时间线。"
+    }
+  ],
+  "component_plan": [
+    {
+      "component": "key_figures",
+      "slot": {"at": "after_para", "para": 3},
+      "reason": "四项 condensed 数据点，不复述正文句子。",
+      "data": {
+        "items": [
+          {"label_cn": "利雅得机场袭击 · 死亡", "label_en": "AIRPORT STRIKE · KILLED", "value_cn": "至少12人", "value_en": "at least 12", "note_cn": "另有数百人受伤，许多人伤势严重", "note_en": "hundreds more injured, many severely"},
+          {"label_cn": "利雅得距胡塞控制区", "label_en": "RIYADH TO HOUTHI AREAS", "value_cn": "约500英里", "value_en": "about 500 miles", "note_cn": "首都部分地区已成战场", "note_en": "parts of the capital a battle zone"},
+          {"label_cn": "沙特年度预算", "label_en": "ANNUAL BUDGET", "value_cn": "约3500亿美元", "value_en": "about $350 billion", "note_cn": "未来项目总成本高达数万亿美元", "note_en": "giga-project costs run to trillions"},
+          {"label_cn": "2026 年 GDP 预期", "label_en": "2026 GDP FORECAST", "value_cn": "下降3.6%", "value_en": "shrink 3.6%", "note_cn": "沙特财政部最新预计", "note_en": "per the Saudi Finance Ministry"}
+        ]
+      }
+    },
+    {
+      "component": "quote",
+      "slot": {"at": "after_para", "para": 14},
+      "reason": "全文唯一专家判断句。",
+      "data": {
+        "quote": {
+          "text_cn": "任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。",
+          "text_en": "Any military response risks getting drawn in deeper to an asymmetric conflict.",
+          "attr_cn": "克里斯蒂安·库茨·乌尔里克森 · 莱斯大学贝克研究所",
+          "attr_en": "Kristian Coates Ulrichsen / Baker Institute, Rice University"
+        }
+      }
+    },
+    {
+      "component": "timeline",
+      "slot": {"at": "after_para", "para": 22},
+      "reason": "冲突升级时间线放在也门背景段之后，条目为 condensed 单句。",
+      "data": {
+        "timeline": {
+          "title_cn": "时间线 · 冲突升级",
+          "title_en": "TIMELINE · ESCALATION",
+          "entries": [
+            {"t_cn": "2015 年", "t_en": "2015", "text_cn": "王储使沙特介入也门内战，支持得到国际承认的政府，与胡塞武装作战。", "text_en": "The crown prince involved Saudi Arabia in Yemen's civil war, backing the internationally recognized government."},
+            {"t_cn": "2022 年", "t_en": "2022", "text_cn": "双方陷入僵局，达成停火。", "text_en": "The sides fought to a stalemate and a ceasefire."},
+            {"t_cn": "7 月", "t_en": "JUL", "text_cn": "胡塞宣布对沙特实施海上封锁，红海航运承压。", "text_en": "The Houthis announced a maritime blockade of Saudi Arabia."},
+            {"t_cn": "9 月", "t_en": "SEP", "text_cn": "袭击东西管道，威胁从霍尔木兹撤离的主通道。", "text_en": "An attack on the East-West pipeline hit the kingdom's main escape route from Hormuz."},
+            {"t_cn": "周四", "t_en": "THU", "text_cn": "被拦截弹道导弹碎片击中幼儿园和医疗诊所。", "text_en": "Debris from an intercepted ballistic missile hit a kindergarten and clinic."},
+            {"t_cn": "周六", "t_en": "SAT", "text_cn": "胡塞导弹击中利雅得国际机场，至少 12 人死亡。", "text_en": "A Houthi missile hit Riyadh's international airport, killing at least 12."},
+            {"t_cn": "周日", "t_en": "SUN", "text_cn": "胡塞发言人重申沙特机场仍是袭击目标。", "text_en": "A Houthi spokesman reiterated that Saudi airports remain targets."}
+          ]
+        }
+      }
+    }
+  ],
+  "rejected_opportunities": [
+    {
+      "pattern": "key_figures duplicate of timeline",
+      "reason": "时间线承担升级叙事；关键数字只保留四项 condensed 数据点。"
+    },
+    {
+      "pattern": "L03 compare",
+      "reason": "本文没有平行对照结构。"
+    }
+  ]
+}

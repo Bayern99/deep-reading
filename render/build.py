@@ -52,8 +52,14 @@ body{margin:0;background:var(--paper);color:var(--body);
 .toc{max-width:var(--head-measure);margin:32px auto 0}
 .toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
   border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
-.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
-.toc-list{list-style:none;margin:0;padding:0}
+.toc-sec{margin:0;border-bottom:1px solid var(--line)}
+.toc-sec>summary.toc-group{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:0;padding:14px 0}
+.toc-sec>summary.toc-group::-webkit-details-marker{display:none}
+.toc-sec>summary.toc-group::after{content:"+";margin-left:4px;font-weight:300;font-size:18px;color:var(--mut)}
+.toc-sec[open]>summary.toc-group::after{content:"–"}
+.toc-n{margin-left:auto;font:500 12px/1 var(--font-meta);letter-spacing:0;color:var(--mut)}
+.toc-list{list-style:none;margin:0;padding:0 0 8px}
 .toc-list li{border-bottom:1px solid var(--line)}
 .toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
   padding:11px 2px;text-decoration:none;color:var(--ink)}
@@ -412,8 +418,11 @@ def build_issue(issue, plans_all=None, write_baseline=True):
 
 
 def check_no_duel(html):
-    bad = ['主张与现实', 'cpair', 'cwho', 'duel', 'claim-evidence']
-    found = [b for b in bad if b in html]
+    # 只查标签/类名/中文组件名；base64 图片字节里会出现偶然 'duel' 子串。
+    import re as _re
+    markup = _re.sub(r'data:image/[^"\']+', '', html)
+    bad = ['主张与现实', 'cpair', 'cwho', 'class="duel"', 'claim-evidence']
+    found = [b for b in bad if b in markup]
     assert not found, f'duel residue: {found}'
 
 
