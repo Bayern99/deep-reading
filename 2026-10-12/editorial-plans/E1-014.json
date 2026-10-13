@@ -1,0 +1,45 @@
+{
+  "article_id": "E1-014",
+  "version": "reboot-1",
+  "created": "2026-10-13",
+  "created_by": "Principal Engineer reboot — independent editorial judgment",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "两段短讯：委内瑞拉涉嫌行贿商人被捕。",
+    "structure": ["事实陈述", "起诉背景"],
+    "reader_need": "两段已经把事实说完。任何模块、小标题或加粗都会显得像在表演编辑能力。"
+  },
+  "narrative_outline": [
+    {"block_ids": ["p1", "p2"], "function": "scene", "reader_need": "快速获知逮捕与起诉背景"}
+  ],
+  "text_treatments": [],
+  "layout_decisions": [],
+  "component_plan": [],
+  "rejected_opportunities": [
+    {
+      "pattern_id": "T01",
+      "action": "decline",
+      "reason_against": "短讯无隐藏论点；加粗只会制造假重点。"
+    },
+    {
+      "pattern_id": "T11",
+      "action": "decline",
+      "reason_against": "两段无需路标。"
+    },
+    {
+      "pattern_id": "quote",
+      "action": "decline",
+      "reason_against": "无直接引语。"
+    },
+    {
+      "pattern_id": "key_figures",
+      "action": "decline",
+      "reason_against": "无比较型数据。"
+    },
+    {
+      "pattern_id": "L02",
+      "action": "decline",
+      "reason_against": "人名与案由已在正文；边注无增量。"
+    }
+  ]
+}

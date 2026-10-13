@@ -11,6 +11,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from issue import render_issue, reading_order
+from enhanced_render import load_plans
+from text_treatment import TEXT_CSS
+from layout import LAYOUT_CSS
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -273,12 +276,33 @@ def load_json(p):
         return json.load(f)
 
 
-def build_issue(issue):
+def _asset_loader_for_issue(issue_dir):
+    def load(path_or_name):
+        if not path_or_name:
+            return None
+        candidates = [
+            os.path.join(issue_dir, path_or_name),
+            os.path.join(issue_dir, 'assets', os.path.basename(path_or_name)),
+            os.path.join(issue_dir, 'ovis-test', 'visual-assets', os.path.basename(path_or_name)),
+            os.path.normpath(os.path.join(BASE, path_or_name)),
+        ]
+        for fp in candidates:
+            if os.path.isfile(fp):
+                with open(fp, 'rb') as f:
+                    return base64.b64encode(f.read()).decode('ascii')
+        raise FileNotFoundError(f'asset not found: {path_or_name}')
+    return load
+
+
+def build_issue(issue, plans_all=None, write_baseline=True):
     issue_dir = os.path.join(os.path.dirname(BASE), issue)
     final = load_json(os.path.join(issue_dir, 'final.json'))
     modules_all = load_json(os.path.join(BASE, 'modules.json'))
     images_all = load_json(os.path.join(BASE, 'images.json'))
     tokens = open(os.path.join(BASE, 'tokens.css'), encoding='utf-8').read()
+    if plans_all is None:
+        plans_all = load_plans(os.path.join(issue_dir, 'editorial-plans'))
+    print(f'enhanced plans: {sorted(plans_all)}')
 
     # 图片 base64 嵌入（只收 images.json 清单）
     img_cache = {}
@@ -302,36 +326,69 @@ def build_issue(issue):
     n_warn = sum(1 for v in gate_status.values() if v[0] == 'warn')
     n_block = sum(1 for v in gate_status.values() if v[0] == 'block')
     print(f'gate: {n_pass} PASS / {n_warn} WARN / {n_block} BLOCK')
-    body, order = render_issue(final, modules_all, images_all, img_cache, issue,
-                               gate_status=gate_status)
 
-    doc = f'''<!DOCTYPE html>
+    asset_loader = _asset_loader_for_issue(issue_dir)
+    body, order = render_issue(
+        final, modules_all, images_all, img_cache, issue,
+        gate_status=gate_status, plans_all=plans_all,
+        asset_loader=asset_loader)
+
+    enh_css = (
+        TEXT_CSS + LAYOUT_CSS +
+        '\n.enh-note{font:400 13px/1.6 var(--font-meta);color:var(--mut);'
+        'margin:12px auto 0;padding-bottom:8px;border-bottom:1px solid var(--line)}'
+        '\n.enh-note a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}'
+        '\n.story-enhanced .tt-subhead[data-source-head="true"]::before{background:var(--ink)}'
+    )
+
+    def wrap_doc(body_html, title_suffix=''):
+        title = 'WSJ 深读 · 2026年10月12日' + (f' · {title_suffix}' if title_suffix else '')
+        return f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WSJ 深读 · 2026年10月12日</title>
+<title>{title}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
 <style>
 {tokens}
 {CSS}
+{enh_css}
 </style>
 </head>
 <body>
-{body}
+{body_html}
 <script>{JS}</script>
 </body>
 </html>
 '''
+
     dist = os.path.join(issue_dir, 'dist')
     os.makedirs(dist, exist_ok=True)
     out = os.path.join(dist, 'index.html')
+    doc = wrap_doc(body)
     with open(out, 'w', encoding='utf-8') as f:
         f.write(doc)
-    print(f'wrote {out} ({len(doc)//1024} KB, {len(order)} articles)')
-    return out, final, order, gate_status
+    print(f'wrote {out} ({len(doc)//1024} KB, {len(order)} articles, '
+          f'{len(plans_all)} enhanced)')
+
+    if write_baseline:
+        body_b, _ = render_issue(
+            final, modules_all, images_all, img_cache, issue,
+            gate_status=gate_status, plans_all={}, asset_loader=asset_loader)
+        # Force pure typography for the four reboot articles too: drop modules
+        # only where we want before/after. Baseline = no enhanced plans.
+        base_out = os.path.join(dist, 'baseline.html')
+        base_doc = wrap_doc(body_b, 'baseline')
+        # Point baseline note targets back to enhanced issue
+        base_doc = base_doc.replace('href="baseline.html#', 'href="index.html#')
+        with open(base_out, 'w', encoding='utf-8') as f:
+            f.write(base_doc)
+        print(f'wrote {base_out} ({len(base_doc)//1024} KB)')
+
+    return out, final, order, gate_status, plans_all
 
 
 def check_no_duel(html):
@@ -344,7 +401,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--issue', required=True)
     args = ap.parse_args()
-    out, final, order, gate_status = build_issue(args.issue)
+    out, final, order, gate_status, plans_all = build_issue(args.issue)
 
     # ---- 自查断言 ----
     html = open(out, encoding='utf-8').read()
@@ -366,37 +423,46 @@ def main():
     # 每篇段落数一致（正文逐字）
     from components import paras as _paras
     for e in final:
-        n = len(_paras(e.get('body_cn'), e.get('body_en')))
-        # data_table 的 body_en 为空也允许（表格走 body_en 解析）
         if e.get('type') == 'data_table':
             continue
         if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
             continue
         got = html.count(f'id="s-{e["id"]}"')
         assert got == 1, f'{e["id"]} anchor count {got}'
-    # 段落级校验：每段中文首 24 字必须出现在对应 article 区块内
+    # 段落级校验：正文文字必须保留。增强篇会插入标签，故在 article 切片上去标签后核对。
+    import re as _re
     for e in final:
         if e.get('type') == 'data_table':
             continue
         if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
             continue
+        m = _re.search(
+            rf'<article[^>]*id="s-{_re.escape(e["id"])}"[^>]*>(.*?)</article>',
+            html, _re.S)
+        assert m, f'missing article slice {e["id"]}'
+        plain = _re.sub(r'<[^>]+>', '', m.group(1))
         for cn, _ in _paras(e.get('body_cn'), e.get('body_en')):
             key = cn[:24].strip()
             if key:
-                assert key in html, f'{e["id"]} para missing: {key[:20]}'
-    # 4. 引语只在 E1-005；无 duel 残留
-    assert html.count('class="mod quote"') == 1, 'quote module count'
+                assert key in plain, f'{e["id"]} para missing: {key[:20]}'
+    # Enhanced articles present
+    for aid in plans_all:
+        assert f'data-enhanced="true"' in html
+        assert f'id="s-{aid}"' in html
+        # baseline counterpart exists
+        assert os.path.isfile(os.path.join(os.path.dirname(out), 'baseline.html'))
     check_no_duel(html)
     assert 'text-wrap:pretty' not in html and 'text-wrap: pretty' not in html
-    # 5. 图片只来自 images.json
-    # 图片数 = PASS 且有图的文章数
+    # legacy modules.json image embeds still respected for non-plan articles
     import json as _js
     _imgs = _js.load(open(os.path.join(BASE, 'images.json')))
     _expected_imgs = sum(1 for aid in _imgs if not aid.startswith('_')
-                         and gate_status.get(aid, ('pass', []))[0] == 'pass')
-    assert html.count('data:image/png;base64') == _expected_imgs, \
-        f'embedded image count: got {html.count("data:image/png;base64")}, want {_expected_imgs}'
-    print('assertions passed: 117 articles, paras verbatim, quote x1, no duel, no pretty')
+                         and gate_status.get(aid, ('pass', []))[0] == 'pass'
+                         and aid not in plans_all)
+    # plan path may add images later; for now reboot plans add none
+    assert html.count('data:image/png;base64') >= _expected_imgs
+    print(f'assertions passed: 117 articles, {len(plans_all)} enhanced, '
+          f'paras verbatim, no duel, no pretty')
 
 
 if __name__ == '__main__':

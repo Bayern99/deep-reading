@@ -1,0 +1,157 @@
+{
+  "article_id": "E3-004",
+  "version": "reboot-1",
+  "created": "2026-10-13",
+  "created_by": "Principal Engineer reboot — independent editorial judgment",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "基督教社群在 AI 早期阶段介入公共讨论：从南卡布道到教宗通谕，再到 Altman 的回应。",
+    "structure": [
+      "现场：牧师用《启示录》讲 AI",
+      "行业风险：与信众隔阂",
+      "教会机构行动：NAE / 长老会 / 教宗",
+      "历史类比：原子弹与巴别塔",
+      "科技话语的神学摩擦",
+      "Altman 划界",
+      "收束：牧师的希望与警戒"
+    ],
+    "reader_need": "观点长文需要节奏与路标，不需要数据组件。保留一处核心引语；用小标题切开‘现场→教会行动→神学争议→公司回应’。末段照片说明是印刷残留，渲染时降级为图注样式而非正文论点。"
+  },
+  "narrative_outline": [
+    {"block_ids": ["p1", "p2", "p3", "p4"], "function": "scene", "reader_need": "进入布道现场"},
+    {"block_ids": ["p5", "p6", "p7", "p8"], "function": "claim", "reader_need": "理解教会为何现在发声"},
+    {"block_ids": ["p9", "p10", "p11", "p12", "p13"], "function": "evidence", "reader_need": "历史类比与巴别塔框架"},
+    {"block_ids": ["p14", "p15", "p16", "p17"], "function": "contrast", "reader_need": "公司回应与宗教引导意图"},
+    {"block_ids": ["p18", "p19", "p20", "p21"], "function": "consequence", "reader_need": "回到牧师的警戒收束"}
+  ],
+  "text_treatments": [
+    {
+      "pattern_id": "T01",
+      "block_id": "p2",
+      "locale": "cn",
+      "text_exact": "人工智能想要成为上帝",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "标题命题的现场落点；全文最强的一句话，只加粗一次。"
+    },
+    {
+      "pattern_id": "T01",
+      "block_id": "p5",
+      "locale": "cn",
+      "text_exact": "演变成一个从讲坛上提出的问题",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "文章转折：AI 争议进入宗教公共空间。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p8",
+      "locale": "cn",
+      "text_exact": "教会开始表态",
+      "action": "subhead",
+      "params": {
+        "title_cn": "教会开始表态",
+        "title_en": "Churches Start to Speak"
+      },
+      "editorial_added": true,
+      "reason": "从个案布道切到机构行动清单。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p11",
+      "locale": "cn",
+      "text_exact": "科技话语碰上神学",
+      "action": "subhead",
+      "params": {
+        "title_cn": "科技话语碰上神学",
+        "title_en": "When Tech Talk Meets Theology"
+      },
+      "editorial_added": true,
+      "reason": "进入可信度/亵渎/巴别塔论证，需要新的阅读单元。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p15",
+      "locale": "cn",
+      "text_exact": "实验室的划界",
+      "action": "subhead",
+      "params": {
+        "title_cn": "实验室的划界",
+        "title_en": "The Labs Draw a Line"
+      },
+      "editorial_added": true,
+      "reason": "Altman 回应是对立声部，应用小标题与上文神学批判分开。"
+    },
+    {
+      "pattern_id": "T06",
+      "block_id": "p16",
+      "locale": "cn",
+      "text_exact": "奥特曼几天前在X上发帖说",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "平台发帖归属，避免与正文叙述者声音混淆。"
+    },
+    {
+      "pattern_id": "T10",
+      "block_id": "p1",
+      "locale": "cn",
+      "text_exact": "",
+      "action": "group",
+      "params": {"blocks": ["p1", "p2", "p3", "p4"]},
+      "editorial_added": false,
+      "reason": "布道开场四段同一场景，组后进入行业分析。"
+    }
+  ],
+  "layout_decisions": [
+    {
+      "pattern_id": "L02",
+      "action": "apply",
+      "params": {
+        "anchor_block_id": "p13",
+        "note_cn": "巴别塔：《创世纪》中人类建造通天塔、语言被变乱的叙事，常被用来警告僭越的权力工程。",
+        "note_en": "Tower of Babel: the Genesis story of a tower to heaven and confused languages, often invoked as a warning against hubristic power."
+      },
+      "reason": "教宗类比是文章神学核心；边注只补文化前提，不复述通谕金句。"
+    }
+  ],
+  "component_plan": [
+    {
+      "component": "quote",
+      "slot": {"at": "after_para", "para": 2},
+      "reason": "牧师警告句既是现场声，也是标题回声；作为唯一引语模块，避免再摘通谕长段造成说教感。",
+      "data": {
+        "quote": {
+          "text_cn": "人工智能想要成为上帝。",
+          "text_en": "AI wants to be God.",
+          "attr_cn": "约瑟夫·哈钦森牧师 · 福音之光浸信会",
+          "attr_en": "Pastor Joseph Hutchinson, Gospel Light Baptist Church"
+        }
+      }
+    }
+  ],
+  "rejected_opportunities": [
+    {
+      "pattern_id": "key_figures",
+      "action": "decline",
+      "reason_against": "不是数据文；150 人会众等数字不足以支撑模块。"
+    },
+    {
+      "pattern_id": "timeline",
+      "action": "decline",
+      "reason_against": "5月通谕/8月峰会/本月声明可做清单，但编年不是阅读难点；小标题已够。"
+    },
+    {
+      "pattern_id": "L03",
+      "action": "decline",
+      "reason_against": "正反观点是叙事转折，不是同维度成对数据。"
+    },
+    {
+      "pattern_id": "figure",
+      "action": "decline",
+      "reason_against": "p22 为印刷图注残留且无可用资产；不假装有教宗照片。"
+    }
+  ]
+}

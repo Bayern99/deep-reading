@@ -1,0 +1,136 @@
+{
+  "article_id": "E2-002",
+  "version": "reboot-1",
+  "created": "2026-10-13",
+  "created_by": "Principal Engineer reboot — independent editorial judgment",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "联网摄像头在战争中被劫持为情报工具：从养鸡户摄像头到国家级网络战。",
+    "structure": [
+      "开篇场景：以色列养鸡户发现摄像头被改成阿拉伯语",
+      "规模：全球约12亿联网摄像头成为软肋",
+      "专家定义：民用监控转化为战时情报",
+      "多战区证据：俄乌、以色列—伊朗、欧洲",
+      "机制：设施管理安装、弱口令、IoT 攻击面",
+      "信息战与宣传用途"
+    ],
+    "reader_need": "长文分段已由原稿小标题完成；读者需要抓住‘民用→战时’的论点句、关键量级数字，以及一处值得脱离正文流的专家引语。不需要时间线或关键数字墙——日期分散且口径不一。",
+    "asset_note": "注册表有 A1 小图 104×161，信息量不足，拒绝配图以免装饰性插图。"
+  },
+  "narrative_outline": [
+    {"block_ids": ["p1", "p2", "p3", "p4"], "function": "scene", "reader_need": "建立具象入口"},
+    {"block_ids": ["p5", "p6", "p7", "p8"], "function": "claim", "reader_need": "理解全球软肋与核心论点"},
+    {"block_ids": ["p10", "p11", "p12", "p13"], "function": "evidence", "reader_need": "AI 放大入侵与多战区证据"},
+    {"block_ids": ["p15", "p16", "p17", "p18", "p19"], "function": "evidence", "reader_need": "基辅与欧洲案例"},
+    {"block_ids": ["p21", "p22", "p23", "p24"], "function": "evidence", "reader_need": "伊朗相关冲突"},
+    {"block_ids": ["p26", "p27", "p28"], "function": "evidence", "reader_need": "限制区域与决策周期"},
+    {"block_ids": ["p29", "p30", "p32", "p33", "p34", "p35"], "function": "consequence", "reader_need": "治理缺口与信息战"},
+    {"block_ids": ["p37", "p38"], "function": "consequence", "reader_need": "IoT 攻击面收束"}
+  ],
+  "text_treatments": [
+    {
+      "pattern_id": "T01",
+      "block_id": "p7",
+      "locale": "cn",
+      "text_exact": "民用监控正在转化为战时情报收集",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "全文论点句。加粗一次即可；不重复进其他组件正文。"
+    },
+    {
+      "pattern_id": "T03",
+      "block_id": "p5",
+      "locale": "cn",
+      "text_exact": "约12亿个",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "规模锚点；保留‘约’限定词（T07）。"
+    },
+    {
+      "pattern_id": "T03",
+      "block_id": "p17",
+      "locale": "cn",
+      "text_exact": "大约4万个",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "乌方处置摄像头的量级，支撑‘国家级应对’。"
+    },
+    {
+      "pattern_id": "T06",
+      "block_id": "p12",
+      "locale": "cn",
+      "text_exact": "OneFist团队的负责人克里斯托弗·科特赖特",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "同段专名+引语，归属标识降低跳读混淆。"
+    },
+    {
+      "pattern_id": "T10",
+      "block_id": "p1",
+      "locale": "cn",
+      "text_exact": "",
+      "action": "group",
+      "params": {"blocks": ["p1", "p2", "p3", "p4"]},
+      "editorial_added": false,
+      "reason": "开篇四段是同一场景单元，组间留白后再进入规模论述。"
+    }
+  ],
+  "layout_decisions": [
+    {
+      "pattern_id": "L02",
+      "action": "apply",
+      "params": {
+        "anchor_block_id": "p7",
+        "note_cn": "Recorded Future：美国威胁情报公司，常为政府与企业提供开源与暗网监测。",
+        "note_en": "Recorded Future: a U.S. threat-intelligence firm that monitors open and dark-web sources for governments and companies."
+      },
+      "reason": "p7 首次抛出关键判断；读者未必认识引用来源。边注只解释机构，不复述论点。"
+    }
+  ],
+  "component_plan": [
+    {
+      "component": "quote",
+      "slot": {"at": "after_para", "para": 7},
+      "reason": "论点句已在正文加粗；引语模块只取同一直接引语一句，形成节奏锚点，人物介绍留在正文。",
+      "data": {
+        "quote": {
+          "text_cn": "我们现在看到，民用监控正在转化为战时情报收集。",
+          "text_en": "We are now seeing the conversion of civilian surveillance into wartime intelligence collection.",
+          "attr_cn": "亚历山大·莱斯利 · Recorded Future",
+          "attr_en": "Alexander Leslie, Recorded Future"
+        }
+      }
+    }
+  ],
+  "rejected_opportunities": [
+    {
+      "pattern_id": "T11",
+      "action": "decline",
+      "reason_against": "原稿已有 p9/p14/p20/p25/p31/p36 小标题；再插编辑小标题会与源题竞争。"
+    },
+    {
+      "pattern_id": "timeline",
+      "action": "decline",
+      "reason_against": "时间点分散在多战区，缺统一编年主线；做时间线会伪造连续叙事。"
+    },
+    {
+      "pattern_id": "key_figures",
+      "action": "decline",
+      "reason_against": "数字口径不一（12亿/4万/250多/数十万），拼成关键数字易误导比较。"
+    },
+    {
+      "pattern_id": "L05",
+      "action": "decline",
+      "reason_against": "可用图仅 104×161 像素碎片，不足以承担图文并置。"
+    },
+    {
+      "pattern_id": "L03",
+      "action": "decline",
+      "reason_against": "文中无两组同维度成对对照结构。"
+    }
+  ]
+}

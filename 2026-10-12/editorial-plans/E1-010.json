@@ -1,0 +1,173 @@
+{
+  "article_id": "E1-010",
+  "version": "reboot-1",
+  "created": "2026-10-13",
+  "created_by": "Principal Engineer reboot — independent editorial judgment",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "WSJ 调查显示分析师上调长期美债收益率预期：高利率被视为结构性而非暂时冲击。",
+    "structure": [
+      "论点：高利率将塑造未来十年",
+      "调查核心：10年期收益率预测上调",
+      "传导：借贷成本与联邦利息",
+      "成因：增长、通胀、财政与 AI 资本需求",
+      "财政对照：CBO / OMB 路径",
+      "增长与就业附带预测",
+      "反方：劳动力市场脆弱 → 降息可能"
+    ],
+    "reader_need": "读者真正需要并排看见的是同一调查里‘10月预测 vs 7月预测’的三档收益率，而不是再堆一组与正文重复的数字卡片。财政段需要小标题分节；反方观点前需要明确转折。"
+  },
+  "narrative_outline": [
+    {"block_ids": ["p1", "p2", "p3"], "function": "claim", "reader_need": "建立结构性利率论点"},
+    {"block_ids": ["p4", "p5"], "function": "evidence", "reader_need": "看清调查数字对照"},
+    {"block_ids": ["p6", "p7", "p8", "p9"], "function": "evidence", "reader_need": "理解基本面变化与专家判断"},
+    {"block_ids": ["p10", "p11", "p12"], "function": "background", "reader_need": "通胀与其他推升因素"},
+    {"block_ids": ["p13", "p14", "p15", "p16"], "function": "consequence", "reader_need": "财政与宏观附带影响"},
+    {"block_ids": ["p17", "p18", "p19"], "function": "contrast", "reader_need": "反方降息叙事"}
+  ],
+  "text_treatments": [
+    {
+      "pattern_id": "T01",
+      "block_id": "p1",
+      "locale": "cn",
+      "text_exact": "美国更高的利率将决定未来十年的经济走向",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "开篇立论句；全文只需这一处主题加粗。"
+    },
+    {
+      "pattern_id": "T03",
+      "block_id": "p4",
+      "locale": "cn",
+      "text_exact": "5.1%",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "2026 年底预测值，对照 4.4%。"
+    },
+    {
+      "pattern_id": "T03",
+      "block_id": "p4",
+      "locale": "cn",
+      "text_exact": "4.4%",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "7 月对照基线。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p13",
+      "locale": "cn",
+      "text_exact": "财政压力与增长预期",
+      "action": "subhead",
+      "params": {
+        "title_cn": "财政压力与增长预期",
+        "title_en": "Budget Strain and Growth"
+      },
+      "editorial_added": true,
+      "reason": "从成因转向财政/增长后果，段落主题切换处需要路标。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p17",
+      "locale": "cn",
+      "text_exact": "反方：劳动力市场更脆弱",
+      "action": "subhead",
+      "params": {
+        "title_cn": "反方：劳动力市场更脆弱",
+        "title_en": "Counterpoint: A Weaker Labor Market"
+      },
+      "editorial_added": true,
+      "reason": "明确对立叙事入口，避免读者把达万观点读成主线延续。"
+    },
+    {
+      "pattern_id": "T06",
+      "block_id": "p7",
+      "locale": "cn",
+      "text_exact": "艾伦·西奈",
+      "action": "wrap",
+      "params": {},
+      "editorial_added": false,
+      "reason": "后文多次引用西奈，首次出现时做归属标识。"
+    }
+  ],
+  "layout_decisions": [
+    {
+      "pattern_id": "L03",
+      "action": "apply",
+      "params": {
+        "after_block_id": "p5",
+        "dim_labels": [
+          "2026 年底 10 年期收益率",
+          "2027 年中 10 年期收益率",
+          "2027 年底 10 年期收益率"
+        ],
+        "pairs": [
+          [
+            {"cn": "10 月调查：5.1%", "en": "October survey: 5.1%"},
+            {"cn": "7 月调查：4.4%", "en": "July survey: 4.4%"}
+          ],
+          [
+            {"cn": "10 月调查：4.96%", "en": "October survey: 4.96%"},
+            {"cn": "7 月调查：4.3%", "en": "July survey: 4.3%"}
+          ],
+          [
+            {"cn": "10 月调查：4.78%", "en": "October survey: 4.78%"},
+            {"cn": "7 月调查：4.26%", "en": "July survey: 4.26%"}
+          ]
+        ]
+      },
+      "reason": "p4–p5 给出三档同维度成对数据；双栏让‘上调’一眼可见。手机按维度 A→B 交替，不保留并排几何。"
+    },
+    {
+      "pattern_id": "L02",
+      "action": "apply",
+      "params": {
+        "anchor_block_id": "p13",
+        "note_cn": "CBO：国会预算办公室，负责独立估算联邦预算与经济路径。",
+        "note_en": "CBO: the Congressional Budget Office, which independently projects the U.S. budget and economy."
+      },
+      "reason": "财政段突然抛出机构缩写；边注解释身份，不复述收益率数字。"
+    }
+  ],
+  "component_plan": [
+    {
+      "component": "quote",
+      "slot": {"at": "after_para", "para": 7},
+      "reason": "基本面‘重大变化’是成因段的判断句；只拔直接引语，避免与 L03 数字重复。",
+      "data": {
+        "quote": {
+          "text_cn": "这标志着支撑固定收益市场和经济的基本面发生了重大变化。",
+          "text_en": "It has been a sea change in the fundamentals underlying the fixed-income market and the economy.",
+          "attr_cn": "艾伦·西奈 · Decision Economics 总裁",
+          "attr_en": "Allen Sinai, Decision Economics"
+        }
+      }
+    }
+  ],
+  "rejected_opportunities": [
+    {
+      "pattern_id": "key_figures",
+      "action": "decline",
+      "reason_against": "核心数字已由 L03 承担对照功能；再做关键数字会第三次复述 5.1%/4.4%。"
+    },
+    {
+      "pattern_id": "timeline",
+      "action": "decline",
+      "reason_against": "文章是预测区间比较，不是事件编年。"
+    },
+    {
+      "pattern_id": "T09",
+      "action": "decline",
+      "reason_against": "p12 虽长，因果链完整；拆分会切断‘通胀缓和但仍担忧债务/AI’。"
+    },
+    {
+      "pattern_id": "L03",
+      "candidate": "p13 CBO vs OMB",
+      "action": "decline",
+      "reason_against": "一边是‘不超过 4.3%’，一边是‘降至 3% 中段’，维度不对等，禁止硬凑双栏。"
+    }
+  ]
+}

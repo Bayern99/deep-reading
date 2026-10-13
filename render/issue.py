@@ -4,6 +4,7 @@
 """
 from components import esc
 from article import render_article, article_nav
+from enhanced_render import render_enhanced_article
 
 
 GROUP_DEFS = [
@@ -50,8 +51,11 @@ def render_toc(order):
 
 
 def render_issue(articles, modules_all, images_all, img_cache, issue_date,
-                 gate_status=None):
-    """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。"""
+                 gate_status=None, plans_all=None, asset_loader=None):
+    """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。
+    plans_all: editorial-plans by article id → enhanced production path.
+    """
+    plans_all = plans_all or {}
     if gate_status:
         pub_articles = [e for e in articles
                         if gate_status.get(e['id'], ('pass', []))[0] == 'pass']
@@ -89,10 +93,14 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
 
     for i, e in enumerate(order):
         uid = e['id']
-        mods = modules_all.get(uid)
-        imgs = images_all.get(uid)
-        b64 = img_cache.get(uid)
-        parts.append(render_article(e, mods, imgs, b64))
+        plan = plans_all.get(uid)
+        if plan is not None:
+            parts.append(render_enhanced_article(e, plan, asset_loader=asset_loader))
+        else:
+            mods = modules_all.get(uid)
+            imgs = images_all.get(uid)
+            b64 = img_cache.get(uid)
+            parts.append(render_article(e, mods, imgs, b64))
         prev_e = order[i - 1] if i > 0 else None
         next_e = order[i + 1] if i + 1 < len(order) else None
         parts.append(article_nav(
