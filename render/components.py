@@ -29,35 +29,63 @@ def paras(cn_text, en_text):
     return out
 
 
-PRI_LABEL = {'P1': 'P1 必读', 'P2': 'P2', 'P3': 'P3'}
+SECTION_LABEL = {
+    'News': ('新闻', 'NEWS'),
+    'U.S. News': ('美国', 'U.S.'),
+    'World News': ('世界', 'WORLD'),
+    'Personal Journal': ('生活', 'LIFE'),
+    'Arts in Review': ('文艺', 'ARTS'),
+    'Sports': ('体育', 'SPORTS'),
+    'Opinion': ('观点', 'OPINION'),
+    'Business & Finance': ('商业与金融', 'BUSINESS'),
+    'Technology': ('科技', 'TECHNOLOGY'),
+    'Business News': ('商业', 'BUSINESS'),
+    'Heard on the Street': ('街谈', 'HEARD ON THE STREET'),
+    'Money & Investing': ('投资', 'MONEY'),
+    'Data': ('数据', 'DATA'),
+}
+
+
+def section_label(e):
+    sec = e.get('section') or ''
+    return SECTION_LABEL.get(sec, (sec, sec))
+
+
+def kicker_pair(e):
+    """读者表面 kicker：版面身份 + 页码。不含 P1/流水线标签。"""
+    cn_sec, en_sec = section_label(e)
+    if e.get('type') == 'letter':
+        cn_sec, en_sec = '读者来信', 'LETTER'
+    page = e.get('page') or ''
+    bits_cn, bits_en = [], []
+    if cn_sec:
+        bits_cn.append(cn_sec)
+        bits_en.append(en_sec)
+    if page:
+        bits_cn.append(page)
+        bits_en.append(page)
+    return ' · '.join(bits_cn), ' · '.join(bits_en)
+
 
 
 def kicker_text(e):
-    bits = []
-    if e.get('section'):
-        bits.append(e['section'])
-    if e.get('page'):
-        bits.append(e['page'] + ' 版')
-    bits.append(PRI_LABEL.get(e.get('priority'), e.get('priority') or ''))
-    if e.get('type') == 'opinion':
-        bits.append('观点')
-    if e.get('type') == 'letter':
-        bits.append('读者来信')
-    return ' · '.join(b for b in bits if b)
+    cn, _en = kicker_pair(e)
+    return cn
 
 
 def article_header(e):
     """完整文章头：kicker / h1 / deck / byline / rule"""
+    kick_cn, kick_en = kicker_pair(e)
     h = [f'''<header class="ahead">
-    <div class="kicker"><span class="kbar"></span><span class="k-cn">{esc(kicker_text(e))}</span><span class="k-en" hidden>{esc(kicker_text(e))}</span></div>
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">{esc(kick_cn)}</span><span class="k-en" hidden>{esc(kick_en)}</span></div>
     <h2 class="art-title"><span class="k-cn">{esc(e.get('title_cn'))}</span><span class="k-en" hidden>{esc(e.get('title'))}</span></h2>''']
     if e.get('dek_cn') or e.get('dek'):
         h.append(f'''<p class="deck"><span class="k-cn">{esc(e.get('dek_cn'))}</span><span class="k-en" hidden>{esc(e.get('dek'))}</span></p>''')
     if e.get('byline'):
         h.append(f'''<div class="byline">
       <span class="who">{esc(e.get('byline'))}</span>
-      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》{esc(e.get('page') or '')} 版</span>
-      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.{esc(e.get('page') or '')}</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》{esc(e.get('page') or '')}</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, {esc(e.get('page') or '')}</span>
     </div>''')
     h.append('</header>\n  <div class="arule"></div>')
     return '\n'.join(h)

@@ -9,7 +9,7 @@ import re
 
 from components import (
     esc, article_header, key_figures, timeline, quote, context_box,
-    figure, chart, infographic, bargraph, data_table, rail, kicker_text,
+    figure, chart, infographic, bargraph, data_table, rail, kicker_pair,
 )
 from layout import (
     render_margin_note, render_compare, render_figure_text,
@@ -268,32 +268,17 @@ def render_enhanced_article(e, plan, asset_loader=None):
          f'aria-label="{esc(e.get("title_cn") or e.get("title") or uid)}">']
     h.append('<div class="sheet">')
     if e.get('type') in ('brief', 'letter'):
-        # keep compact head for shorts even on plan path
-        kick = kicker_text(e)
+        kick_cn, kick_en = kicker_pair(e)
         h.append(
             '<header class="ahead ahead-compact">'
             f'<div class="kicker"><span class="kbar"></span>'
-            f'<span class="k-cn">{esc(kick)}</span>'
-            f'<span class="k-en" hidden>{esc(kick)}</span></div>'
+            f'<span class="k-cn">{esc(kick_cn)}</span>'
+            f'<span class="k-en" hidden>{esc(kick_en)}</span></div>'
             f'<h2 class="art-title art-compact"><span class="k-cn">{esc(e.get("title_cn"))}</span>'
             f'<span class="k-en" hidden>{esc(e.get("title"))}</span></h2>'
             '</header>')
     else:
         h.append(article_header(e))
-    if has_ops:
-        h.append(
-            '<p class="enh-note ed-block">'
-            '<span class="k-cn">本篇含编辑增强 · '
-            f'<a href="baseline.html#s-{uid}">对照纯排版版</a></span>'
-            '<span class="k-en" hidden>Editorially enhanced · '
-            f'<a href="baseline.html#s-{uid}">plain typography</a></span></p>')
-    else:
-        h.append(
-            '<p class="enh-note ed-block">'
-            '<span class="k-cn">经编辑审查 · 保持克制，未增加辅助模块 · '
-            f'<a href="baseline.html#s-{uid}">对照版</a></span>'
-            '<span class="k-en" hidden>Editorially reviewed · restraint, no aids · '
-            f'<a href="baseline.html#s-{uid}">baseline</a></span></p>')
     h.append(rail(uid, _rail_from_plan(plan, e, uid)))
 
     for x in layouts['before_body'] + aid_before:

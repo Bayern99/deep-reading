@@ -4,7 +4,7 @@
 """
 from components import (esc, pair, paras, article_header, body_paras, key_figures,
                         timeline, quote, context_box, figure, data_table, rail,
-                        bargraph)
+                        bargraph, kicker_pair)
 
 
 def _schedule_block(uid, days):
@@ -60,14 +60,61 @@ def _quote_after_index(e, q):
 
 
 def _compact_kicker(e):
-    bits = []
-    if e.get('section'):
-        bits.append(e['section'])
-    if e.get('page'):
-        bits.append(e['page'] + ' 版')
-    if e.get('type') == 'letter':
-        bits.append('读者来信')
-    return ' · '.join(b for b in bits if b)
+    return kicker_pair(e)
+
+
+def _digest_groups(cn_text, en_text):
+    """Parse What's News into (heading_cn, heading_en, [(item_cn, item_en)]). Verbatim."""
+    def parts(text):
+        groups = []
+        heading = None
+        items = []
+        for raw in (text or '').split('\n'):
+            line = raw.strip()
+            if not line:
+                continue
+            if line.startswith('- '):
+                items.append(line.strip())
+            else:
+                if heading is not None or items:
+                    groups.append((heading or '', items))
+                heading = line
+                items = []
+        if heading is not None or items:
+            groups.append((heading or '', items))
+        return groups
+    cn_g, en_g = parts(cn_text), parts(en_text)
+    out = []
+    for i, (h_cn, items_cn) in enumerate(cn_g):
+        h_en, items_en = en_g[i] if i < len(en_g) else ('', [])
+        pairs = []
+        for j, c in enumerate(items_cn):
+            pairs.append((c, items_en[j] if j < len(items_en) else ''))
+        out.append((h_cn, h_en, pairs))
+    return out
+
+
+def _render_digest(e):
+    h = ['<header class="ahead ahead-compact">']
+    h.append('<div class="kicker"><span class="kbar"></span>'
+             '<span class="k-cn">最新消息</span><span class="k-en" hidden>WHAT\'S NEWS</span></div>')
+    h.append('</header>')
+    h.append('<div class="wn">')
+    for h_cn, h_en, items in _digest_groups(e.get('body_cn'), e.get('body_en')):
+        if h_cn or h_en:
+            h.append(
+                f'<h3 class="wn-h"><span class="k-cn">{esc(h_cn)}</span>'
+                f'<span class="k-en" hidden>{esc(h_en)}</span></h3>')
+        h.append('<ul class="wn-list">')
+        for c, n in items:
+            c_pre, c_rest = (c[:2], c[2:]) if c.startswith('- ') else ('', c)
+            n_pre, n_rest = (n[:2], n[2:]) if n.startswith('- ') else ('', n)
+            h.append(
+                f'<li><span class="k-cn"><span class="wn-dash">{esc(c_pre)}</span>{esc(c_rest)}</span>'
+                f'<span class="k-en" hidden><span class="wn-dash">{esc(n_pre)}</span>{esc(n_rest)}</span></li>')
+        h.append('</ul>')
+    h.append('</div>')
+    return h
 
 
 def _compact_head(e, kicker_cn, kicker_en):
@@ -123,11 +170,15 @@ def render_article(e, modules, images, img_b64=None, curated=None):
         h.append('<div class="story-end"><span class="endmark" aria-hidden="true">■</span></div>')
 
     elif t in ('brief', 'letter'):
-        h.append(_compact_head(e, _compact_kicker(e), _compact_kicker(e)))
+        kick_cn, kick_en = kicker_pair(e)
+        h.append(_compact_head(e, kick_cn, kick_en))
         h.extend(body_paras(e))
 
+    elif t == 'index_digest':
+        h.extend(_render_digest(e))
+
     elif t == 'data_table':
-        h.append(_compact_head(e, f'数据 · {e.get("page") or ""} 版', f'DATA · p.{e.get("page") or ""}'))
+        h.append(_compact_head(e, kicker_pair(e)[0], kicker_pair(e)[1]))
         h.append(f'<div class="tbl-cap"><span class="k-cn">{esc(e.get("title_cn"))}</span>'
                  f'<span class="k-en" hidden>{esc(e.get("title"))}</span></div>')
         h.extend(_curated_blocks(uid, curated))
@@ -135,7 +186,8 @@ def render_article(e, modules, images, img_b64=None, curated=None):
             h.append(data_table(e.get('body_en')))
 
     elif t == 'photo_caption':
-        h.append(_compact_head(e, f'图片 · {e.get("page") or ""} 版', f'PHOTO · p.{e.get("page") or ""}'))
+        kick_cn, kick_en = kicker_pair(e)
+        h.append(_compact_head(e, kick_cn, kick_en))
         if images and img_b64:
             h.append(figure(img_b64, e.get('title_cn'), e.get('title'), images.get('credit', ''), uid))
         else:
@@ -143,8 +195,8 @@ def render_article(e, modules, images, img_b64=None, curated=None):
         h.extend(body_paras(e))
 
     else:
-        h.append(_compact_head(e, f'{e.get("section") or ""} · {e.get("page") or ""} 版',
-                               f'{e.get("section") or ""} · p.{e.get("page") or ""}'))
+        kick_cn, kick_en = kicker_pair(e)
+        h.append(_compact_head(e, kick_cn, kick_en))
         h.extend(body_paras(e))
 
     h.append('</div>')

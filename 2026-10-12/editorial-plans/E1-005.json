@@ -92,10 +92,9 @@
     {
       "component": "key_figures",
       "slot": {"at": "after_para", "para": 3},
-      "reason": "四项 condensed 数据点，不复述正文句子。",
+      "reason": "三项 condensed 数据点；伤亡已在正文，不再复述。",
       "data": {
         "items": [
-          {"label_cn": "利雅得机场袭击 · 死亡", "label_en": "AIRPORT STRIKE · KILLED", "value_cn": "至少12人", "value_en": "at least 12", "note_cn": "另有数百人受伤，许多人伤势严重", "note_en": "hundreds more injured, many severely"},
           {"label_cn": "利雅得距胡塞控制区", "label_en": "RIYADH TO HOUTHI AREAS", "value_cn": "约500英里", "value_en": "about 500 miles", "note_cn": "首都部分地区已成战场", "note_en": "parts of the capital a battle zone"},
           {"label_cn": "沙特年度预算", "label_en": "ANNUAL BUDGET", "value_cn": "约3500亿美元", "value_en": "about $350 billion", "note_cn": "未来项目总成本高达数万亿美元", "note_en": "giga-project costs run to trillions"},
           {"label_cn": "2026 年 GDP 预期", "label_en": "2026 GDP FORECAST", "value_cn": "下降3.6%", "value_en": "shrink 3.6%", "note_cn": "沙特财政部最新预计", "note_en": "per the Saudi Finance Ministry"}

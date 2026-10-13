@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""WSJ 深读 · 整期组装（目录 / 阅读顺序 / 导航 / 进度条）
-分组：P1 必读 → P2 → P3 → 数据附录（data_table 全部沉底）；组内按 final.json 原顺序。
+"""WSJ 深读 · 整期组装（头版选稿 / 目录 / 阅读顺序 / 导航）
+读者表面不含流水线标签。正文仍按版块顺序，digest 与 A1 头条提前。
 """
 from components import esc
 from article import render_article, article_nav
@@ -55,39 +55,109 @@ def section_of(e):
     return 'life'
 
 
+def _story_weight(e):
+    t = e.get('type')
+    if t in ('photo_caption', 'index_digest', 'data_table', 'correction'):
+        return 9
+    if e.get('id') == 'E1-005':
+        return -1
+    pri = {'P1': 0, 'P2': 1, 'P3': 2}.get(e.get('priority'), 3)
+    return pri
+
+
 def reading_order(articles):
+    """头版：digest + A1 长文（P1 先）+ 其余 A1；其后按版块。"""
+    used = set()
     order = []
+
+    digest = next((e for e in articles if e.get('type') == 'index_digest'), None)
+    if digest:
+        order.append(digest)
+        used.add(digest['id'])
+
+    a1 = [e for e in articles
+          if e.get('page') == 'A1' and e['id'] not in used
+          and e.get('type') not in ('data_table', 'photo_caption', 'index_digest')]
+    a1.sort(key=_story_weight)
+    order.extend(a1)
+    used.update(e['id'] for e in a1)
+
     for sid, *_rest in SECTION_DEFS:
-        order.extend([e for e in articles if section_of(e) == sid])
+        rest = [e for e in articles if e['id'] not in used and section_of(e) == sid]
+        rest.sort(key=_story_weight)
+        order.extend(rest)
+        used.update(e['id'] for e in rest)
+    leftover = [e for e in articles if e['id'] not in used]
+    order.extend(leftover)
     return order
+
+
+def render_front(order):
+    """头版选稿：1 条主导 + 2 条次条（只要 A1 新闻，不要生活稿）。"""
+    leads = [e for e in order
+             if e.get('page') == 'A1'
+             and e.get('type') == 'article'
+             and e.get('section') == 'News']
+    if not leads:
+        return ''
+    hero, rest = leads[0], leads[1:3]
+    h = ['<section class="front-pack" aria-label="今日要闻">']
+    h.append('<a class="front-hero" href="#s-%s">' % hero['id'])
+    h.append('<div class="kicker"><span class="kbar"></span>'
+             '<span class="k-cn">要闻</span><span class="k-en" hidden>FRONT</span></div>')
+    h.append(f'<h2 class="front-title"><span class="k-cn">{esc(hero.get("title_cn"))}</span>'
+             f'<span class="k-en" hidden>{esc(hero.get("title"))}</span></h2>')
+    if hero.get('dek_cn') or hero.get('dek'):
+        h.append(f'<p class="front-dek"><span class="k-cn">{esc(hero.get("dek_cn") or "")}</span>'
+                 f'<span class="k-en" hidden>{esc(hero.get("dek") or "")}</span></p>')
+    h.append('</a>')
+    if rest:
+        h.append('<ol class="front-also">')
+        for e in rest:
+            dek_cn = e.get('dek_cn') or ''
+            dek_en = e.get('dek') or ''
+            h.append(f'<li><a href="#s-{e["id"]}">'
+                     f'<span class="toc-t"><span class="k-cn">{esc(e.get("title_cn"))}</span>'
+                     f'<span class="k-en" hidden>{esc(e.get("title") or "")}</span></span>')
+            if dek_cn:
+                h.append(f'<span class="front-also-dek"><span class="k-cn">{esc(dek_cn)}</span>'
+                         f'<span class="k-en" hidden>{esc(dek_en)}</span></span>')
+            h.append('</a></li>')
+        h.append('</ol>')
+    h.append('</section>')
+    return '\n'.join(h)
 
 
 def render_toc(order):
     h2 = ['<nav id="toc" class="toc" aria-label="toc">']
-    h2.append('<div class="toc-head"><span class="k-cn">本期目录</span><span class="k-en" hidden>IN THIS ISSUE</span></div>')
     buckets = {sid: [] for sid, *_ in SECTION_DEFS}
     for e in order:
+        if e.get('type') in ('index_digest', 'photo_caption', 'correction'):
+            continue
         buckets[section_of(e)].append(e)
-    for sid, cn, en, _secs, _pages, default_open in SECTION_DEFS:
+    h2.append('<ol class="toc-jump">')
+    digest = next((e for e in order if e.get('type') == 'index_digest'), None)
+    if digest:
+        h2.append(
+            f'<li><a href="#s-{digest["id"]}">'
+            f'<span class="k-cn">最新消息</span><span class="k-en" hidden>WHAT\'S NEWS</span></a></li>')
+    for sid, cn, en, *_rest in SECTION_DEFS:
         items = buckets[sid]
         if not items:
             continue
-        open_attr = ' open' if default_open or sid == 'front' else ''
-        h2.append(f'<details class="toc-sec"{open_attr}>')
         h2.append(
-            f'<summary class="toc-group"><span class="k-cn">{cn}</span>'
-            f'<span class="k-en" hidden>{en}</span>'
-            f'<span class="toc-n">{len(items)}</span></summary>')
-        h2.append('<ol class="toc-list">')
-        for e in items:
-            meta = ' · '.join(x for x in [e.get('section') or '', (e.get('page') or '') + ' 版'] if x)
-            h2.append(f'''<li><a href="#s-{e["id"]}">
-      <span class="toc-t"><span class="k-cn">{esc(e.get("title_cn") or e.get("title") or e["id"])}</span><span class="k-en" hidden>{esc(e.get("title") or "")}</span></span>
-      <span class="toc-m">{esc(meta)}</span></a></li>''')
-        h2.append('</ol>')
-        h2.append('</details>')
-    h2.append('</nav>')
+            f'<li><a href="#sec-{sid}">'
+            f'<span class="k-cn">{cn}</span><span class="k-en" hidden>{en}</span></a></li>')
+    h2.append('</ol></nav>')
     return '\n'.join(h2)
+
+
+def _section_break(sid, cn, en):
+    return (
+        f'<header class="sec-break" id="sec-{sid}">'
+        f'<span class="k-cn">{esc(cn)}</span>'
+        f'<span class="k-en" hidden>{esc(en)}</span></header>'
+    )
 
 
 def render_issue(articles, modules_all, images_all, img_cache, issue_date,
@@ -110,12 +180,9 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
     else:
         pub_articles, review_articles = articles, []
     order = reading_order(pub_articles)
-    n_pub = len(order)
-    n_review = len(review_articles)
     parts = []
 
-    # masthead
-    masthead = '''
+    parts.append('''
 <header class="masthead">
   <a class="skip" href="#toc">跳到目录</a>
   <div class="mast-in">
@@ -130,15 +197,24 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
 <div class="issue-hero">
   <div class="issue-kicker"><span class="kbar"></span><span class="k-cn">华尔街日报 · 每日深读</span><span class="k-en" hidden>THE WALL STREET JOURNAL · DAILY DEEP READ</span></div>
   <h1 class="issue-title"><span class="k-cn">2026年10月12日</span><span class="k-en" hidden>October 12, 2026</span></h1>
-  <p class="issue-dek"><span class="k-cn">共 {n_pub} 篇 · 机器辅助翻译 · 逐版摘要</span><span class="k-en" hidden>{n_pub} stories · machine-assisted translation · section-by-section digest</span></p>
-</div>'''.format(n_pub=n_pub)
-    parts.append(masthead)
+  <p class="issue-dek"><span class="k-cn">胡塞袭击利雅得机场。今日头版。</span><span class="k-en" hidden>Houthis strike Riyadh's airport. Today's front page.</span></p>
+</div>''')
 
     parts.append('<main id="issue">')
+    parts.append(render_front(order))
     parts.append(render_toc(order))
 
+    last_sid = None
+    sid_label = {sid: (cn, en) for sid, cn, en, *_ in SECTION_DEFS}
     for i, e in enumerate(order):
         uid = e['id']
+        sid = section_of(e)
+        if e.get('type') != 'index_digest' and sid != last_sid and sid in sid_label:
+            cn, en = sid_label[sid]
+            parts.append(_section_break(sid, cn, en))
+            last_sid = sid
+        elif e.get('type') == 'index_digest':
+            last_sid = None
         plan = plans_all.get(uid)
         if plan is not None:
             parts.append(render_enhanced_article(e, plan, asset_loader=asset_loader))
@@ -153,29 +229,18 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
         parts.append(article_nav(
             prev_e['id'] if prev_e else None, prev_e.get('title_cn') if prev_e else None,
             next_e['id'] if next_e else None, next_e.get('title_cn') if next_e else None))
-    # 待审核区：WARN/BLOCK 文章只列元数据，不渲染正文
+
     if review_articles and gate_status:
-        parts.append('<section class="review-queue" aria-label="待审核">')
-        parts.append('<h2><span class="k-cn">待审核（%d 篇）</span>'
-                     '<span class="k-en" hidden>Under Review (%d)</span></h2>' % (n_review, n_review))
-        parts.append('<p class="review-note"><span class="k-cn">以下文章尚未通过完整性确认，暂不发布正文。</span>'
-                     '<span class="k-en" hidden>These articles are pending integrity review.</span></p>')
+        parts.append('<section class="review-queue" hidden aria-label="待审核">')
         for e in review_articles:
-            status, issues = gate_status.get(e['id'], ('warn', []))
-            reason = '; '.join(i.get('detail', '')[:80] for i in issues[:2] if isinstance(i, dict))
-            parts.append(
-                f'<article class="review-item" id="review-{e["id"]}">'
-                f'<h3>{e.get("title_cn") or e["id"]}</h3>'
-                f'<p class="review-meta">{e["id"]} · {e.get("type","")} · 状态：{status}</p>'
-                f'<p class="review-reason">{reason}</p>'
-                '</article>')
+            parts.append(f'<div id="review-{e["id"]}"></div>')
         parts.append('</section>')
     parts.append('</main>')
 
     parts.append('''
 <footer class="issue-foot">
   <div class="arule"></div>
-  <p><span class="k-cn">《华尔街日报》2026年10月12日 · 机器辅助翻译 · 逐版摘要</span><span class="k-en" hidden>WSJ, Oct 12, 2026 · machine-assisted translation · section digest</span></p>
+  <p><span class="k-cn">《华尔街日报》 2026年10月12日</span><span class="k-en" hidden>The Wall Street Journal, Oct 12, 2026</span></p>
   <button id="toTop" class="pill"><span class="k-cn">回顶部</span><span class="k-en" hidden>Back to top</span></button>
 </footer>''')
     return '\n'.join(parts), order

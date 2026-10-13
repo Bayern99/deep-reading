@@ -47,24 +47,39 @@ body{margin:0;background:var(--paper);color:var(--body);
   color:var(--ink);margin:0 0 12px;text-wrap:balance}
 .issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
 
-/* toc */
+/* toc + front pack */
 #issue{max-width:var(--page);margin:0 auto;padding:0 24px}
-.toc{max-width:var(--head-measure);margin:32px auto 0}
-.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
-  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
-.toc-sec{margin:0;border-bottom:1px solid var(--line)}
-.toc-sec>summary.toc-group{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
-  font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:0;padding:14px 0}
-.toc-sec>summary.toc-group::-webkit-details-marker{display:none}
-.toc-sec>summary.toc-group::after{content:"+";margin-left:4px;font-weight:300;font-size:18px;color:var(--mut)}
-.toc-sec[open]>summary.toc-group::after{content:"–"}
-.toc-n{margin-left:auto;font:500 12px/1 var(--font-meta);letter-spacing:0;color:var(--mut)}
-.toc-list{list-style:none;margin:0;padding:0 0 8px}
-.toc-list li{border-bottom:1px solid var(--line)}
-.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
-  padding:11px 2px;text-decoration:none;color:var(--ink)}
-.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
-.toc-m{font-size:12px;color:var(--mut);flex:none}
+.front-pack{max-width:var(--head-measure);margin:28px auto 8px;padding-bottom:8px;
+  border-bottom:1px solid var(--ink)}
+.front-hero{display:block;text-decoration:none;color:var(--ink);padding:0 0 22px}
+.front-title{font-family:var(--font-display);font-weight:700;font-size:44px;line-height:1.22;
+  margin:0 0 12px;text-wrap:balance;letter-spacing:.01em}
+.front-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+.front-also{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.front-also li{border-bottom:1px solid var(--line)}
+.front-also a{display:block;padding:14px 0;text-decoration:none;color:var(--ink)}
+.front-also .toc-t{font-size:20px}
+.front-also-dek{display:block;margin-top:4px;font-family:var(--font-display);font-size:15px;
+  line-height:1.6;color:var(--mut)}
+.toc{max-width:var(--head-measure);margin:20px auto 8px}
+.toc-jump{list-style:none;margin:0;padding:12px 0 4px;display:flex;flex-wrap:wrap;gap:0;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.toc-jump li{flex:none}
+.toc-jump a{display:flex;align-items:baseline;gap:8px;padding:10px 18px 10px 0;
+  text-decoration:none;color:var(--ink);font:700 13px/1 var(--font-meta);letter-spacing:.12em}
+.toc-jump .toc-n{font-weight:500;letter-spacing:0;color:var(--mut);font-size:12px}
+.sec-break{max-width:var(--head-measure);margin:8px auto 0;padding:28px 0 4px;
+  font:700 13px/1 var(--font-meta);letter-spacing:.16em;color:var(--mut);
+  border-top:1px solid var(--ink)}
+.wn{max-width:var(--measure);margin:0 auto 8px}
+.wn-h{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.14em;
+  color:var(--ink);margin:22px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--ink)}
+.wn-list{list-style:none;margin:0;padding:0}
+.wn-list li{position:relative;padding:10px 0 10px 1.15em;border-bottom:1px solid var(--line);
+  font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--body)}
+.wn-list li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:1px;background:var(--ink)}
+.wn-dash{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.review-queue{display:none}
 
 /* article */
 .story{position:relative;padding:0 0 8px}
@@ -208,6 +223,7 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
   .ahead-compact{padding:24px 0 4px}
   .issue-hero{padding:36px 24px 8px}
   .issue-title{font-size:32px}
+  .front-title{font-size:34px}
   .mast-meta{display:none}
 }
 @media(max-width:430px){
@@ -215,6 +231,7 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
   h2.art-title.art-compact{font-size:21px}
   .deck{font-size:17px}
   .issue-title{font-size:28px}
+  .front-title{font-size:30px;line-height:1.3}
   .issue-dek{font-size:16px}
   .sheet>p{font-size:16px;line-height:1.75}
   .quote .qt{font-size:19px}
