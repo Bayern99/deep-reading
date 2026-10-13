@@ -68,6 +68,10 @@ PLANNER_PROMPT = """你是 WSJ 深读的 Editorial Planner。通读全文后，�
 - T13 并列列表（block_id + items）：逐字条目，可逆
 
 **Layout**（默认 L01；从下面四选一需满足其适用条件）：
+
+### 本篇可用视觉资产
+{assets_block}
+（无资产时 L05/L08 不可选；有资产时必须评估是否使用，拒绝需给理由）
 """ + LAYOUT_SPECS + """
 
 **Reading Aid**（data 逐字来自正文；日期不加年份）：
@@ -112,14 +116,20 @@ PLANNER_PROMPT = """你是 WSJ 深读的 Editorial Planner。通读全文后，�
 """
 
 
-def call_planner(aid, meta, cn_blocks, en_blocks, model=None):
-    """调用 oMLX 上的 planner 模型。返回解析后的 dict。"""
+def call_planner(aid, meta, cn_blocks, en_blocks, model=None, assets=None):
+    """调用 oMLX 上的 planner 模型。返回解析后的 dict。
+
+    assets: 该文章的可用视觉资产列表（来自 asset_registry.json），
+            每项含 asset_id/asset_type/caption_cn/credit。None 或空表示无资产。
+    """
     import urllib.request
     key = json.load(open(os.path.expanduser('~/.pi/agent/models.json')))['providers']['omlx']['apiKey']
+    assets_block = _format_assets(assets)
     prompt = PLANNER_PROMPT.format(
         atype=meta['type'], prio=meta['priority'],
         section=meta['section'], page=meta['page'],
-        cn_blocks=cn_blocks, en_blocks=en_blocks)
+        cn_blocks=cn_blocks, en_blocks=en_blocks,
+        assets_block=assets_block)
     body = json.dumps({
         'model': model or 'Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-6bit',
         'messages': [{'role': 'user', 'content': prompt}],
@@ -137,3 +147,31 @@ def call_planner(aid, meta, cn_blocks, en_blocks, model=None):
         if raw.rstrip().endswith('```'):
             raw = raw.rstrip()[:-3]
     return json.loads(raw), prompt
+
+
+def _format_assets(assets):
+    """格式化资产列表供 prompt 注入。"""
+    if not assets:
+        return "（本篇无可用视觉资产）"
+    lines = []
+    for a in assets:
+        if a.get('status') != 'extracted':
+            continue
+        lines.append(
+            f"- {a['asset_id']}｜{a.get('asset_type','photo')}｜"
+            f"图注：{(a.get('caption_cn') or '')[:60]}｜"
+            f"来源：{a.get('credit') or '未注明'}"
+        )
+    return '\n'.join(lines) if lines else "（本篇无可用视觉资产）"
+
+
+def load_assets_for_article(aid, registry_path=None):
+    """从 asset_registry.json 取某文章的可用资产。"""
+    import json as _json, os as _os
+    rp = registry_path or _os.path.join(
+        _os.path.dirname(_os.path.abspath(__file__)), 'asset_registry.json')
+    try:
+        reg = _json.load(open(rp, encoding='utf-8'))
+    except FileNotFoundError:
+        return []
+    return [r for r in reg if r.get('article_id') == aid]

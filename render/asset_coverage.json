@@ -1,0 +1,537 @@
+{
+ "E1-001": {
+  "class": "no_asset"
+ },
+ "E1-002": {
+  "class": "no_asset"
+ },
+ "E1-003": {
+  "class": "unrecoverable",
+  "reason": "photo_caption 但未找到对应图片"
+ },
+ "E1-004": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-004-A1-312"
+  ]
+ },
+ "E1-005": {
+  "class": "no_asset"
+ },
+ "E2-002": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-002-A1-310"
+  ]
+ },
+ "E1-007": {
+  "class": "no_asset"
+ },
+ "E2-010": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-010-A1-311"
+  ]
+ },
+ "E2-001": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-001-A1-309"
+  ]
+ },
+ "E1-010": {
+  "class": "no_asset"
+ },
+ "E1-011": {
+  "class": "no_asset"
+ },
+ "E1-012": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-012-A2-947"
+  ]
+ },
+ "E1-013": {
+  "class": "no_asset"
+ },
+ "E1-014": {
+  "class": "no_asset"
+ },
+ "E1-015": {
+  "class": "no_asset"
+ },
+ "E1-016": {
+  "class": "no_asset"
+ },
+ "E1-017": {
+  "class": "no_asset"
+ },
+ "E1-018": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-018-A2-948"
+  ]
+ },
+ "E1-019": {
+  "class": "no_asset"
+ },
+ "E1-020": {
+  "class": "no_asset"
+ },
+ "E1-021": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-021-A3-1098",
+   "IMG-E1-021-A3-1100",
+   "IMG-E1-021-A3-1099"
+  ]
+ },
+ "E1-022": {
+  "class": "no_asset"
+ },
+ "E1-023": {
+  "class": "no_asset"
+ },
+ "E1-024": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-024-A3-1101"
+  ]
+ },
+ "E1-025": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-025-A4-1201"
+  ]
+ },
+ "E1-026": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-026-A4-1202"
+  ]
+ },
+ "E1-027": {
+  "class": "no_asset"
+ },
+ "E1-028": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-028-A4-1198",
+   "IMG-E1-028-A4-1199",
+   "IMG-E1-028-A4-1200"
+  ]
+ },
+ "E1-029": {
+  "class": "no_asset"
+ },
+ "E1-030": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-030-A5-1282",
+   "IMG-E1-030-A5-1285",
+   "IMG-E1-030-A5-1286",
+   "IMG-E1-030-A5-1287",
+   "IMG-E1-030-A5-1284"
+  ]
+ },
+ "E1-031": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-031-A6-1406"
+  ]
+ },
+ "E1-032": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-032-A6-1405"
+  ]
+ },
+ "E1-033": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-033-A6-1403",
+   "IMG-E1-033-A6-1404"
+  ]
+ },
+ "E1-034": {
+  "class": "no_asset"
+ },
+ "E1-035": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-035-A7-1530"
+  ]
+ },
+ "E1-036": {
+  "class": "no_asset"
+ },
+ "E1-037": {
+  "class": "unrecoverable",
+  "reason": "photo_caption 但未找到对应图片"
+ },
+ "E1-038": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-038-A8-2420"
+  ]
+ },
+ "E1-039": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-039-A8-2418"
+  ]
+ },
+ "E1-040": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-040-A8-2421",
+   "IMG-E1-040-A8-2419"
+  ]
+ },
+ "E1-041": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-041-A9-2527",
+   "IMG-E1-041-A9-2528"
+  ]
+ },
+ "E1-042": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-042-A9-2526"
+  ]
+ },
+ "E1-043": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E1-043-A9-2529"
+  ]
+ },
+ "E1-044": {
+  "class": "unrecoverable",
+  "reason": "photo_caption 但未找到对应图片"
+ },
+ "E2-003": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-003-A10-2646",
+   "IMG-E2-003-A10-2657",
+   "IMG-E2-003-A10-2659",
+   "IMG-E2-003-A10-2662"
+  ]
+ },
+ "E2-004": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-004-A10-2652",
+   "IMG-E2-004-A10-2661",
+   "IMG-E2-004-A10-2663",
+   "IMG-E2-004-A10-2653",
+   "IMG-E2-004-A10-2654"
+  ]
+ },
+ "E2-005": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-005-A11-2759"
+  ]
+ },
+ "E2-006": {
+  "class": "no_asset"
+ },
+ "E2-007": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-007-A11-2760"
+  ]
+ },
+ "E2-008": {
+  "class": "no_asset"
+ },
+ "E2-009": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-009-A12-2878"
+  ]
+ },
+ "E2-011": {
+  "class": "unrecoverable",
+  "reason": "photo_caption 但未找到对应图片"
+ },
+ "E2-012": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-012-A12-2877"
+  ]
+ },
+ "E2-013": {
+  "class": "no_asset"
+ },
+ "E2-014": {
+  "class": "no_asset"
+ },
+ "E2-015": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-015-A14-3150"
+  ]
+ },
+ "E2-016": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-016-A14-3146",
+   "IMG-E2-016-A14-3147",
+   "IMG-E2-016-A14-3148",
+   "IMG-E2-016-A14-3149"
+  ]
+ },
+ "E2-017": {
+  "class": "no_asset"
+ },
+ "E2-018": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-018-A15-3238"
+  ]
+ },
+ "E2-019": {
+  "class": "no_asset"
+ },
+ "E2-020": {
+  "class": "no_asset"
+ },
+ "E2-021": {
+  "class": "no_asset"
+ },
+ "E2-022": {
+  "class": "no_asset"
+ },
+ "E2-023": {
+  "class": "no_asset"
+ },
+ "E2-024": {
+  "class": "no_asset"
+ },
+ "E2-025": {
+  "class": "no_asset"
+ },
+ "E2-026": {
+  "class": "no_asset"
+ },
+ "E2-027": {
+  "class": "no_asset"
+ },
+ "E2-028": {
+  "class": "no_asset"
+ },
+ "E2-029": {
+  "class": "no_asset"
+ },
+ "E2-030": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-030-A16-3321"
+  ]
+ },
+ "E2-031": {
+  "class": "no_asset"
+ },
+ "E2-032": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-032-A17-3404"
+  ]
+ },
+ "E2-033": {
+  "class": "no_asset"
+ },
+ "E2-034": {
+  "class": "no_asset"
+ },
+ "E2-035": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-035-A18-3474",
+   "IMG-E2-035-A18-3475"
+  ]
+ },
+ "E2-036": {
+  "class": "unrecoverable",
+  "reason": "photo_caption 但未找到对应图片"
+ },
+ "E2-037": {
+  "class": "no_asset"
+ },
+ "E2-038": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E2-038-A18-3476"
+  ]
+ },
+ "E3-001": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-001-B1-3763"
+  ]
+ },
+ "E3-002": {
+  "class": "no_asset"
+ },
+ "E3-003": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-003-B1-3770"
+  ]
+ },
+ "E3-004": {
+  "class": "no_asset"
+ },
+ "E3-005": {
+  "class": "no_asset"
+ },
+ "E3-006": {
+  "class": "needs_review",
+  "reason": "资产归属不明"
+ },
+ "E3-007": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-007-B1-3760",
+   "IMG-E3-007-B1-3761",
+   "IMG-E3-007-B1-3762"
+  ]
+ },
+ "E3-008": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-008-B2-4856",
+   "IMG-E3-008-B2-4857"
+  ]
+ },
+ "E3-009": {
+  "class": "no_asset"
+ },
+ "E3-010": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-010-B3-4996"
+  ]
+ },
+ "E3-011": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-011-B3-4998",
+   "IMG-E3-011-B3-4999"
+  ]
+ },
+ "E3-012": {
+  "class": "no_asset"
+ },
+ "E3-013": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-013-B3-4997"
+  ]
+ },
+ "E3-014": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-015": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-016": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-017": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-018": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-019": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-020": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-021": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-022": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-023": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-024": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-025": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-025-B5-5280"
+  ]
+ },
+ "E3-026": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-027": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-028": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-029": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-030": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-031": {
+  "class": "unrecoverable",
+  "reason": "B5/B6 矢量图表未提取"
+ },
+ "E3-032": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-032-B7-7556"
+  ]
+ },
+ "E3-033": {
+  "class": "no_asset"
+ },
+ "E3-034": {
+  "class": "no_asset"
+ },
+ "E3-035": {
+  "class": "no_asset"
+ },
+ "E3-036": {
+  "class": "no_asset"
+ },
+ "E3-037": {
+  "class": "extracted",
+  "assets": [
+   "IMG-E3-037-B7-7555"
+  ]
+ },
+ "E3-038": {
+  "class": "no_asset"
+ }
+}

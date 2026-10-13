@@ -28,7 +28,7 @@ from layout import (
     render_wide_figure, LAYOUT_CSS, validate_mobile_order,
 )
 from components import esc, article_header
-from autonomous_planner import call_planner
+from autonomous_planner import call_planner, load_assets_for_article
 from integrity_gate import check_article
 from orchestrate import validate_quote_bilingual
 
@@ -255,7 +255,8 @@ def run_one(aid):
             'section': e.get('section'), 'page': e.get('page')}
     # Planner
     try:
-        plan, _prompt = call_planner(aid, meta, blocks_text(sm, 'cn'), blocks_text(sm, 'en'))
+        assets = load_assets_for_article(aid)
+        plan, _prompt = call_planner(aid, meta, blocks_text(sm, 'cn'), blocks_text(sm, 'en'), assets=assets)
     except Exception as ex:
         val['status'] = 'FAIL'
         val['fail_reason'] = f'planner 调用失败: {ex}'[:200]

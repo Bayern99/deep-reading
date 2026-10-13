@@ -1,0 +1,1503 @@
+[
+ {
+  "asset_id": "IMG-E2-001-A1-309",
+  "article_id": "E2-001",
+  "source_page": 1,
+  "source_wsj_page": "A1",
+  "source_region": [
+   373,
+   1352,
+   435,
+   1442
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Chances are they’re already fretting about work, too. The That feeling",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A1-p1-x309.png",
+  "status": "extracted",
+  "assoc_note": "dist=216"
+ },
+ {
+  "asset_id": "IMG-E1-004-A1-312",
+  "article_id": "E1-004",
+  "source_page": 1,
+  "source_wsj_page": "A1",
+  "source_region": [
+   164,
+   207,
+   648,
+   530
+  ],
+  "asset_type": "photo",
+  "caption_cn": "RACE DAY: Runners compete Sunday during the 2026 Chicago Marathon, with more than 55,000 entrants registered. Amos Kipruto of Kenya finished first, with a time of 2:01:09, while Ethiopia’s Hawi Feysa ",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A1-p1-x312.png",
+  "status": "extracted",
+  "assoc_note": "dist=261"
+ },
+ {
+  "asset_id": "IMG-E1-018-A2-948",
+  "article_id": "E1-018",
+  "source_page": 2,
+  "source_wsj_page": "A2",
+  "source_region": [
+   411,
+   1157,
+   772,
+   1479
+  ],
+  "asset_type": "photo",
+  "caption_cn": "“伊萨亚斯”飓风过后",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A2-p2-x948.png",
+  "status": "extracted",
+  "assoc_note": "dist=190"
+ },
+ {
+  "asset_id": "IMG-E1-012-A2-947",
+  "article_id": "E1-012",
+  "source_page": 2,
+  "source_wsj_page": "A2",
+  "source_region": [
+   164,
+   706,
+   525,
+   933
+  ],
+  "asset_type": "photo",
+  "caption_cn": "哈马克参观 Jergens 工厂",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A2-p2-x947.png",
+  "status": "extracted",
+  "assoc_note": "dist=255"
+ },
+ {
+  "asset_id": "IMG-E1-021-A3-1098",
+  "article_id": "E1-021",
+  "source_page": 3,
+  "source_wsj_page": "A3",
+  "source_region": [
+   411,
+   523,
+   648,
+   684
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Suisun市紧盯 California Forever 交易",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A3-p3-x1098.png",
+  "status": "extracted",
+  "assoc_note": "dist=244"
+ },
+ {
+  "asset_id": "IMG-E1-021-A3-1100",
+  "article_id": "E1-021",
+  "source_page": 3,
+  "source_wsj_page": "A3",
+  "source_region": [
+   287,
+   168,
+   772,
+   482
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Suisun市紧盯 California Forever 交易",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A3-p3-x1100.png",
+  "status": "extracted",
+  "assoc_note": "dist=345"
+ },
+ {
+  "asset_id": "IMG-E1-028-A4-1198",
+  "article_id": "E1-028",
+  "source_page": 4,
+  "source_wsj_page": "A4",
+  "source_region": [
+   41,
+   1031,
+   165,
+   1497
+  ],
+  "asset_type": "photo",
+  "caption_cn": "道格·埃姆霍夫",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A4-p4-x1198.png",
+  "status": "extracted",
+  "assoc_note": "dist=261"
+ },
+ {
+  "asset_id": "IMG-E1-028-A4-1199",
+  "article_id": "E1-028",
+  "source_page": 4,
+  "source_wsj_page": "A4",
+  "source_region": [
+   165,
+   1031,
+   276,
+   1497
+  ],
+  "asset_type": "photo",
+  "caption_cn": "道格·埃姆霍夫",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A4-p4-x1199.png",
+  "status": "extracted",
+  "assoc_note": "dist=165"
+ },
+ {
+  "asset_id": "IMG-E1-028-A4-1200",
+  "article_id": "E1-028",
+  "source_page": 4,
+  "source_wsj_page": "A4",
+  "source_region": [
+   411,
+   1109,
+   648,
+   1288
+  ],
+  "asset_type": "photo",
+  "caption_cn": "道格·埃姆霍夫",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A4-p4-x1200.png",
+  "status": "extracted",
+  "assoc_note": "dist=200"
+ },
+ {
+  "asset_id": "IMG-E1-025-A4-1201",
+  "article_id": "E1-025",
+  "source_page": 4,
+  "source_wsj_page": "A4",
+  "source_region": [
+   164,
+   168,
+   648,
+   559
+  ],
+  "asset_type": "photo",
+  "caption_cn": "kos, to attend his wife’s fash- ion show, she said in the re- cording. They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of Gstaad. “I see Nikos every f—ing ",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A4-p4-x1201.png",
+  "status": "extracted",
+  "assoc_note": "dist=448"
+ },
+ {
+  "asset_id": "IMG-E1-026-A4-1202",
+  "article_id": "E1-026",
+  "source_page": 4,
+  "source_wsj_page": "A4",
+  "source_region": [
+   287,
+   581,
+   648,
+   780
+  ],
+  "asset_type": "photo",
+  "caption_cn": "吉尔福伊尔在希腊与鲁比奥会面",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A4-p4-x1202.png",
+  "status": "extracted",
+  "assoc_note": "dist=327"
+ },
+ {
+  "asset_id": "IMG-E1-030-A5-1282",
+  "article_id": "E1-030",
+  "source_page": 5,
+  "source_wsj_page": "A5",
+  "source_region": [
+   400,
+   515,
+   726,
+   745
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A5-p5-x1282.png",
+  "status": "extracted",
+  "assoc_note": "dist=570"
+ },
+ {
+  "asset_id": "IMG-E1-030-A5-1285",
+  "article_id": "E1-030",
+  "source_page": 5,
+  "source_wsj_page": "A5",
+  "source_region": [
+   400,
+   516,
+   630,
+   716
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A5-p5-x1285.png",
+  "status": "extracted",
+  "assoc_note": "dist=532"
+ },
+ {
+  "asset_id": "IMG-E1-030-A5-1286",
+  "article_id": "E1-030",
+  "source_page": 5,
+  "source_wsj_page": "A5",
+  "source_region": [
+   206,
+   795,
+   439,
+   968
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A5-p5-x1286.png",
+  "status": "extracted",
+  "assoc_note": "dist=284"
+ },
+ {
+  "asset_id": "IMG-E1-030-A5-1287",
+  "article_id": "E1-030",
+  "source_page": 5,
+  "source_wsj_page": "A5",
+  "source_region": [
+   272,
+   1191,
+   424,
+   1392
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A5-p5-x1287.png",
+  "status": "extracted",
+  "assoc_note": "dist=533"
+ },
+ {
+  "asset_id": "IMG-E1-033-A6-1403",
+  "article_id": "E1-033",
+  "source_page": 6,
+  "source_wsj_page": "A6",
+  "source_region": [
+   290,
+   1030,
+   769,
+   1319
+  ],
+  "asset_type": "photo",
+  "caption_cn": "If children are the future, their now matters. Their health matters now. Their education and their path",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A6-p6-x1403.png",
+  "status": "extracted",
+  "assoc_note": "dist=659"
+ },
+ {
+  "asset_id": "IMG-E1-033-A6-1404",
+  "article_id": "E1-033",
+  "source_page": 6,
+  "source_wsj_page": "A6",
+  "source_region": [
+   41,
+   1031,
+   276,
+   1445
+  ],
+  "asset_type": "photo",
+  "caption_cn": "8=?*(,\" &=A'?(,,:\" *?8 *8&=7*(,> B<<!1+5*-<;1#$>);54*#2?).",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A6-p6-x1404.png",
+  "status": "extracted",
+  "assoc_note": "dist=573"
+ },
+ {
+  "asset_id": "IMG-E1-032-A6-1405",
+  "article_id": "E1-032",
+  "source_page": 6,
+  "source_wsj_page": "A6",
+  "source_region": [
+   535,
+   831,
+   772,
+   990
+  ],
+  "asset_type": "photo",
+  "caption_cn": "乔·迪杰诺瓦退出调查。",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A6-p6-x1405.png",
+  "status": "extracted",
+  "assoc_note": "dist=510"
+ },
+ {
+  "asset_id": "IMG-E1-031-A6-1406",
+  "article_id": "E1-031",
+  "source_page": 6,
+  "source_wsj_page": "A6",
+  "source_region": [
+   164,
+   168,
+   401,
+   319
+  ],
+  "asset_type": "photo",
+  "caption_cn": "failing government polygraph tests about his foreign contacts. Olsen said the security clear- ance issue wasn’t a factor in his departure but declined to elabo- rate. Trump is frustrated by the lack o",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A6-p6-x1406.png",
+  "status": "extracted",
+  "assoc_note": "dist=279"
+ },
+ {
+  "asset_id": "IMG-E1-035-A7-1530",
+  "article_id": "E1-035",
+  "source_page": 7,
+  "source_wsj_page": "A7",
+  "source_region": [
+   287,
+   178,
+   525,
+   424
+  ],
+  "asset_type": "photo",
+  "caption_cn": "胡塞武装袭击后利雅得机场的景象。",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A7-p7-x1530.png",
+  "status": "extracted",
+  "assoc_note": "dist=330"
+ },
+ {
+  "asset_id": "IMG-E1-040-A8-2421",
+  "article_id": "E1-040",
+  "source_page": 8,
+  "source_wsj_page": "A8",
+  "source_region": [
+   534,
+   111,
+   772,
+   290
+  ],
+  "asset_type": "photo",
+  "caption_cn": "俄罗斯袭击基辅现场的消防员。",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A8-p8-x2421.png",
+  "status": "extracted",
+  "assoc_note": "dist=150"
+ },
+ {
+  "asset_id": "IMG-E1-038-A8-2420",
+  "article_id": "E1-038",
+  "source_page": 8,
+  "source_wsj_page": "A8",
+  "source_region": [
+   40,
+   831,
+   401,
+   1058
+  ],
+  "asset_type": "photo",
+  "caption_cn": "VATICAN Pope Plans Surgery To Remove Nodule Pope Leo XIV announced Sunday he will undergo sur- gery “in the coming days” to remove a nodule on his lung, in the first major health event of his 17-month",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A8-p8-x2420.png",
+  "status": "extracted",
+  "assoc_note": "dist=157"
+ },
+ {
+  "asset_id": "IMG-E1-040-A8-2419",
+  "article_id": "E1-040",
+  "source_page": 8,
+  "source_wsj_page": "A8",
+  "source_region": [
+   63,
+   94,
+   378,
+   760
+  ],
+  "asset_type": "photo",
+  "caption_cn": "俄罗斯袭击基辅现场的消防员。",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A8-p8-x2419.png",
+  "status": "extracted",
+  "assoc_note": "dist=341"
+ },
+ {
+  "asset_id": "IMG-E1-039-A8-2418",
+  "article_id": "E1-039",
+  "source_page": 8,
+  "source_wsj_page": "A8",
+  "source_region": [
+   434,
+   796,
+   770,
+   1476
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A8-p8-x2418.png",
+  "status": "extracted",
+  "assoc_note": "dist=318"
+ },
+ {
+  "asset_id": "IMG-E1-042-A9-2526",
+  "article_id": "E1-042",
+  "source_page": 9,
+  "source_wsj_page": "A9",
+  "source_region": [
+   427,
+   796,
+   770,
+   1476
+  ],
+  "asset_type": "photo",
+  "caption_cn": "新德里警方拘留一名抗议者。",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A9-p9-x2526.png",
+  "status": "extracted",
+  "assoc_note": "dist=445"
+ },
+ {
+  "asset_id": "IMG-E1-041-A9-2527",
+  "article_id": "E1-041",
+  "source_page": 9,
+  "source_wsj_page": "A9",
+  "source_region": [
+   411,
+   111,
+   772,
+   319
+  ],
+  "asset_type": "photo",
+  "caption_cn": "New Delhi Locks Down As Voter Protests Grow Police officers detain a person in New Delhi, India’s capital, amid a mass protest.",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A9-p9-x2527.png",
+  "status": "extracted",
+  "assoc_note": "dist=218"
+ },
+ {
+  "asset_id": "IMG-E1-041-A9-2528",
+  "article_id": "E1-041",
+  "source_page": 9,
+  "source_wsj_page": "A9",
+  "source_region": [
+   42,
+   76,
+   391,
+   756
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A9-p9-x2528.png",
+  "status": "extracted",
+  "assoc_note": "dist=210"
+ },
+ {
+  "asset_id": "IMG-E1-043-A9-2529",
+  "article_id": "E1-043",
+  "source_page": 9,
+  "source_wsj_page": "A9",
+  "source_region": [
+   40,
+   802,
+   401,
+   1020
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Kenyan Club Rejects Bid To Allow Women Into Bar Membership in Muthaiga Country Club in Nairobi is by invitation only.",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A9-p9-x2529.png",
+  "status": "extracted",
+  "assoc_note": "dist=221"
+ },
+ {
+  "asset_id": "IMG-E2-004-A10-2652",
+  "article_id": "E2-004",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   410,
+   902,
+   648,
+   1040
+  ],
+  "asset_type": "photo",
+  "caption_cn": "摩西职员组织发布的视频片段",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2652.png",
+  "status": "extracted",
+  "assoc_note": "dist=637"
+ },
+ {
+  "asset_id": "IMG-E2-004-A10-2661",
+  "article_id": "E2-004",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   164,
+   1320,
+   401,
+   1490
+  ],
+  "asset_type": "photo",
+  "caption_cn": "摩西职员组织发布的视频片段",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2661.png",
+  "status": "extracted",
+  "assoc_note": "dist=148"
+ },
+ {
+  "asset_id": "IMG-E2-004-A10-2663",
+  "article_id": "E2-004",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   411,
+   1320,
+   648,
+   1490
+  ],
+  "asset_type": "photo",
+  "caption_cn": "摩西职员组织发布的视频片段",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2663.png",
+  "status": "extracted",
+  "assoc_note": "dist=376"
+ },
+ {
+  "asset_id": "IMG-E2-005-A11-2759",
+  "article_id": "E2-005",
+  "source_page": 11,
+  "source_wsj_page": "A11",
+  "source_region": [
+   40,
+   148,
+   623,
+   530
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Hoping to Land Next Summer’s $50,000 Internships? Too Late",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A11-p11-x2759.png",
+  "status": "extracted",
+  "assoc_note": "dist=353"
+ },
+ {
+  "asset_id": "IMG-E2-007-A11-2760",
+  "article_id": "E2-007",
+  "source_page": 11,
+  "source_wsj_page": "A11",
+  "source_region": [
+   149,
+   1051,
+   512,
+   1327
+  ],
+  "asset_type": "photo",
+  "caption_cn": "people who are al- ready using nicotine for those purposes. For years, influenc- ers have been talking about nicotine as a wellness product. They’ve promoted smoke-free nicotine formulations in- cludi",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A11-p11-x2760.png",
+  "status": "extracted",
+  "assoc_note": "dist=221"
+ },
+ {
+  "asset_id": "IMG-E2-009-A12-2878",
+  "article_id": "E2-009",
+  "source_page": 12,
+  "source_wsj_page": "A12",
+  "source_region": [
+   142,
+   274,
+   671,
+   626
+  ],
+  "asset_type": "photo",
+  "caption_cn": "DebtTok 视频截图",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A12-p12-x2878.png",
+  "status": "extracted",
+  "assoc_note": "dist=288"
+ },
+ {
+  "asset_id": "IMG-E2-016-A14-3146",
+  "article_id": "E2-016",
+  "source_page": 14,
+  "source_wsj_page": "A14",
+  "source_region": [
+   272,
+   1023,
+   474,
+   1500
+  ],
+  "asset_type": "photo",
+  "caption_cn": "默片服装",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A14-p14-x3146.png",
+  "status": "extracted",
+  "assoc_note": "dist=469"
+ },
+ {
+  "asset_id": "IMG-E2-016-A14-3147",
+  "article_id": "E2-016",
+  "source_page": 14,
+  "source_wsj_page": "A14",
+  "source_region": [
+   292,
+   696,
+   521,
+   952
+  ],
+  "asset_type": "photo",
+  "caption_cn": "默片服装",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A14-p14-x3147.png",
+  "status": "extracted",
+  "assoc_note": "dist=127"
+ },
+ {
+  "asset_id": "IMG-E2-016-A14-3148",
+  "article_id": "E2-016",
+  "source_page": 14,
+  "source_wsj_page": "A14",
+  "source_region": [
+   40,
+   1023,
+   260,
+   1452
+  ],
+  "asset_type": "photo",
+  "caption_cn": "默片服装",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A14-p14-x3148.png",
+  "status": "extracted",
+  "assoc_note": "dist=566"
+ },
+ {
+  "asset_id": "IMG-E2-016-A14-3149",
+  "article_id": "E2-016",
+  "source_page": 14,
+  "source_wsj_page": "A14",
+  "source_region": [
+   486,
+   1051,
+   772,
+   1500
+  ],
+  "asset_type": "photo",
+  "caption_cn": "默片服装",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A14-p14-x3149.png",
+  "status": "extracted",
+  "assoc_note": "dist=465"
+ },
+ {
+  "asset_id": "IMG-E2-015-A14-3150",
+  "article_id": "E2-015",
+  "source_page": 14,
+  "source_wsj_page": "A14",
+  "source_region": [
+   189,
+   120,
+   772,
+   581
+  ],
+  "asset_type": "photo",
+  "caption_cn": "《机器中的女神》展览现场",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A14-p14-x3150.png",
+  "status": "extracted",
+  "assoc_note": "dist=374"
+ },
+ {
+  "asset_id": "IMG-E2-030-A16-3321",
+  "article_id": "E2-030",
+  "source_page": 16,
+  "source_wsj_page": "A16",
+  "source_region": [
+   624,
+   1336,
+   771,
+   1484
+  ],
+  "asset_type": "photo",
+  "caption_cn": "胡椒……还有盐（漫画说明）",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A16-p16-x3321.png",
+  "status": "extracted",
+  "assoc_note": "dist=127"
+ },
+ {
+  "asset_id": "IMG-E2-032-A17-3404",
+  "article_id": "E2-032",
+  "source_page": 17,
+  "source_wsj_page": "A17",
+  "source_region": [
+   338,
+   159,
+   623,
+   367
+  ],
+  "asset_type": "photo",
+  "caption_cn": "基辅遭喷气式无人机袭击（图片说明）",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A17-p17-x3404.png",
+  "status": "extracted",
+  "assoc_note": "dist=113"
+ },
+ {
+  "asset_id": "IMG-E2-035-A18-3474",
+  "article_id": "E2-035",
+  "source_page": 18,
+  "source_wsj_page": "A18",
+  "source_region": [
+   40,
+   120,
+   623,
+   492
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Late Interceptions Doom Texas The No. 1 Longhorns lost to Oklahoma after a late wobble by quarterback Arch Manning",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A18-p18-x3474.png",
+  "status": "extracted",
+  "assoc_note": "dist=352"
+ },
+ {
+  "asset_id": "IMG-E2-035-A18-3475",
+  "article_id": "E2-035",
+  "source_page": 18,
+  "source_wsj_page": "A18",
+  "source_region": [
+   189,
+   581,
+   681,
+   924
+  ],
+  "asset_type": "photo",
+  "caption_cn": "ning’s turnovers led directly to 10 Sooner points. “There’s a level of anger and frustration,” Texas coach Steve Sarkisian said. The puzzling thing about Sat- urday’s meltdown wasn’t simply that the N",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A18-p18-x3475.png",
+  "status": "extracted",
+  "assoc_note": "dist=467"
+ },
+ {
+  "asset_id": "IMG-E2-038-A18-3476",
+  "article_id": "E2-038",
+  "source_page": 18,
+  "source_wsj_page": "A18",
+  "source_region": [
+   486,
+   1042,
+   772,
+   1394
+  ],
+  "asset_type": "photo",
+  "caption_cn": "文尼·毛里（照片说明）",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A18-p18-x3476.png",
+  "status": "extracted",
+  "assoc_note": "dist=218"
+ },
+ {
+  "asset_id": "IMG-E3-007-B1-3760",
+  "article_id": "E3-007",
+  "source_page": 19,
+  "source_wsj_page": "B1",
+  "source_region": [
+   411,
+   946,
+   772,
+   1173
+  ],
+  "asset_type": "photo",
+  "caption_cn": "From the company’s Shanghai studios, crews broadcast live on apps for 12 hours a day. ing after seeing an ad. Reckitt’s success capitaliz- ing on Chinese consumers’ shift points to how Western firms t",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B1-p19-x3760.png",
+  "status": "extracted",
+  "assoc_note": "dist=242"
+ },
+ {
+  "asset_id": "IMG-E3-001-B1-3763",
+  "article_id": "E3-001",
+  "source_page": 19,
+  "source_wsj_page": "B1",
+  "source_region": [
+   40,
+   187,
+   525,
+   501
+  ],
+  "asset_type": "photo",
+  "caption_cn": "New stations have more plugs and powerful chargers to cut down on wait time. The Upside to EV Slump: Charging Is Getting Better",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B1-p19-x3763.png",
+  "status": "extracted",
+  "assoc_note": "dist=299"
+ },
+ {
+  "asset_id": "IMG-E3-006-B2-4858",
+  "article_id": "E3-006",
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   164,
+   312,
+   525,
+   540
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Hood Summit attendees, above, listen to Robinhood CEO Vlad Tenev, below left, deliver the event’s keynote address in Houston last month. Below right, merchandise at the summit.",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4858.png",
+  "status": "needs_review",
+  "assoc_note": "too_far dist=873"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4856",
+  "article_id": "E3-008",
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   287,
+   571,
+   525,
+   751
+  ],
+  "asset_type": "photo",
+  "caption_cn": "“If you have a couple high- conviction names, that’s all you need to become extremely wealthy,” he said. “But you have to be right.” Six years ago, Sara Brescia O’Rear started buying as many shares of",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4856.png",
+  "status": "extracted",
+  "assoc_note": "dist=667"
+ },
+ {
+  "asset_id": "IMG-E3-013-B3-4997",
+  "article_id": "E3-013",
+  "source_page": 21,
+  "source_wsj_page": "B3",
+  "source_region": [
+   411,
+   1023,
+   772,
+   1231
+  ],
+  "asset_type": "photo",
+  "caption_cn": "apart for its focus on customer service, according to industry analysts. Company greeters take customer orders at their car windows when lines begin to form. Baristas—which the company calls “broistas",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B3-p21-x4997.png",
+  "status": "extracted",
+  "assoc_note": "dist=356"
+ },
+ {
+  "asset_id": "IMG-E3-011-B3-4998",
+  "article_id": "E3-011",
+  "source_page": 21,
+  "source_wsj_page": "B3",
+  "source_region": [
+   287,
+   168,
+   648,
+   386
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Alexey Andreev, exterior de- sign lead at Jaguar Land Rover, after the production model was uncovered at an af- ternoon preview event in New York. The space around him was decorated with the new car’s",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B3-p21-x4998.png",
+  "status": "extracted",
+  "assoc_note": "dist=340"
+ },
+ {
+  "asset_id": "IMG-E3-011-B3-4999",
+  "article_id": "E3-011",
+  "source_page": 21,
+  "source_wsj_page": "B3",
+  "source_region": [
+   534,
+   600,
+   772,
+   770
+  ],
+  "asset_type": "photo",
+  "caption_cn": "The film earned $27.5 million in North American theaters. Estimated Box-OfficeFigures, Through Sunday Sales, InMillions Film Distributor Weekend* Cumulative % Change 1. Other Mommy Universal $27.5 $27",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B3-p21-x4999.png",
+  "status": "extracted",
+  "assoc_note": "dist=114"
+ },
+ {
+  "asset_id": "IMG-E3-032-B7-7556",
+  "article_id": "E3-032",
+  "source_page": 25,
+  "source_wsj_page": "B7",
+  "source_region": [
+   189,
+   274,
+   623,
+   568
+  ],
+  "asset_type": "photo",
+  "caption_cn": "They stepped in to fill the gap in existing-home inventory. Sales of new homes rose 7% between 2022 and 2025. 12 14 16 18% Sales incentives on newly built homes as a percentage of revenue for Lennar B",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B7-p25-x7556.png",
+  "status": "extracted",
+  "assoc_note": "dist=438"
+ },
+ {
+  "asset_id": "IMG-E3-037-B7-7555",
+  "article_id": "E3-037",
+  "source_page": 25,
+  "source_wsj_page": "B7",
+  "source_region": [
+   369,
+   1234,
+   687,
+   1413
+  ],
+  "asset_type": "photo",
+  "caption_cn": "Core, Aug. up 0.2% Sep.,expected up 0.3% Retailsales, ex. autos Aug.,previous up 1.4% Sep.,expected up 0.6% Retailsales Aug.,previous up 1.2% Sep.,expected up0.4% EIAreport: natural-gas Previouschange",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B7-p25-x7555.png",
+  "status": "extracted",
+  "assoc_note": "dist=235"
+ },
+ {
+  "asset_id": "IMG-E2-002-A1-310",
+  "article_id": "E2-002",
+  "source_page": 1,
+  "source_wsj_page": "A1",
+  "source_region": [
+   416,
+   916,
+   520,
+   1077
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A1-p1-x310.png",
+  "status": "extracted",
+  "assoc_note": "dist=135 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-010-A1-311",
+  "article_id": "E2-010",
+  "source_page": 1,
+  "source_wsj_page": "A1",
+  "source_region": [
+   292,
+   917,
+   396,
+   1077
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A1-p1-x311.png",
+  "status": "extracted",
+  "assoc_note": "dist=181 (small img)"
+ },
+ {
+  "asset_id": "IMG-E1-021-A3-1099",
+  "article_id": "E1-021",
+  "source_page": 3,
+  "source_wsj_page": "A3",
+  "source_region": [
+   287,
+   405,
+   402,
+   559
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A3-p3-x1099.png",
+  "status": "extracted",
+  "assoc_note": "dist=106 (small img)"
+ },
+ {
+  "asset_id": "IMG-E1-024-A3-1101",
+  "article_id": "E1-024",
+  "source_page": 3,
+  "source_wsj_page": "A3",
+  "source_region": [
+   411,
+   907,
+   525,
+   1039
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A3-p3-x1101.png",
+  "status": "extracted",
+  "assoc_note": "dist=285 (small img)"
+ },
+ {
+  "asset_id": "IMG-E1-030-A5-1284",
+  "article_id": "E1-030",
+  "source_page": 5,
+  "source_wsj_page": "A5",
+  "source_region": [
+   630,
+   516,
+   729,
+   749
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A5-p5-x1284.png",
+  "status": "extracted",
+  "assoc_note": "dist=678 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-003-A10-2646",
+  "article_id": "E2-003",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   275,
+   617,
+   340,
+   687
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2646.png",
+  "status": "extracted",
+  "assoc_note": "dist=276 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-004-A10-2653",
+  "article_id": "E2-004",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   163,
+   902,
+   277,
+   1040
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2653.png",
+  "status": "extracted",
+  "assoc_note": "dist=525 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-004-A10-2654",
+  "article_id": "E2-004",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   287,
+   902,
+   401,
+   1040
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2654.png",
+  "status": "extracted",
+  "assoc_note": "dist=552 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-003-A10-2657",
+  "article_id": "E2-003",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   418,
+   407,
+   485,
+   507
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2657.png",
+  "status": "extracted",
+  "assoc_note": "dist=237 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-003-A10-2659",
+  "article_id": "E2-003",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   192,
+   556,
+   268,
+   668
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2659.png",
+  "status": "extracted",
+  "assoc_note": "dist=223 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-003-A10-2662",
+  "article_id": "E2-003",
+  "source_page": 10,
+  "source_wsj_page": "A10",
+  "source_region": [
+   275,
+   617,
+   339,
+   687
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A10-p10-x2662.png",
+  "status": "extracted",
+  "assoc_note": "dist=276 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-012-A12-2877",
+  "article_id": "E2-012",
+  "source_page": 12,
+  "source_wsj_page": "A12",
+  "source_region": [
+   536,
+   808,
+   648,
+   1000
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A12-p12-x2877.png",
+  "status": "extracted",
+  "assoc_note": "dist=119 (small img)"
+ },
+ {
+  "asset_id": "IMG-E2-018-A15-3238",
+  "article_id": "E2-018",
+  "source_page": 15,
+  "source_wsj_page": "A15",
+  "source_region": [
+   535,
+   399,
+   652,
+   558
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/A15-p15-x3238.png",
+  "status": "extracted",
+  "assoc_note": "dist=258 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-007-B1-3761",
+  "article_id": "E3-007",
+  "source_page": 19,
+  "source_wsj_page": "B1",
+  "source_region": [
+   663,
+   1330,
+   767,
+   1423
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B1-p19-x3761.png",
+  "status": "extracted",
+  "assoc_note": "dist=119 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-007-B1-3762",
+  "article_id": "E3-007",
+  "source_page": 19,
+  "source_wsj_page": "B1",
+  "source_region": [
+   539,
+   1330,
+   643,
+   1423
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B1-p19-x3762.png",
+  "status": "extracted",
+  "assoc_note": "dist=85 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-003-B1-3770",
+  "article_id": "E3-003",
+  "source_page": 19,
+  "source_wsj_page": "B1",
+  "source_region": [
+   658,
+   658,
+   772,
+   808
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B1-p19-x3770.png",
+  "status": "extracted",
+  "assoc_note": "dist=218 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4859",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   40,
+   111,
+   135,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4859.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1098 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4857",
+  "article_id": "E3-008",
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   164,
+   571,
+   278,
+   750
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4857.png",
+  "status": "extracted",
+  "assoc_note": "dist=621 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4835",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   143,
+   110,
+   237,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4835.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1097 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4834",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   554,
+   111,
+   648,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4834.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1184 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4833",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   451,
+   111,
+   546,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4833.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1149 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4832",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   348,
+   111,
+   443,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4832.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1122 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-008-B2-4831",
+  "article_id": null,
+  "source_page": 20,
+  "source_wsj_page": "B2",
+  "source_region": [
+   246,
+   111,
+   340,
+   252
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B2-p20-x4831.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1105 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-010-B3-4996",
+  "article_id": "E3-010",
+  "source_page": 21,
+  "source_wsj_page": "B3",
+  "source_region": [
+   164,
+   619,
+   278,
+   789
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B3-p21-x4996.png",
+  "status": "extracted",
+  "assoc_note": "dist=226 (small img)"
+ },
+ {
+  "asset_id": "IMG-E3-025-B5-5280",
+  "article_id": "E3-025",
+  "source_page": 23,
+  "source_wsj_page": "B5",
+  "source_region": [
+   380,
+   1075,
+   527,
+   1195
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B5-p23-x5280.png",
+  "status": "extracted",
+  "assoc_note": "dist=218 (small img)"
+ },
+ {
+  "asset_id": "IMG-UNASSIGNED-B8-8522",
+  "article_id": null,
+  "source_page": 26,
+  "source_wsj_page": "B8",
+  "source_region": [
+   90,
+   704,
+   159,
+   774
+  ],
+  "asset_type": "photo",
+  "caption_cn": "",
+  "caption_en": "",
+  "credit": "",
+  "file": "assets/B8-p26-x8522.png",
+  "status": "needs_review",
+  "assoc_note": "dist=1000000000 (small img)"
+ }
+]
