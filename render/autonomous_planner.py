@@ -72,7 +72,7 @@ PLANNER_PROMPT = """你是 WSJ 深读的 Editorial Planner。通读全文后，�
 
 **Reading Aid**（data 逐字来自正文；日期不加年份）：
 - key_figures：数字同属一叙事问题且需比较；口径不一则拒绝
-- timeline：≥4 可定日期事件，日期原文逐字出现
+- timeline：≥4 可定日期事件，日期原文逐字出现；输出 events[] 每项含 date/event（中文逐字）+ t_en/text_en（英文）
 - quote：具名人物直接引语，中英同一片段
 - data_table：仅 data_table 类型
 
