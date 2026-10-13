@@ -41,7 +41,41 @@ def adapt_plan(auto_plan, article):
                 'data': aid.get('data', {}),
                 'slot': aid.get('slot', {'at': 'after_body'}),
             })
+    _validate_output(out)
     return out
+
+
+def _validate_output(out):
+    """结构验证：任何会导致空白渲染的问题直接抛异常，不许静默通过。"""
+    for cp in out.get('component_plan', []):
+        comp = cp.get('component')
+        data = cp.get('data', {})
+        if comp == 'timeline':
+            tl = data.get('timeline', {})
+            entries = tl.get('entries', [])
+            if not entries:
+                raise ValueError('timeline 无 entries，会空白渲染')
+            for e in entries:
+                if not e.get('text_cn'):
+                    raise ValueError(f'timeline entry 缺 text_cn: {e}')
+                # 双语同源检查：有英文则中英长度比应在合理范围
+                if e.get('text_en'):
+                    cn_len = len(e['text_cn'])
+                    en_len = len(e['text_en'].split())
+                    if cn_len > 10 and (en_len / cn_len < 0.2 or en_len / cn_len > 4):
+                        raise ValueError(
+                            f'timeline 中英疑似不同源: CN{cn_len}字 EN{en_len}词')
+        elif comp == 'quote':
+            q = data.get('quote', {})
+            if not q.get('text_cn') or not q.get('text_en'):
+                raise ValueError('quote 缺中英文本，会空白渲染')
+        elif comp == 'key_figures':
+            items = data.get('key_figures', {}).get('items', [])
+            if not items:
+                raise ValueError('key_figures 无 items，会空白渲染')
+            for it in items:
+                if not it.get('value_cn'):
+                    raise ValueError(f'key_figures 缺 value_cn: {it}')
 
 
 def _adapt_timeline(aid):
@@ -62,12 +96,13 @@ def _adapt_timeline(aid):
 
 
 def _adapt_quote(aid):
-    q = aid.get('quote') or aid.get('data', {}).get('quote', {})
+    # 兼容两种格式：{quote: {text_cn...}} 或 {quote_cn/quote_en/speaker_cn...}
+    q = aid.get('quote') or aid.get('data', {}).get('quote', {}) or aid
     return {
-        'text_cn': q.get('text_cn') or '',
-        'text_en': q.get('text_en') or '',
-        'attr_cn': q.get('attr_cn') or q.get('attr') or '',
-        'attr_en': q.get('attr_en') or '',
+        'text_cn': q.get('text_cn') or aid.get('quote_cn') or '',
+        'text_en': q.get('text_en') or aid.get('quote_en') or '',
+        'attr_cn': q.get('attr_cn') or aid.get('speaker_cn') or '',
+        'attr_en': q.get('attr_en') or aid.get('speaker_en') or '',
     }
 
 

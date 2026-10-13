@@ -34,7 +34,7 @@ TURN_RES = [
     re.compile(r'请见.*页.*完|未完待续\s*$'),
 ]
 
-BRIEF_TYPES = {'brief', 'briefs', 'digest', 'headline'}
+BRIEF_TYPES = {'brief', 'briefs', 'digest', 'headline', 'photo_caption', 'data_table', 'letter', 'correction'}
 
 
 def _paras(text):
@@ -83,7 +83,7 @@ def check_article(article):
 
     # ③ declutter 标记未处理 → 拦截
     # （article['declutter_issues'] 为已确认列表；若扫描有新命中且未确认则拦）
-    confirmed = article.get('declutter_confirmed') or []
+    confirmed = [tuple(c) for c in (article.get('declutter_confirmed') or [])]
     fresh = _declutter_scan(article)
     unconfirmed = [i for i in fresh
                    if (i['field'], i['para_idx'], i['type']) not in confirmed]
