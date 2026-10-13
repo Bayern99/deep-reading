@@ -364,7 +364,7 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     body, order = render_issue(
         final, modules_all, images_all, img_cache, issue,
         gate_status=gate_status, plans_all=plans_all,
-        asset_loader=asset_loader, curation=curation)
+        asset_loader=asset_loader, curation=curation, issue_dir=issue_dir)
 
     enh_css = (
         TEXT_CSS + LAYOUT_CSS +
@@ -384,7 +384,10 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     )
 
     def wrap_doc(body_html, title_suffix=''):
-        title = 'WSJ 深读 · 2026年10月12日' + (f' · {title_suffix}' if title_suffix else '')
+        from issue import load_front as _lf
+        _fr = _lf(issue_dir)
+        dcn = _fr.get('date_cn') or issue
+        title = f'WSJ 深读 · {dcn}' + (f' · {title_suffix}' if title_suffix else '')
         return f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -420,7 +423,7 @@ def build_issue(issue, plans_all=None, write_baseline=True):
         body_b, _ = render_issue(
             final, modules_all, images_all, img_cache, issue,
             gate_status=gate_status, plans_all={}, asset_loader=asset_loader,
-            curation=curation)
+            curation=curation, issue_dir=issue_dir)
         # Force pure typography for the four reboot articles too: drop modules
         # only where we want before/after. Baseline = no enhanced plans.
         base_out = os.path.join(dist, 'baseline.html')
@@ -470,11 +473,12 @@ def main():
             # WARN/BLOCK 只进待审核区
             assert f'id="review-{e["id"]}"' in html, f'missing review {e["id"]}'
     # 阅读顺序 = 分组顺序
-    from issue import reading_order
+    from issue import reading_order, load_front
     pub_final = [e for e in final
                  if gate_status.get(e['id'], ('pass', []))[0] == 'pass'
                  and e['id'] not in excluded]
-    assert [e['id'] for e in order] == [e['id'] for e in reading_order(pub_final)]
+    _issue_dir = os.path.join(os.path.dirname(BASE), args.issue)
+    assert [e['id'] for e in order] == [e['id'] for e in reading_order(pub_final, load_front(_issue_dir))]
     # 每篇段落数一致（正文逐字）
     from components import paras as _paras
     for e in final:

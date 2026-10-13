@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """WSJ 深读 · 整期组装（头版选稿 / 目录 / 阅读顺序 / 导航）
-读者表面不含流水线标签。正文仍按版块顺序，digest 与 A1 头条提前。
+读者表面不含流水线标签。每期选稿来自 <issue>/front.json。
 """
-from components import esc
+import json
+import os
+from components import esc, set_issue_meta
 from article import render_article, article_nav
 from enhanced_render import render_enhanced_article
-
 
 GROUP_DEFS = [
     ('p1', 'P1 必读', 'P1 MUST READ'),
@@ -54,19 +55,28 @@ def section_of(e):
             return sid
     return 'life'
 
+def load_front(issue_dir):
+    p = os.path.join(issue_dir or '', 'front.json')
+    if issue_dir and os.path.isfile(p):
+        with open(p, encoding='utf-8') as f:
+            return json.load(f)
+    return {}
 
-def _story_weight(e):
+
+def _story_weight(e, lead_id=None):
     t = e.get('type')
     if t in ('photo_caption', 'index_digest', 'data_table', 'correction'):
         return 9
-    if e.get('id') == 'E1-005':
+    if lead_id and e.get('id') == lead_id:
         return -1
     pri = {'P1': 0, 'P2': 1, 'P3': 2}.get(e.get('priority'), 3)
     return pri
 
 
-def reading_order(articles):
-    """头版：digest + A1 长文（P1 先）+ 其余 A1；其后按版块。"""
+def reading_order(articles, front=None):
+    """digest + A1 长文（front.lead_id 先）+ 其余按版块。"""
+    front = front or {}
+    lead_id = front.get('lead_id')
     used = set()
     order = []
 
@@ -78,13 +88,13 @@ def reading_order(articles):
     a1 = [e for e in articles
           if e.get('page') == 'A1' and e['id'] not in used
           and e.get('type') not in ('data_table', 'photo_caption', 'index_digest')]
-    a1.sort(key=_story_weight)
+    a1.sort(key=lambda e: _story_weight(e, lead_id))
     order.extend(a1)
     used.update(e['id'] for e in a1)
 
     for sid, *_rest in SECTION_DEFS:
         rest = [e for e in articles if e['id'] not in used and section_of(e) == sid]
-        rest.sort(key=_story_weight)
+        rest.sort(key=lambda e: _story_weight(e, lead_id))
         order.extend(rest)
         used.update(e['id'] for e in rest)
     leftover = [e for e in articles if e['id'] not in used]
@@ -92,15 +102,29 @@ def reading_order(articles):
     return order
 
 
-def render_front(order):
-    """头版选稿：1 条主导 + 2 条次条（只要 A1 新闻，不要生活稿）。"""
-    leads = [e for e in order
-             if e.get('page') == 'A1'
-             and e.get('type') == 'article'
-             and e.get('section') == 'News']
-    if not leads:
+
+def render_front(order, front=None):
+    """头版：1 主导 + 2 次条。优先 front.json；否则 A1 新闻。"""
+    front = front or {}
+    by_id = {e['id']: e for e in order}
+    news = [e for e in order
+            if e.get('page') == 'A1'
+            and e.get('type') == 'article'
+            and e.get('section') == 'News']
+    hero = by_id.get(front.get('lead_id')) if front.get('lead_id') else None
+    if hero is None:
+        hero = news[0] if news else None
+    if hero is None:
         return ''
-    hero, rest = leads[0], leads[1:3]
+    rest = []
+    for aid in front.get('also_ids') or []:
+        e = by_id.get(aid)
+        if e and e['id'] != hero['id']:
+            rest.append(e)
+    if not rest:
+        rest = [e for e in news if e['id'] != hero['id']][:2]
+    else:
+        rest = rest[:2]
     h = ['<section class="front-pack" aria-label="今日要闻">']
     h.append('<a class="front-hero" href="#s-%s">' % hero['id'])
     h.append('<div class="kicker"><span class="kbar"></span>'
@@ -162,10 +186,11 @@ def _section_break(sid, cn, en):
 
 def render_issue(articles, modules_all, images_all, img_cache, issue_date,
                  gate_status=None, plans_all=None, asset_loader=None,
-                 curation=None):
+                 curation=None, issue_dir=None):
     """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。
     plans_all: editorial-plans by article id → enhanced production path.
-    curation: render/curation.json — exclude（撤下死内容）与 data_treatment（数据稿编辑处理）。
+    curation: render/curation.json — exclude 与 data_treatment。
+    issue_dir: 用于读取该期 front.json。
     """
     plans_all = plans_all or {}
     curation = curation or {}
@@ -179,15 +204,29 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
                            if gate_status.get(e['id'], ('pass', []))[0] in ('warn', 'block')]
     else:
         pub_articles, review_articles = articles, []
-    order = reading_order(pub_articles)
+    if issue_dir is None and issue_date:
+        issue_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), issue_date)
+        if not os.path.isdir(issue_dir):
+            issue_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', issue_date)
+    front = load_front(issue_dir)
+    order = reading_order(pub_articles, front)
+    date_cn = front.get('date_cn') or issue_date or ''
+    date_en = front.get('date_en') or issue_date or ''
+    wd_cn = front.get('weekday_cn') or ''
+    wd_en = front.get('weekday_en') or ''
+    meta_cn = (date_cn + (' ' + wd_cn if wd_cn else '')).strip()
+    meta_en = ((wd_en + ', ' if wd_en else '') + date_en).strip(', ')
+    dek_cn = front.get('dek_cn') or ''
+    dek_en = front.get('dek_en') or ''
+    set_issue_meta(date_cn, date_en)
     parts = []
 
-    parts.append('''
+    parts.append(f'''
 <header class="masthead">
   <a class="skip" href="#toc">跳到目录</a>
   <div class="mast-in">
     <div class="brand"><span class="sq"></span><span class="wm k-cn">WSJ 深读</span><span class="wm k-en" hidden>WSJ Deep Read</span></div>
-    <div class="mast-meta"><span class="k-cn">2026年10月12日 星期一</span><span class="k-en" hidden>Mon, Oct 12, 2026</span></div>
+    <div class="mast-meta"><span class="k-cn">{esc(meta_cn)}</span><span class="k-en" hidden>{esc(meta_en)}</span></div>
     <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文">
       <span class="k-cn">EN</span><span class="k-en" hidden>中文</span>
     </button>
@@ -196,12 +235,12 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
 <div class="progress" aria-hidden="true"><span id="pbar"></span></div>
 <div class="issue-hero">
   <div class="issue-kicker"><span class="kbar"></span><span class="k-cn">华尔街日报 · 每日深读</span><span class="k-en" hidden>THE WALL STREET JOURNAL · DAILY DEEP READ</span></div>
-  <h1 class="issue-title"><span class="k-cn">2026年10月12日</span><span class="k-en" hidden>October 12, 2026</span></h1>
-  <p class="issue-dek"><span class="k-cn">胡塞袭击利雅得机场。今日头版。</span><span class="k-en" hidden>Houthis strike Riyadh's airport. Today's front page.</span></p>
+  <h1 class="issue-title"><span class="k-cn">{esc(date_cn)}</span><span class="k-en" hidden>{esc(date_en)}</span></h1>
+  <p class="issue-dek"><span class="k-cn">{esc(dek_cn)}</span><span class="k-en" hidden>{esc(dek_en)}</span></p>
 </div>''')
 
     parts.append('<main id="issue">')
-    parts.append(render_front(order))
+    parts.append(render_front(order, front))
     parts.append(render_toc(order))
 
     last_sid = None
@@ -237,10 +276,10 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
         parts.append('</section>')
     parts.append('</main>')
 
-    parts.append('''
+    parts.append(f'''
 <footer class="issue-foot">
   <div class="arule"></div>
-  <p><span class="k-cn">《华尔街日报》 2026年10月12日</span><span class="k-en" hidden>The Wall Street Journal, Oct 12, 2026</span></p>
+  <p><span class="k-cn">《华尔街日报》 {esc(date_cn)}</span><span class="k-en" hidden>The Wall Street Journal, {esc(date_en)}</span></p>
   <button id="toTop" class="pill"><span class="k-cn">回顶部</span><span class="k-en" hidden>Back to top</span></button>
 </footer>''')
     return '\n'.join(parts), order

@@ -1,5 +1,14 @@
 # Agent instructions
 
+Daily newspaper, not a lab dump. Content changes every issue; principles do not.
+
+**Before building or restyling an issue, read `FOUNDATION.md` then `DESIGN.md`.**
+
+- `FOUNDATION.md` — product constitution (reader surface, front.json, invariants, next).
+- `DESIGN.md` — visual canon (AJ × WIRED tokens, type, components).
+- Build: `cd render && python3 build.py --issue YYYY-MM-DD` → `../YYYY-MM-DD/dist/index.html`.
+- Per-issue selection: `<date>/front.json`. Do not hardcode story ids in the renderer.
+
 ## Agent skills
 
 ### Issue tracker

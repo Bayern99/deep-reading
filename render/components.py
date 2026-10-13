@@ -5,10 +5,16 @@
 """
 import html
 import re
-
-
 def esc(s):
     return html.escape(s or '', quote=True).replace('&#x27;', "'")
+
+
+ISSUE_META = {'date_cn': '', 'date_en': ''}
+
+
+def set_issue_meta(date_cn, date_en):
+    ISSUE_META['date_cn'] = date_cn or ''
+    ISSUE_META['date_en'] = date_en or ''
 
 
 def pair(cn, en, tag='p', cls=''):
@@ -84,8 +90,8 @@ def article_header(e):
     if e.get('byline'):
         h.append(f'''<div class="byline">
       <span class="who">{esc(e.get('byline'))}</span>
-      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》{esc(e.get('page') or '')}</span>
-      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, {esc(e.get('page') or '')}</span>
+      <span class="meta k-cn">{esc(ISSUE_META.get('date_cn') or '')} · 《华尔街日报》{esc(e.get('page') or '')}</span>
+      <span class="meta k-en" hidden>{esc(ISSUE_META.get('date_en') or '')} · The Wall Street Journal, {esc(e.get('page') or '')}</span>
     </div>''')
     h.append('</header>\n  <div class="arule"></div>')
     return '\n'.join(h)
