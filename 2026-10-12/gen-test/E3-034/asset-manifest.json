@@ -1,0 +1,14 @@
+[
+ {
+  "file": "chart-01.png",
+  "page": "B7",
+  "region": {
+   "x1": 484,
+   "y1": 584,
+   "x2": 647,
+   "y2": 705
+  },
+  "description": "Line chart: 'Share-price performance' — AT&T, Verizon Communications, T-Mobile US (intraday 10 a.m.-4 p.m.). Source: FactSet.",
+  "relation": "OCR illustration marker inside this article's segment (reading order), but caption 'Share-price performance' matches the neighboring item 'Share-price performance: Wireless Firms' Day of Woe' (E3-036); planner must verify it belongs to this article per rule 6"
+ }
+]

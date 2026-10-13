@@ -1,0 +1,73 @@
+{
+ "article_id": "E2-010",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "The psychological phenomenon of 'Sunday scaries' and its increasing prevalence among US workers.",
+  "structure": [
+   "profile"
+  ],
+  "key_facts": [
+   "Jill Davis experiences anxiety every Sunday afternoon (p1)",
+   "Merriam-Webster added 'Sunday scares' to its dictionary last month (p3)",
+   "More than half of U.S. workers report experiencing this anxiety (p4)"
+  ],
+  "key_numbers": [
+   "More than half (p4)"
+  ],
+  "quotes": [
+   {
+    "text": "Am I organized and ready enough? Am I prepared for this meeting?",
+    "speaker": "Jill Davis",
+    "para": 2,
+    "why": "Directly illustrates the internal monologue of the anxiety described in the article."
+   }
+  ],
+  "timeline_events": [],
+  "visual_assets": [],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No component repeats body text verbatim; quote is a direct extraction, key_figures condenses the statistic."
+ },
+ "component_plan": [
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "p2 contains a direct, striking quote from Jill Davis that encapsulates the specific anxiety described in the article.",
+   "data": {
+    "quote": {
+     "text_cn": "“我是否安排妥当、准备充分？我为这次会议做好准备了吗？”",
+     "text_en": "Am I organized and ready enough? Am I prepared for this meeting?",
+     "attr_cn": "吉尔·戴维斯，非营利组织发展总监",
+     "attr_en": "Jill Davis, Chief Development Officer"
+    }
+   }
+  },
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 3
+   },
+   "reason": "p4 provides a significant statistic ('More than half of U.S. workers') that quantifies the prevalence of the issue, fitting the key_figures component for a single impactful data point.",
+   "data": {
+    "items": [
+     {
+      "value_cn": "超过半数",
+      "value_en": "More than half",
+      "label_cn": "美国劳动者",
+      "label_en": "U.S. workers",
+      "note_cn": "表示经历过“周日恐慌”",
+      "note_en": "report experiencing Sunday scaries"
+     }
+    ]
+   }
+  }
+ ],
+ "created": "2026-10-13"
+}

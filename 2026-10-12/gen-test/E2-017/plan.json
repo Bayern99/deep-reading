@@ -1,0 +1,94 @@
+{
+ "article_id": "E2-017",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "The impending collapse of AI data-center costs due to the 'factor of 10' efficiency shift to edge devices.",
+  "structure": [
+   "argument"
+  ],
+  "key_facts": [
+   "US AI lab market share dropped from 70% to 30% (p3)",
+   "Chinese open-weight models cost 90% less than US counterparts (p3)",
+   "PrismLl compressed Qwen3.8 27B to under 6GB (p3)",
+   "Qualcomm NPU runs 30B parameter model in 3GB memory (p4)",
+   "Reflection AI claims 3-4x less inference compute (p7)"
+  ],
+  "key_numbers": [
+   "70% to 30% (p3)",
+   "90% (p3)",
+   "88.7% (p3)",
+   "3-4x (p7)"
+  ],
+  "quotes": [
+   {
+    "text": "We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.",
+    "speaker": "Steve Jutreson",
+    "para": 2,
+    "why": "Defines the core thesis of the article"
+   }
+  ],
+  "timeline_events": [],
+  "visual_assets": [],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No component repeats body text verbatim; key_figures and quote are condensed or direct extracts."
+ },
+ "component_plan": [
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 2
+   },
+   "reason": "p3 contains multiple distinct data points (market share, price diff, accuracy) that support the 'factor of 10' argument.",
+   "data": {
+    "items": [
+     {
+      "value_cn": "70% → 30%",
+      "value_en": "70% → 30%",
+      "label_cn": "美国AI实验室市场份额",
+      "label_en": "US AI Lab Market Share",
+      "note_cn": "从去年到今年",
+      "note_en": "Last year to today"
+     },
+     {
+      "value_cn": "90%",
+      "value_en": "90%",
+      "label_cn": "中国开源模型价格优势",
+      "label_en": "Chinese Model Price Advantage",
+      "note_cn": "相比美国模型",
+      "note_en": "vs. US models"
+     },
+     {
+      "value_cn": "88.7%",
+      "value_en": "88.7%",
+      "label_cn": "本地小模型回答准确率",
+      "label_en": "Local Small Model Accuracy",
+      "note_cn": "单轮对话及推理",
+      "note_en": "Single-turn chat & reasoning"
+     }
+    ]
+   }
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "p2 contains a direct quote from Steve Jutreson that defines the 'factor of 10' concept central to the article's argument.",
+   "data": {
+    "quote": {
+     "text_cn": "“通常当一种新技术比旧技术提升10倍时，我们就会看到技术变革的发生。这种提升可以体现在性能提高10倍，或者成本降低10倍，有时两者兼而有之。”",
+     "text_en": "“We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.”",
+     "attr_cn": "史蒂夫·朱特雷森，风险投资家",
+     "attr_en": "Steve Jutreson, Venture Capitalist"
+    }
+   }
+  }
+ ],
+ "created": "2026-10-13"
+}

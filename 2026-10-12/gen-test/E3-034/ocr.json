@@ -1,0 +1,55 @@
+{
+ "article_id": "E3-034",
+ "page": "B7",
+ "text": "Investors were rattled by contagion fears over a bond-market meltdown in France. But when it comes to risks looming over the market next year, they have bigger things to worry about—at least according to George Saravels, head of foreign-exchange research at Deutsche Bank, who summarized his conversations with clients this week like this:\n\n\"The biggest systemic risk in the market next year is not France but 'something going wrong' in the AI ecosystem: a safety event, a failed IPO, or disappointing revenues.\"\n\nSaravels cited a Brookings paper that recently estimated AI labs need to generate upward of $3.5 trillion a year by 2032 to earn a return on data-center investments.",
+ "paragraphs": [
+  "Investors were rattled by contagion fears over a bond-market meltdown in France. But when it comes to risks looming over the market next year, they have bigger things to worry about—at least according to George Saravels, head of foreign-exchange research at Deutsche Bank, who summarized his conversations with clients this week like this:",
+  "\"The biggest systemic risk in the market next year is not France but 'something going wrong' in the AI ecosystem: a safety event, a failed IPO, or disappointing revenues.\"",
+  "Saravels cited a Brookings paper that recently estimated AI labs need to generate upward of $3.5 trillion a year by 2032 to earn a return on data-center investments."
+ ],
+ "anchor": "Investors' No. 1 Worry",
+ "anchor_how": "headline",
+ "markers": [
+  {
+   "line": 112,
+   "bbox": "bbox_500_591_641_691",
+   "norm": [
+    0.5,
+    0.591,
+    0.641,
+    0.691
+   ],
+   "caps": [
+    "Share-price performance",
+    "Source: FactSet"
+   ]
+  }
+ ],
+ "captions": [
+  "Share-price performance",
+  "Source: FactSet"
+ ],
+ "number_warnings": {
+  "ocr_only": [
+   "000700"
+  ],
+  "pdf_only": [
+   "00700",
+   "1.06",
+   "1.10",
+   "1.4",
+   "1.88",
+   "11",
+   "14",
+   "16",
+   "19",
+   "2.27",
+   "2009",
+   "2020",
+   "22",
+   "23",
+   "3",
+   "85"
+  ]
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "article_id": "E3-032",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "Rising competition from existing home sellers is squeezing builder margins and forcing price cuts.",
+  "structure": [
+   "argument"
+  ],
+  "key_facts": [
+   "Mortgage rates are above 7% (p1)",
+   "Lennar's west region average price dropped 7% YoY (p3)",
+   "21% of existing-home sellers dropped asking prices in the 4 weeks through Sept 20 (p5)",
+   "45% of home sellers gave concessions in August (p6)",
+   "Lennar's gross margin is 15.8%, matching post-2008 levels (p14)",
+   "Cost to buy down rate on $100M forward commitment rose to $5.4M (p17)",
+   "New home sales per community fell 18% in September vs August (p18)"
+  ],
+  "key_numbers": [
+   "7% (p1)",
+   "$44,000 (p3)",
+   "21% (p5)",
+   "45% (p6)",
+   "15.8% (p14)",
+   "$5.4 million (p17)",
+   "18% (p18)"
+  ],
+  "quotes": [
+   {
+    "text": "Builders will have to cough up money if they want to stay competitive with the swelling inventory on the market.",
+    "speaker": "Author",
+    "para": 11,
+    "why": "Summarizes the core financial pressure on builders"
+   }
+  ],
+  "timeline_events": [
+   {
+    "t": "2022-2025",
+    "para": 12,
+    "event": "New home sales rose 7% as builders filled inventory gaps."
+   },
+   {
+    "t": "August",
+    "para": 6,
+    "event": "45% of home sellers offered concessions to buyers."
+   },
+   {
+    "t": "Sept 20",
+    "para": 5,
+    "event": "21% of existing-home sellers dropped asking prices in the prior four weeks."
+   },
+   {
+    "t": "May",
+    "para": 19,
+    "event": "Berkshire Hathaway paid $6.8 billion to buy Taylor Morrison."
+   },
+   {
+    "t": "September",
+    "para": 19,
+    "event": "Berkshire Hathaway raised its stake in Lennar above 10%."
+   }
+  ],
+  "visual_assets": [
+   {
+    "file": "img-01.png",
+    "kind": "photo",
+    "caption": "",
+    "value": "Photo of construction worker framing a house, directly illustrating the builder subject."
+   },
+   {
+    "file": "chart-02.png",
+    "kind": "chart",
+    "caption": "",
+    "value": "Bar chart showing Lennar's sales incentives as a percentage of revenue, supporting the margin discussion."
+   }
+  ],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No component repeats body text verbatim; all data is condensed or reframed."
+ },
+ "component_plan": [
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "Condenses 7 distinct data points from p1, p3, p5, p6, p14, p17, p18 into a ranked list to highlight the scale of market pressure.",
+   "data": {
+    "items": [
+     {
+      "value_cn": "7%",
+      "value_en": "7%",
+      "label_cn": "抵押贷款利率",
+      "label_en": "Mortgage Rate",
+      "note_cn": "利率突破此阈值导致需求下滑 (p1)",
+      "note_en": "Rate threshold driving demand drop (p1)"
+     },
+     {
+      "value_cn": "21%",
+      "value_en": "21%",
+      "label_cn": "降价卖家比例",
+      "label_en": "Sellers Cutting Prices",
+      "note_cn": "截至9月20日四周内 (p5)",
+      "note_en": "In 4 weeks through Sept 20 (p5)"
+     },
+     {
+      "value_cn": "45%",
+      "value_en": "45%",
+      "label_cn": "提供优惠卖家比例",
+      "label_en": "Sellers Offering Concessions",
+      "note_cn": "8月份数据 (p6)",
+      "note_en": "August data (p6)"
+     },
+     {
+      "value_cn": "15.8%",
+      "value_en": "15.8%",
+      "label_cn": "莱纳毛利率",
+      "label_en": "Lennar Gross Margin",
+      "note_cn": "与2008-09危机后水平相当 (p14)",
+      "note_en": "Matches post-2008 crisis levels (p14)"
+     },
+     {
+      "value_cn": "540万美元",
+      "value_en": "$5.4M",
+      "label_cn": "利率补贴成本",
+      "label_en": "Rate Buydown Cost",
+      "note_cn": "1亿美元远期承诺降1%利率 (p17)",
+      "note_en": "For $100M commitment, 1% drop (p17)"
+     },
+     {
+      "value_cn": "18%",
+      "value_en": "18%",
+      "label_cn": "新房销量降幅",
+      "label_en": "New Home Sales Drop",
+      "note_cn": "9月环比8月 (p18)",
+      "note_en": "Sept vs Aug (p18)"
+     }
+    ]
+   }
+  },
+  {
+   "component": "figure",
+   "slot": {
+    "at": "before_body"
+   },
+   "reason": "Verified photo asset depicting the article's subject (construction/builders).",
+   "data": {
+    "caption_cn": "建筑工人在施工现场搭建房屋框架。",
+    "caption_en": "A construction worker frames a house at a building site.",
+    "credit": "David Paul Morris/Bloomberg News"
+   },
+   "asset": "img-01.png"
+  },
+  {
+   "component": "chart",
+   "slot": {
+    "at": "after_para",
+    "para": 13
+   },
+   "reason": "Chart asset directly visualizes the 'sales incentives' and margin pressure discussed in p13-p14.",
+   "data": {
+    "caption_cn": "莱纳公司新房销售激励占收入比例（2009-2026）。",
+    "caption_en": "Sales incentives on newly built homes as a percentage of revenue for Lennar (2009-2026).",
+    "source_note": "Source: John Burns Research & Consulting"
+   },
+   "asset": "chart-02.png"
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 10
+   },
+   "reason": "Direct quote from p11 that encapsulates the financial imperative for builders.",
+   "data": {
+    "quote": {
+     "text_cn": "若想在市场上日益增多的库存中保持竞争力，建筑商们就不得不投入资金。",
+     "text_en": "Builders will have to cough up money if they want to stay competitive with the swelling inventory on the market.",
+     "attr_cn": "文章作者",
+     "attr_en": "Author"
+    }
+   }
+  },
+  {
+   "component": "timeline",
+   "slot": {
+    "at": "after_para",
+    "para": 18
+   },
+   "reason": "Chronological events from p5, p6, p12, p19 illustrate the shifting market dynamics and investor response.",
+   "data": {
+    "timeline": {
+     "title_cn": "市场动态时间线",
+     "title_en": "Market Dynamics Timeline",
+     "entries": [
+      {
+       "t_cn": "2022-2025",
+       "t_en": "2022-2025",
+       "text_cn": "新房销量增长7%，建筑商填补库存缺口。",
+       "text_en": "New home sales rose 7% as builders filled inventory gaps."
+      },
+      {
+       "t_cn": "8月",
+       "t_en": "August",
+       "text_cn": "45%的售房者向买家提供优惠措施。",
+       "text_en": "45% of home sellers offered concessions to buyers."
+      },
+      {
+       "t_cn": "9月20日",
+       "t_en": "Sept 20",
+       "text_cn": "过去四周内21%的现有住房卖家降低挂牌价。",
+       "text_en": "21% of existing-home sellers dropped asking prices in the prior four weeks."
+      },
+      {
+       "t_cn": "5月",
+       "t_en": "May",
+       "text_cn": "伯克希尔·哈撒韦斥资68亿美元收购泰勒·莫里森。",
+       "text_en": "Berkshire Hathaway paid $6.8 billion to buy Taylor Morrison."
+      },
+      {
+       "t_cn": "9月",
+       "t_en": "September",
+       "text_cn": "伯克希尔·哈撒韦将莱纳股份比例提升至10%以上。",
+       "text_en": "Berkshire Hathaway raised its stake in Lennar above 10%."
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "created": "2026-10-13"
+}

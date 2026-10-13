@@ -1,0 +1,26 @@
+[
+ {
+  "file": "img-01.png",
+  "page": "B7",
+  "region": {
+   "x1": 232,
+   "y1": 175,
+   "x2": 767,
+   "y2": 363
+  },
+  "description": "Photo: construction worker framing a house at a building site. Credit printed vertically at left edge: David Paul Morris/Bloomberg News.",
+  "relation": "OCR illustration marker inside this article's segment overlaps this image (reading-order attribution); photo subject matches the article topic"
+ },
+ {
+  "file": "chart-02.png",
+  "page": "B7",
+  "region": {
+   "x1": 230,
+   "y1": 348,
+   "x2": 588,
+   "y2": 521
+  },
+  "description": "Bar chart: 'Sales incentives on newly built homes as a percentage of revenue for Lennar', 2009-2026. Note: No data available for 4Q 2019 through 4Q 2020 due to Covid-19 pandemic. Source: John Burns Research & Consulting.",
+  "relation": "vector chart detected in article band; caption subject (Lennar sales incentives) matches this article"
+ }
+]

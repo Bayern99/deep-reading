@@ -1,0 +1,92 @@
+{
+  "article_id": "E1-003",
+  "version": "1.0",
+  "created_by": "generic-planner-v1",
+  "analysis": {
+    "topic": "2026 Chicago Marathon results and participation",
+    "structure": "data",
+    "key_facts": [
+      "55,000+ entrants registered (p1)",
+      "Amos Kipruto won men's race in 2:01:09 (p1)",
+      "Hawi Feysa defended women's title in 2:13:33 (p1)"
+    ],
+    "key_numbers": [
+      {
+        "value": "55,000",
+        "para": "p1",
+        "use": "Scale of participation"
+      },
+      {
+        "value": "2:01:09",
+        "para": "p1",
+        "use": "Men's winning time"
+      },
+      {
+        "value": "2:13:33",
+        "para": "p1",
+        "use": "Women's winning time"
+      }
+    ],
+    "quotes": [],
+    "timeline_events": [],
+    "visual_assets": [
+      {
+        "file": "img-01.png",
+        "relevance": "Depicts the race day scene described in p1"
+      }
+    ],
+    "needs_background": false,
+    "duplication_check": "No component repeats body text verbatim; key_figures condenses stats, figure caption describes visual."
+  },
+  "component_plan": [
+    {
+      "component": "figure",
+      "slot": {
+        "at": "before_body"
+      },
+      "reason": "Asset img-01.png is the verified photo for this article, showing the race day scene mentioned in p1.",
+      "data": {
+        "caption_cn": "2026年芝加哥马拉松赛比赛现场，超过55,000名选手参赛。",
+        "caption_en": "Runners compete during the 2026 Chicago Marathon, which saw more than 55,000 entrants.",
+        "credit": "AJ Photo"
+      },
+      "asset": "img-01.png"
+    },
+    {
+      "component": "key_figures",
+      "slot": {
+        "at": "after_para",
+        "para": 0
+      },
+      "reason": "p1 contains three distinct, condensable data points: total entrants, men's winning time, and women's winning time.",
+      "data": {
+        "items": [
+          {
+            "value_cn": "55,000+",
+            "value_en": "55,000+",
+            "label_cn": "报名选手",
+            "label_en": "Registered Entrants",
+            "note_cn": "2026年赛事规模",
+            "note_en": "2026 Race Scale"
+          },
+          {
+            "value_cn": "2:01:09",
+            "value_en": "2:01:09",
+            "label_cn": "男子冠军成绩",
+            "label_en": "Men's Winning Time",
+            "note_cn": "肯尼亚选手阿莫斯·基普鲁托",
+            "note_en": "Amos Kipruto (Kenya)"
+          },
+          {
+            "value_cn": "2:13:33",
+            "value_en": "2:13:33",
+            "label_cn": "女子冠军成绩",
+            "label_en": "Women's Winning Time",
+            "note_cn": "埃塞俄比亚选手哈维·费萨",
+            "note_en": "Hawi Feysa (Ethiopia)"
+          }
+        ]
+      }
+    }
+  ]
+}

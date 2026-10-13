@@ -1,0 +1,193 @@
+{
+  "article_id": "E1-034",
+  "version": "1.0",
+  "created_by": "generic-planner-v1",
+  "created": "2024-05-22T10:00:00Z",
+  "analysis": {
+    "topic": "Commercial aviation is being targeted by missile and drone attacks in the Middle East, forcing route changes and safety warnings.",
+    "structure": [
+      "Introduction: Air travel targeted by conflicts (p2)",
+      "Incident: Houthi strike on Riyadh airport (p3-p4)",
+      "Government Response: Travel warnings and airspace closures (p5)",
+      "Expert Opinion: Risk assessment responsibility (p6)",
+      "Context: Broader regional attacks on airports (p8)",
+      "Institutional Response: ICAO rebuke (p9)",
+      "Impact: Route diversions and fuel costs (p10-p11)",
+      "Historical Context: Shifts since 2022 (p12)",
+      "Case Studies: Specific airline route changes (p13-p14)"
+    ],
+    "key_facts": [
+      "Houthi missile strike on King Khalid International Airport killed at least 12 people (p3)",
+      "More than 1,000 flights were cancelled following the strike (p4)",
+      "U.S., U.K., and Australia advised citizens to avoid Riyadh airport (p5)",
+      "Jet fuel is trading at about twice the price it was last year (p11)"
+    ],
+    "key_numbers": [
+      "12 people killed in the Riyadh airport strike (p3)",
+      "300+ people injured in the Riyadh airport strike (p3)",
+      "1,000+ flights cancelled (p4)",
+      "2x jet fuel price compared to last year (p11)"
+    ],
+    "quotes": [
+      {
+        "text": "All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment.",
+        "speaker": "Matt Borie, chief intelligence officer at Osprey Flight Solutions",
+        "para": 6,
+        "why": "Highlights the shared responsibility and risk assessment gap between states and airlines."
+      }
+    ],
+    "timeline_events": [
+      {
+        "t": "February 2024",
+        "event": "U.S. and Israel start Iran war; major Middle East airports targeted.",
+        "para": 3
+      },
+      {
+        "t": "Late February 2024",
+        "event": "Iran damages infrastructure at airports in Dubai, Qatar, Bahrain, Kuwait.",
+        "para": 8
+      },
+      {
+        "t": "July 2024",
+        "event": "Saudi Arabia bombs Yemen's San'a Airport.",
+        "para": 8
+      },
+      {
+        "t": "Saturday (Recent)",
+        "event": "Houthi missile strike on Riyadh's King Khalid International Airport.",
+        "para": 3
+      },
+      {
+        "t": "Sunday (Recent)",
+        "event": "New attacks on closed Riyadh airport, fire in Terminal 4.",
+        "para": 4
+      }
+    ],
+    "visual_assets": [
+      {
+        "file": "img-1.png",
+        "kind": "photo",
+        "caption": "Damage at Riyadh's King Khalid airport following the Houthi attack.",
+        "value": "Visual evidence of the specific incident driving the current travel warnings."
+      }
+    ],
+    "needs_background": {
+      "needed": false,
+      "what": ""
+    },
+    "duplication_check": "Key figures and timeline entries condense data from p3, p4, p8, and p11; the quote is a direct extraction from p6; the figure caption describes the visual in p7 without repeating the narrative text."
+  },
+  "component_plan": [
+    {
+      "component": "figure",
+      "slot": {
+        "at": "before_body"
+      },
+      "reason": "Asset img-1.png depicts the direct consequence of the main event (Houthi strike on Riyadh airport) described in p3 and p7, providing immediate visual context.",
+      "data": {
+        "caption_cn": "周六也门胡塞武装袭击利雅得的哈利德国王机场后，社交媒体上发布的现场视频截图。",
+        "caption_en": "An image of Riyadh's King Khalid airport from a video posted on social media after Yemen's Houthis attacked it Saturday.",
+        "credit": "Social Media Video"
+      },
+      "asset": "img-1.png"
+    },
+    {
+      "component": "key_figures",
+      "slot": {
+        "at": "after_para",
+        "para": 3
+      },
+      "reason": "Condenses the immediate impact statistics from the Riyadh strike (p3) and the subsequent operational disruption (p4) into ranked data points.",
+      "data": {
+        "items": [
+          {
+            "value_cn": "12+",
+            "value_en": "12+",
+            "label_cn": "死亡人数",
+            "label_en": "Deaths",
+            "note_cn": "胡塞武装袭击利雅得机场造成至少12人死亡 (p3)",
+            "note_en": "At least 12 people killed in Houthi strike on Riyadh airport (p3)"
+          },
+          {
+            "value_cn": "300+",
+            "value_en": "300+",
+            "label_cn": "受伤人数",
+            "label_en": "Injuries",
+            "note_cn": "袭击导致300多人受伤 (p3)",
+            "note_en": "More than 300 others injured in the strike (p3)"
+          },
+          {
+            "value_cn": "1,000+",
+            "value_en": "1,000+",
+            "label_cn": "取消航班",
+            "label_en": "Flights Cancelled",
+            "note_cn": "袭击后取消超过1,000个航班 (p4)",
+            "note_en": "More than 1,000 flights cancelled following the strike (p4)"
+          }
+        ]
+      }
+    },
+    {
+      "component": "quote",
+      "slot": {
+        "at": "after_para",
+        "para": 5
+      },
+      "reason": "Extracts the direct quote from Matt Borie in p6, which provides expert context on safety responsibilities immediately after the government warnings in p5.",
+      "data": {
+        "quote": {
+          "text_cn": "“这一切都取决于各国如何管理本国的空域，以及航空公司自身如何进行风险评估。”",
+          "text_en": "“All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment.”",
+          "attr_cn": "马特·博里，Osprey Flight Solutions 首席情报官",
+          "attr_en": "Matt Borie, Chief Intelligence Officer at Osprey Flight Solutions"
+        }
+      }
+    },
+    {
+      "component": "timeline",
+      "slot": {
+        "at": "after_para",
+        "para": 8
+      },
+      "reason": "Synthesizes the chronological escalation of attacks on aviation infrastructure from p3, p8, and p4 to show the trend leading to the current crisis.",
+      "data": {
+        "timeline": {
+          "title_cn": "中东航空安全危机时间线",
+          "title_en": "Middle East Aviation Security Crisis Timeline",
+          "entries": [
+            {
+              "t_cn": "2024年2月",
+              "t_en": "Feb 2024",
+              "text_cn": "美以发起对伊朗战争，中东主要机场屡遭袭击。",
+              "text_en": "U.S. and Israel start Iran war; major Middle East airports targeted."
+            },
+            {
+              "t_cn": "2024年2月下旬",
+              "t_en": "Late Feb 2024",
+              "text_cn": "伊朗破坏迪拜、卡塔尔等地机场设施。",
+              "text_en": "Iran damages infrastructure at airports in Dubai, Qatar, and elsewhere."
+            },
+            {
+              "t_cn": "2024年7月",
+              "t_en": "July 2024",
+              "text_cn": "沙特轰炸也门萨那机场。",
+              "text_en": "Saudi Arabia bombs Yemen's San'a Airport."
+            },
+            {
+              "t_cn": "周六",
+              "t_en": "Saturday",
+              "text_cn": "胡塞武装导弹袭击利雅得哈利德国王机场。",
+              "text_en": "Houthi missile strike on Riyadh's King Khalid International Airport."
+            },
+            {
+              "t_cn": "周日",
+              "t_en": "Sunday",
+              "text_cn": "利雅得机场4号航站楼再次遇袭起火。",
+              "text_en": "New attacks on closed Riyadh airport, fire in Terminal 4."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

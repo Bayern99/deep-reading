@@ -1,0 +1,50 @@
+{
+ "article_id": "E1-002",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "Weekly market performance snapshot for major indices and commodities",
+  "structure": [
+   "data"
+  ],
+  "key_facts": [
+   "DJIA closed at $1654.95, up 477.99 points (0.93%) (p1)",
+   "NASDAQ closed at 27366.17, up 0.6% (p1)",
+   "STOXX 600 closed at 631.55, up 0.03% (p1)",
+   "10-Year Treasury yield was 5.24% (p1)",
+   "Oil price was $91.85, up $0.74 (p1)",
+   "Euro exchange rate was $1.1202 (p1)",
+   "Yen exchange rate was 158.29 (p1)"
+  ],
+  "key_numbers": [
+   "$1654.95 (p1)",
+   "27366.17 (p1)",
+   "631.55 (p1)",
+   "5.24% (p1)",
+   "$91.85 (p1)",
+   "$1.1202 (p1)",
+   "158.29 (p1)"
+  ],
+  "quotes": [],
+  "timeline_events": [],
+  "visual_assets": [],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No components planned that repeat body text verbatim; data_table uses raw text as per rule 5."
+ },
+ "component_plan": [
+  {
+   "component": "data_table",
+   "slot": {
+    "at": "before_body"
+   },
+   "reason": "Article type is 'data_table' and p1 contains raw market data that should be presented as a table per rule 5.",
+   "data": {
+    "body_en": "Index/Asset\tValue\tChange\tChange %\nDJIA\t$1654.95\t▲ 477.99\t0.93%\nNASDAQ\t27366.17\t▲\t0.6%\nSTOXX 600\t631.55\t▲\t0.03%\n10-YR.TREASURY (Reopening)\t5.24%\t-\t-\nOIL\t$91.85\t▲ $0.74\t-\nEURO\t$1.1202\t-\t-\nYEN\t158.29\t-\t-"
+   }
+  }
+ ],
+ "created": "2026-10-13"
+}

@@ -1,0 +1,43 @@
+{
+  "article_id": "E1-014",
+  "version": "1.0",
+  "created_by": "generic-planner-v1",
+  "created": "2024-05-22T10:00:00Z",
+  "analysis": {
+    "topic": "委内瑞拉行贿嫌疑人阿尔瓦罗·普利多在佛罗里达被捕",
+    "structure": [
+      "headline",
+      "location",
+      "arrest_details_and_context"
+    ],
+    "key_facts": [
+      "Alvaro Pulido was taken into custody in Florida (p3)",
+      "Pulido was indicted in Miami federal court in 2019 and 2021 (p3)",
+      "The investigation involves his business partner Alex Saab (p3)"
+    ],
+    "key_numbers": [
+      "2019 (p3)",
+      "2021 (p3)"
+    ],
+    "quotes": [],
+    "timeline_events": [
+      {
+        "t": "2019",
+        "event": "Alvaro Pulido indicted in Miami federal court",
+        "para": 3
+      },
+      {
+        "t": "2021",
+        "event": "Alvaro Pulido indicted again in Miami federal court",
+        "para": 3
+      }
+    ],
+    "visual_assets": [],
+    "needs_background": {
+      "needed": false,
+      "what": ""
+    },
+    "duplication_check": "No components planned; no duplication risk."
+  },
+  "component_plan": []
+}

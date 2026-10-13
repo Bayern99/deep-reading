@@ -1,0 +1,53 @@
+{
+  "article_id": "E1-004",
+  "version": "1.0",
+  "created_by": "generic-planner-v1",
+  "analysis": {
+    "topic": "Political backlash against Trump's Russia energy export policy and ceasefire claims",
+    "structure": "narrative",
+    "key_facts": [
+      "Trump claimed an immediate energy ceasefire on social media (p2)",
+      "Moscow rejected the deal and no agreement is in place (p2)",
+      "Bipartisan senators called the export plan illegal (p3)",
+      "A 2022 law banned Russian energy imports (p3)",
+      "Midterm elections are weeks away (p4)"
+    ],
+    "key_numbers": [
+      {
+        "value": "2022",
+        "para": "p3",
+        "use": "Year of the law banning Russian energy imports"
+      }
+    ],
+    "quotes": [
+      {
+        "text": "ENERGY CEASEFIRE",
+        "speaker": "Donald Trump",
+        "para": "p2",
+        "use": "Direct quote illustrating the specific claim being contested"
+      }
+    ],
+    "timeline_events": [],
+    "visual_assets": [],
+    "needs_background": false,
+    "duplication_check": "No component repeats body text verbatim; quote is a specific phrase, not a full sentence."
+  },
+  "component_plan": [
+    {
+      "component": "quote",
+      "slot": {
+        "at": "after_para",
+        "para": 1
+      },
+      "reason": "p2 contains a striking direct quote from Trump ('ENERGY CEASEFIRE') that is central to the controversy described in the article.",
+      "data": {
+        "quote": {
+          "text_cn": "能源停火",
+          "text_en": "ENERGY CEASEFIRE",
+          "attr_cn": "唐纳德·特朗普，美国总统",
+          "attr_en": "Donald Trump, U.S. President"
+        }
+      }
+    }
+  ]
+}

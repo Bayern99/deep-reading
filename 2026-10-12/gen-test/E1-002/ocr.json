@@ -1,0 +1,20 @@
+{
+ "article_id": "E1-002",
+ "page": "p0",
+ "text": "Last week: DJIA $1654.95 ▲ 477.99 0.93% NASDAQ 27366.17 ▲ 0.6% STOXX 600 631.55 ▲ 0.03% 10-YR.TREASURY (Reopening) yield 5.24% OIL $91.85 ▲ $0.74 EURO $1.1202 YEN 158.29",
+ "paragraphs": [
+  "Last week: DJIA $1654.95 ▲ 477.99 0.93% NASDAQ 27366.17 ▲ 0.6% STOXX 600 631.55 ▲ 0.03% 10-YR.TREASURY (Reopening) yield 5.24% OIL $91.85 ▲ $0.74 EURO $1.1202 YEN 158.29"
+ ],
+ "anchor": "Last week: DJIA $1654.95 ▲ 477.99 0.93% NASDAQ 27366.17 ▲ 0.6% STOXX 600 631.55 ▲ 0.03% 10-YR.TREASURY (Reopening) yield 5.24% OIL $91.85 ▲ $0.74 EURO $1.1202 YEN 158.29",
+ "anchor_how": "suffix2",
+ "number_warnings": {
+  "ocr_only": [
+   "1654.95",
+   "5.24"
+  ],
+  "pdf_only": [
+   "5.243",
+   "51654.95"
+  ]
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "article_id": "E2-017",
+ "paragraphs": [
+  {
+   "id": "title",
+   "en": "How the AI Boom Ends",
+   "cn": "人工智能热潮将如何落幕"
+  },
+  {
+   "id": "p1",
+   "en": "I can tell you how the artificial-intelligence data-center boom will probably end, but I can't tell you when. Implementing large language models has been a brute-force approach: Big, fast and expensive GPUs from Nvidia crunch a trillion parameters using massive amounts of memory housed in liquid-cooled, gigawatt-gobbling data centers, all with brute-force pricing. It sure smells like IBM making a deal with the Be careful about extrapolating anything from today's pricing. With AI, like all new technologies, the refinement stage is looming — just as the frames gave way to cheaper minicomputers, microprocessors, web servers and now AI architectures. AI tokens have been dropping but are set to plunge faster than most anticipate. Tech growth is never a straight line.",
+   "cn": "我可以告诉你人工智能数据中心热潮可能如何收场，但说不准具体何时会发生。目前部署大型语言模型的方式可谓“蛮力驱动”：借助英伟达出品的庞大、高速且价格昂贵的GPU，配合液冷技术以及耗电量惊人的数据中心，利用海量内存来处理数万亿个参数——整个过程的成本也极其高昂。这不禁让人联想到IBM曾做过的交易……不过，切勿仅凭当前的定价趋势来推断未来。与所有新技术一样，人工智能也即将进入优化完善阶段——正如早期的大型计算机被更便宜的迷你计算机、微处理器、网络服务器乃至如今的各种AI架构所取代。目前AI相关代币价格虽已下跌，但预计其跌幅将超出多数人的预期。科技行业的增长从来都不是一条直线。"
+  },
+  {
+   "id": "p2",
+   "en": "Silicon Valley's mantra for decades has been smaller, cheaper, faster, better. I asked venture capitalist Steve Jutreson to translate that into numbers. \"We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.\" He calls it the \"factor of 10.\"",
+   "cn": "几十年来，硅谷的座右铭一直是：更小、更便宜、更快、更好。我请风险投资家史蒂夫·朱特雷森用数字来诠释这一点。“通常当一种新技术比旧技术提升10倍时，我们就会看到技术变革的发生。这种提升可以体现在性能提高10倍，或者成本降低10倍，有时两者兼而有之。”他将此称为“10倍效应”。"
+  },
+  {
+   "id": "p3",
+   "en": "And it's happening. Last week, according to OpenRouter, OpenAI and Anthropic were charging a premium for some of their models—$1 to$2 per million input tokens. Comparable Chinese open-weight models like Zai's GLM and Alibaba's Qwen charged 6 to 12 cents, around 90% less—that factor of 10 inflection point. American AI labs have gone from 70% market share last year to 30% today. All are still growing. But prices must be less可怕 than the large language models, right? Not really. Stanford researchers show that a locally run small language model \"can successfully answer 88.7% of single-turn chat and reasoning queries.\" No question we'll always have high- and low- and low- and low- Where? Another Silicon Valley saying I've lived by: Intelligence moves out to the edge of the network. The real breakthrough will happen when robust AI models run on smartphones. It's already starting. In September, California-based PrismLl released a compressed version of the popular open-source Qwen3.8 27B AI model. The company got it down to under 6 gigabytes. That means it fits not only on PCs but also on high-end smartphones. The memory size is reduced by roughly 9 to 10 times. There's that factor of 10.",
+   "cn": "这一切正在发生。上周，据OpenRouter的数据显示，OpenAI和Anthropic对其部分模型收取了溢价——每百万个输入标记收费1至2美元。而类似的中国开源模型，如智谱AI的GLM和阿里巴巴的Qwen，收费仅为6至12美分，价格低了约90%——这正是那个“10倍差距”的体现。美国的人工智能实验室的市场份额从去年的70%降至如今的30%。不过这些模型仍在持续增长。那么，小型语言模型的价格应该不会像大型语言模型那样昂贵吧？其实未必。斯坦福大学的研究人员指出，在本地运行的小型语言模型“能够成功回答88.7%的单轮对话及推理类问题”。毫无疑问，未来市场上必然会出现高端、中端以及低端等不同层级的模型。还有一句我一直奉为圭臬的硅谷名言：智能将向网络边缘扩散。真正的突破将出现在强大的AI模型能够在智能手机上运行之时。这一趋势已然开始。今年9月，总部位于加利福尼亚的PrismLl发布了广受欢迎的开源模型Qwen3.8 27B的压缩版。该公司成功将其体积压缩至6GB以下，这意味着该模型不仅能运行在个人电脑上，还能在高端智能手机上运行。其内存占用量减少了约9到10倍。又是那个“10倍”效应。"
+  },
+  {
+   "id": "p4",
+   "en": "Technology doesn't stand still. Qualcomm recently announced a new Snapdragon neural processing unit, or NPU, for smartphones. Using what the company calls a \"miture-of-experts\" model, it could run a 30 billion parameter AI model in 3 gigabytes of memory. According to the DeepMind, the large AI model on a phone has been four billion parameters on an Apple A20 Pro chip. Qualcomm provides a 7.5 times boost.",
+   "cn": "技术从未停步。高通最近宣布了一款专为智能手机设计的全新骁龙神经网络处理单元（NPU）。该处理单元采用了该公司所称的“专家混合”模型，能够在仅3GB的内存条件下运行包含300亿个参数的人工智能模型。据DeepMind介绍，目前苹果A20 Pro芯片所能支持的移动端大型AI模型最多只能处理40亿个参数。高通的这项技术则实现了7.5倍的性能提升。"
+  },
+  {
+   "id": "p5",
+   "en": "Demand isn't about to let up, but prices will start plunging by factors of 10.",
+   "cn": "需求短期内不会减弱，但受多种因素影响，价格将暴跌10倍。"
+  },
+  {
+   "id": "p6",
+   "en": "NPUs, like Qualcomm's new Snapdragon and Google's Tensor chips in its Pixel phones, are now making the same for the latest Apple M- and A-series chips, engines that can run AI models locally on iPhones—maybe why Apple hasn't joined the AI data-center spending delirium.",
+   "cn": "如今，类似于高通新推出的骁龙芯片以及谷歌Pixel手机中搭载的Tensor芯片，苹果最新的M系列和A系列芯片也配备了专用神经网络处理单元。这些单元能够在iPhone上本地运行人工智能模型——这或许就是苹果并未跟风投入巨额资金建设AI数据中心的原因。"
+  },
+  {
+   "id": "p7",
+   "en": "A Nvidia-backed startup, Reflection AI, claims it matches leading Chinese open-weight AI models with \"3-4x less inference compute.\" That's it? Only 3 or 4 times? Wake me up when it's 10 times. At the end of the year, that could be year-end.",
+   "cn": "这家由英伟达投资的初创公司 Reflection AI 宣称，其性能可与中国顶尖的开源权重型 AI 模型相媲美，且“推理计算量仅需后者的三分之一到四分之一”。就这样？仅仅3到4倍的差距？等到能达到10倍差距时再叫醒我吧。大概要等到年底，也就是今年年末了。"
+  },
+  {
+   "id": "p8",
+   "en": "Agents are all the rage, from Meta's Muse to xAI's Grokbot. They run on virtual machines in data centers but raise all sorts of privacy concerns. Startup Perplexity recently teamed up with Nvidia to run agents on PCs. Zero token costs. And you own your data.",
+   "cn": "各类智能代理正大受欢迎，从 Meta 的 Muse 到 xAI 的 Grokbot。它们运行在数据中心的虚拟机上，但也引发了诸多隐私方面的担忧。初创公司 Perplexity 最近与英伟达合作，让这些代理能在个人电脑上运行。这种方式无需支付任何代币费用，而且用户能完全掌控自己的数据。"
+  },
+  {
+   "id": "p9",
+   "en": "I often hear, that if tokens get cheaper, demand will go up. That's Jevens Paradox. Sure, elasticity works. But if prices drop 90%, demand must increase 900% just to stay flat. Remember when internet大厂 Meta's AI model on Global Crossing spectacularly failed because prices dropped too fast? Historically, semiconductors got 30% cheaper every year. When prices dropped by more than 50%, disaster struck with fabrication plant closings and company failures.",
+   "cn": "我经常听到这样一种说法：如果代币价格下跌，需求就会上升。这就是所谓的“杰文斯悖论”。诚然，价格弹性确实存在。但倘若价格下降90%，需求就必须增加900%才能维持原水平。还记得互联网巨头Meta的AI模型因价格下跌过快而在Global Crossing项目中惨遭失败吗？历史上，半导体价格每年都会下降30%左右。然而一旦价格降幅超过50%，就会引发灾难：制造工厂纷纷倒闭，众多公司也随之破产。"
+  },
+  {
+   "id": "p10",
+   "en": "Will 2026 be a data center? Again, timing is dicey. Current demand is gangbusters, but spending is a game of chicken until multiple factor-of-10 improvements kick in and prices collapse. This could set off a cascade of data-center halts and debt defaults, even as token demand increases.",
+   "cn": "2026年会迎来数据中心建设热潮吗？时机仍难以预料。目前需求极为旺盛，但在实现十倍级的性能提升且价格大幅下跌之前，各方在投资上仍持观望态度。即便需求名义上有所增长，这仍可能引发数据中心建设停滞以及债务违约的连锁反应。"
+  },
+  {
+   "id": "p11",
+   "en": "Yes, model training, drug discovery and winning prizes like the recently solved Navier-Stokes equations require hot chips in data centers. But chatbots and agents and other tasks may increasingly be handled on PCs and phones and smart glasses and whatever new gizmos Silicon Valley invents over the next decade. I've heard this called the \"AI boom.\" The reason? The factor of 10 is visible now, as it often is, but ignored. Change doesn't happen overnight. It happens gradually, then suddenly.",
+   "cn": "没错，模型训练、药物研发，以及解决像纳维-斯托克斯方程这样的难题，都需要数据中心里的高性能芯片。不过，聊天机器人、智能代理以及其他任务或许会逐渐在个人电脑、手机、智能眼镜，以及未来十年硅谷可能发明的各种新设备上完成。这种现象被称作“AI繁荣”。原因何在？10倍的性能提升如今已显而易见，但通常被忽视。变化不会一蹴而就，它是循序渐进，然后突然发生的。"
+  }
+ ]
+}

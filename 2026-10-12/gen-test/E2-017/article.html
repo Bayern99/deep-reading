@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · 测试页 E2-017</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E2-017" aria-label="人工智能热潮将如何落幕">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">Opinion · A15 版 · P1 必读 · 观点</span><span class="k-en" hidden>Opinion · A15 版 · P1 必读 · 观点</span></div>
+    <h2 class="art-title"><span class="k-cn">人工智能热潮将如何落幕</span><span class="k-en" hidden>How the AI Boom Ends</span></h2>
+<div class="byline">
+      <span class="who">Andy Kessler (Inside View)</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A15 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A15</span>
+    </div>
+</header>
+  <div class="arule"></div>
+<aside class="rail" aria-label="rail">
+    <div class="rail-in">
+      <div class="rail-t"><span class="k-cn">本篇</span><span class="k-en" hidden>IN THIS STORY</span></div>
+      <nav><a href="#keyfig-E2-017" data-spy="keyfig-E2-017"><span class="k-cn">关键数字</span><span class="k-en" hidden>KEY FIGURES</span></a></nav>
+    </div>
+  </aside>
+<p><span class="k-cn">我可以告诉你人工智能数据中心热潮可能如何收场，但说不准具体何时会发生。目前部署大型语言模型的方式可谓“蛮力驱动”：借助英伟达出品的庞大、高速且价格昂贵的GPU，配合液冷技术以及耗电量惊人的数据中心，利用海量内存来处理数万亿个参数——整个过程的成本也极其高昂。这不禁让人联想到IBM曾做过的交易……不过，切勿仅凭当前的定价趋势来推断未来。与所有新技术一样，人工智能也即将进入优化完善阶段——正如早期的大型计算机被更便宜的迷你计算机、微处理器、网络服务器乃至如今的各种AI架构所取代。目前AI相关代币价格虽已下跌，但预计其跌幅将超出多数人的预期。科技行业的增长从来都不是一条直线。</span><span class="k-en" hidden>I can tell you how the artificial-intelligence data-center boom will probably end, but I can't tell you when. Implementing large language models has been a brute-force approach: Big, fast and expensive GPUs from Nvidia crunch a trillion parameters using massive amounts of memory housed in liquid-cooled, gigawatt-gobbling data centers, all with brute-force pricing. It sure smells like IBM making a deal with the Be careful about extrapolating anything from today's pricing. With AI, like all new technologies, the refinement stage is looming — just as the frames gave way to cheaper minicomputers, microprocessors, web servers and now AI architectures. AI tokens have been dropping but are set to plunge faster than most anticipate. Tech growth is never a straight line.</span></p>
+<p><span class="k-cn">几十年来，硅谷的座右铭一直是：更小、更便宜、更快、更好。我请风险投资家史蒂夫·朱特雷森用数字来诠释这一点。“通常当一种新技术比旧技术提升10倍时，我们就会看到技术变革的发生。这种提升可以体现在性能提高10倍，或者成本降低10倍，有时两者兼而有之。”他将此称为“10倍效应”。</span><span class="k-en" hidden>Silicon Valley's mantra for decades has been smaller, cheaper, faster, better. I asked venture capitalist Steve Jutreson to translate that into numbers. &quot;We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.&quot; He calls it the &quot;factor of 10.&quot;</span></p>
+<aside class="mod quote" aria-label="引语">
+    <div class="qt"><span class="k-cn">通常当一种新技术比旧技术提升10倍时，我们就会看到技术变革的发生。这种提升可以体现在性能提高10倍，或者成本降低10倍，有时两者兼而有之。</span><span class="k-en" hidden>We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.</span></div>
+    <div class="qa"><span class="k-cn">史蒂夫·朱特雷森，风险投资家</span><span class="k-en" hidden>Steve Jutreson, Venture Capitalist</span></div>
+  </aside>
+<p><span class="k-cn">这一切正在发生。上周，据OpenRouter的数据显示，OpenAI和Anthropic对其部分模型收取了溢价——每百万个输入标记收费1至2美元。而类似的中国开源模型，如智谱AI的GLM和阿里巴巴的Qwen，收费仅为6至12美分，价格低了约90%——这正是那个“10倍差距”的体现。美国的人工智能实验室的市场份额从去年的70%降至如今的30%。不过这些模型仍在持续增长。那么，小型语言模型的价格应该不会像大型语言模型那样昂贵吧？其实未必。斯坦福大学的研究人员指出，在本地运行的小型语言模型“能够成功回答88.7%的单轮对话及推理类问题”。毫无疑问，未来市场上必然会出现高端、中端以及低端等不同层级的模型。还有一句我一直奉为圭臬的硅谷名言：智能将向网络边缘扩散。真正的突破将出现在强大的AI模型能够在智能手机上运行之时。这一趋势已然开始。今年9月，总部位于加利福尼亚的PrismLl发布了广受欢迎的开源模型Qwen3.8 27B的压缩版。该公司成功将其体积压缩至6GB以下，这意味着该模型不仅能运行在个人电脑上，还能在高端智能手机上运行。其内存占用量减少了约9到10倍。又是那个“10倍”效应。</span><span class="k-en" hidden>And it's happening. Last week, according to OpenRouter, OpenAI and Anthropic were charging a premium for some of their models—$1 to$2 per million input tokens. Comparable Chinese open-weight models like Zai's GLM and Alibaba's Qwen charged 6 to 12 cents, around 90% less—that factor of 10 inflection point. American AI labs have gone from 70% market share last year to 30% today. All are still growing. But prices must be less可怕 than the large language models, right? Not really. Stanford researchers show that a locally run small language model &quot;can successfully answer 88.7% of single-turn chat and reasoning queries.&quot; No question we'll always have high- and low- and low- and low- Where? Another Silicon Valley saying I've lived by: Intelligence moves out to the edge of the network. The real breakthrough will happen when robust AI models run on smartphones. It's already starting. In September, California-based PrismLl released a compressed version of the popular open-source Qwen3.8 27B AI model. The company got it down to under 6 gigabytes. That means it fits not only on PCs but also on high-end smartphones. The memory size is reduced by roughly 9 to 10 times. There's that factor of 10.</span></p>
+<section id="keyfig-E2-017" class="mod keyfig" aria-label="关键数字">
+<div class="mtag"><span class="k-cn">关键数字</span><span class="k-en" hidden>KEY FIGURES</span></div>
+<div class="krow">
+      <div class="kidx">01</div>
+      <div class="kval"><span class="k-cn">70% → 30%</span><span class="k-en" hidden>70% → 30%</span></div>
+      <div class="kbody">
+        <div class="klabel"><span class="k-cn">美国AI实验室市场份额</span><span class="k-en" hidden>US AI Lab Market Share</span></div>
+        <div class="knote"><span class="k-cn">从去年到今年</span><span class="k-en" hidden>Last year to today</span></div>
+      </div>
+    </div>
+<div class="krow">
+      <div class="kidx">02</div>
+      <div class="kval"><span class="k-cn">90%</span><span class="k-en" hidden>90%</span></div>
+      <div class="kbody">
+        <div class="klabel"><span class="k-cn">中国开源模型价格优势</span><span class="k-en" hidden>Chinese Model Price Advantage</span></div>
+        <div class="knote"><span class="k-cn">相比美国模型</span><span class="k-en" hidden>vs. US models</span></div>
+      </div>
+    </div>
+<div class="krow">
+      <div class="kidx">03</div>
+      <div class="kval"><span class="k-cn">88.7%</span><span class="k-en" hidden>88.7%</span></div>
+      <div class="kbody">
+        <div class="klabel"><span class="k-cn">本地小模型回答准确率</span><span class="k-en" hidden>Local Small Model Accuracy</span></div>
+        <div class="knote"><span class="k-cn">单轮对话及推理</span><span class="k-en" hidden>Single-turn chat &amp; reasoning</span></div>
+      </div>
+    </div>
+</section>
+<p><span class="k-cn">技术从未停步。高通最近宣布了一款专为智能手机设计的全新骁龙神经网络处理单元（NPU）。该处理单元采用了该公司所称的“专家混合”模型，能够在仅3GB的内存条件下运行包含300亿个参数的人工智能模型。据DeepMind介绍，目前苹果A20 Pro芯片所能支持的移动端大型AI模型最多只能处理40亿个参数。高通的这项技术则实现了7.5倍的性能提升。</span><span class="k-en" hidden>Technology doesn't stand still. Qualcomm recently announced a new Snapdragon neural processing unit, or NPU, for smartphones. Using what the company calls a &quot;miture-of-experts&quot; model, it could run a 30 billion parameter AI model in 3 gigabytes of memory. According to the DeepMind, the large AI model on a phone has been four billion parameters on an Apple A20 Pro chip. Qualcomm provides a 7.5 times boost.</span></p>
+<p><span class="k-cn">需求短期内不会减弱，但受多种因素影响，价格将暴跌10倍。</span><span class="k-en" hidden>Demand isn't about to let up, but prices will start plunging by factors of 10.</span></p>
+<p><span class="k-cn">如今，类似于高通新推出的骁龙芯片以及谷歌Pixel手机中搭载的Tensor芯片，苹果最新的M系列和A系列芯片也配备了专用神经网络处理单元。这些单元能够在iPhone上本地运行人工智能模型——这或许就是苹果并未跟风投入巨额资金建设AI数据中心的原因。</span><span class="k-en" hidden>NPUs, like Qualcomm's new Snapdragon and Google's Tensor chips in its Pixel phones, are now making the same for the latest Apple M- and A-series chips, engines that can run AI models locally on iPhones—maybe why Apple hasn't joined the AI data-center spending delirium.</span></p>
+<p><span class="k-cn">这家由英伟达投资的初创公司 Reflection AI 宣称，其性能可与中国顶尖的开源权重型 AI 模型相媲美，且“推理计算量仅需后者的三分之一到四分之一”。就这样？仅仅3到4倍的差距？等到能达到10倍差距时再叫醒我吧。大概要等到年底，也就是今年年末了。</span><span class="k-en" hidden>A Nvidia-backed startup, Reflection AI, claims it matches leading Chinese open-weight AI models with &quot;3-4x less inference compute.&quot; That's it? Only 3 or 4 times? Wake me up when it's 10 times. At the end of the year, that could be year-end.</span></p>
+<p><span class="k-cn">各类智能代理正大受欢迎，从 Meta 的 Muse 到 xAI 的 Grokbot。它们运行在数据中心的虚拟机上，但也引发了诸多隐私方面的担忧。初创公司 Perplexity 最近与英伟达合作，让这些代理能在个人电脑上运行。这种方式无需支付任何代币费用，而且用户能完全掌控自己的数据。</span><span class="k-en" hidden>Agents are all the rage, from Meta's Muse to xAI's Grokbot. They run on virtual machines in data centers but raise all sorts of privacy concerns. Startup Perplexity recently teamed up with Nvidia to run agents on PCs. Zero token costs. And you own your data.</span></p>
+<p><span class="k-cn">我经常听到这样一种说法：如果代币价格下跌，需求就会上升。这就是所谓的“杰文斯悖论”。诚然，价格弹性确实存在。但倘若价格下降90%，需求就必须增加900%才能维持原水平。还记得互联网巨头Meta的AI模型因价格下跌过快而在Global Crossing项目中惨遭失败吗？历史上，半导体价格每年都会下降30%左右。然而一旦价格降幅超过50%，就会引发灾难：制造工厂纷纷倒闭，众多公司也随之破产。</span><span class="k-en" hidden>I often hear, that if tokens get cheaper, demand will go up. That's Jevens Paradox. Sure, elasticity works. But if prices drop 90%, demand must increase 900% just to stay flat. Remember when internet大厂 Meta's AI model on Global Crossing spectacularly failed because prices dropped too fast? Historically, semiconductors got 30% cheaper every year. When prices dropped by more than 50%, disaster struck with fabrication plant closings and company failures.</span></p>
+<p><span class="k-cn">2026年会迎来数据中心建设热潮吗？时机仍难以预料。目前需求极为旺盛，但在实现十倍级的性能提升且价格大幅下跌之前，各方在投资上仍持观望态度。即便需求名义上有所增长，这仍可能引发数据中心建设停滞以及债务违约的连锁反应。</span><span class="k-en" hidden>Will 2026 be a data center? Again, timing is dicey. Current demand is gangbusters, but spending is a game of chicken until multiple factor-of-10 improvements kick in and prices collapse. This could set off a cascade of data-center halts and debt defaults, even as token demand increases.</span></p>
+<p><span class="k-cn">没错，模型训练、药物研发，以及解决像纳维-斯托克斯方程这样的难题，都需要数据中心里的高性能芯片。不过，聊天机器人、智能代理以及其他任务或许会逐渐在个人电脑、手机、智能眼镜，以及未来十年硅谷可能发明的各种新设备上完成。这种现象被称作“AI繁荣”。原因何在？10倍的性能提升如今已显而易见，但通常被忽视。变化不会一蹴而就，它是循序渐进，然后突然发生的。</span><span class="k-en" hidden>Yes, model training, drug discovery and winning prizes like the recently solved Navier-Stokes equations require hot chips in data centers. But chatbots and agents and other tasks may increasingly be handled on PCs and phones and smart glasses and whatever new gizmos Silicon Valley invents over the next decade. I've heard this called the &quot;AI boom.&quot; The reason? The factor of 10 is visible now, as it often is, but ignored. Change doesn't happen overnight. It happens gradually, then suddenly.</span></p>
+<div class="story-end"><span class="endmark" aria-hidden="true">■</span></div>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+ "article_id": "E3-034",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "Investor concerns regarding AI ecosystem risks versus French bond market issues",
+  "structure": [
+   "brief"
+  ],
+  "key_facts": [
+   "Investors are worried about AI ecosystem risks more than French bond contagion (p1)",
+   "George Saravels identifies AI safety events, failed IPOs, or low revenues as the biggest systemic risk (p2)",
+   "AI labs need >$3.5 trillion annual revenue by 2032 to justify data-center investments (p3)"
+  ],
+  "key_numbers": [
+   "$3.5 trillion (p3)"
+  ],
+  "quotes": [
+   {
+    "text": "The biggest systemic risk in the market next year is not France but 'something going wrong' in the AI ecosystem: a safety event, a failed IPO, or disappointing revenues.",
+    "speaker": "George Saravels",
+    "para": 2,
+    "why": "Direct quote summarizing the core argument of the brief"
+   }
+  ],
+  "timeline_events": [],
+  "visual_assets": [
+   {
+    "file": "chart-01.png",
+    "kind": "photo",
+    "caption": "",
+    "value": "Asset description indicates it belongs to a different article (E3-036) about wireless firms, not this article about AI risks. Rule 6 requires verification; this asset does not belong."
+   }
+  ],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No components repeat body text verbatim; quote is a direct citation, key_figures condenses the $3.5T figure."
+ },
+ "component_plan": [
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 1
+   },
+   "reason": "p2 contains a striking direct quote from George Saravels that encapsulates the main point of the brief. Placed after p1 to highlight the expert opinion immediately following the setup.",
+   "data": {
+    "quote": {
+     "text_cn": "“明年市场上最大的系统性风险并非法国，而是人工智能生态系统中‘出现问题’：比如安全事故、IPO失败或营收不及预期。”",
+     "text_en": "The biggest systemic risk in the market next year is not France but 'something going wrong' in the AI ecosystem: a safety event, a failed IPO, or disappointing revenues.",
+     "attr_cn": "乔治·萨拉维尔斯，德意志银行外汇研究主管",
+     "attr_en": "George Saravels, Head of Foreign-Exchange Research at Deutsche Bank"
+    }
+   }
+  },
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 2
+   },
+   "reason": "p3 provides a specific, high-impact data point ($3.5 trillion) regarding AI revenue requirements. This single figure is significant enough to warrant a key_figures component to emphasize the scale of the risk mentioned in the quote.",
+   "data": {
+    "items": [
+     {
+      "value_cn": "3.5万亿美元",
+      "value_en": "$3.5 trillion",
+      "label_cn": "2032年AI实验室所需年收入",
+      "label_en": "Annual revenue needed by AI labs by 2032",
+      "note_cn": "用于从数据中心投资中获利",
+      "note_en": "To earn a return on data-center investments"
+     }
+    ]
+   }
+  }
+ ],
+ "created": "2026-10-13"
+}

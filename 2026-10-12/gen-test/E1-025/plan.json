@@ -1,0 +1,179 @@
+{
+ "article_id": "E1-025",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "created": "2026-01-20T00:00:00Z",
+ "analysis": {
+  "topic": "美国驻希腊大使吉尔福伊尔在达沃斯炫耀特权及接受商人资助引发政治与法律争议",
+  "structure": [
+   "达沃斯炫耀特权与紧急请求入场 (p3-p8)",
+   "披露接受希腊大亨私人飞机与酒店费用 (p9-p12)",
+   "官方回应与调查启动 (p13-p18)",
+   "白宫与国务院内部反应及政治后果 (p16-p29)",
+   "国会民主党人施压要求调查或撤职 (p30-p35)"
+  ],
+  "key_facts": [
+   "吉尔福伊尔在达沃斯称希腊大亨资助其奢华旅行 (p3)",
+   "她因未被列入埃里克·特朗普晚宴名单而愤怒，最终获最后时刻席位 (p5-p8)",
+   "她承认与Aktor Group CEO埃克萨罗乌同乘私人飞机赴达沃斯 (p9)",
+   "她计划与航运大亨察科斯同飞巴黎，费用由察科斯支付 (p10-p12)",
+   "国务院监察长正在调查其是否收受礼物或好处 (p18)",
+   "特朗普政府高层讨论是否解除其职务 (p17)"
+  ],
+  "key_numbers": [
+   "200万 Instagram 粉丝 (p12)",
+   "20张 活动照片 (p12)",
+   "10万美元 请求捐赠者汇入的金额 (p19)"
+  ],
+  "quotes": [
+   {
+    "text": "I see Nikos every f-ing day. I'm flying with him to Paris. I'm with him for a f-ing week.... He loves me. Honey, I spent Christmas with him. New Years. OK? Gstaad. Like, everywhere.",
+    "speaker": "Kimberly Guilfoyle",
+    "para": 11,
+    "why": "直接引用录音中她炫耀与商人亲密关系及共同旅行的原话，最具冲击力且直接证明其言论内容。"
+   }
+  ],
+  "timeline_events": [
+   {
+    "t": "January 2026",
+    "event": "吉尔福伊尔在达沃斯世界经济论坛期间炫耀特权并请求入场晚宴",
+    "para": 4
+   },
+   {
+    "t": "Last Wednesday",
+    "event": "吉尔福伊尔在希腊（照片拍摄时间）",
+    "para": 2
+   },
+   {
+    "t": "Thursday",
+    "event": "吉尔福伊尔在雅典附近与国务卿鲁比奥合影；鲁比奥离开雅典时拒绝评论",
+    "para": 26
+   },
+   {
+    "t": "Friday",
+    "event": "特朗普在离开白宫时评论报道；众议员米克斯发信要求立即调查",
+    "para": 33
+   }
+  ],
+  "visual_assets": [
+   {
+    "file": "img-1.png",
+    "kind": "photo",
+    "caption": "上图：金伯利·吉尔福伊尔，上周三在希腊。下图：周四在雅典附近与国务卿马尔科·鲁比奥的合影。",
+    "value": "提供大使近期在希腊及与国务卿同框的视觉证据，印证其当前职务状态及与政府高层的关联。"
+   }
+  ],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "quote 组件仅提取 p11 的直接引语，未重复正文叙述；key_figures 提取 p12 和 p19 的数字，未重复正文句子；figure 组件使用 p2 描述的图像，caption 与 p2 一致但属于图像说明而非正文重复。"
+ },
+ "component_plan": [
+  {
+   "component": "figure",
+   "slot": {
+    "at": "before_body"
+   },
+   "reason": "p2 描述了图像内容，img-1.png 是文章中唯一的视觉资产，展示了吉尔福伊尔在希腊及与鲁比奥的合影，直接关联文章主题。",
+   "data": {
+    "caption_cn": "上图：金伯利·吉尔福伊尔，上周三在希腊。下图：周四在雅典附近与国务卿马尔科·鲁比奥的合影。",
+    "caption_en": "Above, Kimberly Guilfoyle, last Wednesday in Greece. Below, with Secretary of State Marco Rubio on Thursday near Athens.",
+    "credit": "The Wall Street Journal"
+   },
+   "asset": "img-1.png"
+  },
+  {
+   "component": "key_figures",
+   "slot": {
+    "at": "after_para",
+    "para": 11
+   },
+   "reason": "p12 和 p19 包含具体的数字数据（Instagram 粉丝数、照片数、请求金额），适合用 key_figures 组件突出显示，增强数据冲击力。",
+   "data": {
+    "items": [
+     {
+      "value_cn": "200万",
+      "value_en": "2 million",
+      "label_cn": "Instagram 粉丝数",
+      "label_en": "Instagram followers",
+      "note_cn": "吉尔福伊尔在巴黎活动后发布照片的受众规模 (p12)",
+      "note_en": "Audience size for photos posted after Paris event (p12)"
+     },
+     {
+      "value_cn": "20张",
+      "value_en": "20",
+      "label_cn": "发布照片数量",
+      "label_en": "Photos posted",
+      "note_cn": "包括两张与察科斯的合影 (p12)",
+      "note_en": "Including two with Tsakos (p12)"
+     },
+     {
+      "value_cn": "10万美元",
+      "value_en": "$100,000",
+      "label_cn": "请求捐赠者汇入金额",
+      "label_en": "Amount requested from donor",
+      "note_cn": "吉尔福伊尔要求特朗普捐赠者汇入其账户的金额 (p19)",
+      "note_en": "Amount Guilfoyle requested from a Trump donor (p19)"
+     }
+    ]
+   }
+  },
+  {
+   "component": "quote",
+   "slot": {
+    "at": "after_para",
+    "para": 10
+   },
+   "reason": "p11 包含吉尔福伊尔在录音中直接炫耀与商人关系的原话，极具冲击力且直接证明其言论内容，适合用 quote 组件突出显示。",
+   "data": {
+    "quote": {
+     "text_cn": "“我他妈每天都能见到尼科斯，”她在录音中说道。“我要和他一起飞往巴黎。我要和他待上一整周……他爱我。亲爱的，我和他一起过了圣诞节，还有新年。明白吗？在格斯塔德，就是到处都一起。”",
+     "text_en": "\"I see Nikos every f-ing day,\" she said in the recording. \"I'm flying with him to Paris. I'm with him for a f-ing week.... He loves me. Honey, I spent Christmas with him. New Years. OK? Gstaad. Like, everywhere.\"",
+     "attr_cn": "金伯利·吉尔福伊尔，美国驻希腊大使",
+     "attr_en": "Kimberly Guilfoyle, U.S. Ambassador to Greece"
+    }
+   }
+  },
+  {
+   "component": "timeline",
+   "slot": {
+    "at": "after_para",
+    "para": 17
+   },
+   "reason": "文章包含多个按时间顺序发生的事件（达沃斯事件、照片拍摄、鲁比奥访问、特朗普评论、国会施压），适合用 timeline 组件展示事件发展脉络。",
+   "data": {
+    "timeline": {
+     "title_cn": "吉尔福伊尔争议事件时间线",
+     "title_en": "Timeline of Guilfoyle Controversy",
+     "entries": [
+      {
+       "t_cn": "2026年1月",
+       "t_en": "January 2026",
+       "text_cn": "吉尔福伊尔在达沃斯世界经济论坛期间炫耀特权并请求入场晚宴 (p4)",
+       "text_en": "Guilfoyle boasted about perks and requested entry to dinner at Davos WEF (p4)"
+      },
+      {
+       "t_cn": "上周三",
+       "t_en": "Last Wednesday",
+       "text_cn": "吉尔福伊尔在希腊（照片拍摄时间） (p2)",
+       "text_en": "Guilfoyle in Greece (photo date) (p2)"
+      },
+      {
+       "t_cn": "周四",
+       "t_en": "Thursday",
+       "text_cn": "吉尔福伊尔在雅典附近与国务卿鲁比奥合影；鲁比奥离开雅典时拒绝评论 (p26)",
+       "text_en": "Guilfoyle photographed with Secretary Rubio near Athens; Rubio declined to comment upon departure (p26)"
+      },
+      {
+       "t_cn": "周五",
+       "t_en": "Friday",
+       "text_cn": "特朗普在离开白宫时评论报道；众议员米克斯发信要求立即调查 (p33)",
+       "text_en": "Trump commented on reporting leaving White House; Rep. Meeks sent letter demanding immediate investigation (p33)"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

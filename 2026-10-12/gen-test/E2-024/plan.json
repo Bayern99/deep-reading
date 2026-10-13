@@ -1,0 +1,31 @@
+{
+ "article_id": "E2-024",
+ "version": "1.0",
+ "created_by": "generic-planner-v1",
+ "analysis": {
+  "topic": "Argument that Massachusetts' green energy policies are driving up electricity costs.",
+  "structure": [
+   "argument"
+  ],
+  "key_facts": [
+   "Natural gas provides >40% of US electricity (p2)",
+   "Massachusetts aims for carbon neutrality by 2050 (p3)",
+   "Massachusetts electricity prices are 40-60% higher than national average (p5)"
+  ],
+  "key_numbers": [
+   "40% (p2)",
+   "2050 (p3)",
+   "40% to 60% (p5)"
+  ],
+  "quotes": [],
+  "timeline_events": [],
+  "visual_assets": [],
+  "needs_background": {
+   "needed": false,
+   "what": ""
+  },
+  "duplication_check": "No components planned; no duplication risk."
+ },
+ "component_plan": [],
+ "created": "2026-10-13"
+}

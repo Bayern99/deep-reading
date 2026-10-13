@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · 测试页 E2-024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E2-024" aria-label="马萨诸塞州的政策导致电费上涨">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">Opinion · A16 版 · P3 · 读者来信</span><span class="k-en" hidden>Opinion · A16 版 · P3 · 读者来信</span></div>
+    <h2 class="art-title"><span class="k-cn">马萨诸塞州的政策导致电费上涨</span><span class="k-en" hidden>Massachusetts’ Policies Increase Electric Bills</span></h2>
+<p class="deck"><span class="k-cn">回复：“气候现实冲击贝肯山”（10月8日）</span><span class="k-en" hidden>Re: “Climate Reality Hits Beacon Hill” (Oct. 8)</span></p>
+<div class="byline">
+      <span class="who">Daniel Turner, Executive director and founder, Power The Future, Round Hill, Va.</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A16 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A16</span>
+    </div>
+</header>
+  <div class="arule"></div>
+
+<p><span class="k-cn">关于您发表于10月8日的社论《气候现实冲击贝肯山》：美国东北部地区主要由一些“蓝色州”的政府掌管，那里的政客们既受制于不切实际的“绿色”议程，又迫切希望谈论“可负担性”——这两者根本无法兼得。</span><span class="k-en" hidden>Regarding your editorial &quot;Climate Reality Hits Beacon Hill&quot; (Oct. 8): The Northeast is dominated by blue-state governments where politicians are beholden to an unrealistic &quot;green&quot; agenda and are simultaneously desperate to talk about &quot;affordability&quot;—an incompatible combination.</span></p>
+<p><span class="k-cn">反对本土且可靠的能源供应的做法导致了管道项目的受阻。这进而阻碍了从邻近的宾夕法尼亚州等地获取天然气——该州是美国天然气产量第二高的州。天然气为美国超过40%的电力供应提供动力，而美国也是全球最大的天然气生产国。这本应是一件显而易见、无需多虑的事情。</span><span class="k-en" hidden>Opposition to domestic and reliable energy leads to the obstruction of pipeline projects. This in turn creates roadblocks toward getting natural gas from places like nearby Pennsylvania, the second-highest natural-gas-producing state. Natural gas is responsible for more than 40% of all electricity in the U.S., and the U.S. is the world's largest producer of natural gas. It should be a no-brainer.</span></p>
+<p><span class="k-cn">然而近年来，马萨诸塞州实施了相关政策，旨在到2050年实现碳中和。这意味着减少天然气、石油和煤炭的使用，增加太阳能和风能项目。</span><span class="k-en" hidden>Yet in recent years, Massachusetts has implemented policies to become carbon neutral by 2050. That means less natural gas, oil and coal, and more solar and wind projects.</span></p>
+<p><span class="k-cn">政界人士对关闭地区内的燃煤电厂表示欢迎。最令人印象深刻的或许是2022年，时任总统乔·拜登站在该州最后一座燃煤电厂——布雷顿角发电站前，谈到了气候“紧急状态”。</span><span class="k-en" hidden>Politicians have cheered the closure of regional coal plants, perhaps most memorably in 2022 when former President Joe Biden stood before the state's last coal-fired power plant, Brayton Point Power Station, to discuss the climate &quot;emergency.&quot;</span></p>
+<p><span class="k-cn">强行将可靠的能源来源从电网中剔除，并不能让冬天变得不那么严寒，也无法让房屋更暖和。这样做只会减少能源供应，导致价格上涨——马萨诸塞州的电价比全国平均水平高出40%至60%——或者迫使人们更加依赖外部能源供应。</span><span class="k-en" hidden>Forcibly removing reliable sources of energy from the grid doesn't make winter less harsh or homes warmer. It decreases supply, which leads to higher prices—Massachusetts' electricity prices are 40% to 60% higher than the national average—or forces an increased reliance on foreign supply.</span></p>
+<p><span class="k-cn">政客们可以侧重气候保护或价格可负担性，但无法两者兼顾。遗憾的是，今年秋冬，马萨诸塞州的居民们在收到电费账单时，也将体会到这一教训。</span><span class="k-en" hidden>Politicians can be focused on climate or affordability, but they can't do both. Sadly, it's a lesson Massachusetts residents are about to learn when they open their electric bills this fall and winter.</span></p>
+<div class="story-end"><span class="endmark" aria-hidden="true">■</span></div>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

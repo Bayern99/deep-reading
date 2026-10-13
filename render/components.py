@@ -135,10 +135,13 @@ def context_box(context_cn, uid):
 
 
 def figure(img_b64, caption_cn, caption_en, credit, uid):
-    """已验证真实图片（base64 嵌入）+ 图注（必带来源）"""
+    """已验证真实图片（base64 嵌入）+ 图注。credit 为空/unknown 时不渲染，不许编造。"""
+    cr = (credit or '').strip()
+    cr_cn = f'（{esc(cr)}）' if cr and cr.lower() not in ('unknown', '未知') else ''
+    cr_en = f' ({esc(cr)})' if cr and cr.lower() not in ('unknown', '未知') else ''
     return f'''<figure id="fig-{uid}" class="mod fig">
     <img src="data:image/png;base64,{img_b64}" alt="{esc(caption_cn)}">
-    <figcaption><span class="k-cn">{esc(caption_cn)}（{esc(credit)}）</span><span class="k-en" hidden>{esc(caption_en)} ({esc(credit)})</span></figcaption>
+    <figcaption><span class="k-cn">{esc(caption_cn)}{cr_cn}</span><span class="k-en" hidden>{esc(caption_en)}{cr_en}</span></figcaption>
   </figure>'''
 
 
@@ -210,10 +213,14 @@ def bargraph(title_cn, title_en, bars, note_cn='', note_en='', uid=''):
 
 def chart(img_b64, caption_cn, caption_en, source_note, uid):
     """图表：原报图表的高清裁图 + 图注 + 数据来源行。OCR 识别出的图表文字不等于图表本身——图必须保留。"""
+    sn = (source_note or '').strip()
+    sn_body = re.sub(r'(?i)^source\s*:\s*', '', sn)
+    sn_cn = sn if sn.startswith('数据来源') else f'数据来源：{sn_body}'
+    sn_en = sn if re.match(r'(?i)^source\s*:', sn) else f'Source: {sn}'
     return f'''<figure id="chart-{uid}" class="mod fig chart">
     <img src="data:image/png;base64,{img_b64}" alt="{esc(caption_cn)}">
     <figcaption><span class="k-cn">{esc(caption_cn)}</span><span class="k-en" hidden>{esc(caption_en)}</span></figcaption>
-    <div class="fig-note"><span class="k-cn">数据来源：{esc(source_note)}</span><span class="k-en" hidden>Source: {esc(source_note)}</span></div>
+    <div class="fig-note"><span class="k-cn">{esc(sn_cn)}</span><span class="k-en" hidden>{esc(sn_en)}</span></div>
   </figure>'''
 
 
