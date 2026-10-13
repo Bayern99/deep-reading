@@ -300,6 +300,8 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     final = load_json(os.path.join(issue_dir, 'final.json'))
     modules_all = load_json(os.path.join(BASE, 'modules.json'))
     images_all = load_json(os.path.join(BASE, 'images.json'))
+    curation = load_json(os.path.join(BASE, 'curation.json')) \
+        if os.path.isfile(os.path.join(BASE, 'curation.json')) else {}
     tokens = open(os.path.join(BASE, 'tokens.css'), encoding='utf-8').read()
     if plans_all is None:
         plans_all = load_plans(os.path.join(issue_dir, 'editorial-plans'))
@@ -313,6 +315,13 @@ def build_issue(issue, plans_all=None, write_baseline=True):
         fp = os.path.normpath(os.path.join(BASE, im['file']))
         with open(fp, 'rb') as f:
             img_cache[aid] = base64.b64encode(f.read()).decode('ascii')
+
+    # 策展图（curation.json data_treatment.figures）同样 base64 嵌入
+    for aid, treat in curation.get('data_treatment', {}).items():
+        for fig in treat.get('figures', []):
+            fp = os.path.normpath(os.path.join(issue_dir, fig['file']))
+            with open(fp, 'rb') as f:
+                fig['b64'] = base64.b64encode(f.read()).decode('ascii')
 
     # 完整性门禁分流
     from integrity_gate import check_article
@@ -332,7 +341,7 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     body, order = render_issue(
         final, modules_all, images_all, img_cache, issue,
         gate_status=gate_status, plans_all=plans_all,
-        asset_loader=asset_loader)
+        asset_loader=asset_loader, curation=curation)
 
     enh_css = (
         TEXT_CSS + LAYOUT_CSS +
@@ -340,6 +349,10 @@ def build_issue(issue, plans_all=None, write_baseline=True):
         'margin:12px auto 0;padding-bottom:8px;border-bottom:1px solid var(--line)}'
         '\n.enh-note a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}'
         '\n.story-enhanced .tt-subhead[data-source-head="true"]::before{background:var(--ink)}'
+        '\n.dins{margin:14px auto 20px;padding:14px 18px;border-left:3px solid var(--orange);'
+        'background:#faf7f2;max-width:var(--measure)}'
+        '\n.dins-tag{font:700 12px/1.4 var(--font-meta);letter-spacing:.08em;color:var(--orange);margin-bottom:6px}'
+        '\n.dins p{font-size:15px;line-height:1.8;margin:0}'
     )
 
     def wrap_doc(body_html, title_suffix=''):
@@ -378,7 +391,8 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     if write_baseline:
         body_b, _ = render_issue(
             final, modules_all, images_all, img_cache, issue,
-            gate_status=gate_status, plans_all={}, asset_loader=asset_loader)
+            gate_status=gate_status, plans_all={}, asset_loader=asset_loader,
+            curation=curation)
         # Force pure typography for the four reboot articles too: drop modules
         # only where we want before/after. Baseline = no enhanced plans.
         base_out = os.path.join(dist, 'baseline.html')
@@ -406,11 +420,18 @@ def main():
 
     # ---- 自查断言 ----
     html = open(out, encoding='utf-8').read()
-    # 1. 117 条全在，无遗漏/重复/错序
+    import json as _js
+    _cur = _js.load(open(os.path.join(BASE, 'curation.json'))) \
+        if os.path.isfile(os.path.join(BASE, 'curation.json')) else {}
+    excluded = set(_cur.get('exclude', {}))
+    # 1. 117 条全在，无遗漏/重复/错序（策展撤下项除外，它们记录在 curation.json）
     ids = [e['id'] for e in final]
     assert len(ids) == 117, f'expected 117, got {len(ids)}'
     assert len(set(ids)) == 117, 'duplicate ids'
     for e in final:
+        if e['id'] in excluded:
+            assert f'id="s-{e["id"]}"' not in html, f'excluded article rendered: {e["id"]}'
+            continue
         st = gate_status.get(e['id'], ('pass', []))[0]
         if st == 'pass':
             assert f'id="s-{e["id"]}"' in html, f'missing article {e["id"]}'
@@ -419,7 +440,9 @@ def main():
             assert f'id="review-{e["id"]}"' in html, f'missing review {e["id"]}'
     # 阅读顺序 = 分组顺序
     from issue import reading_order
-    pub_final = [e for e in final if gate_status.get(e['id'], ('pass', []))[0] == 'pass']
+    pub_final = [e for e in final
+                 if gate_status.get(e['id'], ('pass', []))[0] == 'pass'
+                 and e['id'] not in excluded]
     assert [e['id'] for e in order] == [e['id'] for e in reading_order(pub_final)]
     # 每篇段落数一致（正文逐字）
     from components import paras as _paras
@@ -427,6 +450,8 @@ def main():
         if e.get('type') == 'data_table':
             continue
         if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
+            continue
+        if e['id'] in excluded:
             continue
         got = html.count(f'id="s-{e["id"]}"')
         assert got == 1, f'{e["id"]} anchor count {got}'
@@ -436,6 +461,8 @@ def main():
         if e.get('type') == 'data_table':
             continue
         if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
+            continue
+        if e['id'] in excluded:
             continue
         m = _re.search(
             rf'<article[^>]*id="s-{_re.escape(e["id"])}"[^>]*>(.*?)</article>',

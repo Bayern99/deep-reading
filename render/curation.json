@@ -1,0 +1,79 @@
+{
+  "note": "内容策展（2026-10-13 人工评审）：25 个 data_table 中保留 6 个高价值项（insight + 已恢复图/自做图），其余与印刷版索引/导读/填字等死内容一并从正文流撤下。insight_cn 为编辑撰写，渲染时标记 data-editorial-added；原文 verbatim 保留。",
+  "exclude": {
+    "E2-012": "周日时间占比图表——图未恢复，仅剩描述文字",
+    "E2-013": "每日填字游戏——印刷版游戏，非阅读内容",
+    "E3-007": "内页导读——与本期目录重复",
+    "E3-008": "企业/人物索引——印刷版索引页，正文为空，数字版无意义",
+    "E3-011": "票房图表——图未恢复，仅剩描述文字",
+    "E3-015": "美国主要股票市场指数——原始行情表，日报读者无需全表",
+    "E3-016": "国际股票指数——原始行情表",
+    "E3-017": "商品和货币——原始行情表",
+    "E3-018": "消费者利率——原始行情表",
+    "E3-019": "企业借贷利率——原始行情表",
+    "E3-020": "新上市 IPO——原始列表",
+    "E3-021": "IPO 成绩单——原始列表",
+    "E3-022": "国债借贷——原始行情表",
+    "E3-024": "美元外汇汇率——原始行情表",
+    "E3-025": "比特币 vs 黄金图表——图未恢复",
+    "E3-026": "封闭式基金——26KB 扁平化表格废墟（300 只基金），不可读且无翻译",
+    "E3-027": "锁定期届满——原始列表",
+    "E3-028": "货币市场利率——原始行情表",
+    "E3-029": "内幕交易聚焦——原始列表",
+    "E3-030": "内幕人士买卖——原始列表",
+    "E3-031": "现货价格——原始行情表"
+  },
+  "data_treatment": {
+    "E1-002": {
+      "insight_cn": "上周收盘：道指 51654.95（▲477.99 / +0.93%）｜纳指 27366.17（+0.6%）｜欧洲 STOXX 600 631.55（+0.03%）｜10 年期美债收益率 5.243%｜原油 $91.85（▲$0.74）｜欧元 $1.1202｜日元 158.29",
+      "insight_en": "Last week: DJIA 51,654.95 (+0.93%) | NASDAQ 27,366.17 (+0.6%) | STOXX 600 631.55 (+0.03%) | 10-yr Treasury 5.243% | Oil $91.85 | Euro $1.1202 | Yen 158.29"
+    },
+    "E1-033": {
+      "figures": [
+        {
+          "file": "ovis-test/visual-assets/infographic-newleft-donors.png",
+          "caption_cn": "各州进步派团体投入资金对比（密歇根 $1270 万、宾夕法尼亚 $910 万；比例尺：$1000 万与 $100 万标记。含 24 个进步派 PAC 与倡导组织，2025 年 1 月 1 日—10 月 7 日）",
+          "caption_en": "Funding by state for progressive groups (Michigan $12.7M; Pennsylvania $9.1M; scale markers $10M and $1M; 24 progressive PACs and advocacy groups, Jan 1–Oct 7, 2025)",
+          "credit": "AdImpact"
+        }
+      ]
+    },
+    "E3-014": {
+      "suppress_body": "正文为图形标签碎片（含邻栏串栏文字），图已恢复，原文无阅读价值",
+      "figures": [
+        {
+          "file": "ovis-test/visual-assets/chart-dow-jones.png",
+          "caption_cn": "道琼斯工业平均指数 52 周高低开收（周五收盘 51654.95，上周 +0.93%；市盈率 21.03，股息率 1.54%）",
+          "caption_en": "DJIA 52-week high/low/open/close (Fri close 51,654.95, +0.93% last week; trailing P/E 21.03; dividend yield 1.54%)",
+          "credit": "《华尔街日报》"
+        },
+        {
+          "file": "ovis-test/visual-assets/chart-sp500.png",
+          "caption_cn": "标准普尔 500 指数 52 周高低开收（收盘 7811.54，上周 +1.15%；市盈率 24.92，股息率 1.62%）",
+          "caption_en": "S&P 500 52-week high/low/open/close (close 7,811.54, +1.15% last week; trailing P/E 24.92; dividend yield 1.62%)",
+          "credit": "《华尔街日报》"
+        }
+      ]
+    },
+    "E3-023": {
+      "insight_cn": "上周道指主要推手：Visa（+6.87%，贡献 147.34 点）、沃尔玛（+6.80%）、迪士尼（+5.73%）、思科（+5.52%）；微软 +3.39%。"
+    },
+    "E3-036": {
+      "insight_cn": "SpaceX 80 亿美元频谱交易重创无线运营商：AT&T 收跌 −9.8%（24 年多来最大单日跌幅），Verizon −8.7%，T-Mobile −13%（13 年多来最大百分比跌幅）。",
+      "chart": {
+        "title_cn": "无线运营商单日跌幅（周五）",
+        "title_en": "Wireless carriers' one-day drop (Friday)",
+        "note_cn": "来源：FactSet；盘中 10 a.m.–4 p.m.",
+        "note_en": "Source: FactSet; intraday 10 a.m.–4 p.m.",
+        "bars": [
+          ["AT&T", "AT&T", "跌 9.8%", "-9.8%", 75],
+          ["Verizon", "Verizon", "跌 8.7%", "-8.7%", 67],
+          ["T-Mobile", "T-Mobile", "跌 13%", "-13%", 100]
+        ]
+      }
+    },
+    "E3-038": {
+      "insight_cn": "本周前瞻：周一（哥伦布日）美债市场休市；财报密集——花旗、高盛、摩根大通、摩根士丹利、联合健康、富国银行等；详见下方清单。"
+    }
+  }
+}

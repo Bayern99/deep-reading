@@ -3,7 +3,35 @@
 铁律：正文逐字来自 final.json；模块只来自 modules.json / images.json / context_cn。
 """
 from components import (esc, pair, paras, article_header, body_paras, key_figures,
-                        timeline, quote, context_box, figure, data_table, rail)
+                        timeline, quote, context_box, figure, data_table, rail,
+                        bargraph)
+
+
+def _curated_blocks(uid, cur):
+    """数据稿编辑处理：编辑摘要（editorial_added 标记）、已恢复图、自做图表。
+    原文始终 verbatim 保留在下方。"""
+    cur = cur or {}
+    h = []
+    if cur.get('insight_cn'):
+        h.append(
+            '<aside class="dins ed-block" data-editorial-added="true">'
+            '<div class="dins-tag"><span class="k-cn">编辑摘要</span>'
+            '<span class="k-en" hidden>EDITOR’S SUMMARY</span></div>'
+            f'<p><span class="k-cn">{esc(cur["insight_cn"])}</span>'
+            f'<span class="k-en" hidden>{esc(cur.get("insight_en", ""))}</span></p>'
+            '</aside>')
+    for i, fig in enumerate(cur.get('figures', [])):
+        if fig.get('b64'):
+            h.append(figure(fig['b64'], fig.get('caption_cn', ''),
+                            fig.get('caption_en', ''), fig.get('credit', ''),
+                            f'{uid}-{i}'))
+    ch = cur.get('chart')
+    if ch:
+        h.append(bargraph(ch['title_cn'], ch.get('title_en', ''),
+                          [tuple(b) for b in ch['bars']],
+                          note_cn=ch.get('note_cn', ''),
+                          note_en=ch.get('note_en', ''), uid=uid))
+    return h
 
 
 def _quote_after_index(e, q):
@@ -42,8 +70,9 @@ def _compact_head(e, kicker_cn, kicker_en):
     return '\n'.join(h)
 
 
-def render_article(e, modules, images, img_b64=None):
-    """返回 article HTML。modules/images 为该文章的策展数据（可为 None）。"""
+def render_article(e, modules, images, img_b64=None, curated=None):
+    """返回 article HTML。modules/images 为该文章的策展数据（可为 None）。
+    curated: curation.json 的 data_treatment（仅数据稿使用）。"""
     uid = e['id']
     t = e.get('type')
     h = [f'<article class="story story-{t}" id="s-{uid}" aria-label="{esc(e.get("title_cn") or e.get("title") or uid)}">']
@@ -86,7 +115,9 @@ def render_article(e, modules, images, img_b64=None):
         h.append(_compact_head(e, f'数据 · {e.get("page") or ""} 版', f'DATA · p.{e.get("page") or ""}'))
         h.append(f'<div class="tbl-cap"><span class="k-cn">{esc(e.get("title_cn"))}</span>'
                  f'<span class="k-en" hidden>{esc(e.get("title"))}</span></div>')
-        h.append(data_table(e.get('body_en')))
+        h.extend(_curated_blocks(uid, curated))
+        if not (curated or {}).get('suppress_body'):
+            h.append(data_table(e.get('body_en')))
 
     elif t == 'photo_caption':
         h.append(_compact_head(e, f'图片 · {e.get("page") or ""} 版', f'PHOTO · p.{e.get("page") or ""}'))

@@ -51,14 +51,20 @@ def render_toc(order):
 
 
 def render_issue(articles, modules_all, images_all, img_cache, issue_date,
-                 gate_status=None, plans_all=None, asset_loader=None):
+                 gate_status=None, plans_all=None, asset_loader=None,
+                 curation=None):
     """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。
     plans_all: editorial-plans by article id → enhanced production path.
+    curation: render/curation.json — exclude（撤下死内容）与 data_treatment（数据稿编辑处理）。
     """
     plans_all = plans_all or {}
+    curation = curation or {}
+    exclude = set(curation.get('exclude', {}))
+    treatments = curation.get('data_treatment', {})
     if gate_status:
         pub_articles = [e for e in articles
-                        if gate_status.get(e['id'], ('pass', []))[0] == 'pass']
+                        if gate_status.get(e['id'], ('pass', []))[0] == 'pass'
+                        and e['id'] not in exclude]
         review_articles = [e for e in articles
                            if gate_status.get(e['id'], ('pass', []))[0] in ('warn', 'block')]
     else:
@@ -100,7 +106,8 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
             mods = modules_all.get(uid)
             imgs = images_all.get(uid)
             b64 = img_cache.get(uid)
-            parts.append(render_article(e, mods, imgs, b64))
+            parts.append(render_article(e, mods, imgs, b64,
+                                        curated=treatments.get(uid)))
         prev_e = order[i - 1] if i > 0 else None
         next_e = order[i + 1] if i + 1 < len(order) else None
         parts.append(article_nav(
