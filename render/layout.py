@@ -70,9 +70,9 @@ LAYOUT_CSS = '''
 /* L02 边注 */
 .ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
   font:400 14px/1.7 var(--font-meta);color:var(--mut)}
-.ly-note @media(min-width:1200px){
+@media(min-width:1200px){
   .has-margin-notes{position:relative}
-  .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
+  .has-margin-notes .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
     border-left:2px solid var(--orange);margin:0;padding-left:12px}
 }
 /* L03 平行双栏 */
@@ -102,7 +102,7 @@ LAYOUT_CSS = '''
 .ly-wide{margin:1.8em calc(50% - 50vw + 12px);max-width:none}
 .ly-wide-scroll{overflow-x:auto}
 @media(max-width:767px){
-  .ly-wide{margin:1.5em -16px}
+  .ly-wide{margin:1.5em -20px}
 }
 @media(max-width:430px){
   .ly-note{font-size:13.5px}

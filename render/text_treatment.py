@@ -208,7 +208,15 @@ def _norm_ws(s):
 
 
 # ---------------- Text Treatment CSS（AJ×WIRED token，不新增色板） ----------------
+# 布局契约：所有正文流子元素通过 .ed-block 统一宽度，不再依赖元素类型子选择器。
+# Text Treatment 只改变文字样式，不得改变正文宽度/字体体系/响应式行为。
 TEXT_CSS = '''
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
 /* ---- Text Treatment（阅读增强文字层） ---- */
 .tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
 .tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
@@ -219,7 +227,7 @@ TEXT_CSS = '''
   margin:1.8em 0 .7em;padding-left:12px;position:relative}
 .tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
   width:3px;background:var(--orange)}
-.tt-subhead .tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
 .tt-group p:last-child{margin-bottom:0}
 ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
 ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;

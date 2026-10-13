@@ -246,12 +246,12 @@ def render_body_full(sm, treatments):
             continue
         bid = b['id']
         if bid in group_ranges and in_group is None:
-            h.append('<div class="tt-group">')
+            h.append('<div class="tt-group ed-block">')
             in_group = group_ranges[bid]
         if bid in subheads:
             op = subheads[bid]
             h.append(
-                f'<h3 class="tt-subhead" data-editorial-added="true">'
+                f'<h3 class="tt-subhead ed-block" data-editorial-added="true">'
                 f'<span class="k-cn">{esc(op.params["title_cn"])}</span>'
                 f'<span class="k-en" hidden>{esc(op.params.get("title_en", ""))}</span>'
                 f'</h3>')
@@ -294,7 +294,7 @@ def render_body_full(sm, treatments):
                                      [o for o in ops_by_block.get(bid, [])
                                       if o.action in ('wrap', 'mix') and o.locale == 'cn'])
                 lis.append(f'<li><span class="k-cn">{ih}</span></li>')
-            h.append(f'<ul class="tt-list" data-block="{bid}">' + ''.join(lis) +
+            h.append(f'<ul class="tt-list ed-block" data-block="{bid}">' + ''.join(lis) +
                      f'<span class="k-en" hidden>{esc(b["en"])}</span></ul>')
         else:
             cn_h, en_h = render_block(b, ops_by_block.get(bid, []))
@@ -347,7 +347,7 @@ def build_full_page(aid, e, sm, treatments, plan, css, base_html):
             n += 1
             id2n[b['id']] = n
     # data-block 可能是 pN / pN-a / pN-b
-    parts = re.split(r'(?=<p data-block=|<ul class="tt-list"|<h3 class="tt-subhead|<div class="tt-group">)', body_html)
+    parts = re.split(r'(?=<p data-block=|<ul class="tt-list ed-block"|<h3 class="tt-subhead ed-block|<div class="tt-group ed-block">)', body_html)
     for part in parts:
         if not part.strip():
             continue

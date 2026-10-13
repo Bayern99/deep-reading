@@ -233,6 +233,12 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
 }
 
 
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
 /* ---- Text Treatment（阅读增强文字层） ---- */
 .tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
 .tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
@@ -243,7 +249,7 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
   margin:1.8em 0 .7em;padding-left:12px;position:relative}
 .tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
   width:3px;background:var(--orange)}
-.tt-subhead .tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
 .tt-group p:last-child{margin-bottom:0}
 ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
 ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
@@ -259,9 +265,9 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 /* L02 边注 */
 .ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
   font:400 14px/1.7 var(--font-meta);color:var(--mut)}
-.ly-note @media(min-width:1200px){
+@media(min-width:1200px){
   .has-margin-notes{position:relative}
-  .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
+  .has-margin-notes .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
     border-left:2px solid var(--orange);margin:0;padding-left:12px}
 }
 /* L03 平行双栏 */
@@ -291,7 +297,7 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 .ly-wide{margin:1.8em calc(50% - 50vw + 12px);max-width:none}
 .ly-wide-scroll{overflow-x:auto}
 @media(max-width:767px){
-  .ly-wide{margin:1.5em -16px}
+  .ly-wide{margin:1.5em -20px}
 }
 @media(max-width:430px){
   .ly-note{font-size:13.5px}
@@ -339,7 +345,7 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 
 <p data-block="p8"><span class="k-cn"><strong class="tt-b">最终，吉尔福伊尔得以在最后一刻获得一个席位</strong>。希腊达沃斯论坛主席艾琳·万塔拉基表示，她的团队“不得不应对一场波及多位知名嘉宾的小危机”，并且“有些人感到失望”。她称，吉尔福伊尔“谦逊有礼且行事谨慎”，并提前离开了晚宴。</span><span class="k-en" hidden>In the end, Guilfoyle was able to score a last-minute seat. The chairwoman of Greek House Davos, Irene Vantaraki, said that her team "had to manage a small crisis [that] affected a number of high-profile guests" and that "some were disappointed." Guilfoyle was "gracious and discreet" and left the dinner early, she said.</span></p>
 
-<h3 class="tt-subhead" data-editorial-added="true"><span class="k-cn">奢华旅行谁买单</span><span class="k-en" hidden>Who Paid for the Luxury Travel</span></h3>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">奢华旅行谁买单</span><span class="k-en" hidden>Who Paid for the Luxury Travel</span></h3>
 
 <p data-block="p9"><span class="k-cn">她在录音中承认，自己曾与希腊建筑公司<span class="tt-mix">Aktor Group</span>的首席执行官亚历山德罗斯·埃克萨罗乌一同乘坐私人飞机前往参加<span class="tt-mix">2026</span>年1月举行的世界经济论坛。据《华尔街日报》报道，吉尔福伊尔敦促从保加利亚到阿尔巴尼亚的各国政府与埃克萨罗乌开展合作，并从其公司购买价值数十亿美元的美国天然气。她在录音中称，这位希腊商人是“自己人”。</span><span class="k-en" hidden>Guilfoyle had flown to the January 2026 World Economic Forum on a private jet with Alexandros Exarchou, chief executive of the Greek construction company Aktor Group, she acknowledged on the recording. Governments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy billions of dollars of American natural gas from his company, the Journal has reported. The Greek businessman was, she said in the recording, "my people."</span></p>
 
@@ -382,7 +388,7 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 
 <p data-block="p13"><span class="k-cn">此前并无报道提及察科斯为她的旅行提供资金。察科斯及其妻子未对置评请求作出回应。阿克托尔集团通过律师表示不愿置评。该集团的律师称，吉尔福伊尔并未不恰当地为阿克托尔集团的商业利益进行宣传。</span><span class="k-en" hidden>Tsakos's financing of her travel hasn't been previously reported. Tsakos and his wife didn't respond to requests for comment. Aktor Group, through lawyers, declined to comment. The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests.</span></p>
 
-<div class="tt-group">
+<div class="tt-group ed-block">
 
 <p data-block="p14"><span class="k-cn">美国驻雅典大使馆发言人称，这位大使“在公共服务领域及以外的职业生涯始终以深厚而坚定的价值观为指引”，并且她“严格遵循了国务院的职业道德规范及礼品申报准则”。</span><span class="k-en" hidden>A spokesman for the U.S. Embassy in Athens said that the ambassador's "career in and out of public service is guided by deep and abiding values" and that she had "faithfully followed State Department ethics and gift reporting guidelines."</span></p>
 
@@ -419,7 +425,7 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 </ol></section>
 <p data-block="p18"><span class="k-cn">据一位知情人士透露，美国国务院监察长正在调查吉尔福伊尔是否收受了私人商人的礼物或好处。</span><span class="k-en" hidden>The State Department's inspector general is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said.</span></p>
 
-<h3 class="tt-subhead" data-editorial-added="true"><span class="k-cn">十万美元的请求</span><span class="k-en" hidden>The $100,000 Ask</span></h3>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">十万美元的请求</span><span class="k-en" hidden>The $100,000 Ask</span></h3>
 
 <p data-block="p19"><span class="k-cn">周三，《华尔街日报》率先公布了相关短信内容：<strong class="tt-b">吉尔福伊尔要求一位特朗普的捐赠者向她的美国运通账户汇入<span class="tt-mix">10</span>万美元</strong>，作为回报，她承诺协助促使特朗普政府着手调查该捐赠者的个人税务及法律问题。</span><span class="k-en" hidden>On Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send $100,000 to her American Express account, and in return offered help in getting the Trump administration to look into the donor's personal tax and legal issues.</span></p>
 

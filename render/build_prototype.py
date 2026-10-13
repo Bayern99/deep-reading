@@ -92,14 +92,14 @@ def render_body(sm, treatments, skip_caption_dup=True):
 
         # T10 组开始
         if bid in group_ranges and in_group is None:
-            h.append('<div class="tt-group">')
+            h.append('<div class="tt-group ed-block">')
             in_group = group_ranges[bid]
 
         # T11 小标题
         if bid in subheads:
             op = subheads[bid]
             h.append(
-                f'<h3 class="tt-subhead" data-editorial-added="true">'
+                f'<h3 class="tt-subhead ed-block" data-editorial-added="true">'
                 f'<span class="k-cn">{esc(op.params["title_cn"])}</span>'
                 f'<span class="k-en" hidden>{esc(op.params.get("title_en",""))}</span>'
                 f'</h3>')
@@ -201,7 +201,7 @@ def main():
     for part in re.findall(r'<p data-block="([^"]+)">.*?</p>', body_html, re.S):
         seg[part] = True
     # 逐段输出（复用 render_body 的顺序）
-    parts = re.split(r'(?=<p data-block=|<h3 class="tt-subhead|<div class="tt-group">)', body_html)
+    parts = re.split(r'(?=<p data-block=|<h3 class="tt-subhead ed-block|<div class="tt-group ed-block">)', body_html)
     # 映射 data-block -> para 序号
     id2n = {b['id']: int(b['id'][1:]) for b in sm.body_blocks()}
     for part in parts:
