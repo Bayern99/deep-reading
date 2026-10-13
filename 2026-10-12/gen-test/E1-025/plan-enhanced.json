@@ -129,12 +129,12 @@
    "data": {
     "quote": {
      "text_cn": "“我要和他一起飞往巴黎。",
-     "text_en": "\" she said in the recording.",
+     "text_en": "\"I'm flying with him to Paris.",
      "attr_cn": "金伯利·吉尔福伊尔，美国驻希腊大使",
      "attr_en": "Kimberly Guilfoyle, U.S. Ambassador to Greece"
     }
    },
-   "dedup_note": "引语与正文 p11 逐字重复；按编辑理由缩减为首个直接引语单句，保留导读功能，消除重复成本"
+   "dedup_note": "引语与正文逐字重复；缩减为第2个引语片段首句（中英对齐），保留导读功能，消除重复成本"
   },
   {
    "component": "timeline",
@@ -989,6 +989,6 @@
    }
   ],
   "quote_trimmed": true,
-  "quote_note": "引语与正文 p11 逐字重复；按编辑理由缩减为首个直接引语单句，保留导读功能，消除重复成本"
+  "quote_note": "引语与正文逐字重复；缩减为第2个引语片段首句（中英对齐），保留导读功能，消除重复成本"
  }
 }

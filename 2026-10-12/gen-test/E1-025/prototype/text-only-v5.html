@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E1-025 原型 text-only</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+@media(min-width:1200px){
+  .has-margin-notes{position:relative}
+  .has-margin-notes .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
+    border-left:2px solid var(--orange);margin:0;padding-left:12px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图 */
+.ly-wide{margin:1.8em calc(50% - 50vw + 12px);max-width:none}
+.ly-wide-scroll{overflow-x:auto}
+@media(max-width:767px){
+  .ly-wide{margin:1.5em -20px}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · 原型 text-only</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E1-025" aria-label="E1-025">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">U.S. News · A4 版 · P1 必读</span><span class="k-en" hidden>U.S. News · A4 版 · P1 必读</span></div>
+    <h2 class="art-title"><span class="k-cn">在达沃斯，吉尔福伊尔炫耀所享特权</span><span class="k-en" hidden>At Davos, Guilfoyle Boasted About Perks</span></h2>
+<p class="deck"><span class="k-cn">在一份录音中，这位大使表示，一些商人为她的奢华旅行支付了费用。</span><span class="k-en" hidden>On a recording, ambassador said businessmen paid for her luxury travel</span></p>
+<div class="byline">
+      <span class="who">By Rebecca Ballhaus, Joe Parkinson, Drew Hinshaw and Dana Mattioli</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A4 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A4</span>
+    </div>
+</header>
+  <div class="arule"></div>
+<p data-block="p3"><span class="k-cn">作为美国新任驻希腊大使，金伯利·吉尔福伊尔在达沃斯吹嘘自己与两位希腊大亨的关系，并称是他们资助了自己环游世界的奢华之旅。</span><span class="k-en" hidden>Kimberly Guilfoyle, as America's newly minted ambassador to Greece, boasted at Davos about her ties to two Greek tycoons and said they were bankrolling her high-rolling trips around the world.</span></p>
+<p data-block="p4"><span class="k-cn">据听取了对话内容的人士以及《华尔街日报》所审阅的音频记录显示，1月份，吉尔福伊尔在提出一项紧急请求时，炫耀了自己与希腊富商们的关系。</span><span class="k-en" hidden>According to people who heard the conversation and an audio recording reviewed by The Wall Street Journal, Guilfoyle was flexing her connections to wealthy Greek businessmen in January as she made an urgent request.</span></p>
+<p data-block="p5"><span class="k-cn">她被禁止参加即将为埃里克·特朗普举办的晚宴，因此希望借助名单上的某位美国商人帮忙让自己得以入场。</span><span class="k-en" hidden>She was being blocked from attending an upcoming dinner being held for Eric Trump, and she wanted to enlist an American businessman who was on the guest list to help get her in the door.</span></p>
+<p data-block="p6"><span class="k-cn">“你知道，我能把整个世界都带给你。这是你应得的，”根据录音，<span class="tt-attr">她这样说道</span>。“我会让你赚大钱的，”在与那位商人的对话中，<span class="tt-attr">她又说了这样一句话</span>。</span><span class="k-en" hidden>"You know, I can deliver the world to you. Which you deserve," she said, according to the recording. "I'm going to make you a lot of f-ing money," she said at another point in the exchange with the businessman.</span></p>
+<p data-block="p7"><span class="k-cn">她对自己未被列入晚宴名单感到怒不可遏，该晚宴由希腊之家达沃斯组织。“你们居然没让美国驻希腊大使出席。她理该对我毕恭毕敬才对，”吉尔福伊尔在谈到活动组织者时说道。</span><span class="k-en" hidden>She expressed fury at not being on the list for the dinner, which was being organized by Greek House Davos. "You don't have the f-ing U.S., you know, ambassador to Greece not come. She should be kissing my f-ing ass," Guilfoyle said of the event's organizer.</span></p>
+<p data-block="p8"><span class="k-cn"><strong class="tt-b">最终，吉尔福伊尔得以在最后一刻获得一个席位</strong>。希腊达沃斯论坛主席艾琳·万塔拉基表示，她的团队“不得不应对一场波及多位知名嘉宾的小危机”，并且“有些人感到失望”。她称，吉尔福伊尔“谦逊有礼且行事谨慎”，并提前离开了晚宴。</span><span class="k-en" hidden>In the end, Guilfoyle was able to score a last-minute seat. The chairwoman of Greek House Davos, Irene Vantaraki, said that her team "had to manage a small crisis [that] affected a number of high-profile guests" and that "some were disappointed." Guilfoyle was "gracious and discreet" and left the dinner early, she said.</span></p>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">奢华旅行谁买单</span><span class="k-en" hidden>Who Paid for the Luxury Travel</span></h3>
+<p data-block="p9"><span class="k-cn">她在录音中承认，自己曾与希腊建筑公司<span class="tt-mix">Aktor Group</span>的首席执行官亚历山德罗斯·埃克萨罗乌一同乘坐私人飞机前往参加<span class="tt-mix">2026</span>年1月举行的世界经济论坛。据《华尔街日报》报道，吉尔福伊尔敦促从保加利亚到阿尔巴尼亚的各国政府与埃克萨罗乌开展合作，并从其公司购买价值数十亿美元的美国天然气。她在录音中称，这位希腊商人是“自己人”。</span><span class="k-en" hidden>Guilfoyle had flown to the January 2026 World Economic Forum on a private jet with Alexandros Exarchou, chief executive of the Greek construction company Aktor Group, she acknowledged on the recording. Governments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy billions of dollars of American natural gas from his company, the Journal has reported. The Greek businessman was, she said in the recording, "my people."</span></p>
+<p data-block="p10"><span class="k-cn">他并非唯一一位协助吉尔福伊尔出行的商人。她在录音中称，当月晚些时候还计划搭乘希腊航运大亨尼科拉斯·察科斯驾驶的私人飞机前往巴黎，出席他妻子的时装秀。 holiday season期间，两人曾在瑞士顶级奢华度假胜地格斯塔德共度时光。</span><span class="k-en" hidden>He wasn't the only businessman facilitating Guilfoyle's travels. She was also planning to fly later that month to Paris, on a jet with a Greek shipping tycoon, Nikolas Tsakos, to attend his wife's fashion show, she said in the recording. They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of Gstaad.</span></p>
+<p data-block="p11"><span class="k-cn">“我他妈每天都能见到尼科斯，”她在录音中说道。“我要和他一起飞往巴黎。我要和他待上一整周……他爱我。亲爱的，我和他一起过了圣诞节，还有新年。明白吗？在格斯塔德，就是到处都一起。”</span><span class="k-en" hidden>"I see Nikos every f-ing day," she said in the recording. "I'm flying with him to Paris. I'm with him for a f-ing week.... He loves me. Honey, I spent Christmas with him. New Years. OK? Gstaad. Like, everywhere."</span></p>
+<p data-block="p12"><span class="k-cn">据知情人士透露，当这位大使入住巴黎的乔治五世四季酒店——这家酒店深受好莱坞一线明星以及非洲和中东地区领导人青睐——相关费用则由塔科斯能源航运公司首席执行官塔科斯支付。吉尔福伊尔身着多套名牌礼服，随后在<span class="tt-mix">Instagram</span>上向<span class="tt-mix">200</span>万粉丝发布了<span class="tt-mix">20</span>张活动照片，其中两张是与塔科斯的合影。</span><span class="k-en" hidden>When the ambassador checked into Paris's Four Seasons Hotel George V—a favored hotel of Hollywood A-listers and African and Middle Eastern leaders—the bill fell to Tsakos, CEO of Tsakos Energy Navigation, according to people familiar with the matter. Guilfoyle, dressed in several designer gowns, would post 20 photos of herself—including two with Tsakos—at the event to her 2 million Instagram followers.</span></p>
+<p data-block="p13"><span class="k-cn">此前并无报道提及察科斯为她的旅行提供资金。察科斯及其妻子未对置评请求作出回应。阿克托尔集团通过律师表示不愿置评。该集团的律师称，吉尔福伊尔并未不恰当地为阿克托尔集团的商业利益进行宣传。</span><span class="k-en" hidden>Tsakos's financing of her travel hasn't been previously reported. Tsakos and his wife didn't respond to requests for comment. Aktor Group, through lawyers, declined to comment. The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests.</span></p>
+<div class="tt-group ed-block">
+<p data-block="p14"><span class="k-cn">美国驻雅典大使馆发言人称，这位大使“在公共服务领域及以外的职业生涯始终以深厚而坚定的价值观为指引”，并且她“严格遵循了国务院的职业道德规范及礼品申报准则”。</span><span class="k-en" hidden>A spokesman for the U.S. Embassy in Athens said that the ambassador's "career in and out of public service is guided by deep and abiding values" and that she had "faithfully followed State Department ethics and gift reporting guidelines."</span></p>
+<p data-block="p15"><span class="k-cn">“这些毫无事实依据的指控不过是在分散人们对她在希腊及整个东地中海地区所作卓越工作的关注，”发言人说道。</span><span class="k-en" hidden>"The unsubstantiated claims are simply a distraction from the great work she is doing in Greece and the broader Eastern Mediterranean," the spokesman said.</span></p>
+</div>
+<p data-block="p16"><span class="k-cn">这一新披露的信息正值特朗普政府的高层官员们斟酌如何应对这位大使之际。此人原本有望嫁入特朗普家族，但在2026年中期选举临近之时，却逐渐变成了政治上的累赘。</span><span class="k-en" hidden>The new revelations come as top Trump administration officials are deliberating what to do about an ambassador who was once set to marry into the first family, yet is now evolving into a political liability ahead of the 2026 midterms.</span></p>
+<p data-block="p17"><span class="k-cn">助手们称，政府官员们正在讨论是否应解除她的职务，预计特朗普总统很快就会做出决定。</span><span class="k-en" hidden>Administration officials are discussing whether she should be removed, and a decision is expected by President Trump soon, aides said.</span></p>
+<p data-block="p18"><span class="k-cn">据一位知情人士透露，美国国务院监察长正在调查吉尔福伊尔是否收受了私人商人的礼物或好处。</span><span class="k-en" hidden>The State Department's inspector general is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said.</span></p>
+<h3 class="tt-subhead ed-block" data-editorial-added="true"><span class="k-cn">十万美元的请求</span><span class="k-en" hidden>The $100,000 Ask</span></h3>
+<p data-block="p19"><span class="k-cn">周三，《华尔街日报》率先公布了相关短信内容：<strong class="tt-b">吉尔福伊尔要求一位特朗普的捐赠者向她的美国运通账户汇入<span class="tt-mix">10</span>万美元</strong>，作为回报，她承诺协助促使特朗普政府着手调查该捐赠者的个人税务及法律问题。</span><span class="k-en" hidden>On Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send $100,000 to her American Express account, and in return offered help in getting the Trump administration to look into the donor's personal tax and legal issues.</span></p>
+<p data-block="p20"><span class="k-cn">吉尔福伊尔的律师对这些信息的真实性提出质疑，但拒绝透露具体细节。</span><span class="k-en" hidden>A lawyer for Guilfoyle disputed the authenticity of the messages but declined to provide specifics.</span></p>
+<p data-block="p21"><span class="k-cn">“我刚听说这件事。真遗憾，”周五离开白宫时，特朗普在谈到有关吉尔福伊尔的报道时对记者说道。“我是说，我也不清楚。她是一名大使……她一直都非常友善。”</span><span class="k-en" hidden>"I just heard about it. It's too bad," Trump told reporters of the reporting on Guilfoyle as he left the White House on Friday. "I mean, I don't know. She's an ambassador.... She was always very nice."</span></p>
+<p data-block="p22"><span class="k-cn">上周，吉尔福伊尔遭到参议院及众议院外交事务委员会中民主党议员的抨击。在《华尔街日报》的调查揭露这位大使试图力推希腊企业Aktor之后，这些议员敦促国务院对其行为进行审查。该企业的首席执行官曾亲自安排吉尔福伊尔前往达沃斯。</span><span class="k-en" hidden>Last week, Guilfoyle came under fire from Democrats on the Senate and House foreign-affairs committees, who urged the State Department to review her conduct after the Journal investigation revealed the ambassador's efforts to promote Aktor, the Greek firm whose CEO had flown her to Davos.</span></p>
+<p data-block="p23"><span class="k-cn">这些爆料给白宫和国务院带来了混乱。吉尔福伊尔花了好几天时间联系政府内部及周边人士，否认自己曾发送那些请求信用卡债务减免的短信，并试图争取他们的支持。</span><span class="k-en" hidden>The revelations have been a disruption for the White House and State Department. Guilfoyle spent several days reaching out to people in and around the administration, denying that she had sent the texts soliciting credit-card relief, and seeking their support.</span></p>
+<p data-block="p24"><span class="k-cn">国务卿马可·鲁比奥在飞往雅典的飞机上，通过《华尔街日报》的置评请求得知了她的短信内容。他此行是要在卫城前发表演讲，探讨“西方能否继续稳居世界领先地位”。</span><span class="k-en" hidden>Secretary of State Marco Rubio learned about her text messages from the Journal's request for comment as he was on a plane to Athens, where he would deliver a speech standing before the Acropolis, "on whether the West maintains its place at the head of the world."</span></p>
+<p data-block="p25"><span class="k-cn">据了解相关讨论情况的人士透露，助手们感到沮丧，担心这些爆料会盖过鲁比奥的重要演讲。在鲁比奥访问期间，吉尔福伊尔陪同他参加了多项活动。</span><span class="k-en" hidden>Aides were frustrated and feared the revelations would overshadow Rubio's marquee address, according to people familiar with the discussions. Guilfoyle joined Rubio for multiple events during his visit.</span></p>
+<p data-block="p26"><span class="k-cn">然而，周四当鲁比奥离开雅典时，他拒绝谈论《华尔街日报》所报道的那些短信内容。</span><span class="k-en" hidden>Yet as Rubio departed Athens on Thursday, he declined to discuss the text messages reported by the Journal.</span></p>
+<p data-block="p27"><span class="k-cn">“我们不会因为某篇报道就在一个外国的停机坪上举行新闻发布会，”他告诉记者。吉尔福伊尔当时就在停机坪上为他送行。</span><span class="k-en" hidden>"We don't conduct these things in a press conference on a tarmac in a foreign country because you wrote a story," he told reporters. Guilfoyle was on the tarmac to see him off.</span></p>
+<p data-block="p28"><span class="k-cn">副总统JD·万斯在被问及《华尔街日报》周五的报道时，拒绝表明立场。</span><span class="k-en" hidden>Vice President JD Vance, asked about the Journal's reporting on Friday, declined to take a stance.</span></p>
+<p data-block="p29"><span class="k-cn">“这些都是指控，”他说。“让我们看看真相究竟是什么。显然，如果真发生了什么不好的事情，那么相关人员就必须承担后果。”</span><span class="k-en" hidden>"These are accusations," he said. "Let's see what the truth is. And obviously, if there was something bad that happened, then people have to suffer consequences."</span></p>
+<p data-block="p30"><span class="k-cn">一些前特朗普政府官员对吉尔福伊会承担后果表示怀疑。</span><span class="k-en" hidden>Some former Trump officials expressed skepticism that Guilfoyle would face consequences.</span></p>
+<p data-block="p31"><span class="k-cn">前第一夫人梅拉尼娅·特朗普的发言人斯蒂芬妮·格里沙姆在X平台上发帖写道：“她对特朗普家族及核心圈子的了解实在太多，我想他们希望她离得越远越好。如果在美国境内出现愤怒的凯莉安妮，对特朗普阵营而言绝非好事。”</span><span class="k-en" hidden>Stephanie Grisham, first lady Melania Trump's former spokeswoman, wrote in a post on X: "She knows far too much about the Trump family/inner circle &amp; I imagine they like her as far away as possible. An angry KG state-side would not be a good thing for Trumpworld."</span></p>
+<p data-block="p32"><span class="k-cn">最近几天，国会中的民主党人愈发强烈地呼吁对吉尔福伊尔展开调查，或将其撤职——甚至两者兼施。</span><span class="k-en" hidden>In recent days, congressional Democrats have intensified their calls for Guilfoyle to face an investigation or be ousted from her role—or both.</span></p>
+<p data-block="p33"><span class="k-cn">周五，众议院外交委员会民主党首席议员、纽约州民主党众议员格雷戈里·米克斯在给吉尔福伊尔的信中，呼吁对这位大使是否违反了联邦贿赂及公共腐败相关法律展开“立即调查”。</span><span class="k-en" hidden>In a letter to Guilfoyle on Friday, Rep. Gregory Meeks (D, N.Y.), the top Democrat on the House Foreign Affairs Committee, called for an "immediate investigation" into whether the ambassador had violated federal bribery and public corruption laws.</span></p>
+<p data-block="p34"><span class="k-cn">米克斯还要求国务院监察长调查吉尔福尔是否违反了联邦法律、部门规章及其他相关规定。</span><span class="k-en" hidden>Meeks also requested the State Department inspector general investigate whether Guilfoyle had violated federal law, department regulations or other requirements.</span></p>
+<p data-block="p35"><span class="k-cn">周四，众议院监督委员会中的民主党首席议员、加利福尼亚州众议员罗伯特·加西亚在给吉尔福伊尔的信中表示，据报道的这些行为“引发了严重的公共腐败及国家安全方面的担忧”，并要求她提供相关记录以及其与某些政府官员的通信副本。</span><span class="k-en" hidden>California Rep. Robert Garcia, the top Democrat on the House oversight committee, in a letter to Guilfoyle on Thursday said the reported conduct "raises serious public corruption and national security concerns" and requested she provide the relevant records and copies of her communications with certain government officials.</span></p>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

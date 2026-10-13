@@ -116,30 +116,77 @@ def build_e1025_layouts():
     return layouts, rejected
 
 
+def _quoted_segments(text):
+    """按引号对切分引语片段，返回 [(open_idx, segment_text)]（按出现顺序）。"""
+    import re
+    segs = []
+    for pat in [r'“([^”]*)”', r'"([^"]*)"']:
+        for m in re.finditer(pat, text or ''):
+            segs.append((m.start(), m.group(0)))
+    segs.sort()
+    return segs
+
+
+def _first_sentence(seg_text):
+    """引语片段内取首个完整句子（含结尾标点）；无则返回 None。"""
+    import re
+    m = re.search(r'^[“"]?[^。！？.!?]*[。！？.!?]', (seg_text or '').strip())
+    return m.group(0) if m else None
+
+
 def dedup_quote(plan):
     """引语去重：quote 与正文逐字重复时，缩减为首个直接引语单句。
+
+    中英必须取同一序号的引语片段（双语一致性），否则拒绝去重、
+    保留原文并记录人工审核。
     返回 (modified: bool, note: str)。"""
     for cp in plan.get('component_plan', []):
         if cp['component'] != 'quote':
             continue
         d = cp.get('data', {})
         q = d.get('quote', {})
-        text = q.get('text_cn', '')
-        # 取首个直接引语单句（引号内第一句）
-        import re
-        m = re.search(r'[“"]([^“”"]+?[。！？])', text)
-        if m:
-            single = m.group(0)
-            if single != text:
-                q['text_cn'] = single
-                # 英文同步
-                me = re.search(r'"([^"]+?[.!?])', q.get('text_en', ''))
-                if me:
-                    q['text_en'] = me.group(0)
-                cp['dedup_note'] = ('引语与正文 p11 逐字重复；按编辑理由缩减为首个直接引语单句，'
-                                    '保留导读功能，消除重复成本')
+        cn_segs = _quoted_segments(q.get('text_cn', ''))
+        en_segs = _quoted_segments(q.get('text_en', ''))
+        cn_pick = en_pick = None
+        for idx, (_, seg) in enumerate(cn_segs):
+            s = _first_sentence(seg)
+            if s:
+                cn_pick = (idx, s)
+                break
+        for idx, (_, seg) in enumerate(en_segs):
+            s = _first_sentence(seg)
+            if s:
+                en_pick = (idx, s)
+                break
+        if cn_pick and en_pick and cn_pick[0] == en_pick[0]:
+            single_cn, single_en = cn_pick[1], en_pick[1]
+            if single_cn != q['text_cn']:
+                q['text_cn'] = single_cn
+                q['text_en'] = single_en
+                cp['dedup_note'] = ('引语与正文逐字重复；缩减为第%d个引语片段首句（中英对齐），'
+                                    '保留导读功能，消除重复成本' % (cn_pick[0] + 1))
                 return True, cp['dedup_note']
+        elif cn_pick or en_pick:
+            cp['dedup_note'] = ('中英引语片段序号不一致，去重中止，保留原文，需人工审核')
+            return False, cp['dedup_note']
     return False, ''
+
+
+def validate_quote_bilingual(plan):
+    """双语引用一致性校验：所有 quote 组件的中英引语片段数必须一致。
+    返回 [(component_idx, ok, msg)]。"""
+    results = []
+    for i, cp in enumerate(plan.get('component_plan', [])):
+        if cp.get('component') != 'quote':
+            continue
+        q = cp.get('data', {}).get('quote', {})
+        cn_n = len(_quoted_segments(q.get('text_cn', '')))
+        en_n = len(_quoted_segments(q.get('text_en', '')))
+        if cn_n != en_n:
+            results.append((i, False, '中英引语片段数不一致 CN=%d EN=%d' % (cn_n, en_n)))
+        else:
+            results.append((i, True, '中英引语片段对齐 (%d 对)' % cn_n))
+    return results
 
 
 def orchestrate_e1025(gen_test_dir):
