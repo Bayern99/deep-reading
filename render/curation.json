@@ -29,11 +29,12 @@
       "insight_en": "Last week: DJIA 51,654.95 (+0.93%) | NASDAQ 27,366.17 (+0.6%) | STOXX 600 631.55 (+0.03%) | 10-yr Treasury 5.243% | Oil $91.85 | Euro $1.1202 | Yen 158.29"
     },
     "E1-033": {
+      "suppress_body": "图已恢复；原文是印刷页说明+扫码提示，数字版无阅读价值",
       "figures": [
         {
           "file": "ovis-test/visual-assets/infographic-newleft-donors.png",
-          "caption_cn": "各州进步派团体投入资金对比（密歇根 $1270 万、宾夕法尼亚 $910 万；比例尺：$1000 万与 $100 万标记。含 24 个进步派 PAC 与倡导组织，2025 年 1 月 1 日—10 月 7 日）",
-          "caption_en": "Funding by state for progressive groups (Michigan $12.7M; Pennsylvania $9.1M; scale markers $10M and $1M; 24 progressive PACs and advocacy groups, Jan 1–Oct 7, 2025)",
+          "caption_cn": "各州进步派团体投入资金对比（密歇根 $1270 万、宾夕法尼亚 $910 万；含 24 个进步派 PAC 与倡导组织，2025 年 1 月 1 日—10 月 7 日）",
+          "caption_en": "Funding by state for progressive groups (Michigan $12.7M; Pennsylvania $9.1M; 24 progressive PACs and advocacy groups, Jan 1–Oct 7, 2025)",
           "credit": "AdImpact"
         }
       ]
@@ -59,7 +60,9 @@
       "insight_cn": "上周道指主要推手：Visa（+6.87%，贡献 147.34 点）、沃尔玛（+6.80%）、迪士尼（+5.73%）、思科（+5.52%）；微软 +3.39%。"
     },
     "E3-036": {
+      "suppress_body": "柱图已覆盖跌幅数字；原文是图表说明，数字版重复",
       "insight_cn": "SpaceX 80 亿美元频谱交易重创无线运营商：AT&T 收跌 −9.8%（24 年多来最大单日跌幅），Verizon −8.7%，T-Mobile −13%（13 年多来最大百分比跌幅）。",
+      "insight_en": "SpaceX’s $8 billion spectrum deal hit wireless carriers: AT&T −9.8% (biggest one-day drop in 24 years), Verizon −8.7%, T-Mobile −13% (worst percentage drop in 13 years).",
       "chart": {
         "title_cn": "无线运营商单日跌幅（周五）",
         "title_en": "Wireless carriers' one-day drop (Friday)",
@@ -73,7 +76,15 @@
       }
     },
     "E3-038": {
-      "insight_cn": "本周前瞻：周一（哥伦布日）美债市场休市；财报密集——花旗、高盛、摩根大通、摩根士丹利、联合健康、富国银行等；详见下方清单。"
+      "suppress_body": "已改写为中英对照日程；原文是英文密排清单",
+      "insight_cn": "本周：周一哥伦布日美债休市；银行与资管财报扎堆；周三看 CPI 与初请失业金。",
+      "insight_en": "This week: U.S. bond markets closed Monday (Columbus Day); bank/asset-manager earnings cluster; Wednesday CPI and jobless claims.",
+      "schedule": [
+        {"day_cn": "周一", "day_en": "Monday", "cn": "美债市场因哥伦布日休市。财报：花旗、高盛、强生、摩根大通、联合健康、富国银行、贝莱德、摩根士丹利、嘉信等。", "en": "U.S. bond markets closed for Columbus Day. Earnings: Citi, Goldman, J&J, JPM, UnitedHealth, Wells Fargo, BlackRock, Morgan Stanley, Schwab."},
+        {"day_cn": "周二", "day_en": "Tuesday", "cn": "成屋销售（9 月预期 395 万套）；9 月财政部预算。", "en": "Existing-home sales (Sep expected 3.95M); Treasury budget."},
+        {"day_cn": "周三", "day_en": "Wednesday", "cn": "CPI（9 月预期 +3.7%，核心 +2.5%）；初请失业金（预期 20.2 万）；费城联储、纽约联储制造业。", "en": "CPI (Sep expected +3.7%, core +2.5%); initial claims (exp. 202k); Philly Fed, Empire Manufacturing."},
+        {"day_cn": "周四", "day_en": "Thursday", "cn": "PPI、零售销售、商业库存；EIA 原油库存；房地美抵押贷款利率。", "en": "PPI, retail sales, business inventories; EIA crude stocks; Freddie Mac mortgage survey."}
+      ]
     }
   }
 }

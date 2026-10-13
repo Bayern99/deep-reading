@@ -7,9 +7,22 @@ from components import (esc, pair, paras, article_header, body_paras, key_figure
                         bargraph)
 
 
+def _schedule_block(uid, days):
+    rows = []
+    for d in days:
+        rows.append(
+            f'<li><span class="dcal-d"><span class="k-cn">{esc(d["day_cn"])}</span>'
+            f'<span class="k-en" hidden>{esc(d["day_en"])}</span></span>'
+            f'<span class="dcal-b"><span class="k-cn">{esc(d["cn"])}</span>'
+            f'<span class="k-en" hidden>{esc(d["en"])}</span></span></li>')
+    return (
+        f'<ol class="dcal ed-block" data-editorial-added="true" id="dcal-{uid}">'
+        + ''.join(rows) + '</ol>'
+    )
+
+
 def _curated_blocks(uid, cur):
-    """数据稿编辑处理：编辑摘要（editorial_added 标记）、已恢复图、自做图表。
-    原文始终 verbatim 保留在下方。"""
+    """数据稿编辑处理：编辑摘要、已恢复图、自做图表、日程。原文默认 verbatim，suppress_body 时不输出。"""
     cur = cur or {}
     h = []
     if cur.get('insight_cn'):
@@ -31,6 +44,8 @@ def _curated_blocks(uid, cur):
                           [tuple(b) for b in ch['bars']],
                           note_cn=ch.get('note_cn', ''),
                           note_en=ch.get('note_en', ''), uid=uid))
+    if cur.get('schedule'):
+        h.append(_schedule_block(uid, cur['schedule']))
     return h
 
 

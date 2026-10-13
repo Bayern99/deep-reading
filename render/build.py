@@ -353,6 +353,11 @@ def build_issue(issue, plans_all=None, write_baseline=True):
         'background:#faf7f2;max-width:var(--measure)}'
         '\n.dins-tag{font:700 12px/1.4 var(--font-meta);letter-spacing:.08em;color:var(--orange);margin-bottom:6px}'
         '\n.dins p{font-size:15px;line-height:1.8;margin:0}'
+        '\n.dcal{list-style:none;margin:8px auto 20px;padding:0;max-width:var(--measure)}'
+        '\n.dcal li{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:10px 0;'
+        'border-bottom:1px solid var(--line);font-size:15px;line-height:1.7}'
+        '\n.dcal-d{font:700 13px/1.5 var(--font-meta);letter-spacing:.04em;color:var(--mut)}'
+        '\n@media(max-width:430px){.dcal li{grid-template-columns:1fr;gap:2px}}'
     )
 
     def wrap_doc(body_html, title_suffix=''):
