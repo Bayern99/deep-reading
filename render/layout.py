@@ -113,6 +113,8 @@ LAYOUT_CSS = '''
   /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
   .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
   .ly-wide figcaption{padding:0 20px}
+  /* 图表保持可读宽度，横向滚动而非压扁 */
+  .ly-wide .ly-wide-scroll img{min-width:560px;max-width:none}
 }
 @media(max-width:430px){
   .ly-note{font-size:13.5px}
