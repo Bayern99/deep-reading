@@ -1,0 +1,93 @@
+{
+ "_note": "策展模块数据。只收人工确认的内容，不许自动生成。key 为 final_id。",
+ "E1-005": {
+  "key_figures": [
+   {
+    "label_cn": "利雅得机场袭击 · 死亡",
+    "label_en": "AIRPORT STRIKE · KILLED",
+    "value_cn": "至少12人",
+    "value_en": "at least 12",
+    "note_cn": "另有数百人受伤，许多人伤势严重",
+    "note_en": "hundreds more injured, many severely"
+   },
+   {
+    "label_cn": "利雅得距胡塞控制区",
+    "label_en": "RIYADH TO HOUTHI AREAS",
+    "value_cn": "约500英里",
+    "value_en": "about 500 miles",
+    "note_cn": "首都部分地区已成战场",
+    "note_en": "parts of the capital a battle zone"
+   },
+   {
+    "label_cn": "沙特年度预算",
+    "label_en": "ANNUAL BUDGET",
+    "value_cn": "约3500亿美元",
+    "value_en": "about $350 billion",
+    "note_cn": "未来项目总成本高达数万亿美元",
+    "note_en": "giga-project costs run to trillions"
+   },
+   {
+    "label_cn": "2026 年 GDP 预期",
+    "label_en": "2026 GDP FORECAST",
+    "value_cn": "下降3.6%",
+    "value_en": "shrink 3.6%",
+    "note_cn": "沙特财政部最新预计",
+    "note_en": "per the Saudi Finance Ministry"
+   }
+  ],
+  "timeline": {
+   "title_cn": "时间线 · 冲突升级",
+   "title_en": "TIMELINE · ESCALATION",
+   "entries": [
+    {
+     "t_cn": "2015 年",
+     "t_en": "2015",
+     "text_cn": "2015年，王储使沙特阿拉伯卷入了也门内战，支持该国得到国际承认的政府，与胡塞武装作战。",
+     "text_en": "The crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis."
+    },
+    {
+     "t_cn": "2022 年",
+     "t_en": "2022",
+     "text_cn": "双方陷入僵局，并在2022年达成了停火协议。",
+     "text_en": "The sides fought to a stalemate and a ceasefire in 2022."
+    },
+    {
+     "t_cn": "7 月",
+     "t_en": "JUL",
+     "text_cn": "但在7月，胡塞武装宣布对沙特阿拉伯实施海上封锁，使红海航运面临风险。",
+     "text_en": "But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk."
+    },
+    {
+     "t_cn": "9 月",
+     "t_en": "SEP",
+     "text_cn": "9月，对东西管道的袭击直接威胁到该国从霍尔木兹海峡逃离的主要通道。",
+     "text_en": "In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz."
+    },
+    {
+     "t_cn": "周四",
+     "t_en": "THU",
+     "text_cn": "周四，一枚被拦截的弹道导弹的碎片击中了一所幼儿园和一座医疗诊所综合楼。",
+     "text_en": "Debris from an intercepted ballistic missile hit a kindergarten and a medical clinic complex Thursday."
+    },
+    {
+     "t_cn": "周六",
+     "t_en": "SAT",
+     "text_cn": "周六，一枚胡塞导弹击中了沙特首都的国际机场，造成至少 12 人死亡，数百人受伤，其中许多人伤势严重。 这是伊朗战争相关冲突中，针对美国或其海湾盟友造成的单次伤亡最严重的袭击。",
+     "text_en": "On Saturday, a Houthi missile slammed into the Saudi capital's international airport, killing at least 12 people and injuring hundreds more, many seriously. It was the single deadliest attack on the U.S."
+    },
+    {
+     "t_cn": "周日",
+     "t_en": "SUN",
+     "text_cn": "周日，一名胡塞武装的军事发言人重申，沙特机场是该组织的袭击目标。",
+     "text_en": "On Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets."
+    }
+   ]
+  },
+  "quote": {
+   "text_cn": "任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。",
+   "text_en": "Any military response risks getting drawn in deeper to an asymmetric conflict.",
+   "attr_cn": "克里斯蒂安·库茨·乌尔里克森 / 莱斯大学贝克研究所",
+   "attr_en": "Kristian Coates Ulrichsen / Baker Institute, Rice University"
+  }
+ }
+}
