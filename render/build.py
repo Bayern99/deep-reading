@@ -289,7 +289,21 @@ def build_issue(issue):
         with open(fp, 'rb') as f:
             img_cache[aid] = base64.b64encode(f.read()).decode('ascii')
 
-    body, order = render_issue(final, modules_all, images_all, img_cache, issue)
+    # 完整性门禁分流
+    from integrity_gate import check_article
+    gate_status = {}
+    for e in final:
+        passed, issues = check_article(e)
+        gate_status[e['id']] = ('pass' if passed else 'block',
+                                issues) if not passed else ('pass', [])
+        if passed and issues:
+            gate_status[e['id']] = ('warn', issues)
+    n_pass = sum(1 for v in gate_status.values() if v[0] == 'pass')
+    n_warn = sum(1 for v in gate_status.values() if v[0] == 'warn')
+    n_block = sum(1 for v in gate_status.values() if v[0] == 'block')
+    print(f'gate: {n_pass} PASS / {n_warn} WARN / {n_block} BLOCK')
+    body, order = render_issue(final, modules_all, images_all, img_cache, issue,
+                               gate_status=gate_status)
 
     doc = f'''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -317,7 +331,7 @@ def build_issue(issue):
     with open(out, 'w', encoding='utf-8') as f:
         f.write(doc)
     print(f'wrote {out} ({len(doc)//1024} KB, {len(order)} articles)')
-    return out, final, order
+    return out, final, order, gate_status
 
 
 def check_no_duel(html):
@@ -330,7 +344,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--issue', required=True)
     args = ap.parse_args()
-    out, final, order = build_issue(args.issue)
+    out, final, order, gate_status = build_issue(args.issue)
 
     # ---- 自查断言 ----
     html = open(out, encoding='utf-8').read()
@@ -339,10 +353,16 @@ def main():
     assert len(ids) == 117, f'expected 117, got {len(ids)}'
     assert len(set(ids)) == 117, 'duplicate ids'
     for e in final:
-        assert f'id="s-{e["id"]}"' in html, f'missing article {e["id"]}'
+        st = gate_status.get(e['id'], ('pass', []))[0]
+        if st == 'pass':
+            assert f'id="s-{e["id"]}"' in html, f'missing article {e["id"]}'
+        else:
+            # WARN/BLOCK 只进待审核区
+            assert f'id="review-{e["id"]}"' in html, f'missing review {e["id"]}'
     # 阅读顺序 = 分组顺序
     from issue import reading_order
-    assert [e['id'] for e in order] == [e['id'] for e in reading_order(final)]
+    pub_final = [e for e in final if gate_status.get(e['id'], ('pass', []))[0] == 'pass']
+    assert [e['id'] for e in order] == [e['id'] for e in reading_order(pub_final)]
     # 每篇段落数一致（正文逐字）
     from components import paras as _paras
     for e in final:
@@ -350,11 +370,15 @@ def main():
         # data_table 的 body_en 为空也允许（表格走 body_en 解析）
         if e.get('type') == 'data_table':
             continue
+        if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
+            continue
         got = html.count(f'id="s-{e["id"]}"')
         assert got == 1, f'{e["id"]} anchor count {got}'
     # 段落级校验：每段中文首 24 字必须出现在对应 article 区块内
     for e in final:
         if e.get('type') == 'data_table':
+            continue
+        if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
             continue
         for cn, _ in _paras(e.get('body_cn'), e.get('body_en')):
             key = cn[:24].strip()
@@ -365,7 +389,13 @@ def main():
     check_no_duel(html)
     assert 'text-wrap:pretty' not in html and 'text-wrap: pretty' not in html
     # 5. 图片只来自 images.json
-    assert html.count('data:image/png;base64') == 1, 'embedded image count'
+    # 图片数 = PASS 且有图的文章数
+    import json as _js
+    _imgs = _js.load(open(os.path.join(BASE, 'images.json')))
+    _expected_imgs = sum(1 for aid in _imgs if not aid.startswith('_')
+                         and gate_status.get(aid, ('pass', []))[0] == 'pass')
+    assert html.count('data:image/png;base64') == _expected_imgs, \
+        f'embedded image count: got {html.count("data:image/png;base64")}, want {_expected_imgs}'
     print('assertions passed: 117 articles, paras verbatim, quote x1, no duel, no pretty')
 
 

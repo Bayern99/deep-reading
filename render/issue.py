@@ -49,12 +49,23 @@ def render_toc(order):
     return '\n'.join(h2)
 
 
-def render_issue(articles, modules_all, images_all, img_cache, issue_date):
-    order = reading_order(articles)
+def render_issue(articles, modules_all, images_all, img_cache, issue_date,
+                 gate_status=None):
+    """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。"""
+    if gate_status:
+        pub_articles = [e for e in articles
+                        if gate_status.get(e['id'], ('pass', []))[0] == 'pass']
+        review_articles = [e for e in articles
+                           if gate_status.get(e['id'], ('pass', []))[0] in ('warn', 'block')]
+    else:
+        pub_articles, review_articles = articles, []
+    order = reading_order(pub_articles)
+    n_pub = len(order)
+    n_review = len(review_articles)
     parts = []
 
     # masthead
-    parts.append('''
+    masthead = '''
 <header class="masthead">
   <a class="skip" href="#toc">跳到目录</a>
   <div class="mast-in">
@@ -69,8 +80,9 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date):
 <div class="issue-hero">
   <div class="issue-kicker"><span class="kbar"></span><span class="k-cn">华尔街日报 · 每日深读</span><span class="k-en" hidden>THE WALL STREET JOURNAL · DAILY DEEP READ</span></div>
   <h1 class="issue-title"><span class="k-cn">2026年10月12日</span><span class="k-en" hidden>October 12, 2026</span></h1>
-  <p class="issue-dek"><span class="k-cn">共 117 篇 · 机器辅助翻译 · 逐版摘要</span><span class="k-en" hidden>117 stories · machine-assisted translation · section-by-section digest</span></p>
-</div>''')
+  <p class="issue-dek"><span class="k-cn">共 {n_pub} 篇 · 机器辅助翻译 · 逐版摘要</span><span class="k-en" hidden>{n_pub} stories · machine-assisted translation · section-by-section digest</span></p>
+</div>'''.format(n_pub=n_pub)
+    parts.append(masthead)
 
     parts.append('<main id="issue">')
     parts.append(render_toc(order))
@@ -86,6 +98,23 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date):
         parts.append(article_nav(
             prev_e['id'] if prev_e else None, prev_e.get('title_cn') if prev_e else None,
             next_e['id'] if next_e else None, next_e.get('title_cn') if next_e else None))
+    # 待审核区：WARN/BLOCK 文章只列元数据，不渲染正文
+    if review_articles and gate_status:
+        parts.append('<section class="review-queue" aria-label="待审核">')
+        parts.append('<h2><span class="k-cn">待审核（%d 篇）</span>'
+                     '<span class="k-en" hidden>Under Review (%d)</span></h2>' % (n_review, n_review))
+        parts.append('<p class="review-note"><span class="k-cn">以下文章尚未通过完整性确认，暂不发布正文。</span>'
+                     '<span class="k-en" hidden>These articles are pending integrity review.</span></p>')
+        for e in review_articles:
+            status, issues = gate_status.get(e['id'], ('warn', []))
+            reason = '; '.join(i.get('detail', '')[:80] for i in issues[:2] if isinstance(i, dict))
+            parts.append(
+                f'<article class="review-item" id="review-{e["id"]}">'
+                f'<h3>{e.get("title_cn") or e["id"]}</h3>'
+                f'<p class="review-meta">{e["id"]} · {e.get("type","")} · 状态：{status}</p>'
+                f'<p class="review-reason">{reason}</p>'
+                '</article>')
+        parts.append('</section>')
     parts.append('</main>')
 
     parts.append('''

@@ -202,6 +202,18 @@ def validate_quote_bilingual(plan):
         if _re.match(r'^[“"]?\s*\w+\s+said\b', qen, _re.I):
             results.append((i, False, '英文疑似 attribution 而非引语：%s' % qen[:40]))
             continue
+        # source span 关联：中英引语在各自正文中的相对位置应接近
+        # （不是序号对齐，而是位置对齐——同一引语在双语中位置相近）
+        cn_segs = _quoted_segments(qcn)
+        en_segs = _quoted_segments(qen)
+        if cn_segs and en_segs and len(qcn) > 50 and len(qen) > 50:
+            # 用首个片段的相对位置比
+            cn_rel = cn_segs[0][0] / len(qcn)
+            en_rel = en_segs[0][0] / len(qen)
+            if abs(cn_rel - en_rel) > 0.5:
+                results.append((i, False,
+                    '中英引语位置偏差过大 (CN%.2f vs EN%.2f)，疑似非同一来源' % (cn_rel, en_rel)))
+                continue
         results.append((i, True, '中英引语片段对齐 (%d 对)' % cn_n))
     return results
 
