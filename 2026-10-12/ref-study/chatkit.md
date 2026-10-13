@@ -1,0 +1,64 @@
+研究完成。Gallery 页是纯 JS 应用，文本抓取拿不到渲染内容（已如实说明）；但 components 文档、agent-authoring 的完整模板代码和官方 API 文档都是文本可读的——模板里的 size/gap/padding/color 参数反而比截图更精确。以下是研究报告：
+
+---
+
+# ChatKit Widget 视觉设计研究报告（为 WSJ 深读文章内部排版）
+
+## 一、系统设计哲学（agent-authoring 核心原则）
+
+来源：https://widgets.chatkit.studio/agent-authoring
+
+1. **Opinionated defaults（固执己见的默认值）**：不传任何 props 也能渲染出好看的组件——默认间距、字体、圆角、阴影都经过设计。系统会在元素间**自动加间距**，极少需要手动设 `gap`。→ 对我们的启示：先定一套默认排印节奏，而不是每个条目逐个调。
+2. **Complexity budget（复杂度预算）**：标题 ≤40 字符、文本行 ≤100 字符；需求模糊时返回**最小摘要**。"Use fewer colors and type sizes"——颜色和字号越少越一致。
+3. **容器三选一**：`Card`（单个事物）/`ListView`（多个选项）/`Basic`（极少用）。`ListViewItem` 只能是 `ListView` 的直接子项。
+4. **文字即 props**：`Text`/`Title`/`Caption`/`Badge` 永不接受 children，只用 `value`/`label`——文字是数据，不是装饰。
+
+## 二、四个组件案例
+
+### 案例 1：大数字 + 标签（日历事件卡）
+
+- 链接：https://widgets.chatkit.studio/agent-authoring（"confirm adding a new calendar event" 示例）
+- 结构：`Card > Row(align="start") > Col(gap={1}, width={80})`，内含 `Caption(size="lg", color="secondary")`（星期名，如 MONDAY）在上 + `Title(size="3xl")`（日期数字）在下；右侧 `Col(flex="auto")` 列事件。
+- 视觉细节：**标签在上、数字在下**，`gap={1}` 贴紧，靠"小灰字 vs 特大字"建立层级而非间距。事件行是 `Row(padding={{x:3,y:2}}, gap={3}, radius="xl", background="surface-secondary")`，内有一条 4px 宽、40px 高的圆头色条 `Box` 做视觉锚点，右侧 `Col` 放 `Text(标题)` + `Text(size="sm", color="tertiary")`（时间）。
+- 字体三档：`Title` 有 sm→3xl 五档，`Text` 默认 md（xs/sm/md/lg/xl），`Caption` 专做辅助小字（sm/md/lg）；颜色三档 `emphasis`（默认正文）/`secondary`/`tertiary`。
+- **适合 WSJ**：Compact Stat 关键数字（如"196 次袭击""5.243%"）——mono 小标签在上 + 大数字在下。
+- **融入现有系统**：大数字用衬线 3xl（呼应我们的衬线标题），标签用现有 mono 11px；色条换成 1.5px 黑线或 P1/P2/P3 优先级色；圆角全部压成 0。
+
+### 案例 2：高密度列表行（ListView 议程 / 设备列表）
+
+- 链接：https://widgets.chatkit.studio/agent-authoring（"list of agenda items" 与 "a list of user devices" 示例）；API：https://developers.openai.com/api/docs/guides/chatkit-widgets（ListViewItem：`gap`/`align`，默认 align="center"）
+- 议程版：`ListViewItem(gap={2}, align="stretch")` > 3px 色条 + `Col(gap={0})` 内三行——`Row` 并排两个 `Caption`（时间、地点，同 accent 色）→ `Text(title, size="sm")` → `Text(note, size="sm", color="secondary")`。
+- 设备版：`ListViewItem(gap={3})` > 图标盒（`background="alpha-10"`, padding={2}）+ `Col(gap={0})` 内 `Text(name, size="sm", weight="semibold")` + `Caption("status • os version", color="secondary")`——**三个元数据用 `•` 连成一行 Caption**。
+- 视觉细节：`Col(gap={0})` 让同属一条目的三行贴紧，**靠字号/字重/颜色区分，不靠间距**；行与行之间靠 ListView 系统间距自然分开，不用每行加框。
+- **适合 WSJ**：What's News 简讯列表——mono 版次/时间行 + 中文标题 + 一句话说明；设备版的 `•` 连接法**验证了我们现有 kicker（`A1 · P1必读 · BYLINE`）的做法是对的**。
+- **融入现有系统**：图标盒换成 mono 页码小方块；色条用优先级色；行间用 1px 灰线（`--line-2`）而非卡片边框。
+
+### 案例 3：Label / Value 事实行（软件购买确认卡）
+
+- 链接：https://widgets.chatkit.studio/agent-authoring（"software purchase confirmation" 示例）
+- 结构：`Card(padding={0})` > 标题行 `Row` > `Divider flush`（**分隔线 bleed 到卡片边缘**，去掉容器内边距）> `Col` 内多组 `Row`：`Text(label, size="sm", color="secondary")` + `Spacer` + 右对齐 value → 底部总计行 `Row(background="surface-elevated-secondary", border={{top:{size:1}}})`。
+- 视觉细节：**行与行之间没有分隔线**，秩序完全靠"左灰标签 + 右对齐值 + Spacer 撑开"建立；只有"头/体"和"体/总计"两处用线，且都是 bleed 到边缘的粗线。这是最高密度的 Label/Value 排法。
+- **适合 WSJ**：Key Facts 事实模块（人物/时间/地点/金额/来源），新闻正文中的简洁事实块；总计行模式可做"核心结论"行。
+- **融入现有系统**：label 用 mono 11px `--ink-3`，value 用 sans 15px；总计行底色用 `--fill`（#f3f5f8）+ 顶部 1.5px 黑线；圆角 0。
+
+### 案例 4：三层文字栈（会议详情卡头）
+
+- 链接：https://widgets.chatkit.studio/agent-authoring（"detail view for a conference session" 示例）
+- 结构：`Col(gap={1})` 内三行：`Text(type, size="sm", color="purple")`（彩色小标签）→ `Title(title, size="sm")` → `Text(description, size="sm", color="secondary")`，下方 `Divider flush` 再接信息行（图标盒 + 地点/时间两行 + 右侧按钮）。
+- 视觉细节：三档同字号（sm），**只靠颜色区分层级**：彩色标签 → 默认色标题 → secondary 描述，`gap={1}` 紧贴。这是"标签-标题-说明"最紧凑的标准式。
+- **适合 WSJ**：验证了我们 v5/v6 的 kicker → 标题 → 导语结构方向正确；可优化的是导语与标题的字号差要更大（案例里标题 Title sm vs 描述 Text sm 同字号，我们 v6 导语 15.5px vs P1 标题 34px 已经拉得更开，是对的）。
+- **融入现有系统**：purple 换成我们的 accent 蓝 `#1d5fbf` 或直接用黑色；`Divider flush` 对应我们盒子内的 1px 灰线。
+
+## 三、可迁移的通用原则（给 v-next 的设计 token 建议）
+
+1. **gap 语义化**：0=同一信息单元内（如标题+说明），1=紧密相关，2~3=分组，4+=区块。不要用随意数值。
+2. **Row + Spacer 是最高频的对齐模式**：左标签右值、左标题右元数据，不需要表格。
+3. **Divider 只用在"头/体""体/尾"分界**，且 bleed 到容器边缘（`flush`）；列表项之间不用线，靠系统间距。
+4. **列表行防溢出**：`maxLines={1}` + truncate，标题一行截断。
+5. **每行一个视觉锚点**：3~4px 色条或小图标盒，让扫描有落点。
+6. **颜色预算**：正文/次要/第三级三档灰 + 一个强调色（我们的 P1 黑 / P2 蓝 / P3 灰已符合）。
+
+## 四、局限说明
+
+- Gallery（https://widgets.chatkit.studio/gallery）是纯 JS 应用，文本抓取只拿到页面框架，**未能看到实际渲染截图**；本报告的视觉依据来自 agent-authoring 的 10+ 个完整模板代码和官方 API 文档的参数定义（size/gap/padding/color 都是精确值，可靠性反而更高）。
+- 如需像素级还原某个 widget 的渲染效果，需要 parent 用 live browser 打开 gallery 截图，或我方后续用有浏览器环境的 agent 补截图。

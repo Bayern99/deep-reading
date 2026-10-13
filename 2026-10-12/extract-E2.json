@@ -1,0 +1,1652 @@
+[
+  {
+    "id": "E2-001",
+    "page": "A10",
+    "section": "News",
+    "title": "Americans' Savings Help Fuel Private Credit",
+    "dek": "and helped power the rise of their private lending to risky companies",
+    "byline": "Heather Gillers",
+    "body_en": "The annuity industry recently got a black mark after Delaware Life, an insurer controlled by Dodgers owner Mark Walter, disclosed it was under federal investigation for failing to report loans to other entities he owned.\n\nIndexed annuities are meant to appeal to older people who may be on fixed incomes and have little appetite for risk, but still want some exposure to stock-market gains. People turn over $50,000 or $100,000 worth of savings for a decade or so. Insurers guarantee that their investment return will never fall below zero, with the potential for better returns than a CD or savings account.\n\nExactly how much a person's money grows is based on terms the insurer can change during the life of policy, such as the share of the deposit that can earn market returns, any cap on returns and any spread subtracted from those returns.\n\nIn the first year of Elliott's policy, 60% of her money earned returns tied to the S&P 500, minus a 2.9-percentage-point spread. In the policy's seventh year, Athene lowered that share to 55%, then to 45% in the 11th year. The rest of the money grew at a fixed rate of 1%.\n\nElliott, a 69-year-old professor of nutrition in the Florida university system, had paid for add-ons that let her choose to parcel out payments over her lifetime or to her heirs. That reduced her annual return by about 2 percentage points.\n\nThe 3.7% annualized rate she earned over the 12-year life of her annuity beat the 1.9% she would have gotten from Treasurys. But it paled next to the annualized return of 13% on the S&P 500.\n\nAthene, which Apollo fully took over in 2022, said in a statement that the annuity “performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”\n\nThe company said “it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”\n\nProducts tied to the stock market are typically overseen by the Securities and Exchange Commission, and selling them often requires a securities license. But indexed annuities can also be sold by state insurance agents, who aren't subject to the same rules on disclosing conflicts of interest or acting in a client's best interest. Indexed annuities are often among the most lucrative products these agents can sell.\n\nAmerican Equity, for instance, pays agents a commission of 5% to 7% of a policyholder's deposit on some 10-year indexed annuities. That is compared with around 3% for simpler annuities with fixed rates sold by the Brookfield-owned insurer.\n\nInsurers say the higher commissions reflect the complexity of the products, which require greater explanation. Still, consumer advocates say indexed annuities can be a magnet for misleading sales pitches.\n\nEducational materials for an indexed annuity sold by Delaware Life, for instance, show a premium of $100,000 growing to $2.7 million over the next 21 years. But the “Momentum Growth” annuity is tied to a stock-and-crypto index established just last year. The returns advertised draw on hypothetical data based on the past 15 years—a period that included 11 years with double-digit stock-market gains.\n\nAfter the financial crisis, private-asset managers began buying up insurers to access their huge pools of policyholder premiums. Indexed annuities were particularly attractive. Payouts follow a relatively predictable timetable, and the policies typically last about a decade, compared with about three to five years for fixed-rate annuities. That gives asset managers flexibility to put the money into riskier, less-liquid private-credit investments like collateralized loan obligations or asset-backed securities.\n\nIf their investments do poorly, the insurer can cushion against loss by lowering the caps on policyholder gains, and if their investments do well they can fatten their profits the same way, said Larry Rybka, chief executive of Valmark Financial Group, which sells life insurance, annuities and investment products. “That's why private equity likes this, because they can change the deal on the consumer,” Rybka said.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Delaware Life",
+        "zh_suggested": "特拉华人寿",
+        "note": "insurer controlled by Mark Walter"
+      },
+      {
+        "en": "Mark Walter",
+        "zh_suggested": "马克·沃尔特",
+        "note": "Dodgers owner"
+      },
+      {
+        "en": "Athene",
+        "zh_suggested": "Athene",
+        "note": "insurer backed by Apollo"
+      },
+      {
+        "en": "Apollo Global Management",
+        "zh_suggested": "阿波罗全球管理",
+        "note": "private-asset giant"
+      },
+      {
+        "en": "American Equity",
+        "zh_suggested": "美国公平人寿",
+        "note": "insurer"
+      },
+      {
+        "en": "Brookfield",
+        "zh_suggested": "博枫",
+        "note": "asset manager"
+      },
+      {
+        "en": "Valmark Financial Group",
+        "zh_suggested": "Valmark金融集团"
+      },
+      {
+        "en": "Larry Rybka",
+        "zh_suggested": "拉里·里布卡"
+      },
+      {
+        "en": "Sabrina Elliott",
+        "zh_suggested": "萨布丽娜·埃利奥特",
+        "note": "annuity holder in the article"
+      },
+      {
+        "en": "indexed annuities",
+        "zh_suggested": "指数型年金"
+      },
+      {
+        "en": "private credit",
+        "zh_suggested": "私人信贷"
+      },
+      {
+        "en": "collateralized loan obligations",
+        "zh_suggested": "担保贷款凭证",
+        "note": "CLO"
+      },
+      {
+        "en": "asset-backed securities",
+        "zh_suggested": "资产支持证券",
+        "note": "ABS"
+      },
+      {
+        "en": "Securities and Exchange Commission",
+        "zh_suggested": "美国证券交易委员会",
+        "note": "SEC"
+      },
+      {
+        "en": "S&P 500",
+        "zh_suggested": "标准普尔500指数"
+      }
+    ],
+    "continued_from": "A1"
+  },
+  {
+    "id": "E2-002",
+    "page": "A10",
+    "section": "News",
+    "title": "Video Cameras Are Hacked for War",
+    "dek": "Combatants hijack vulnerable devices to track, surveil and attack the enemy",
+    "byline": "Daniel Michaels, Anat Peled and Milàn Czerny",
+    "body_en": "the camera's security and adjust its viewing angle to stop capturing military operations.\n\nThe farmer's webcam was one of an estimated 1.2 billion internet-connected cameras worldwide, according to cybersecurity consultants S-RM.\n\nThe devices have become a background fixture of daily life in the form of security systems, doorbells, traffic controls and even baby monitors—and potentially any of them are vulnerable to snooping, say cybersecurity experts and hackers.\n\n“We are now seeing the conversion of civilian surveillance into wartime intelligence collection,” said Alexander Leslie, a national-security expert at threat-intelligence consultants Recorded Future, who sees a global “soft underbelly” in omnipresent digital eyeballs.\n\nThe Wall Street Journal spoke with intelligence agencies, cybersecurity experts, military officials and hackers to scope out the extent and impact of the invasive surveillance. The Journal also reviewed dozens of hours of footage and hundreds of images, much of it made public by hackers, and independently verified their authenticity, by geolocating their locations and checking for any signs of digital manipulations.\n\nHidden gems\n\nIntelligence agencies scour the internet for vulnerable cameras and robotically tap in to them by testing millions of passwords. Now, AI has made it even easier to hack into them and analyze their data at scale, transforming cameras that were designed to boost safety into tools for combatants to track, surveil and attack the enemy—often surpassing the abilities of human intelligence analysts.\n\nAlgorithms digest endless reams of footage to find hidden gems and patterns for agents to monitor.\n\n“AI changed everything,” said Kristopher Kortright, leader of Team OneFist, an international hacker group supporting Ukraine in its war with Russia.\n\nRussia and Ukraine have ramped up camera-hacking in their war, aiming to spy on each other, find new targets and assess damage from their attacks. Israel, long a master of digital spycraft, hacked into Iranian traffic cameras to help forces collect intelligence used in the assassination of Iranian Supreme Leader Ali Khamenei earlier this year. Iran and its proxies have struck back by breaking into hundreds of Israeli webcams and security cameras that Israeli officials consider sensitive to national security, like the one on the chicken coop.\n\nCondo association\n\n“They can't look through binoculars” to see Israel from Iran, said Eliav Noori, a cybersecurity expert at Israel's cyber directorate. “So they take advantage of cameras that are exposed to the internet and turn them into lookout points.”\n\nIn 2024, Russian hackers commandeered residential webcams in Kyiv, including one installed by a condominium association to monitor the neighborhood.\n\nUkraine's security service, the SBU, said that Russia intended to use the hacked video feeds to find targets and “to adjust missile attacks on Ukraine,” refining their aim for subsequent strikes. The SBU said it has identified and secured, reoriented or blocked roughly 40,000 video cameras that posed potential security risks since Russia's 2022 invasion.\n\nRussia's efforts extend beyond the war zone. Dutch intelligence agencies warned in July that “Russian state actors are systematically conducting digital espionage operations” by hacking into cameras across Europe. The operations aim to collect data on military transport routes, arms deliveries to Ukraine and the whereabouts of Ukrainian military personnel, the agencies said.\n\nCybersecurity consultants CloudSEK recently discovered an exposed server they suspect belongs to a Russian-speaking hacker that contained hundreds of webcam images of Ukrainian facilities involved in defense, government, energy and communications, plus assorted views of daily life. CloudSEK said many of the images came from locations near Ukraine's borders with NATO ally Romania.\n\nWar with Iran\n\nWebcams are also playing an increasingly important role in the war with Iran. An Iran-linked group called Moses Staff hacked into a Jerusalem security camera to monitor the 2022 bus stop bombings by a Palestinian militant that killed two people and injured more than 20 others, Israel's cyber directorate said.\n\nThis year, Iranian-linked groups have hacked into more than 250 sensitive Israeli security cameras in incidents that pose immediate danger to national security, according to Israel's cyber directorate, more than in previous years. Compromised cameras include license-plate readers and security cameras near strategic sites and places where soldiers gather, including military outposts near the border with Lebanon.\n\nThe total number of cameras breached in Israel since the start of the Iran war is far higher, the cyber directorate said, adding that out of hundreds of thousands of cameras connected to the internet there, tens of thousands have vulnerabilities that Iranian hackers could take advantage of like default passwords.\n\nHacked cameras are taking over roles in targeting, damage assessments and other combat intelligence-gathering that were previously supplied by aerial reconnaissance or on-the-ground spies. Penetrating a well-placed camera can get analysts closer to targets and carries less risk than infiltrating the canniest secret agent.\n\nRestricted areas\n\nVideo cameras operate silently, often in restricted areas. Ukraine's penetration of Russian camera feeds from unreachable locations have helped Kyiv strike Moscow's troops and infrastructure.\n\nEarly in the Ukraine war, Team OneFist watched feeds from cameras on Russia's Kerch Strait Bridge to Crimea, providing images that helped refine attack plans—including the fact that Russia had installed motion detectors underneath the bridge to thwart waterborne attacks.\n\nInformation from hacked cameras “can shorten decision cycles in exactly the way modern militaries care about,” said Recorded Future's Leslie.\n\nWhile private individuals and enterprise-network managers are increasingly attuned to cybersecurity, web-connected devices like cameras may have fewer built-in protections and not be consistently monitored, patched or updated, said Xu Zou, senior vice president for cloud security services at cybersecurity company Palo Alto Networks.\n\nInformation-security specialists inside companies and governments often aren't aware of connected cameras, which are frequently installed and operated by facilities managers or other non-IT teams. “Those teams have very little cybersecurity awareness and knowledge. Their job is to mount that camera, power it on, and walk away,” said Zou.\n\nInformation warfare\n\nPalo Alto found last year that the vast majority of weakly secured internet-connected devices are webcams and digital video recorders. The company also found that video-streaming and video-conferencing equipment—ubiquitous in office buildings around the globe—are particularly vulnerable. That has made them useful for information warfare, not just military operations, said Ari Ben Am, an adjunct fellow at the Center on Cyber and Technology Innovation at the Foundation for Defense of Democracies, a Washington think tank.\n\nAnti-Israeli groups, he said, use imagery from hacked cameras in propaganda videos and content. “For them it is about playing up their intelligence superiority,” he said.\n\nIranian-linked group Handala taunts Israelis by boasting that it can see and hear them close to home. “Have a message? Find the nearest traffic camera and talk,” Handala wrote last year on one of its websites, which has since been taken down.\n\nIn Russia, officials from the Ministry of Industry and Trade were grousing on a videoconference call earlier this year about their reliance on Chinese drone components when an unexpected voice joined in. “Colleagues, can you hear me?” the voice asked. Yes, replied the meeting leader. The intruder then asked a seemingly technical question that quickly turned obscene. “Turn it off,” the meeting leader told his colleagues, in a video later posted online by Ukrainian hackers.\n\n‘Internet of things’\n\nVulnerable accessories linked into a network are among hackers' prime targets, expanding what technicians call the attack surface. Often, cameras aren't the target, but serve as the weak link in a larger hacking attempt. Ransomware group Akira tapped an unprotected webcam to get around one organization's network-security systems and extort it, S-RM reported last year. Once hackers are inside a local network, they can usually probe stored files, email accounts and other devices, including cameras.\n\n“The Internet of Things is such a wild area that everything—whether you realize it or not—is an extension of your attack surface,” said Paul Caron, S-RM head of cyber for the Americas.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Team OneFist",
+        "zh_suggested": "OneFist团队",
+        "note": "international hacker group supporting Ukraine"
+      },
+      {
+        "en": "Sevastopol",
+        "zh_suggested": "塞瓦斯托波尔",
+        "note": "city in Crimea"
+      },
+      {
+        "en": "S-RM",
+        "zh_suggested": "S-RM",
+        "note": "cybersecurity consultants"
+      },
+      {
+        "en": "Recorded Future",
+        "zh_suggested": "Recorded Future",
+        "note": "threat-intelligence consultants"
+      },
+      {
+        "en": "Alexander Leslie",
+        "zh_suggested": "亚历山大·莱斯利"
+      },
+      {
+        "en": "Kristopher Kortright",
+        "zh_suggested": "克里斯托弗·科特赖特"
+      },
+      {
+        "en": "SBU",
+        "zh_suggested": "乌克兰国家安全局",
+        "note": "Security Service of Ukraine"
+      },
+      {
+        "en": "CloudSEK",
+        "zh_suggested": "CloudSEK",
+        "note": "cybersecurity consultants"
+      },
+      {
+        "en": "Moses Staff",
+        "zh_suggested": "摩西职员",
+        "note": "Iran-linked hacking group"
+      },
+      {
+        "en": "Eliav Noori",
+        "zh_suggested": "埃利亚夫·努里"
+      },
+      {
+        "en": "Handala",
+        "zh_suggested": "汉达拉",
+        "note": "Iranian-linked group"
+      },
+      {
+        "en": "Palo Alto Networks",
+        "zh_suggested": "派拓网络"
+      },
+      {
+        "en": "Xu Zou",
+        "zh_suggested": "邹旭",
+        "note": "待查"
+      },
+      {
+        "en": "Ari Ben Am",
+        "zh_suggested": "阿里·本·阿姆",
+        "note": "待查"
+      },
+      {
+        "en": "Foundation for Defense of Democracies",
+        "zh_suggested": "保卫民主基金会",
+        "note": "Washington think tank"
+      },
+      {
+        "en": "Akira",
+        "zh_suggested": "Akira",
+        "note": "ransomware group"
+      },
+      {
+        "en": "Paul Caron",
+        "zh_suggested": "保罗·卡伦"
+      },
+      {
+        "en": "Ali Khamenei",
+        "zh_suggested": "阿里·哈梅内伊",
+        "note": "Iranian Supreme Leader"
+      },
+      {
+        "en": "Kerch Strait Bridge",
+        "zh_suggested": "刻赤海峡大桥"
+      }
+    ],
+    "continued_from": "A1"
+  },
+  {
+    "id": "E2-003",
+    "page": "A10",
+    "section": "News",
+    "title": "Virtual Binoculars (Sevastopol Bay map)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Infographic accompanying “Video Cameras Are Hacked for War.” Title: “Virtual Binoculars.” Intro text: “Team OneFist, an international hacker group supporting Ukraine in its war with Russia, took control of a camera in Sevastopol, the largest city in Ukraine's Crimean peninsula, which Russia has occupied since 2014.”\n\nMap labels: Sevastopol Bay; Sevastopol; UKRAINE; CRIMEA; “Helicopter tracked to this area”; numbered markers 1–4.\n\n1. The camera was located on a tall building on the city's west side near the coast.\n\n2. The camera's vantage point gave the hackers a wide view of the surrounding area and the Black Sea.\n\n3. The hackers were able to rotate and zoom the camera, allowing them to monitor Russian helicopters, submarines and ships.\n\n4. The hackers tracked a Russian military helicopter to a location near a local airport where they discovered a previously unknown Russian air base.\n\nCaption: “Team OneFist shared the information with Ukrainian forces, who launched attacks against the base soon after, damaging Russian planes and air-defense systems.”",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Sevastopol Bay",
+        "zh_suggested": "塞瓦斯托波尔湾"
+      }
+    ]
+  },
+  {
+    "id": "E2-004",
+    "page": "A10",
+    "section": "News",
+    "title": "Moses Staff footage (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Footage released by the Iranian-linked hacking group Moses Staff showed a bombing at a Jerusalem bus stop.",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Moses Staff",
+        "zh_suggested": "摩西职员",
+        "note": "Iran-linked hacking group"
+      }
+    ]
+  },
+  {
+    "id": "E2-005",
+    "page": "A11",
+    "section": "Personal Journal",
+    "title": "Hoping to Land Next Summer’s $50,000 Internships? Too Late",
+    "dek": "Elite financial firms are recruiting earlier and paying handsomely for prospective talent",
+    "byline": "Callum Borchers (On the Clock)",
+    "body_en": "The school year is barely a month old, but for college students hoping to land a primo internship next summer it might already be too late. Elite financial firms that pay around $50,000 for 10-week programs have been recruiting for weeks, if not months. While most of their peers are still decorating their dorm rooms, hard-charging undergrads are vying for these coveted seats. Some already have offers for 2027 or are deep in the interview process. And just as students are in a frenzied competition with one another, firms such as Citadel, Five Rings and Jane Street Capital are hustling to lock down the most promising talent before their rivals do. In this arms race, 20-year-olds now command pay rates that most Americans don't reach at the peaks of their careers, never mind as interns.\n\n“When I got the offer call and they said how much the salary was, I asked a few times if they were saying the right number,” says Karthik Kallam, fresh off a quantitative-trading internship at Susquehanna International Group. “I can't fathom how an intern should be making that much money.”\n\nTop internship programs have long been competitive, but those dangling stratospheric compensation rates now have acceptance rates of less than 1%. You'd have a better chance of getting into Harvard. The result is that application cycles keep starting earlier. Some firms now open applications for the following summer's internships while the current cohort is still on the job. Starting early affords time for multiple rounds of interviews. These culminate in on-site “super-days” where evaluators gauge whether candidates are as impressive in person as they seemed on-screen—and don't have access to AI.\n\nThe most selective financial firms are often looking for a kind of raw intelligence that doesn't show up on students' transcripts. They sometimes scout collegiate chess and poker tournaments, looking for people who are uncannily good at playing the odds and anticipating what will happen next. Kallam plays both games competitively. He says he believes his prowess at the table did more to boost his internship application than his sparkling GPA at Ohio State, where he is studying computer science and statistics. Then there is the quant factor. In quantitative finance, where many of the highest-paying internships are concentrated, experience arguably matters less than in most other disciplines.\n\nIf you were choosing a personal-financial planner, you'd want someone with decades' worth of judgment and intuition—a pro with a steady demeanor that comes from having seen it all before. Quant traders don't necessarily need that. They use mathematical models to predict where markets are going and take pride in removing emotion from investment decisions. “They can become exceptional very quickly because of their technical skills and the opportunities we give them,” says John Talarico, global head of talent acquisition at Millennium Management, though he adds that experience is a plus. In this way, finding promising talent for niche finance roles is a bit like scouting athletes. A college quarterback may not know how to read an NFL defense or have any experience in a professional team's style of play. Yet coaches might see potential in his arm strength and decision-making. Similarly, firms like Millennium might see an upside in candidates who have never taken a finance course. If their logic, problem solving and pattern recognition are off the charts, then they could become major moneymakers. To find out whether they have what it takes, it's worth paying them handsomely for the 10-week equivalent of training camp. At this level, interns aren't fetching coffee; they are auditioning for full-time jobs with base salaries around $300,000. With so much at stake, shenanigans are inevitable.\n\n“Always say you're a junior” is the unofficial motto of students applying for top-flight financial internships, a former Arrowstreet Capital intern told me. The thinking is that third-year college students are the most appealing because they are close to graduation. Sophomores and freshmen sometimes fudge their class years in hopes of improving their chances.\n\nAnd I thought college students only lied about their ages to get into bars.\n\nTheir deception is laced with desperation. A lot of high-achieving students have an unhealthy fear of falling behind, says Joe Catrino, executive director of the Dartmouth Center for Career Design. “It's a troubling thing for us because we see students that have this anxiety and stress that they have to figure out what they want to do, and they just got here,” he says. At Ivy and other top colleges, this often results in a frenzied effort to gain acceptance into selective clubs on campus almost as soon as first-year orientation wraps up. Membership promises a standout résumé line, as well as access to peer and alumni networks. Ishaan Shah recalls being rejected by the quantitative-trading club at Penn in his first semester of college. He applied again in the spring semester—and was turned down once more. The third time was the charm. Being in the quant club helped propel him to an internship at Susquehanna last summer as a rising senior. But he didn't receive an offer to return after graduation. “Just because you've got an internship offer at one place and have seen that big paycheck, it doesn't mean you've made it,” he says. The disappointment didn't last long; Shah landed a full-time job offer from another firm a couple of weeks ago. Still, his highs and lows underscore how precarious these ultracompetitive internship programs can be. Even for those who are highly skilled at making predictions, the surest bet is that you'll be humbled eventually.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Citadel",
+        "zh_suggested": "城堡证券/ citadel",
+        "note": "hedge fund"
+      },
+      {
+        "en": "Jane Street Capital",
+        "zh_suggested": "简街资本"
+      },
+      {
+        "en": "Five Rings",
+        "zh_suggested": "Five Rings",
+        "note": "trading firm, 待查"
+      },
+      {
+        "en": "Susquehanna International Group",
+        "zh_suggested": "萨斯奎汉纳国际集团",
+        "note": "SIG"
+      },
+      {
+        "en": "Millennium Management",
+        "zh_suggested": "千禧管理",
+        "note": "hedge fund"
+      },
+      {
+        "en": "Arrowstreet Capital",
+        "zh_suggested": "Arrowstreet资本",
+        "note": "待查"
+      },
+      {
+        "en": "Karthik Kallam",
+        "zh_suggested": "卡尔蒂克·卡拉姆",
+        "note": "待查"
+      },
+      {
+        "en": "John Talarico",
+        "zh_suggested": "约翰·塔拉里科",
+        "note": "待查"
+      },
+      {
+        "en": "Joe Catrino",
+        "zh_suggested": "乔·卡特里诺",
+        "note": "待查"
+      },
+      {
+        "en": "Ishaan Shah",
+        "zh_suggested": "伊山·沙阿",
+        "note": "待查"
+      },
+      {
+        "en": "Dartmouth Center for Career Design",
+        "zh_suggested": "达特茅斯职业设计中心"
+      },
+      {
+        "en": "On the Clock",
+        "zh_suggested": "On the Clock",
+        "note": "WSJ column"
+      }
+    ]
+  },
+  {
+    "id": "E2-006",
+    "page": "A11",
+    "section": "Personal Journal",
+    "title": "Nicotine Undergoes a Rebrand",
+    "dek": "The following items first appeared in Sara Ashley O'Brien's weekly Wellness newsletter",
+    "byline": "Sara Ashley O'Brien",
+    "body_en": "The rebranding of nicotine is well underway. Influencers and entrepreneurs are spreading the idea that the highly addictive substance can actually be good for you in small doses. They're claiming it can improve attention span, mood and memory. Companies promoting tobacco-free nicotine products are leaning in to health, wellness and fitness associations, too.\n\nLucy, which sells “intelligent nicotine” products, including flavored gum and pouches, states on its website that “whether you use nicotine to enhance focus, boost your energy, or relax—there's a Lucy perfect for you.” Athletic Nicotine's website features a young woman on a rowing machine with text that reads: “Next-level nicotine for the winner in all of us.” Another brand, Nic Nac, touts “premium ingredients” and tells consumers to use its lozenges “anywhere you need an edge, whether it's in the gym, office, or on an airplane.”\n\nThe companies each told me that their products are intended for existing adult nicotine consumers. Athletic Nicotine said it does not market itself “as a health product, wellness supplement, or performance enhancer.” Lucy said that its website copy is meant to appeal to people who are already using nicotine for those purposes.\n\nPull quote: “Influencers are spreading the idea nicotine can actually be good in small doses. Research debunks claims.”\n\nFor years, influencers have been talking about nicotine as a wellness product. They've promoted smoke-free nicotine formulations including lozenges, pouches and gums. It's a familiar phenomenon in the era of D.I.Y. health: Influencers using anecdotal evidence and limited research to peddle the next holy-grail product. Their talking points can have powerful ripple effects for their followings. While nicotine products like pouches are deemed less harmful than cigarettes—which harm nearly every organ of the body—the substance is what makes tobacco products so addictive.\n\nThe pulmonologist Dr. Hasmeena Kathuria penned a column in the Washington Post recently debunking wellness claims about nicotine and underscoring its risks. She writes that nicotine activates the body's fight-or-flight response, increases heart rate and blood pressure and can disrupt sleep.\n\nResearchers haven't found an association between cognition and nicotine use, Melissa Little, an associate professor of public-health sciences at the University of Virginia—my alma mater—told me. She's also director of the school's Center for Nicotine & Tobacco Research. “The evidence on the benefits of nicotine on memory, mood and metabolism is not well supported,” she said. She added that any mood improvements findings from nicotine use are primarily from “smokers who use nicotine replacement to manage withdrawal symptoms. Most nonsmokers find nicotine worsens their mood and even increases nausea.” Plus, the long-term health effects of nicotine products like pouches are still unknown, she said.\n\nMeanwhile, sales of nicotine pouches increased by 319% between January 2023 and May 2026.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Lucy",
+        "zh_suggested": "Lucy",
+        "note": "nicotine products brand"
+      },
+      {
+        "en": "Athletic Nicotine",
+        "zh_suggested": "Athletic Nicotine",
+        "note": "nicotine brand"
+      },
+      {
+        "en": "Nic Nac",
+        "zh_suggested": "Nic Nac",
+        "note": "nicotine lozenges brand"
+      },
+      {
+        "en": "Dr. Hasmeena Kathuria",
+        "zh_suggested": "哈斯米娜·卡图里亚医生",
+        "note": "待查, pulmonologist"
+      },
+      {
+        "en": "Melissa Little",
+        "zh_suggested": "梅丽莎·利特尔",
+        "note": "待查"
+      },
+      {
+        "en": "Center for Nicotine & Tobacco Research",
+        "zh_suggested": "尼古丁与烟草研究中心",
+        "note": "University of Virginia"
+      },
+      {
+        "en": "Wellness newsletter",
+        "zh_suggested": "Wellness newsletter",
+        "note": "Sara Ashley O'Brien's weekly WSJ newsletter"
+      }
+    ]
+  },
+  {
+    "id": "E2-007",
+    "page": "A11",
+    "section": "Personal Journal",
+    "title": "Facial fat grafting grows",
+    "dek": "Item from Sara Ashley O'Brien's weekly Wellness newsletter",
+    "byline": "Sara Ashley O'Brien",
+    "body_en": "My colleague Chavie Lieber and I published an article recently about how facial filler has fallen out of favor. The filler look—characterized by overly plump lips and pillowy cheeks—is losing appeal. It's partly because people are shrinking due to GLP-1s, so their features, too, must scale to size.\n\nThe American Society of Plastic Surgeons recently released its annual report with statistics showing cosmetic-procedure trends in 2025. Notably, 82% of the organization's member surgeons reported receiving consultation requests related to GLP-1 use in 2025. Of all cosmetic procedures tracked, one saw the most growth year-over-year: facial fat grafting.\n\nFacial fat grafting, up 39% in 2025 compared with the year prior, involves removing fat from elsewhere in the body, such as the stomach, via liposuction and then having it injected into the face. The idea is to rejuvenate and restore lost volume, which might come as a result of weight loss. “Ozempic Face” isn't what most people are going for when they start taking these medications. The desired outcome is a more naturally filled out look.\n\n“People want to look as good as they feel,” ASPS president Dr. Bob Basu, a plastic surgeon in Houston, told me. “People want to look refreshed, but they want to look like an authentic version of themselves, and I think that's where fat comes into play.”\n\nASPS said it no longer reports the costs of procedures because they're variable, fluctuating by many factors including geographic location or a surgeon's expertise. In 2024, the organization said the price for the surgeon's fee for facial fat grafting was between $3,000 and $5,500, which doesn't include additional costs for things like anesthesia, operating room facility fees and other fees.\n\nDr. Kelly Killeen, an ASPS member and plastic surgeon at the Practice Healthcare in Beverly Hills, told me facial fat grafting can even sometimes be done in the office, depending on how much fat is being placed and any other procedures involved. She said it could run from as little as $4,000 up to more than $20,000, with add-ons like skin-tightening procedures.\n\nTo subscribe to the Friday newsletter, go to wsj.com/newsletters.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "GLP-1",
+        "zh_suggested": "GLP-1",
+        "note": "glucagon-like peptide-1, weight-loss drugs"
+      },
+      {
+        "en": "Ozempic Face",
+        "zh_suggested": "Ozempic脸",
+        "note": "facial volume loss from weight-loss drugs"
+      },
+      {
+        "en": "facial fat grafting",
+        "zh_suggested": "面部脂肪移植"
+      },
+      {
+        "en": "American Society of Plastic Surgeons",
+        "zh_suggested": "美国整形外科医师协会",
+        "note": "ASPS"
+      },
+      {
+        "en": "Dr. Bob Basu",
+        "zh_suggested": "鲍勃·巴苏医生",
+        "note": "待查, ASPS president"
+      },
+      {
+        "en": "Dr. Kelly Killeen",
+        "zh_suggested": "凯利·基林医生",
+        "note": "待查"
+      },
+      {
+        "en": "Chavie Lieber",
+        "zh_suggested": "查维·利伯",
+        "note": "待查, WSJ colleague"
+      },
+      {
+        "en": "liposuction",
+        "zh_suggested": "抽脂术"
+      }
+    ]
+  },
+  {
+    "id": "E2-008",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "Videos of People Paying Down Their Debt Are Generating Interest",
+    "dek": "Viewers return to cheer, judge and see whether balances went up or down",
+    "byline": "Dalvin Brown",
+    "body_en": "Facing your debt can be painful. Watching someone else deal with theirs can be gripping. That became clear to Rodney Morgan in July, when he posted a TikTok of himself sitting on a blowup mattress with his head in one hand, and his debt tally of $40,058.44 imposed on the screen.\n\n“I'm rebuilding from scratch as a flight attendant and being honest about where I'm starting,” wrote Morgan, a 33-year-old Los Angeles resident. It was a changeup from his usual posts about life as a flight attendant, and racked up 1.5 million views—far more than the roughly 100,000 views he said his previous best-performing videos drew.\n\nTikTok is filled with influencers dispensing all manner of advice on how to get ahead financially, whether it is saving to retire early, earning a passive income or using credit-card rewards to fund a globe-trotting lifestyle. But users are also finding big audiences showing the private money struggles many would be too embarrassed to share.\n\nThe format is simple: Users share the exact amount they owe, along with updates on how they are chipping away at the figure—or suffering setbacks. Viewers tune in to see the numbers move up and down and root for people, often weighing in with advice.\n\nMore than 28,000 debt-related videos were uploaded to TikTok in the 12 months through September, according to Tubular Labs, which tracks social-video viewing.\n\nPart of #DebtTok's draw is that it addresses a taboo topic that people feel they can't discuss even with friends and family. Like gossip, the videos let viewers size up other people's financial choices and measure their own against them, said Brooke Erin Duffy, a Cornell University professor who studies social-media culture.\n\nPersonal-finance gurus like Suze Orman and Dave Ramsey gained huge followings by dispensing advice to callers who shared their money problems. TikTok videos cut out the guru—the host is the person with the problem, not the one giving advice.\n\nViewers tune in for the drama of a hero's journey, like a movie where someone takes on a big obstacle, said Brittney Castro, a certified financial planner at Chime, a mobile banking app. “It's so human to want to see that person win and succeed,” she said.\n\nFor those posting about their debt, racking up views can help pay off bills. TikTok pays creators for some popular videos, and viewers can send virtual gifts during livestreams. Creators also earn income when brands sponsor their posts, or a cut when followers buy through links they share.\n\nAfter Morgan's video took off, for instance, a personal-finance app offered him his biggest social-media deal yet. He expects the sponsored post to pay off a piece of his debt: the roughly $800 left on the Home Depot and Lowe's cards he opened to remodel his house.\n\nEvery night before bed, Tianna Carter records an update on her debt, sometimes at 10 p.m. in her kitchen. “I look forward to it every day,” she said. Carter, a 31-year-old human-resources director for a public school district, didn't say at first the amount she owed: $54,057.93. Then she decided to share the figure. “People understand more and can relate more to my number,” said Carter, who lives in Harrisburg, Pa. Her followers don't always agree with her choices, such as her spending on her personal upkeep. “How am I supposed to keep you accountable if you're getting your hair done?” one commenter wrote. Carter said she treats salon visits as fixed costs and cuts elsewhere, like bringing lunch to work. She puts the money she makes from her posts toward daycare costs and paying down her debt.\n\nWhen Kayla Rose was in college, her father gave her a credit card for groceries and gas. She ended up using it to buy clothes, workout gear and home décor as well, promoting some of what she bought in her videos. Rose, now a 29-year-old full-time influencer in Palm Beach, Fla., told followers in March that she owed more than $25,000 on credit cards and planned to pay it off with money she made from her videos. The posts about her debt brought new followers, and she paid off the cards in August. “What paid off my credit-card debt was these silly little videos you guys are currently watching,” she told followers.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "#DebtTok",
+        "zh_suggested": "#DebtTok",
+        "note": "TikTok debt-confession trend"
+      },
+      {
+        "en": "Tubular Labs",
+        "zh_suggested": "Tubular Labs",
+        "note": "social-video analytics firm"
+      },
+      {
+        "en": "Brooke Erin Duffy",
+        "zh_suggested": "布鲁克·艾琳·达菲",
+        "note": "待查, Cornell professor"
+      },
+      {
+        "en": "Suze Orman",
+        "zh_suggested": "苏茜·欧曼"
+      },
+      {
+        "en": "Dave Ramsey",
+        "zh_suggested": "戴夫·拉姆齐"
+      },
+      {
+        "en": "Brittney Castro",
+        "zh_suggested": "布兰妮·卡斯特罗",
+        "note": "待查, financial planner at Chime"
+      },
+      {
+        "en": "Chime",
+        "zh_suggested": "Chime",
+        "note": "mobile banking app"
+      },
+      {
+        "en": "Rodney Morgan",
+        "zh_suggested": "罗德尼·摩根",
+        "note": "待查"
+      },
+      {
+        "en": "Tianna Carter",
+        "zh_suggested": "蒂安娜·卡特",
+        "note": "待查"
+      },
+      {
+        "en": "Kayla Rose",
+        "zh_suggested": "凯拉·罗斯",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-009",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "DebtTok screenshots (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Screenshots of TikTok videos featuring people talking about their debt. Viewers often weigh in with advice. (Credits: Tianna Carter; Tristan Duplichain; Kayla Rose.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Tristan Duplichain",
+        "zh_suggested": "特里斯坦·杜普利钦",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-010",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "The Sunday Scaries Are Real—And They're Getting Worse",
+    "dek": null,
+    "byline": "Ray A. Smith",
+    "body_en": "the Sunday scaries, according to an October survey of 2,100 people by job platform FlexJobs. Having a list of unfinished tasks hanging over them was the most commonly cited cause.\n\nIt's only a matter of time before the scaries ruin Saturday too, turning it into a day to dread the dread we'll feel on Sunday.\n\nFor Davis, the jitters so consumed her Sundays that she bought a $30 hourglass to rein them in. It takes an hour for the sand to run through it—the maximum time she now lets herself work, or even think about work. On a recent Sunday, “when it ran out, I got up and I left and went in the other room,” she said.\n\nEffectively treating the Sunday scaries without causing negative side effects is a delicate balancing act. It requires being busy enough to ease the stress but not the kind of busy that drags everyone down. It appears we're getting worse at that.\n\nThe share of Sundays that employees devoted to work messaging and chats was about 12% last year, compared with 6.6% in 2023, according to data compiled for The Wall Street Journal by workforce analytics firm ActivTrak.\n\n“People feel like they have to toil away harder in order to make sure they don't get fired,” said Angie Callen, an executive coach and author of “Scary Good: Discovering Life Beyond the Sunday Scaries.” Her advice? Ask yourself honestly why you are engaging with work on a Sunday. Will you get a positive return on your time? “You don't have to settle for the Sunday scaries,” said Callen. “We let Mondays ruin our Sundays. Stop. Be present in your life instead of accepting that default.”\n\nJoanna Johnston, a longtime tech executive, used to combat her Sunday scaries by getting up as early as 6 a.m. to squeeze in an hour of Monday prep work, then putting in more time in the evenings. When she sent Slack and other messages, it was usually to a peer or in response to a manager. But she didn't always adhere to the unwritten rules of weekend communication with subordinates. “I'm sure before I became more sensitive to the intrusion this caused, I did it to my direct reports and broader team as well,” said Johnston, who retired from corporate roles in June and now coaches executives. Despite the career shift, she's still working on Sundays. “I think I just have a problem,” she laughed.\n\nUntil a few years ago, Chris Keller ran his own marketing agency and often worked seven days a week. Now in a corporate role, he limits himself to two hours on early Sunday mornings to prepare for the week. Otherwise, “I know it could get away from me really quickly,” said Keller, marketing chief at a credit union. Keller said he will typically use the time to dictate notes to a transcription app to prepare for meetings. “If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,” he said.\n\nDo psychiatrists approve? If doing some work on Sunday will relieve you of feeling behind or overwhelmed on Monday, it's OK, just set guardrails, said Kia-Rai Prewitt, a psychiatrist with Cleveland Clinic's Behavioral Health. “If I can just log in really quick and respond to this email, that's all I'm going to do,” she said. “You have to set the boundary and say, ‘I'm not going to respond to other emails.’”\n\nOthers recommend exhausting all options to avoid work altogether. Consider spending a little more time at work on Friday “so you can officially be done” or getting to work a little earlier on Monday “so that you're not going to be behind the eight ball,” said Amy Cooper Hakim, an industrial organizational psychologist. “There's always a way to shift those same extra minutes.”\n\nIf all else fails, try a rebrand. Davis, the Sunday afternoon worrier, worked with an executive coach who helped her reimagine the “Sunday scaries” as “Monday maybe.” The idea is to approach Monday with curiosity rather than thinking everything has to be buttoned-up and perfect by then. “I'm trying to release the pressure of what's so special about everything getting done before Monday,” she said. “I sleep better on Sunday nights.”",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Sunday scaries",
+        "zh_suggested": "周日恐慌",
+        "note": "pre-Monday work dread"
+      },
+      {
+        "en": "FlexJobs",
+        "zh_suggested": "FlexJobs",
+        "note": "job platform"
+      },
+      {
+        "en": "ActivTrak",
+        "zh_suggested": "ActivTrak",
+        "note": "workforce analytics firm"
+      },
+      {
+        "en": "Angie Callen",
+        "zh_suggested": "安吉·卡伦",
+        "note": "待查, executive coach"
+      },
+      {
+        "en": "Scary Good: Discovering Life Beyond the Sunday Scaries",
+        "zh_suggested": "《Scary Good》",
+        "note": "book by Angie Callen"
+      },
+      {
+        "en": "Joanna Johnston",
+        "zh_suggested": "乔安娜·约翰斯顿",
+        "note": "待查"
+      },
+      {
+        "en": "Chris Keller",
+        "zh_suggested": "克里斯·凯勒",
+        "note": "待查"
+      },
+      {
+        "en": "Kia-Rai Prewitt",
+        "zh_suggested": "基娅-拉伊·普雷维特",
+        "note": "待查, Cleveland Clinic psychiatrist"
+      },
+      {
+        "en": "Cleveland Clinic",
+        "zh_suggested": "克利夫兰诊所"
+      },
+      {
+        "en": "Amy Cooper Hakim",
+        "zh_suggested": "艾米·库珀·哈基姆",
+        "note": "待查, industrial organizational psychologist"
+      },
+      {
+        "en": "Jill Davis",
+        "zh_suggested": "吉尔·戴维斯",
+        "note": "待查"
+      }
+    ],
+    "continued_from": "A1"
+  },
+  {
+    "id": "E2-011",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "Jill Davis hourglass (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Jill Davis bought an hourglass to limit her time spent working on Sundays. (Credit: Jill Davis.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-012",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "Share of Sundays spent on... (chart)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Chart embedded in “The Sunday Scaries Are Real—And They're Getting Worse.” Title: “Share of Sundays spent on...” Legend: Chat and messaging; Admin and IT; Business management; Email; Research and reference. Periods: 2023–24; 2024–25; 2025–26. Note: Work activity data for employees at 336 companies. Data captures activity over a 24-hour period on monitored devices only. Source: ActivTrak.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "ActivTrak",
+        "zh_suggested": "ActivTrak",
+        "note": "workforce analytics firm"
+      }
+    ]
+  },
+  {
+    "id": "E2-013",
+    "page": "A12",
+    "section": "Personal Journal",
+    "title": "The WSJ Daily Crossword (Final Count, by Zhouqin Burnikel; edited by Mike Shenk)",
+    "dek": null,
+    "byline": null,
+    "body_en": "The WSJ Daily Crossword | Edited by Mike Shenk. FINAL COUNT | By Zhouqin Burnikel.\n\nAcross: 1 Color of an igloo; 6 Foot division; 10 Plumbing piece; 14 Stand for an artist; 15 Revolutionary hero Nathan; 16 In the center of; 17 Neither gains nor loses money; 19 Nutmeg State school; 20 Blueprint detail; 21 Sandwich spread, familiarly; 22 Pale from fright; 23 Tech line caller; 25 Censorship-fighting org. since 1920; 26 Traveled hobo-style; 32 Wood for a model plane; 33 Run out of battery; 34 Fruit in a gift basket; 35 TV spots; 36 Station with shells; 40 Sch. in Tallahassee; 41 Honey bunch?; 43 Worn-down pencil; 44 Make overjoyed; 46 “Marty” Oscar winner; 50 New Mexico art town; 51 Teeny bit; 52 Cries like an infant; 54 Rum-soaked cake; 56 Analogy words; 60 Lake bordering Ontario; 61 Tune in just to complain; 63 Service bell sound; 64 Big brand in skin care; 65 Showing sulkiness; 66 Bratty attitude; 67 Motion of the ocean; 68 Take, as neighboring territory.\n\nDown: 1 Fly catchers, of a sort; 2 Instrument on a Guinness bottle; 3 “That clears things up”; 4 Saucer toppers; 5 State animal of Utah; 6 “Rumor has it...”; 7 Blue hue; 8 Jazz singer Laine; 9 Free-range fowl; 10 Record of wages; 11 “Really love your work!”; 12 Heap; 13 Garden in Genesis; 18 Captain Hook's helper; 22 Top card in a suit; 24 Minor quarrel; 25 Region; 26 Bill of HBO's “Barry”; 27 Small pair in “Full House”?; 28 Marinade in Filipino cuisine; 29 Little lie; 30 Excessive hurry; 31 “Can't argue with that!”; 32 Sheep-herding pig of film; 37 Crawlers in long lines; 38 Young panda; 39 Landlord's collection; 42 Steadiness on a ship; 45 Intermediary; 47 “Get me out of here!”; 48 Marbled steak cut; 49 Hockey score; 52 Some kings and queens; 53 Solo for a diva; 54 Indonesian island known for terraced rice fields; 55 Slightly speechless; 57 Leave; 58 Head, to Henri; 59 Stone found in cameos; 61 Fresh from the oven; 62 Craft brew, for short.\n\nPrevious Puzzle's Solution (grid): A L L I N / C O P E / E M M A; S E E N O / E R I C / G A I T; E M E R Y C L O T H / O N T V; A S S U C H / O C T E T; S E A L S / E A R; D O H / F A I R Y R I N G S; B O L / E T N A / S P I R E; A V I D / S I N K S / S C A N; N E V I L / N E I L / K I T; C R A Z Y H O R S E / G S N; Z O O / S H A D Y; G W Y N N / Z O M B I E; S I R I / S P A D E P R E S S; G L E N / H I D E / E A T I T; T A N G / U C S F / S T A N D.\n\nContest note: The contest answer is LONG. Removing the letters from both ends of each five-letter word of each theme answer yields a new six-letter word: EMERY CLOTH > merlot, FAIRY RINGS > airing, CRAZY HORSE > razors, SPADE PRESS > Padres. Those words start clues for other grid answers (LEES, ON TV, NICKS, GWYNN), and the first letters of those answers spell the contest answer.\n\n▶ Solve this puzzle online and discuss it at WSJ.com/Puzzles.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Mike Shenk",
+        "zh_suggested": "迈克·申克",
+        "note": "WSJ crossword editor"
+      },
+      {
+        "en": "Zhouqin Burnikel",
+        "zh_suggested": "周钦·伯尼克尔",
+        "note": "待查, crossword constructor"
+      }
+    ]
+  },
+  {
+    "id": "E2-014",
+    "page": "A14",
+    "section": "Arts in Review",
+    "title": "Lights, Camera, Costumes!",
+    "dek": "As silent movies emerged as an art form, fashion played an essential, energizing role on screen",
+    "byline": "Laura Jacobs (Exhibition Review)",
+    "body_en": "New York. The story for Paramount's 1927 silent movie “It” was provided by the British writer Elinor Glyn, who used the word to mean a “magnetic force” that draws others. The 21-year-old actress Clara Bow, who starred in the film, was henceforth known as the first “It Girl.” Charisma? Glamour? Not quite. Her creamy cheeks, tousled bob and bright, beguiling eyes brought a hint of id, jolts of energy, into the picture. And energy was what moving pictures were all about. Where photographs were still, and theater could talk, silent movies were action and “It” was everything.\n\nThat the mute infant art form soon relied on fashions that excited the eye should come as no surprise. Glyn's older sister, Lady Duff-Gordon, otherwise known as the couturier Lucile, immediately forged relationships with actresses—Billie Burke, for instance. As early as 1913 she was designing heart-stopping gowns for their movies, which in turn brought renown to her fashion house. What is surprising is that “Goddesses in the Machine: Fashion in American Silent Film,” at New York's Bard Graduate Center, is the first major exhibition to explore the subject.\n\nLaunched in the U.S. in 1896, with the New York premiere of Thomas Edison's Vitascope film projector, silent movies astonished audiences. And yet the medium, entirely visual, posed definite challenges. “Seeking ways to craft narratives without audible dialogue,” reads the show's introductory wall text, “filmmakers used costume to convey character, drive plot, and heighten emotion.”\n\nThe first costumes were made by dressmakers and couturiers, but a network of costume professionals would emerge, designers who realized that clothing in film had to be fascinating, energized—stories within the story.\n\nThe show's co-organizers—Michelle Finamore, a fashion and design historian, and Emma Cormack, the associate curator for exhibitions and study collection curator at Bard Graduate Center—remind us that during those early decades, when the movie industry began on the East Coast, and relocated to California in the mid-1910s, costumes were not preserved. Even after the advent of the talkies, and well into the sound era, they were reused and revised with no thought to historical value. Leslie Caron once told me that the unforgettable white gown she wore in 1958's “Gigi,” designed by Cecil Beaton and ravishing with swallow's wings at the shoulders, was used on and on, feathers plucked, and that it eventually had sleeves. Garments that have lasted, usually aided by conservation, are rare—and rarely exhibited.\n\nSo it's quite the bounty that the exhibition presents 16 surviving silent-screen treasures along with stills and film clips that show the pieces in action. Among them are two ensembles worn by Lillian Gish in D.W. Griffith's “Way Down East” (1920); a risqué Travis Banton evening dress used in both Dorothy Arzner's “Fashions for Women” (1927) and A. Edward Sutherland's “Pointed Heels” (1929); and a fringed mauve gown from which Gloria Swanson unwound herself in Cecil B. DeMille's “Male and Female” (1919). These gems are surrounded by a wealth of period garments, accessories, artworks, posters, sketches, photographs and clips from over 50 silent movies.\n\nThe exhibition of more than 180 objects unfolds over three floors, with the first bringing us into the early moviegoing experience. A 1920s usher's uniform in sky blue with black trim, likely from the Plaza Theatre in London, stands at the entrance. Videos show people at the new “picture palaces,” where genders and classes mingle and comic clashes ensue. Displays of brightly colored glass preview slides, fanzines such as Photoplay, and Beautebox tins lithographed with the faces of stars (Pola Negri! Bebe Daniels!) illustrate the various forms of advertising and collectibles aimed at filmgoers.\n\nOn the second floor, the curators look at the actresses who went to Callot Soeurs, Madame Frances and Henri Bendel for their costumes, and then move on to the new studio system and its designers, who pulled a sense of color from the black-and-white spectrum, and exploited reflective materials—lamé, panné velvet, satin, sequins—for onscreen shimmer and flash. Silent movies may be the home of slapstick, but they are also akin to ballet. Light reinforces gesture and shadows contour expression.\n\nOn the third floor, the focus is movement, “woven into the fabric of cinema” through dance-hall and jazz-club settings, as well as in scenes of driving, swimming, riding and piloting. A surprisingly immaculate canary-yellow dress, glitteringly embellished for Mae Murray in “Circe the Enchantress” (1924), is flanked by the film that has her wearing it in a nightclub, dancing up a storm. Look at those Watteau straps in the back, dripping with rhinestones and looping, swinging, amplifying the dynamics. Onscreen the dress is the color of limelight.\n\nWith precise plotting and symbolic pieces, the curators have neatly fit the era into the center's jewel-box spaces. Nothing is belabored. And who would have guessed that a grail of It-ness would be part of the show, nestled next to the matador jacket worn by Rudolph Valentino in 1922's “Blood and Sand.” On loan from La Cinémathèque Française, Paris, laid flat in a vitrine, is a flesh-colored silk-chiffon slip dress, its hem beaded with silver lozenges. A relic from “Red Hair,” a 1928 silent film now lost, it was made for Clara Bow.\n\nGoddesses in the Machine: Fashion in American Silent Film. Bard Graduate Center, through Jan. 3, 2027.\n\nMs. Jacobs is the Arts Intel Report editor for the newsletter Air Mail.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Goddesses in the Machine: Fashion in American Silent Film",
+        "zh_suggested": "《机器中的女神：美国默片中的时尚》",
+        "note": "exhibition at Bard Graduate Center"
+      },
+      {
+        "en": "Bard Graduate Center",
+        "zh_suggested": "巴德研究生中心",
+        "note": "New York"
+      },
+      {
+        "en": "Elinor Glyn",
+        "zh_suggested": "埃莉诺·格林"
+      },
+      {
+        "en": "Clara Bow",
+        "zh_suggested": "克拉拉·鲍"
+      },
+      {
+        "en": "It Girl",
+        "zh_suggested": "It Girl",
+        "note": "1927 film “It”"
+      },
+      {
+        "en": "Lady Duff-Gordon (Lucile)",
+        "zh_suggested": "达夫-戈登夫人（Lucile）",
+        "note": "couturier"
+      },
+      {
+        "en": "Billie Burke",
+        "zh_suggested": "比莉·伯克"
+      },
+      {
+        "en": "Michelle Finamore",
+        "zh_suggested": "米歇尔·菲纳莫尔",
+        "note": "待查"
+      },
+      {
+        "en": "Emma Cormack",
+        "zh_suggested": "艾玛·科马克",
+        "note": "待查"
+      },
+      {
+        "en": "Lillian Gish",
+        "zh_suggested": "莉莲·吉什"
+      },
+      {
+        "en": "D.W. Griffith",
+        "zh_suggested": "D.W.格里菲斯"
+      },
+      {
+        "en": "Way Down East",
+        "zh_suggested": "《一路向东》",
+        "note": "1920 film"
+      },
+      {
+        "en": "Travis Banton",
+        "zh_suggested": "特拉维斯·班顿",
+        "note": "costume designer"
+      },
+      {
+        "en": "Dorothy Arzner",
+        "zh_suggested": "多萝西·阿兹纳"
+      },
+      {
+        "en": "Gloria Swanson",
+        "zh_suggested": "葛洛丽亚·斯旺森"
+      },
+      {
+        "en": "Cecil B. DeMille",
+        "zh_suggested": "塞西尔·B·戴米尔"
+      },
+      {
+        "en": "Rudolph Valentino",
+        "zh_suggested": "鲁道夫·瓦伦蒂诺"
+      },
+      {
+        "en": "Blood and Sand",
+        "zh_suggested": "《血与沙》",
+        "note": "1922 film"
+      },
+      {
+        "en": "La Cinémathèque Française",
+        "zh_suggested": "法国电影资料馆"
+      },
+      {
+        "en": "Mae Murray",
+        "zh_suggested": "梅·默里",
+        "note": "待查"
+      },
+      {
+        "en": "Circe the Enchantress",
+        "zh_suggested": "《女巫西茜》",
+        "note": "1924 film, 待查"
+      },
+      {
+        "en": "Pola Negri",
+        "zh_suggested": "宝拉·内格里"
+      },
+      {
+        "en": "Bebe Daniels",
+        "zh_suggested": "比比·丹尼尔斯"
+      },
+      {
+        "en": "Callot Soeurs",
+        "zh_suggested": "Callot姐妹",
+        "note": "fashion house"
+      },
+      {
+        "en": "Henri Bendel",
+        "zh_suggested": "亨利·本德尔"
+      },
+      {
+        "en": "Cecil Beaton",
+        "zh_suggested": "塞西尔·比顿"
+      },
+      {
+        "en": "Leslie Caron",
+        "zh_suggested": "莱斯利·卡伦"
+      },
+      {
+        "en": "Photoplay",
+        "zh_suggested": "《Photoplay》",
+        "note": "fan magazine"
+      },
+      {
+        "en": "Louise Glaum",
+        "zh_suggested": "露易丝·格劳姆",
+        "note": "待查"
+      },
+      {
+        "en": "David Cox",
+        "zh_suggested": "大卫·考克斯",
+        "note": "待查, designer"
+      }
+    ]
+  },
+  {
+    "id": "E2-015",
+    "page": "A14",
+    "section": "Arts in Review",
+    "title": "Goddesses in the Machine installation (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Installation view of ‘Goddesses in the Machine,’ above; matador jacket worn by Rudolph Valentino, below. (Credit: Bard Graduate Center.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-016",
+    "page": "A14",
+    "section": "Arts in Review",
+    "title": "Silent-film costumes (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "From left to right: a David Cox ensemble worn by Louise Glaum in ‘Sex’ (1920); a Henri Bendel evening dress worn by Lillian Gish; and Gish in the D.W. Griffith film ‘Way Down East’ (1920).",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-017",
+    "page": "A15",
+    "section": "Opinion",
+    "title": "How the AI Boom Ends",
+    "dek": null,
+    "byline": "Andy Kessler (Inside View)",
+    "body_en": "I can tell you how the artificial-intelligence data-center boom will probably end, but I can't tell you when. Implementing large language models has been a brute-force approach: Big, fast and expensive GPUs from Nvidia crunch a trillion parameters using massive amounts of memory housed in liquid-cooled, gigawatt-gobbling data centers, all with brute-force pricing. It sure smells like IBM mainframes of old.\n\nBe careful about extrapolating anything from today's pricing. With AI, like all new technologies, the refinement stage is kicking in—just as mainframes gave way to cheaper minicomputers, microprocessors, web servers and now AI architectures. AI token prices have been dropping but are set to plunge faster than most anticipate. Tech growth is never a straight line.\n\nSilicon Valley's mantra for decades has been smaller, cheaper, faster, better. I asked venture capitalist Steve Jurvetson to translate that into numbers. “We often see a technology shift when the new approach is 10 times better. It can be 10 times more performant or 10 times cheaper, sometimes both.” He calls it the “factor of 10.”\n\nAnd it's happening. Last week, according to OpenRouter, OpenAI and Anthropic were charging a premium for some of their models—$1 to $2 per million input tokens. Comparable Chinese open-weight models like Z.ai's GLM and Alibaba's Qwen charged 6 to 12 cents, around 90% less—that factor of 10 inflection point. American AI labs have gone from 70% market share last year to 30% today. All are still growing. But prices matter.\n\nAI architecture is evolving. Instead of a trillion parameters, efficient small language models might use 70 billion and run on an Apple Mac. These local models have no token costs beyond the cost of hardware and electricity. But they must be less capable than the large language models, right? Not really. Stanford researchers show that a locally run small language model “can successfully answer 88.7% of single-turn chat and reasoning queries.”\n\nNo question we'll always have high-end models running in data centers. IBM still sells mainframes. But growth will happen elsewhere. Where? Another Silicon Valley saying I've lived by: Intelligence moves out to the edge of the network. The real breakthrough will happen when robust AI models run on smartphones. It's already starting. In September, California-based PrismML released a compressed version of the popular open-source Qwen3.8 27B AI model. The company got it down to under 6 gigabytes. That means it fits not only on PCs but also on high-end smartphones. The memory size is reduced by roughly 9 to 10 times. There's that factor of 10.\n\nTechnology doesn't stand still. Qualcomm recently announced a new Snapdragon neural processing unit, or NPU, for smartphones. Using what the company calls a “mixture-of-experts” model, it could run a 30 billion parameter AI model in 3 gigabytes of memory. According to the Deep View, the largest AI model on a phone has been four billion parameters on an Apple A20 Pro chip. Qualcomm provides a 7.5 times boost.\n\nDemand isn't about to let up, but prices will start plunging by factors of 10.\n\nNPUs, like Qualcomm's new Snapdragon and Google's Tensor chips in its Pixel phones, are multiplying. Same for the latest Apple M- and A-series chips, engines that can run AI models locally on iPhones—maybe why Apple hasn't joined the AI data-center spending delirium.\n\nA Nvidia-backed startup, Reflection AI, claims it matches leading Chinese open-weight AI models with “3-4x less inference compute.” That's it? Only 3 or 4 times? Wake me up when it's 10 times. At the pace AI is moving, that could be year-end.\n\nAgents are all the rage, from Meta's Muse to xAI's Grokbot. They run on virtual machines in data centers but raise all sorts of privacy concerns. Startup Perplexity recently teamed up with Nvidia to run agents on PCs. Zero token costs. And you own your data.\n\nI often hear, that if tokens get cheaper, demand will go up. That's Jevons Paradox. Sure, elasticity works. But if prices drop 90%, demand must increase 900% just to stay flat. Remember when internet demand grew while debt-laden Global Crossing spectacularly failed because prices dropped too fast? Historically, semiconductors got 30% cheaper every year. When prices dropped by more than 50%, disaster struck with fabrication plant closings and company failures.\n\nWill 2027 see peak data center? Again, timing is dicey. Current demand is gangbusters, but spending is a game of chicken until multiple factor-of-10 improvements kick in and prices collapse. This could set off a cascade of data-center halts and debt defaults, even as token demand increases.\n\nYes, model training, drug discovery and winning prizes like the recently solved Navier-Stokes equations require hot chips in data centers. But chatbots and agents and other tasks may increasingly be handled on PCs and phones and smart glasses and whatever new gizmos Silicon Valley invents over the next decade.\n\nI've heard this called the “Great Migration.” Mr. Jurvetson's factor of 10 is visible now, as it often is, but ignored. Change doesn't happen overnight. It happens gradually, then suddenly.\n\nWrite to kessler@wsj.com.",
+    "priority": "P1",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Steve Jurvetson",
+        "zh_suggested": "史蒂夫·尤维特森",
+        "note": "venture capitalist"
+      },
+      {
+        "en": "OpenRouter",
+        "zh_suggested": "OpenRouter",
+        "note": "AI model pricing tracker"
+      },
+      {
+        "en": "Z.ai (GLM)",
+        "zh_suggested": "智谱 Z.ai",
+        "note": "Chinese AI lab"
+      },
+      {
+        "en": "Qwen",
+        "zh_suggested": "通义千问",
+        "note": "Alibaba open-weight models"
+      },
+      {
+        "en": "PrismML",
+        "zh_suggested": "PrismML",
+        "note": "待查, California startup"
+      },
+      {
+        "en": "Qwen3.8 27B",
+        "zh_suggested": "Qwen3.8 27B",
+        "note": "open-source AI model"
+      },
+      {
+        "en": "Snapdragon NPU",
+        "zh_suggested": "骁龙NPU",
+        "note": "Qualcomm neural processing unit"
+      },
+      {
+        "en": "mixture-of-experts",
+        "zh_suggested": "混合专家模型",
+        "note": "MoE"
+      },
+      {
+        "en": "Reflection AI",
+        "zh_suggested": "Reflection AI",
+        "note": "Nvidia-backed startup"
+      },
+      {
+        "en": "Jevons Paradox",
+        "zh_suggested": "杰文斯悖论"
+      },
+      {
+        "en": "Global Crossing",
+        "zh_suggested": "Global Crossing",
+        "note": "dot-com-era telecom firm"
+      },
+      {
+        "en": "Meta's Muse",
+        "zh_suggested": "Meta的Muse",
+        "note": "AI agent"
+      },
+      {
+        "en": "xAI's Grokbot",
+        "zh_suggested": "xAI的Grokbot",
+        "note": "待查"
+      },
+      {
+        "en": "Perplexity",
+        "zh_suggested": "Perplexity",
+        "note": "AI startup"
+      },
+      {
+        "en": "Navier-Stokes equations",
+        "zh_suggested": "纳维-斯托克斯方程"
+      },
+      {
+        "en": "Inside View",
+        "zh_suggested": "Inside View",
+        "note": "WSJ column by Andy Kessler"
+      }
+    ]
+  },
+  {
+    "id": "E2-018",
+    "page": "A15",
+    "section": "Opinion",
+    "title": "Fusionism",
+    "dek": "An Alliance Of Principles. Book: “Fusionism: Liberty, Virtue, and the Future of the American Right” by Stephanie Slade (Notre Dame, 304 pages, $30)",
+    "byline": "Aurelian Craiutu (Bookshelf)",
+    "body_en": "The name of Frank Meyer is rarely heard on the political right today. Younger conservatives in the 2020s won't know much about fusionism, the political outlook Meyer formulated—briefly, the idea that free markets, virtue and tradition can cohere with one another. Since his death in 1972, fusionism's heyday, it has gone out of fashion, replaced by a form of right-wing bellicosity with little patience for compromise.\n\nStephanie Slade's “Fusionism: Liberty, Virtue, and the Future of the American Right” explores the intellectual roots of fusionism and, by extension, American conservatism. The starting point is the great debate between traditionalists as defenders of order, morality, religion and virtue, and libertarians and classical liberals as advocates of the free market and individual rights. Over time, neither side achieved dominance within American conservatism; what emerged instead was a “fusion” of the two. Ms. Slade, an editor at Reason magazine, has given us an excellent account of a once-influential political outlook that deserves renewed attention.\n\nFusionism was given its first full expression in the Sharon Statement of 1960, drafted by young conservatives in the home of William F. Buckley Jr. in Sharon, Conn. They believed conservatives needed a solid philosophical and metaphysical foundation anchored in the principles of limited government, free markets and individual rights. For them, liberty and virtue were the two pillars on which any good society rests. We need freedom to be virtuous, the fusionists argued, and we require virtue to live happily and freely. “The task of the conservative movement in America,” Ms. Slade explains, “was to ‘harmonize’ social conservatism with free-market economics . . . because human flourishing is impossible without freedom as well as virtue.”\n\nFusionists were liberals, but their liberalism differed from that of the progressives. This is evident in their conception of the role of the state. In the fusionist view, the state can't be trusted with authority over economic, moral, religious or lifestyle questions. Its job is to keep individuals free so that they can pursue a life of virtue on their own. Fusionists were conservatives, but their traditionalism had little in common with the vision of ultraconservatives who opposed the values of the modern world.\n\nFusionism, Ms. Slade maintains, was not merely an alliance between factions for short-term political gain. It offered a coherent set of shared commitments with a pedigree that runs through the American founding. Russell Kirk and Friedrich Hayek held views that seem irreconcilable, but they both adhered more closely to fusionist principles than is commonly understood. The same goes for Milton Friedman, who remained in the fusionist orbit for a long time.\n\nAnother arguably fusionist figure discussed in the book is Ronald Reagan, who combined libertarian leanings with genuine appreciation for freedom anchored in virtue. Sadly, Reagan's worldview has fallen into disrepute among what Ms. Slade calls the Dissident Right. She devotes half of the book to an analysis of the current political landscape on the right and explains why Reagan's vision is deeply at odds with today's scorched-earth politics.\n\nPull quote: “A half-century ago, conservatives championed free markets and moral traditionalism. Much of today's right has abandoned that synthesis.”\n\nHow did the Republican Party go from Reagan to Donald Trump? Today's right-wing populism, Ms. Slade asserts, has roots in the post-Reagan years when a split emerged between neoconservatives, committed to free markets and global cooperation, and paleoconservatives, who embraced economic nationalism, protectionism and anti-immigrant policies. The latter hearkened back to an earlier America First isolationism and introduced coarseness into political debates, vilifying adversaries and dissidents within their own camp. In Ms. Slade's assessment, the face of the paleocon movement was “Pitchfork Pat” Buchanan, whose militant and isolationist worldview reached its maturity in the MAGA movement. “The paleocons were concerned less with keeping the government small,” she writes, “than with ensuring it be used to promote the right causes and help the right people.”\n\nSix decades ago, Meyer worried that a heresy had crept into Republican thinking, one that demanded election victories at all costs and that placed no importance on principle or policy. If he were alive today, he would not be pleased with his friends. The Dissident Right exploits grievance and status resentments triggered by immigration and economic hardship. Its leaders declare opponents traitors and denounce compromise, gradualism and moderation as signs of weakness. The Dissident Right, Ms. Slade persuasively shows, believes that our system of checks and balances and limited government is rotten and must give way to a “Caesarist” approach to executive power. Self-described conservatives jettison free-market policies and embrace big deficits and government expenditures for the benefit of Republican voting constituencies; their aim isn't to shrink the state or limit its purview but to control and expand it for nakedly partisan purposes.\n\nCould an updated form of fusionism ameliorate some of these pathologies? Nobody knows for sure. Breathing life into the liberty-virtue synthesis might require relinquishing the vocabulary of fusionism. Perhaps a new type of conservatism will emerge that reflects and responds to the complexity and tensions of modern life.\n\nMs. Slade believes that there is a kernel of fusionism in almost all of us. She may be right. It is impossible, in the 21st century, to identify a single overriding interest or value that ought alone to govern social life, whether freedom, virtue, equality or efficiency. During the Cold War, as collectivism made advances in all areas of life, individualism made sense as a lodestar. But we live in a multiplicity of realms—social, economic, cultural, political, religious—that follow their own logic and cannot be reduced to a single principle. What's needed is a balance between rival values and principles that is flexible, moderate and resistant to doctrinal purity. Ms. Slade's history of fusionism might help conservatives practice this art of balance in dark times.\n\nMr. Craiutu is a professor of political science at Indiana University, Bloomington.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "fusionism",
+        "zh_suggested": "融合主义",
+        "note": "Frank Meyer's political outlook"
+      },
+      {
+        "en": "Frank Meyer",
+        "zh_suggested": "弗兰克·迈耶"
+      },
+      {
+        "en": "Stephanie Slade",
+        "zh_suggested": "斯蒂芬妮·斯莱德",
+        "note": "Reason magazine editor"
+      },
+      {
+        "en": "Reason magazine",
+        "zh_suggested": "《Reason》杂志",
+        "note": "libertarian magazine"
+      },
+      {
+        "en": "Sharon Statement",
+        "zh_suggested": "沙龙声明",
+        "note": "1960 conservative manifesto"
+      },
+      {
+        "en": "William F. Buckley Jr.",
+        "zh_suggested": "小威廉·F·巴克利"
+      },
+      {
+        "en": "Russell Kirk",
+        "zh_suggested": "拉塞尔·柯克"
+      },
+      {
+        "en": "Friedrich Hayek",
+        "zh_suggested": "弗里德里希·哈耶克"
+      },
+      {
+        "en": "Milton Friedman",
+        "zh_suggested": "米尔顿·弗里德曼"
+      },
+      {
+        "en": "Dissident Right",
+        "zh_suggested": "异见右派"
+      },
+      {
+        "en": "paleoconservatives",
+        "zh_suggested": "旧保守派"
+      },
+      {
+        "en": "neoconservatives",
+        "zh_suggested": "新保守派"
+      },
+      {
+        "en": "Pat Buchanan",
+        "zh_suggested": "帕特·布坎南",
+        "note": "“Pitchfork Pat”"
+      },
+      {
+        "en": "MAGA movement",
+        "zh_suggested": "MAGA运动"
+      },
+      {
+        "en": "Aurelian Craiutu",
+        "zh_suggested": "奥雷利安·克拉尤图",
+        "note": "待查, Indiana University professor"
+      }
+    ]
+  },
+  {
+    "id": "E2-019",
+    "page": "A15",
+    "section": "Opinion",
+    "title": "What Are U.S. Soldiers Doing in Ecuador?",
+    "dek": null,
+    "byline": "Mary Anastasia O'Grady (Americas)",
+    "body_en": "News that U.S. soldiers were deployed to Ecuador last month to fight drug-trafficking cartels deserves more attention than it has received. A trademark pledge of President Trump is to stay out of “endless wars.” Yet if ever there were a conflict destined to go on forever, it's the armed effort to defeat the suppliers of mind-altering substances in the face of robust consumer demand.\n\nThis isn't to dismiss out of hand the Shield of the Americas, the new U.S. regional security initiative under which the Ecuador mission was launched. The State Department says the goal of the hemispheric project, unveiled in March, is to pull together “likeminded allies” to “work together to advance strategies that stop foreign interference in our hemisphere, criminal and narco-terrorist gangs and cartels, and illegal and mass immigration.”\n\nEnhanced cooperation on the security interests of pro-Western countries in the hemisphere is a welcome development. To the extent it's possible for the U.S. to assist neighbors in recovering democratic institutions that have been lost to organized crime, the initiative has promise. But if the Americas Counter Cartel Coalition, operating under the “shield,” requires sending American soldiers to fight in the jungles of far-flung lands, it will tread on dangerous ground.\n\nThe U.S. successfully supported Colombia and President Álvaro Uribe in that country's war against narco-trafficking rebels in the 2000s by helping with intelligence, equipment and training and by sending in military advisers. It never committed troops.\n\nA growing number of countries now welcome security help from the U.S. because armed groups have overwhelmed national police and military. The problems go well beyond narcotics production and trafficking. Criminal networks rule swaths of weak countries. They run extortion and kidnapping rackets, collect taxes, interfere with elections, traffic people, intimidate the political class with threats of violence, and run illegal gold-mining operations that trample the rights of mining companies and rural communities.\n\nQuito is one of 19 governments that have joined the shield. Argentina, Bolivia, Chile, Colombia, Costa Rica, Guatemala, Honduras, Peru and Panama are members. Four Caribbean countries, including the Dominican Republic, are in the group. Most member governments are center-right. Guatemala is one notable exception. All have reason to worry about threats to democracy from transnational criminal networks.\n\nOver the past decade drug traffickers searching for the path of least resistance from South America to the north have gravitated to Ecuador. Once a small-bore banana republic marked by political instability, its weak institutions, rampant corruption and attractive location made it a target for gangsters looking to create a transit hub. It is now an organized-crime hot spot.\n\nQuito wants help in curbing cartel violence, but demand for drugs persists. As cartel violence has intensified and security has deteriorated, Ecuadorians have desperately sought a way back to the old tranquility they remember. President Daniel Noboa won a special election in 2023 and a regular election in 2025 by promising to crack down on crime. But progress has been slow. The arrival of U.S. forces raised hopes that the tide will soon turn. In raids last month, Ecuadorian forces, fighting alongside Americans, killed three alleged narcos and captured dozens more.\n\nYet the broader strategy is unclear. Mr. Uribe's triumph in Colombia over the guerrillas and the paramilitary didn't end the flow of cocaine to the U.S. One reason is that American demand for narcotics is inelastic: Even when the white hats reduce supply and prices go up, consumers keep buying. The net effect is that cartel income increases.\n\nIllicit groups aren't about to abandon their profitable businesses. But they can be cut down to size. The difficulty is finding a way to minimize their capacity to control territory without trampling republican values. Mr. Uribe managed that. His government re-established its authority across the country and restored it to its proper function of defending life and property without destroying democracy. Contrast that with El Salvador, which has gone the strongman route, employing high-powered weapons and sweeping lockups with no due process and at the expense of pluralism. Freedom has been exchanged for peace. Some political opponents of President Nayib Bukele have fled into exile. Sadly, the Trump administration celebrates Mr. Bukele.\n\nEcuador could come out a winner if it can copy Colombia and avoid the error of El Salvador. If the costs of operating in Ecuador go high enough, gangsters might even leave, establishing routes through different countries. It's what regional analysts call the “balloon effect.” The trouble is it doesn't do much for the Americas. To reach a lasting peace, the region will do better to emphasize open markets, deregulation, transparency, independent institutions that check the concentration of power, and efforts to professionalize the military. That's a hemispheric cause worth fighting for.\n\nWrite to O'Grady@wsj.com.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Shield of the Americas",
+        "zh_suggested": "美洲之盾",
+        "note": "U.S. regional security initiative"
+      },
+      {
+        "en": "Americas Counter Cartel Coalition",
+        "zh_suggested": "美洲反卡特尔联盟"
+      },
+      {
+        "en": "Daniel Noboa",
+        "zh_suggested": "丹尼尔·诺沃亚",
+        "note": "President of Ecuador"
+      },
+      {
+        "en": "Álvaro Uribe",
+        "zh_suggested": "阿尔瓦罗·乌里韦",
+        "note": "former Colombian president"
+      },
+      {
+        "en": "Nayib Bukele",
+        "zh_suggested": "纳伊布·布克莱",
+        "note": "President of El Salvador"
+      },
+      {
+        "en": "balloon effect",
+        "zh_suggested": "气球效应",
+        "note": "drug routes shifting under pressure"
+      }
+    ]
+  },
+  {
+    "id": "E2-020",
+    "page": "A15",
+    "section": "Opinion",
+    "title": "Will the FTC Protect You From Discounts?",
+    "dek": null,
+    "byline": "Mary Sullivan",
+    "body_en": "The Federal Trade Commission seems poised to join the backlash against personalized pricing. That would be a mistake. The practice remains poorly understood.\n\nPersonalized pricing, or its more sinister name, “surveillance pricing,” is a method of setting prices whereby companies use personal data to make individualized offers. According to a new FTC proposal, personalized pricing likely constitutes an “unfair or deceptive” practice unless the seller discloses “the fact that the price is personalized, the basis of that personalization, and the type of data used.”\n\nThe agency's conclusion is premature and relies on incomplete information. Don't take my word for it. The FTC concedes as much, stating in its August enforcement bulletin that “the extent to which businesses currently use personalized pricing is not well understood, and the effects of personalized pricing on consumers are unclear.”\n\nNor do we have a grasp of its prevalence. Remarkably, the FTC's proposal doesn't cite a single instance of a company's using personalized pricing.\n\nThe commission rushes to regulate personalized pricing.\n\nRather, it relies on hypotheticals designed to make the practice appear harmful to consumers. Consider a grocery chain charging more for milk to a family with children. A hotel could charge a higher price for a person traveling for a funeral. These scenarios strain credulity. The FTC should develop its enforcement policy around real-world behavior, not imagined harms.\n\nAccording to the theory of perfect price discrimination, a monopolist charges each consumer the maximum price that he is willing to pay for a good or service. This would make consumers worse off because all the gains from trade go to the seller.\n\nIn reality, even a monopolist wouldn't be able to extract all consumer surplus, because of the presence of alternatives and the inability to fully know consumers' willingness to pay. With personalized pricing, some buyers would see higher prices and others lower ones. The overall effect on consumer welfare is an empirical question.\n\nSo far, only one study, from 2022, has directly examined it with a pricing field experiment. Researchers at the University of Chicago found personalized pricing could benefit many consumers. While the practice raised prices for some, 60% were better off. They received individualized offers that were lower than the previous uniform price.\n\nThese results should give the FTC reason to pause any proposed enforcement and first develop a better understanding of personalized pricing. Instead of caricaturing how firms set prices, the commission should grapple with how the practice actually works. Rather than assume personalized pricing is always bad for consumers, it should account for the possible benefits suggested by scholars. Our limited knowledge provides little justification for rushing forward with policies that could effectively ban personalized pricing—a practice whose potential upside we have yet to fully understand.\n\nMs. Sullivan, a former FTC economist, is a visiting scholar at the George Washington University Regulatory Studies Center.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Federal Trade Commission",
+        "zh_suggested": "美国联邦贸易委员会",
+        "note": "FTC"
+      },
+      {
+        "en": "personalized pricing",
+        "zh_suggested": "个性化定价"
+      },
+      {
+        "en": "surveillance pricing",
+        "zh_suggested": "监控定价"
+      },
+      {
+        "en": "perfect price discrimination",
+        "zh_suggested": "完全价格歧视"
+      },
+      {
+        "en": "George Washington University Regulatory Studies Center",
+        "zh_suggested": "乔治·华盛顿大学监管研究中心"
+      }
+    ]
+  },
+  {
+    "id": "E2-021",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Trump’s Diesel Insult to Lindsey Graham",
+    "dek": null,
+    "byline": "Review & Outlook (lead editorial)",
+    "body_en": "The world misses Lindsey Graham, and never more than now as President Trump sides more decidedly with Vladimir Putin in his war against Ukraine and Europe. The late Senator might have been able to persuade the President to avoid this moral and strategic mistake.\n\nMr. Trump announced late Friday that the U.S. will buy up to 4.8 million tons (nearly 36 million barrels) of Russian diesel fuel in stages. That includes an “immediate” supply of 300,000 tons, another 500,000 in November, and one million “immediately thereafter.”\n\nThe delivery of another three million tons is “based on the condition of their Diesel Refineries,” Mr. Trump wrote on Truth Social. The U.S. Treasury lifted some sanctions on Russia through April 7 so it could export the diesel.\n\n“Between our TOTAL CONTROL of the Strait of Hormuz, and this great announcement on Russian Energy, Diesel Prices for Americans and, indeed, the World, will be COMING DOWN, IN RECORD NUMBERS, AND FAST!” Mr. Trump wrote on Truth Social.\n\nThis is supposed to help Republicans in the November elections that are three weeks away. But 36 million barrels of Russian diesel won't move prices much. The world consumed 28 million barrels of diesel and other distillates daily in 2025, according to OPIS, which is part of Dow Jones Energy.\n\nWhat the deal will do is directly finance Mr. Putin's bloody war in Ukraine. And it may be worse. The Financial Times reported Saturday that the Trump Administration “threatened to cut off vital intelligence sharing” to Kyiv if it continues attacking Russian refineries.\n\nIn September Mr. Trump blamed Ukraine for causing diesel-fuel shortages with its long-range strikes on Russian refineries. Never mind Iranian and Houthi strikes on Middle Eastern energy production and transport. Russia helps Iran with intelligence and weapons.\n\nOn Sunday Mr. Trump announced what he called “an ENERGY CEASEFIRE in the War between Russia and Ukraine. Both parties have agreed.” Ukrainian President Volodymyr Zelensky said Ukraine supports such a cease-fire if Russia does the same, but as we write this Russia hasn't commented.\n\nAn energy cease-fire would help both sides, as Ukraine faces another harsh winter and Russian refineries are under siege. But what about Mr. Putin's relentless attacks on Ukrainian cities?\n\nHis deal with Putin helps the Kremlin's war on Ukraine's cities.\n\nOn Wednesday 22 people, including five children, were killed in a Russian cruise missile strike on an apartment building in the city of Pryluky. The next day a glide bomb hit two buses in Kramatorsk, killing 33. After the diesel announcement, Russia launched glide bombs Saturday at a residential area of Zaporizhzhia, killing at least 20, including three children. Without a complete cease-fire, Russia will continue to torment Ukrainian civilians.\n\nThe strategic turn here is hard to understand. Only last month Mr. Trump signed Lindsey Graham's bill to allow new sanctions and tariffs on countries that buy Russian oil and gas. Now Mr. Trump has decided to buy Russian diesel and lift some current U.S. sanctions. The U.S. has been browbeating Europe, India and China not to buy Russian oil, and so much for all that diplomatic effort.\n\nThe Kremlin has been under financial pressure from Western sanctions and Ukraine's ability to hit targets in Russia. The Centre for Research on Energy and Clean Air estimates Russian oil companies will earn some $4.5 billion from the diesel deal.\n\nMr. Trump added to the pressure on Ukraine by saying it's “time for Ukraine to get a new president.” But he'll have to search far and wide for anyone in Ukraine who supports financing Vladimir Putin.\n\nMr. Trump complained again on the weekend that Mr. Zelensky could have settled the war many times. Yes, Kyiv could always surrender. Ukrainians prefer to fight for their independence and freedom. Eyeing a Nobel peace prize, Mr. Trump wants to broker a Russia-Ukraine peace, but the only pressure he ever applies is on Ukraine.\n\nHis multiple attempts at appeasing Mr. Putin with summitry, flattery, offers of new investment, and more haven't moved the Russian. On the weekend a Russian official said the diesel deal doesn't change Mr. Putin's determination to achieve his war aim, which is to turn Ukraine into a Kremlin satrapy. Until that changes, Mr. Trump's diesel deal helps Russia and not the cause of peace.",
+    "priority": "P1",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Lindsey Graham",
+        "zh_suggested": "林赛·格雷厄姆",
+        "note": "late U.S. Senator, per the editorial"
+      },
+      {
+        "en": "Truth Social",
+        "zh_suggested": "Truth Social",
+        "note": "Trump's social platform"
+      },
+      {
+        "en": "OPIS",
+        "zh_suggested": "OPIS",
+        "note": "oil price information service, part of Dow Jones Energy"
+      },
+      {
+        "en": "Centre for Research on Energy and Clean Air",
+        "zh_suggested": "能源与清洁空气研究中心",
+        "note": "CREA"
+      },
+      {
+        "en": "Pryluky",
+        "zh_suggested": "普里卢基",
+        "note": "Ukrainian city"
+      },
+      {
+        "en": "Kramatorsk",
+        "zh_suggested": "克拉马托尔斯克",
+        "note": "Ukrainian city"
+      },
+      {
+        "en": "Zaporizhzhia",
+        "zh_suggested": "扎波罗热",
+        "note": "Ukrainian city"
+      },
+      {
+        "en": "Strait of Hormuz",
+        "zh_suggested": "霍尔木兹海峡"
+      },
+      {
+        "en": "Volodymyr Zelensky",
+        "zh_suggested": "弗拉基米尔·泽连斯基"
+      }
+    ]
+  },
+  {
+    "id": "E2-022",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "How to Make a Jihadist Martyr",
+    "dek": null,
+    "byline": "Review & Outlook (editorial)",
+    "body_en": "Jihadist killer Nidal Hasan deserves his future in hell, but before he gets there Defense Secretary Pete Hegseth wants him to die before a firing squad open to the public for all to watch and record. This is a bad idea for many reasons, not least that it offers the killer the public martyrdom he craves.\n\nThese columns don't oppose the death penalty. For some murders, it shows that a society is serious enough about its self-preservation to deliver retributive justice. Mr. Hasan killed 13 and wounded 32 others at Fort Hood in 2009 in the name of Islam.\n\nBut his execution is best done quietly with few witnesses beyond officials and the families of the victims who wish to attend. This consigns him to history with ignominy but no fanfare. Mr. Hasan has said “I would still be a martyr” if executed, and that he killed those soldiers because they were “going against the Islamic Empire.” A livestreamed death, complete with some incendiary last words, is what he wants.\n\nMr. Hegseth seems to think a livestreamed execution by firing squad will be a show of U.S. resolve and deter others from such murderous acts. This misjudges the jihadist mind. It is a miscalculation that Western leaders often make about revolutionary jihadists like those who now run Iran.\n\nMr. Hasan and his ilk understand they are likely to die. That is part of their fevered calculation. They imagine that by their violence they will contribute to the bloody caliphate they hope to build on earth.\n\nA public death by firing squad would give Mr. Hasan that publicity in perpetuity. It would assist the cult of death promoted by the perversion of Islam seeking to recruit more suicide attackers. Far from deterring jihadists, it would serve as a YouTube recruiting video.\n\nThe U.S. doesn't need to execute Mr. Hasan on live TV to send a deterrent message. It needs to win the war against jihadists around the world, which at the moment means the fight against the Islamic Revolutionary Guard Corps and its Houthi allies. If this weekend's attack on Riyadh is a guide, Mr. Hegseth has more urgent duties on that front.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Nidal Hasan",
+        "zh_suggested": "尼达尔·哈桑",
+        "note": "Fort Hood shooter"
+      },
+      {
+        "en": "Pete Hegseth",
+        "zh_suggested": "皮特·赫格塞斯",
+        "note": "Defense Secretary"
+      },
+      {
+        "en": "Fort Hood",
+        "zh_suggested": "胡德堡",
+        "note": "2009 shooting"
+      },
+      {
+        "en": "Islamic Revolutionary Guard Corps",
+        "zh_suggested": "伊斯兰革命卫队",
+        "note": "IRGC"
+      },
+      {
+        "en": "Houthi",
+        "zh_suggested": "胡塞武装"
+      }
+    ]
+  },
+  {
+    "id": "E2-023",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Democrats vs. Alaska, Again",
+    "dek": null,
+    "byline": "Review & Outlook (editorial)",
+    "body_en": "The Alaska Senate race is a toss-up this year, which is remarkable given how Democrats in Washington keep demonstrating their zeal to stop economic development in the state. They did it again before they left town last month, blocking a bill that would have aided oil and gas development in the Arctic National Wildlife Refuge (ANWR).\n\nIn 2017 Congress required the Interior Secretary to create a plan for developing oil and gas in the ANWR coastal plain with a competitive program for leasing, developing and transporting the resources. The Biden Administration quickly suspended the leases in 2021 pending environmental review. Joe Biden's Interior Secretary later canceled the leases. The political seesaw left developers without enough confidence in stable policy to make the large investments required to get the region's rich reserves out of the ground.\n\nTrump II has opened more development leases for bidding, but companies are understandably wary of investing in projects that can be shut down by the next Democratic administration. In June the Bureau of Land Management's ANWR lease sale offered some 689,000 acres for lease but received bids on about 70,000 acres, worth about $3.7 million.\n\nEnter Alaska Sen. Dan Sullivan, who proposed to provide some federal assurance that the leases can't be canceled by the stroke of a pen. The Alaska's Right to Produce Act 2.0 would have prevented leases in the coastal plain oil and gas leasing program from being canceled unless the lessee is in violation of the lease terms.\n\nDemocrats and the climate lobby blocked it from getting a vote on the Senate floor. Defenders of Wildlife said the bill would produce “rampant oil and gas drilling,” while Sen. Martin Heinrich (D., N.M.) called it “another bill that would prioritize oil and gas over literally everything else.”\n\nThat's odd, since New Mexico is a major oil and gas producing state and Mr. Heinrich's constituents profit from it. The U.S. Energy Information Administration says New Mexico had 4.15 trillion cubic feet of gross natural gas withdrawals in 2025, far more than Alaska.\n\nPull quote: “They vote to keep oil and gas in the ground in a state that needs jobs and investment.”\n\nOpponents say oil and gas leases in ANWR would destroy wildlife habitats, spoil the wilderness and infringe on sacred indigenous lands. But no one is proposing to pave the Arctic. If all of the 2026 leases offered had been purchased, the less than 700,000 acres would have been a small fraction of the more than 19 million acre wildlife refuge.\n\nProgressives want Alaska to be a nature preserve for tourism and dog-sled races. But the oil industry makes up a significant portion of Alaska's GDP, and future oil and gas leases will add jobs and tax revenue. It also serves America's energy needs and national-security interests. Across his two terms, Sen. Sullivan has been a champion for bringing investment to a state that needs more of both, while protecting the environment.\n\nHis opponent, Mary Peltola, initially co-sponsored a version of this legislation when she was in the U.S. House. When the vote took place on the floor, she voted “present.” Ms. Peltola could provide the 51st vote to give Democrats a majority, and then vote “present” to put even more of Alaska's vast energy resources in a deep political freeze.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Arctic National Wildlife Refuge",
+        "zh_suggested": "北极国家野生动物保护区",
+        "note": "ANWR"
+      },
+      {
+        "en": "Dan Sullivan",
+        "zh_suggested": "丹·沙利文",
+        "note": "Alaska Senator"
+      },
+      {
+        "en": "Mary Peltola",
+        "zh_suggested": "玛丽·佩尔托拉"
+      },
+      {
+        "en": "Alaska's Right to Produce Act 2.0",
+        "zh_suggested": "《阿拉斯加生产权法案2.0》",
+        "note": "待查"
+      },
+      {
+        "en": "Defenders of Wildlife",
+        "zh_suggested": "野生动物保护者",
+        "note": "advocacy group"
+      },
+      {
+        "en": "Martin Heinrich",
+        "zh_suggested": "马丁·海因里希",
+        "note": "Senator (D., N.M.)"
+      },
+      {
+        "en": "Bureau of Land Management",
+        "zh_suggested": "土地管理局",
+        "note": "BLM"
+      },
+      {
+        "en": "U.S. Energy Information Administration",
+        "zh_suggested": "美国能源信息署",
+        "note": "EIA"
+      }
+    ]
+  },
+  {
+    "id": "E2-024",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Massachusetts’ Policies Increase Electric Bills",
+    "dek": "Re: “Climate Reality Hits Beacon Hill” (Oct. 8)",
+    "byline": "Daniel Turner, Executive director and founder, Power The Future, Round Hill, Va.",
+    "body_en": "The Northeast is dominated by blue-state governments where politicians are beholden to an unrealistic “green” agenda and are simultaneously desperate to talk about “affordability”—an incompatible combination. Opposition to domestic and reliable energy leads to the obstruction of pipeline projects. This in turn creates roadblocks toward getting natural gas from places like nearby Pennsylvania, the second-highest natural-gas-producing state. Natural gas is responsible for more than 40% of all electricity in the U.S., and the U.S. is the world's largest producer of natural gas. It should be a no-brainer.\n\nYet in recent years, Massachusetts has implemented policies to become carbon neutral by 2050. That means less natural gas, oil and coal, and more solar and wind projects. Politicians have cheered the closure of regional coal plants, perhaps most memorably in 2022 when former President Joe Biden stood before the state's last coal-fired power plant, Brayton Point Power Station, to discuss the climate “emergency.” Forcibly removing reliable sources of energy from the grid doesn't make winter less harsh or homes warmer. It decreases supply, which leads to higher prices—Massachusetts' electricity prices are 40% to 60% higher than the national average—or forces an increased reliance on foreign supply. Politicians can be focused on climate or affordability, but they can't do both. Sadly, it's a lesson Massachusetts residents are about to learn when they open their electric bills this fall and winter.",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Power The Future",
+        "zh_suggested": "Power The Future",
+        "note": "advocacy group"
+      },
+      {
+        "en": "Brayton Point Power Station",
+        "zh_suggested": "布雷顿角发电站",
+        "note": "Massachusetts coal plant"
+      },
+      {
+        "en": "Daniel Turner",
+        "zh_suggested": "丹尼尔·特纳",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-025",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "To Keep Medical Bills Low, Stay Out of the ER",
+    "dek": "Re: “Influencers Urge Public: Don’t Pay Medical Bills” (Page One, Oct. 8)",
+    "byline": "Laura Daymut, M.D., Omaha, Neb.",
+    "body_en": "Here's a tip for reducing medical bills: Don't go to the emergency room when you don't need to. ER bills are high partly because of the tremendous overhead required to provide 24/7 availability of life-saving medical care and expertise. As an ER physician, I see patients come to the ER for all sorts of complaints and then lament the high costs. Facility fees help cover the staffing and resources that allow ERs to respond to anything at a moment's notice.\n\nVisiting the ER for an ankle sprain provides a patient medical care wherever and whenever he wants it. But that convenience comes with a cost. Waiting to see a primary-care physician or a walk-in clinic would result in a significantly lower bill. Using patient portals for nonurgent questions, seeking telehealth services, or consulting reputable online sources to determine whether something requires emergency services can save patients more than the 25% discount offered before a bill goes to collections. Simply not paying the bill exacerbates the problem by increasing hospital losses, potentially forcing them to raise charges to recoup those costs. Patients looking to reduce medical bills should skip the TikTok influencers and turn to actual medical experts for guidance on where and when to seek care.",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-026",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "How to Help Lower Diesel Costs for Truckers",
+    "dek": "Re: “Diesel Prices Wearing Down Truckers” (U.S. News, Oct. 5)",
+    "byline": "Max McBrayer, President and CEO, NATSO, representing truck stops and travel centers, Alexandria, Va.",
+    "body_en": "For decades, the biodiesel tax credit encouraged fuel retailers to blend biodiesel into petroleum diesel, expanding supply options while also driving demand for U.S. soybeans. Trucking customers reaped the benefits, realizing tangible savings with every gallon pumped into their tanks, and farmers had more demand for their soybeans. A rare win-win. But Congress allowed the biodiesel tax credit to lapse in 2024. This has ricocheted through the trucking sector, where fuel represents one of the industry's highest operating expenses. Loss of the biodiesel tax credit put upward pressure on the cost of all goods moved by truck. With more than 70% of all goods Americans purchase moving by truck, fuel prices are embedded in the cost of everything consumers buy.\n\nReinstating the biodiesel tax credit is one of the clearest ways to help lower fuel costs and stabilize fuel supplies while strengthening demand for American agricultural products, benefiting families, farmers and our overall economy. If truck drivers are using every trick they can to address rising diesel fuel prices, then it's incumbent upon Congress to do the same.",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "NATSO",
+        "zh_suggested": "NATSO",
+        "note": "truck stop and travel center association"
+      },
+      {
+        "en": "biodiesel tax credit",
+        "zh_suggested": "生物柴油税收抵免"
+      },
+      {
+        "en": "Max McBrayer",
+        "zh_suggested": "马克斯·麦克布雷耶",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-027",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "The West’s Great Inheritance",
+    "dek": "Re: “Rubio Gets to the Heart of the Matter” (Oct. 8)",
+    "byline": "Alexander Gellos, New York",
+    "body_en": "The secretary of state is correct that the Western world must recover confidence in its history and heritage. That inheritance wasn't merely a retrospective justification for the postwar liberal order; it was one of the reasons its architects built that order in the first place. Western civilization—built on Greece and Rome, Christendom, the Renaissance and Reformation, the Enlightenment and the English and American traditions of liberty and representative government—provides a common intellectual and moral inheritance for the nations that built the Atlantic alliance.\n\nIn 1949 the Senate Foreign Relations Committee voted unanimously to report the North Atlantic Treaty to the full Senate. Its report concluded: “In tendering this unanimous report on the North Atlantic Treaty, we do so in furtherance of our Nation's most precious heritage—shared in common with the other signatories—continuing faith in our dependence upon Almighty God and His guidance in the affairs of men and nations.” That isn't antiquated rhetoric; it is an explanation of why these nations belong together. The postwar order is more than an arrangement of strategic interests; it is a political expression of a shared way of life and conception of the world. Recovering confidence in the West should mean reaffirming these principle that promote human flourishing.",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "North Atlantic Treaty",
+        "zh_suggested": "北大西洋公约",
+        "note": "1949"
+      },
+      {
+        "en": "Alexander Gellos",
+        "zh_suggested": "亚历山大·盖洛斯",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-028",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Rahm Emanuel Gets the Core American Principles Wrong",
+    "dek": "Re: “Washington Needs the Tax-Reform Spirit of ’86” (Oct. 7)",
+    "byline": "Michael Mendelson, Los Angeles",
+    "body_en": "In his op-ed “Washington Needs the Tax-Reform Spirit of '86” (Oct. 7), Rahm Emanuel writes at length about tax increases, mostly on business and capital, and even in duplicate when we die; he saves conciseness for his discussion of spending cuts. While none of that is surprising for a potential political candidate, not so his final, shocking sentence: “Washington's goal should be to create wealth, not protect it.” For 250 years our nation has grown on the exact opposite principle: a free people who work, innovate and invest to create wealth, and a government that protects it. Mr. Emanuel's formulation, a government that “produces” wealth but doesn't protect its citizens' property rights, has been a total failure everywhere it has been tried. It's less evocative of a revolutionary American “spirit of '86” than it is a Russian “dukh of '17.”",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Rahm Emanuel",
+        "zh_suggested": "拉姆·伊曼纽尔"
+      },
+      {
+        "en": "Michael Mendelson",
+        "zh_suggested": "迈克尔·门德尔松",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-029",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Justice Through Deterrence",
+    "dek": "Re: “Justice for Our Daughter Christa” (Oct. 7)",
+    "byline": "Thomas F. Berner, Yonkers, N.Y.",
+    "body_en": "In their op-ed “Justice for Our Daughter Christa” (Oct. 7), Chris Bauer and Sharon Bauer make a lovely Christian case against the death penalty. But the purpose of the death penalty is to set a price tag on human life. The more lenient the punishment, the more likely homicide will appear to be an acceptable course of action. The death penalty for murder isn't barbaric. It is society's attempt to prevent future homicides.",
+    "priority": "P3",
+    "type": "letter",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Thomas F. Berner",
+        "zh_suggested": "托马斯·F·伯纳",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E2-030",
+    "page": "A16",
+    "section": "Opinion",
+    "title": "Pepper ... And Salt (cartoon caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Pepper ... And Salt. The Wall Street Journal. Caption: “Long night?”",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-031",
+    "page": "A17",
+    "section": "Opinion",
+    "title": "The Race to Defeat Russia’s Jet Drones",
+    "dek": "The West needs to pay attention as Ukraine defends itself against a novel Russian weapon",
+    "byline": "Jillian Kay Melchior, Kyiv, Ukraine",
+    "body_en": "By now everybody in defense knows about the global shortage of Patriots and other high-end interceptors. But the war here is showing that the arms innovation cycle is relentless and cheap drones can become an equally dire problem. Fall behind in technology or scale to counter them, and you pay in blood.\n\nRussia's newest breakthrough is a jet-powered drone, and Ukraine lacks a good response. The good news is that Kyiv has a framework for catching up quickly. The West should pay attention. It may need one.\n\nRussia's jet drones can fly up to 375 miles an hour with a maximum altitude of about 5.5 miles—too fast for Ukraine's current stock of interceptor drones and too high for man-portable air-defense systems. Jet drones have a range of nearly 600 miles and carry a maximum payload of almost 200 pounds. Ukraine intercepts only 55% of them, compared with more than 90% of the older Shaheds. The Kremlin is launching up to 100 jet drones a day. They cost $100,000 or less each. Ramping up production is a Russian priority.\n\nJet drones aren't only a Ukrainian problem. Vladimir Putin wants to break the North Atlantic Treaty Organization and is testing what level of aggression he can get away with in Europe. An increasing number of drones are straying into NATO airspace amid aerial attacks on Ukraine. Europe has repeatedly failed to detect suspicious drones over sensitive military sites and infrastructure, and the London-based International Institute for Strategic Studies has warned that Russia is likely behind these incursions and probing for air-defense vulnerabilities.\n\nDanish defense intelligence recently warned of “a low but growing risk” of a “limited” military attack “against one or several NATO countries bordering Russia.” The Spanish publication El Mundo reported in late September about warnings from U.S. intelligence that Moscow could launch a drone attack on Europe from ships in the Mediterranean. Moscow shares information about drone technologies and tactics with China, Iran and North Korea. Last week concerns about an Iranian drone attack prompted the U.S. to move its B-1 bombers from a British military base.\n\nThe El Mundo report focused on Russia's smaller Gerbera drones, but older models of Shaheds can be launched from a ship deck, as can jet drones in all likelihood. A prominent Russian military blogger recently published maps with potential jet-drone targets in the U.S., the U.K., France and Poland. Targets include major military bases, tech and defense companies, nuclear power plants, ports and airports. Deterrence requires the ability to identify such threats and a cost-effective countermeasure, but adversaries have reason to suspect the West lacks both.\n\nTo understand how Ukraine is responding, last month I visited an air-defense center protecting Kyiv, one of several such hubs nationwide. I interviewed the commander and deputy commander but agreed not to publish their names, given the sensitivity of their work.\n\nUkraine's air-defense system collects data along the front line and across the country from tens of thousands of audio, visual and thermal sensors and radars. In the air-defense center, a real-time digital map displays everything in Ukrainian airspace. The system automatically provides information about the number and types of threats and their location and speed. In total the system can provide up to 150 discrete details about an aerial threat, while an unassisted human can pick up fewer than five. Closed-system artificial intelligence helps Ukraine analyze and act on all this data to mount a timely air defense. The air-defense center also manages deconfliction, ensuring that kinetic and electronic countermeasures against Russian drones don't result in friendly-fire damage.\n\nRussia's massive combined drone and missile attacks are “designed to overwhelm your defenses, and one way to deal with it is slicing your response,” the deputy commander says. Electronic warfare is the cheapest countermeasure available. The system identifies whether an enemy drone may be vulnerable to electronic warfare and executes a defense accordingly. Failing that, the air-defense centers coordinate responses up the echelon both geographically and kinetically, like a zone defense in football. The goal is to use the cheapest countermeasure at the earliest point to neutralize the threat, with all decisions driven by data.\n\nThis air-defense system gives Ukraine a head start as it develops a cheap, reliable interceptor for jet drones. Kyiv has collected extensive intelligence about how the new drones function, so weapons developers know what specific problems they need to solve. Several interceptors are in testing, and developers receive near-instantaneous feedback and adjust accordingly. Ukraine's air-defense system accounts for the rapid innovation cycle, so any new tool can be plugged in and used as soon as it's ready: different type of interceptor, but same basic air-defense concept.\n\nThe bad news is that until Ukraine develops and scales a jet-drone interceptor, “we are in deep s—,” says Yuriy Sak, a former adviser to Ukraine's Defense and Strategic Industries ministries. There are major challenges ahead. Given the jet drones' high speeds, the new interceptors will require sophisticated technologies that may be hard to procure. “Scaling up is tough because of constant attacks,” Mr. Sak says.\n\nHere in Kyiv, aerial attacks have been so intense that authorities are contemplating designating the capital a front-line city. The threat extends far beyond civilian morale. Russians can target Ukraine's weapons manufacturers and its energy grid at the same time. Ukraine's weapons developers need reliable power to produce at scale, and the attacks on energy infrastructure, ports and grain-export vessels will also hinder the Ukrainian economy, hurting tax revenue. Kyiv's best option may be to pursue joint production in partner countries.\n\nDuring this window, Ukraine's air defenders are taking advantage of the precision of their information about incoming aerial threats to blunt the danger and disruption to businesses and civilians. Better-tailored air alerts can limit the number of businesses that have to shut down and avoid sending civilians to shelters unless a threat is imminent.\n\nThe West can do more to help Ukraine get through this dangerous interval. F-16s are the most reliable defense against jet drones, but Ukraine is flying them far more than the West anticipated, and too many are now out of commission pending maintenance in Belgium.\n\nUkraine was caught unprepared for the jet-drone threat in part because of financial constraints that force it to choose between competing defense research-and-development and procurement priorities. Europe has frozen billions in Russian assets, and it can strengthen its own deterrence by transferring some of that money to Ukraine.\n\nMs. Melchior is a London-based member of the Journal's editorial board.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Shahed",
+        "zh_suggested": "沙赫德",
+        "note": "Iranian/Russian attack drone"
+      },
+      {
+        "en": "Gerbera",
+        "zh_suggested": "天竺葵",
+        "note": "Russian drone, 待查"
+      },
+      {
+        "en": "International Institute for Strategic Studies",
+        "zh_suggested": "国际战略研究所",
+        "note": "IISS, London"
+      },
+      {
+        "en": "El Mundo",
+        "zh_suggested": "《世界报》",
+        "note": "Spanish publication"
+      },
+      {
+        "en": "Yuriy Sak",
+        "zh_suggested": "尤里·萨克",
+        "note": "待查, former adviser to Ukraine's defense ministries"
+      },
+      {
+        "en": "Jillian Kay Melchior",
+        "zh_suggested": "吉莉安·凯·梅尔基奥",
+        "note": "待查, WSJ editorial board"
+      }
+    ]
+  },
+  {
+    "id": "E2-032",
+    "page": "A17",
+    "section": "Opinion",
+    "title": "Jet-drone strike in Kyiv (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "A building hit by a Russian jet-powered drone strike in Kyiv, Sept. 28. (Credit: Thomas Peter/Reuters.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-033",
+    "page": "A17",
+    "section": "Opinion",
+    "title": "The ‘Scientific’ Socialism of Abdul El-Sayed",
+    "dek": null,
+    "byline": "Allysia Finley (Life Science)",
+    "body_en": "Apparently, “following the science” means embracing socialism. So argues Abdul El-Sayed, the left-wing Democrat running for Senate in Michigan.\n\n“Once you train in the sciences, you don't leave that scientific approach to thinking and that rigor of thinking. And I try to bring that to policy problems,” Mr. El-Sayed, who has a medical degree but has never practiced as a physician, told Scientific American. “You construct a hypothesis of the world and you test it . . . and then you'll study the outcome of the intervention to see if it works.”\n\nA drug maker would scrap an experimental medicine that fails to help patients and causes severe adverse effects. Mr. El-Sayed and his fellow Democrats want to rerun failed policy experiments at a higher dosage.\n\nConsider taxes. Most European countries that have imposed wealth taxes—including Austria, Denmark, Germany, Sweden and France—repealed them because they prompted high earners to flee. Before France's repeal in 2018, a net 580 households subject to the tax left each year on average. After repeal, many returned.\n\nProgressives claim the wealthy are impervious to higher taxes. So why has a stream of Cessnas vamoosed from California, New York and New Jersey to zero-income tax Florida, Texas and Nevada?\n\nA 2013 study of European soccer players found countries with lower tax rates attracted the most talented foreign players. Irony alert: One of the study's authors was left-wing economist Emmanuel Saez, an architect of a California wealth tax ballot measure, who advocates drowning the rich to pay for cradle-to-grave states. Democrats are on board.\n\nMr. Sayed has endorsed a wealth tax on billionaires and even those with smaller fortunes. He also wants to tax capital gains above $1 million at the same rate as ordinary income, remove the $184,500 income cap on the 12.4% Social Security payroll tax and boost the top marginal personal income-tax rate (now 37%), though he doesn't specify how high.\n\nSuch ideas are mainstream in the Democratic Party. New Jersey Sen. Cory Booker has proposed raising the top income-tax rate to 43%. Maryland Sen. Chris Van Hollen bids 49%. Uncapping the Social Security tax would boost the marginal tax rate for higher earners by another 12.4%, putting the total top federal rate in the neighborhood of 60%.\n\nThrow in state taxes, and the wealthy in some states would be paying north of 70% of their income to the government. The top rates in the U.K. (45%), Germany (47.5%) and France (55.4%) would be a relative bargain. Watch as professional basketball players jump to European leagues.\n\nSoaking the rich hasn't solved the fiscal problems of European welfare states. Instead, it has stunted economic growth and, in turn, tax revenue, resulting in a lower standard of living and shoddy public services. Witness the recent student-led protests in France over the rickety infrastructure in public schools. Its national healthcare system is similarly dilapidated. Seniors may not have the energy to take to the streets because their hips are failing and the government won't pay for a replacement. They're going to die soon anyway, so why spend the money? Better to spend it on subsidizing idle young people—France's youth unemployment rate tops 20%—who can't find jobs because of stultifying taxes, regulations and labor rules.\n\nSingle-payer healthcare has proved itself a failure, so he wants to rerun the experiment on America.\n\nMr. El-Sayed and his socialist compatriots present “Medicare for all”—a euphemism for a single-payer system—as a healthcare nirvana. The Democratic candidate's idealized system has no copays, deductibles, premiums or provider network. It promises free healthcare on demand from any doctor. Such a system doesn't exist anywhere in the world. Medicare requires premiums, copays and deductibles, and as Mr. El-Sayed acknowledged, “as it operates right now, there is some subcontracting to private companies.” About half of Medicare beneficiaries are enrolled in privately administered Advantage plans, which are less expensive than traditional fee-for-service because insurers do a better job than the government of controlling waste and fraud. Democrats want to eliminate the Advantage program and move entirely to a fee-for-service system. If you like your Medicare plan, don't expect to keep it.\n\nMost countries fund their government-run systems with payroll and value-added taxes, so that people pay for healthcare by having less disposable income. And by enduring delays. Government-run health systems are inefficient and stingy. Result: longer waits for appointments with procedures, if rationing bodies will even approve them.\n\nAbout 17% of patients in the U.S. wait more than two months for an appointment with a specialist, which is significantly less than in socialized-medicine utopias like Canada (48%), France (45%) and the U.K. (43%). Government-run healthcare means less access, not more.\n\nDemocrats are unlikely to ban private insurance in the short term, if only because this would be unpopular with unions that have Cadillac plans. The bigger danger is they muck up private insurance with more regulation as they try to fix the unintended effects of their disastrous ObamaCare experiment.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Abdul El-Sayed",
+        "zh_suggested": "阿卜杜勒·埃尔-赛义德",
+        "note": "Michigan Senate candidate"
+      },
+      {
+        "en": "Scientific American",
+        "zh_suggested": "《科学美国人》"
+      },
+      {
+        "en": "Emmanuel Saez",
+        "zh_suggested": "埃马纽埃尔·塞斯"
+      },
+      {
+        "en": "Cory Booker",
+        "zh_suggested": "科里·布克",
+        "note": "Senator (D., N.J.)"
+      },
+      {
+        "en": "Chris Van Hollen",
+        "zh_suggested": "克里斯·范霍伦",
+        "note": "Senator (D., Md.)"
+      },
+      {
+        "en": "Medicare for all",
+        "zh_suggested": "全民医保"
+      },
+      {
+        "en": "Allysia Finley",
+        "zh_suggested": "阿利西娅·芬利",
+        "note": "待查, WSJ columnist"
+      }
+    ]
+  },
+  {
+    "id": "E2-034",
+    "page": "A17",
+    "section": "Opinion",
+    "title": "Republican Senate Losses Will Hurt Long After Trump",
+    "dek": null,
+    "byline": "Matthew Continetti",
+    "body_en": "Republicans are bracing for an ugly November. The GOP House majority looks lost, and Democrats are increasingly confident of capturing the Senate. Divided government lies ahead, along with obstruction and investigations. “I'm going to be impeached,” President Trump told South Carolina voters in August. “They're going to impeach me. They have no idea why.”\n\nImpeachment may be the least of Mr. Trump's worries. After all, he's been through it twice. What he hasn't experienced is full Democratic control of Congress. It would make all his problems worse.\n\nThe president might believe he would be able to dismiss a Speaker Hakeem Jeffries as a nuisance, as he did Speaker Nancy Pelosi in his first term. He won't have that luxury if Chuck Schumer is also Senate majority leader. A Democratic Senate would be impossible to ignore.\n\nNor would the pain end for Republicans when Mr. Trump leaves office. Senate elections have a long tail. Six-year Senate terms are spread across presidential administrations, giving senators many chances to serve in the majority, influence policy and cast defining votes.\n\nThe senators who win this year won't be up for re-election until 2032, the end of the next presidential term. They will become the base of support for, or a bulwark against, the legislation and appointments of Mr. Trump's successor. Some may try to become that successor.\n\nThis has happened before. Democrats netted six seats in 2006 and gained Senate control. Sherrod Brown, Bob Casey Jr., Claire McCaskill, Jon Tester, Jim Webb and Sheldon Whitehouse opposed George W. Bush during his last years in office, for sure. But their true impact wasn't felt until 2009, when they voted for President Obama's stimulus bill and ObamaCare.\n\nConversely, Republicans gained nine seats and a Senate majority in 2014. The class of '14 included conservative stars Ben Sasse, Tom Cotton and Joni Ernst, who helped sustain Majority Leader Mitch McConnell's 2016 hold on Merrick Garland's nomination to replace Justice Antonin Scalia. And when Donald Trump became president, they all voted for Mr. Trump's Supreme Court nominees and the Tax Cuts and Jobs Act.\n\nEven small gains in the Senate can have major consequences. Democrats won two Senate seats in 2018 (while losing four), yet Kyrsten Sinema and Jacky Rosen went on to vote for President Biden's spending deluge. Democrats won both Georgia Senate seats amid the 2020 election debacle—aiding Mr. Biden and providing a presidential springboard for Jon Ossoff.\n\nThough Republicans lost a Senate seat in 2022, one GOP senator elected that year found himself as Mr. Trump's vice president in 2025, casting the tie-breaking vote for the One Big Beautiful Bill Act. Americans who cast votes this year in protest might wind up launching the career of the Democrats' JD Vance. Also recall 2004, when an open Senate seat in Illinois served as the launch vehicle for Mr. Obama.\n\nNew members of the upper chamber will remain there through the first term of the president's successor. Here's what a Democratic Senate might do: Not only would Democrats stop Mr. Trump's legislative agenda. They would amplify the progressive tax, spending and regulatory bills that come from a Democratic House. President Trump's veto pen would be busy.\n\nAt the same time, Senate Democrats would block presidential appointments. The Supreme Court wouldn't be exempt. Democrats have been thirsting for revenge since Sen. McConnell blocked Mr. Garland's nomination. Winning the Senate in November would give them that chance in the event of a vacancy.\n\nThwarting Mr. Trump would be only the start. Democrats in Congress will use policy and messaging to soften the ground for the 2028 presidential campaign. And if a Democrat wins in 2028, he could, like every first-term president since Bill Clinton, take office with a unified government. Then the conservative nightmare begins.\n\nBy 2029, potential Democratic members of the class of 2026—Roy Cooper, Mr. Brown, Mary Peltola, Josh Turek, Abdul El-Sayed and company—would all be ensconced in the Dirksen, Russell and Hart office buildings. They'd be eager to cast votes for the next Sonia Sotomayor or Ketanji Brown Jackson. They'd be champing at the bit to end the legislative filibuster. That would open the door for bills to override state-based election laws, including voter ID, to impose term limits on or add seats to the Supreme Court, and grant statehood to the District of Columbia and Puerto Rico. Senators elected under the banner of “affordability” would be positioned to raise taxes, limit oil and gas production, expand government and muck with health insurance—a lefty free-for-all.\n\nA Senate election has lasting consequences. That is even more reason for Republicans to make a priority of spending in races that could tip the balance of power. Mr. Trump may agree with Democrats that the election is about him, but it is also about setting the stage for what comes after him. Mr. Trump might not be on the ballot this year. The future of American politics certainly is.\n\nMr. Continetti is a columnist for WSJ Opinion's Free Expression.",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Hakeem Jeffries",
+        "zh_suggested": "哈基姆·杰弗里斯"
+      },
+      {
+        "en": "Chuck Schumer",
+        "zh_suggested": "查克·舒默"
+      },
+      {
+        "en": "Merrick Garland",
+        "zh_suggested": "梅里克·加兰"
+      },
+      {
+        "en": "One Big Beautiful Bill Act",
+        "zh_suggested": "《大而美法案》"
+      },
+      {
+        "en": "JD Vance",
+        "zh_suggested": "J.D.万斯"
+      },
+      {
+        "en": "Roy Cooper",
+        "zh_suggested": "罗伊·库珀",
+        "note": "待查"
+      },
+      {
+        "en": "Josh Turek",
+        "zh_suggested": "乔什·图雷克",
+        "note": "待查"
+      },
+      {
+        "en": "Matthew Continetti",
+        "zh_suggested": "马修·康蒂内蒂",
+        "note": "待查"
+      },
+      {
+        "en": "Free Expression",
+        "zh_suggested": "Free Expression",
+        "note": "WSJ Opinion column"
+      }
+    ]
+  },
+  {
+    "id": "E2-035",
+    "page": "A18",
+    "section": "Sports",
+    "title": "Late Interceptions Doom Texas",
+    "dek": "The No. 1 Longhorns lost to Oklahoma after a late wobble by quarterback Arch Manning",
+    "byline": "Robert O'Connell",
+    "body_en": "Barely a month ago, Arch Manning finally looked like the golden boy quarterback the football world had been waiting to see. With a furious fourth-quarter rally, Manning had led Texas to a 20-point comeback win over Ohio State to launch the Longhorns to the No. 1 spot in the Top 25. He entrenched himself as the favorite to win the Heisman Trophy, guide Texas to a national title and cement himself as the top pick in the NFL draft.\n\nBut in a stunning collapse against Oklahoma on Saturday, Manning showed that years after being anointed as football's next star he remains far from the finished product.\n\nWith 20 seconds left in a tie game, Manning was trying to drive Texas into field-goal range when he slung a desperate pass off his back foot—straight into the hands of a Sooners defender for a critical interception.\n\nMoments later, Oklahoma kicked a field goal to win 27-24.\n\n“I think we beat ourselves,” Manning said after the game. “I can't be loose with the ball.”\n\nThat looseness doomed Texas all afternoon long, as a 10-point lead crumbled into their first defeat of the season. In addition to the last-minute interception, he threw a pick earlier in the fourth quarter that was returned for a touchdown, giving Oklahoma its first lead of the day. In all, Manning's turnovers led directly to 10 Sooner points.\n\n“There's a level of anger and frustration,” Texas coach Steve Sarkisian said.\n\nThe puzzling thing about Saturday's meltdown wasn't simply that the No. 1 team in the nation lost to a .500 team that had dropped out of the Top 25 rankings. It was that Texas spent all offseason dedicated to building the perfect football machine around the perfect football prospect—a roster so refined they wouldn't be in this kind of do-or-die situation to begin with.\n\nAfter Manning's debut as a full-time starter last season ended without a playoff appearance, the Longhorns shelled out more than $40 million in NIL spending on this year's roster. Texas splurged on high-profile transfers such as receiver Cam Coleman and running back Hollywood Smothers. They had one job: Make Arch Manning live up to his last name and join football royalty.\n\n“When we're at our best, we're a very explosive offensive football team,” Sarkisian said of the additions. “We were not that a year ago.”\n\nThe dynamite hasn't quite materialized. Manning has thrown for just 224.4 yards per game, the 53st-highest average in the country, according to Stats Perform. His two touchdowns per game are 32nd, and his passer rating is 64th.\n\nMost worrisome of all is Manning's inability to throw the football to his own team. After throwing seven interceptions all of last season, he has racked up five in just five games in 2026. In all, 3.4% of his throws have ended up in the hands of his opponents—a higher rate than 106 other quarterbacks nationwide.\n\nThe concerns around the Manning-led attack became so severe on Saturday that Sarkisian elected to try a 53-yard field goal rather than go for it on 4th-and-2. (The kick missed.) But despite a crushing loss to their biggest rivals, the Longhorns don't believe the sky is falling. In the age of an expanded playoff, one defeat doesn't spell doom for championship hopes.\n\n“We're not dead,” Sarkisian said. “We're going to be OK. We'll get back up off the mat.”\n\nHowever Texas' season ends up, fans awaiting the next great Manning may have to face a somewhat duller reality. The Heisman Trophy has all but slipped from his grasp, and his hold on the No. 1 spot in the NFL draft is facing threats from, among others, upstart Oklahoma State quarterback Drew Mestemaker.\n\n“Arch competed his tail off,” Sarkisian said, despite the throws that cost Texas its unbeaten record. “The competitor in him, he'd love to have that back.”",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Arch Manning",
+        "zh_suggested": "阿奇·曼宁",
+        "note": "Texas quarterback"
+      },
+      {
+        "en": "Texas Longhorns",
+        "zh_suggested": "得克萨斯长角牛队"
+      },
+      {
+        "en": "Oklahoma Sooners",
+        "zh_suggested": "俄克拉荷马捷足者队"
+      },
+      {
+        "en": "Steve Sarkisian",
+        "zh_suggested": "史蒂夫·萨基西安",
+        "note": "Texas coach"
+      },
+      {
+        "en": "Heisman Trophy",
+        "zh_suggested": "海斯曼奖"
+      },
+      {
+        "en": "NIL",
+        "zh_suggested": "NIL",
+        "note": "name, image and likeness (college athlete pay)"
+      },
+      {
+        "en": "Cam Coleman",
+        "zh_suggested": "卡姆·科尔曼",
+        "note": "待查"
+      },
+      {
+        "en": "Hollywood Smothers",
+        "zh_suggested": "好莱坞·斯莫瑟斯",
+        "note": "待查, running back"
+      },
+      {
+        "en": "Peyton Bowen",
+        "zh_suggested": "佩顿·鲍文",
+        "note": "待查"
+      },
+      {
+        "en": "Drew Mestemaker",
+        "zh_suggested": "德鲁·梅斯特梅克",
+        "note": "待查, Oklahoma State quarterback"
+      },
+      {
+        "en": "Stats Perform",
+        "zh_suggested": "Stats Perform",
+        "note": "sports data firm"
+      },
+      {
+        "en": "NFL draft",
+        "zh_suggested": "NFL选秀"
+      }
+    ]
+  },
+  {
+    "id": "E2-036",
+    "page": "A18",
+    "section": "Sports",
+    "title": "Arch Manning interceptions (photo caption)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Arch Manning, top, threw two fourth-quarter interceptions, including a pick-six to Peyton Bowen, below, in a 27-24 loss. (From top: Jeffrey McWhorter/AP; Sara Diggins/The San Antonio Express-News/AP.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E2-037",
+    "page": "A18",
+    "section": "Sports",
+    "title": "The Marathoner Who Trains On a Planet Fitness Treadmill",
+    "dek": null,
+    "byline": "Rachel Bachman",
+    "body_en": "Elite marathoners go to extreme lengths to chase top times, shelling out fortunes on fancy coaching and remote altitude camps to gain an edge.\n\nVinny Mauri spends his money on a Planet Fitness membership. The 25-year-old who lives outside Youngstown, Ohio, is self-coached and logs most of his mileage on standard treadmills at his local gym for $24.99 a month.\n\n“Didn't even think those could go that fast!” one of Mauri's Strava's followers commented on a recent run.\n\nMauri's unconventional approach is already paying off. He shocked the running world when he won Toledo's Glass City Marathon in April, shattering the course record with a finish of 2 hours, 5 minutes and 54 seconds.\n\nThat's 4:48 a mile for 26.2 miles—the fastest debut marathon ever recorded by an American. On Sunday, the treadmill phenom took on a much larger and tougher field at the Chicago Marathon and finished 10th, in 2:06:45.\n\n“People love that I'm just doing it from here, doing it from home,” said Mauri, who often bumps into former high-school classmates at the gym. “Didn't really have to relocate to do the thing that I love.”\n\nMost distance runners would shudder at the thought of grinding away on a machine so boring it has earned the nickname “dreadmill.” (An early ancestor of the machine was used as punishment in 19th-century British prisons.) But for Mauri, the treadmill turned out to be far more than the workout machine of last resort. It actually sparked his athletic rebirth.\n\nAs a senior at Howland High in Warren, Ohio, Mauri won the 3,200-meter state title. But in college, first at Arizona State then as a graduate student at Notre Dame, he underachieved. He had a few bad-luck stumbles in races, and suffered from nagging injuries.\n\nThe problem, he said, was that he loved running too much. He would get so excited about workouts that he often overdid it.\n\nAfter college, when he struggled to put his degree in biomedical engineering to good use, he set his sights on the marathon. The treadmill offered an escape from Ohio's winters, but he quickly found other advantages.\n\nThe treadmill surface is bouncier than the road, more forgiving on his body than pounding on pavement. It also saves him from making turns, which is easier on a nagging hip injury he carried in college.\n\nAnd most importantly, the machine is like a metronome, keeping him steady and curbing his impulse to go overboard.\n\n“Every once in a while he'll text me and be like, ‘I ran outside today. Got a little fast,’” said Chris Neal, who coached Mauri at Notre Dame. “He knows that he kind of needs that speed governor on his running.”\n\nWhich isn't to say Mauri takes it easy. His epic treadmill sessions have become legendary among running junkies. In June, he ran a full marathon on the treadmill in about 2:20. More recently, he ran a staggering 45 miles across two treadmill sessions in a single day. He's used the apparatus for about 70% of his training mileage for Sunday's marathon.\n\n“The weather's always good inside,” Mauri said.\n\nAs for the monotony, Mauri has a whole routine. After he sets the treadmill, he throws a T-shirt over the digital display so he won't be tempted to fiddle with it. “It kind of helps when you zone out,” he said.\n\nTo pass the time, Mauri surfs YouTube, listens to music or stand-up comedy, or watches golf. He also likes to call friends right from the treadmill, “and just like shoot the breeze with us when he's doing some ridiculous 50-minute workout at a 4:40 pace,” said Tyler Clark, a former runner at Youngstown State and occasional training partner.\n\nMauri only recently turned pro, signing a shoe deal with Asics. After his breakout marathon, though, he received a perk that's less valuable but might be even more useful: a free one-year membership to Planet Fitness.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Vinny Mauri",
+        "zh_suggested": "文尼·毛里",
+        "note": "待查, marathoner"
+      },
+      {
+        "en": "Planet Fitness",
+        "zh_suggested": "Planet Fitness",
+        "note": "gym chain"
+      },
+      {
+        "en": "Glass City Marathon",
+        "zh_suggested": "玻璃城马拉松",
+        "note": "Toledo"
+      },
+      {
+        "en": "Chicago Marathon",
+        "zh_suggested": "芝加哥马拉松"
+      },
+      {
+        "en": "Strava",
+        "zh_suggested": "Strava",
+        "note": "fitness app"
+      },
+      {
+        "en": "Chris Neal",
+        "zh_suggested": "克里斯·尼尔",
+        "note": "待查, Notre Dame coach"
+      },
+      {
+        "en": "Tyler Clark",
+        "zh_suggested": "泰勒·克拉克",
+        "note": "待查"
+      },
+      {
+        "en": "Asics",
+        "zh_suggested": "亚瑟士"
+      },
+      {
+        "en": "Howland High",
+        "zh_suggested": "豪兰高中",
+        "note": "Warren, Ohio, 待查"
+      },
+      {
+        "en": "Arizona State",
+        "zh_suggested": "亚利桑那州立大学"
+      },
+      {
+        "en": "Notre Dame",
+        "zh_suggested": "圣母大学"
+      }
+    ]
+  },
+  {
+    "id": "E2-038",
+    "page": "A18",
+    "section": "Sports",
+    "title": "Vinny Mauri (photo captions)",
+    "dek": null,
+    "byline": null,
+    "body_en": "Vinny Mauri logs most of his mileage on treadmills at his local gym.\n\nVinny Mauri won Toledo's Glass City Marathon in April in 2:05:54. (Credit: Mercy Health Glass City Marathon.)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "skipped_ads": [
+      "Volunteers of America Operation Backpack full-page ad (A13): “Remember when you felt this way about school supplies? Through Volunteers of America’s Operation Backpack, more than 59,000 children started school ready to learn this year. Scan to help the next child start strong. VOA.ORG/BACKPACKS-FOR-KIDS”"
+    ]
+  }
+]

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WSJ 深读 R3 · 方向A</title>
+<style>
+
+:root{
+  --bg:#f6f6f3; --paper:#ffffff;
+  --ink:#16181d; --ink-2:#4b5260; --ink-3:#8b929e;
+  --line:#1d2026; --line-2:#d6dae1; --fill:#f3f5f8;
+  --bw:1.5px;
+  --accent:#1d5fbf; --accent-bg:#e4ecf8;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"JetBrains Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;border-radius:0 !important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.skip-link{position:absolute;left:-9999px}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;background:transparent}
+.progress i{display:block;height:100%;width:0;background:var(--ink)}
+.frame{max-width:1180px;margin:0 auto;padding:0 28px 90px}
+/* masthead */
+.cover{background:var(--ink);color:#fff;margin:0 -28px;padding:52px 40px 40px}
+.edition{font:700 11px/1 var(--mono);letter-spacing:.22em;color:#fff;opacity:.65;margin:0 0 20px;text-transform:uppercase}
+.cover h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,5.4vw,64px);line-height:1.12;letter-spacing:-.01em;margin:0;max-width:900px}
+.cover-weekend,.cover-date{display:block}
+.cover-date{margin-top:.12em}
+.deck{margin:18px 0 0;max-width:62ch;font-size:15px;line-height:1.65;color:#d6dae1}
+.issue-data{margin-top:28px;border-top:var(--bw) solid #fff;padding-top:16px;max-width:560px}
+.issue-data dl{display:grid;grid-template-columns:1fr auto;gap:7px 24px;margin:0;font:12.5px/1.5 var(--mono)}
+.issue-data dt{color:#8b929e}.issue-data dd{margin:0;text-align:right;color:#fff}
+/* reader note + priority guide */
+.reader-note{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:34px 0 0;background:var(--paper);border:var(--bw) solid var(--line)}
+.reader-note>div{padding:18px 20px;border-left:var(--bw) solid var(--line)}
+.reader-note>div:first-child{border-left:0}
+.reader-note b{font:700 11px/1.4 var(--mono);letter-spacing:.12em;display:block;margin-bottom:8px}
+.reader-note p{margin:0;font-size:13.5px;line-height:1.65;color:var(--ink-2)}
+.priority-guide{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:0;margin:22px 0 0;background:var(--paper);border:var(--bw) solid var(--line)}
+.priority-guide>div{padding:18px 20px;border-left:var(--bw) solid var(--line)}
+.priority-guide>div:first-child{border-left:0}
+.priority-guide h2{font-family:var(--serif);font-size:19px;line-height:1.35;margin:0 0 8px;letter-spacing:-.01em}
+.priority-guide p{margin:0;font-size:13px;line-height:1.6;color:var(--ink-2)}
+.priority-guide b{font:700 11px/1.4 var(--mono);letter-spacing:.1em;display:block;margin-bottom:8px}
+.priority-guide b.p1{background:var(--ink);color:#fff;display:inline-block;padding:4px 10px}
+.priority-guide div:nth-child(3) b{color:var(--accent)}
+.priority-guide div:nth-child(4) b{color:var(--ink-3)}
+/* toolbar */
+.toolbar{position:sticky;top:0;z-index:100;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 0;background:var(--bg);border-bottom:var(--bw) solid var(--line)}
+.toc-button,.global-lang-toggle,.priority-filters button{font:700 12px/1 var(--mono);letter-spacing:.06em;background:var(--paper);border:var(--bw) solid var(--line);color:var(--ink);padding:10px 14px;cursor:pointer}
+.toc-button:hover,.global-lang-toggle:hover,.priority-filters button:hover{background:var(--ink);color:#fff}
+.priority-filters{display:flex;gap:0}
+.priority-filters button{border-left:0}
+.priority-filters button:first-child{border-left:var(--bw) solid var(--line)}
+.priority-filters button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.search{display:flex;align-items:center;gap:8px;background:var(--paper);border:var(--bw) solid var(--line);padding:8px 12px;flex:1;min-width:200px}
+.search svg{width:16px;height:16px;flex:none}
+.search input{border:0;outline:0;background:transparent;font:14px var(--sans);width:100%;color:var(--ink)}
+.result-count{font:700 12px var(--mono);color:var(--ink-3);margin-left:auto}
+/* layout */
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px;margin-top:8px}
+.toc{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;padding:24px 0}
+.toc h2{font:700 11px/1.2 var(--mono);letter-spacing:.18em;margin:0 0 12px;color:var(--ink-3)}
+.toc nav{display:flex;flex-direction:column}
+.toc a{display:flex;gap:10px;align-items:baseline;color:var(--ink-2);text-decoration:none;font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line-2)}
+.toc a strong{font:700 11px var(--mono);color:var(--ink-3)}
+.toc a:hover{color:var(--ink)}.toc a:hover strong{color:var(--accent)}
+.content{min-width:0}
+/* sections */
+.paper-section{padding:44px 0 6px}
+.section-head{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:end;padding-bottom:16px;border-bottom:3px solid var(--line);margin-bottom:6px}
+.section-no{font:700 34px/1 var(--mono);color:var(--ink)}
+.section-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-.01em;margin:0}
+.section-head p{font:11px/1.4 var(--mono);letter-spacing:.14em;color:var(--ink-3);margin:10px 0 0;text-transform:uppercase}
+/* stories */
+.story{background:var(--paper);border:var(--bw) solid var(--line);padding:26px 30px;margin:22px 0;max-width:860px}
+.story[hidden],.paper-section[hidden]{display:none}
+
+
+.story h3{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;margin:0;line-height:1.22;text-wrap:balance}.story[data-priority="1"] h3{font-size:clamp(26px,3vw,34px)}.story[data-priority="2"] h3{font-size:23px}.story[data-priority="3"] h3{font-size:20px}
+
+.kicker{display:flex;justify-content:space-between;align-items:center;gap:16px;font:700 11px/1.5 var(--mono);letter-spacing:.1em;margin:0 0 14px}.k-left{display:flex;align-items:center;gap:10px}.k-page{color:var(--ink)}
+.story[data-priority="1"] .k-pri{background:var(--ink);color:#fff;padding:4px 9px}
+.story[data-priority="2"] .k-pri{color:var(--accent);border:var(--bw) solid var(--accent);padding:3px 8px}
+.story[data-priority="3"] .k-pri{color:var(--ink-3);border:1px solid var(--line-2);padding:3px 8px}.k-byline{color:var(--ink-3);font-weight:400;letter-spacing:.04em;text-align:right}
+
+.dek-cn{font-family:var(--sans);font-weight:400;font-size:15.5px;line-height:1.7;color:var(--ink-2);margin:12px 0 0;max-width:62ch}
+.dek-en{font-size:13.5px;color:var(--ink-3);margin:0 0 4px}
+.story-body{margin-top:14px;max-width:68ch}
+.story-body p{margin:0 0 12px;font-size:16px;line-height:1.75}
+.story-body p:last-child{margin-bottom:0}
+.story-body strong{font-weight:700}
+/* context */
+details.context{margin-top:20px;border:1px solid var(--line-2);background:transparent}
+details.context summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 14px;cursor:pointer;list-style:none;font:700 10.5px/1.4 var(--mono);letter-spacing:.12em;color:var(--ink-2)}
+details.context summary::-webkit-details-marker{display:none}
+details.context summary::after{content:"+";font-size:16px}
+details.context[open] summary::after{content:"–"}
+.context-source{color:var(--ink-3);letter-spacing:.04em}
+.context-body{padding:2px 14px 16px;border-top:1px solid var(--line-2)}
+.context-body p{font-size:14px;line-height:1.7;color:var(--ink-2);margin:12px 0 0}
+/* data tables */
+.table-wrap{margin:16px 0 6px;border:var(--bw) solid var(--line);overflow-x:auto}
+.tbl-cap{font:700 12px/1.5 var(--mono);letter-spacing:.04em;padding:12px 14px;margin:0;border-bottom:var(--bw) solid var(--line);background:var(--paper)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px}
+.table-wrap th{background:var(--ink);color:#fff;font:700 11px/1.4 var(--mono);letter-spacing:.04em;text-align:left;padding:9px 12px;border:1px solid var(--line);white-space:nowrap}
+.table-wrap td{border:1px solid var(--line-2);padding:8px 12px;text-align:left;vertical-align:top}
+.table-wrap tbody tr:nth-child(even) td{background:var(--fill)}
+.chart-note .raw{font:12.5px/1.65 var(--mono);white-space:pre-wrap;background:var(--fill);border:var(--bw) solid var(--line);padding:16px;overflow-x:auto;margin:12px 0 0}
+/* footer */
+footer.colophon{margin-top:60px;border-top:3px solid var(--line);padding-top:18px;color:var(--ink-2);font-size:12.5px;line-height:1.7;max-width:860px}
+/* responsive */
+.paper-section{scroll-margin-top:84px}
+.story{content-visibility:auto;contain-intrinsic-size:auto 800px}
+.table-wrap th,.table-wrap td{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chart-meta{margin:14px 0 0;border:1px solid var(--line-2);background:var(--paper)}
+.chart-meta>div{display:grid;grid-template-columns:64px 1fr;gap:14px;padding:10px 14px;border-top:1px solid var(--line-2)}
+.chart-meta>div:first-child{border-top:0}
+.chart-meta dt{font:700 11px/1.7 var(--mono);letter-spacing:.08em;color:var(--ink-3)}
+.chart-meta dd{margin:0;font-size:13.5px;line-height:1.7}
+.chart-note>p.b-cn:first-child{font:700 11px/1.6 var(--mono);letter-spacing:.1em;color:var(--ink-2);margin:0 0 6px}
+.chart-note .b-en{font-size:13.5px;line-height:1.7;color:var(--ink-2);margin:0 0 8px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:fixed;top:0;left:0;bottom:0;width:280px;background:var(--paper);border-right:var(--bw) solid var(--line);z-index:300;padding:24px 20px;transform:translateX(-105%);transition:transform .25s}
+  .toc.open{transform:none}
+  .reader-note,.priority-guide{grid-template-columns:1fr}
+  .reader-note>div,.priority-guide>div{border-left:0;border-top:var(--bw) solid var(--line)}
+  .reader-note>div:first-child,.priority-guide>div:first-child{border-top:0}
+  .cover{margin:0 -20px;padding:40px 24px 32px}
+  .frame{padding:0 20px 70px}
+  .story{padding:20px}
+}
+
+
+:root{
+  --bg:#ece5d3;
+  --paper:#faf6ec;
+  --ink:#211d15;
+  --ink-2:#57503f;
+  --ink-3:#948a73;
+  --line:#211d15;
+  --line-2:#d9d0b8;
+  --verm:#cf421b; --verm-soft:#e88a6d;
+  --petrol:#14616a; --petrol-soft:#7fb3b8;
+}
+
+/* ---- R3 shared: R2 typography assets ---- */
+.beat{margin:0 0 26px}
+.beat:last-child{margin-bottom:0}
+.b-cn.b-lede::first-letter{font:700 3.1em/1 var(--serif);float:left;margin:6px 10px 0 0}
+.num{font-weight:600;font-variant-numeric:tabular-nums}
+.num.hot{color:var(--verm)}
+.cmp-label{font:600 11px/1.6 var(--mono);letter-spacing:.14em;color:var(--ink-3);margin:26px 0 12px;padding-top:12px;border-top:1px solid var(--line-2)}
+.photo-cap{font:400 13px/1.7 var(--sans);color:var(--ink-2);border-left:3px solid var(--line-2);padding:2px 0 2px 12px;margin:14px 0}
+article.dir-a[data-priority="1"] h3,article.dir-b[data-priority="1"] h3{font-size:clamp(30px,4vw,42px);line-height:1.28;letter-spacing:-.01em}
+article.dir-a[data-priority="2"] h3,article.dir-b[data-priority="2"] h3{font-size:clamp(24px,3vw,30px)}
+/* stat strip */
+.stat-strip{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin:8px 0;padding:20px 0;border-top:3px solid var(--ink);border-bottom:1px solid var(--line-2)}
+.stat{min-width:0}
+.stat .k{font:600 11px/1.5 var(--mono);letter-spacing:.1em;color:var(--ink-3);margin-bottom:8px}
+.stat .v{font:600 34px/1.15 var(--serif);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.stat .v.long{font-size:22px;letter-spacing:0;white-space:nowrap}
+.stat .d{font:400 13px/1.6 var(--sans);color:var(--ink-2);margin-top:6px}
+/* timeline */
+.timeline{margin:6px 0 8px}
+.tl-item{display:grid;grid-template-columns:64px 20px 1fr;gap:0 10px;padding:9px 0;position:relative}
+.tl-time{font:600 12px/1.75 var(--mono);text-align:right;letter-spacing:.04em;color:var(--ink-3)}
+.tl-rail{position:relative}
+.tl-rail::before{content:"";position:absolute;left:9px;top:26px;bottom:-10px;width:1.5px;background:var(--ink)}
+.tl-item:last-child .tl-rail::before{display:none}
+.tl-dot{position:absolute;left:5px;top:7px;width:9px;height:9px;background:var(--ink)}
+.tl-body{font:400 14.5px/1.7 var(--sans);color:var(--ink)}
+/* claim vs reality */
+.claimev{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:8px 0;border:var(--bw) solid var(--ink)}
+.ce-block{padding:18px 20px}
+.ce-claim{background:var(--paper)}
+.ce-ev{background:#fff;border-left:1px solid var(--line-2)}
+.ce-tag{font:700 11px/1.6 var(--mono);letter-spacing:.14em;margin-bottom:10px;color:var(--ink-3)}
+.ce-text{font:600 16px/1.65 var(--serif)}
+.ce-src{font:400 12px/1.6 var(--mono);color:var(--ink-3);margin-top:10px}
+/* bar graphic */
+.bargraph{margin:8px 0;padding:18px 0;border-top:var(--bw) solid var(--ink);border-bottom:1px solid var(--line-2)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font:600 12px/1.5 var(--mono);color:var(--ink-2)}
+.bar-track{height:16px;background:var(--line-2);position:relative}
+.bar-fill{height:100%}
+.bar-fill.verm{background:var(--verm)}
+.bar-fill.verm2{background:var(--verm-soft)}
+.bar-fill.petrol{background:var(--petrol)}
+.bar-fill.petrol2{background:var(--petrol-soft)}
+.bar-val{font:700 15px/1.4 var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.bar-note{font:400 12px/1.6 var(--sans);color:var(--ink-3);margin-top:10px}
+/* compare duel */
+.compare-duel{margin:8px 0}
+.compare-duel .crow{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:16px 0;border-top:1px solid var(--line-2)}
+.compare-duel .crow.chead{padding:0 0 10px;border-top:0}
+.compare-duel .crow.chead + .crow{border-top:var(--bw) solid var(--ink)}
+.compare-duel .crow:last-child{border-bottom:var(--bw) solid var(--ink)}
+.compare-duel .ccell{min-width:0}
+.compare-duel .cwho{font:600 11px/1.6 var(--mono);letter-spacing:.12em;color:var(--ink-3)}
+.compare-duel .cwhat{font:400 15px/1.7 var(--sans)}
+/* pullquote base */
+.pullquote{margin:30px 0}
+.pq-text{font:600 21px/1.65 var(--serif);letter-spacing:.005em}
+.pq-attr{font:600 12px/1.6 var(--mono);letter-spacing:.08em;color:var(--ink-3);margin-top:12px}
+.proto-note{font:400 12px/1.6 var(--mono);color:var(--ink-2);letter-spacing:.06em}
+/* R3 page chrome */
+.r3-top{border-bottom:3px solid var(--ink);padding:26px 0 18px;margin-bottom:8px}
+.r3-top .brand{font:700 11px/1.6 var(--mono);letter-spacing:.22em;color:var(--ink-3)}
+.r3-top h1{font:700 clamp(26px,3.4vw,36px)/1.2 var(--serif);margin:8px 0 6px;letter-spacing:-.01em}
+.r3-top .sub{font:400 13px/1.6 var(--sans);color:var(--ink-2)}
+.r3-toolbar{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line-2);margin-bottom:26px}
+.global-lang-toggle{font:700 12px/1 var(--mono);letter-spacing:.1em;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);padding:8px 14px;cursor:pointer}
+.colophon{font:400 12px/1.7 var(--mono);color:var(--ink-3);border-top:1px solid var(--line-2);margin-top:34px;padding:16px 0 30px;letter-spacing:.04em}
+.page{max-width:1180px;margin:0 auto;padding:0 24px}
+.story{background:var(--paper);border:var(--bw) solid var(--line);padding:26px 30px;margin:26px 0;max-width:880px}
+
+/* ============ Direction A: Vermilion Editorial ============ */
+.dir-a .pq-text::before{content:"\201C";display:block;font:700 56px/1 var(--serif);color:var(--verm);margin-bottom:12px}
+.dir-a .pullquote{margin:36px -24px;padding:0 24px}
+.dir-a .pq-text{font-size:22px}
+.dir-a .tl-dot{background:var(--verm)}
+.dir-a .tl-time{color:var(--petrol)}
+.dir-a .stat .v.hot{color:var(--verm)}
+.dir-a .compare-duel .cL .cwho{color:var(--verm)}
+.dir-a .compare-duel .cR .cwho{color:var(--petrol)}
+.dir-a .ce-ev .ce-tag{color:var(--verm)}
+.dir-a .bar-val{color:var(--verm)}
+
+@media(max-width:640px){
+  .compare-duel .crow{grid-template-columns:1fr;gap:12px}
+  .claimev{grid-template-columns:1fr}
+  .ce-ev{border-left:0;border-top:1px solid var(--line-2)}
+  .stat .v{font-size:28px}
+  .tl-item{grid-template-columns:52px 20px 1fr}
+  .dir-a .pullquote{margin:30px 0;padding:0}
+  .bar-row{grid-template-columns:110px 1fr 64px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="r3-top"><div class="brand">WSJ 深读 · DEEP READ</div><h1>R3 · 编辑设计探索</h1><div class="sub">方向 A · 朱砂印刷风 Vermilion Editorial · 两篇完整文章 · 内容逐字取自 2026-10-12 深读定稿</div></div>
+<div class="r3-toolbar"><button class="global-lang-toggle" id="globalLang" type="button" aria-pressed="false">EN</button><span class="proto-note">R3 样稿 · 方向 A · 朱砂印刷风 Vermilion Editorial</span></div>
+<article class="story dir-a" id="r3E1-005" data-priority="1">
+<div class="kicker"><span class="k-left"><span class="k-page">A1</span><span class="k-pri">P1 必读</span></span><span class="k-byline">BY SUMMER SAID AND GEORGI KANTCHEV</span></div>
+<h3 data-title-zh="胡塞武装发动袭击，沙特王储重担加重" data-title-en="Saudi Crown Prince's Burden Grows Heavier as Houthis Strike">胡塞武装发动袭击，沙特王储重担加重</h3>
+<p class="dek-cn">沙特王国正面临着诸多困境，伊朗支持的反叛武装正在加剧对该国安全的袭击。</p>
+<p class="dek-en" hidden>Kingdom is facing myriad dilemmas as Iran-backed rebels intensify attacks on the kingdom's security and</p>
+<div class="story-body">
+<div class="beat">
+<p class="b-cn b-lede">迪拜——沙特王储穆罕默德·本·萨勒曼以积极的姿态开始了新的一年。他刚刚访问了白宫，并受到了特朗普总统的热情欢迎。即使在与伊朗的战争爆发后，沙特阿拉伯的处境也相对较好：它可以通过一条绕过受阻的霍尔木兹海峡的管道出口石油。</p>
+<p class="b-en" hidden>DUBAI—Saudi Crown Prince Mohammed bin Salman started the year on a high note. He'd just visited the White House where he was embraced by President Trump. Even after the war with Iran kicked off, Saudi Arabia looked relatively well positioned: It could export oil through a pipeline that bypassed the blocked Strait of Hormuz.</p>
+<p class="b-cn">但沙特与伊朗支持的也门胡塞武装分子在邻国也门日益激烈的冲突，现在给该国的安全以及王储雄心勃勃但已面临困境的改造该国依赖石油的经济的计划带来了新的挑战。</p>
+<p class="b-en" hidden>But the Saudis' escalating fight with Iran-backed Houthi militants in neighboring Yemen now piles new challenges on the kingdom's security and the crown prince's ambitious but already struggling plans to transform the country's oil-dependent economy.</p>
+</div>
+<div class="cmp-label"><span class="k-cn">关键数字</span><span class="k-en" hidden>KEY FIGURES</span></div>
+<div class="stat-strip">
+<div class="stat">
+<div class="k"><span class="k-cn">利雅得机场袭击 · 死亡</span><span class="k-en" hidden>AIRPORT STRIKE · KILLED</span></div>
+<div class="v hot"><span class="k-cn">至少12人</span><span class="k-en" hidden>at least 12</span></div>
+<div class="d"><span class="k-cn">另有数百人受伤，许多人伤势严重</span><span class="k-en" hidden>hundreds more injured, many severely</span></div>
+</div>
+<div class="stat">
+<div class="k"><span class="k-cn">利雅得距胡塞控制区</span><span class="k-en" hidden>RIYADH TO HOUTHI AREAS</span></div>
+<div class="v"><span class="k-cn">约500英里</span><span class="k-en" hidden>about 500 miles</span></div>
+<div class="d"><span class="k-cn">首都部分地区已成战场</span><span class="k-en" hidden>parts of the capital a battle zone</span></div>
+</div>
+<div class="stat">
+<div class="k"><span class="k-cn">沙特年度预算</span><span class="k-en" hidden>ANNUAL BUDGET</span></div>
+<div class="v long"><span class="k-cn">约3500亿美元</span><span class="k-en" hidden>about $350 billion</span></div>
+<div class="d"><span class="k-cn">未来项目总成本高达数万亿美元</span><span class="k-en" hidden>giga-project costs run to trillions</span></div>
+</div>
+<div class="stat">
+<div class="k"><span class="k-cn">2026 年 GDP 预期</span><span class="k-en" hidden>2026 GDP FORECAST</span></div>
+<div class="v"><span class="k-cn">下降3.6%</span><span class="k-en" hidden>shrink 3.6%</span></div>
+<div class="d"><span class="k-cn">沙特财政部最新预计</span><span class="k-en" hidden>per the Saudi Finance Ministry</span></div>
+</div>
+</div>
+<div class="beat">
+<p class="b-cn">周六，一枚胡塞导弹击中了沙特首都的国际机场，造成至少 12 人死亡，<span class="num">数百人</span>受伤，其中许多人伤势严重。这是伊朗战争相关冲突中，针对美国或其海湾盟友造成的单次伤亡最严重的袭击。</p>
+<p class="b-en" hidden>On Saturday, a Houthi missile slammed into the Saudi capital's international airport, killing at least <span class="num">12</span> people and injuring <span class="num">hundreds</span> more, many seriously. It was the single deadliest attack on the U.S. or its Gulf allies in the conflicts related to the Iran war.</p>
+<p class="b-cn">据知情官员透露，一名 28 岁的埃及空姐在手臂被炸断后失血过多而死亡，她是袭击事件中失去肢体的一些受害者之一。</p>
+<p class="b-en" hidden>A 28-year-old Egyptian flight attendant bled to death after her arm was blown off, one of several victims to lose limbs, officials briefed on the attack said.</p>
+<p class="b-cn">据熟悉情况的人士称，两座航站楼遭到袭击，屋顶部分坍塌。Storyful（一家视频验证机构）验证的视频显示，乘客在机场疏散时，拖着行李箱，从地面上一道血迹旁经过。Storyful 与《华尔街日报》一样，都由道琼斯公司所有。当局报告称，周日，关闭的机场再次遭到袭击，称一枚弹药在 4 号航站楼引发火灾，并造成人员受伤。</p>
+<p class="b-en" hidden>Two terminals were struck and their roofs partially collapsed, people familiar with the damage said. Video verified by Storyful, which like The Wall Street Journal is owned by Dow Jones, showed passengers rolling suitcases past a trail of blood on the floor as the airport was evacuated. Authorities reported new attacks on the shuttered airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries.</p>
+</div>
+<div class="cmp-label"><span class="k-cn">时间线 · 冲突升级</span><span class="k-en" hidden>TIMELINE · ESCALATION</span></div>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">2015 年</span><span class="k-en" hidden>2015</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">2015年，王储使沙特阿拉伯卷入了也门内战，支持该国得到国际承认的政府，与胡塞武装作战。</span><span class="k-en" hidden>The crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a ceasefire in 2022.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">2022 年</span><span class="k-en" hidden>2022</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">双方陷入僵局，并在2022年达成了停火协议。</span><span class="k-en" hidden>The crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a ceasefire in 2022.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">7 月</span><span class="k-en" hidden>JUL</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">但在7月，胡塞武装宣布对沙特阿拉伯实施海上封锁，使红海航运面临风险。</span><span class="k-en" hidden>The kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">9 月</span><span class="k-en" hidden>SEP</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">9月，对东西管道的袭击直接威胁到该国从霍尔木兹海峡逃离的主要通道。</span><span class="k-en" hidden>The kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">周四</span><span class="k-en" hidden>THU</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">周四，一枚被拦截的弹道导弹的碎片击中了一所幼儿园和一座医疗诊所综合楼。</span><span class="k-en" hidden>Attacks on Riyadh—about 500 miles from Houthi territory in Yemen—have transformed parts of the Saudi capital into a battle zone, with residents taking cover as explosions ring out across the city. Debris from an intercepted ballistic missile hit a kindergarten and a medical clinic complex Thursday. Workers in the city's financial district, students at some international schools and diplomats were ordered to evacuate or take shelter.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">周六</span><span class="k-en" hidden>SAT</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">周六，一枚胡塞导弹击中了沙特首都的国际机场，造成至少 12 人死亡，数百人受伤，其中许多人伤势严重。 这是伊朗战争相关冲突中，针对美国或其海湾盟友造成的单次伤亡最严重的袭击。</span><span class="k-en" hidden>On Saturday, a Houthi missile slammed into the Saudi capital's international airport, killing at least 12 people and injuring hundreds more, many seriously. It was the single deadliest attack on the U.S. or its Gulf allies in the conflicts related to the Iran war.</span></div>
+</div>
+<div class="tl-item">
+<div class="tl-time"><span class="k-cn">周日</span><span class="k-en" hidden>SUN</span></div>
+<div class="tl-rail"><span class="tl-dot"></span></div>
+<div class="tl-body"><span class="k-cn">周日，一名胡塞武装的军事发言人重申，沙特机场是该组织的袭击目标。</span><span class="k-en" hidden>On Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets. Saudi officials said they are running low on interceptors needed to fend off further strikes.</span></div>
+</div>
+</div>
+<div class="beat">
+<p class="b-cn">就在今年夏天，沙特官员曾向记者表示，胡塞武装的情况已经得到控制。但武装分子日益激烈的袭击，他们声称这是对沙特采取的行动的回应，袭击了机场和能源设施——包括该国的主要东西部管道和炼油厂——表明南部边境的威胁正在增加。</p>
+<p class="b-en" hidden>As recently as this summer, Saudi officials briefed journalists that the Houthi situation was under control. But the militants' escalating attacks, which they say are retaliation for Saudi actions against them, have hit airports and energy facilities—including the kingdom's main east-west pipeline and refineries—showing the growing threat along the southern border.</p>
+<p class="b-cn">这场冲突正在危及沙特将旅游业发展成为经济支柱的努力，包括一项计划于本月底举行的备受瞩目的国际投资会议，而该会议能否如期举行如今越来越成疑。</p>
+<p class="b-en" hidden>The conflict is jeopardizing Saudi efforts to build travel and tourism into a pillar of the economy, including with a marquee international investment conference scheduled for</p>
+<p class="b-cn">战争的成本已经扩大了预算赤字，并有可能导致经济萎缩。</p>
+<p class="b-en" hidden>The costs of the war have already widened the budget deficit and threaten to push the economy into contraction.</p>
+</div>
+<div class="cmp-label"><span class="k-cn">主张与现实</span><span class="k-en" hidden>CLAIM VS REALITY</span></div>
+<div class="claimev">
+<div class="ce-block ce-claim">
+<div class="ce-tag"><span class="k-cn">此前称</span><span class="k-en" hidden>CLAIMED</span></div>
+<div class="ce-text"><span class="k-cn">胡塞武装的情况已经得到控制。</span><span class="k-en" hidden>the Houthi situation was under control.</span></div>
+<div class="ce-src"><span class="k-cn">今年夏天 · 沙特官员向记者表示</span><span class="k-en" hidden>This summer · Saudi officials briefed journalists</span></div>
+</div>
+<div class="ce-block ce-ev">
+<div class="ce-tag"><span class="k-cn">随后发生</span><span class="k-en" hidden>WHAT HAPPENED</span></div>
+<div class="ce-text"><span class="k-cn">周六，一枚胡塞导弹击中了沙特首都的国际机场，造成至少12人死亡，数百人受伤。</span><span class="k-en" hidden>On Saturday, a Houthi missile slammed into the Saudi capital’s international airport, killing at least 12 people and injuring hundreds more.</span></div>
+<div class="ce-src"><span class="k-cn">周六 · 利雅得</span><span class="k-en" hidden>Saturday · Riyadh</span></div>
+</div>
+</div>
+<div class="beat">
+<p class="b-cn">王储如何应对这次考验，将对沙特王国以外的地区产生影响。沙特是全球科技产业和人工智能项目的重要资金来源，同时，它还为美国军队提供基地和空域通行权。</p>
+<p class="b-en" hidden>How the crown prince handles this test will have consequences beyond the kingdom. Saudi Arabia is a major source of funding for the global tech industry and artificial-intelligence projects. It also provides basing and overflight rights to the U.S. military.</p>
+<p class="b-cn">特朗普在周末告诉记者，美国正在与胡塞武装进行沟通，但可能会加入沙特对该武装组织的打击。</p>
+<p class="b-en" hidden>Trump told reporters over the weekend that the U.S. was in communication with the Houthis but might join Saudi strikes on the militant group.</p>
+<p class="b-cn">周日，一名胡塞武装的军事发言人重申，沙特机场是该组织的袭击目标。沙特官员表示，他们的拦截导弹库存告急，难以防御进一步袭击。</p>
+<p class="b-en" hidden>On Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets. Saudi officials said they are running low on interceptors needed to fend off further strikes.</p>
+<p class="b-cn">对利雅得的袭击——该市距离也门胡塞武装控制区约 500 英里——已将沙特首都的部分地区变成了战场，居民们在爆炸声中四处躲避。周四，一枚被拦截的弹道导弹的碎片击中了一所幼儿园和一座医疗诊所综合楼。该市金融区的工人、一些国际学校的学生和外交官被要求撤离或寻找避难所。</p>
+<p class="b-en" hidden>Attacks on Riyadh—about <span class="num">500 miles</span> from Houthi territory in Yemen—have transformed parts of the Saudi capital into a battle zone, with residents taking cover as explosions ring out across the city. Debris from an intercepted ballistic missile hit a kindergarten and a medical clinic complex Thursday. Workers in the city's financial district, students at some international schools and diplomats were ordered to evacuate or take shelter.</p>
+<p class="b-cn">据熟悉王储动向的官员透露，这位 41 岁的王储正在穿梭于配备有防空洞的宫殿之间，并由一支精选的安保团队保护。他最后一次公开露面是在周二。</p>
+<p class="b-en" hidden>The 41-year-old crown prince is shuttling between palaces equipped with bunkers and is guarded by a handpicked security team, officials familiar with his movements said. His last public appearance was Tuesday.</p>
+</div>
+<div class="pullquote">
+<div class="pq-text"><span class="k-cn">任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。</span><span class="k-en" hidden>"Any military response risks getting drawn in deeper to an asymmetric conflict."</span></div>
+<div class="pq-attr"><span class="k-cn">— 克里斯蒂安·库茨·乌尔里克森 / 莱斯大学贝克研究所</span><span class="k-en" hidden>— Kristian Coates Ulrichsen / Baker Institute, Rice University</span></div>
+</div>
+<div class="beat">
+<p class="b-cn">克里斯蒂安·库茨·乌尔里克森表示，这位王储几乎没有好的选项；他是波斯湾问题专家，同时也是莱斯大学贝克研究所的研究员。“任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。”</p>
+<p class="b-en" hidden>He has few good options, said Kristian Coates Ulrichsen, a Persian Gulf expert and fellow with Rice University's Baker Institute. "Any military response risks getting drawn in deeper to an asymmetric conflict."</p>
+<p class="b-cn">沙特新闻官员没有回应置评请求。</p>
+<p class="b-en" hidden>Saudi press officials didn't respond to a request for comment.</p>
+</div>
+<div class="beat">
+<p class="b-cn">在过去十年中，这位王储投入了大量资金，用于一系列具有未来感的项目，这些项目具有极其复杂的工程要求，旨在展示沙特王国的现代化进程，并吸引投资和旅游。这些项目包括未来之城 Neom、位于利雅得的一座巨大的立方体建筑以及一座沙漠滑雪胜地。总成本高达<span class="num">数万亿美元</span>——对年度预算仅约 3500 亿美元的政府而言可谓野心勃勃。</p>
+<p class="b-en" hidden>The crown prince has plowed funds over the past decade into a slate of futuristic projects with extraordinarily complex engineering requirements aimed at signaling the kingdom's modernization and drawing investment and tourism. They include the futuristic city of Neom, an enormous cube-shaped building in Riyadh and a desert ski resort. The total cost ran to the <span class="num">trillions</span> of dollars—aggressive for a government with an annual budget of around <span class="num">$350 billion</span>.</p>
+<p class="b-cn">与伊朗的战争所带来的成本和经济损失，使得原本就不太可能实现的目标更加难以实现。</p>
+<p class="b-en" hidden>The costs and economic damage of war with Iran are making that already unlikely math impossible to balance.</p>
+</div>
+<div class="beat">
+<p class="b-cn">今年前两个季度，外国投资有所下降，并且远低于王储设定的 2030 年目标。不断上升的国防和基础设施成本可能会挤占用于推动经济多元化的资金。即使是沙特王国努力成为人工智能中心，现在也面临新的风险，数据中心正逐渐成为袭击目标。</p>
+<p class="b-en" hidden>Foreign investment fell in the first two quarters of the year and is running well behind the crown prince's 2030 target. Rising defense and infrastructure costs threaten to siphon away money needed for the economic diversification push. Even the kingdom's push to become an AI hub now carries new risks, with data centers emerging as targets.</p>
+<p class="b-cn">许多由王储推动的项目都已停滞或正在接受审查。</p>
+<p class="b-en" hidden>Many of the projects pushed by the crown prince are stalled or under review.</p>
+<p class="b-cn">根据凯投宏观的分析，该国经济中非石油领域的规模在第二季度低于第一季度。沙特财政部现在预计，2026年国内生产总值将下降<span class="num hot">3.6%</span>。</p>
+<p class="b-en" hidden>The non-oil side of the country's economy was smaller in the second quarter than in the first, according to Capital Economics. The Saudi Finance Ministry now expects GDP to shrink by <span class="num">3.6%</span> in 2026.</p>
+</div>
+<div class="beat">
+<p class="b-cn">今年年初，该国设法将石油通过管道输送到红海，以摆脱伊朗对霍尔木兹海峡的控制。但在7月，胡塞武装宣布对沙特阿拉伯实施海上封锁，使红海航运面临风险。9月，对东西管道的袭击直接威胁到该国从霍尔木兹海峡逃离的主要通道。</p>
+<p class="b-en" hidden>The kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz.</p>
+<p class="b-cn">2015年，王储使沙特阿拉伯卷入了也门内战，支持该国得到国际承认的政府，与胡塞武装作战。沙特阿拉伯发动了空袭，加剧了冲突，但也招致了胡塞武装对其石油设施和包括利雅得在内的城市发动的袭击。双方陷入僵局，并在2022年达成了停火协议。</p>
+<p class="b-en" hidden>The crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a ceasefire in 2022.</p>
+</div>
+<div class="beat">
+<p class="b-cn">新一轮冲突爆发之际，王储正努力控制与伊朗的对抗。战争初期，德黑兰发动的袭击表明，海湾地区的能源设施和机场等经济资产面临风险。据了解沙特阿拉伯内部情况的人士称，沙特阿拉伯也在努力在广阔的国土上部署防空系统，并正在调动防空部队，以保护宫殿和重要的能源基础设施。这些人士表示，虽然王储支持继续对伊朗施加经济压力，但他也在指示他的顾问，要与伊朗保持外交沟通渠道畅通，并明确表示该国的意图并非对抗。</p>
+<p class="b-en" hidden>The new outbreak came as the crown prince was working to contain the confrontation with Iran. Attacks by Tehran early in the war demonstrated the risk to energy facilities and economic assets like airports across the Gulf. Saudi Arabia was also struggling to cover the vast country with air defense and was shifting batteries around to try to protect palaces and key energy infrastructure, people familiar with the kingdom's deliberations said. While supportive of continued economic pressure on Iran, the crown prince was telling his advisers to keep the diplomatic channel open with Iran and make clear the kingdom's intentions weren't confrontational, the people said.</p>
+<p class="b-cn">这些人士称，该国已向其军事盟友巴基斯坦寻求援助，并正在全球范围内寻找防空系统。他们还表示，该国也在寻求招募外国战士，以帮助其在也门的盟友。</p>
+<p class="b-en" hidden>The kingdom has called for help from its military ally Pakistan and is scouring the globe for air defenses, the people said. It is also looking to recruit foreign fighters to help its Yemeni allies, they said.</p>
+</div>
+</div>
+</article>
+<article class="story dir-a" id="r3E3-002" data-priority="2">
+<div class="kicker"><span class="k-left"><span class="k-page">B1</span><span class="k-pri">P2 重点</span></span><span class="k-byline">By Patrick George</span></div>
+<h3 data-title-zh="电动汽车销量下滑带来的积极影响：充电基础设施正在不断完善" data-title-en="The Upside to EV Slump: Charging Is Getting Better">电动汽车销量下滑带来的积极影响：充电基础设施正在不断完善</h3>
+<p class="dek-cn">在美国，公共充电桩的安装速度依然保持稳定。</p>
+<p class="dek-en" hidden>Public chargers continue to be installed at a steady clip in the U.S.</p>
+<div class="story-body">
+<div class="beat">
+<p class="b-cn">美国电动汽车的销量与去年相比下降了一半。显然，电动汽车充电行业并没有意识到这一情况。</p>
+<p class="b-en" hidden>Electric-vehicle sales in the U.S. are down by half compared with last year. The EV charging industry evidently didn't get the memo.</p>
+</div>
+<div class="cmp-label"><span class="k-cn">新车销量份额 · 电动汽车</span><span class="k-en" hidden>EV SHARE OF NEW-CAR SALES</span></div>
+<div class="bargraph">
+<div class="bar-row">
+<div class="bar-label"><span class="k-cn">2025 年第三季度 · 峰值</span><span class="k-en" hidden>Q3 2025 · PEAK</span></div>
+<div class="bar-track"><div class="bar-fill verm" style="width:100%"></div></div>
+<div class="bar-val"><span class="k-cn">约12%</span><span class="k-en" hidden>about 12%</span></div>
+</div>
+<div class="bar-row">
+<div class="bar-label"><span class="k-cn">目前 · 徘徊</span><span class="k-en" hidden>NOW · HOVERING</span></div>
+<div class="bar-track"><div class="bar-fill verm2" style="width:50%"></div></div>
+<div class="bar-val"><span class="k-cn">6%左右</span><span class="k-en" hidden>about 6%</span></div>
+</div>
+<div class="bar-note"><span class="k-cn">约占新车市场份额。来源：第 9 段。</span><span class="k-en" hidden>Share of new-car market. Source: paragraph 9.</span></div>
+</div>
+<div class="cmp-label"><span class="k-cn">反差 · 销量与充电</span><span class="k-en" hidden>CONTRAST · SALES VS CHARGING</span></div>
+<div class="compare-duel">
+<div class="crow chead">
+<div class="ccell"><div class="cwho"><span class="k-cn">电动汽车销量</span><span class="k-en" hidden>EV SALES</span></div></div>
+<div class="ccell"><div class="cwho"><span class="k-cn">充电基础设施</span><span class="k-en" hidden>CHARGING BUILDOUT</span></div></div>
+</div>
+<div class="crow">
+<div class="ccell cL"><div class="cwhat"><span class="k-cn">美国电动汽车的销量与去年相比下降了一半</span><span class="k-en" hidden>U.S. EV sales fell by half from last year</span></div></div>
+<div class="ccell cR"><div class="cwhat"><span class="k-cn">今年公共充电桩安装量预计与2025年持平，达历史最高</span><span class="k-en" hidden>public charger installations set to match 2025, an all-time high</span></div></div>
+</div>
+<div class="crow">
+<div class="ccell cL"><div class="cwhat"><span class="k-cn">2025年第三季度达峰值（约占新车12%），此后徘徊在6%左右</span><span class="k-en" hidden>peaked in Q3 2025 at ~12% of new cars, since hovering around 6%</span></div></div>
+<div class="ccell cR"><div class="cwhat"><span class="k-cn">美国目前拥有超过8万个公共快速充电桩</span><span class="k-en" hidden>the U.S. now has 80,000+ public fast chargers</span></div></div>
+</div>
+</div>
+<div class="beat">
+<p class="b-cn">美国充电公司今年的公共电动汽车充电桩安装数量，预计将与2025年持平，达到行业历史最高水平。充电公司高管表示，他们计划今年增加数千个新的充电桩，旨在为那些希望更轻松地进行长途旅行的现有电动汽车车主以及涌向二手电动汽车市场的买家提供服务——同时为电动汽车需求可能反弹的那一天做好基础设施准备。</p>
+<p class="b-en" hidden>Charging companies in the U.S. are on track to install about as many public EV plugs this year as in 2025, the industry's record high. By adding thousands of new plugs this year, charging executives say they aim to serve longtime EV owners looking for easier road trips as well as buyers flocking to used EVs—while prepping infrastructure for a day when EV demand might bounce back.</p>
+<p class="b-cn">ChargePoint（充电桩公司）首席执行官里克·威尔默表示，在谈及行业低迷期的情绪时说：“我仍觉得大家都还在惊慌失措（往纸袋里喘气）。但增长是真实的。电动汽车用户希望世界上有更多的充电桩。”</p>
+<p class="b-en" hidden>"I still think people are breathing into paper bags," Rick Wilmer, chief executive of the charging company ChargePoint, said of the industry's mood amid the downturn. "But the growth is real. The EV-driving community wants more chargers in the world."</p>
+<p class="b-cn">自特朗普总统取消旨在鼓励美国人放弃燃油汽车的税收优惠和燃油经济性法规以来，电动汽车行业的乐观情绪一直不足。汽车制造商退出了他们最初雄心勃勃的电动汽车发展目标，取消了现有车型和计划中的车型，并列出了数十亿美元的资产减值，以重新调整其投资并转向燃油汽车。</p>
+<p class="b-en" hidden>Optimism has been in short supply for the EV industry since President Trump axed tax credits and fuel-economy regulations aimed at moving Americans away from gasoline-powered cars. Automakers backed away from their most ambitious pro-EV goals, canceling models and planned ones, while listing multibillion-dollar write-downs as they retool their investments and pivot back to gas.</p>
+</div>
+<div class="pullquote">
+<div class="pq-text"><span class="k-cn">我仍觉得大家都还在惊慌失措（往纸袋里喘气）。但增长是真实的。</span><span class="k-en" hidden>"I still think people are breathing into paper bags," said Rick Wilmer, chief executive of ChargePoint. "But the growth is real."</span></div>
+<div class="pq-attr"><span class="k-cn">— 里克·威尔默 / ChargePoint 首席执行官</span><span class="k-en" hidden>— Rick Wilmer, CEO, ChargePoint</span></div>
+</div>
+<div class="beat">
+<p class="b-cn">尽管如此，根据充电行业数据公司Paren的数据，到10月初，美国新增了<span class="num">近2000个</span>充电站，拥有<span class="num">超过12000个</span>充电桩。这一数字与去年大致持平，去年新增了<span class="num">3885个</span>充电站，拥有<span class="num">19839个</span>充电桩。数据显示，美国目前拥有超过<span class="num">8万</span>个公共快速充电桩。</p>
+<p class="b-en" hidden>Even so, the U.S. by early October added nearly <span class="num">2,000</span> charging stations with more than <span class="num">12,000</span> plugs, according to charging-industry data firm Paren. That is roughly on pace with last year, which ended with <span class="num">3,885</span> new charging stations added with <span class="num">19,839</span> plugs. The U.S. now has more than <span class="num">80,000</span> public fast-charging plugs, data shows.</p>
+<p class="b-cn">Paren的联合创始人兼首席技术官比尔·费罗表示，充电服务提供商正在从过去的一些错误中吸取教训，这些错误常常让电动汽车车主感到沮丧。</p>
+<p class="b-en" hidden>More crucially, charging providers are learning from the mistakes of the past that often frustrated EV owners, said Bill Ferro, co-founder and chief technical officer of Paren.</p>
+<p class="b-cn">新的充电站平均拥有更多的充电桩，以缩短等待时间。充电桩的功率正在提高，以便更快地“补充”电动汽车的电量。此外，该行业还在努力改善其选址策略：在餐馆和繁忙区域附近增加更多的充电站，而不是设置在远离洗手间或其他便利设施的偏远停车场。</p>
+<p class="b-en" hidden>New stations have more plugs on average to cut down on wait time. Chargers are becoming more powerful to "refuel" EVs more quickly. And the industry is working on its real-estate game: adding more stations near restaurants and busy areas, not in distant parking lots far from restrooms or other amenities.</p>
+</div>
+<div class="pullquote">
+<div class="pq-text"><span class="k-cn">我开始称之为"伟大的美国充电站建设"。</span><span class="k-en" hidden>"I've started calling it the Great American Build-Out," Ferro said.</span></div>
+<div class="pq-attr"><span class="k-cn">— 比尔·费罗 / Paren 联合创始人兼首席技术官</span><span class="k-en" hidden>— Bill Ferro, co-founder &amp; CTO, Paren</span></div>
+</div>
+<div class="beat">
+<p class="b-cn">费罗说：“我开始称之为‘伟大的美国充电站建设’。你不会意识到自己已经身处其中，直到你真正参与其中。”</p>
+<p class="b-en" hidden>"I've started calling it the Great American Build-Out," Ferro said. "You don't realize you're in it until you're in the middle of it."</p>
+<p class="b-cn">这项建设试图解决电动汽车自诞生之初就面临的“先有鸡还是先有蛋”难题：如果没有足够的充电基础设施，[此处印刷文本如此]2030年美国汽车销量中电动、氢能或插电混动车型的占比……</p>
+<p class="b-en" hidden>That build-out attempts to solve a chicken-and-egg problem that beguiled EVs since their earliest days: Without adequate charging infrastructure, [text as printed] U.S. car sales to be electric, hydrogen or plug-in hybrid models by 2030.</p>
+<p class="b-cn">然而，实际情况是，对这些汽车的需求并未达到汽车行业预测的水平。在税收优惠取消之前，电动汽车的销量在 2025 年第三季度达到峰值，约占新车市场的 <span class="num hot">12%</span>，此后销量一直徘徊在 <span class="num hot">6%</span> 左右。</p>
+<p class="b-en" hidden>Instead, demand for the cars never reached levels projected by the auto industry. EV sales peaked around <span class="num">12%</span> of the new-car market in the third quarter of 2025 before the tax credits went away, and have hovered around <span class="num">6%</span> this year.</p>
+</div>
+<div class="beat">
+<p class="b-cn">汽车行业高管们经常表示，他们预计美国对电动汽车的需求最终会再次增长，尤其是在价格更实惠的电动车型上市后。</p>
+<p class="b-en" hidden>Auto-industry executives frequently say they expect EV demand to eventually rise again in the U.S., especially as less expensive electric models come to market.</p>
+<p class="b-cn">当然，充电服务提供商要想实现持续盈利，还有很长的路要走，因为他们面临着高昂的资本成本。</p>
+<p class="b-en" hidden>To be sure, charging providers also have a long way to go to reach consistent profitability as they contend with high capital costs.</p>
+<p class="b-cn">ChargePoint（充电桩公司）的威尔默指出，公司的亏损正在减少，并且该公司在所有业务领域都实现了增长，包括公共充电站和面向车队的客户。</p>
+<p class="b-en" hidden>ChargePoint's Wilmer noted that losses are narrowing and that the company has seen growth across all its business lines, including public stations and fleet customers.</p>
+<p class="b-cn">自动驾驶汽车，其中绝大多数是电动汽车，预计将推动充电需求。</p>
+<p class="b-en" hidden>Autonomous vehicles, which are overwhelmingly electric, are expected to drive charging demand.</p>
+<p class="b-cn">威尔默和其他充电行业高管表示，目前美国的充电桩数量不足以满足现有电动汽车用户的需求，更不用说未来可能加入的更多用户。</p>
+<p class="b-en" hidden>Wilmer and other charging-industry executives say there aren't enough plugs to properly serve America's current fleet of EV drivers—let alone the ones who might join the fray later on.</p>
+</div>
+<div class="beat">
+<p class="b-cn">充电行业的蓬勃发展并非在所有地区都同步进行。增长主要集中在加利福尼亚州和纽约州等沿海州，尽管费罗表示，德克萨斯州和佛罗里达州的增长速度也在迅速提升。</p>
+<p class="b-en" hidden>The charging space's glow-up isn't happening everywhere. Growth is primarily concentrated in coastal states like California and New York, although Ferro said Texas and Florida are scaling up quickly.</p>
+<p class="b-cn">尽管如此，该行业近期仍有一些成功的案例。Ionna（充电网络）是一家由现代汽车、丰田和其他汽车制造商支持的充电网络，[原文此处有缺失]。更多充电站将由这家零售巨头建设。</p>
+<p class="b-en" hidden>Still, the industry has more than a few recent success stories. Ionna, the charging network backed by Hyundai, Toyota and other automakers, [text fragmented in print] a restroom. More are coming from the retail giant.</p>
+</div>
+<div class="beat">
+<p class="b-cn">特斯拉仍然是该行业的领头羊。根据Paren（充电行业数据公司）的数据，埃隆·马斯克领导的特斯拉公司今年增加了<span class="num">超过3500个</span>快速充电桩，使美国境内的总数达到<span class="num">约4万个</span>。尽管马斯克坚称特斯拉的未来在于机器人技术和人工智能，但该公司仍在不断扩大其充电网络。该公司在其财务报告中并未单独列出充电业务的收入，而是将其列为服务业务的一部分，该业务在第二季度带来了<span class="num">46亿美元</span>的收入。（特斯拉未对置评请求做出回应。）</p>
+<p class="b-en" hidden>The leader by a country mile remains Tesla. According to Paren, the Elon Musk-helmed company added more than <span class="num">3,500</span> fast-charging plugs this year, good for about <span class="num">40,000</span> total across the U.S. While Musk insists Tesla's future lies in robotics and AI, it continues to scale its charging network. The company doesn't break out charging revenue in its financial reports but lists it as part of a services business that brought in <span class="num">$4.6 billion</span> in the second quarter. (Tesla didn't respond to a request for comment.)</p>
+<p class="b-cn">一些行业高管正在密切关注汽油价格可能如何影响消费者的行为。Tiya Gordon是It's Electric（初创公司）的联合创始人，该公司最近获得了在纽约市建设路边公共充电站的独家合同。她认为，持续上涨的燃料成本可能会导致电动汽车市场出现“摆动”，甚至最近还在身上纹了霍尔木兹海峡的图案。</p>
+<p class="b-en" hidden>Some industry executives are keeping a close eye on how gas prices might affect consumer behavior. Tiya Gordon, co-founder of It's Electric, a startup that recently secured an exclusive contract to build curbside, public charging stations across New York City, thinks sustained higher fuel costs could mean a "pendulum swing" is coming for EVs—so much so that she recently got a tattoo of the Strait of Hormuz.</p>
+</div>
+<div class="photo-cap"><span class="k-cn">[图表：自2021年1月以来，美国公共电动汽车快速充电桩数量按月统计。注：数据截至2026年9月。来源：能源部。]</span><span class="k-en" hidden>[Chart: U.S. public EV fast-charging ports by month since January 2021. Note: Data through September 2026. Source: Energy Department.]</span></div>
+<div class="photo-cap"><span class="k-cn">[照片说明：新的充电站拥有更多的充电桩和更强大的充电器，以缩短等待时间。（Angus Mordant/彭博新闻）]</span><span class="k-en" hidden>[Photo caption: New stations have more plugs and powerful chargers to cut down on wait time. (Angus Mordant/Bloomberg News)]</span></div>
+<div class="photo-cap"><span class="k-cn">[照片说明：埃隆·马斯克的特斯拉公司今年增加了超过3500个快速充电桩。]</span><span class="k-en" hidden>[Photo caption: Elon Musk's Tesla added more than 3,500 fast-charging plugs this year.]</span></div>
+</div>
+</article>
+<footer class="colophon">R3 样稿：内容逐字取自 2026-10-12 深读定稿（final.json）。信息图形仅使用原文已有数据。</footer>
+</div>
+
+<script>
+(function(){
+var root=document.documentElement;
+function setLang(l){
+  root.dataset.lang=l;
+  var en=l==='en';
+  document.querySelectorAll('.story h3').forEach(function(h){
+    h.textContent=en?h.dataset.titleEn:h.dataset.titleZh;});
+  document.querySelectorAll('.k-cn,.b-cn,.dek-cn').forEach(function(e){e.hidden=en;});
+  document.querySelectorAll('.k-en,.b-en,.dek-en').forEach(function(e){e.hidden=!en;});
+  var g=document.getElementById('globalLang');
+  g.textContent=en?'\u4e2d\u6587':'EN';
+  g.setAttribute('aria-pressed',en?'true':'false');
+}
+document.getElementById('globalLang').addEventListener('click',function(){
+  setLang(root.dataset.lang==='en'?'cn':'en');});
+})();
+</script>
+
+</body>
+</html>

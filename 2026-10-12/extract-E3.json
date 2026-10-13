@@ -1,0 +1,925 @@
+[
+  {
+    "id": "E3-001",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "Amazon in Talks To Buy AI Startup",
+    "dek": null,
+    "byline": "By Kate Clark and Lauren Thomas",
+    "body_en": "Amazon.com is in talks to acquire artificial-intelligence startup Decart in a deal that could be valued at around $7 billion, according to people familiar with the matter.\n\nSan Francisco-based Decart's software makes it easier for developers to switch between different AI chips, which is increasingly important as companies race to secure more computing power.\n\nA deal could come together soon, the people said, assuming talks don't fall apart or another suitor doesn't emerge.\n\nDecart raised more than $400 million in venture capital funding from investors including Sequoia Capital, Benchmark and Radical Ventures, according to PitchBook. It was valued at nearly $4 billion in May. The company was founded in 2023 by three Israeli engineers, brothers Dean and Orian Leitersdorf and Moshe Shalev. Decart is developing world models known as Lucy and Oasis. World models can generate and simulate real-world 3-D environments.\n\nAmazon developed its own custom AI chip, Trainium3, in competition with Nvidia, which continues to dominate the market for graphics processing units, the specialized chips powering the AI boom. Amazon Web Services gave Decart early access to the chip in 2025 after meeting with the company and being impressed by its founders, The Wall Street Journal has reported.\n\nAmazon's other sizable acquisitions in recent years include a $6.5 billion deal for the MGM movie and television studio in 2022 and a roughly $11 billion deal for Starlink rival Globalstar announced earlier this year.\n\nIsraeli news outlet Calcalist reported earlier this month that Decart was in advanced talks to be sold to a major technology company.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Decart",
+        "zh_suggested": "Decart（AI初创公司）",
+        "note": "亚马逊拟以约70亿美元收购；开发Lucy和Oasis世界模型"
+      },
+      {
+        "en": "Trainium3",
+        "zh_suggested": "Trainium3（亚马逊自研AI芯片）",
+        "note": "与英伟达GPU竞争"
+      },
+      {
+        "en": "Sequoia Capital",
+        "zh_suggested": "红杉资本",
+        "note": "Decart投资方"
+      },
+      {
+        "en": "Benchmark",
+        "zh_suggested": "Benchmark（风投）",
+        "note": "Decart投资方"
+      },
+      {
+        "en": "Radical Ventures",
+        "zh_suggested": "Radical Ventures（风投）",
+        "note": "Decart投资方"
+      },
+      {
+        "en": "PitchBook",
+        "zh_suggested": "PitchBook（创投数据商）",
+        "note": null
+      },
+      {
+        "en": "Calcalist",
+        "zh_suggested": "Calcalist（以色列财经媒体）",
+        "note": "率先报道Decart出售谈判"
+      },
+      {
+        "en": "Globalstar",
+        "zh_suggested": "Globalstar（卫星通信公司，星链竞争对手）",
+        "note": "亚马逊年初宣布约110亿美元收购"
+      }
+    ]
+  },
+  {
+    "id": "E3-002",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "The Upside to EV Slump: Charging Is Getting Better",
+    "dek": "Public chargers continue to be installed at a steady clip in the U.S.",
+    "byline": "By Patrick George",
+    "body_en": "Electric-vehicle sales in the U.S. are down by half compared with last year. The EV charging industry evidently didn't get the memo.\n\nCharging companies in the U.S. are on track to install about as many public EV plugs this year as in 2025, the industry's record high. By adding thousands of new plugs this year, charging executives say they aim to serve longtime EV owners looking for easier road trips as well as buyers flocking to used EVs—while prepping infrastructure for a day when EV demand might bounce back.\n\n\"I still think people are breathing into paper bags,\" Rick Wilmer, chief executive of the charging company ChargePoint, said of the industry's mood amid the downturn. \"But the growth is real. The EV-driving community wants more chargers in the world.\"\n\nOptimism has been in short supply for the EV industry since President Trump axed tax credits and fuel-economy regulations aimed at moving Americans away from gasoline-powered cars. Automakers backed away from their most ambitious pro-EV goals, canceling models and planned ones, while listing multibillion-dollar write-downs as they retool their investments and pivot back to gas.\n\nEven so, the U.S. by early October added nearly 2,000 charging stations with more than 12,000 plugs, according to charging-industry data firm Paren. That is roughly on pace with last year, which ended with 3,885 new charging stations added with 19,839 plugs. The U.S. now has more than 80,000 public fast-charging plugs, data shows.\n\nMore crucially, charging providers are learning from the mistakes of the past that often frustrated EV owners, said Bill Ferro, co-founder and chief technical officer of Paren.\n\nNew stations have more plugs on average to cut down on wait time. Chargers are becoming more powerful to \"refuel\" EVs more quickly. And the industry is working on its real-estate game: adding more stations near restaurants and busy areas, not in distant parking lots far from restrooms or other amenities.\n\n\"I've started calling it the Great American Build-Out,\" Ferro said. \"You don't realize you're in it until you're in the middle of it.\"\n\nThat build-out attempts to solve a chicken-and-egg problem that beguiled EVs since their earliest days: Without adequate charging infrastructure, [text as printed] U.S. car sales to be electric, hydrogen or plug-in hybrid models by 2030.\n\nInstead, demand for the cars never reached levels projected by the auto industry. EV sales peaked around 12% of the new-car market in the third quarter of 2025 before the tax credits went away, and have hovered around 6% this year.\n\nAuto-industry executives frequently say they expect EV demand to eventually rise again in the U.S., especially as less expensive electric models come to market.\n\nTo be sure, charging providers also have a long way to go to reach consistent profitability as they contend with high capital costs.\n\nChargePoint's Wilmer noted that losses are narrowing and that the company has seen growth across all its business lines, including public stations and fleet customers.\n\nAutonomous vehicles, which are overwhelmingly electric, are expected to drive charging demand.\n\nWilmer and other charging-industry executives say there aren't enough plugs to properly serve America's current fleet of EV drivers—let alone the ones who might join the fray later on.\n\nThe charging space's glow-up isn't happening everywhere. Growth is primarily concentrated in coastal states like California and New York, although Ferro said Texas and Florida are scaling up quickly.\n\nStill, the industry has more than a few recent success stories. Ionna, the charging network backed by Hyundai, Toyota and other automakers, [text fragmented in print] a restroom. More are coming from the retail giant.\n\nThe leader by a country mile remains Tesla. According to Paren, the Elon Musk-helmed company added more than 3,500 fast-charging plugs this year, good for about 40,000 total across the U.S. While Musk insists Tesla's future lies in robotics and AI, it continues to scale its charging network. The company doesn't break out charging revenue in its financial reports but lists it as part of a services business that brought in $4.6 billion in the second quarter. (Tesla didn't respond to a request for comment.)\n\nSome industry executives are keeping a close eye on how gas prices might affect consumer behavior. Tiya Gordon, co-founder of It's Electric, a startup that recently secured an exclusive contract to build curbside, public charging stations across New York City, thinks sustained higher fuel costs could mean a \"pendulum swing\" is coming for EVs—so much so that she recently got a tattoo of the Strait of Hormuz.\n\n[Chart: U.S. public EV fast-charging ports by month since January 2021. Note: Data through September 2026. Source: Energy Department.]\n\n[Photo caption: New stations have more plugs and powerful chargers to cut down on wait time. (Angus Mordant/Bloomberg News)]\n\n[Photo caption: Elon Musk's Tesla added more than 3,500 fast-charging plugs this year.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "B2",
+    "terms": [
+      {
+        "en": "ChargePoint",
+        "zh_suggested": "ChargePoint（充电桩公司）",
+        "note": "CEO Rick Wilmer"
+      },
+      {
+        "en": "Paren",
+        "zh_suggested": "Paren（充电行业数据公司）",
+        "note": "联合创始人兼CTO Bill Ferro"
+      },
+      {
+        "en": "Ionna",
+        "zh_suggested": "Ionna（充电网络）",
+        "note": "现代、丰田等车企支持"
+      },
+      {
+        "en": "It's Electric",
+        "zh_suggested": "It's Electric（初创公司）",
+        "note": "联合创始人Tiya Gordon；纽约路边充电桩"
+      }
+    ]
+  },
+  {
+    "id": "E3-003",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "Delta CEO Says It's Prepared for Swings",
+    "dek": null,
+    "byline": "By Alison Sider",
+    "body_en": "Fuel is taking a chunk out of Delta Air Lines' profits. The carrier on Friday sharply lowered its outlook for the year, reflecting a $6 billion increase in fuel costs.\n\nBut even with fuel prices on the rise, Delta Chief Executive Ed Bastian said his airline—the most profitable in the U.S.—is best-positioned to ride out the wild swings. Airlines cut routes and managed to charge higher fares and fees for checked bags.\n\nSo far, travel demand has been resilient. But some carriers are on track to lose money this year—unlike Delta.\n\nThe Wall Street Journal spoke with Bastian about how the industry is navigating the turbulence, the never-ending appetite for new premium-travel amenities, and why Delta is sticking to its decision to skip Starlink Wi-Fi.\n\nWSJ: Last time we spoke, there seemed to be a lot more optimism that fuel prices were coming down. How do you see things now?\n\nBASTIAN: Well, obviously that didn't come to pass. It's real hard to predict what's going to happen. So what we're doing is focusing on things we can control. If you consider fuel prices were up 60%, and the company earned a level of profitability comparable to where we were a year ago, it's pretty stunning, and certainly very different than anything that you would have seen within the industry going back over a number of cycles of prior fuel spikes.\n\nWSJ: Are you seeing any resistance to higher fares? Are there people who are kind of throwing in the towel?\n\nBASTIAN: I wouldn't say throwing in the towel, but those at the lower end of the economic curve are going to be the most sensitive, and that's why we reduced our supply offering in that market. Holiday bookings look strong. We're expecting our fourth-quarter revenues to be up 20%.\n\nWSJ: Is there an upper limit to premium demand?\n\nBASTIAN: I don't think it's getting crowded. But just because someone says they're going premium, that does not make them a premium airline. We've been at it for 15 years. Premium is the overall experience, not just bringing in new seats or adding Starlink. I think we're probably still in the early-to-mid innings in terms of the overall premium supply versus demand.\n\nWSJ: You mentioned Starlink. Does it get to you when Elon Musk is criticizing you?\n\nBASTIAN: I don't read it. All kidding aside, we know what we're doing in the space, and we've been the pioneer in Wi-Fi. Starlink's a great product, and we know it well. We were involved in the early years of bringing it to aviation, and they had a different business model than we had. We're happy with where we sit.\n\n[Photo: Ed Bastian. (Anindito Mukherjee/Bloomberg News)]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "B2",
+    "terms": [
+      {
+        "en": "Ed Bastian",
+        "zh_suggested": "埃德·巴斯蒂安（达美航空CEO）",
+        "note": null
+      },
+      {
+        "en": "Starlink",
+        "zh_suggested": "星链（SpaceX卫星互联网）",
+        "note": "达美决定不采用其机上Wi-Fi"
+      }
+    ]
+  },
+  {
+    "id": "E3-004",
+    "page": "B1",
+    "section": "Technology",
+    "title": "Artificial Intelligence Has a God Problem",
+    "dek": null,
+    "byline": "By Tim Higgins",
+    "body_en": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times.\n\n\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C.\n\nThe sermon, the 74-year-old later told me, was inspired by the questions he was getting from the congregation, which numbers around 150. In his roughly 50 years preaching, Hutchinson says the anxiety he is hearing about AI outranks everything—wars, economy.\n\n\"The more you see people that are projecting doom and despair coming out, then the more people say, 'Well, the preacher must have been right, and the Bible must be right,'\" Hutchinson said.\n\nAlready a polarizing political issue, the AI industry's latest challenge is emerging from the pulpit. Unlike recent generations of technology, the Christian community appears poised to put its stamp on AI early in an attempt to ensure it benefits all of humanity rather than a few tech billionaires.\n\nThe risk for the likes of OpenAI and Anthropic is getting further sideways with a swath of the American populace, some of whom are unhappy with AI data centers and Flock cameras in their communities.\n\n\"A lot of pastors are realizing when people get freaked out about institutions they depend on, they try to find their voice to advocate for themselves and their communities,\" said Meghan Sullivan, a philosophy professor at the University of Notre Dame. \"And churches are really good at giving people a vehicle for advocating for their vision of the common good in broader society, especially in parts of the country like\" the Midwest.\n\nThis month, the National Association of Evangelicals issued a policy statement on AI. The Presbyterian Church (U.S.A.) held a summit on the topic in August. And Pope Leo XIV published a rare encyclical in May on \"safeguarding the human person in the time of artificial intelligence.\"\n\nHistory is replete with moments when new technology—so powerful, so complex as to be almost magical—stirs primal fears. After the U.S. dropped atomic bombs to end World War II, the New York Times invoked Old Testament language when writing that the technology had \"sowed the whirlwind.\"\n\nToday, AI carries its own whirlwind of change. With potential good and bad so intertwined, it is hard to know if the technology will bring a brighter future or darker days: cures for cancers, untold scientific discoveries, sustainable abundance. Yet also rogue AI hacks, job losses, and questions about the very meaning of work.\n\nOne of the self-inflicted challenges for AI creators is that the tech community has framed much of the public conversation, intentionally or not, in language that resonates with the Christian community. That raises concerns about whether they can be trusted, especially with the baggage tech-at-large carries from the ways, some religious leaders say, it failed to ensure social media didn't become harmful.\n\nThe theme of a higher power creating AI in its own image only for it to rebel against its creator is a familiar one to those who study the Bible. The idea that people in AI labs think they have a power akin to God to create a new kind of consciousness is unsettling, if not blasphemous, to some. And, for others, there is a certain hubris seen in tech leaders chasing a technology that on one hand promises to make them incredibly wealthy while suggesting it is only safe within their control.\n\nIn his May encyclical, the pope drew comparisons to the Tower of Babel, a cautionary tale that appears in the first Book of Genesis around an effort to build a tower that reached to the heavens in a bid to guarantee stability and power that displeased God. \"The risk of dehumanization—of building a future that excludes God and reduces the other to a means—is an ancient and ever-new temptation that today takes on a technical guise,\" the pope wrote.\n\nSince then, the pope hasn't let up, including on social-media platform X where a robust debate is playing out among AI's creators.\n\nMaybe that's why in recent days, OpenAI CEO Sam Altman tried to distance his company from a report by the New York Times that rival Anthropic unsuccessfully lobbied the Vatican to change its views on whether AI could have a consciousness.\n\n\"I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models, and think it is a real safety issue,\" Altman posted on X a weekend ago.\n\nThose raising concerns can't be dismissed as simply Luddites. Many faith leaders say they are hoping to steer the technology to ensure it is beneficial to humanity—not harmful. [Print edition is fragmented here; web edition of the same article attributes the following to Walter Kim, president of the National Association of Evangelicals:] \"There's a reason why the faith community is having a moment because they're beginning to see that this is a technology that is actually addressing…not only the consequential horizontal societal issues that are at stake, but it's actually raising the larger question of what does it mean to be human?\"\n\nDuring that recent Sunday sermon in South Carolina, Hutchinson's Siri assistant squawked from his iPhone as he connected how all of the surveillance aspects of AI would be powerful in Revelation's apocalypse.\n\nWhen it comes to AI, the pastor is hopeful it will find amazing cures for illnesses and he agrees with President Trump that America shouldn't slow down development at the risk of letting China get ahead.\n\nIt's just that he also sees a power being created, which he cautioned his flock to remember, could be misused.\n\n\"I see what it's leading to in the future and that doesn't scare me, but it bothers me for the other people that aren't ready,\" he said.\n\n[Photo caption: Pope Leo XIV drew comparisons between AI and the Tower of Babel in his May encyclical. (Vatican Media/AFP/Getty Images)]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "B4",
+    "terms": [
+      {
+        "en": "Pope Leo XIV",
+        "zh_suggested": "教宗良十四世",
+        "note": "5月发布AI主题通谕"
+      },
+      {
+        "en": "Gospel Light Baptist Church",
+        "zh_suggested": "福音之光浸信会（南卡Orangeburg）",
+        "note": "Joseph Hutchinson牧师所在教会"
+      },
+      {
+        "en": "National Association of Evangelicals",
+        "zh_suggested": "美国福音派协会",
+        "note": "本月发布AI政策声明；会长Walter Kim"
+      },
+      {
+        "en": "Flock cameras",
+        "zh_suggested": "Flock（车牌识别摄像头公司）",
+        "note": null
+      },
+      {
+        "en": "Tower of Babel",
+        "zh_suggested": "巴别塔",
+        "note": "教宗通谕中的比喻"
+      }
+    ]
+  },
+  {
+    "id": "E3-005",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "Reckitt Thrives on China Social Media",
+    "dek": null,
+    "byline": "By Natasha Khan",
+    "body_en": "Several years ago, China-based executives of Lysol maker Reckitt leveled with their boss. More consumers were skipping supermarket runs and buying household staples while they scrolled on phones, the executives said.\n\nCould they have some funds to get ahead of the trend?\n\nChief Executive Kris Licht figured they were talking about China's equivalents of Amazon.com and Walmart+. \"But no,\" Licht recalled, \"I was told that e-commerce was a yesterday technology.\"\n\nThe result: a pivot in Reckitt's China sales tactics, one that propelled 12 consecutive quarters of double-digit sales growth in the country and helped the British firm weather a sales slowdown in established markets.\n\nWhat the CEO's colleagues said Reckitt needed to jump on was the rapid rise of a different venue for shopping in China. In what's known as social commerce, people scrolling through social-media apps for entertainment end up buying after seeing an ad.\n\nReckitt's success capitalizing on Chinese consumers' shift points to how Western firms that once counted on China for growth can thrive there though local competitors have made it a tougher place to do business. It's also an example of how social media and shopping are converging.\n\nAfter its China team's tête-à-tête with Licht, Reckitt pulled out the stops to go to the social-media apps where many Chinese shop.\n\nThe company built 18 studios inside a building on the outskirts of Shanghai. On videos broadcast from there, employees sell Veet hair-removal cream, Lysol's international equivalent Dettol and other Reckitt goods on China's popular social-media platforms.\n\nIn some of the studios, company staffers join guest actors and influencers making quick comedies and mini-dramas about domestic life featuring a Reckitt brand.\n\n\"This is the way forward,\" Licht said. \"Those that don't figure this out will be left behind.\"\n\nSome 800 million of China's 1.4 billion people now each day use social media like Douyin, the Chinese version of TikTok, and apps like Kuaishou. The users spend an average of about 90 minutes a day scrolling through short videos, Reckitt estimated. Key for consumer-good companies: Half of them have bought items on the platforms.\n\nSocial commerce is starting to catch on in the U.S., where shoppers are now buying products by clicking links in TikTok and Instagram videos, and watching live-shopping streams on apps like Whatnot.\n\n\"We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,\" said Vivien Huang, Reckitt's director of marketing in China.\n\nIt was around 2022 that Reckitt's team in China sought Licht's support getting Reckitt to invest in social commerce.\n\nThe team initially struggled to hire influencers or agencies with the right experience, so staff did it themselves. Out of a conference room converted into a makeshift studio, customer-service staff answered questions on video about the chemical composition of disinfectants.\n\nSales shot up, boosting the company while it grappled with stagnating sales in the U.S. and other developed markets. Reckitt's emerging-market sales grew 8.5% to 2.23 billion pounds in the first half of this year.\n\nFrom the company's Shanghai studios, crews broadcast live on the apps for 12 hours a day, while shoppers bombard them with comments and questions in a chat that dominates part of the screen.\n\nThe Reckitt hosts respond rapidly, a sort of interactive infomercial. A team monitoring the livestreams guides the hosts and adjusts the featured products they talk about in real-time.\n\nIn other studios, short dramas and skits are filmed. The videos, which are often under a minute, might depict a scene from a living room or highlight a domestic dispute. In one, a parent argues with their teenager about smelly shoes—and Dettol comes to the rescue.\n\nThe short-form video team drove 40 million new customers to Reckitt last year, drawn by videos they produced that the company said were viewed 15 billion times.\n\nReckitt predicts social commerce will catch on in some form in the more than 100 other countries where it sells its products, and has begun replicating its China playbook in markets including Brazil, Mexico and Malaysia.\n\n[Photo caption: From the company's Shanghai studios, crews broadcast live on apps for 12 hours a day.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "B4",
+    "terms": [
+      {
+        "en": "Reckitt",
+        "zh_suggested": "利洁时（英国消费品巨头）",
+        "note": "旗下有滴露、薇婷；中国社交电商连续12季度两位数增长"
+      },
+      {
+        "en": "Kris Licht",
+        "zh_suggested": "傅乐宏（利洁时CEO）",
+        "note": null
+      },
+      {
+        "en": "Dettol",
+        "zh_suggested": "滴露",
+        "note": "Lysol的国际版"
+      },
+      {
+        "en": "Veet",
+        "zh_suggested": "薇婷（脱毛膏品牌）",
+        "note": null
+      },
+      {
+        "en": "Douyin",
+        "zh_suggested": "抖音",
+        "note": null
+      },
+      {
+        "en": "Kuaishou",
+        "zh_suggested": "快手",
+        "note": null
+      },
+      {
+        "en": "Whatnot",
+        "zh_suggested": "Whatnot（美国直播购物应用）",
+        "note": null
+      },
+      {
+        "en": "social commerce",
+        "zh_suggested": "社交电商",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-006",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "Robinhood Traders Share Tales of Wealth",
+    "dek": null,
+    "byline": "By Hannah Erin Lang and Rachel Mendelson",
+    "body_en": "HOUSTON—Thirty minutes before Robinhood Markets Chief Executive Vlad Tenev took the stage, the crowd was already buzzing.\n\nSome 1,500 individual investors were packed into the seats of a Houston convention hall, snapping pictures and fiddling with their neon-green nametags. They came from different walks of life—plumbers and small-business owners, mingling with corporate middle managers and stay-at-home parents. But many had something in common: investment portfolios that had grown so large in recent years they had quit their jobs to play the market full time.\n\nBack on Wall Street, investors have been sweating higher oil prices and a global bond selloff that pushed Treasury yields to two-decade highs. But at Robinhood's Hood Summit, the party was still raging.\n\nRobinhood's conference for active traders is the largest of the brokerage's annual events. For two days in September, hundreds of everyday investors descend on a conference center in cities like Miami, Las Vegas and Houston to attend training sessions, swap trading tips and swarm the open bar.\n\nThe conference also offers an up-close view of a generational shift in financial markets: The do-it-yourself investor is playing a bigger role on Wall Street than ever before.\n\nEveryday traders have gained access to new, riskier assets, from event contracts and private companies to leveraged perpetual futures and even tokenized stocks. They powered market rebounds, rushing in to buy the dip when share prices swooned.\n\nMany made massive bets on popular tech names such as Tesla, Alphabet or Palantir—and, as the artificial-intelligence rally blew past record after record, got richer than they ever imagined.\n\nIn recent weeks, professional money managers have grappled with a punishing bond selloff, rising fuel costs and a stock-market rally that is increasingly dependent on a handful of tech stocks.\n\nIn Houston, nobody was all that worried.\n\n\"The trend is always going to be up and to the right,\" said Sara Brescia O'Rear, a former pharmacist who retired in her 40s thanks to her investing success. \"I'm willing to take on risk because I know it can pay off.\"\n\nThe Wall Street Journal spent two days talking to individual investors at Hood Summit, asking them about their riskiest investing moves, their concerns about the current market and what it means to make \"life-changing money\" by betting it all.\n\nMarkese Johnson said he never considered buying stocks until well into adulthood, when a childhood friend started showing him the ropes while Johnson was serving in the U.S. Army.\n\nHis lucky break came when he bought several thousand shares of cloud computing company IREN when its share price was roughly $4. The stock is now trading around $35.\n\n\"It's helping me live a lifestyle I never dreamed I would live,\" he said. Now, Johnson said he can afford experiences that once felt out of reach, like vacations to the Dominican Republic, or courtside seats to a Washington Wizards game.\n\n[Trader profiles: Markese Johnson, 36, Hometown: Dallas, Occupation: Logistics Account Coordinator, Trading since: 2019; Alexander Bittan, 33, Hometown: Englewood, N.J., Occupation: Entrepreneur, Stock picks: Alphabet, Uber; Sara Brescia O'Rear, 41, Hometown: St. Simons Island, Ga., Occupation: Full-time trader, Stock picks: Palantir, Robinhood; James Chen, 34, Hometown: San Diego and Detroit, Occupation: Full-time trader, Trading since: 2010; Colin Edsman, 36, Hometown: Waimea, Hawaii, Occupation: Stay-at-home dad, Stock picks: GoPro, E.l.f. Beauty, Trading since: 2017; Lance Zakrzewski II, 37 (with mom Kitty), Hometown: Jackson, Mich., Occupation: Business owner.]\n\n[\"I want [my children] to see you can build wealth the right way,\" he said. Alexander Bittan made millions betting on Tesla shares back in 2017 and has been a fan of going all-in on just a few stocks ever since. Most of his investments are still tied up in a couple of tech names.]\n\n[\"If you have a couple high-conviction names, that's all you need to become extremely wealthy,\" he said. \"But you have to be right.\" Six years ago, Sara Brescia O'Rear started buying as many shares of Palantir as she could afford, eventually tying about one-third of her portfolio to the company's shares. Since then, the stock has surged nearly 2,000%. \"Life-changing money,\" she called it. Brescia O'Rear said she is holding on to a little more cash these days, but the fears of a potential AI overbuild don't keep her up at night. \"I'm very pro-technology,\" she said.]\n\n[\"Every successful business from the beginning of time—they're going to have to take on debt,\" she said. — Sara Brescia O'Rear]\n\n[James Chen, who was born in China, lost his job about a year and a half ago and decided to focus on investing full time. Since then, he has made about five times his former salary trading options and stocks like Alphabet, Tesla and Robinhood. \"In the past, my goal was to make it in corporate America,\" he said. His new aim? \"Trade myself into the new American dream.\" It isn't something he would recommend to other traders.]\n\n[But in 2024, Colin Edsman bet half of his savings on a stock trading for less than a dollar a share. A year later, the company, mineral provider United States Antimony, saw its share price climb into the double digits. Edsman made more than $13,000—and has made several similarly successful trades since. \"I've never relied on luck,\" he said. \"I figured I could make my own.\"]\n\n[In March 2020, Lance Zakrzewski put every dollar he had into the market, even taking early withdrawals from his retirement account, to plow more money into tech and dividend-paying stocks. His net worth tripled during the monthslong rebound that followed. The steady gains in his portfolio have allowed for some splurges, like the nine-day Caribbean cruise he booked for him and his mother, Kitty Zakrzewski, once Hood Summit wrapped. Zakrzewski said he is somewhat concerned about the market's reliance on a handful of AI companies. But should stocks suddenly tank, he has a plan: \"Probably just buy more.\"]\n\n[Photo caption: Hood Summit attendees, above, listen to Robinhood CEO Vlad Tenev, below left, deliver the event's keynote address in Houston last month. Below right, merchandise at the summit. (Jeff Lautenberger for WSJ)]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "B2",
+    "terms": [
+      {
+        "en": "Robinhood Markets",
+        "zh_suggested": "罗宾汉（美股券商）",
+        "note": "Hood Summit年度交易者大会；CEO Vlad Tenev"
+      },
+      {
+        "en": "Vlad Tenev",
+        "zh_suggested": "弗拉德·特内夫（罗宾汉CEO）",
+        "note": null
+      },
+      {
+        "en": "IREN",
+        "zh_suggested": "IREN（云计算公司）",
+        "note": null
+      },
+      {
+        "en": "Palantir",
+        "zh_suggested": "Palantir（数据分析公司）",
+        "note": null
+      },
+      {
+        "en": "United States Antimony",
+        "zh_suggested": "美国锑业公司",
+        "note": null
+      },
+      {
+        "en": "event contracts",
+        "zh_suggested": "事件合约",
+        "note": "散户可交易的新型风险资产"
+      },
+      {
+        "en": "leveraged perpetual futures",
+        "zh_suggested": "杠杆永续期货",
+        "note": null
+      },
+      {
+        "en": "tokenized stocks",
+        "zh_suggested": "代币化股票",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-007",
+    "page": "B1",
+    "section": "Business & Finance",
+    "title": "Inside",
+    "dek": null,
+    "byline": null,
+    "body_en": "INSIDE\n\nAUTOS: Jaguar shifts gears in branding in unveiling of its large, sleek Type 01 EV. B3\n\nHEARD ON THE STREET: Home builders and sellers are competing for buyers. B7",
+    "priority": "P3",
+    "type": "index_digest",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-008",
+    "page": "B2",
+    "section": "Business & Finance",
+    "title": "Index to Businesses / Index to People",
+    "dek": "These indexes cite notable references to most parent companies and businesspeople in today's edition. Articles on regional page inserts aren't cited in these indexes.",
+    "byline": null,
+    "body_en": "INDEX TO BUSINESSES\n\nA: Alphabet...B1; Amazon.com...B1; Apollo Global Management...A1\nB: Bayerische Motoren Werke...B3; Berkshire Hathaway...B7\nC: ChargePoint...B1\nD: Delta Air Lines...B1; Dutch Bros...B3\nE: e.l.f. Beauty...B3; EVgo...B2\nF: Ford Motor...(page cut off in print)\nG: General Motors...B3\nI: IREN...B2\nK: KB Home...B7\nL: Lennar...B7; Levi Strauss...B3; Lowe's...A12\nM: Macy's...B3; Mercedes-Benz Group...B3\nP: Palantir Technologies...B1,B2; Paren...B2\nR: Reckitt...B1; Robinhood Markets...B1\nS: Samsung Electronics...B3; Starbucks...B3; Stellantis...B3\nT: Tesla...B1,B2\nU: United States Antimony...B2\nV: Volkswagen...B3\nW: Walmart...B1,B2; Warby Parker...B3\n\nINDEX TO PEOPLE\n\nA: Andreev, Alexey...B3\nB: Bastian, Ed...B1; Bittan, Alexander...B2\nC: Chen, James...B2\nE: Edsman, Colin...B2\nF: Ferro, Bill...B2\nG: Glover, Rawdon...B3; Gordon, Tiya...B2; Guenser, Josh...B3\nH: Huang, Vivien...B4\nJ: Johnson, Markese...B2\nL: Licht, Kris...B1; Lovallo, John...B7\nM: Mitchell, Adrian...B3; Musk, Elon...B2\nO: O'Rear, Sara Brescia...B2\nP: Palacios, Rick...B7; Pinto, Edward...B7; Pugh, Florence...B3\nS: Singh, Harmit...B3\nT: Tenev, Vlad...B1\nW: Wilmer, Rick...B1\nZ: Zakrzewski, Kitty...B2; Zakrzewski, Lance...B2",
+    "priority": "P3",
+    "type": "index_digest",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-009",
+    "page": "B3",
+    "section": "Business News",
+    "title": "Jaguar Shifts Gears in Debut of Type 01 EV",
+    "dek": null,
+    "byline": "By Katie Deighton",
+    "body_en": "Jaguar has introduced the showroom-ready version of the electric vehicle it hopes will usher in a new, ultraluxury era for the British carmaker, leaving aside some of the provocative notes it sounded nearly two years ago when it unveiled its new strategy.\n\nIn contrast with the two-door concept car Jaguar unveiled in pink and bright blue at Miami Art Week in 2024, the four-door Type 01 model arrived last Tuesday in silver, with an \"orchid white\" interior. And where the original avant-garde teaser video depicted expressionless models striding around a fuchsia landscape, the EV's first ad features a handsome driver, atmospheric smoke, cars traveling at high speeds and a color scheme heavy on red and black.\n\nThe quirky 2024 film was \"a conceptual world for a conceptual car that was really just trying to herald the new design language and the new direction that Jaguar was going in,\" said Rawdon Glover, Jaguar's managing director. \"This is a production car that's in the real world that real people want to buy, and putting it in a context that felt more grounded felt very important.\"\n\nThe Type 01, which is expected to start at $130,500 in the U.S., is nonetheless still a significant departure for the storied Jaguar brand.\n\nKnown for its sporty cars that to many represented a suave, English roguishness, Jaguar has been in a sales slump for the better part of the past decade. A plan to compete more directly against the likes of BMW and Mercedes-Benz with a lineup of crossover SUVs and sedans fell flat, and executives conceded the brand has failed to connect with younger drivers.\n\nSo the company plotted an ambitious pivot: It would rip up the rulebook and switch to selling fewer cars at a much higher price. At its headquarters in the West Midlands of the U.K., designers were tasked with conjuring up a sleek silhouette that engineers had to transform into a viable machine. The result was a futuristic-looking all-electric concept car dubbed Type 00 that was larger than most EVs on the road.\n\nThe Type 01 retains much of the initial attitude.\n\n\"Ask yourself the inner question: Have you ever seen a car like this before?\" said Alexey Andreev, exterior design lead at Jaguar Land Rover, after the production model was uncovered at an afternoon preview event in New York. The space around him was decorated with the new car's design elements, including samples of brass-effect anodized aluminum and \"the impossible panel\"—an aluminum body side shaped into five different planes.\n\nThe production car is fast, too, able to hit 60 miles an hour in just 3.1 seconds. But whether it's fast enough to outrun its controversies remains to be seen. Jaguar's teaser film and concept car were derided online, eventually catching President Trump's attention. \"Who wants to buy a Jaguar after looking at that disgraceful ad?\" Trump wrote on Truth Social in 2025.\n\nActor Florence Pugh, Jaguar's newly minted brand ambassador, schmoozed with design journalists, bloggers and online creators at a party later Tuesday to promote the Type 01. The guest list was crafted to represent Jaguar's attempted leap from being a favored car of older drivers to being considered by the fashionable, cosmopolitan new-money set.\n\nThe American electric-vehicle market has grown tougher in the past two years. The Biden-era $7,500 EV tax credit is gone, prices are up, and several automakers have canceled or delayed planned models.\n\nMany automakers are trying to adapt with longer-range, more advanced EVs—especially in the luxury space. Volkswagen-owned Bentley last month unveiled its first EV, touting the $230,000 car's acceleration from 0 to 60 miles an hour in 2.9 seconds.\n\nFor Jaguar, the Type 01 will be one of the longer-distance EVs on the U.S. market, capable of driving up to 400 miles on a full charge. Engineers also aimed to give car fanatics all the things they love in a gas-powered vehicle, providing a simulated engine sound and an elongated hood.\n\nThe next step in convincing skeptical buyers and analysts will be less about selling the new Jaguar as a youthful, creative company, and more about explaining the car's full driver-friendly capabilities, Glover said.\n\n\"If some people don't like the car because it polarizes, that's OK,\" he said. \"But we've done everything we've done with a very, very singular purpose—what we think is best for Jaguar.\"\n\n[Photo caption: Jaguar's Type 01, unveiled in New York last Tuesday, marks a departure from a previous model. Alexey Andreev, exterior design lead at Jaguar Land Rover, after the production model was uncovered at an afternoon preview event in New York. The space around him was decorated with the new car's design elements, including samples of brass-effect anodized aluminum and \"the impossible panel\"—an aluminum body side shaped into five different planes. (Dimitrios Kambouris/Getty Images for Jaguar Land Rover)]\n\n[Katie Deighton writes for WSJ Leadership Institute's CMO Today.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Rawdon Glover",
+        "zh_suggested": "罗登·格洛弗（捷豹董事总经理）",
+        "note": null
+      },
+      {
+        "en": "Alexey Andreev",
+        "zh_suggested": "阿列克谢·安德烈耶夫（捷豹路虎外观设计负责人）",
+        "note": null
+      },
+      {
+        "en": "Type 00",
+        "zh_suggested": "Type 00（概念车）",
+        "note": "2024年迈阿密艺术周发布"
+      },
+      {
+        "en": "Florence Pugh",
+        "zh_suggested": "弗洛伦斯·皮尤（演员，捷豹品牌大使）",
+        "note": null
+      },
+      {
+        "en": "Truth Social",
+        "zh_suggested": "Truth Social（特朗普社交平台）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-010",
+    "page": "B3",
+    "section": "Business News",
+    "title": "Fain Claims Victory in UAW Election Rout",
+    "dek": null,
+    "byline": "By Christopher Otts",
+    "body_en": "United Auto Workers President Shawn Fain and his allies on Friday claimed an easy victory in the union's election, cementing Fain's leadership of one of the most powerful forces in American organized labor.\n\nFain secured a position of strength for the union's next showdown with Ford Motor, General Motors and Jeep-Ram parent Stellantis in 2028 over labor contracts. The UAW priorities will include seeking to restore benefits such as traditional pensions and winning protections against artificial intelligence and automation replacing factory jobs.\n\n\"The membership has spoken,\" Fain said Friday. \"UAW members are united and want us to keep fighting and building on what we've done.\"\n\nWhile official results weren't available, tallies posted by Fain's campaign showed his garnering about 68% of the vote as of Friday afternoon. A UAW spokesman said official results would come later.\n\nUAW Vice President Mike Booth, who ran on a ticket opposing Fain, told The Wall Street Journal that there is no doubt about the outcome.\n\nFain faced five challengers, including a UAW vice president with whom he had feuded. Fain's allies defeated top UAW officials whom Fain viewed as impediments to his agenda for vice-presidential slots and other key roles.\n\nFain clashed with another UAW vice president, Rich Boyer, who unsuccessfully challenged Fain for the top job. He feuded with the person who signs the checks for union expenses, Secretary-Treasurer Margaret Mock. Boyer and Mock didn't return a request for comment.\n\nFain, a former Chrysler plant electrician from Kokomo, Ind., had been a staffer at the union's Detroit headquarters when he narrowly won the top job in a runoff election in 2023. He was part of a hastily arranged \"reform\" slate meant to steer the union past a corruption scandal that sent two former UAW presidents to federal prison. It was the first time the union allowed its members, rather than a cadre of insiders, to directly vote on its president and top leaders.\n\nFain soon became one of the labor movement's most recognizable figures, adopting a more confrontational posture with the Detroit automakers, hurling profanities during speeches.\n\nDuring contract talks in 2023, Fain called targeted strikes of certain auto plants, such as the Kentucky facility where Ford produces its most profitable trucks. The union secured large wage increases and other gains when the carmakers relented.\n\nFain's UAW then realized a long-sought goal of organizing a foreign automaker's plant, winning union representation at Volkswagen's factory in Chattanooga, Tenn. But the UAW has been unable to extend its wins to other foreign auto plants.\n\nAt the union's home base in Detroit, Fain has been bogged down in internal controversies. A federal monitor charged with overseeing the union accused Fain of retaliating against Mock and Boyer. Fain has had to restore powers he and the board had stripped from his rivals and part ways with his chief of staff and top strategist.\n\n[Photo: Shawn Fain. (Jose Juarez/AP)]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Shawn Fain",
+        "zh_suggested": "肖恩·费恩（全美汽车工人联合会主席）",
+        "note": null
+      },
+      {
+        "en": "United Auto Workers (UAW)",
+        "zh_suggested": "全美汽车工人联合会",
+        "note": null
+      },
+      {
+        "en": "Stellantis",
+        "zh_suggested": "斯特兰蒂斯（Jeep-Ram母公司）",
+        "note": null
+      },
+      {
+        "en": "Rich Boyer",
+        "zh_suggested": "里奇·博耶（UAW副主席）",
+        "note": "曾挑战费恩的主席之位"
+      },
+      {
+        "en": "Margaret Mock",
+        "zh_suggested": "玛格丽特·莫克（UAW秘书-财务长）",
+        "note": null
+      },
+      {
+        "en": "Mike Booth",
+        "zh_suggested": "迈克·布斯（UAW副主席）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-011",
+    "page": "B3",
+    "section": "Business News",
+    "title": "'Other Mommy' Starts on Top",
+    "dek": "The film earned $27.5 million in North American theaters.",
+    "byline": null,
+    "body_en": "Estimated Box-Office Figures, Through Sunday. Sales, in millions.\n\nFilm | Distributor | Weekend* | Cumulative | % Change\n1. Other Mommy | Universal | $27.5 | $27.5\n2. Verity | Amazon MGM Studios | $11.5 | $53.9\n3. Resident Evil | Sony | $8.3 | $138.5\n4. Heart of the Beast | Paramount | $7.1 | $49.7\n5. The Social Reckoning | Sony | $5.5 | $5.5\n\n*Friday, Saturday and Sunday in North American theaters.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Other Mommy",
+        "zh_suggested": "《Other Mommy》（电影，待查）",
+        "note": "周末票房冠军，环球发行"
+      },
+      {
+        "en": "Verity",
+        "zh_suggested": "《Verity》（电影，待查）",
+        "note": "亚马逊米高梅发行"
+      }
+    ]
+  },
+  {
+    "id": "E3-012",
+    "page": "B3",
+    "section": "Business News",
+    "title": "Tariff Refunds Lift Brands' Marketing Drive",
+    "dek": null,
+    "byline": "By Patrick Coffee",
+    "body_en": "Advertisers from Macy's to Levi Strauss have announced that a portion of the multimillion-dollar tariff refunds they received from the federal government will go to boost marketing spending as the holiday shopping season approaches.\n\nThese messages may say more about the companies' investor-relations strategies than their marketing plans.\n\nLater this fall, eyeglass maker Warby Parker will launch Intelligent Eyewear, a line of AI-powered glasses developed in partnership with Google and Samsung.\n\nIn order to help market this critical product rollout, the company will draw on the $11.8 million it received last quarter after the Supreme Court struck down President Trump's tariffs on imported goods.\n\nThe cash injection has given Warby Parker flexibility to invest more in its brand by offsetting other expenses, Chief Financial Officer Adrian Mitchell said on the company's August earnings call.\n\n\"Within marketing, we plan to meaningfully increase our total brand and media investments, which will be shared with our partners as we scale Intelligent Eyewear campaigns,\" Mitchell said. \"With regards to the investments in the business and integrating Intelligent Eyewear—that's fully funded by the tariff benefits.\"\n\nBillions of dollars have begun making their way to some of the importers that qualified for refunds after the February high court decision.\n\nAs of Oct. 2, U.S. Customs and Border Protection has received approximately $136 billion in refund requests and sent $126 billion to the Treasury Department for payment, said an agency spokesperson. More than 286,000 importers requested refunds, according to a September court filing.\n\nMuch subsequent conversation has focused on whether companies that receive tariff refunds would cut prices, but some recipients have told investors that portions will go toward promotions and brand investments.\n\nE.l.f. Beauty will use some of the approximately $50 million it has received so far to help raise awareness of its brands in key markets such as the U.K., Canada and Germany. The company's overall marketing spending for the fiscal year through next March will skew toward the high end of a given range of 23% to 25% of net sales, powered in part by the refunds.\n\nLevi Strauss last Wednesday said a large portion of its tariff refunds will go toward holiday-season marketing campaigns. \"We redeployed $60 million out of the $80-odd million from tariffs that we received,\" Harmit Singh, the denim-maker's chief financial and growth officer, said on its earnings call. \"I would say a third is marketing, a third is distribution and logistics, and a third is promotional activities.\"\n\n[Patrick Coffee writes for WSJ Leadership Institute's CMO Today.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Warby Parker",
+        "zh_suggested": "Warby Parker（眼镜品牌）",
+        "note": "与谷歌、三星合作推AI眼镜Intelligent Eyewear"
+      },
+      {
+        "en": "Intelligent Eyewear",
+        "zh_suggested": "Intelligent Eyewear（AI眼镜）",
+        "note": "Warby Parker与谷歌、三星合作"
+      },
+      {
+        "en": "Adrian Mitchell",
+        "zh_suggested": "阿德里安·米切尔（Warby Parker CFO）",
+        "note": null
+      },
+      {
+        "en": "e.l.f. Beauty",
+        "zh_suggested": "e.l.f.美妆",
+        "note": null
+      },
+      {
+        "en": "Harmit Singh",
+        "zh_suggested": "哈米特·辛格（Levi's首席财务与增长官）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-013",
+    "page": "B3",
+    "section": "Business News",
+    "title": "Coffee Chain Dutch Bros, Known for Drive-Throughs, Wants to Lure Pedestrians",
+    "dek": null,
+    "byline": "By Kristin Broughton",
+    "body_en": "Dutch Bros, the fast-growing, drive-through coffee chain known for its colorful drinks and outgoing baristas, has a strategy to attract pedestrian traffic: walk-up-only windows.\n\nThe company opened its first walk-up-only location last November near the University of Southern California in Los Angeles, in what it describes as a test of the concept. The location—which features three windows for ordering, pickup and mobile orders—had the highest sales volume of any Dutch Bros coffee shop until May, when it was surpassed by the opening of the first Chicago-area location, according to Chief Financial Officer Josh Guenser. Dutch Bros is now considering opening similar walk-up shops in other densely populated areas, Guenser said.\n\n\"We will be looking for other walk-up tests, to see if that's a new way to go after different real estate,\" Guenser said.\n\nThe move shows how Dutch Bros is adapting to new markets as it expands nationwide.\n\nTempe, Ariz.-based Dutch Bros, founded in southern Oregon in 1992, has been on a tear in recent years, expanding from its Pacific Northwest roots eastward. The company, which went public five years ago, operated 1,225 shops as of June 30, an increase of 17% from last year. It aims to boost its shop count to 2,029 in 2029.\n\nIn the growing market for caffeinated, customizable drinks, Dutch Bros stands apart for its focus on customer service, according to industry analysts. Company greeters take customer orders at their car windows when lines begin to form. Baristas—which the company calls \"broistas\"—are encouraged to create a fun experience by making small talk and playing music.\n\nDutch Bros is also known for brightly colored energy drinks, offering a long list of flavors and add-ons, and for serving mostly cold drinks. The company's drive-through locations have walk-up windows for mobile-order pickups and no cafe space for lingering inside.\n\nWhile inflation has put pressure on household budgets, coffee chains have been mostly immune from the pressures elsewhere in the restaurant industry, analysts said.\n\n\"It's still an affordable luxury,\" said Sarang Vora, an analyst with Telsey Advisory Group.\n\nDutch Bros, which owns most of its shops, is using cash from its operations to fund its growth. Revenue during the latest quarter ended June 30 was $550.9 million, up 32% from a year earlier. Profit rose 46% to $37.4 million.\n\nAcquisitions are part of the company's expansion strategy. Dutch Bros paid about $20 million to acquire 20 locations from Clutch Coffee, a regional coffee chain in the Carolinas. \"This is another way for us to get a hold of real estate, and in some cases accelerate our opening into a market, or opening of shops in an existing market,\" said Guenser.\n\nCompetition from rivals is increasing, including from 7 Brew, a privately held drive-through coffee chain, and larger players such as Starbucks, which is undergoing a turnaround and refreshing its drink menu, analysts said. That could put a damper on Dutch Bros's ambitious growth targets, said Ari Felhandler, an analyst with Morningstar who anticipates the company will fall short of its 2029 shop count goal by about 300 locations.\n\nOver the long term, Dutch Bros has a goal of operating as many as 7,000 drive-through locations nationwide. It is too early to say whether the addition of more walk-up-only windows could increase the company's addressable market, analysts said.\n\n[Photo caption: The coffee chain opened its first walk-up-only location last November in Los Angeles.]\n\n[Kristin Broughton writes for the WSJ Leadership Institute's CFO Journal.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Dutch Bros",
+        "zh_suggested": "Dutch Bros（美国咖啡连锁）",
+        "note": "以得来速和花哨饮品著称；CFO Josh Guenser"
+      },
+      {
+        "en": "Josh Guenser",
+        "zh_suggested": "乔希·根瑟（Dutch Bros CFO）",
+        "note": null
+      },
+      {
+        "en": "7 Brew",
+        "zh_suggested": "7 Brew（咖啡连锁）",
+        "note": "私营得来速咖啡竞争对手"
+      },
+      {
+        "en": "Clutch Coffee",
+        "zh_suggested": "Clutch Coffee（卡罗来纳地区咖啡连锁）",
+        "note": "被Dutch Bros收购20家门店"
+      },
+      {
+        "en": "Sarang Vora",
+        "zh_suggested": "萨朗·沃拉（Telsey Advisory分析师）",
+        "note": null
+      },
+      {
+        "en": "Ari Felhandler",
+        "zh_suggested": "阿里·费尔汉德勒（晨星分析师）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-014",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Dow Jones Industrial Average / S&P 500 Index",
+    "dek": "Weekly index charts",
+    "byline": null,
+    "body_en": "Dow Jones Industrial Average\n51654.95, up 477.99, or 0.93% last week\nHigh, low, open and close for each of the past 52 weeks\nTrailing P/E ratio 21.03; P/E estimate 19.58; Dividend yield 1.54\nCurrent divisor 0.1682481652835\n65-day moving average; 200-day moving average\nWeek's high; Week's low; Monday's open; Friday's close\nBars measure the point change from Monday's open\nNYSE weekly volume, in billions of shares\n\nS&P 500 Index\n7811.54, up 88.82, or 1.15% last week\nHigh, low, open and close for each of the past 52 weeks\nTrailing P/E ratio 24.92; P/E estimate 22.09; Dividend yield 1.62\nAll-time high 54349.12, 08/05/26 (as printed)\n65-day moving average\nWeekly P/E data based on as-reported earnings from Birinyi Associates Inc.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-015",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Major U.S. Stock-Market Indexes",
+    "dek": "Latest Week: High, Low, Close, Net chg, % chg; 52-Week Low, Close",
+    "byline": null,
+    "body_en": "Major U.S. Stock-Market Indexes\n\nDow Jones\nIndustrial Average | 51765.11 | 50862.85 | 51654.95 | 477.99 | 0.93 | 45166.64\nTransportation Avg | 19971.56 | 19489.07 | 19804.14 | -205.61 | -1.03 | 15067.87\nUtility Average | 1057.24 | 1011.00 | 1055.96 | 37.94 | 3.73 | 1004.50\nTotal Stock Market | 77317.47 | 76081.55 | 76901.75 | 769.23 | 1.01 | 62750.36\nBarron's 400 | 1613.34 | 1585.33 | 1607.51 | 14.68 | 0.92 | 1318.70\n\nNasdaq Stock Market\nNasdaq Composite | 27722.75 | 27066.76 | 27366.17 | 175.31 | 0.64 | 20794.64\nNasdaq-100 | 31361.37 | 30556.40 | 30883.15 | 75.22 | 0.24 | 22953.38\n\nS&P\n500 Index | 7844.52 | 7727.59 | 7811.54 | 88.82 | 1.15 | 6343.72\nMidCap 400 | 3715.21 | 3615.93 | 3669.17 | 1.16 | 0.03 | 3109.89\nSmallCap 600 | 1700.38 | 1651.35 | 1672.98 | -12.77 | -0.76 | 1364.94\n\nOther Indexes\nRussell 2000 | 2864.83 | 2762.58 | 2806.98 | -25.91 | -0.91 | 2305.11\nNYSE Composite | 23988.90 | 23581.09 | 23939.10 | 284.79 | 1.20 | 20912.89\nValue Line | 658.24 | 644.21 | 653.33 | 3.86 | 0.59 | 590.50\nNYSE Arca Biotech | 9517.66 | 8910.92 | 9236.24 | -37.31 | -0.40 | 6340.88\nNYSE Arca Pharma | 1247.22 | 1198.98 | 1241.74 | 28.94 | 2.39 | 984.85\nKBW Bank | 172.06 | 166.86 | 170.65 | -0.05 | -0.03 | 143.23\nPHLX Gold/Silver | 368.93 | 348.18 | 366.69 | 4.80 | 1.33 | 265.03\nPHLX Oil Service | 96.90 | 92.40 | 94.28 | 1.17 | 1.26 | 60.27\nPHLX Semiconductor | 13349.96 | 12483.95 | 12572.42 | -564.25 | -4.30 | 6352.07\nCboe Volatility | 16.46 | 14.77 | 14.84 | -0.47 | -3.07 | 13.47\n\nNote: PHLX = Nasdaq PHLX. Weekly P/E data based on as-reported earnings from Birinyi Associates Inc.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-016",
+    "page": "B5",
+    "section": "Markets",
+    "title": "International Stock Indexes",
+    "dek": "Latest Week: Close, % chg; 52-Week Range: Low, Close",
+    "byline": null,
+    "body_en": "International Stock Indexes\n\nRegion/Country | Index | Close | % chg (week) | 52-wk Low | 52-wk Close\nWorld | MSCI ACWI | 1147.26 | 0.65 | 960.87\n| MSCI ACWI ex-USA | 468.55 | -0.30 | 396.90\n| MSCI World | 4962.41 | 0.73 | 4163.77\n| MSCI Emerging Markets | 1708.77 | -0.01 | 1333.96\nAmericas | MSCI AC Americas | 2954.96 | 1.22 | 2411.22 | 2958.19\nCanada | S&P/TSX Comp | 35664.62 | 0.46 | 29777.82 | 36957.63\nLatin Amer. | MSCI EM Latin America | 3372.92 | 9.65 | 2421.54 | 3372.92\nBrazil | Bovespa | 209066.90 | 8.82 | 140680.34 | 209066.90\nMexico | S&P/BMV IPC | 66048.57 | 2.35 | 60568.93\nEMEA | STOXX Europe 600 | 631.55 | 0.03 | 561.71 | 660.51\n| STOXX Europe 50 | 5305.21 | 0.13 | 4701.04 | 5548.17\n| Euro STOXX | 649.97 | -1.03 | 581.91 | 689.45\n| Euro STOXX 50 | 6173.37 | -1.04 | 5501.28 | 6551.22\nAustria | ATX | 6543.45 | -2.60 | 4578.37 | 7012.13\nBelgium | Bel-20 | 5454.74 | -0.92 | 4899.21 | 5879.05\nFrance | CAC 40 | 7803.33 | -1.19 | 7665.62 | 8726.03\nGermany | DAX | 25087.27 | -0.57 | 22300.75 | 26569.99\nGreece | Athex Composite | 2559.18 | -2.93 | 1986.89 | 2738.35\nIsrael | Tel Aviv | 4061.71 | -3.71 | 3174.18 | 4527.63\nItaly | FTSE MIB | 49746.31 | -1.46 | 41758 | 53717\nNetherlands | AEX | 1130.95 | 1.28 | 926.69 | 1130.95\nNorway | Oslo Bors All-Share | 2480.48 | 0.50 | 1822.75 | 2557.39\nPortugal | PSI 20 | 9267.50 | -1.59 | 7993.87 | 9712.35\nSouth Africa | FTSE/JSE All-Share | 108524.77 | 0.14 | 107104.29 | 128455.68\nSpain | IBEX 35 | 19033.10 | -0.27 | 15476.5 | 20213.6\nSweden | OMX Stockholm | 1122.11 | 0.06 | 983.86 | 1154.65\nSwitzerland | Swiss Market | 13787.40 | 0.93 | 12234.50 | 14633.70\nU.K. | FTSE 100 | 10552.05 | 0.86 | 9354.57 | 10910.55\nAsia-Pacific | MSCI AC Asia Pacific | 274.81 | -0.52 | 217.40\nAustralia | S&P/ASX 200 | 8716.60 | 0.40 | 8365.9\nChina | Shanghai Composite | 3813.79 | -0.74 | 3764.15\nHong Kong | Hang Seng | 24211.35 | 1.00 | 22671.86\nIndia | BSE Sensex | 72472.33 | 0.78 | 71593.24\nIndonesia | JSX Composite | 6093.76 | 0.94 | 5342.14\nJapan | NIKKEI 225 | 69030.92 | 1.06 | 46847.32 | 72366.34\nMalaysia | FTSE Bursa Malaysia KLCI | 1608.45 | -1.37 | 1601.01 | 1771.25\nSingapore | Straits Times | 5401.89 | -4.13 | 4328.93 | 5801.96\nSouth Korea | KOSPI | 6625.93 | -5.39 | 3549.21 | 9114.55\nTaiwan | TAIEX | 49313.44 | 1.73 | 26434.94 | 49822.55\n\nSource: FactSet; Dow Jones Market Data",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-017",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Commodities and Currencies",
+    "dek": "Last Week: Close, Net chg, %Chg, YTD % chg; 52-Week: Low, Close, High, % Chg",
+    "byline": null,
+    "body_en": "Commodities and Currencies\n\nLast Week: Close | Net chg | %Chg | YTD % chg\nDJ Commodity | 1463.79 | 21.12 | 1.46 | 29.46\nFTSE/CC CRB Index | 414.73 | 4.63 | 1.13 | 38.81\nCrude oil, $ per barrel | 91.85 | 0.74 | 0.81 | 59.96\nNatural gas, $/MMBtu | 3.220 | 0.185 | 6.10 | -12.64\nGold, $ per troy oz. | 4191.00 | 57.30 | 1.39 | -3.11\n\nCurrencies\nU.S. Dollar Index | 102.23 | 0.30 | 0.29 | 3.98\nWSJ Dollar Index | 97.38 | 0.12 | 0.13 | 1.52\nEuro, per dollar | 0.8927 | 0.004 | 0.46 | 4.89\nYen, per dollar | 158.29 | 0.45 | 0.28 | 1.03\nU.K. pound, in dollars | 1.32 | -0.0009 | -0.07 | -1.81\n\n52-Week: Low | Close | High | % Chg\nDJ Commodity | 1076.65 | (latest) | 1505.40 | 35.96\nFTSE/CC CRB Index | 291.69 | | 429.15 | 41.66\nCrude oil, $ per barrel | 55.27 | | 112.95 | 55.94\nNatural gas, $/MMBtu | 2.523 | | 7.460 | 3.67\nGold, $ per troy oz. | 3947.70 | | 5318.40 | 5.41\nU.S. Dollar Index | 96.22 | | 102.24 | 3.29\nWSJ Dollar Index | 93.64 | | 97.73 | 1.25\nEuro, per dollar | 0.8305 | | 0.8931 | 3.74\nYen, per dollar | 150.44 | | 163.87 | 4.71\nU.K. pound, in dollars | 1.30 | | 1.39 | -0.93\n\nGo to WSJMarkets.com for free access to real-time market data.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-018",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Consumer Rates and Returns to Investor: U.S. consumer rates",
+    "dek": "A consumer rate against its benchmark over the past year",
+    "byline": null,
+    "body_en": "U.S. consumer rates\n\nInterest rate | Last | Week ago | 52-Week Range Low | High | 3-yr chg (pct pts)\nFederal-funds rate target | 3.75-4.00 | 3.75-4.00 | 3.50 | 4.25 | -1.50\nPrime rate* | 7.00 | 7.00 | 6.75 | 7.25 | -1.50\nSOFR | 3.87 | 3.87 | 3.50 | 4.31 | -1.44\nMoney market, annual yield | 0.45 | 0.45 | 0.41 | 0.45 | -0.16\nFive-year CD, annual yield | 1.78 | 1.77 | 1.67 | 1.79 | -1.05\n30-year mortgage, fixed | 7.50 | 7.40 | 6.11 | 7.50 | -0.57\n15-year mortgage, fixed | 6.92 | 6.84 | 5.55 | 6.92 | -0.28\nJumbo mortgages, $832,750-plus | 7.51 | 7.42 | 6.34 | 7.51 | -0.63\nFive-year adj mortgage (ARM) | 6.43 | 6.63 | 5.66 | 6.72 | -0.35\nNew-car loan, 48-month | 7.04 | 6.97 | 6.85 | 7.13 | -0.44\n\nBankrate.com rates based on survey of over 1,500 online banks. *Base rate posted by 70% of the nation's largest banks. Excludes closing costs.\n\nMoney Market/Savings Accts (Selected rates, Bankrate.com avg: 0.45%)\nCFG Bank, Baltimore, MD, 888-205-8388: 4.05%\nEverBank, Jacksonville, FL, 888-882-EVER: 4.20%\nNewtek Bank, Miami, FL, 888-681-7238: 4.20%\nPiBank, Coral Gables, FL, 877-678-0888: 4.25%\nPeak Bank, McCall, ID, 866-484-5705: 4.27%\n\nTreasury yield curve: Yield to maturity of current bills, notes and bonds. Tradeweb FTSE Friday. Yen, euro vs. dollar; dollar vs. major U.S. trading partners.\n\nSources: FactSet; Dow Jones Market Data; Bankrate.com",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "SOFR",
+        "zh_suggested": "SOFR（担保隔夜融资利率）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-019",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Corporate Borrowing Rates and Yields / Bond total return",
+    "dek": "Spread +/- Treasurys, Yield (%) in basis pts, 52-wk Range; Total Return 52-wk, 3-yr",
+    "byline": null,
+    "body_en": "Corporate Borrowing Rates and Yields\n\nBond total return index | Last | Wk ago | Spread +/- Treasurys, in basis pts (Last / Low / High) | Total Return 52-wk | 3-yr\nU.S. Treasury, Bloomberg | 5.080 | 5.120 | | -1.67 | 3.66\nU.S. Treasury Long, Bloomberg | 5.620 | 5.660 | | -7.40 | 2.41\nAggregate, Bloomberg | 5.510 | 5.560 | 31 / 23 / 33 | -1.56 | 4.62\nFixed-Rate MBS, Bloomberg | 5.920 | | 39 / 14 / 45 | -1.31 | 5.18\nHigh Yield 100, ICE BofA | 7.529 | 7.617 | 254 / 183 / 298 | 1.41 | 8.13\nMuni Master, ICE BofA | 4.391 | 4.387 | 5 / -1 / 10 | -2.50 | 3.05\nEMBI Global, J.P. Morgan | n.a. | n.a. | n.a. | n.a. | n.a.\n\nSources: Dow Jones Indices; Bloomberg Fixed Income Indices; ICE BofA; J.P. Morgan; Tradeweb FTSE U.S. Treasury Close; Tullett Prebon; Dow Jones Market Data",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-020",
+    "page": "B5",
+    "section": "Markets",
+    "title": "New to the Market: Public Offerings of Stock — IPOs in the U.S. Market",
+    "dek": "Initial public offerings of stock expected this week; might include some offerings, U.S. and foreign, open to institutional investors only via the Rule 144a market; deal amounts are for the U.S. market only",
+    "byline": null,
+    "body_en": "Expected pricing date | Filed | Issuer/business | Symbol/primary exchange | Shares (mil.) | Pricing Range($) Low/High | Bookrunner(s)\n10/14 | 9/21 | Iambic Therapeutics — Provides therapeutic discovery software solutions services | IAM / Nq | 9.4 | 15.00/17.00 | JPM Securities, Jefferies, BofA Securities, Citigroup Global Markets",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Iambic Therapeutics",
+        "zh_suggested": "Iambic Therapeutics（AI药物发现公司）",
+        "note": "本周IPO，纳斯达克代码IAM"
+      }
+    ]
+  },
+  {
+    "id": "E3-021",
+    "page": "B5",
+    "section": "Markets",
+    "title": "IPO Scorecard",
+    "dek": "Performance of IPOs, most-recent listed first. % Chg From Friday's close / Offer price / 1st-day close",
+    "byline": null,
+    "body_en": "Company | SYMBOL | IPO date/Offer price | Friday's close ($) | % Chg From Offer price | % Chg From 1st-day close\nRetension Pharamaceuticals | RTSN | Oct. 9/$12.00 | 10.53 | -12.3 | ...\nTRex Bio | TRXB | Oct. 9/$14.00 | 14.00 | ... | ...\nPine Tree Acquisition | PAXGU | Oct. 6/$10.00 | 9.99 | -0.1 | -0.1\nSouthport Acquisition II | PORT.UT | Oct. 1/$10.00 | 9.95 | -0.5 | -0.3\nAccelevation Hldgs | ACCV | Sept. 30/$18.00 | 16.72 | -7.1 | -6.9\nRoze AI | RZAI | Sept. 29/$8.00 | 10.15 | 26.9 | -3.3\nADARx Pharmaceuticals | ADRX | Sept. 25/$17.00 | 17.78 | 4.6 | -8.1\nBluerock Acquisition II | BRRKU | Sept. 25/$10.00 | 10.00 | ... | -0.1\nLive Oak Acquisition VI | LOVIU | Sept. 23/$10.00 | 10.01 | 0.1 | ...\nElectra Therapeucticals | ETRA | Sept. 18/$15.00 | 9.04 | -39.7 | -31.8\nLeader's Advantage Acquisition | LEDRU | Sept. 18/$10.00 | 9.95 | -0.5 | -0.2\nOrion180 Insurance | OIG | Sept. 18/$12.00 | 8.84 | -26.4 | -24.2\nAmerican Savings Bank | ASBH | Sept. 16/$16.00 | 17.83 | 11.4 | 4.9\nThree Lions Acquisition | TLACU | Sept. 1/$10.00 | 9.93 | -0.7 | -0.2\nInflection Point Acquisition VIII | IPHXU | Aug. 28/$10.00 | 10.06 | 0.6 | -0.4\nRainier Acquisition | RNAQU | Aug. 27/$10.00 | 10.16 | 1.6 | ...\nJATT III Acquisition | JTTT | Aug. 26/$10.00 | 10.61 | 6.1 | -7.3\nSouthern Cross Acquisition II | SCATU | Aug. 26/$10.00 | 10.04 | 0.4 | 0.4\nAdvasa Hldgs | ADBT | Aug. 25/$10.00 | 0.12 | -98.8 | -98.0\nFirst Breach | FBDT | Aug. 20/$8.00 | 0.89 | -88.8 | -78.5\n\nSources: Dow Jones Market Data; FactSet",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-022",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Public and Private Borrowing: Treasurys",
+    "dek": null,
+    "byline": null,
+    "body_en": "Tuesday, October 13: Auction of 6, 13 and 26 week bills; announced on October 8; settles on October 15\n\nWednesday, October 14: Auction of 17 week bill; announced on October 13; settles on October 20\n\nThursday, October 15: Auction of 4 and 8 week bills; announced on October 13; settles on October 20",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-023",
+    "page": "B5",
+    "section": "Markets",
+    "title": "A Week in the Life of the DJIA",
+    "dek": "A look at how the Dow Jones Industrial Average component stocks did in the past week and how much each moved the index. The DJIA gained 477.99 points, or 0.93%, on the week. A $1 change in the price of any DJIA stock = 5.94-point change in the average. To date, a $1,000 investment on Dec. 31 in each current DJIA stock component would have returned $32,830, or a gain of 9.43%, on the $30,000 investment, including reinvested dividends.",
+    "byline": null,
+    "body_en": "The Week's Action: Pct chg (%) | Stock price change | Point chg in average* | Company | Symbol | Close | $1,000 Invested (year-end '25): $1,000\n6.87 | 24.79 | 147.34 | Visa | V | 385.45 | 1,106\n6.80 | 7.09 | 42.14 | Walmart | WMT | 111.35 | 1,006\n5.73 | 5.86 | 34.83 | Walt Disney | DIS | 108.05 | 957\n5.52 | 6.19 | 36.79 | Cisco Systems | CSCO | 118.39 | 1,565\n4.36 | 6.32 | 37.56 | Procter & Gamble | PG | 151.23 | 1,078\n4.34 | 10.91 | 64.84 | Amazon.com | AMZN | 262.43 | 1,137\n3.39 | | | Microsoft | MSFT | 535.07 | 1,113\n2.94 | 17.54 | 104.25 | Amgen | AMGN | 414.87 | 1,293\n2.80 | 2.40 | 14.26 | Coca-Cola | KO | 88.05 | 1,284\n2.79 | 7.89 | 46.90 | Home Depot | HD | 290.74 | 863\n2.56 | 5.29 | 31.44 | Chevron | CVX | 211.98 | 1,430\n2.48 | 0.84 | 4.99 | NIKE | NKE | 34.71 | 559\n2.38 | 8.16 | 48.50 | Alphabet | GOOGL | 351.66 | 1,126\n2.32 | 8.37 | 49.75 | Travelers | TRV | 368.75 | 1,286\n2.11 | 5.41 | 32.15 | Johnson & Johnson | JNJ | 261.44 | 1,284\n2.02 | 4.49 | 26.69 | IBM | IBM | 227.13 | 782\n1.99 | 7.40 | 43.98 | UnitedHealth | UNH | 379.30 | 1,171\n1.78 | 5.39 | 32.04 | American Express | AXP | 308.17 | 842\n1.44 | 3.34 | 19.85 | McDonald's | MCD | 235.23 | 785\n0.90 | 1.30 | 7.73 | Merck | MRK | 145.60 | 1,412\n0.88 | 2.95 | 17.53 | Apple | AAPL | 336.64 | 1,242\n0.18 | 0.61 | 3.63 | JPMorgan Chase | JPM | 332.99 | 1,053\n-0.05 | -0.15 | -0.89 | Sherwin-Williams | SHW | 319.36 | 993\n-0.80 | -7.24 | -43.03 | Goldman Sachs | GS | 895.32 | 1,033\n-1.19 | -1.93 | -11.47 | 3M | MMM | 159.96 | 1,013\n-1.65 | -3.19 | -18.96 | Boeing | BA | 190.37 | 877\n-2.00 | -4.67 | -27.76 | NVIDIA | NVDA | 229.28 | 1,232\n-2.37 | -5.56 | -33.05 | Salesforce | CRM | 229.13 | 871\n-2.93 | -6.26 | -37.21 | Honeywell International | HON | 207.73 | 1,030\n-5.32 | -44.95 | -267.16 | Caterpillar | CAT | 800.47 | 1,406\n\n*Based on Composite price. DJIA is calculated on primary-market price. Source: Dow Jones Market Data; FactSet.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-024",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Currencies: U.S.-dollar foreign-exchange rates",
+    "dek": "U.S.-dollar foreign-exchange rates at 5 p.m. ET. Columns: in US$ | per US$ | US$ vs. YTD chg (%)",
+    "byline": null,
+    "body_en": "Americas\nArgentina peso | (as printed)\nBrazil real | .2005 | 4.9870 | -9.6\nCanada dollar | .7015 | 1.4256 | 3.9\nChile peso | .001024 | 976.97 | 8.5\nColombia peso | .000313 | 3195.29 | -15.2\nEcuador US dollar | 1 | 1 | unch\nMexico peso | .0543 | 18.4131 | 2.2\nUruguay peso | .02490 | 40.1644 | 2.8\n\nAsia-Pacific\nAustralia dollar | .6982 | 1.4323 | -4.4\nChina yuan | .1494 | 6.6924 | -4.3\nHong Kong dollar | .1274 | 7.8483 | 0.8\nIndia rupee | .01037 | 96.465 | 7.3\nIndonesia rupiah | .0000558 | 17917 | 7.3\nJapan yen | .006317 | 158.29 | 1.0\nKazakhstan tenge | .002204 | 453.69 | -10.6\nMacau pataca | .1237 | 8.0853 | 0.8\nMalaysia ringgit | .2447 | 4.0860 | 0.7\nNew Zealand dollar | .5612 | 1.7819 | 2.6\nPakistan rupee | .00361 | 276.898 | -1.2\nPhilippines peso | .0159 | 62.806 | 6.6\nSingapore dollar | .7808 | 1.2807 | -0.4\nSouth Korea won | .0007460 | 1340.44 | -7.0\nSri Lanka rupee | .0030226 | 330.84 | 6.8\nTaiwan dollar | .03132 | 31.932 | 1.9\nThailand baht | .02983 | 33.520 | 6.4\nVietnam dong | .00003864 | 25881 | -1.6\n\nEurope\nCzech Rep. koruna | .04595 | 21.763 | 5.8\nDenmark krone | .1499 | 6.6724 | 4.9\nEuro area euro | 1.1202 | .8927 | 4.9\nHungary forint | .003070 | 325.75 | -0.5\nIceland krona | .008188 | 122.13 | -2.5\nNorway krone | .1047 | 9.5553 | -5.3\nPoland zloty | .2553 | 3.9168 | 9.1\nSweden krona | .1000 | 9.9970 | 8.5\nSwitzerland franc | 1.2047 | .8301 | 4.7\nTurkey lira | .0203 | 49.2694 | 14.7\nUkraine hryvnia | .0222 | 44.9500 | 6.1\nUK pound | 1.3232 | .7557 | 1.8\n\nMiddle East/Africa\nBahrain dinar | 2.6485 | .3776 | 0.2\nEgypt pound | .0191 | 52.3716 | 9.8\nIsrael shekel | .3266 | 3.0622 | -3.9\nKuwait dinar | 3.2157 | .3110 | 1.0\nOman sul rial | 2.6010 | .3845 | -0.1\nQatar rial | .2736 | 3.655 | 0.03\nSaudi Arabia riyal | .2663 | 3.7547 | 0.1\nSouth Africa rand | .0605 | 16.5189 | -0.3\n\nWSJ Dollar Index: 97.38, +0.04, +0.04%, YTD +1.52%\nSources: Tullett Prebon, Dow Jones Market Data",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-025",
+    "page": "B5",
+    "section": "Markets",
+    "title": "Prediction Market: Bitcoin vs. Gold vs. S&P 500 in 2026",
+    "dek": "This market will resolve according to the asset which has the best performance in 2026 among Bitcoin, Gold, and the S&P 500 with performance measured as the percentage change in price during the year for each asset.",
+    "byline": null,
+    "body_en": "Prediction Market: Bitcoin vs. Gold vs. S&P 500 in 2026\n\nS&P 500: 67%\nBitcoin: 16%\nGold: 10%\n\nData from Polymarket. Data as of 2:30 p.m. ET. Volume: $941,284.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Polymarket",
+        "zh_suggested": "Polymarket（预测市场）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-026",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Closed-End Funds",
+    "dek": "Listed are the 300 largest closed-end funds as measured by assets. Friday, October 9, 2026.",
+    "byline": null,
+    "body_en": "Listed are the 300 largest closed-end funds as measured by assets. Closed-end funds sell a limited number of shares and invest the proceeds in securities. Unlike open-end funds, closed-ends generally do not buy their shares back from investors who wish to cash in their holdings. Instead, fund shares trade on a stock exchange. NA signifies that the information is not available or not applicable. NS signifies funds not in existence for the entire period. 12 month yield is computed by dividing income dividends paid (during the previous 12 months for periods ending at month-end or during the previous 52 weeks for periods ending at any time other than month-end) by the latest month-end market price adjusted for capital gains distributions. Depending on the fund category, either 12-month yield or total return is listed.\n\nFriday, October 9, 2026\n\nColumns: Fund (SYM) | NAV | Close | 52-wk Prem/Disc | Ttl Ret (12-mo yield or total return)\n\nSource: LSEG\nFriday, October 9, 2026\n52 wk\nPrem Ttl\nFund (SYM)                  NAV Close /Disc Ret\nGeneral Equity Funds\nAdams Diversified Eq Inc ADX 26.94 26.17 -2.9 28.0\nBlackRock En Lg Cap Cr CII 24.59 24.33 -1.1 21.4\nCentral Secs CET              67.62 55.87 -17.4 16.5\nCohenStrsCEOppFd FOF 12.88 12.50 -3.0 4.0\nEVTxAdvDivIncm EVT 30.67 28.12 -8.3 25.5\nGabelliDiv&IncTr GDV 32.66 28.58 -12.5 14.6\nGabelli Equity Tr GAB 5.50 5.21 -5.3 -0.9\nGeneralAmer GAM 74.43 64.71 -13.1 14.2\nJHancockTaxAdvDiv HTD 24.86 22.67 -8.8 0.5\nLiberty All-Star Equity USA 6.75 5.92 -12.3 6.1\nLiberty All-Star Growth ASG 5.91 5.08 -14.0 2.8\nNuveenNasdaq100DynOv QQQX 32.42 31.10 -4.1 26.1\nNuvS&P500DynOvFd SPXX 20.86 18.94 -9.2 21.9\nRoyce Micro-Cap Tr RMT 15.32 13.29 -13.3 41.8\nRoyce Value Trust RVT 19.47 16.98 -12.8 18.0\nSource Capital SOR 50.02 45.50 -9.0 5.8\nSpecial Opportunities SPE 15.03 12.57 -16.4 -6.3\nSprott Focus Trust FUND 10.90 9.75 -10.6 28.2\nSRH Total Return STEW 23.32 17.58 -24.6 4.5\nTri-Continental TY            38.83 34.78 -10.4 15.4\nSpecialized Equity Funds\nabrdn Glb Prem Prop AWP 10.33 10.14 -1.8 0.4\nabrdn Global Infra Inc ASGI 20.79 19.24 -7.5 2.9\nabrdn Healthcare Invest HQH 21.41 19.93 -6.9 20.3\nabrdn Healthcare Opps THQ 19.32 17.86 -7.6 12.9\nabrdn Life Sciences Inv HQL 19.01 18.15 -4.5 28.2\nabrdn World Healthcare THW 12.78 12.28 -3.9 7.7\nAdams Natural Resources PEO 32.13 28.86 -10.2 49.1\nAllspring Ut & Hi Inc ERH 11.86 10.60 -10.6 -9.2\nASA Gold & Prec Met Ltd ASA NA 56.36 NA 20.3\nBlackRock Energy & Res BGR 19.65 17.71 -9.9 45.1\nBlackRock Eq Enh Div BDJ 10.47 9.59 -8.4 17.5\nBlackRock Enh Glbl Div BOE 13.25 11.88 -10.3 12.4\nBlackRock Enh Intl Div BGY 6.32 5.73 -9.3 9.4\nBlackRock ESG Cap All T ECAT 14.83 14.13 -4.7 7.3\nBlackRock Hlth Sci Term BMEZ 18.42 16.52 -10.3 22.0\nBlackRock Hlth Sciences BME 45.69 43.94 -3.8 26.4\nBlackRock Res & Comm BCX 13.30 12.16 -8.6 31.0\nBlackRock Sci&Tech Term BSTZ 33.13 30.10 -9.1 56.3\nBlackRock Sci&Tech Trust BST 52.75 50.54 -4.2 40.6\nBlackRock Innov&Gro Term BTX 10.54 9.40 -10.8 53.6\nBlackRock Utl Inf & Pwr BUI 25.33 25.99 +2.6 9.1\nBluerock Private RE BPRE 22.58 NA NA NS\nCLEARBRIDGEENGYMDSOPP EMO 56.96 51.19 -10.1 32.4\nChnStrInfr UTF                26.18 25.74 -1.7 14.9\nCohen&SteersQualInc RQI 12.26 11.23 -8.4 2.6\nCohenStrs Real Est and I RLTY 15.86 13.83 -12.8 0.7\nCohen&Steers TotRet RFI 11.13 10.54 -5.3 -2.3\nCohenStrsREITPrefInc RNP 20.42 18.56 -9.1 -5.6\nColumbia Sel Prm Tech Gr STK 59.38 55.48 -6.6 69.9\nDNP Select Income DNP 9.08 9.89 +8.9 7.9\nDuff&Ph Uti&Infra Inc Fd DPG 14.84 13.01 -12.3 5.4\nEtnVncEqtyInc EOI 21.75 20.22 -7.0 7.1\nEtnVncEqtyIncoII EOS 24.72 21.58 -12.7 -1.0\nEVRskMnDvsEqInc ETJ 9.32 8.24 -11.6 2.0\nETnVncTxMgdBuyWrtInc ETB 17.31 15.62 -9.8 14.4\nEtnVncTxMgdBuyWrtOpp ETV 16.61 15.17 -8.7 16.9\nEvTxMnDvsEqInc ETY 16.15 14.32 -11.3 0.0\nEtnVncTxMgdGlbB ETW 10.85 9.67 -10.9 18.0\nEVTxMnGblDvEqInc EXG 10.59 9.50 -10.3 14.6\nFirst Tr Enhanced Eq FFA 25.45 22.61 -11.2 14.7\nGab Gl Util & Inc GLU 18.75 17.52 -6.6 4.9\nGabelli Healthcare GRX 10.77 9.63 -10.6 12.1\nGab Utility GUT                2.81 5.90 110.0 19.5\nGAMCOGlGold&NatRes GGN 5.93 5.32 -10.3 12.1\nGAMCO NR GLD & INC GNT 8.66 8.57 -1.0 33.1\nJ Han Finl Opptys BTO 39.45 36.39 -7.8 12.7\nKayneEnrgyInfraInc KYN 16.04 14.25 -11.2 31.3\nNeuberger Enrgy Inf & In NML 11.42 10.23 -10.4 35.3\nNeuberger Nxt Gen Conn NBXG 18.30 16.03 -12.4 17.9\nNeuberger Real Est SI NRO 2.93 2.58 -11.9 -7.2\nNuvCorEqAlpha JCE 18.26 17.17 -6.0 23.4\nNuveenNasdaq100DynOv QQQX 32.42 31.10 -4.1 26.1\nNuv Real Est JRS\n8.29 7.29 -12.1 0.2\nNuvS&P500DynOvFd SPXX 20.86 18.94 -9.2 21.9\nNXGCushingMdstrmEnrgy SRV 44.33 44.49 +0.4 23.4\nNXG NextGen Infras Inc NXG 56.65 56.61 -0.1 30.0\nPGIM Prvt Real Est:I PPRUX 30.55 NA NA NA\nNew to the Market\nLockup Expirations\nBelow, companies whose officers and other insiders will beco\nto sell shares in their newly public companies for the first\nsales can move the stock’s price.\nLockup\nexpiration Issue date\nOct. 13     April 16, ’26 Arxis\nApril 16, ’26 Madison Air Solutions MAIR\nOct. 14     April 17, ’26 AEVEX\nApril 17, ’26 Alamar Biosciences\nCohenStrsLtdDurPref&Inc LDP 21.26 19.17 -9.8 -3.5\nCohenStrsSelPref&Income PSF 20.59 18.19 -11.7 -4.9\nCohenStrsTaxAvPreSecs&I PTA 19.33 17.13 -11.4 -7.8\nFirstTrIntDurPref&Inc FPF 17.64 15.87 -10.0 -6.9\nJHanPrefInc HPI               14.17 13.80 -2.6 -12.2\nJHPrefIncII HPF               14.06 13.43 -4.5 -11.6\nHnckJPfdInco III HPS 12.67 11.79 -6.9 -15.0\nJ Han Prm PDT                 13.34 12.04 -9.7 -0.6\nLMP CapInco SCD\n16.91 14.88 -12.0 6.1\nNuveen Pref & Inc Opp JPC 7.39 6.75 -8.7 -8.8\nNuveen Var Rate P&I NPFD 18.66 17.76 -4.8 -0.7\nTCW Strat Income TSI NA 4.25 NA -7.3\nConvertible Sec's. Funds\nAdvntCnvrtbl&IncFd AVK NA 11.65 NA 1.7\nBancroft Fund Ltd BCV 27.05 23.21 -14.2 7.3\nCalamosConvHi CHY 12.28 12.22 -0.5 19.5\nCalmosConvOp CHI 11.55 11.98 +3.7 20.7\nEllsworth G&I Fund Ltd ECF 13.89 12.11 -12.8 9.4\nHiIncBd PCF                    6.14 5.04 -17.9 -9.7\nV Conv & Inc NCV              17.37 15.67 -9.8 12.3\nV Conv & Inc II NCZ           15.78 14.51 -8.0 14.3\nV Div Inc & Conv ACV 26.30 24.87 -5.4 11.0\nV Eqty & Conv Inc NIE 28.86 25.48 -11.7 12.8\nWorld Equity Funds\nIndia Fund IFN                11.76 10.40 -11.6 -17.9\nabrdnAusEq IAF                13.78 12.53 -9.1 4.9\nabrdn Emg Mkts Ex-China AEF 10.01 9.36 -6.5 65.0\nabrdn Glbl Dyn Div AGD 11.71 11.26 -3.8 12.6\nabrdn Tot Dyn Div AOD 10.18 10.15 -0.3 21.9\nAllspring Gl Div Oppty EOD 7.08 6.44 -9.0 25.3\nCentral and Eastern Euro CEE 21.51 18.17 -15.5 24.1\nGabelli Gl Sm&Mid Cp Val GGZ 16.95 15.25 -10.0 16.9\nGabelli Multimedia GGT 3.42 4.01 +17.3 20.3\nGDL Fund GDL                  10.64 8.41 -21.0 5.2\nJ Han Hdgd Ety & Inc HEQ 12.37 11.30 -8.6 18.1\nJapan Smaller Cap JOF 14.34 12.43 -13.3 37.2\nKorea KF                      76.39 63.75 -16.5 110.2\nMexico MXF                    23.14 NA NA NA\nMS ChinaShrFd CAF 21.05 17.20 -18.3 9.5\nMS India IIF                  24.08 20.99 -12.8 -14.7\nNew Germany GF                11.43 10.31 -9.8 -7.4\nNuveen Rl Asst Inc & Gro JRI 12.10 10.62 -12.2 -12.7\nNYLI CBRE Glbl Inf Meg T MEGI 15.26 13.75 -9.9 4.4\nRoyce Global Value Trust RGT 17.07 14.28 -16.3 14.2\nTempleton Dragon TDF 11.63 9.70 -16.6 -8.8\nTempleton Em Mkt EMF 25.08 22.35 -10.9 49.2\nPrem12 Mo\nFund (SYM)                  NAV Close /Disc Yld\nU.S. Mortgage Bond Funds\nBlckRk Income BKT 10.27 9.55 -7.0 11.0\nNuveen Mortgage and Inc JLS 18.52 16.46 -11.1 11.2\nWestern Asset Mtg Oppty DMO 10.76 9.38 -12.8 14.3\nInvestment Grade Bond Funds\nMFS Intmdt MIN                15.01 13.78 -8.2 2.6\nAngel Oak FS Inc Trm FINS NA 11.96 NA 11.5\nBlRck Core Bond BHK 8.84 8.21 -7.1 10.9\nBR Credit Alloc Inc BTZ 10.42 9.44 -9.4 10.8\nInvescoBond VBF               15.44 14.20 -8.0 5.7\nJ Han Income JHS              11.35 10.17 -10.4 6.0\nWA Investment Grade Inc PAI 12.49 11.30 -9.5 5.4\nWesternAssetPremBd WEA 10.64 9.80 -7.9 8.2\nLoan Participation Funds\nBR Debt Strategy DSU 9.40 8.87 -5.6 13.1\nBR F/R Inc Str FRA            11.18 10.29 -8.0 14.1\nBlackRock Floatng Rt Inc BGT 10.95 10.38 -5.2 13.7\nBlackstone Lng-Sh Cr Inc BGX 12.20 10.55 -13.5 9.2\nBS SFR 2027 T BSL 13.41 12.99 -3.2 8.1\nBS St Cr 2027 Tm BGB 11.68 11.12 -4.8 8.2\nEtnVncFltRteInc EFT 11.86 10.65 -10.2 8.5\nEV SenFlRtTr EFR                NA 10.31 NA 8.4\nEVSnrIncm EVF                  5.59 4.83 -13.6 8.8\nFS Specialty Lending Fd FSSL NA NA NA NS\nHighland Oppty & Income HFRO 11.52 6.56 -43.1 6.9\nInvDYCrOpp:AX VTA 9.39 NA NA NA\nInvSnrIncTr VVR                3.32 2.86 -13.9 14.2\nNuveen Credit Strat Inc JQC 5.24 4.65 -11.3 12.9\nNuvFloatRateIncFd JFR 8.18 7.42 -9.3 13.0\nSOUNDPOINTMRDANCAP SPMC NA NA NA 30.3\nHigh Yield Bond Funds\nabrdn Inc Credit Str ACP 5.02 4.36 -13.1 20.3\nAllianceBernGlHiIncm AWF 10.92 9.60 -12.1 8.0\nAllspring Income Oppty EAD 6.87 6.04 -12.1 10.6\nBarings Glb SD HY Bd BGH 14.30 13.05 -8.7 11.2\nBR Corporate HY HYT 8.77 7.93 -9.6 11.9\neligible\nime. Such\nOffer Offer amt Through Lockup\nmbol price($) ($ mil.) Friday (%) provision\nXS     28.00      1304.1     71.0%        180 days\n27.00      2567.6     –10.3%       180 days\nEX\nMR\n20.00\n17.00\n368.0\n219.9\n–26.9%\n48.6%\n180 days\n180 days\nNuveen Global High Inc JGH 13.16 11.58 -12.0 10.5\nPGIM Global High Yield GHY 12.22 10.91 -10.7 11.4\nPGIM High Yield Bond ISD 13.02 11.70 -10.1 10.7\nPGIM Sh Dur Hi Yld Opp SDHY 16.75 15.35 -8.4 8.5\nUBS Ast Mgmt Hi Yld Crd DHY 18.73 16.24 -13.3 11.6\nWstAstHIF II HIX               3.83 3.50 -8.6 16.6\nWestern Asset Hi Inc Opp HIO 3.72 3.27 -12.1 13.0\nWestern Asset Hi Yld Opp HYI 10.96 9.75 -11.0 11.5\nOther Domestic Taxable Bond Funds\nAllspring Multi-Sector ERC 9.57 8.58 -10.3 10.2\nAres Dynamic Crdt Alloc ARDC 13.03 11.45 -12.1 11.7\nBlackRock Mlt-Sctr Inc BIT 12.61 11.27 -10.6 13.2\nBlackRock Tax Muni Bd BBN 15.59 14.43 -7.4 8.2\nDoubleLine:Oppor Crdt Fd DBL 14.28 13.39 -6.2 9.7\nEVLmtDurIncm EVV                NA 8.44 NA 10.1\nFranklin Ltd Dur Income FTF 6.14 5.37 -12.5 13.7\nPutnam Mas Int PIM 3.26 3.00 -8.0 8.7\nPutnam Prem Inc PPT 3.55 3.25 -8.5 9.5\nFS Credit Opportunities FSCO NA 5.02 NA 14.5\nJ Han Investors JHI 13.63 12.06 -11.5 9.8\nNuvCorePlusImpact NPCT 10.04 9.06 -9.8 12.7\nNuveen Taxable Muni Inc NBB 14.97 14.28 -4.6 8.1\nPIMCO Corp & Inc Oppty PTY 11.04 10.97 -0.6 12.9\nPIMCO Corp & Inc Strat PCN 11.04 10.89 -1.4 12.6\nPIMCOHilnco PHK                4.32 4.16 -3.7 14.0\nPIMCO IncmStrFd PFL 7.21 6.94 -3.7 14.1\nPIMCO IncmStrFd II PFN 6.62 6.25 -5.6 13.8\nWestern Asset Dvsfd Inc WDI 13.37 11.71 -12.4 15.0\nWestern Asset Inf-Lk Inc WIA 8.55 7.60 -11.1 7.6\nWestern Asset Inf-Lk O&I WIW 9.00 7.87 -12.6 8.7\nWorld Income Funds\nabrdn AP IncFd FAX 14.53 12.87 -11.4 15.0\nBrndywnGLB Glb Inc Oppts BWG 8.20 6.99 -14.8 13.8\nEtnVncStDivInc EVG 10.83 10.31 -4.8 8.9\nMS EmMktDomDebt EDD 5.67 5.34 -5.8 13.6\nMs EmMktDebtFd MSD 7.55 6.77 -10.3 8.6\nPIMCO Access Income PAXS 14.16 13.32 -5.9 13.5\nPIMCO Dynamic Inc Strat PDX 22.88 20.83 -9.0 7.8\nPIMCO Dynamic Income PDI 15.09 14.36 -4.8 18.8\nPIMCO Dynamic Inc Opp PDO 12.38 12.10 -2.3 12.9\nPIMCO Stratg Inc RCS 4.36 5.04 +15.6 9.4\nTempltn Glbl Inc SABA NA 7.72 NA NE\nTempleton Em Inc TEI 6.89 6.19 -10.2 14.5\nVirtus SH Emerg Mkts Inc EDF 4.79 4.88 +1.9 15.2\nWstAstEmergDebt EMD 10.42 9.31 -10.7 11.2\nNational Muni Bond Funds\nAllBerNatlMunInc AFB 10.37 9.46 -8.8 6.2\nBlackRock 2037 Muni Trg BMN 23.12 22.01 -4.8 5.1\nBlackRock Muni 2030 Tgt BTT 23.84 21.79 -8.6 2.5\nBR MuniAssets Fd MUA 9.97 9.33 -6.4 6.9\nBR MuniHoldngs MHD 11.26 10.21 -9.3 6.9\nBR MuniYield Qlty MQY 10.85 9.98 -8.0 7.0\nBR MuniYld Qly 3 MYI 10.44 9.57 -8.3 6.9\nBNY Mellon Muni Bd Infra DMB 10.35 9.32 -10.0 5.7\nBNY Mellon Str Muni Bond DSM 5.72 5.18 -9.4 6.0\nBNY Mellon Strat Muni LEO 6.10 5.55 -9.0 5.6\nDWS Muni Inc KTF               8.13 8.07 -0.7 8.3\nEVMuniBd EIM                   9.53 8.84 -7.2 6.7\nEVMuniIncm EVN                 9.73 9.37 -3.7 6.6\nEVNatMuniOpp EOT 16.61 15.23 -8.3 5.3\nPutnam Mgd Inc PMM 5.95 5.83 -2.0 6.2\nPutnam Muni Opp PMO 10.08 9.42 -6.5 5.7\nInvAdvMuIncTrII VKI 7.92 7.78 -1.8 8.9\nInvesco MuniOp OIA 5.62 5.73 +2.0 6.0\nInvescoMuOppTr VMO 8.83 8.66 -1.9 8.9\nInvescoMuTr VKQ                8.88 8.65 -2.6 8.8\nInvescoQual Inc IQI            8.99 8.89 -1.1 8.7\nInvTrInvGrMu VGM               9.16 8.93 -2.5 8.9\nInvescoValMunInc IIM 11.02 10.85 -1.5 8.8\nNeuberger Municipal NBH 9.91 8.89 -10.3 7.1\nNuveen AMT-Fr Mu Val NUW 14.00 13.12 -6.3 4.3\nNuveen AMT-Fr Qlty Mun I NEA 10.09 10.01 -0.8 8.2\nNuveen AMT-Fr Mu CI NVG 10.92 10.71 -1.9 8.9\nNuveen Dyn Muni Opp NDMO 9.34 8.86 -5.1 8.2\nNuveen Mu Crdt Opps NMCO 9.06 8.70 -4.0 9.2\nNuv Muni Credit Income NZF 11.00 10.86 -1.3 8.8\nNuvMuniHiIncOpp NMZ 9.07 9.09 +0.2 8.7\nNuveen Muni Inc NMI 9.23 9.23 0.0 4.8\nNuveen Muni Val NUV 8.51 8.33 -2.1 4.7\nNuveen Quality Muni Inc NAD 10.43 10.20 -2.2 8.3\nNuveen Sel Mat NIM 9.43 8.78 -6.9 4.0\nNuveen Sel TF NXP 13.37 13.12 -1.9 4.7\nNYLIMacKayDTMuniOpp MMD 14.92 13.93 -6.6 5.7\nPIMCOMuniIncII PML 7.06 6.58 -6.8 7.2\nRiverNorth Flx Mu Inc II RFMZ 12.96 11.48 -11.4 8.3\nRiverNorthMgdDurMuII RMMZ 14.42 13.28 -7.9 8.2\nRiverNorth Mgd Dur Mun I RMM 13.65 12.87 -5.7 8.2\nWestern Asset Mgd Muni MMU 9.79 9.21 -5.9 7.3\nWestern Asset Mun Hi Inc MHF 6.39 6.24 -2.3 6.7\nSingle State Muni Bond\nBR MH CA Qly Fd Inc MUC 10.49 9.82 -6.4 6.5\nBR MH NJ Qly MUJ 11.28 11.26 -0.2 5.7\nBR MuniYld MI Qly MIY 10.97 11.46 +4.5 5.7\nBR MuniYld NY Qly MYN 9.43 8.79 -6.8 7.0\nBR MuniYld PA Qly MPA 10.86 9.72 -10.5 6.3\nInvCaValMuIncTr VCV 8.85 8.93 +0.9 8.6\nInvPAValMuIncTr VPV 9.54 10.61 +11.2 7.6\nInvTrInvGrNYMu VTN 9.42 9.46 +0.4 8.7\nNuveen AZ Qual Muni Inc NAZ 10.26 10.66 +3.9 7.3\nNuveen CA AMT-F Qual MI NKX 10.71 10.47 -2.2 8.5\nNuveen CA Val NCA              8.61 8.28 -3.8 4.1\nNuveenCAQtyMuInc NAC 10.22 10.17 -0.5 8.4\nNuveen MA Qual Muni Inc NMT 9.90 10.18 +2.8 7.2\nNuveen NY AMT/Fr Qual MI NRK 9.32 9.31 -0.1 8.8\nNuveen NY Val NNY 8.22 7.98 -2.9 4.5\nNuveen NY Qual Muni Inc NAN 9.95 9.65 -3.0 8.6\nNuveen VA Qlty Mun Inc NPV 10.00 9.50 -5.0 8.3\nTRP GS All Eq Ac;D           25.27 NA NA         N\nTRP GS All Eq Ac;I           25.28 NA NA         N\nTRP GS Prv Mkt;A             25.71 NA NA         N\nTRP GS Prv Mkt;D             25.75 NA NA         N\nTRP GS Prv Mkt;I             25.77 NA NA         N\nSpecialized Equity Funds\nAccordant ODCE Index;A 9.20 NA NA 4.4\nAccordant ODCE Index;I 9.27 NA NA 4.7\nAccordant ODCE Index;Y 9.26 NA NA 4.6\nAOG INSTITUTIONAL;A 17.97 NA NA 9.6\nAOG INSTITUTIONAL;I 17.97 NA NA 9.7\nApollo Diversified RE:A 23.24 NA NA 1.9\nApollo Diversified RE:C 21.31 NA NA 1.3\nApollo Diversified RE:I 23.94 NA NA 2.2\nARK Venture                  62.14 NA NA 45.5\nArrowMark Financial Corp BANX NA 19.64 NA NA\nCalamos Aksia PE & Alt;A 12.13 NA NA 12.7\nCalamos Aksia PE & Alt;C 12.01 NA NA 11.8\nCalamos Aksia PE & Alt;I 12.15 NA NA 12.9\nCalamos Aksia PE & Alt;M 12.05 NA NA 12.2\nCAP GRP KKR US EQ+;A 10.85 NA NA NS\nCAP GRP KKR US EQ+;A-2 10.86 NA NA NS\nCAP GRP KKR US EQ+;A-3 10.86 NA NA NS\nCAP GRP KKR US EQ+;F-2 10.86 NA NA NS\nCAP GRP KKR US EQ+;F-3 10.87 NA NA NS\nCAP GRP KKR US EQ+;R-6 10.87 NA NA NS\nCARLYLE ALPINVEST PMS;I NA NA NA NS\nCARLYLE ALPINVEST PMS;U NA NA NA NS\nCASCADE PRIVATE CAP;I 22.42 NA NA 15.1\nCascade Real Assets I 10.22 NA NA NS\nCBRE GlbRlEst IGR 11.88 11.30 -4.9 -2.0\nCIM RA&C A                   20.16 NA NA 0.1\nCIM RA&C C\n19.23 NA NA -0.5\nCIM RA&C I                   20.48 NA NA 0.3\nCIM RA&C L                   19.83 NA NA -0.1\nClarion Partners REI D 11.32 NA NA 5.7\nClarion Partners REI I 11.32 NA NA 6.1\nClarion Partners REI S 11.32 NA NA 5.1\nClarion Partners REI T 11.31 NA NA 5.3\nClarion Partners REI U 11.30 NA NA NS\nConnetic Venture CA;I 10.01 NA NA -3.6\nFT VEST TRI FD: SER A2;A NA NA NA NS\nVersus Cap RE:I              22.79 NA NA -1.0\nVersus Capital Real Asst 28.82 NA NA 5.9\nJACKSON REAL ASSETS;I 11.17 NA NA 3.8\nMEKETA INFRSTRCTR;I 30.02 NA NA 9.3\nMEKETA INFRSTRCTR;III 30.06 NA NA 9.3\nNexPointRlEstStrat;A 12.01 NA NA -2.8\nNexPointRlEstStrat;C 12.22 NA NA -3.5\nNexPointRlEstStrat;Z 12.22 NA NA -2.5\nPENDER REAL ESTATE CR;A 10.04 NA NA 6.8\nPENDER REAL ESTATE CR;I1 10.05 NA NA 7.2\nPENDER REAL ESTATE CR;I2 10.05 NA NA 7.4\nPIMCO Flexible REI;A-3 10.31 NA NA 4.6\nPIMCO Flexible REI;A-4 10.31 NA NA 4.6\nPIMCO FLEXIBLE REI;F 10.31 NA NA 5.4\nPIMCO Flexible REI;Inst 10.31 NA NA 5.4\nPrincipal Real Asst A 28.19 NA NA 7.3\nPrincipal Real Asst Ins 28.48 NA NA 7.6\nPrincipal Real Asst Y 28.93 NA NA 7.9\nRedwood Rl Est;I             25.12 NA NA 7.0\nSTEPSTONE PRIVTE MRKTS;R NA NA NA NS\nTHE PRE-IPO & GROWTH;F 15.90 NA NA NS\nTHE PRE-IPO & GROWTH;S 15.89 NA NA NS\nThe Private Shares;A 52.86 NA NA 23.7\nThe Private Shares;I 53.88 NA NA 23.8\nThe Private Shares;L 51.76 NA NA 23.5\nThirdline Real EstateI 8.34 NA NA -7.8\nUSQ Core Real Estate:I 11.80 NA NA 2.3\nWildermuth:I                  0.13 NA NA -93.0\nWILSHIRE PRIV ASST;D 10.22 NA NA NS\nWILSHIRE PRIV ASST;INST 15.69 NA NA 15.3\nIncome & Preferred Stock Funds\nALPHA ALT ASST;A              6.30 NA NA 13.9\nAlpha Alternative Assets 6.37 NA NA 14.0\nCalamos L/S Eqty and DI CPZ 15.00 12.64 -15.7 -2.0\nFlat Rock Opportunity 13.83 NA NA -6.9\nVersus Capital Infra Inc 10.14 NA NA 10.2\nLord Abbett Corp Opps:A 8.59 NA NA 0.1\nLord Abbett Corp Opps:I 8.60 NA NA 0.9\nVariant Altrntv Inc:Inst 25.72 NA NA 6.3\nVariant Impact;Instl 26.30 NA NA 5.9\nConvertible Sec's. Funds\nCalmos Dyn Conv and Inc CCD 23.07 24.38 +5.7 20.7\nWorld Equity Funds\nAlpha Summit Strat Alt;I NA NA NA NS\nAMG PANTHEON INF FD;I 11.75 NA NA 17.1\nAMG PANTHEON INF FD;M 11.75 NA NA 17.1\nAMG PANTHEON INF FD;S 11.75 NA NA 17.1\nCalamosGlbTotRet CGO 14.05 12.54 -10.7 17.5\nCantor Fitzgerald SI:A 13.56 NA NA 4.4\nCantor Fitzgerald SI:C 13.19 NA NA 3.6\nCantor Fitzgerald SI:I 13.64 NA NA 4.6\nCANTOR FITZGERALD IN;S X 14.04 NA NA 5.6\nSweater Cashmere             24.65 NA NA 6.6\nHMLTN LN PRIV INFRA;I 16.81 NA NA NA\nHMLTN LN PRIV INFRA;R 16.33 NA NA NA\nHMLTN LN PRIV INFRA;Y 16.87 NA NA NA\nIDA Private Access;I           NA NA NA NS\nPrimark Priv Eq Inv:I 17.44 NA NA 18.1\nRBC BlueBay Enh Inc;A NA NA NA NS\nRBC BlueBay Enh Inc;I NA NA NA NS\nRBC BlueBay Enh Inc;T NA NA NA NS\nBorrowing Benchmarks | wsj.com/market-data/bonds/ben\nMoney Rates\nKey annual interest rates paid to borrow or lend mon\nForum RE Income;Founders 9.70 NA NA 8.5\nForum RE Income;I             9.70 NA NA 8.4\nForum RE Income;K             9.67 NA NA 7.5\nORGN RE CRDT;I                9.82 NA NA NS\nORGN RE CRDT;O                9.83 NA NA NS\nLoan Participation Funds\n1WS Credit Income;A2 17.97 NA NA 10.0\n1WS Credit Income;Inst 18.76 NA NA 9.6\nApollo Diversified Cd:A 21.95 NA NA 7.8\nApollo Diversified Cd:C 21.94 NA NA 7.1\nApollo Diversified Cd:F 21.94 NA NA 10.8\nApollo Diversified Cd:I 21.94 NA NA 8.0\nApollo Diversified Cd:L 21.93 NA NA 7.5\nApollo Diversified Cd:M 21.88 NA NA 7.7\nAxonic Alternative I;A NA NA NA 10.1\nAxonic Alternative I Ins NA NA NA 10.2\nBluerock HI Inst Crd:A 22.26 NA NA 8.3\nBluerock HI Inst Crd:C 22.23 NA NA 7.7\nBluerock HI Inst Crd:F 22.28 NA NA 9.1\nBluerock HI Inst Crd:I 22.29 NA NA 8.6\nCALLODINE SPCLTY INC;I 9.81 NA NA 7.1\nCIBC Prvt Lndng Strat I 10.13 NA NA NS\nCliffwaterClFd;I               NA NA NA 9.97\nCliffwater Ehn Lending;D 10.74 NA NA 9.6\nCliffwaterElFd;I             10.73 NA NA 10.3\nCNR Strategic Credit 4.05 NA NA 38.3\nEAGLE POINT ENH INC;A 9.63 NA NA NS\nEAGLE POINT ENH INC;AA 9.61 NA NA 10.8\nEAGLE POINT ENH INC;C 9.61 NA NA NS\nEAGLE POINT ENH INC;I 9.64 NA NA NS\nEAGLE POINT ENH INC;S 9.62 NA NA NS\nEqualize Community Dev 9.30 NA NA 2.9\nFedProj&TrFinanceTendr 10.08 NA NA 6.1\nFEDERATED HRMS P&TFIN;SS 10.08 NA NA 6.1\nFlat Rock Core Income 19.02 NA NA 9.6\nFlat Rock Enhanced Inc 21.47 NA NA 8.8\nFRANKLIN BSP LENDING;I 9.92 NA NA NS\nIDIRECT PRVT CRDT;A 9.75 NA NA NA\nIDIRECT PRVT CRDT;D 9.83 NA NA NA\nIDIRECT PRVT CRDT;I 9.79 NA NA NA\nInvDYCrOpp:A                  9.39 NA NA 10.4\nInvDYCrOpp:R6                 9.40 NA NA 10.8\nInvDYCrOpp:Y                  9.40 NA NA 10.7\nInvesco Sr Loan A             5.37 NA NA 7.5\nInvesco Sr Loan C\n5.39 NA NA 6.7\nInvesco Sr Loan IB            5.37 NA NA 7.7\nInvesco Sr Loan IC            5.37 NA NA 7.5\nInvesco Sr Loan Y             5.38 NA NA 7.7\nMonachil Credit Income:I 10.24 NA NA 7.1\nNEUBERGER AST-BS CR;INST 10.21 NA NA 9.5\nNomura Alt Inc;I              9.64 NA NA 10.0\nNuveen Enh CLO Inc:A1 17.21 NA NA 12.4\nNuveen Enh CLO Inc:A2 17.22 NA NA 12.6\nNuveen Enh CLO Inc:I 17.22 NA NA 13.2\nOFS Credit Company OCCI NA 2.08 NA NA\nOXFORD LANE CAPITAL NA 8.56 NA NA\nPC PCAAM AI;I                 9.86 NA NA 10.5\nPRINCIPAL PRVT CR;A 10.15 NA NA 6.9\nPRINCIPAL PRVT CR;INS 10.20 NA NA 7.1\nPRINCIPAL PRVT CR;Y 10.25 NA NA 7.1\nPURSUIT ASSET-BASED I;I 8.27 NA NA 12.0\nSARDIS CREDIT OPPTYS;I 10.07 NA NA NS\nSEI Alternative Income:F 10.00 NA NA 6.8\nSEI Alternative Income:Y 10.00 NA NA 7.1\nSOUND POINT ALT INC;I 20.21 NA NA NS\nVanEck CLO Oppts;I 24.00 NA NA NS\nOctagon XAI CLO Inc;A 23.99 NA NA 7.1\nOctagon XAI CLO Inc;I 24.01 NA NA 7.6\nHigh Yield Bond Funds\nAB CarVal Credit Opp;Adv 10.04 NA NA 7.0\nAB CarVal Credit Opp;A 10.04 NA NA 6.2\nAB CarVal Credit Opp;C 10.04 NA NA 5.8\nAB CarVal Credit Opp;U 10.04 NA NA 6.1\nOpprtnstc Crdt Intrvl;I 11.25 NA NA 8.8\nPENNANTPARK ENH INC;A 26.36 NA NA NS\nPENNANTPARK ENH INC;C 26.34 NA NA NS\nPENNANTPARK ENH INC;I 26.39 NA NA NS\nPIMCO Flexible Cr I;A-1 6.63 NA NA 11.1\nPIMCO Flexible Cr I;A-2 6.63 NA NA 11.1\nPIMCO Flexible Cr I;A-3 6.63 NA NA 10.9\nPIMCO Flexible Cr I;A-4 6.63 NA NA 10.9\nPIMCO Flexible Cr I;Inst 6.63 NA NA 11.7\nPolen Credit Opps;Inst 8.24 NA NA 10.2\nOther Domestic Taxable Bond Funds\nABX Longevity Gro & Inc 10.04 NA NA NS\nAFA Private Credit;Fndr 8.97 NA NA 9.7\nAFA Private Credit;Inst 8.95 NA NA 9.7\nAMG BBH Ast-Back Crd;I 11.37 NA NA NS\nAMG BBH Ast-Back Crd;M 11.37 NA NA NS\nAMG BBH Ast-Back Crd;S 11.37 NA NA NS\nAMG Pantheon Crdt Soln;I 10.36 NA NA 7.5\nAMG Pantheon Crdt Soln;M 10.37 NA NA 6.9\nAMG Pantheon Crdt Soln;S 10.47 NA NA 7.6\nAngel Oak Str Crdt:FI          NA NA NA 8.6\nAngel Oak Str Crdt:Inst NA NA NA 8.6\nBlackRock HPS Cr Str;A 7.94 NA NA 8.4\nBlackRock HPS Cr Str;I 7.90 NA NA 9.3\nBlackRock HPS Cr Str;J 7.92 NA NA 8.7\nBlackRock HPS Cr Str;U 7.91 NA NA 8.4\nBlackRock HPS Cr Str;W 7.94 NA NA 8.4\nCAP GRP KKR CR PL+;A 9.55 NA NA 6.3\nCAP GRP KKR CR PL+;A-2 9.55 NA NA 6.5\nCAP GRP KKR CR PL+;A-3 9.55 NA NA 5.9\nCAP GRP KKR CR PL+;F-2 9.55 NA NA 6.6\nmarks\nin U.S. and international markets. Rates below are a\nCION Ares Dvsfd Crdt;L NA NA NA 8.4\nCION Ares Dvsfd Crdt;U NA NA NA 8.1\nCION Ares Dvsfd Crdt:U2 NA NA NA 8.1\nCION Ares Dvsfd Crdt;W NA NA NA 8.4\nCNR Select Strategies 17.97 NA NA 0.0\nCOLUMBIA CR INC OPP;A 19.21 NA NA 9.4\nCOLUMBIA CR INC OPP;I 19.23 NA NA 9.99\nDiamond Hill Sec Cr;I 10.53 NA NA 7.6\nDiamond Hill Sec Cr;R 10.53 NA NA 8.0\nEAGLE POINT DFNSV INC;A 11.19 NA NA NS\nEAGLE POINT DFNSV INC;C 11.18 NA NA NS\nEAGLE POINT DFNSV INC;I 11.19 NA NA NS\nEAGLE POINT DFNSV INC;S 11.18 NA NA NS\nFirst Eagle Crdt Opps A 21.62 NA NA 9.0\nFirst Eagle Crdt Opps A2 21.59 NA NA 8.6\nFirst Eagle Crdt Opps I 21.51 NA NA 9.2\nFirst Trust Private Cr;A NA NA NA 9.6\nFirst Trust Private Cr;I NA NA NA 9.6\nFranklin BSP Pvt Cr:A 9.78 NA NA 6.2\nFranklin BSP Pvt Cr:Adv 9.79 NA NA 6.7\nFS Credit Income;A       11.72 NA NA 9.1\nFS Credit Income;I       11.76 NA NA 9.3\nFS Credit Income;T       11.75 NA NA 8.8\nFS Credit Income;U       11.69 NA NA 8.6\nFS Credit Income;U-2 11.81 NA NA 8.5\nJ HANCOCK CQS ASSETBS;A 17.89 NA NA 9.4\nJ HANCOCK CQS ASSETBS;I 17.91 NA NA 9.7\nJ HANCOCK CQS ASSETBS;U 17.87 NA NA 8.9\nKKR ASST BSD FIN;D\nNA NA NA 7.9\nKKR ASST BSD FIN;I         NA NA NA 8.2\nKKR ASST BSD FIN;T         NA NA NA 7.4\nKKR ASST BSD FIN;U         NA NA NA 7.4\nLibreMax AsstBckd Incm;I 9.91 NA NA NS\nLoomis Sayles Cr In Op;R 9.94 NA NA NS\nLoomis Sayles Cr In Op;I 9.94 NA NA NS\nLORD ABETT FLEX INC;A 9.98 NA NA 6.1\nLORD ABETT FLEX INC;I 9.97 NA NA 6.9\nLORD ABETT FLEX INC;U 9.97 NA NA 6.0\nMA SPECIALTY CREDIT IN;S 24.72 NA NA 9.0\nNIAGARAINCOMEOPPORTNTS NA NA NA 9.9\nPalmer Square Opp Inc 17.24 NA NA 7.0\nTCW PRIV ASSET INC;A 9.82 NA NA 8.8\nTCW PRIV ASSET INC;I 9.94 NA NA 8.4\nTCW PRIV ASSET INC;I-3 9.94 NA NA 7.8\nWorld Income Funds\nBlueBay Destra Itl E:A 21.79 NA NA 7.7\nBlueBay Destra Itl E:I 21.82 NA NA 8.0\nBlueBay Destra Itl E:T 21.63 NA NA 7.3\nBOOSTER INCOME OPPTYS 9.79 NA NA 10.3\nCalamos-Aksia ACI:A 10.54 NA NA 8.8\nCalamos-Aksia ACI:C 10.50 NA NA 8.0\nCalamos-Aksia ACI:I 10.54 NA NA 9.0\nCalamos-Aksia ACI:M 10.54 NA NA 8.3\nCarlyle Tact Pvt Cred:A NA NA NA 7.9\nCarlyle Tact Pvt Cred:I NA NA NA 8.4\nCarlyle Tact Pvt Cred:L NA NA NA 7.9\nCarlyle Tact Pvt Cred:M NA NA NA 7.6\nCarlyle Tact Pvt Cred:N NA NA NA 8.4\nCarlyle Tact Pvt Cred:U NA NA NA 7.6\nCarlyle Tact Pvt Cred:Y NA NA NA 8.1\nEMERY PRTNRS INC CRE STR 10.20 NA NA 7.2\nFid MS Cr;A                NA NA NA 5.4\nFid MS Cr;C                NA NA NA 4.6\nFid MS Cr;I                NA NA NA 5.6\nFid MS Cr;L                NA NA NA 5.1\nJackson Credit Opps:I 10.89 NA NA 0.0\nJPMorgan Credit Mkts;A 10.20 NA NA NS\nJPMorgan Credit Mkts;I 10.20 NA NA NS\nJPMorgan Credit Mkts;S 10.20 NA NA NS\nLincoln Bain CTC;A        9.72 NA NA 5.5\nLincoln Bain CTC;D        9.73 NA NA 5.7\nLincoln Bain CTC;I       10.12 NA NA 5.9\nLincoln Bain CTC;IS       9.73 NA NA 5.9\nLord Abbett Cred Opps Fd 7.80 NA NA 9.7\nLord Abbett Cred Opps Fd 7.80 NA NA 10.5\nLord Abbett Crd Op:U 7.80 NA NA 9.7\nNuveen En Corp Opp;I 19.44 NA NA NS\nOAKTREE ASST-BCKD INC;I 10.37 NA NA NS\nOAKTREE DVSFD INCOME;A 8.66 NA NA NS\nOaktree Dvsfd Income;D 8.66 NA NA 8.3\nPIMCO Flexible EM I;Inst 8.93 NA NA 9.4\nNational Muni Bond Funds\nBlackRock Mun Cr Alpha A 11.52 NA NA 5.6\nBlackRock Mun Cr Alpha U 11.50 NA NA 5.6\nFirst Eagle Tct Mn Op;I 9.66 NA NA 7.2\nLind Cap Pt Mun Cred Inc 8.19 NA NA 5.2\nLord Abbett Muni Opps:A 9.64 NA NA 5.6\nLord Abbett Muni Opps:I 9.63 NA NA 6.4\nNuveen En HY Muni Bd:A1 6.39 NA NA 6.0\nNuveen En HY Muni Bd:A2 6.40 NA NA 6.3\nNuveen En HY Muni Bd:I 6.39 NA NA 6.9\nNYLI MacKay Mu IO;A1 9.44 NA NA 3.7\nNYLI MacKay Mu IO;A2 9.46 NA NA 3.7\nNYLI MacKay Mu IO;A3 9.45 NA NA 3.5\nNYLI MacKay Mu IO;I 9.45 NA NA 4.3\nPIMCO Flex Mun Inc;A-3 9.47 NA NA 3.8\nPIMCO Flex Mun Inc:A1 9.47 NA NA 4.1\nPIMCO Flex Mun Inc;A2 9.47 NA NA 4.1\nPIMCO Flex Mun Inc;Inst 9.47 NA NA 4.6\nROCKEFELLER MUNI OPPS;I 18.66 NA NA 5.8\nSingle State Muni Bond\nPIMCO CA FMI;A-1          9.47 NA NA 3.3\nPIMCO CA FMI;Inst         9.47 NA NA 3.8\nOctober 9, 2026\n\nSource: LSEG",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-027",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Lockup Expirations",
+    "dek": null,
+    "byline": null,
+    "body_en": "Lockup expiration | Issue date | Issue | Symbol | Offer price($) | Offer amt ($ mil.) | Through Friday (%) | Lockup provision\nOct. 13 | April 16, '26 | Arxis | ARXS | 28.00 | 1304.1 | 71.0% | 180 days\nOct. 13 | April 16, '26 | Madison Air Solutions | MAIR | 27.00 | 2567.6 | -10.3% | 180 days\nOct. 14 | April 17, '26 | AEVEX | AVEX | 20.00 | 368.0 | -26.9% | 180 days\nOct. 14 | April 17, '26 | Alamar Biosciences | ALMR | 17.00 | 219.9 | 48.6% | 180 days\nOct. 14 | April 17, '26 | Kailera Therapeutics | KLRA | 16.00 | 718.8 | -27.4% | 180 days\n\nSources: LSEG Data and Analytics; Dow Jones Market Data",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Kailera Therapeutics",
+        "zh_suggested": "Kailera Therapeutics（生物制药，待查）",
+        "note": null
+      },
+      {
+        "en": "Alamar Biosciences",
+        "zh_suggested": "Alamar Biosciences（生物科技，待查）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-028",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Money Rates",
+    "dek": "Key annual interest rates paid to borrow or lend money in U.S. and international markets. Rates below are a guide to general level of interest rates and are not actual transactions.",
+    "byline": null,
+    "body_en": "Money Rates\n\nFederal funds: Effective rate n.a. / 3.8900 (week ago) / 52-wk High 4.1100 / Low 3.6300; High n.a. / 3.9500 / 4.2000 / 3.7000; Low n.a. / 3.8000 / 4.0800 / 3.5500; Bid n.a. / 3.8800 / 4.1000 / 3.6100; Offer n.a. / 3.8900 / 4.1200 / 3.6300\n\nCommercial paper (AA financial), 90 days: n.a. / 4.16 / 4.16\n\nSecured Overnight Financing Rate: 3.87 / 3.87 / 52-wk High 4.31\n\nTreasury bill auction: 4 weeks 3.980 (Latest) / 3.890 (Value traded) / 52-wk High 4.030 / Low 3.550; 13 weeks 4.050 / 4.110 / 4.110 / 3.540; 26 weeks 4.165 / 4.285 / 4.285 / 3.475\n\nDTCC GCF Repo Index: Treasury 3.904 / 87.520 / 52-wk High 4.319 / Low 3.504; MBS 3.910 / 109.722 / 4.371 / 3.517\n\nPolicy Rates (Latest / Week ago / 52-wk High / Low): Euro zone 2.65 / 2.65 / 2.65 / 2.15; Switzerland 0.25 / 0.25 / 0.50 / 0.25; Britain 3.75 / 3.75 / 4.00 / 3.75; Australia 4.60 / 4.60 / 4.60 / 3.60\n\nOvernight repurchase, U.S.: 3.90 / 3.91 / 4.30 / 3.49\n\nU.S. government rates, Discount: 4.00 / 4.00 / 4.25 / 3.75\n\nBorrowing Benchmarks: Inflation (Aug.): U.S. 3.4 / 2.4 (as printed, fragmented)",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-029",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Insider-Trading Spotlight: Biggest weekly individual trades",
+    "dek": "Trading by 'insiders' of a corporation, such as a company's CEO, vice president or director, potentially conveys new information about the prospects of a company. Insiders are required to report large trades to the SEC within two business days. Here's a look at the biggest individual trades by insiders, based on data received by LSEG Data and Analytics on October 9, and year-to-date stock performance of the company. Based on reports filed with regulators this past week.",
+    "byline": null,
+    "body_en": "KEY: B: beneficial owner of more than 10% of a security class; CB: chairman; CEO: chief executive officer; CFO: chief financial officer; CO: chief operating officer; D: director; DO: director and beneficial owner; GC: general counsel; H: officer, director and beneficial owner; I: indirect transaction filed through a trust, insider spouse, minor child or other; O: officer; OD: officer and director; unknown VP: vice president. Excludes pure options transactions. * Half the transactions were indirect. **Two day transaction. p - Pink Sheets.\n\nDate(s) | Company | Symbol | Insider | Title | No. of shrs in trans (000s) | Price range ($) in transaction | $ Value (000s) | Close ($) | Ytd (%)\n\nBuyers\nSept. 17-25 | 51Talk Online Education Group | COE | J. Huang | CEOI | 2,812 | 11.48-11.50 | 32,334 | 12.22 | -61.7\nSept. 28 | ADARx Pharmaceuticals | ADRX | S. George | DOI | 1,600 | 17.00 | 27,200 | 17.78 | (cut off)\nSept. 28 | | | C. Gordon | DOI | 950 | 17.00 | 16,150 | | \nSept. 28 | | | E. Chimovits | DI | 62 | 17.00 | 1,046 | | \nOct. 2 | GameStop | GME | R. Cohen | CEO | 700 | 24.41 | 17,084 | 26.56 | 32.3\nOct. 6 | Borr Drilling | BORR | T. Troim | DI | 1,500 | 4.24 | 6,364 | 4.78 | 18.6\nOct. 5 | | | T. Troim | DI | 1,500 | 4.13 | 6,197 | | \nOct. 7 | | | T. Troim | DI | 1,250 | 4.31 | 5,390 | | \nOct. 1 | Accelevation Holdings | ACCV | M. Rubiera | CEO | 203* | 18.00 | 3,658 | 16.72 | n.a.\nSept. 30 | Nayax | NYAX | Y. Nechmad | CEO | 44 | 46.39-48.56 | 2,112 | 45.60 | -9.9\nOct. 5 | Sonic Automotive | SAH | P. Rusnak | B | 28 | 59.76 | 1,659 | 60.56 | -2.1\nOct. 1 | | | P. Rusnak | B | 22 | 59.50 | 1,288 | | \nSept. 28 | Pampa Energia | PAM | D. Mindlin | O | 15 | 77.63 | 1,164 | 80.34 | -9.2\nOct. 1-2 | Outset Medical | OM | B. Leonard | BI | 245 | 3.53-3.88 | 870 | 4.05 | 9.2\nOct. 2 | Prothena | PRTA | W. Scully | BI | 100 | 8.57 | 857 | 8.84 | -7.4\nSept. 30 | First Guaranty Bancshares | FGBI | E. Smith | DOI | 99 | 8.28 | 822 | 8.34 | 55.3\nOct. 7 | H.B. Fuller | FUL | R. Bailly | DI | 10 | 50.00 | 500 | 49.56 | -16.6\nOct. 7 | Immersion | IMMR | E. Singer | CEO | 41 | 7.11-7.15 | 293 | 7.43 | 9.3\n\nSellers\nOct. 5 | Elastic | ESTC | S. Schuurman | DI | 1,500 | 90.13 | 135,195 | 98.23 | 30.2\nOct. 5 | Nebius Group | NBIS | O. Nave | CO | 500 | 231.12-243.50 | 117,765 | 221.07 | 164.1\nOct. 6 | Arista Networks | ANET | J. Ullal | CEOI | 460 | 211.36-213.06 | 97,643 | 216.74 | 65.4\nSept. 30 | CrowdStrike Holdings | CRWD | M. Sentonas | P | 242 | 262.71-267.96 | 64,225 | 275.04 | 134.7\nOct. 1 | | | S. Gandhi | DI | 54 | 260.34-269.07 | 14,322 | | \nOct. 2 | Apple | AAPL | T. Cook | OD | 192 | 331.44-333.94 | 63,846 | 336.64 | 23.8\nOct. 2 | | | D. O'Brien | O | 46 | 333.35-333.91 | 15,467 | | \nOct. 5 | Robinhood Markets | HOOD | V. Tenev | CEO | 375 | 113.24-114.95 | 42,644 | 109.02 | -3.6\nOct. 5-7 | Cloudflare | NET | M. Zatlyn | CBI | 99 | 346.40-369.34 | 35,236 | 360.93 | 83.1\nOct. 6-7 | Nutanix | NTNX | R. Ramaswami | CEO | 400 | 73.35-74.00 | 29,460 | 74.63 | 44.4\nOct. 1 | Lumentum Holdings | LITE | W. Ali | CFO | 25 | 1048.50 | 25,732 | 1103.36 | 199.3\nOct. 6 | Trane Technologies | TT | D. Regnery | CEO | 48 | 480.00 | 23,084 | 476.98 | 22.6\nOct. 5-6 | Gap | GAP | W. Fisher | DO | 934 | 23.35-23.89 | 22,071 | 23.23 | -9.3\nOct. 6 | Workday | WDAY | D. Duffield | BI | 99 | 184.80-189.39 | 18,587 | 186.59 | -13.1\nOct. 1 | | | D. Duffield | BI | 98 | 183.86-194.77 | 18,416 | | \nOct. 2 | Snowflake | SNOW | M. Speiser | D | 51* | 344.00 | 17,455 | 368.89 | 68.2\nOct. 7 | | | B. Dageville | DI | 50 | 333.42 | 16,671 | | \nOct. 1 | Seagate Technology Holdings | STX | W. Mosley | CEO | 19 | 898.10-927.90 | 17,377 | 783.00 | 184.3",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Ryan Cohen",
+        "zh_suggested": "瑞安·科恩（GameStop CEO）",
+        "note": "买入70万股"
+      },
+      {
+        "en": "Tim Cook",
+        "zh_suggested": "蒂姆·库克（苹果CEO）",
+        "note": "卖出19.2万股"
+      },
+      {
+        "en": "Vlad Tenev",
+        "zh_suggested": "弗拉德·特内夫（罗宾汉CEO）",
+        "note": "卖出37.5万股"
+      }
+    ]
+  },
+  {
+    "id": "E3-030",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Insider Buying and Selling by Sector",
+    "dek": "Based on actual transaction dates in reports received this past week",
+    "byline": null,
+    "body_en": "Sector | Buying | Selling | Sector\nBasic Industries | 500,000 | 5,864,012 | Finance\nCapital Goods | 4,098,600 | 57,107,906 | Health care\nConsumer durables | 0 | 807,898 | Public Utilities\nConsumer non-durables | 540,443 | 6,427,154 | Technology\nConsumer services | 3,768,521 | 49,400,612 | Transportation\nEnergy | 39,425 | 20,346,036\n\nSources: LSEG Data and Analytics",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-031",
+    "page": "B6",
+    "section": "Markets",
+    "title": "Cash Prices",
+    "dek": "These prices reflect buying and selling of a variety of actual or \"physical\" commodities in the marketplace—separate from the futures price on an exchange, which reflects what the commodity might be worth in future months. Friday, October 09, 2026.",
+    "byline": null,
+    "body_en": "Cash Prices | wsj.com/market-data/commodities. Friday, October 09, 2026.\n\nBattery/EV metals\nBMI Lithium Carbonate, EXW China, >=99.5%-v,w: 18450\nBMI Lithium Hydroxide, EXW China, >=56.5%-v,w: 17250\nBMI Cobalt sulphate, EXW China, >20.5%-v,w: 8642\nBMI Nickel Sulphate, EXW China, >22%-v,k: 4172\nBMI Flake Graphite, FOB China, -100 Mesh, 94-95%-v,m: 415\n\nEnergy\nCoal, C. Aplc., 12500 Btu, 1.2 SO2-r,w: 84.500\nCoal, Pwdr Rvr Bsn, 8800 Btu, 0.8 SO2-r,w: 14.650\n\nMetals\nGold, per troy oz: Engelhard industrial 4200.00; Krugerrand, wholesale-e 4364.15; Maple Leaf-e 4406.12; American Eagle-e 4406.12; Mexican peso-e 5067.48; Austria crown-e 4116.21; Austria phil-e 4406.12\nSilver, troy oz.: Engelhard industrial 61.0000; Handy & Harman base 60.9200; Handy & Harman fabricated 76.1500\n\nFibers and Textiles\nBurlap, 10-oz, 40-inch NY yd-n,w: 1.2375\nCotton, 1 1/16 std lw-md Mphs-u: 0.7829\nCotlook 'A' Index-t: *90.65\nHides, hvy native steers piece fob-u: n.a.\nWool, 64s, staple, Terr del-u,w: n.a.\n\nGrains and Feeds\nBran, wheat middlings, KC-u,w: 155\nCorn, No. 2 yellow, Cent IL-bp,u: 4.4400\nCottonseed meal-u,w: n.a.\nHominy feed, Cent IL-u,w: n.a.\nMeat-bonemeal, 50% pro Mnpls-u,w: 463\nOats, No. 2 milling, Mnpls-u: (as printed)\nRice, Long Grain Milled, No. 2 AR-u,w: (as printed)\nSoybean Meal, Cent IL, rail, ton 48%-u,w: 387.60\nSoybeans, No. 1 yllw IL-bp,u: 12.5600\nWheat, Spring 14%-pro Mnpls-u: 8.8525\nWheat, No. 2 soft red, St. Louis-u: 6.4850\nWheat - Hard - KC (USDA) $ per bu-u: 6.8525\nWheat, No. 1 soft white, Portld, OR-u: 6.5000\n\nFood\nBeef, carcass equiv. index: choice 1-3, 600-900 lbs.-u: 343.45; select 1-3, 600-900 lbs.-u: 323.62\nBroilers, National comp wtd. avg.-u,w: 1.1674\nButter, AA Chicago-d: 1.2750\nCheddar cheese, bbl, Chicago-d: 145.25\nCheddar cheese, blk, Chicago-d: 138.50\nMilk, Nonfat dry, Chicago lb.-d: 226.75\nCoffee, Brazilian, Comp-y: 2.8848\nCoffee, Colombian, NY-y: 3.5369\nEggs, large white, Chicago-u,w: 0.6350\nFlour, hard winter KC-p: 18.10\nHams, 17-20 lbs, Mid-US fob-u: 0.8\nHogs, Iowa-So. Minnesota-u: 75.59\nPork bellies, 12-14 lb MidUS-u: n.a.\nPork loins, 13-19 lb MidUS-u: 1.0215\nSteers, Tex.-Okla. Choice-u: n.a.\nSteers, feeder, Okla. City-u,w: 374.25\n\nFats and Oils\nDegummed corn oil, crude wtd. avg.-u,w: n.a.\nGrease, choice white, Chicago-h: 0.6000\nLard, Chicago-u: n.a.\nSoybean oil, crude; Centl IL-u,w: 0.7052\nTallow, bleach; Chicago-h: 0.7050\nTallow, edible, Chicago-u: n.a.\n\nKEY TO CODES: A=ask; B=bid; BP=country elevator bids to producers; C=corrected; D=CME; E=Manfra, Tordella & Brookes; H=American Commodities Brokerage Co.; n.a.=not available; P=Sosland Publishing; R=SNL Energy; S=Platts-TSI; T=Cotlook Limited; U=USDA; V=Benchmark; [I]nternational Coffee Organization; Z=not quoted. *Data as of 10/8\n\nSource: Dow Jones Market Data",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-032",
+    "page": "B7",
+    "section": "Heard on the Street",
+    "title": "Home Builders and Sellers Vie for Buyers",
+    "dek": "Competition is heating up, which will force companies like Lennar and KB Home to beef up incentives",
+    "byline": null,
+    "body_en": "Ready to be realistic about the value of your home now that mortgage rates are above 7%? Builders won't thank you for it.\n\nHome builders had one thing working in their favor over the past four years: Regular home sellers weren't willing to budge on prices, so competition from the existing home market was low.\n\nThis is starting to change, which will hurt builders' already diminished profit margins.\n\nLennar and KB Home said recently that they are facing tougher competition from regular owners who are more motivated to sell. The average price Lennar sold homes for in its west region over the three months through August was $44,000 lower than the same period last year—a 7% drop. Average prices in its central region dropped 5% compared with a year ago. It said stiffer competition from the existing-home market was one factor behind the declines.\n\nKB Home lowered the midpoint of its average sales-price estimate for the fourth quarter from $500,000 to $480,000. Southern Californian home sellers are cutting their prices to entice buyers, so KB Home has to follow or risk missing out on sales.\n\nIn the four weeks through Sept. 20, 21% of sellers in the existing-home market dropped their asking price, data from Redfin shows. The most significant activity is happening with concessions, which don't show up in headline prices.\n\nIn August, 45% of home sellers gave concessions to buyers, such as offering to cover the closing costs or handing the buyer money for repairs. In oversupplied Sunbelt markets such as Atlanta and Nashville, Tenn., 7 in 10 sellers are now offering concessions. These are the same markets where home builders tend to cluster.\n\nOutright price cuts are likely to become more common because the number of homes for sale is almost back to prepandemic levels. In September, inventory was 5% below the same month of 2019, according to data from Realtor.com.\n\nThe pandemic-era housing boom sent the usual competitive dynamic between the new-home and existing-home markets haywire. Last year, sales of existing homes were one-fifth below 2022 levels.\n\nOnce mortgage rates began to rise four years ago, owners with ultralow rates stayed put, starving the for-sale market of supply. And many sellers had a \"here is my price, make me move\" mentality. They preferred to take their property off the market rather than accept a lower offer.\n\nThat suited builders nicely.\n\n[Print edition continues but is cut off in extraction after:] The downside is that the buydowns are expensive and have sapped profit margins. Lennar currently has to offer incentives such as rate buydowns worth 12% of the value of a home to get deals done. In the three months through August, the company's gross margin was 15.8%—back at levels last seen in the aftermath of the 2008-09 financial crisis. Things might get worse. Higher [text ends]\n\n[Chart: Sales incentives on newly built homes as a percentage of revenue, 2009–2026. Note: No data available for 4Q 2019 through 4Q 2020 due to Covid-19 pandemic. Source: John Burns Research & Consulting.]\n\n[Photo: David Paul Morris/Bloomberg News]",
+    "priority": "P2",
+    "type": "opinion",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Lennar",
+        "zh_suggested": "莱纳（美国住宅建筑商）",
+        "note": null
+      },
+      {
+        "en": "KB Home",
+        "zh_suggested": "KB Home（美国住宅建筑商）",
+        "note": null
+      },
+      {
+        "en": "Redfin",
+        "zh_suggested": "Redfin（房产平台）",
+        "note": null
+      },
+      {
+        "en": "Realtor.com",
+        "zh_suggested": "Realtor.com（房产平台）",
+        "note": null
+      },
+      {
+        "en": "rate buydowns",
+        "zh_suggested": "利率买断（卖方贴息降月供）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-033",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "Stock Spotlight",
+    "dek": null,
+    "byline": null,
+    "body_en": "Space Exploration Technologies: Shares climbed 1.2% after the company struck a deal for cellular spectrum licenses in a big play to become a wireless carrier.\n\nDelta Air Lines: Shares in the carrier ended the day roughly flat, making up early losses after Delta cut its earnings outlook following another quarter of persistently high fuel costs.\n\nHumana: The health insurer surged 12% after the U.S. government improved its rating for the company's Medicare Advantage plans, putting it in line for more bonus payments.\n\nApple: Shares fell 1.1%, after Nikkei Asia reported the company told some of its suppliers to cut production of parts for its new iPhone 18 lineup because of softer demand.\n\nAvient: Shares of the materials solutions provider fell 7.8% after the company said Ashish Khandpur had stepped down as chief executive officer.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Space Exploration Technologies (SpaceX)",
+        "zh_suggested": "SpaceX",
+        "note": "收购蜂窝频谱牌照，进军无线运营商"
+      },
+      {
+        "en": "Humana",
+        "zh_suggested": "Humana（美国健康保险商）",
+        "note": "Medicare Advantage评级上调，涨12%"
+      },
+      {
+        "en": "Avient",
+        "zh_suggested": "Avient（材料方案商）",
+        "note": "CEO Ashish Khandpur卸任，跌7.8%"
+      },
+      {
+        "en": "iPhone 18",
+        "zh_suggested": "iPhone 18",
+        "note": "日经称苹果因需求疲软砍单"
+      }
+    ]
+  },
+  {
+    "id": "E3-034",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "Investors' No. 1 Worry",
+    "dek": null,
+    "byline": "By Cristina Roca",
+    "body_en": "Investors were rattled by contagion fears over a bond-market meltdown in France.\n\nBut when it comes to risks looming over the market next year, they have bigger things to worry about—at least according to George Saravelos, head of foreign-exchange research at Deutsche Bank, who summarized his conversations with clients this week like this:\n\n\"The biggest systemic risk in the market next year is not France but 'something going wrong' in the AI ecosystem: a safety event, a failed IPO, or disappointing revenues.\"\n\nSaravelos cited a Brookings paper that recently estimated AI labs need to generate upward of $3.5 trillion a year by 2032 to earn a return on data-center investments.",
+    "priority": "P2",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "George Saravelos",
+        "zh_suggested": "乔治·萨拉维洛斯（德银外汇研究主管）",
+        "note": null
+      },
+      {
+        "en": "Brookings",
+        "zh_suggested": "布鲁金斯学会",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-035",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "In Market History",
+    "dek": null,
+    "byline": null,
+    "body_en": "On this day in 1982, after nearly 17 years of going nowhere, the Dow Jones Industrial Average finally rose above the peak it set in the bull market of the 1960s.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-036",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "Share-price performance: Wireless Firms' Day of Woe",
+    "dek": null,
+    "byline": null,
+    "body_en": "Share-price performance chart (intraday, 10 a.m. to 4 p.m.): AT&T, Verizon, T-Mobile US.\n\nShares in AT&T, Verizon Communications and T-Mobile US fell sharply Friday in the wake of SpaceX's $8 billion spectrum deal. AT&T and Verizon suffered their biggest one-day declines in more than 24 years. For T-Mobile, it was the worst percentage drop in more than 13 years. AT&T closed down 9.8%, Verizon fell 8.7% and T-Mobile declined 13%.\n\nSource: FactSet.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E3-037",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "Dollar Has 4th Week of Gains",
+    "dek": null,
+    "byline": null,
+    "body_en": "The WSJ Dollar Index, which tracks the greenback against a basket of currencies, finished its fourth consecutive week of gains Friday, the longest streak since May 2025, according to Dow Jones Market Data. The gains reflect investor expectations that the Federal Reserve will continue to raise interest rates. Higher rates tend to boost the dollar by making dollar-denominated assets more attractive.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "WSJ Dollar Index",
+        "zh_suggested": "WSJ美元指数",
+        "note": null
+      }
+    ]
+  },
+  {
+    "id": "E3-038",
+    "page": "B7",
+    "section": "Money & Investing",
+    "title": "The Ticker: Market Events Coming This Week",
+    "dek": null,
+    "byline": null,
+    "body_en": "THE TICKER | MARKET EVENTS COMING THIS WEEK\n\nMonday\nU.S. Bond markets are closed for Columbus Day holiday.\nEarnings expected (Estimate/Year Ago): Citigroup 2.65/1.86; Goldman Sachs 12.86/12.25; Johnson & Johnson 2.50/2.80 (Johnson & Johnson is expected to post a profit of $2.50 a share); JPMorgan Chase 5.93/5.07; UnitedHealth Group 4.15/2.92; Wells Fargo 1.85/1.66; BlackRock 14.33/11.55; Fastenal 0.34/0.29; Home BancShares 0.64/0.61; Morgan Stanley 2.93/2.80; State Street 3.68/2.78; Charles Schwab 1.66/1.31; Marsh & McLennan 1.97/1.85; Bank of New York Mellon 2.27/1.88; PNC Financial Services 4.91/4.35.\n\nTuesday\nExisting home sales: Aug., previous 3.98 mil.; Sep., expected 3.95 mil.\nTreasury budget: Sep. '25, $198 bil. surplus; Sep. '26, expected n.a.\n\nWednesday\nConsumer price index: All items, Aug. up 3.4%; Sep., expected up 3.7%; Core, Aug. up 2.4%; Sep., expected up 2.5%.\nMortgage bankers indexes: Purchases, previous down 2.0%; Refinancings, previous down 8.0%.\nEmpire Manufacturing: Sep., previous 7.6; Oct., expected n.a.\nInitial jobless claims: Previous 197,000; Expected 202,000.\nPhiladelphia Fed survey: Sep., previous 37.8; Oct., expected 35.0.\n\nThursday\nBusiness inventories: Jul., previous up 0.8%; Aug., expected up 0.4%.\nEIA status report (previous change in stocks, millions of barrels): Crude-oil stocks down 3.2; Gasoline stocks up 0.4; Distillates up 0.0.\nFreddie Mac mortgage survey (previous weekly averages): 30-year fixed 7.40%; 15-year fixed 6.73%.\nProducer price index: All items, Aug. up 0.4%; Sep., expected up 0.6%.\nRetail sales: Aug., previous up 1.2%; Sep., expected up 0.4%; ex. autos, Aug. previous up 1.4%, Sep. expected up 0.6%.\nEIA report: natural-gas (previous change in stocks in billions of cubic feet).\n\n* FactSet Estimates: earnings-per-share estimates don't include extraordinary items (losses in parentheses). Adjusted for stock split. Note: Forecasts are from Dow Jones weekly survey of economists.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Columbus Day",
+        "zh_suggested": "哥伦布日（美债市休市）",
+        "note": null
+      }
+    ]
+  },
+  {
+    "skipped_ads": [
+      "B2: The Marketplace — To advertise: 800-366-3975 or WSJ.com/classifieds",
+      "B2: CLASS ACTION LEGAL NOTICE — Singularity Future Technology Ltd. (f/k/a Sino-Global Shipping America Ltd.) $5.8 million class action settlement notice (www.SingularitySecuritiesSettlement.com)",
+      "B4: 'Human. Machine. AI. One identity security platform for all.' — identity security platform advertisement",
+      "B8: Full-page WSJ subscription promotion ('Required reading. viewing. listening.' — WSJ.com/appdownload)"
+    ]
+  }
+]

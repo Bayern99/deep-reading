@@ -1,0 +1,1643 @@
+[
+  {
+    "id": "E1-001",
+    "page": "A1",
+    "section": "News",
+    "title": "What's News",
+    "dek": null,
+    "byline": null,
+    "body_en": "Business & Finance\n\n- Prediction markets, such as Polymarket, have allowed betting on criminal cases, including the Lindsay Clancy murder trial, creating unusual challenges to the justice system. (A1)\n\n- Amazon.com is in talks to acquire AI startup Decart in a deal that could be valued at about $7 billion. (B1)\n\n- Electric vehicle sales in the U.S. are down by half compared with last year, but charging companies are on track to install about as many public EV plugs this year as in 2025, the industry's record high. (B1)\n\n- United Auto Workers President Shawn Fain and his allies have claimed an easy victory in the union's election, cementing Fain's leadership of one of the most powerful forces in American organized labor. (B3)\n\n- Jaguar has introduced the showroom-ready version of the EV it hopes will usher in a new, ultraluxury era for the British carmaker, leaving aside some of the provocative notes it sounded nearly two years ago when it announced its new strategy. (B3)\n\n- Advertisers from Macy's to Levi Strauss have announced that a portion of the multimillion-dollar tariff refunds they received from the federal government will go to boost marketing spending as the holiday shopping season nears. (B3)\n\n- Dutch Bros, the fast-growing, drive-through coffee chain known for its colorful drinks and outgoing baristas, has a strategy to attract pedestrian traffic: walk-up-only windows. (B3)\n\nWorldwide\n\n- President Trump pushed Russia and Ukraine to agree to halt strikes on energy infrastructure, as he continued to face bipartisan criticism over moves in recent days to ease U.S. pressure on Moscow and shift blame for the continued fighting to Kyiv. (A1)\n\n- The Saudis' escalating fight with Iran-backed Houthi militants in Yemen is piling new challenges on the kingdom's security and Crown Prince Mohammed bin Salman's plans to transform the country's oil-dependent economy. (A1)\n\n- California Gov. Newsom, who has long opposed a ballot measure that would tax billionaires' wealth, is endorsing a different measure aimed at prohibiting wealth taxes. (A3)\n\n- A federal judge ordered the Trump administration to halt any further airing of taxpayer-funded television ads touting the president, ruling they are likely illegal. (A3)\n\n- The Justice Department is investigating whether TV networks violated antitrust laws when they briefly suspended a rotation of broadcast journalists covering the White House last month following CNN's removal from a planned assignment. (A3)\n\n- Christa Pike, the inmate who survived Tennessee's attempt to execute her by lethal injection, has been discharged from the hospital and is back in prison. (A5)\n\n- India locked down the capital in a bid to thwart a mass protest over an effort to clean up voter lists that critics say is stripping millions of the right to vote. (A9)",
+    "priority": "P3",
+    "type": "index_digest",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Polymarket",
+        "zh_suggested": "Polymarket（预测市场平台）",
+        "note": "首次出现"
+      },
+      {
+        "en": "Lindsay Clancy",
+        "zh_suggested": "林赛·克兰西",
+        "note": "待查"
+      },
+      {
+        "en": "Decart",
+        "zh_suggested": "Decart（AI初创公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Shawn Fain",
+        "zh_suggested": "肖恩·费恩",
+        "note": "美国汽车工人联合会主席"
+      },
+      {
+        "en": "United Auto Workers",
+        "zh_suggested": "美国汽车工人联合会",
+        "note": "缩写UAW"
+      },
+      {
+        "en": "Macy's",
+        "zh_suggested": "梅西百货"
+      },
+      {
+        "en": "Levi Strauss",
+        "zh_suggested": "李维斯"
+      },
+      {
+        "en": "Dutch Bros",
+        "zh_suggested": "Dutch Bros（得来速咖啡连锁）",
+        "note": "待查"
+      },
+      {
+        "en": "Volodymyr Zelensky",
+        "zh_suggested": "弗拉基米尔·泽连斯基",
+        "note": "乌克兰总统"
+      },
+      {
+        "en": "Mohammed bin Salman",
+        "zh_suggested": "穆罕默德·本·萨勒曼",
+        "note": "沙特王储"
+      },
+      {
+        "en": "Houthis",
+        "zh_suggested": "胡塞武装",
+        "note": "也门伊朗支持的武装组织"
+      },
+      {
+        "en": "Gavin Newsom",
+        "zh_suggested": "加文·纽森",
+        "note": "加州州长"
+      },
+      {
+        "en": "Christa Pike",
+        "zh_suggested": "克丽斯塔·派克",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-002",
+    "page": "A1",
+    "section": "News",
+    "title": "Market Snapshot: Last Week",
+    "dek": null,
+    "byline": null,
+    "body_en": "Last week: DJIA 51654.95 ▲ 477.99 (0.93%) | NASDAQ 27366.17 ▲ 0.6% | STOXX 600 631.55 ▲ 0.03% | 10-YR. TREASURY (Reopening) yield 5.243% | OIL $91.85 ▲ $0.74 | EURO $1.1202 | YEN 158.29",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "DJIA",
+        "zh_suggested": "道琼斯工业平均指数"
+      },
+      {
+        "en": "STOXX 600",
+        "zh_suggested": "斯托克600指数"
+      }
+    ]
+  },
+  {
+    "id": "E1-003",
+    "page": "A1",
+    "section": "News",
+    "title": "Kenyan, Ethiopian Win Chicago Marathon",
+    "dek": null,
+    "byline": null,
+    "body_en": "RACE DAY: Runners compete Sunday during the 2026 Chicago Marathon, with more than 55,000 entrants registered. Amos Kipruto of Kenya finished first, with a time of 2:01:09, while Ethiopia's Hawi Feysa defended her women's title in 2:13:33. (Photo: KAMIL KRZACZYNSKI/AFP/GETTY IMAGES)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Amos Kipruto",
+        "zh_suggested": "阿莫斯·基普鲁托",
+        "note": "肯尼亚马拉松选手"
+      },
+      {
+        "en": "Hawi Feysa",
+        "zh_suggested": "哈维·费萨",
+        "note": "埃塞俄比亚马拉松选手，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-004",
+    "page": "A1",
+    "section": "News",
+    "title": "Trump's Russia Energy Deal Gets Pushback",
+    "dek": "As president presses a Ukraine ceasefire, senators call his export plan illegal",
+    "byline": "BY MARCUS WALKER AND ROBBIE GRAMER",
+    "body_en": "President Trump pushed Russia and Ukraine to agree to halt strikes on each other's energy infrastructure, as the White House continued to face bipartisan criticism over moves in recent days to ease U.S. pressure on Moscow and shift blame for the continued fighting to Kyiv.\n\nTrump on social media Sunday said there was an immediate \"ENERGY CEASEFIRE\" between Ukraine and Russia, despite Moscow's rejection of such a deal so far and no sign that there was an agreement in place.\n\nThe latest Trump statement came as he encountered widespread pushback on Capitol Hill to his decision to allow Russia to export oil to the U.S. and world markets and his harsh remarks toward Ukraine's President Volodymyr Zelensky. On Sunday, a group of Democratic and Republican senators issued a joint statement calling Trump's export plan illegal and contrary to a 2022 law that banned Russian energy imports.\n\nTrump is moving quickly to try to ease energy prices with the U.S. midterm elections just weeks away, with high gasoline and diesel prices driven by the Iran war and the Russia-Ukraine conflict contributing to voter discontent toward Republicans. But analysts said the impact of new Russian supplies on lowering prices would likely be minimal.\n\n[Continued on page A8 under the headline \"Russian Oil Deal Faces Pushback\":]\n\nRussian President Vladimir Putin has rebuffed proposals for an energy ceasefire, and the Kremlin didn't respond to a request for comment. Trump previously announced such a ceasefire on Sept. 14; Russia and Ukraine continued their strikes.\n\nZelensky reiterated on Sunday that he is open to stopping airstrikes against Russian oil refineries if Moscow stops bombing Ukraine's energy grid, but he has staved off Trump's pressure for Kyiv to cease its strikes unilaterally. He said Ukraine's skies had been \"infested\" with Russian drone and bomb strikes throughout the day.\n\nThe White House didn't respond to a request for comment on the senators' statement.\n\nRussia continued to bomb Ukraine's energy grid and other targets in Kyiv on Sunday, with explosions audible throughout the day and power cuts continuing.\n\n\"Ukraine wants peace. The question is whether Russia does,\" Zelensky said in a social-media post. \"We are awaiting clear details of the dialogue between America and Russia—and we expect Putin to follow through on what President Trump said.\"\n\nDemocrats and some Republicans have objected to Trump's efforts to ease economic pressure on Russia, which launched its full-scale invasion of Ukraine in February 2022.\n\nThe U.S. \"should not provide Putin with a financial lifeline while Russia continues to kill Ukrainian civilians. The administration must immediately reverse course,\" a bipartisan group of senators said in a statement on Sunday. The group is made up of Republicans Susan Collins of Maine, Lisa Murkowski of Alaska, John Curtis of Utah and Thom Tillis of North Carolina and Democratic Sens. Jeanne Shaheen of New Hampshire, Ron Wyden of Oregon and Richard Blumenthal of Connecticut.\n\nThe senators said the administration failed to consult with Congress or submit the justification required under the 2022 law barring Russian energy imports to the U.S.\n\nTrump's statement Sunday came after he lambasted Zelensky on Saturday, calling for his removal as Ukrainian leader and blaming him for Russia's continuing war on Ukraine—as well as for pushing up fuel prices, which have risen globally since the U.S.-Iran war disrupted Middle East energy exports.\n\nWith no end to the conflict with Iran in sight, Trump presented Russia as part of a solution, announcing a deal with Putin on Friday to boost the supply of Russian diesel to the U.S. and world markets.\n\nEnergy experts say the deal, if implemented, could benefit the Kremlin's coffers but is unlikely to provide significant relief to global energy markets.\n\n\"Our president is trying to find every answer possible,\" said Rep. Tom Emmer (R., Minn.) on ABC News on Sunday, defending the deal on Russian diesel.\n\nDemocrats saw it as a last-ditch effort to bring down prices ahead of the elections. \"Literally, Trump has made a deal with the devil. He will do anything for Republicans to win\" the midterms, said Rep. Donald Norcross (D., N.J.).\n\nRussia has been planning to resume exports of diesel anyway, said Janis Kluge, head of Eastern Europe research at the German Institute for International and Security Affairs, a think tank in Berlin. \"There was no concession from Putin in this deal,\" he said.\n\nExtra Russian diesel is unlikely to relieve the stress in global fuel markets. \"The Middle East is much more important,\" he said.\n\nTrump's comments in recent days have shown the limits of U.S. leverage in the war between Russia and Ukraine, as Europe, rather than the U.S., has become the mainstay of support for Kyiv's defense against Moscow's invasion.\n\nUkraine has greatly expanded domestic output of drones and other weaponry, while relying on European allies for financing and military aid. Trump has ended nearly all U.S. aid for Ukraine's defense, though the U.S. continues to share valuable satellite and other intelligence with Kyiv.\n\nBombing Russian refineries is the strongest card that Ukraine holds to force Putin to stop the war he launched nearly five years ago.\n\nRussia is bombarding Ukraine's energy infrastructure in an attempt to cut off heating, electricity, water and other essential services ahead of winter. In the past week, Russia has attacked Ukraine's electricity system 196 times and its oil and gas infrastructure 20 times, Zelensky said in an interview with ABC News broadcast on Sunday.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": "A8",
+    "terms": [
+      {
+        "en": "Marcus Walker",
+        "zh_suggested": "马库斯·沃克",
+        "note": "待查"
+      },
+      {
+        "en": "Robbie Gramer",
+        "zh_suggested": "罗比·格拉默",
+        "note": "待查"
+      },
+      {
+        "en": "Vladimir Putin",
+        "zh_suggested": "弗拉基米尔·普京",
+        "note": "俄罗斯总统"
+      },
+      {
+        "en": "Susan Collins",
+        "zh_suggested": "苏珊·柯林斯"
+      },
+      {
+        "en": "Lisa Murkowski",
+        "zh_suggested": "丽莎·穆尔科斯基"
+      },
+      {
+        "en": "John Curtis",
+        "zh_suggested": "约翰·柯蒂斯"
+      },
+      {
+        "en": "Thom Tillis",
+        "zh_suggested": "汤姆·蒂利斯"
+      },
+      {
+        "en": "Jeanne Shaheen",
+        "zh_suggested": "珍妮·沙欣",
+        "note": "待查"
+      },
+      {
+        "en": "Ron Wyden",
+        "zh_suggested": "罗恩·怀登"
+      },
+      {
+        "en": "Richard Blumenthal",
+        "zh_suggested": "理查德·布卢门撒尔",
+        "note": "待查"
+      },
+      {
+        "en": "Tom Emmer",
+        "zh_suggested": "汤姆·埃默"
+      },
+      {
+        "en": "Donald Norcross",
+        "zh_suggested": "唐纳德·诺克罗斯",
+        "note": "待查"
+      },
+      {
+        "en": "Janis Kluge",
+        "zh_suggested": "亚尼斯·克卢格",
+        "note": "待查"
+      },
+      {
+        "en": "German Institute for International and Security Affairs",
+        "zh_suggested": "德国国际与安全事务研究所",
+        "note": "柏林智库，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-005",
+    "page": "A1",
+    "section": "News",
+    "title": "Saudi Crown Prince's Burden Grows Heavier as Houthis Strike",
+    "dek": "Kingdom is facing myriad dilemmas as Iran-backed rebels intensify attacks on the kingdom's security and",
+    "byline": "BY SUMMER SAID AND GEORGI KANTCHEV",
+    "body_en": "DUBAI—Saudi Crown Prince Mohammed bin Salman started the year on a high note. He'd just visited the White House where he was embraced by President Trump. Even after the war with Iran kicked off, Saudi Arabia looked relatively well positioned: It could export oil through a pipeline that bypassed the blocked Strait of Hormuz.\n\nBut the Saudis' escalating fight with Iran-backed Houthi militants in neighboring Yemen now piles new challenges on the kingdom's security and the crown prince's ambitious but already struggling plans to transform the country's oil-dependent economy.\n\nOn Saturday, a Houthi missile slammed into the Saudi capital's international airport, killing at least 12 people and injuring hundreds more, many seriously. It was the single deadliest attack on the U.S. or its Gulf allies in the conflicts related to the Iran war.\n\nA 28-year-old Egyptian flight attendant bled to death after her arm was blown off, one of several victims to lose limbs, officials briefed on the attack said.\n\nTwo terminals were struck and their roofs partially collapsed, people familiar with the damage said. Video verified by Storyful, which like The Wall Street Journal is owned by Dow Jones, showed passengers rolling suitcases past a trail of blood on the floor as the airport was evacuated. Authorities reported new attacks on the shuttered airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries.\n\nAs recently as this summer, Saudi officials briefed journalists that the Houthi situation was under control. But the militants' escalating attacks, which they say are retaliation for Saudi actions against them, have hit airports and energy facilities—including the kingdom's main east-west pipeline and refineries—showing the growing threat along the southern border.\n\nThe conflict is jeopardizing Saudi efforts to build travel and tourism into a pillar of the economy, including with a marquee international investment conference scheduled for\n\n[Continued on page A7 under the headline \"Challenges Piling Up For Saudis\":]\n\nthe end of the month that looks increasingly in doubt.\n\nThe costs of the war have already widened the budget deficit and threaten to push the economy into contraction.\n\nHow the crown prince handles this test will have consequences beyond the kingdom. Saudi Arabia is a major source of funding for the global tech industry and artificial-intelligence projects. It also provides basing and overflight rights to the U.S. military.\n\nTrump told reporters over the weekend that the U.S. was in communication with the Houthis but might join Saudi strikes on the militant group.\n\nOn Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets. Saudi officials said they are running low on interceptors needed to fend off further strikes.\n\nAttacks on Riyadh—about 500 miles from Houthi territory in Yemen—have transformed parts of the Saudi capital into a battle zone, with residents taking cover as explosions ring out across the city. Debris from an intercepted ballistic missile hit a kindergarten and a medical clinic complex Thursday. Workers in the city's financial district, students at some international schools and diplomats were ordered to evacuate or take shelter.\n\nThe 41-year-old crown prince is shuttling between palaces equipped with bunkers and is guarded by a handpicked security team, officials familiar with his movements said. His last public appearance was Tuesday.\n\nHe has few good options, said Kristian Coates Ulrichsen, a Persian Gulf expert and fellow with Rice University's Baker Institute. \"Any military response risks getting drawn in deeper to an asymmetric conflict.\"\n\nSaudi press officials didn't respond to a request for comment.\n\nThe crown prince has plowed funds over the past decade into a slate of futuristic projects with extraordinarily complex engineering requirements aimed at signaling the kingdom's modernization and drawing investment and tourism. They include the futuristic city of Neom, an enormous cube-shaped building in Riyadh and a desert ski resort. The total cost ran to the trillions of dollars—aggressive for a government with an annual budget of around $350 billion.\n\nThe costs and economic damage of war with Iran are making that already unlikely math impossible to balance.\n\nForeign investment fell in the first two quarters of the year and is running well behind the crown prince's 2030 target. Rising defense and infrastructure costs threaten to siphon away money needed for the economic diversification push. Even the kingdom's push to become an AI hub now carries new risks, with data centers emerging as targets.\n\nMany of the projects pushed by the crown prince are stalled or under review.\n\nThe non-oil side of the country's economy was smaller in the second quarter than in the first, according to Capital Economics. The Saudi Finance Ministry now expects GDP to shrink by 3.6% in 2026.\n\nThe kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the East-West pipeline struck at the kingdom's main escape route from Hormuz.\n\nThe crown prince got Saudi Arabia involved in Yemen's civil war in 2015, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a ceasefire in 2022.\n\nThe new outbreak came as the crown prince was working to contain the confrontation with Iran. Attacks by Tehran early in the war demonstrated the risk to energy facilities and economic assets like airports across the Gulf. Saudi Arabia was also struggling to cover the vast country with air defense and was shifting batteries around to try to protect palaces and key energy infrastructure, people familiar with the kingdom's deliberations said. While supportive of continued economic pressure on Iran, the crown prince was telling his advisers to keep the diplomatic channel open with Iran and make clear the kingdom's intentions weren't confrontational, the people said.\n\nThe kingdom has called for help from its military ally Pakistan and is scouring the globe for air defenses, the people said. It is also looking to recruit foreign fighters to help its Yemeni allies, they said.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": "A7",
+    "terms": [
+      {
+        "en": "Summer Said",
+        "zh_suggested": "萨默·赛义德",
+        "note": "待查"
+      },
+      {
+        "en": "Georgi Kantchev",
+        "zh_suggested": "格奥尔基·坎切夫",
+        "note": "待查"
+      },
+      {
+        "en": "Storyful",
+        "zh_suggested": "Storyful（视频验证机构）",
+        "note": "与WSJ同属Dow Jones"
+      },
+      {
+        "en": "Dow Jones",
+        "zh_suggested": "道琼斯公司"
+      },
+      {
+        "en": "Kristian Coates Ulrichsen",
+        "zh_suggested": "克里斯蒂安·库茨·乌尔里克森",
+        "note": "待查"
+      },
+      {
+        "en": "Baker Institute",
+        "zh_suggested": "贝克研究所",
+        "note": "莱斯大学，待查"
+      },
+      {
+        "en": "Rice University",
+        "zh_suggested": "莱斯大学"
+      },
+      {
+        "en": "Neom",
+        "zh_suggested": "Neom（沙特未来新城）"
+      },
+      {
+        "en": "Capital Economics",
+        "zh_suggested": "凯投宏观",
+        "note": "研究机构"
+      }
+    ]
+  },
+  {
+    "id": "E1-006",
+    "page": "A1",
+    "section": "News",
+    "title": "Video Cameras Are Hacked for War",
+    "dek": "Combatants hijack vulnerable devices to track, surveil and attack the enemy",
+    "byline": "By Daniel Michaels, Anat Peled and Milàn Czerny",
+    "body_en": "As U.S. and Israeli forces bombed Iran early this year, a poultry farmer in northern Israel decided to check on his chickens. When he launched the app on his phone for the webcam outside his coop, he was alarmed to see that its language had been switched to Arabic.\n\nHe contacted Israel's National Cyber Directorate, which found that hackers had taken control of the Chinese-made camera.\n\nThey weren't interested in chickens. The camera's orientation on the coop offered it a line of sight to the movements of Israeli security forces along the nearby border with Lebanon.\n\nThe cyber directorate said it helped the farmer harden\n\n[Continued on page A10.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "A10",
+    "terms": [
+      {
+        "en": "Daniel Michaels",
+        "zh_suggested": "丹尼尔·迈克尔斯",
+        "note": "待查"
+      },
+      {
+        "en": "Anat Peled",
+        "zh_suggested": "阿纳特·佩莱德",
+        "note": "待查"
+      },
+      {
+        "en": "Milàn Czerny",
+        "zh_suggested": "米兰·切尔尼",
+        "note": "待查"
+      },
+      {
+        "en": "Israel's National Cyber Directorate",
+        "zh_suggested": "以色列国家网络局",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-007",
+    "page": "A1",
+    "section": "News",
+    "title": "Prediction-Market Bets Spread to Jury Verdicts",
+    "dek": null,
+    "byline": "BY MARIAH TIMMS",
+    "body_en": "During the summer murder trial of Lindsay Clancy, bettors wagered more than $100,000 on the verdict. Since a deadlocked jury forced a mistrial in early September, more than $500,000 in additional bets have been placed on whether the Massachusetts woman accused of killing her children will eventually be convicted.\n\nIn Utah, a trial date hasn't been set yet for Tyler Robinson, who stands accused of killing conservative commentator Charlie Kirk at a university event last year. But even before Robinson formally entered a not guilty plea last month, more than $300,000 had been wagered on the outcome.\n\nIn both cases, the bets were available on an offshore platform run by Polymarket. The site also has hosted bets on the federal prosecution of Sean \"Diddy\" Combs and the government's current case against ousted Venezuelan President Nicolás Maduro.\n\nPrediction markets are raising novel ethical concerns and insider-trading risks on everything from corporate auditing to U.S. military operations. Those headaches are now at the courthouse door, presenting particularly unusual challenges for the justice system.\n\n\"When the public treats a courtroom like a casino, due process is susceptible to corruption,\" said C. Melissa Owen, president of the National Association of Criminal Defense Lawyers.\n\nThe most direct and obvious concern is the potential for jurors to bet on their own deliberations, creating financial incentives to reach particular outcomes, no matter the facts of the case.\n\nSome court staffers are also potentially in positions to have inside knowledge of how deliberations are proceeding.\n\n[Continued on page A6:]\n\nThe accessibility and pervasiveness of betting platforms makes the possibility of corrupting jurors a real risk, said University of Chicago law professor M. Todd Henderson.\n\n\"But there is a broader concern,\" he said, \"that prediction markets with heavy betting could influence how jurors think about a case. If millions are wagered on the belief that a defendant will be acquitted, could that make a jury more reluctant to convict?\"\n\n\"For Joe Q Juror sitting at home,\" Henderson said, \"the question is: Is he likely to be biased as a juror if he sees the odds on Polymarket and if he sees a pundit in the paper or on TV talking about what the chances are that Tyler Robinson did it?\"\n\nRobinson's lawyers flagged the Polymarket bets to the presiding judge, arguing the wagering was a \"morally dubious enterprise\" that commodified death-penalty litigation.\n\nThe defense said trading volume was active during a preliminary court hearing in July, and argued that continuing to broadcast the proceedings would create pretrial publicity that was unfair to Robinson.\n\n\"The Court credits Defendant's concerns regarding jury contamination and prediction-market activity as genuine,\" Judge Tony Graf wrote in a ruling last month. But he allowed continued livestreaming of the proceedings and suggested that any concerns could be addressed in jury selection, including by asking potential jurors about any exposure they had to prediction markets.\n\nTypically, markets for betting on criminal cases have been hosted on offshore platforms because prediction-market companies have wanted to avoid running afoul of U.S. rules that prohibit gambling on sensitive topics including war, terrorism and assassination.\n\nStill, market observers say that accessing the offshore platforms isn't difficult. Rutgers University statistics professor Harry Crane said around 20% to 40% of the money bet on offshore Polymarket markets comes from inside the U.S. The study doesn't show whether that volume comes from many people making small bets or a small number of super-users, said Crane, who serves on an advisory committee to the Commodity Futures Trading Commission, which regulates prediction markets.\n\nA Polymarket spokesperson said people \"trade on outcomes of real-world events including legal, political and economic developments. These markets do not impact the outcomes—they reflect what market participants collectively believe will happen.\"\n\nPolymarket has a data partnership with Dow Jones, the publisher of The Wall Street Journal.\n\nAt least a handful of courts are beginning to address the issue. The U.S. District Court in Chicago is updating its insider-trading policies to prohibit employees from using on-the-job information to make wagers. Judges in the district are on alert for similar concerns that might arise in jury trials, said Sean Lewis, a court spokesman. \"As technology and society evolve, the court will continue to adapt its policies to safeguard the fair and impartial administration of justice,\" he said.\n\nThe federal trial court in Manhattan has attracted at least two notable betting markets. Between May and July of last year, Polymarket users bet nearly $798,000 on the verdict of the Diddy sex trafficking trial. Combs was found not guilty of racketeering and sex trafficking offenses but convicted of less serious charges.\n\nMaduro is set to go on trial next year in the same court, on charges including narco-terrorism. A Polymarket offering on whether Maduro will be found guilty has attracted about $133,000 in trading volume so far. Another on whether he will serve prison time has seen more than $900,000 of activity.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "A6",
+    "terms": [
+      {
+        "en": "Mariah Timms",
+        "zh_suggested": "玛丽亚·蒂姆斯",
+        "note": "待查"
+      },
+      {
+        "en": "Tyler Robinson",
+        "zh_suggested": "泰勒·罗宾逊",
+        "note": "待查"
+      },
+      {
+        "en": "Charlie Kirk",
+        "zh_suggested": "查理·柯克",
+        "note": "保守派评论员"
+      },
+      {
+        "en": "Sean \"Diddy\" Combs",
+        "zh_suggested": "肖恩·“迪迪”·库姆斯"
+      },
+      {
+        "en": "Nicolás Maduro",
+        "zh_suggested": "尼古拉斯·马杜罗",
+        "note": "委内瑞拉前总统"
+      },
+      {
+        "en": "C. Melissa Owen",
+        "zh_suggested": "C·梅丽莎·欧文",
+        "note": "待查"
+      },
+      {
+        "en": "National Association of Criminal Defense Lawyers",
+        "zh_suggested": "全国刑事辩护律师协会",
+        "note": "待查"
+      },
+      {
+        "en": "M. Todd Henderson",
+        "zh_suggested": "M·托德·亨德森",
+        "note": "芝加哥大学法学教授，待查"
+      },
+      {
+        "en": "Harry Crane",
+        "zh_suggested": "哈里·克兰",
+        "note": "罗格斯大学统计学教授，待查"
+      },
+      {
+        "en": "Rutgers University",
+        "zh_suggested": "罗格斯大学"
+      },
+      {
+        "en": "Commodity Futures Trading Commission",
+        "zh_suggested": "商品期货交易委员会",
+        "note": "缩写CFTC"
+      },
+      {
+        "en": "Sean Lewis",
+        "zh_suggested": "肖恩·刘易斯",
+        "note": "法院发言人，待查"
+      },
+      {
+        "en": "Tony Graf",
+        "zh_suggested": "托尼·格拉夫",
+        "note": "法官，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-008",
+    "page": "A1",
+    "section": "News",
+    "title": "The Sunday Scaries Are Real—And They're Getting Worse",
+    "dek": "As workloads mount, people struggle to tame the pre-Monday dread spiral",
+    "byline": "BY RAY A. SMITH",
+    "body_en": "Jill Davis's official work week starts Monday morning. Unofficially, it kicks off every Sunday afternoon when, like clockwork, anxious thoughts begin seeping into her brain.\n\n\"Am I organized and ready enough? Am I prepared for this meeting?\" says Davis, the chief development officer at a nonprofit. To bat the angst away, she'll often launch into work, writing emails and saving them as drafts so she doesn't disturb her colleagues. Chances are they're already fretting about work, too.\n\n\"Sunday scaries\" have become such a fixture of Americans' weekends that Merriam-Webster added the term to its online dictionary last month. Its definition: a feeling of anxiety or sadness one may feel when the weekend is almost over, either because the work/school week is about to begin, there is no more time for fun or relaxing weekend activities, or both.\n\nThat pre-Monday dread isn't a new phenomenon, but there's reason to believe it's intensifying as workloads mount and job security ebbs. More than half of U.S. workers say they experience\n\n[Continued on page A12.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "A12",
+    "terms": [
+      {
+        "en": "Ray A. Smith",
+        "zh_suggested": "雷·A·史密斯",
+        "note": "待查"
+      },
+      {
+        "en": "Sunday scaries",
+        "zh_suggested": "周日恐慌（周日夜晚焦虑）",
+        "note": "韦氏词典新收录词条"
+      },
+      {
+        "en": "Merriam-Webster",
+        "zh_suggested": "韦氏词典"
+      }
+    ]
+  },
+  {
+    "id": "E1-009",
+    "page": "A1",
+    "section": "News",
+    "title": "Americans' Savings Help Fuel Private Credit",
+    "dek": null,
+    "byline": "BY HEATHER GILLERS",
+    "body_en": "When Sabrina Elliott inherited some money, her son-in-law helped her invest $40,000 in a product that dangled the prospect of stock-market gains with no risk of loss.\n\nIn exchange for locking up her money for 12 years, it promised returns tied to the market's performance. One catch: The company behind the product, Aviva, could periodically lower the portion of market gains Elliott received.\n\nThat happened twice after Aviva was purchased by Athene, an insurer backed by private-asset giant Apollo Global Management. By the time the policy ended in late 2023, her annualized return had come to 3.7%.\n\n\"That's one of the downfalls of the indexed annuities,\" said Carlos Dias Jr., Elliott's son-in-law and a financial adviser outside Orlando, Fla. \"Insurance companies can change the amount that's received from the particular index every year, every two years.\"\n\nWall Street behemoths like Apollo and Brookfield are just now starting to find ways to tap in to the vast sums of money in 401(k) accounts, pitching their alternative investments as another way for people to grow their nest eggs.\n\nBut private-asset managers have already been vacuuming up the savings of American households through indexed annuities, which have surged in popularity over the past decade\n\n[Continued on page A10.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": "A10",
+    "terms": [
+      {
+        "en": "Heather Gillers",
+        "zh_suggested": "希瑟·吉勒斯",
+        "note": "待查"
+      },
+      {
+        "en": "Sabrina Elliott",
+        "zh_suggested": "萨布丽娜·埃利奥特",
+        "note": "待查"
+      },
+      {
+        "en": "Aviva",
+        "zh_suggested": "英杰华保险"
+      },
+      {
+        "en": "Athene",
+        "zh_suggested": "Athene（年金保险公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Apollo Global Management",
+        "zh_suggested": "阿波罗全球管理公司",
+        "note": "私募巨头"
+      },
+      {
+        "en": "Brookfield",
+        "zh_suggested": "布鲁克菲尔德资产管理"
+      },
+      {
+        "en": "Carlos Dias Jr.",
+        "zh_suggested": "小卡洛斯·迪亚斯",
+        "note": "待查"
+      },
+      {
+        "en": "indexed annuities",
+        "zh_suggested": "指数型年金",
+        "note": "保险产品"
+      },
+      {
+        "en": "401(k)",
+        "zh_suggested": "401(k)退休储蓄计划"
+      }
+    ]
+  },
+  {
+    "id": "E1-010",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Why Higher Bond Yields Aren’t Going Away",
+    "dek": null,
+    "byline": "THE OUTLOOK | By Matt Grossman and Anthony DeBarros",
+    "body_en": "Some economic shocks look like bumps in the road—tariffs, to which businesses adjust, or a war with Iran that raises oil prices temporarily. But economists increasingly believe that higher U.S. interest rates will define the rest of the decade.\n\nSo concludes The Wall Street Journal's latest survey of forecasters. The surveyed analysts don't see the recent surge in long-term yields to quarter-century highs as a temporary blip that will fade as inflation cools. Instead, they expect higher long-term yields to be sustained.\n\nTreasurys set the tempo for borrowing costs across the economy. Higher yields mean higher mortgage rates and more expensive borrowing for companies. They also increase the burden on the federal budget, where interest on the national debt now exceeds military spending.\n\nThe 71 analysts who submitted projections in the survey from Oct. 2-7 now expect the benchmark 10-year yield to end 2026 at 5.1%, up from 4.4% the last time we asked, in July. Not all respondents answered every question.\n\nHigher yields are expected to persist. Forecasters see a 10-year yield of 4.96% halfway through 2027 and 4.78% at the end of 2027, up from 4.3% and 4.26% in July projections.\n\nA mix of improving growth, inflation and concerns about the U.S. fiscal trajectory have pushed bond yields higher since the start of the summer. Many economists said the cocktail has forced them to re-evaluate assumptions about demand for Treasurys, whose yields rise when their prices fall.\n\n\"It has been a sea change in the fundamentals underlying the fixed-income market and the economy,\" Allen Sinai, president of consulting firm Decision Economics, said in an interview.\n\nHe said even after the Federal Reserve's interest-rate increase last month, the central bank has fallen behind in the battle to tame inflation. Sinai said it would take more than one hike to smother inflation, which the Fed appeared to acknowledge with its September projections. Those showed the Fed's short-term interest-rate target, the federal-funds rate, topping 4% this year and staying there through 2027.\n\nSinai forecasts the 10-year yield could rise to nearly 6% next year and remain above 5% through the 2020s. Yields on Treasury securities are heavily influenced by investors' expectations for how the Fed will set interest rates in coming years.\n\nMuch of the recent increase in inflation is because of higher oil prices, which economists expect to recede: They forecast the U.S. oil-price benchmark will end the year at $88 a barrel, compared with $91.85 on Friday, and slip below $80 by July.\n\nAs a result, they expect inflation as measured by the consumer-price index of 3.5% in December, 2.6% next June, and 2.3% at the end of 2027. That has changed little from three months ago. The inflation gauge that the Fed tracks, the personal-consumption expenditures price index, is forecast to cool to 2.4% by the end of 2027, from 3.5% at the end of this year.\n\nCarl Tannenbaum, chief economist at Chicago-based Northern Trust, said factors beyond the inflation outlook have pushed up expected yields. Inflationary pressure from the Iran war could abate if the conflict winds down, which would help ease yields, all else equal, he said. But investors will remain nervous about the large and growing debt burden, while the AI infrastructure build-out could lift growth expectations and demand for capital, Tannenbaum said. He sees the 10-year yield around 5.2% through 2028, before falling to 5% by the end of 2029.\n\nYields at that level would strain the federal budget. In February, the Congressional Budget Office projected the 10-year Treasury yield won't exceed 4.3% for the rest of the decade. The White House Office of Management and Budget is even more optimistic, projecting yields falling into the mid-3% range later this decade.\n\nEconomists penciled in higher expected growth this year. They expect GDP to increase by 2.4% in 2026, up from their 2.1% July projection. That reflects upward revisions to second-quarter growth and interim data suggesting the economy might have grown by an annualized rate of more than 3% in the third quarter. Respondents see growth slipping back thereafter, to 2.1% or 2.2% for the rest of the decade.\n\nLikewise, forecasters don't anticipate much drama in the labor market. On average, they think unemployment will hang around 4.2% through 2029, little changed from the 4.2% unemployment rate in September.\n\nThey put the probability of recession in the coming 12 months at 24%, barely budged from 25% in July.\n\nNot all forecasters agree yields will stay high. Rajeev Dhawan, an economist at Georgia State University, thinks the labor market is more fragile than it appears.\n\nOver the past six months, the economy has added a solid 66,000 jobs a month on average, but few have been in the most lucrative fields, he said.\n\nIn Dhawan's view, a weaker labor market could force the Fed to bring rates lower again, which could pull down yields. \"The labor market's got a white-collar job malaise,\" Dhawan said. \"Once the Fed realizes it isn't as strong, they will pivot to rate cuts.\"\n\n[Graphics with the article: (1) \"Probability the U.S. is in a recession in next 12 months, including today,\" 2015-2026; (2) \"GDP (annualized growth)\" with October '26 forecast vs July '26 forecast, Q3 2026-Q3 2027; (3) \"Closing yield, 10-year Treasury notes\" with October '26, July '26 and April '26 forecasts, Dec. 31 2026-Dec. 31 2029. Note: Recession probability is an average of economists' answers. GDP forecasts are for inflation-adjusted GDP. Source: Wall Street Journal surveys of economists.]",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Matt Grossman",
+        "zh_suggested": "马特·格罗斯曼",
+        "note": "待查"
+      },
+      {
+        "en": "Anthony DeBarros",
+        "zh_suggested": "安东尼·德巴罗斯",
+        "note": "待查"
+      },
+      {
+        "en": "Allen Sinai",
+        "zh_suggested": "艾伦·西奈",
+        "note": "待查"
+      },
+      {
+        "en": "Decision Economics",
+        "zh_suggested": "Decision Economics（咨询公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Carl Tannenbaum",
+        "zh_suggested": "卡尔·坦嫩鲍姆",
+        "note": "待查"
+      },
+      {
+        "en": "Northern Trust",
+        "zh_suggested": "北方信托银行"
+      },
+      {
+        "en": "Rajeev Dhawan",
+        "zh_suggested": "拉吉夫·达万",
+        "note": "待查"
+      },
+      {
+        "en": "Georgia State University",
+        "zh_suggested": "佐治亚州立大学"
+      },
+      {
+        "en": "Congressional Budget Office",
+        "zh_suggested": "国会预算办公室",
+        "note": "缩写CBO"
+      },
+      {
+        "en": "Office of Management and Budget",
+        "zh_suggested": "白宫行政管理和预算局",
+        "note": "缩写OMB"
+      }
+    ]
+  },
+  {
+    "id": "E1-011",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Fed’s Hammack Sees Engine of Inflation on Factory Floor",
+    "dek": null,
+    "byline": "BY NICK TIMIRAOS",
+    "body_en": "CLEVELAND—Jack Schron spent most of 90 minutes last week showing Cleveland Fed President Beth Hammack how good business has gotten at Jergens, a family-run manufacturer built on the site of old railroad buildings on the city's east side.\n\nOrders from aerospace companies are surging, tariffs have made a Chinese rival's parts more expensive, and the company is about to make the biggest machine-tool purchase in its 84-year history.\n\nJergens makes industrial hardware such as clamps and quick-release pins that lock everything from aircraft panels to concert speakers into position. What matters most to his customers has shifted, Schron told the central banker. Quality is still the minimum for getting in the door at the aerospace giants. \"The next threshold used to be price,\" he said.\n\nNow it is speed. \"No one wants to wait on anything anymore,\" said Schron, the company's president. Buyers will pay a premium to get products in weeks instead of months, and that has helped Jergens' bottom line.\n\nThat kind of pricing power worries inflation fighters like Hammack. It suggests demand is outrunning what suppliers can make, a dynamic that higher interest rates are supposed to tamp down. Yet interest rates never came up during her visit, which ended with a tour of the busy factory floor.\n\nJergens is one company, but its experience fits what Hammack said she is hearing from across her district. \"You heard it from Jack. He's buying expensive machinery. He's investing. He sees a lot of demand. The growth is there,\" Hammack said in an interview after the tour.\n\nIt is a big reason she thinks the Fed, which raised its benchmark rate last month to a range of 3.75% to 4%, needs to go higher still. With inflation above the Fed's 2% target for more than five years, Hammack says she hears from lower-income households that are no longer just trading down at the grocery store but choosing which bills to pay.\n\nMost of her colleagues last month saw inflation returning to target in 2029. \"To me, that's far too long,\" she said.\n\nHammack, who spent more than 30 years at Goldman Sachs before joining the Fed in 2024, has been among the most outspoken officials in pushing for higher rates. \"I grew up in a world as a trader where if I was wrong 49% of the time, that was a pretty good day, so I'm not afraid of putting out a forecast,\" she said.\n\nHammack was early to argue that rates might not be restraining the economy as much as Fed officials thought, and the boom in AI-related spending rippling through the industrial and technology sectors has since brought more of her colleagues around to that view.\n\nThe question now is how quickly to adjust. Minutes of the Fed's September meeting showed most officials thought another increase would likely be appropriate by year-end, and several have signaled they think the Fed doesn't need to raise rates again this month.\n\nHammack didn't sound as patient. \"Smaller, more frequent adjustments are preferable to larger\" ones, in part because making bigger moves can be harder for businesses to prepare for, said Hammack.\n\nIn July, when the Fed held rates steady, she was one of three policymakers who dissented in favor of a rate increase.\n\nOfficials often gauge how much they are restraining the economy against some estimate of an unobservable \"neutral\" rate, the level that neither spurs nor slows growth. Hammack said her estimate is among the highest on the committee, and that if she is wrong, it is too low.\n\n\"When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint,\" she said.\n\nLong-term Treasury yields have been on the march since the summer, raising borrowing costs across the economy. Hammack said that has moved financial conditions closer to neutral, but she rejected the suggestion that the bond market could do the Fed's work for it. \"Absolutely not,\" she said. \"It's not a substitute, it's a complement.\"\n\nOutside the Fed, critics argue that higher rates are the wrong tool for the job. They can't produce more oil and may not immediately slow AI spending financed by tech giants' cash and the bond market. Hammack conceded the point. \"I do not think that raising rates is going to materially slow the data-center demand,\" she said.\n\nHammack's willingness to say where she stands sets her apart from Fed Chairman Kevin Warsh. Warsh has said he wants to move the Fed away from signaling its own moves or narrating its forecasts, which he has argued locks officials into defending a projection instead of responding to the economy as it unfolds.\n\nSaying less just leaves businesses and households to guess, Hammack said. Her job is to \"arm the public with as much information as possible\" and to \"treat them like mature grown-ups.\"",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Nick Timiraos",
+        "zh_suggested": "尼克·蒂米拉奥斯",
+        "note": "待查"
+      },
+      {
+        "en": "Beth Hammack",
+        "zh_suggested": "贝丝·哈马克",
+        "note": "克利夫兰联储主席"
+      },
+      {
+        "en": "Jack Schron",
+        "zh_suggested": "杰克·施龙",
+        "note": "待查"
+      },
+      {
+        "en": "Jergens",
+        "zh_suggested": "Jergens（工业五金制造商）",
+        "note": "待查"
+      },
+      {
+        "en": "Goldman Sachs",
+        "zh_suggested": "高盛"
+      },
+      {
+        "en": "Kevin Warsh",
+        "zh_suggested": "凯文·沃什",
+        "note": "美联储主席"
+      }
+    ]
+  },
+  {
+    "id": "E1-012",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Hammack Tours Jergens Factory",
+    "dek": null,
+    "byline": null,
+    "body_en": "Jack Schron and Cleveland Fed President Beth Hammack during a tour of Jergens in Cleveland.",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-013",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Corrections & Amplifications",
+    "dek": null,
+    "byline": null,
+    "body_en": "Readers can alert The Wall Street Journal to any errors in news articles by emailing wsjcontact@wsj.com or by calling 888-762-5450.",
+    "priority": "P3",
+    "type": "correction",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-014",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Venezuelan Bribe Suspect Arrested",
+    "dek": "FLORIDA",
+    "byline": "—Associated Press",
+    "body_en": "A businessman wanted in the U.S. for allegedly paying bribes to top Venezuelan officials in exchange for lucrative state contracts in Venezuela has been taken into custody.\n\nAlvaro Pulido was indicted in Miami federal court in 2019 and again in 2021 as part of an investigation into his longtime business partner, Alex Saab, a onetime ally of ousted President Nicolás Maduro.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Alvaro Pulido",
+        "zh_suggested": "阿尔瓦罗·普利多",
+        "note": "待查"
+      },
+      {
+        "en": "Alex Saab",
+        "zh_suggested": "阿莱克斯·萨博"
+      }
+    ]
+  },
+  {
+    "id": "E1-015",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Man Charged in Officer’s Death",
+    "dek": "PHILADELPHIA",
+    "byline": "—Associated Press",
+    "body_en": "Authorities charged Eric Lewis, 35, with homicide in the killing of a police officer Saturday, Philadelphia District Attorney Larry Krasner said.\n\nShane Seiber, 40, was shot and killed after responding to a report of a man with a gun, police said. An officer who was with him was shot 12 times and is in stable condition, Commissioner Kevin Bethel said.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Eric Lewis",
+        "zh_suggested": "埃里克·刘易斯",
+        "note": "待查"
+      },
+      {
+        "en": "Larry Krasner",
+        "zh_suggested": "拉里·克拉斯纳",
+        "note": "费城地区检察官，待查"
+      },
+      {
+        "en": "Shane Seiber",
+        "zh_suggested": "肖恩·塞伯",
+        "note": "待查"
+      },
+      {
+        "en": "Kevin Bethel",
+        "zh_suggested": "凯文·贝塞尔",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-016",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Man Targets His Family, Killing Eight",
+    "dek": "PENNSYLVANIA",
+    "byline": "—Associated Press",
+    "body_en": "A man killed eight people including a pregnant woman, children and other relatives at his home in Erie, Pa., before taking his own life as well, authorities said.\n\nErie Police Chief Rick Lorah said the 45-year-old man was related to seven of the victims in Friday's shooting, while the eighth was a friend of the pregnant woman.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Rick Lorah",
+        "zh_suggested": "里克·洛拉",
+        "note": "伊利市警察局长，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-017",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "At Least 4 People Die in Hurricane",
+    "dek": "SOUTH",
+    "byline": "—Associated Press",
+    "body_en": "At least four deaths were linked to Isaias, including two people killed when trees fell onto homes in Florida and Alabama.\n\nThe first hurricane of the Atlantic season, Isaias came ashore as a Category 2 hurricane Friday near Destin, Fla., and then roared into Alabama with tropical-force winds before heading farther north.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Isaias",
+        "zh_suggested": "伊萨亚斯",
+        "note": "大西洋飓风季首个飓风"
+      }
+    ]
+  },
+  {
+    "id": "E1-018",
+    "page": "A2",
+    "section": "U.S. News",
+    "title": "Aftermath of Hurricane Isaias",
+    "dek": null,
+    "byline": null,
+    "body_en": "Islam Mahfuz salvaged the contents of his destroyed mini mart in the aftermath of Isaias in Milton, Fla., on Saturday. The storm was the first hurricane of the Atlantic season. (Photo: GERALD HERBERT/AP)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Islam Mahfuz",
+        "zh_suggested": "伊斯兰·马哈福兹",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-019",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "Newsom Backs Bid To Counter Billionaire Tax Effort",
+    "dek": null,
+    "byline": "BY PAUL KIERNAN",
+    "body_en": "California Gov. Gavin Newsom has opposed a high-profile ballot measure that would tax billionaires' wealth. Now he is endorsing a different measure aimed at prohibiting wealth taxes.\n\nNewsom announced his endorsement Friday via the campaign backing the antitax measure, known as Proposition 42. \"Californians deserve to have their retirement and life savings protected from new state taxes,\" Newsom said.\n\nProp. 42 has raised tens of millions of dollars from a political committee funded in part by billionaires, including Google co-founder Sergey Brin. This effort took off after a healthcare-workers' union proposed a one-time 5% tax on billionaires' wealth. Voters are set to decide on both ballot measures on Nov. 3.\n\nThe proposed billionaire tax, aimed at offsetting steep cuts to Medicaid funding signed into law last year by President Trump, is novel in the U.S. Unlike the income taxes that most Americans pay, it would apply to the net worth of California residents with net assets of $1 billion or more.\n\nThe wealth tax has exposed bitter divisions in the Democratic Party and in California's labor movement.\n\nNewsom came out against the tax last year, weeks after it was proposed by a healthcare-workers union, and has argued the levy could push the state's largest taxpayers to flee. The state Democratic Party, meanwhile, voted in August to endorse the measure.\n\nProp. 42 could invalidate a billionaire tax by changing California's constitution to prohibit new taxes on financial assets or personal property, other than real estate.\n\nThe California Democratic Party and several large unions oppose it.\n\nCalifornia billionaires have poured money into campaigns claiming the tax could weaken the state's fiscal base or be expanded by the legislature to apply to a broader swath of residents.\n\nA likely legal battle looms if voters approve this measure and the wealth tax.\n\nThe union backing the billionaire tax effort—the Service Employees International Union-United Healthcare Workers West—said Newsom was siding with California's wealthiest residents over healthcare for children and families. \"Governor Newsom is in lock step with his billionaire-backers,\" Debru Carthan, the union's vice president, said.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Paul Kiernan",
+        "zh_suggested": "保罗·基尔南",
+        "note": "待查"
+      },
+      {
+        "en": "Proposition 42",
+        "zh_suggested": "42号提案",
+        "note": "加州反财富税修宪提案"
+      },
+      {
+        "en": "Sergey Brin",
+        "zh_suggested": "谢尔盖·布林",
+        "note": "谷歌联合创始人"
+      },
+      {
+        "en": "Service Employees International Union-United Healthcare Workers West",
+        "zh_suggested": "服务业雇员国际工会-联合医护工作者西部",
+        "note": "待查"
+      },
+      {
+        "en": "Debru Carthan",
+        "zh_suggested": "德布鲁·卡森",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-020",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "Local Politics Stymie Silicon Valley Standoff",
+    "dek": "between county leaders and developers frustrates $3 billion project",
+    "byline": "BY ZUSHA ELINSON",
+    "body_en": "SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for Silicon Valley-backed entrepreneur Jan Sramek were in overdrive. With Gov. Gavin Newsom's office in his corner, Sramek was chasing a prize: a $3 billion shipyard beside the city he wants to build from scratch here.\n\n\"WE HAVE SOME GREAT NEWS!!!!!!,\" a Newsom staffer emailed after the site made the shortlist. \"We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago.\"\n\nThe excitement didn't last. Within an hour, Sramek warned of an obstacle: county government red tape. Ten months later, the shipmaker, Saronic Technologies, chose Brownsville, Texas, taking with it an estimated 10,000 jobs.\n\nSramek, 39 years old, is no stranger to big deals. By 22, he was handling multimillion-dollar trades at Goldman Sachs in London. Now, he is trying to build a kind of walkable suburban utopia, with housing, a high-tech manufacturing hub and a shipyard, a 90-minute drive from San Francisco. His company California Forever has raised about $1 billion from investors, including venture firm Andreessen Horowitz and LinkedIn co-founder Reid Hoffman, assembled top urban planners and won over state leaders including Newsom.\n\nThe group wants to address a regional housing shortage around San Francisco, as well as a lack of jobs in Solano County, which this year lost a Budweiser brewery and a Valero Energy refinery.\n\nBut its biggest hurdle is the county itself.\n\nThe face of the opposition is Mitch Mashburn, 59, a cowboy-hat-wearing Republican county supervisor and descendant of local farmers who has complained the push for the shipyard was being \"crammed down our throat.\"\n\nSramek casts the standoff as a fight against forces that have priced people out of housing and stalled local economies. \"The battle for the future of California is being fought in Solano County,\" he said.\n\nOpponents view it as a tech-billionaire land grab. \"I call it broligarch city because it's really tech bros behind this,\" said Jim DeKloe, a community-college professor and local Sierra Club leader.\n\nEmails seen by The Wall Street Journal show relations have soured to the point where county officials appear more inclined to block the project than negotiate.\n\nFormer County Supervisor Jim Spering faults both sides. County leaders like Mashburn aren't forward-looking and don't know how to cut deals that would help the region, he said. And Sramek is one of those \"dreamer developers that don't understand that you've got to build a relationship with the community\" before \"telling them what you want to do,\" Spering said.\n\nSramek said he thinks his project would have faced stiff opposition no matter the approach. From the start, his campaign to buy up 60,000 acres for a master-planned community for 400,000 people enraged locals, especially after California Forever sued multigenerational farming families, alleging they conspired to inflate land prices. He called opponents the \"70-year-old Sierra Club type.\"\n\nAfterward, Sramek and Mashburn pledged to slow down and work together. The detente faced its first test in Saronic's planned large shipyard along the Sacramento River on California Forever's land. As Saronic, which makes autonomous sea vessels, weighed sites in 2025, Sramek's deputies courted local leaders with riverside tours alongside retired military brass.\n\nBut by April, county officials were feeling sidelined. When a Sramek deputy reminded then-County Administrator Bill Emlen of six months of meetings with him, Mashburn and others, receipts attached, Emlen shot back. \"Sending invites to public briefings does not substitute for a seat at the table,\" he wrote.\n\nSramek found an ally in Bret Prebula, a former government and restless dealmaker who became city manager of Suisun City, one of Solano County's poorest communities. Prebula, 43, saw an opportunity for his 4-square-mile city, which has a large Black population and has long felt overlooked in Solano County. In early 2025, he proposed expanding Suisun City's borders by 35 square miles to annex a significant portion of California Forever's land. For Prebula, it meant city revenue. For Sramek, it was a way around the county's strict rules on development outside city limits.\n\nIn June 2025, Sramek offered Suisun City a $55,000 grant for the local July 4 fireworks celebration and other events threatened by a budget shortfall. He offered to buy $1.5 million in downtown properties to help close the gap, emails show.\n\nSoon after, they struck a deal: California Forever would cover the city's project-related costs and pay it $10 million if the annexation is finalized.\n\nOpponents cried foul. DeKloe, the Sierra Club leader, called it a \"weasel tactic\" intended to bypass a county-wide vote.\n\nWhen Solano County made the shortlist last August, Sramek pushed for special legislation to fast-track the project. State lawmakers worked up a bill but wanted the county to sign off. At a board meeting, Mashburn chastised California Forever for the rush but voted to endorse a compromise bill.\n\nThe bill fell short for Saronic, according to Sramek. Despite months of talks between Sramek's team, Mashburn and lawmakers, trying to hammer out a better one, Saronic said in June it had picked Texas.\n\n\"We kept raising our hand and saying, if we don't pass the legislation, they are going to go to Brownsville,\" Sramek said, \"but there wasn't the political will to get it done.\" A Saronic spokeswoman didn't respond to requests to comment.\n\nPulling into California Forever's unmarked office, Sramek called the vote a speed bump. But the emails show California Forever boosters fear Mashburn has another bullet in the chamber. The Suisun City annexation requires a tax-sharing agreement with Solano County, one developers [say] Mashburn has said publicly the county can't be forced to make.\n\n\"What's happening here is not just local friction,\" Prebula complained in an email to state officials. \"it is a clear example of how counties can weaponize process and inertia.\"",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Zusha Elinson",
+        "zh_suggested": "祖沙·埃林森",
+        "note": "待查"
+      },
+      {
+        "en": "Jan Sramek",
+        "zh_suggested": "扬·斯拉梅克",
+        "note": "待查"
+      },
+      {
+        "en": "Saronic Technologies",
+        "zh_suggested": "Saronic Technologies（造船公司）",
+        "note": "待查"
+      },
+      {
+        "en": "California Forever",
+        "zh_suggested": "California Forever（开发公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Andreessen Horowitz",
+        "zh_suggested": "安德里森·霍洛维茨",
+        "note": "风投"
+      },
+      {
+        "en": "Reid Hoffman",
+        "zh_suggested": "里德·霍夫曼",
+        "note": "领英联合创始人"
+      },
+      {
+        "en": "Mitch Mashburn",
+        "zh_suggested": "米奇·马什伯恩",
+        "note": "待查"
+      },
+      {
+        "en": "Jim DeKloe",
+        "zh_suggested": "吉姆·德克洛",
+        "note": "待查"
+      },
+      {
+        "en": "Jim Spering",
+        "zh_suggested": "吉姆·斯佩林",
+        "note": "待查"
+      },
+      {
+        "en": "Bill Emlen",
+        "zh_suggested": "比尔·埃姆伦",
+        "note": "待查"
+      },
+      {
+        "en": "Bret Prebula",
+        "zh_suggested": "布雷特·普雷布拉",
+        "note": "待查"
+      },
+      {
+        "en": "Suisun City",
+        "zh_suggested": "Suisun市",
+        "note": "索拉诺县城市，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-021",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "Suisun City Eyes California Forever Deal",
+    "dek": null,
+    "byline": null,
+    "body_en": "City Manager Bret Prebula sees opportunity for the 4-square-mile Suisun City, one of Solano County's poorest communities, in working with California Forever. (Photos: JONAH REENDERS FOR WSJ (3)) [Map with article: Proposed new city; Suisun City; Rio Vista; Vallejo; Richmond; Berkeley; San Francisco; Oakland, Calif.; \"CALIFORNIA FOREVER\"; Jan Sramek.]",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-022",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "Pro-Trump Ads Funded by Taxpayers Ordered Off the Air",
+    "dek": null,
+    "byline": "BY BRENT KENDALL",
+    "body_en": "A federal judge ordered the Trump administration to halt any further airing of taxpayer-funded television ads touting the president, ruling they are likely illegal.\n\nU.S. District Judge Jennifer Rochon in New York issued a four-page order late Sunday that barred the administration from using government funds to distribute the ads.\n\nThe judge, a Biden appointee, said it must cancel \"any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.\"\n\nThe order applied immediately to any ads scheduled to run later on Sunday night, but it wasn't immediately clear whether the ruling kept any additional ads off the air.\n\nThe White House didn't respond to a request for comment.\n\nThe Justice Department in a weekend filing said the ad buy was slated to end on Sunday.\n\nThe ads, which predominantly feature the president and promote the administration's policies, started airing on national television in September. They were paid for by federal funds from the Department of Homeland Security.\n\nPresident Trump personally pushed for the ads and was involved in their creation, The Wall Street Journal has reported.\n\nThe judge's ruling came in response to a lawsuit filed by plaintiffs including the advocacy group Common Cause and a Democratic candidate running for office in Alabama.\n\nThey argued the expenditures were used for purposes not authorized by Congress and violated restrictions on using public funds for political propaganda. \"There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda,\" the plaintiffs said in response to the ruling.\n\nThe president said last week that he plans to pay for the controversial ads using funds from his MAGA Inc. super PAC rather than the federal government.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Brent Kendall",
+        "zh_suggested": "布伦特·肯德尔",
+        "note": "待查"
+      },
+      {
+        "en": "Jennifer Rochon",
+        "zh_suggested": "珍妮弗·罗尚",
+        "note": "纽约联邦地区法官，待查"
+      },
+      {
+        "en": "Common Cause",
+        "zh_suggested": "Common Cause（倡导组织）",
+        "note": "待查"
+      },
+      {
+        "en": "MAGA Inc.",
+        "zh_suggested": "MAGA Inc.（超级政治行动委员会）"
+      },
+      {
+        "en": "Department of Homeland Security",
+        "zh_suggested": "国土安全部"
+      }
+    ]
+  },
+  {
+    "id": "E1-023",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "DOJ Probes Networks on Halting Coverage",
+    "dek": null,
+    "byline": "BY JOE FLINT AND DAVE MICHAELS",
+    "body_en": "The Justice Department is investigating whether major TV networks violated federal antitrust laws when they briefly suspended a rotation of broadcast journalists covering the White House last month following CNN's removal from a planned assignment.\n\nNetworks learned of the probe Friday, with Justice Department officials seeking records of communication among them regarding the pool, people familiar with the matter said.\n\nFox News, ABC News, CBS News, CNN and NBC News are part of a group of reporters, videographers, photographers and technicians who cover President Trump when he travels or when events take place in spaces that are too small for the entire press corps.\n\nWhen CNN was taken out of the rotation for Trump's trip to New York for the United Nations General Assembly in September—days after Trump banned the network, MS NOW and Politico from the White House—the TV pool briefly halted some coverage of the president.\n\n\"Members of the television press pool have boycotted covering White House events.\"\n\n\"Group boycotts among commercial competitors can violate the Sherman Act,\" Justice Department spokeswoman Emily Covington said. \"The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.\"\n\nThe White House didn't respond to a request for comment.\n\nThe Justice Department's investigation further escalates tensions between the Trump administration and the media. Trump said in July that ABC and NBC should lose their broadcast licenses for not carrying his speech on alleged election fraud on their networks.\n\nHe has also called unfavorable coverage treasonous, and his administration has subpoenaed journalists and limited access to government spaces.\n\n\"Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists,\" said Bruce Brown, president of the Reporters Committee for Freedom of the Press.\n\nFox News parent Fox Corp. and Wall Street Journal parent News Corp share common ownership.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Joe Flint",
+        "zh_suggested": "乔·弗林特",
+        "note": "待查"
+      },
+      {
+        "en": "Dave Michaels",
+        "zh_suggested": "戴夫·迈克尔斯",
+        "note": "待查"
+      },
+      {
+        "en": "Emily Covington",
+        "zh_suggested": "艾米莉·卡温顿",
+        "note": "司法部发言人，待查"
+      },
+      {
+        "en": "Bruce Brown",
+        "zh_suggested": "布鲁斯·布朗",
+        "note": "待查"
+      },
+      {
+        "en": "Reporters Committee for Freedom of the Press",
+        "zh_suggested": "新闻自由记者委员会",
+        "note": "待查"
+      },
+      {
+        "en": "Sherman Act",
+        "zh_suggested": "谢尔曼反托拉斯法"
+      },
+      {
+        "en": "MS NOW",
+        "zh_suggested": "MS NOW（媒体）",
+        "note": "待查"
+      },
+      {
+        "en": "Fox Corp",
+        "zh_suggested": "福克斯公司"
+      },
+      {
+        "en": "News Corp",
+        "zh_suggested": "新闻集团"
+      }
+    ]
+  },
+  {
+    "id": "E1-024",
+    "page": "A3",
+    "section": "U.S. News",
+    "title": "Rogue Anthropic Model Shared Fake Murder Tip",
+    "dek": null,
+    "byline": "BY GEORGIA WELLS AND JOSEPH PISANI",
+    "body_en": "Rogue AI models have hacked companies and tried to break into government websites. Now one has submitted a fake tip for an unsolved crime.\n\nPolice in Philadelphia say Anthropic alerted them last week that one of its artificial-intelligence models submitted a false homicide tip through PhillyUnsolvedMurders.com.\n\nAnthropic said the fake tip was among a group of rogue actions the company uncovered recently. The rogue activity also involved websites run by U.S. government agencies at the federal, state and local levels.\n\nThe company said it has briefed the White House on these cases and notified each agency involved.\n\n\"While these cases had minimal impact, we do not want to diminish the findings, because the same behaviors could do far more harm as models become more powerful,\" Anthropic said.\n\nThe incident happened in July. Anthropic didn't realize it until September.\n\nThe Philadelphia Police Department said, \"The two-month delay in detecting and reporting the incident to the city is unacceptable.\"",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Georgia Wells",
+        "zh_suggested": "乔治娅·威尔斯",
+        "note": "待查"
+      },
+      {
+        "en": "Joseph Pisani",
+        "zh_suggested": "约瑟夫·皮萨尼",
+        "note": "待查"
+      },
+      {
+        "en": "Anthropic",
+        "zh_suggested": "Anthropic（AI公司）"
+      },
+      {
+        "en": "PhillyUnsolvedMurders.com",
+        "zh_suggested": "PhillyUnsolvedMurders.com（费城未破悬案网站）",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-025",
+    "page": "A4",
+    "section": "U.S. News",
+    "title": "At Davos, Guilfoyle Boasted About Perks",
+    "dek": "On a recording, ambassador said businessmen paid for her luxury travel",
+    "byline": "By Rebecca Ballhaus, Joe Parkinson, Drew Hinshaw and Dana Mattioli",
+    "body_en": "Kimberly Guilfoyle, as America's newly minted ambassador to Greece, boasted at Davos about her ties to two Greek tycoons and said they were bankrolling her high-rolling trips around the world.\n\nAccording to people who heard the conversation and an audio recording reviewed by The Wall Street Journal, Guilfoyle was flexing her connections to wealthy Greek businessmen in January as she made an urgent request. She was being blocked from attending an upcoming dinner being held for Eric Trump, and she wanted to enlist an American businessman who was on the guest list to help get her in the door.\n\n\"You know, I can deliver the world to you. Which you deserve,\" she said, according to the recording. \"I'm going to make you a lot of f—ing money,\" she said at another point in the exchange with the businessman.\n\nShe expressed fury at not being on the list for the dinner, which was being organized by Greek House Davos. \"You don't have the f—ing U.S., you know, ambassador to Greece not come. She should be kissing my f—ing ass,\" Guilfoyle said of the event's organizer.\n\nIn the end, Guilfoyle was able to score a last-minute seat. The chairwoman of Greek House Davos, Irene Vantaraki, said that her team \"had to manage a small crisis [that] affected a number of high-profile guests\" and that \"some were disappointed.\" Guilfoyle was \"gracious and discreet\" and left the dinner early, she said.\n\nGuilfoyle had flown to the January 2026 World Economic Forum on a private jet with Alexandros Exarchou, chief executive of the Greek construction company Aktor Group, she acknowledged on the recording.\n\nGovernments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy billions of dollars of American natural gas from his company, the Journal has reported. The Greek businessman was, she said in the recording, \"my people.\"\n\nHe wasn't the only businessman facilitating Guilfoyle's travels. She was also planning to fly later that month to and out of Paris, on a jet with a Greek shipping tycoon, Nikolas Tsakos, to attend his wife's fashion show, she said in the recording. They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of Gstaad. \"I see him every f—ing day,\" she said. \"I'm flying with him to Paris. I'm with him this week.… He spent Christmas with him. OK? Gstaad. Like, everywhere.\"\n\nWhen the ambassador checked in to Paris's Four Seasons Hotel George V—a favorite hotel of Hollywood A-listers and African and Middle Eastern leaders—the bill fell to Nikos Tsakos, CEO of Tsakos Energy Navigation, according to people familiar with the matter.\n\nGuilfoyle, dressed in several designer gowns, would post photos of herself—including two with Tsakos—at the event to her 2 million Instagram followers.\n\nTsakos's financing of her travel hasn't been previously reported. Tsakos and his wife didn't respond to requests for comment.\n\nAktor Group, through lawyers, declined to comment. The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests.\n\nA spokesman for the U.S. Embassy in Athens said the ambassador's \"career in public service is guided by deep and abiding values\" and that she had \"faithfully followed State Department ethics and gift reporting guidelines.\"\n\n\"The unsubstantiated claims are simply a distraction from the great work she is doing in Greece and the broader Eastern Mediterranean,\" the spokesman said.\n\nThe new revelations come as top Trump administration officials are deliberating what to do about an ambassador who was once set to marry into the first family, yet is now evolving into a political liability ahead of the 2026 midterms. Administration officials are discussing whether she should be removed, and a decision is expected by President Trump soon, aides said.\n\nThe State Department's inspector general is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said.\n\nOn Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send $100,000 to her American Express account, and in return offered help in getting the Trump administration to look into the donor's personal tax and legal issues. A lawyer for Guilfoyle disputed the authenticity of the messages but declined to provide specifics.\n\n\"I just heard about it. It's too bad,\" Trump told reporters of the reporting on Guilfoyle as he left the White House on Friday. \"I mean, I know. She's an ambassador. She was always very nice.\"\n\nLast week, Guilfoyle came under fire from Democrats on Senate and House foreign affairs committees, who urged the State Department to review her conduct after the Journal investigation revealed the ambassador's efforts to promote Aktor, the Greek firm whose CEO had flown her to Davos.\n\nThe revelations have been a disruption for the White House and State Department. Guilfoyle spent several days reaching out to people in and around the administration, denying that she had sent the texts soliciting credit-card relief, and seeking their support.\n\nSecretary of State Marco Rubio learned about her text messages from the Journal's request for comment as he was on a plane to Athens, where he would deliver a speech standing before the Acropolis, \"on whether the West maintains its place at the head of the world.\" Aides were frustrated and feared the revelations would overshadow Rubio's marquee address, according to people familiar with the discussions. Guilfoyle joined Rubio for multiple events during his visit. Yet as Rubio departed Athens on Thursday, he declined to discuss the text messages reported by the Journal. \"We don't conduct these things in a press conference on a tarmac in a foreign country because you wrote a story,\" he told reporters. Guilfoyle was on the tarmac to see him off.\n\nVice President JD Vance, asked about the Journal's reporting on Friday, declined to take a stance. \"These are accusations,\" he said. \"Let's see what the truth is. And obviously, if there was something bad that happened, then people have to suffer consequences.\"\n\nSome former Trump officials expressed skepticism that Guilfoyle would face consequences. Stephanie Grisham, first lady Melania Trump's former spokeswoman, wrote in a post on X: \"She knows far too much about the Trump family/inner circle & I imagine they like her as far away as possible. An angry KG stateside would not be a good thing for Trumpworld.\"\n\nIn recent days, congressional Democrats have intensified their calls for Guilfoyle to face an investigation or be ousted from her role—or both. In a letter to Guilfoyle on Friday, Rep. Gregory Meeks (D., N.Y.), the top Democrat on the House Foreign Affairs Committee, called for an \"immediate investigation\" into whether the ambassador had violated federal bribery and public corruption laws. Meeks also requested the State Department inspector general investigate whether Guilfoyle had violated federal law, department regulations or ethics requirements. California Rep. Robert Garcia, the top Democrat on the House oversight committee, in a letter to Guilfoyle on Thursday said the reported conduct \"raises serious public corruption and national security concerns\" and requested she provide financial records and copies of her communications with certain government officials.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Rebecca Ballhaus",
+        "zh_suggested": "丽贝卡·巴尔豪斯",
+        "note": "待查"
+      },
+      {
+        "en": "Joe Parkinson",
+        "zh_suggested": "乔·帕金森",
+        "note": "待查"
+      },
+      {
+        "en": "Drew Hinshaw",
+        "zh_suggested": "德鲁·欣肖",
+        "note": "待查"
+      },
+      {
+        "en": "Dana Mattioli",
+        "zh_suggested": "达娜·马蒂奥利",
+        "note": "待查"
+      },
+      {
+        "en": "Kimberly Guilfoyle",
+        "zh_suggested": "金伯莉·吉尔福伊尔",
+        "note": "美国驻希腊大使"
+      },
+      {
+        "en": "Alexandros Exarchou",
+        "zh_suggested": "亚历山德罗斯·埃克萨尔霍乌",
+        "note": "待查"
+      },
+      {
+        "en": "Aktor Group",
+        "zh_suggested": "Aktor集团（希腊建筑公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Nikolas Tsakos",
+        "zh_suggested": "尼古拉斯·察科斯",
+        "note": "希腊船运大亨，待查"
+      },
+      {
+        "en": "Tsakos Energy Navigation",
+        "zh_suggested": "Tsakos Energy Navigation（船运公司）",
+        "note": "待查"
+      },
+      {
+        "en": "Eric Trump",
+        "zh_suggested": "埃里克·特朗普"
+      },
+      {
+        "en": "Irene Vantaraki",
+        "zh_suggested": "艾琳·万塔拉基",
+        "note": "待查"
+      },
+      {
+        "en": "Greek House Davos",
+        "zh_suggested": "达沃斯希腊之家",
+        "note": "待查"
+      },
+      {
+        "en": "Marco Rubio",
+        "zh_suggested": "马尔科·鲁比奥",
+        "note": "国务卿"
+      },
+      {
+        "en": "Gregory Meeks",
+        "zh_suggested": "格雷戈里·米克斯",
+        "note": "待查"
+      },
+      {
+        "en": "Robert Garcia",
+        "zh_suggested": "罗伯特·加西亚",
+        "note": "待查"
+      },
+      {
+        "en": "Stephanie Grisham",
+        "zh_suggested": "斯蒂芬妮·格里沙姆",
+        "note": "待查"
+      },
+      {
+        "en": "World Economic Forum",
+        "zh_suggested": "世界经济论坛",
+        "note": "达沃斯"
+      }
+    ]
+  },
+  {
+    "id": "E1-026",
+    "page": "A4",
+    "section": "U.S. News",
+    "title": "Guilfoyle in Greece With Rubio",
+    "dek": null,
+    "byline": null,
+    "body_en": "Above, Kimberly Guilfoyle, last Wednesday in Greece. Below, with Secretary of State Marco Rubio on Thursday near Athens. (Photos: MARK SCHIEFELBEIN/PRESS POOL (2))",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-027",
+    "page": "A4",
+    "section": "U.S. News",
+    "title": "Harris’s Husband Has Reservations On Her Potential Presidential Run",
+    "dek": null,
+    "byline": "By Jessica Toonkel, Emily Glazer and Ken Thomas",
+    "body_en": "As former Vice President Kamala Harris lays the groundwork for a potential third presidential campaign, her husband Doug Emhoff has privately told some people he would prefer she didn't run and some donors have told her directly that a bid would be a long shot, said people familiar with the conversations.\n\nHarris has said she is undecided on whether to launch another run for the White House, but she has taken steps that could be a precursor to such a bid, including speaking with major donors, hiring staff and traveling to battleground states to boost Democratic candidates in the November midterm elections.\n\nPublicly, she has said she remains focused on the midterms, in which Democrats hope to win control of the House and Senate and pick up several gubernatorial seats. \"I have not decided if I'm going to run again,\" Harris said at a NAACP event in Michigan last month as the audience gave her a lengthy standing ovation. \"I do sincerely believe '28 won't matter if we don't get through '26.\"\n\nSome people who have known and worked with Harris are skeptical she will mount another run.\n\nA spokesman for Harris declined to comment.\n\nMany Democrats, including some who remain close to her, think the party needs to put forward a fresh candidate in the 2028 election. Unlike in 2024, when the party coalesced around Harris in the aftermath of Biden's exit, she is expected to face a crowded field if she were to run again.\n\nEmhoff is among those who have shared concerns with others about another run, though close to him expect he will support her if she decides to run.\n\nIn \"107 Days,\" her memoir of the 2024 campaign, Harris describes her husband as protective and supportive, noting that when she was chosen to be Biden's running mate in 2020, \"he made a huge sacrifice gladly and without bitterness.\" She wrote, \"he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his last day at his law firm.\"\n\nShe writes that in October 2024, \"the attacks on me, and the many personal assaults he'd been experiencing were finally taking a toll.\" She describes an argument they had and Emhoff telling her, \"We can't turn on each other,\" he said. She wrote, \"With the hits coming from every direction, we had to stay united.\"\n\nSince leaving Washington, Emhoff has returned to work as an attorney in Los Angeles at white shoe law firm Willkie Farr & Gallagher LLP.\n\nSome of Harris's recent moves have made some donors uneasy about her intentions, some of the people said. In the weeks leading up to the midterms, Harris has appeared at private fundraisers in California including an event in Santa Monica for Milwaukee County Executive David Crowley, the party's nominee for governor of Wisconsin, and another for Nevada Attorney General Aaron Ford, the Democratic nominee for governor of Nevada.\n\nShe also joined a get-out-the-vote call with the Democratic National Committee recently, urging more than 2,000 volunteers listening live to knock on doors and engage with voters to flip seats in a dozen states across the country. \"Hard work is good work,\" Harris said.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Jessica Toonkel",
+        "zh_suggested": "杰西卡·通克尔",
+        "note": "待查"
+      },
+      {
+        "en": "Emily Glazer",
+        "zh_suggested": "艾米莉·格莱泽",
+        "note": "待查"
+      },
+      {
+        "en": "Ken Thomas",
+        "zh_suggested": "肯·托马斯",
+        "note": "待查"
+      },
+      {
+        "en": "Kamala Harris",
+        "zh_suggested": "卡玛拉·哈里斯",
+        "note": "前副总统"
+      },
+      {
+        "en": "Doug Emhoff",
+        "zh_suggested": "道格·埃姆霍夫"
+      },
+      {
+        "en": "Willkie Farr & Gallagher",
+        "zh_suggested": "Willkie Farr & Gallagher（律师事务所）",
+        "note": "待查"
+      },
+      {
+        "en": "David Crowley",
+        "zh_suggested": "戴维·克劳利",
+        "note": "待查"
+      },
+      {
+        "en": "Aaron Ford",
+        "zh_suggested": "亚伦·福特",
+        "note": "待查"
+      },
+      {
+        "en": "NAACP",
+        "zh_suggested": "全国有色人种协进会"
+      }
+    ]
+  },
+  {
+    "id": "E1-028",
+    "page": "A4",
+    "section": "U.S. News",
+    "title": "Doug Emhoff",
+    "dek": null,
+    "byline": null,
+    "body_en": "Doug Emhoff is among confidants who have shared concerns about Kamala Harris potentially running for president in 2028. (Photo: ANGELA WEISS/AGENCE FRANCE-PRESSE/GETTY IMAGES)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-029",
+    "page": "A5",
+    "section": "U.S. News",
+    "title": "Hegseth Gets Heat Over Livestream Firing Squad",
+    "dek": null,
+    "byline": "BY LARA SELIGMAN AND YOKO KUBOTA",
+    "body_en": "The planned Dec. 3 execution of Nidal Hasan, a former Army officer who killed 13 people in a 2009 attack, has sparked a national debate after the Pentagon announced that his death by firing squad would be livestreamed.\n\nWhen asked about the livestream, President Trump told reporters Friday afternoon that his administration \"is making a determination about that, but he will be killed.\"\n\nNidal Hasan was a U.S.-born Muslim and Army psychiatrist working at Fort Hood in Texas who said he opened fire because he was trying to defend fellow Muslims. According to testimony, Hasan walked into a crowded building at Fort Hood on Nov. 5, 2009, with 420 rounds of ammunition stuffed in his pockets and paper towels to muffle the sound of the bullets. He yelled \"Allahu akbar\"—Arabic for \"God is great\"—and methodically shot at soldiers, repeatedly shooting wounded soldiers as they tried to escape. Hasan was eventually shot and paralyzed from the waist down in the attack. He killed 13 people and wounded 32 more.\n\nHasan admitted during his court-martial that he carried out the shooting because he believed the military was at war with Islam. During the trial, he acted as his own lawyer and offered no defense for the attack. He was sentenced to death in 2013 by a jury of fellow officers.\n\nHasan has since been held on death row at the military prison in Fort Leavenworth, Kan. The Army, which is required to provide him legal counsel, declined to comment on his behalf.\n\nIt would be the first execution of a servicemember in 65 years. Only a president can approve the execution of U.S. servicemembers, who are subject to the military's own legal system. Trump approved Hasan's firing squad execution on Oct. 2 upon Defense Secretary Pete Hegseth's recommendation, the Pentagon said.\n\nArmy regulation says the execution must take place no sooner than 60 days and no later than 150 days after the president's approval. In the case of Hasan, his Dec. 3 execution would be almost immediately after the 60-day mark.\n\nIf carried out as planned, it would be the first U.S. military execution since 1961, when U.S. Army Pvt. John Bennett was hanged at Leavenworth after a court-martial convicted him of rape and attempted murder. It also would be the first military death by firing squad since World War II, according to the Death Penalty Information Center.\n\n\"It hadn't been since World War II since we've done that. Well, I kind of like the mentality we had in World War II, which was: 'win,' \" Hegseth said.\n\nHegseth said the execution was planned to take place at Fort Hood on the same day of the week and time of day that Hasan opened fire there.\n\nDemocrats and some Republicans have recoiled at Hegseth's plan to livestream the execution, with one Republican saying it turns the event into entertainment and others suggesting it puts America on par with \"jihadists.\" Hasan had told military officials he hoped to become a martyr.\n\nVice President JD Vance on Friday questioned whether the livestream would happen. If it did, he said, he wouldn't be watching. \"I don't know that's actually going to happen,\" he told reporters. He later added: \"Look, if it's all through livestream, I'm not going to be watching it.\"\n\nBishops called on the Pentagon to reconsider the plan. \"This decision is a barbaric promotion of a culture of death,\" Archbishop Paul S. Coakley said. The president of the United States Conference of Catholic Bishops called on the Pentagon to reconsider the plan.\n\nRepublicans expressing opposition include Rep. Rob Bresnahan of Pennsylvania, who wrote on X that the focus shouldn't be \"turning an execution into entertainment.\" Rep. Austin Scott of Georgia, who noted he supports the death sentence, said on X: \"Livestreaming executions is what jihadists do. America is better than that.\" Sen. John Curtis of Utah urged Hegseth in a post on X to reconsider, writing that, \"Broadcasting a death diminishes us and is not an effective deterrent.\"\n\nThe Pentagon and Army have declined to say where the video will be livestreamed and whether it would be put on the internet or a closed circuit for select members of the public to view. Under Army regulations, no one under the age of 18 is allowed to witness an execution of a U.S. servicemember. That rule would be impossible to follow if the military livestreams the execution on the internet.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Lara Seligman",
+        "zh_suggested": "拉拉·塞利格曼",
+        "note": "待查"
+      },
+      {
+        "en": "Yoko Kubota",
+        "zh_suggested": "久保田阳子"
+      },
+      {
+        "en": "Nidal Hasan",
+        "zh_suggested": "尼达尔·哈桑",
+        "note": "胡德堡枪击案凶手"
+      },
+      {
+        "en": "Fort Hood",
+        "zh_suggested": "胡德堡",
+        "note": "得州陆军基地"
+      },
+      {
+        "en": "Pete Hegseth",
+        "zh_suggested": "皮特·赫格塞斯",
+        "note": "国防部长"
+      },
+      {
+        "en": "JD Vance",
+        "zh_suggested": "J·D·万斯",
+        "note": "副总统"
+      },
+      {
+        "en": "John Bennett",
+        "zh_suggested": "约翰·贝内特",
+        "note": "待查"
+      },
+      {
+        "en": "Death Penalty Information Center",
+        "zh_suggested": "死刑信息中心",
+        "note": "待查"
+      },
+      {
+        "en": "Rob Bresnahan",
+        "zh_suggested": "罗布·布雷斯纳汉",
+        "note": "待查"
+      },
+      {
+        "en": "Austin Scott",
+        "zh_suggested": "奥斯汀·斯科特",
+        "note": "待查"
+      },
+      {
+        "en": "Paul S. Coakley",
+        "zh_suggested": "保罗·S·库克利",
+        "note": "大主教，待查"
+      },
+      {
+        "en": "United States Conference of Catholic Bishops",
+        "zh_suggested": "美国天主教主教会议",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-030",
+    "page": "A5",
+    "section": "U.S. News",
+    "title": "Pike Out Of Hospital Following Botched Execution",
+    "dek": null,
+    "byline": "BY JOSEPH PISANI",
+    "body_en": "Christa Pike, the Tennessee inmate who survived the state's attempt to execute her by lethal injection, was discharged from the hospital and is back in prison, her attorneys said.\n\nPike, who is 50, returned Saturday to Debra K. Johnson Rehabilitation Center in Nashville, where she has been for more than 30 years. \"She is continuing to receive medical care at the prison, and we will continue to track her recovery,\" Pike's attorneys said.\n\nPike, who was sentenced to death in 1996 for the murder of Colleen Slemmer, was rushed to a local hospital following the botched execution Sept. 30. Pike received two doses of pentobarbital, a sedative that at least 17 states use for capital punishment, but the execution was called off after she was still alive following the two injections.\n\nThe Tennessee Department of Correction said it followed established protocol and that the drug has been effective. Tennessee Gov. Bill Lee, a Republican, has since halted executions in the state.\n\nAt the hospital, Pike was at first intubated and put on a ventilator as hospital staff worked to clear the pentobarbital from her system. In recent days, Pike's attorneys said she was conscious and speaking.\n\nHer legal team has called on the governor to commute her death sentence and allow her to live the rest of her life in prison.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Colleen Slemmer",
+        "zh_suggested": "科琳·斯莱默",
+        "note": "待查"
+      },
+      {
+        "en": "Bill Lee",
+        "zh_suggested": "比尔·李",
+        "note": "田纳西州州长"
+      },
+      {
+        "en": "pentobarbital",
+        "zh_suggested": "戊巴比妥",
+        "note": "镇静剂"
+      }
+    ]
+  },
+  {
+    "id": "E1-031",
+    "page": "A6",
+    "section": "U.S. News",
+    "title": "Probe of Trump Foes Falters",
+    "dek": "Departures, infighting, inexperience beset DOJ inquiry into alleged conspiracy",
+    "byline": "By Sadie Gurman, Dave Michaels and Josh Dawsey",
+    "body_en": "Last year, Justice Department officials said an investigation would unravel a grand conspiracy by a cabal of national security officials who sought to undermine President Trump.\n\nTrump allies hoped it would confirm what they have been alleging for years: Officials who investigated the president over the past decade engaged in what was essentially a coordinated effort to violate his civil rights.\n\nInstead, the probe has been beset by departures, infighting and inexperience. The 81-year-old Reagan-era prosecutor coaxed out of retirement to lead the effort, Joe diGenova, quit last month, saying top department officials were pressuring the team to bring criminal cases before they were ready. He hadn't charged anyone. Officials denied pressuring him.\n\nDiGenova was one of several overlapping supervisors of the probe, with different interests and marching orders, adding to the chaotic nature of the effort. Last month, another senior counsel, Kurt Olsen, who had joined the probe from the White House, resigned from the inquiry, people familiar with the matter said. He had recently lost a security clearance after failing government polygraph tests about his foreign contacts. Olsen said the security clearance issue wasn't a factor in his departure but declined to elaborate.\n\nTrump is frustrated by the lack of progress and has complained about it to allies, a person familiar with the conversations said.\n\nA number of the Justice Department officials said the case is proceeding apace, with roughly a dozen prosecutors continuing to pursue a set of related investigations that could result in charges in coming weeks. But they privately acknowledge the idea of tying all those loose threads together in one big conspiracy case in South Florida, as they had initially attempted, isn't a practical approach.\n\nOne of the officials said leadership is still confident in the people who continue to work on the inquiry, and recently brought on two former prosecutors. A White House spokeswoman said Trump has full confidence in Attorney General Todd Blanche to hold people accountable.\n\nIn addition to the departures of Olsen and diGenova, Justice Department officials came to believe a third supervisor of the case, Miami U.S. attorney Jason Reding Quiñones, wasn't appropriately managing the investigation and his office more broadly.\n\nA number of the prosecutors on the probe complained to senior officials in Washington that Quiñones had given them no guidance, some of the people said.\n\nLawyers in the deputy attorney general's office are now directly overseeing the Florida-based investigation from Washington, officials said.\n\nA spokeswoman for Quiñones defended his record on the job and said he was proud to serve in the Trump administration but declined to comment on the conspiracy investigation.\n\nThe putative targets of the probe include a raft of people Trump has long disdained, including former CIA Director John Brennan, former FBI Director James Comey and officials involved in the August 2022 search of his Mar-a-Lago home. (Comey was separately charged in connection with a photo he posted of seashells that Trump alleged was threatening, and a judge dismissed a second case targeting him. He has denied the charges and said the cases were an attempt at political retribution.)\n\nThe investigation, which officials informally referred to as the grand-conspiracy probe, sought to tie together a series of past episodes, including the 2016 intelligence community assessment that Russia interfered in that year's election to boost Trump; the FBI's subsequent investigation into alleged Trump campaign ties to that Russian meddling; and the more recent criminal prosecutions by special counsel Jack Smith in 2023 and 2024 that stemmed from Trump's 2020 election loss.\n\nThe probes went to two other U.S. attorneys before Quiñones raised his hand to oversee it, people familiar with the assignment said.\n\nOne of the investigation's first targets: congressional testimony Brennan had given in 2017 and 2023 about the 2016 assessment. A veteran national-security prosecutor working on that line of inquiry, Maria Medetis Long, soon told senior officials she hadn't found a basis to indict Brennan, some of the people said. In April, she was removed from the probe.\n\nThe Justice Department had struggled to find and retain other prosecutors to work on it and brought on temporary hires; some of them had never worked as federal prosecutors. The office had to give them a crash course on presenting evidence to grand juries, some people familiar with the probe said.\n\nJustice Department officials in Washington at the time wanted prosecutors to speed up their process, including by subpoenaing witnesses to testify directly before a grand jury, without any FBI interview first, they said.\n\nProsecutors usually avoid doing that to make sure they know what to expect a witness to say and avoid surprises before the grand jury. Prosecutors had to later withdraw the subpoenas after realizing information the witnesses would need to discuss with grand jurors was classified.\n\nProsecutors had been trying to make the case that the FBI's court-authorized August 2022 search of Trump's Mar-a-Lago home, which led to charges that he illegally retained classified information, was unlawful. But an FBI agent told diGenova that tying the search to a broader conspiracy spanning from Florida to Washington would be challenging; diGenova disagreed and called FBI Director Kash Patel, who moved the agent off the investigation.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Sadie Gurman",
+        "zh_suggested": "萨迪·格曼",
+        "note": "待查"
+      },
+      {
+        "en": "Josh Dawsey",
+        "zh_suggested": "乔希·道西",
+        "note": "待查"
+      },
+      {
+        "en": "Joe diGenova",
+        "zh_suggested": "乔·迪杰诺瓦",
+        "note": "里根时代检察官"
+      },
+      {
+        "en": "Kurt Olsen",
+        "zh_suggested": "库尔特·奥尔森",
+        "note": "待查"
+      },
+      {
+        "en": "Jason Reding Quiñones",
+        "zh_suggested": "杰森·雷丁·基尼奥内斯",
+        "note": "迈阿密联邦检察官，待查"
+      },
+      {
+        "en": "Todd Blanche",
+        "zh_suggested": "托德·布兰奇",
+        "note": "司法部长"
+      },
+      {
+        "en": "John Brennan",
+        "zh_suggested": "约翰·布伦南",
+        "note": "前CIA局长"
+      },
+      {
+        "en": "James Comey",
+        "zh_suggested": "詹姆斯·科米",
+        "note": "前FBI局长"
+      },
+      {
+        "en": "Maria Medetis Long",
+        "zh_suggested": "玛丽亚·梅德蒂斯·朗",
+        "note": "待查"
+      },
+      {
+        "en": "Jack Smith",
+        "zh_suggested": "杰克·史密斯",
+        "note": "前特别检察官"
+      },
+      {
+        "en": "Kash Patel",
+        "zh_suggested": "卡什·帕特尔",
+        "note": "FBI局长"
+      }
+    ]
+  },
+  {
+    "id": "E1-032",
+    "page": "A6",
+    "section": "U.S. News",
+    "title": "Joe diGenova Leaves Investigation",
+    "dek": null,
+    "byline": null,
+    "body_en": "Joe diGenova left the investigation last month. (Photo: TOM WILLIAMS/ZUMA PRESS)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-033",
+    "page": "A6",
+    "section": "U.S. News",
+    "title": "The Donors Powering the Rise of the New Left",
+    "dek": "How much progressive groups spent in each state and D.C.",
+    "byline": null,
+    "body_en": "The left flank of the Democratic Party raises and spends only a fraction of what many Republicans and the Democratic establishment do on elections. But as the far left gains momentum, supporters are working to expand their funding. Millions of dollars are flowing to help Democratic socialists and other progressives. Scan this code to get a detailed look.\n\nData shown: Michigan $12.7 million; Pennsylvania $9.1 million (scale markers $10 million and $1 million).\n\nNote: Includes 24 progressive PACs and advocacy groups. Jan. 1, 2025, through Oct. 7. Source: AdImpact.",
+    "priority": "P3",
+    "type": "data_table",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "AdImpact",
+        "zh_suggested": "AdImpact（广告追踪机构）",
+        "note": "待查"
+      },
+      {
+        "en": "PAC",
+        "zh_suggested": "政治行动委员会",
+        "note": "Political Action Committee"
+      }
+    ]
+  },
+  {
+    "id": "E1-034",
+    "page": "A7",
+    "section": "World News",
+    "title": "Air Travel Thrust Into Front Lines of War",
+    "dek": "Governments caution on flying to Saudi Arabia after Houthi airport strike",
+    "byline": "BY BENJAMIN KATZ",
+    "body_en": "Commercial air travel has been dragged into the front lines of escalating conflicts across the globe, with airports, planes and airspace becoming the deliberate target of missile and drone attacks on a scale not seen before.\n\nSince the U.S. and Israel started the Iran war in February, major airports across the Middle East have been repeatedly targeted. Parked aircraft have been hit by missiles or falling debris from interceptor systems, killing crew members and passengers.\n\nThe threat culminated Saturday in a Houthi missile strike at Riyadh's King Khalid International Airport that killed at least 12 people and injured more than 300 others. The strike, the deadliest attack on Saudi Arabia in more than a decade, left airlines scrambling to divert scores of aircraft and cancel more than 1,000 other flights. Authorities reported new attacks on the closed airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries.\n\nGovernments including the U.S., U.K. and Australia are telling citizens to avoid the Riyadh airport following the attack. France, Canada and Germany are warning airlines that flying over all or large parts of Saudi Arabia is no longer safe.\n\nExperts and safety advocates say travelers shouldn't take an airline's decision to fly as a guarantee of a route's safety. \"All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment,\" said Matt Borie, chief intelligence officer at aviation security specialist Osprey Flight Solutions. \"They're counting on the country to have done the right things to keep the airspace safe,\" he said.\n\nSince late February, Iran has blown up fuel tanks and damaged parked aircraft, runways and air-traffic control infrastructure across major airports in Dubai, Qatar, Bahrain, Kuwait and elsewhere.\n\nIsraeli strikes have meanwhile hit targets at Beirut Airport, while Saudi Arabia bombed Yemen's San'a Airport in July to prevent a plane carrying a Houthi delegation from landing.\n\nThe increasing threat to civilian aircraft has prompted rare rebukes from the International Civil Aviation Organization, the United Nations body that governs global air travel, which last month reiterated a call for member states to prevent aviation from being dragged into ongoing hostilities.\n\nThe warnings over Saudi Arabian skies, which had been regarded as one of the few safe passages through the Middle East, are pushing airlines to scale back flying in what had become one of only two primary corridors linking Europe and Asia. Airlines have repeatedly had to alter flight paths to account for global conflicts, with the rapidly shrinking airspace proving painful at a time when jet fuel is trading at about twice the price it was this time last year.\n\nThe shifts began in earnest with the closure of Ukrainian skies in early 2022 and Moscow's subsequent ban on European, U.S. and other carriers using its skies. The closure of a critical corridor over Iraq at the start of the Iran war this year pushed more airlines to fly through Saudi airspace. Increasingly, airlines have been relying on a sliver of airspace passing over Georgia, Azerbaijan and Turkmenistan to travel between Europe and Asia. Virgin Atlantic, for example, has been flying its twice-daily route from Mumbai to London via central Asia since late September. The airline previously routed it frequently through Egypt and Saudi Arabia.\n\nCarriers often are left with no good options. Air India and Turkish Airlines have shifted some routes so that their aircraft fly along the Saudi-Iraq border further away from threats of Houthi attacks. But those flight paths typically pass near Syria's capital, Damascus, which is still regarded as a risky zone.",
+    "priority": "P1",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Benjamin Katz",
+        "zh_suggested": "本杰明·卡茨",
+        "note": "待查"
+      },
+      {
+        "en": "Matt Borie",
+        "zh_suggested": "马特·博里",
+        "note": "待查"
+      },
+      {
+        "en": "Osprey Flight Solutions",
+        "zh_suggested": "Osprey Flight Solutions（航空安全机构）",
+        "note": "待查"
+      },
+      {
+        "en": "International Civil Aviation Organization",
+        "zh_suggested": "国际民用航空组织",
+        "note": "缩写ICAO，联合国机构"
+      },
+      {
+        "en": "Virgin Atlantic",
+        "zh_suggested": "维珍航空"
+      },
+      {
+        "en": "Air India",
+        "zh_suggested": "印度航空"
+      },
+      {
+        "en": "Turkish Airlines",
+        "zh_suggested": "土耳其航空"
+      }
+    ]
+  },
+  {
+    "id": "E1-035",
+    "page": "A7",
+    "section": "World News",
+    "title": "Riyadh Airport After Houthi Strike",
+    "dek": null,
+    "byline": null,
+    "body_en": "An image of Riyadh's King Khalid airport from a video posted on social media after Yemen's Houthis attacked it Saturday. (Photo: REUTERS)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-036",
+    "page": "A8",
+    "section": "World News",
+    "title": "Pope Plans Surgery To Remove Nodule",
+    "dek": "VATICAN",
+    "byline": "—Associated Press",
+    "body_en": "Pope Leo XIV announced Sunday he will undergo surgery \"in the coming days\" to remove a nodule on his lung, in the first major health event of his 17-month pontificate.\n\nThe 71-year-old Leo said the nodule was found at an early stage and was \"circumscribed\" or small and well-localized. The Vatican said Leo's expected recovery time from surgery would be a week.\n\nThe American pope made the announcement during his Sunday noon blessing in an unusual display of transparency about his health. The Vatican didn't say when the surgery would take place.\n\nA lung nodule is a small abnormal area measuring less than 1 inch that sometimes appears on a CT scan, according to the American Cancer Society. If the nodule turns out to be cancerous, the prognosis is \"excellent\" since it will have been removed at an early stage and surgery alone might be all Leo needs in terms of treatment, he said.\n\nLeo has no previously known health problems and is physically active, with weekly tennis matches and swimming at the papal summer retreat in Castel Gandolfo.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Pope Leo XIV",
+        "zh_suggested": "教皇利奥十四世",
+        "note": "美国籍教皇"
+      },
+      {
+        "en": "American Cancer Society",
+        "zh_suggested": "美国癌症协会"
+      },
+      {
+        "en": "Castel Gandolfo",
+        "zh_suggested": "冈道尔夫堡",
+        "note": "教皇夏宫"
+      }
+    ]
+  },
+  {
+    "id": "E1-037",
+    "page": "A8",
+    "section": "World News",
+    "title": "St. Peter's Square on Surgery Announcement Day",
+    "dek": null,
+    "byline": null,
+    "body_en": "A boy stands next to a sculpture in St. Peter's Square on the day Pope Leo announced surgery. (Photo: MATTEO MINNELLA/REUTERS)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-038",
+    "page": "A8",
+    "section": "World News",
+    "title": "Villages Evacuated Amid Flash Flood",
+    "dek": "NEPAL",
+    "byline": "—Associated Press",
+    "body_en": "Residents along the Budhi Gandaki river in north central Nepal evacuated Sunday as flash flooding destroyed homes and other structures in the area.\n\nThe National Disaster Risk Reduction and Management Authority evacuated villagers and warned others to move to safer areas while remaining on alert until late Sunday.\n\nThe agency said at least five people are reported missing. The flood also damaged or destroyed four bridges, swept away about three dozen houses and damaged the construction site of a hydropower plant. Several power and communication towers were also damaged along the riverside.\n\nNepal's army was continuing to rescue stranded people using helicopters and ground troops. They had rescued 49 people by Sunday afternoon.\n\nThe agency said the flash flood was caused by a landslide that blocked the Budhi Gandaki river near the village of Chumchure. The dam formed by the landslide breached, triggering the flood.\n\nThe Budhi Gandaki river merges into the Trishuli river and is a key waterway near the capital Kathmandu.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Budhi Gandaki",
+        "zh_suggested": "布迪甘达基河",
+        "note": "待查"
+      },
+      {
+        "en": "Chumchure",
+        "zh_suggested": "Chumchure（村庄）",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-039",
+    "page": "A8",
+    "section": "World News",
+    "title": "Arrest Made in Plot To Attack Tusk",
+    "dek": "POLAND",
+    "byline": "—Associated Press",
+    "body_en": "A man suspected of threatening and planning to attack Polish Prime Minister Donald Tusk was arrested, the country's interior minister said Sunday.\n\nInterior Minister Marcin Kierwiński gave no details about the identity of the man nor the type of attack planned.\n\nPoland has been on high alert following a recent series of school stabbings, as well as fears of a possible Russian hybrid attack to weaken Western support for Ukraine in its war against Moscow's full-scale invasion.\n\n\"The man who threatened an attack was detained,\" Tusk wrote on X. \"Thanks to the police for fast and decisive action.\"\n\nPoland's police had said earlier on Sunday they received information about a possible plot to attack Tusk and Defense Minister Władysław Kosiniak-Kamysz.\n\n\"We take this matter extremely seriously,\" said Jacek Dobrzyński, spokesperson for the minister overseeing Poland's intelligence services. He said authorities considered there was a \"high probability\" the threats would be carried out.",
+    "priority": "P3",
+    "type": "brief",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Donald Tusk",
+        "zh_suggested": "唐纳德·图斯克",
+        "note": "波兰总理"
+      },
+      {
+        "en": "Marcin Kierwiński",
+        "zh_suggested": "马尔钦·基尔温斯基",
+        "note": "波兰内政部长，待查"
+      },
+      {
+        "en": "Władysław Kosiniak-Kamysz",
+        "zh_suggested": "瓦迪斯瓦夫·科西尼亚克-卡梅什",
+        "note": "波兰国防部长，待查"
+      },
+      {
+        "en": "Jacek Dobrzyński",
+        "zh_suggested": "亚采克·多布任斯基",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-040",
+    "page": "A8",
+    "section": "World News",
+    "title": "Firefighters at Site of Russian Strike on Kyiv",
+    "dek": null,
+    "byline": null,
+    "body_en": "Firefighters work at the site of a Russian strike on Kyiv. (Photo: ANDRII KHODKOV/REUTERS)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Andrii Khodkov",
+        "zh_suggested": "安德里·霍德科夫",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-041",
+    "page": "A9",
+    "section": "World News",
+    "title": "New Delhi Locks Down As Voter Protests Grow",
+    "dek": null,
+    "byline": "BY TRIPTI LAHIRI AND KRISHNA POKHAREL",
+    "body_en": "NEW DELHI—The government of Indian Prime Minister Narendra Modi locked down India's capital with thousands of security forces in a bid to thwart a mass protest over an effort to clean up voter lists that critics say is stripping millions of Indians of the right to vote.\n\nLast year, India's election commission began a cleanup of voter lists that, according to activists, have resulted in some 130 million people being cut from preliminary or final voter rolls.\n\nModi's government and his ruling Bharatiya Janata Party have said the cleanup—the first in two decades—was needed to preserve the integrity of the lists and remove deceased, duplicate or fraudulent voters, such as illegal immigrants they say have entered from India's eastern border with Bangladesh.\n\nThe anger over the voting lists has melded with grievances from young Indians struggling to find work, together presenting a stiff challenge to Modi.\n\nA youth movement called the Cockroach Janta Party emerged in the spring following a scandal over a university entrance exam. The group has thrown its support behind those protesting the voting issue, joining in Saturday's protests in New Delhi.\n\nIn the Indian capital, police—who were deployed starting before dawn—stopped vehicles and pedestrians at yellow metal barricades. Dozens of metro stations were closed and many intercity trains were canceled.\n\nAbhijeet Dipke, the founder of the Cockroach party, posted a video of himself and fellow protest leaders being taken into custody on their arrival at New Delhi's airport. \"This is dictatorship,\" Dipke shouted as the police officers entered the plane.\n\nWall Street Journal reporters saw about 100 people being detained over the course of two hours.\n\nOver the course of the day, thousands were detained in the capital, according to Cockroach party activists and multiple local news accounts. The Journal couldn't independently verify the numbers. A Delhi police spokesman didn't respond to requests for comment.\n\nDipke and his two fellow activists were released following a court appearance Sunday.\n\nOn Saturday, Ishrat Ansari, 49, said she set off at dawn from her home in the north of the capital, walking 9 miles to reach the protest area.\n\nShe said she, her son and her daughter received notices this year from election authorities that their names had been flagged for discrepancies. In her case, she thinks it was because her name appeared on 2002 voter rolls with the honorific \"Khatun,\" often used by Muslim women, which doesn't appear on her current identification. The social worker, who mainly goes by her first name, feared that she may have received the notice because she is a Muslim. \"Is it because my name is Ishrat that I was cut?\"\n\nModi's BJP has promoted a form of Hindu nationalism that his critics say discriminates against India's Muslim minority. The government denies that, and says its policies are focused on the progress of all Indians.",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Tripti Lahiri",
+        "zh_suggested": "特里普蒂·拉希里",
+        "note": "待查"
+      },
+      {
+        "en": "Krishna Pokharel",
+        "zh_suggested": "克里希纳·波卡雷尔",
+        "note": "待查"
+      },
+      {
+        "en": "Narendra Modi",
+        "zh_suggested": "纳伦德拉·莫迪",
+        "note": "印度总理"
+      },
+      {
+        "en": "Bharatiya Janata Party",
+        "zh_suggested": "印度人民党",
+        "note": "缩写BJP"
+      },
+      {
+        "en": "Abhijeet Dipke",
+        "zh_suggested": "阿布希吉特·迪普克",
+        "note": "待查"
+      },
+      {
+        "en": "Cockroach Janta Party",
+        "zh_suggested": "Cockroach Janta Party（青年运动组织）",
+        "note": "待查"
+      },
+      {
+        "en": "Ishrat Ansari",
+        "zh_suggested": "伊什拉特·安萨里",
+        "note": "待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-042",
+    "page": "A9",
+    "section": "World News",
+    "title": "Police Detain Protester in New Delhi",
+    "dek": null,
+    "byline": null,
+    "body_en": "Police officers detain a person in New Delhi, India's capital, amid a mass protest. (Photo: VIPIN/AP)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-043",
+    "page": "A9",
+    "section": "World News",
+    "title": "Kenyan Club Rejects Bid To Allow Women Into Bar",
+    "dek": null,
+    "byline": "BY CAROLINE KIMEU",
+    "body_en": "One of Kenya's most prestigious social clubs has voted to keep women out of its men-only bar for the foreseeable future.\n\nThe policy, reflected in a fictional scene where Meryl Streep's character is coldly turned away in the 1985 film \"Out of Africa,\" has spurred rancorous debates at the exclusive club for months and was the subject of an article in The Wall Street Journal earlier this year.\n\nMuthaiga Country Club in Nairobi, opened in 1913 for the British elite, has evolved into an exclusive club for top government officials, wealthy businesspeople and successful professionals. Membership is by invitation only, with admission fees upward of $4,000.\n\nYet its century-old Member's Bar has remained strictly reserved for men, and women can only go in once or twice a year during major club events.\n\nFor some members, the bar policy is a source of frustration that has been simmering for decades. For others, it is \"hallowed ground in terms of the genesis story of the club.\"\n\nMore than 700 club members voted on Thursday to keep the men-only bar and set up a separate space for women, against 200 who supported the idea of opening up the men's bar to everyone. \"It was a slaughter,\" said one male member, who had to follow events from outside because the ballroom, where the vote happened, was packed. Over 1,000 members followed the meeting online.\n\nThe club didn't respond to a request for comment.\n\nOne female member opened the debate by defending the men's bar as one of the few remaining spaces men could be men, and insisted that the club had bigger fish to fry than the bar, members recounted. Another woman member who had been campaigning against the men's bar suddenly decamped to the other side.\n\nOther members, including many women, argued that they shouldn't have to pay for the running of a bar they couldn't use.\n\nSome members worry the vote could jeopardize reciprocal privileges with over 100 affiliated international clubs. London's Reform Club already ended its agreement over the policy, and an American club recently withdrew its interest in having a reciprocal arrangement, members familiar with the matter said.\n\nChloé Spo, the French businesswoman who resubmitted the proposal to open up the bar to all members, concluded that Muthaiga is \"still a man's club.\"",
+    "priority": "P2",
+    "type": "article",
+    "turn_to": null,
+    "terms": [
+      {
+        "en": "Caroline Kimeu",
+        "zh_suggested": "卡罗琳·基梅乌",
+        "note": "待查"
+      },
+      {
+        "en": "Muthaiga Country Club",
+        "zh_suggested": "穆泰加乡村俱乐部",
+        "note": "内罗毕，待查"
+      },
+      {
+        "en": "Meryl Streep",
+        "zh_suggested": "梅丽尔·斯特里普"
+      },
+      {
+        "en": "Out of Africa",
+        "zh_suggested": "《走出非洲》（1985）"
+      },
+      {
+        "en": "Chloé Spo",
+        "zh_suggested": "克洛艾·斯波",
+        "note": "姓氏在版面栏位处被截断，待查"
+      },
+      {
+        "en": "Reform Club",
+        "zh_suggested": "改革俱乐部",
+        "note": "伦敦，待查"
+      }
+    ]
+  },
+  {
+    "id": "E1-044",
+    "page": "A9",
+    "section": "World News",
+    "title": "Muthaiga Country Club Membership",
+    "dek": null,
+    "byline": null,
+    "body_en": "Membership in Muthaiga Country Club in Nairobi is by invitation only. (Photo: CAROLINE KIMEU/WSJ)",
+    "priority": "P3",
+    "type": "photo_caption",
+    "turn_to": null,
+    "terms": []
+  },
+  {
+    "id": "E1-SKIPPED-ADS",
+    "type": "skipped_ads",
+    "items": [
+      "A4: Sound It Out Together campaign ad — “All of the things I just found too hard to say. LAUREN JAUREGUI // TRACK 03 WHEN YOUR KID CAN’T FIND THE LANGUAGE, FIND THE LYRICS. USE THEM TO START A CONVERSATION WITH YOUR KIDS ABOUT EMOTIONAL WELLBEING. LISTEN TO THE ALBUM, FIND TOOLS AND GET TIPS FROM PROFESSIONALS AT SOUNDITOUTTOGETHER.ORG”",
+      "A6: ChildFund.org ad — “Children are the future… Their health matters now. Their education and their path to a livelihood matter now. Above all, their safety now… Because we need each other. ChildFund.org”",
+      "A7-A8: NYC Wine & Food Festival ad — “FESTIVAL WEEK TICKET DROP! 25% OFF SELECT EVENTS. CELEBRATE OUR 19TH YEAR… BLUE MOON BURGER BASH | STEAK & WHISKEY | THE COOKOUT | NEW YORK LOTTERY’S GRAND TASTING … OCT. 15-18” (tail “promotes responsible drinking | Lineup subject to change | Sponsors confirmed as of 10.2.26” continues on A8)"
+    ]
+  }
+]
