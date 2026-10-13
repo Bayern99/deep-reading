@@ -67,6 +67,11 @@ def body_paras(e):
     return [pair(cn, en) for cn, en in paras(e.get('body_cn'), e.get('body_en'))]
 
 
+def _strip_src_ref(s):
+    """去掉 planner 写入的内部来源锚点 (p12)——plan JSON 保留备查，页面不渲染。"""
+    return re.sub(r'\s*\(p\d+\)', '', s or '')
+
+
 def key_figures(items, uid):
     """AJ ranked 条目；数值列固定宽度保证标签对齐"""
     kf = [f'<section id="keyfig-{uid}" class="mod keyfig" aria-label="关键数字">']
@@ -77,7 +82,7 @@ def key_figures(items, uid):
       <div class="kval"><span class="k-cn">{esc(s['value_cn'])}</span><span class="k-en" hidden>{esc(s['value_en'])}</span></div>
       <div class="kbody">
         <div class="klabel"><span class="k-cn">{esc(s['label_cn'])}</span><span class="k-en" hidden>{esc(s['label_en'])}</span></div>
-        <div class="knote"><span class="k-cn">{esc(s['note_cn'])}</span><span class="k-en" hidden>{esc(s['note_en'])}</span></div>
+        <div class="knote"><span class="k-cn">{esc(_strip_src_ref(s['note_cn']))}</span><span class="k-en" hidden>{esc(_strip_src_ref(s['note_en']))}</span></div>
       </div>
     </div>''')
     kf.append('</section>')
@@ -93,7 +98,7 @@ def timeline(tl, uid):
         t.append(f'''<li>
       <span class="dot" aria-hidden="true"></span>
       <div class="tt"><span class="k-cn">{esc(e['t_cn'])}</span><span class="k-en" hidden>{esc(e['t_en'])}</span></div>
-      <div class="tx"><span class="k-cn">{esc(e['text_cn'])}</span><span class="k-en" hidden>{esc(e['text_en'])}</span></div>
+      <div class="tx"><span class="k-cn">{esc(_strip_src_ref(e['text_cn']))}</span><span class="k-en" hidden>{esc(_strip_src_ref(e['text_en']))}</span></div>
     </li>''')
     t.append('</ol></section>')
     return '\n'.join(t)

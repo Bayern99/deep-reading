@@ -243,9 +243,7 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
   margin:1.8em 0 .7em;padding-left:12px;position:relative}
 .tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
   width:3px;background:var(--orange)}
-.tt-subhead .ed-tag{font:500 11px/1 var(--font-meta);color:var(--mut);
-  letter-spacing:.08em;margin-left:8px}
-.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-subhead .tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
 .tt-group p:last-child{margin-bottom:0}
 ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
 ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
@@ -261,10 +259,7 @@ ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
 /* L02 边注 */
 .ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
   font:400 14px/1.7 var(--font-meta);color:var(--mut)}
-.ly-note .ed-tag{font:500 11px/1 var(--font-meta);color:var(--mut);
-  letter-spacing:.08em;margin-left:8px;border:1px solid var(--line);
-  padding:2px 6px;border-radius:3px}
-@media(min-width:1200px){
+.ly-note @media(min-width:1200px){
   .has-margin-notes{position:relative}
   .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
     border-left:2px solid var(--orange);margin:0;padding-left:12px}
