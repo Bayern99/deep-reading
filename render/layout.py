@@ -24,7 +24,7 @@ def render_margin_note(anchor_block_id, note_cn, note_en, uid,
                        editorial_added=True):
     """桌面：右栏边注（CSS grid）；手机：锚点段落后 inline note。
     DOM 顺序：锚点段 → note → 下一段（两端一致）。"""
-    tag = '<span class="ed-tag">编辑注</span>' if editorial_added else ''
+    tag = ''  # 内部审计标记只进 data-editorial-added，不渲染可见标签
     return f'''<aside class="ly-note" data-anchor="{anchor_block_id}" id="note-{uid}"
       data-editorial-added="{'true' if editorial_added else 'false'}">
   <p><span class="k-cn">{_esc(note_cn)}{tag}</span><span class="k-en" hidden>{_esc(note_en)}</span></p>
@@ -70,10 +70,7 @@ LAYOUT_CSS = '''
 /* L02 边注 */
 .ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.6em 0;
   font:400 14px/1.7 var(--font-meta);color:var(--mut)}
-.ly-note .ed-tag{font:500 11px/1 var(--font-meta);color:var(--mut);
-  letter-spacing:.08em;margin-left:8px;border:1px solid var(--line);
-  padding:2px 6px;border-radius:3px}
-@media(min-width:1200px){
+.ly-note @media(min-width:1200px){
   .has-margin-notes{position:relative}
   .ly-note{position:absolute;left:calc(100% + 24px);width:180px;
     border-left:2px solid var(--orange);margin:0;padding-left:12px}

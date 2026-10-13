@@ -254,7 +254,7 @@ def render_body_full(sm, treatments):
                 f'<h3 class="tt-subhead" data-editorial-added="true">'
                 f'<span class="k-cn">{esc(op.params["title_cn"])}</span>'
                 f'<span class="k-en" hidden>{esc(op.params.get("title_en", ""))}</span>'
-                f'<span class="ed-tag">编辑小标题</span></h3>')
+                f'</h3>')
 
         if bid in split_ops:
             op = split_ops[bid]

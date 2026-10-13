@@ -219,9 +219,7 @@ TEXT_CSS = '''
   margin:1.8em 0 .7em;padding-left:12px;position:relative}
 .tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
   width:3px;background:var(--orange)}
-.tt-subhead .ed-tag{font:500 11px/1 var(--font-meta);color:var(--mut);
-  letter-spacing:.08em;margin-left:8px}
-.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-subhead .tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
 .tt-group p:last-child{margin-bottom:0}
 ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
 ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;

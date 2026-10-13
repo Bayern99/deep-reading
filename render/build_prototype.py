@@ -102,7 +102,7 @@ def render_body(sm, treatments, skip_caption_dup=True):
                 f'<h3 class="tt-subhead" data-editorial-added="true">'
                 f'<span class="k-cn">{esc(op.params["title_cn"])}</span>'
                 f'<span class="k-en" hidden>{esc(op.params.get("title_en",""))}</span>'
-                f'<span class="ed-tag">编辑小标题</span></h3>')
+                f'</h3>')
 
         cn_h, en_h = render_block(b, ops_by_block.get(bid, []))
         h.append(
