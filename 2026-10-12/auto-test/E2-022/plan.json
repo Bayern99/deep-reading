@@ -1,0 +1,195 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "Understand the central thesis: public execution gives Hasan the martyrdom he wants"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "background",
+   "reader_need": "Know the scope of Hasan's crime and that article doesn't oppose capital punishment"
+  },
+  {
+   "block_ids": [
+    "p4"
+   ],
+   "function": "evidence",
+   "reader_need": "See Hasan's own words supporting the argument"
+  },
+  {
+   "block_ids": [
+    "p5",
+    "p6"
+   ],
+   "function": "analysis",
+   "reader_need": "Understand jihadist psychology and why deterrence logic fails"
+  },
+  {
+   "block_ids": [
+    "p7"
+   ],
+   "function": "consequence",
+   "reader_need": "Grasp the unintended outcome: execution becomes recruitment tool"
+  },
+  {
+   "block_ids": [
+    "p8"
+   ],
+   "function": "conclusion",
+   "reader_need": "Understand the real solution: winning the war, not theatrical executions"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p3",
+   "need": "Highlight the scale of Hasan's crime to establish stakes",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "数字淹没在段落中"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures",
+     "benefit": "13 killed / 32 wounded 并列呈现，强调事件严重性",
+     "cost": "需提取两个数字"
+    }
+   ],
+   "chosen": "D",
+   "reason": "两个数字同属同一事件，口径一致，需比较以理解犯罪规模"
+  },
+  {
+   "id": "opp2",
+   "location": "p4",
+   "need": "突出哈桑自己的话作为核心证据",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外处理",
+     "cost": "引语不够突出"
+    },
+    {
+     "option": "D",
+     "desc": "quote",
+     "benefit": "直接引语具名呈现，增强论证力度",
+     "cost": "需中英对齐"
+    }
+   ],
+   "chosen": "D",
+   "reason": "这是哈桑亲口说的关键证据，支持文章核心论点"
+  },
+  {
+   "id": "opp3",
+   "location": "p2, p7",
+   "need": "强调核心论点短语",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无侵入性",
+     "cost": "关键短语不够醒目"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出'the public martyrdom he craves'和'YouTube recruiting video'",
+     "cost": "需精确定位snippet"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这两个短语分别是论点核心和论证结论，加粗有助于读者抓住要害"
+  },
+  {
+   "id": "opp4",
+   "location": "全文",
+   "need": "考虑特殊布局",
+   "candidates": [
+    {
+     "option": "C",
+     "desc": "L03 平行双栏",
+     "benefit": "对比呈现",
+     "cost": "原文无真实平行结构"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注",
+     "benefit": "解释术语",
+     "cost": "正文已解释所有术语"
+    }
+   ],
+   "chosen": "A",
+   "reason": "无真实平行语义结构，无术语需要边注解释，维持L01"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "public martyrdom he craves",
+   "reason": "核心论点短语"
+  },
+  {
+   "type": "T01",
+   "block_id": "p7",
+   "snippet": "YouTube recruiting video",
+   "reason": "论证结论，形象化表达"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为单一论点推进，无平行对比结构，无术语需要边注解释，维持默认布局"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "key_figures",
+   "data": [
+    {
+     "value": "13",
+     "label": "killed",
+     "source": "p3"
+    },
+    {
+     "value": "32",
+     "label": "wounded",
+     "source": "p3"
+    }
+   ],
+   "title": "Fort Hood Attack, 2009",
+   "reason": "同一事件的伤亡数字，需并列呈现以理解犯罪规模"
+  },
+  {
+   "type": "quote",
+   "speaker": "Nidal Hasan",
+   "quote_cn": "I would still be a martyr",
+   "quote_en": "I would still be a martyr",
+   "block_id": "p4",
+   "context": "哈桑关于被处决后仍会成为'殉道者'的陈述",
+   "reason": "直接引语作为核心证据，支持文章反对公开处决的论点"
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无真实平行语义结构。文章是单一论点推进（反对公开处决），而非两组数据的逐项对照。赫格塞斯的观点vs现实不是成对数据，而是论证的起承转合。"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已解释所有关键术语：哈桑身份在p3说明，赫格塞斯职务在p2说明，胡德堡事件在p3说明。无术语需要边注补充。"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "仅有两个可定日期事件（2009年袭击、本周末利雅得袭击），不满足≥4个事件的要求。"
+  }
+ ]
+}

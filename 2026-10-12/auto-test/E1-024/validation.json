@@ -1,0 +1,50 @@
+{
+ "article_id": "E1-024",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "原文无平行双栏结构，是线性叙事而非对比论证"
+  ],
+  [
+   "L02",
+   "正文已充分解释所有术语和背景，无需要边注澄清的内容"
+  ],
+  [
+   "timeline",
+   "仅有3个可定日期事件（7月发生、9月发现、上周上报），不满足≥4的要求"
+  ],
+  [
+   "key_figures",
+   "文中数字'两个月'与'7月-9月'是同一事实的不同表达，非可比数据"
+  ],
+  [
+   "quote",
+   "引语较短，T01加粗已足够突出，无需独立quote组件"
+  ]
+ ]
+}

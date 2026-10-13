@@ -1,0 +1,275 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2",
+    "p3"
+   ],
+   "function": "claim",
+   "reader_need": "理解核心新闻：哈桑将被枪决并可能直播"
+  },
+  {
+   "block_ids": [
+    "p4",
+    "p5",
+    "p6"
+   ],
+   "function": "background",
+   "reader_need": "了解哈桑身份、袭击细节、审判过程"
+  },
+  {
+   "block_ids": [
+    "p7",
+    "p8",
+    "p9"
+   ],
+   "function": "evidence",
+   "reader_need": "理解历史意义和执行时间线"
+  },
+  {
+   "block_ids": [
+    "p10",
+    "p11"
+   ],
+   "function": "claim",
+   "reader_need": "官方立场和执行细节"
+  },
+  {
+   "block_ids": [
+    "p12",
+    "p13",
+    "p14",
+    "p15"
+   ],
+   "function": "contrast",
+   "reader_need": "了解各方反对意见"
+  },
+  {
+   "block_ids": [
+    "p16"
+   ],
+   "function": "consequence",
+   "reader_need": "直播计划存在的不确定性"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p4-p9",
+   "need": "文章包含多个可定日期的事件，读者需要清晰的时间线来理解案件进程",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "读者需自行梳理时间线"
+    },
+    {
+     "option": "D",
+     "desc": "timeline",
+     "benefit": "4个以上可定日期事件，帮助读者快速把握关键节点",
+     "cost": "需提取和格式化"
+    }
+   ],
+   "chosen": "D",
+   "reason": "原文包含Nov 5, 2009袭击、2013年判决、Oct 2批准、Dec 3执行、1961年上次处决，符合timeline条件(≥4事件)"
+  },
+  {
+   "id": "opp2",
+   "location": "p4-p9",
+   "need": "多个关键数字承担论证功能，需要强调",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外工作",
+     "cost": "关键数据不够突出"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures",
+     "benefit": "13人遇难、420发子弹、65年、60-150天等数字同属案件核心事实",
+     "cost": "需验证口径一致性"
+    }
+   ],
+   "chosen": "D",
+   "reason": "这些数字都服务于'案件严重性'和'历史意义'两个叙事问题，口径一致"
+  },
+  {
+   "id": "opp3",
+   "location": "p10, p12-p15",
+   "need": "多方引语体现争议，需要突出",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文结构",
+     "cost": "引语分散不易对比"
+    },
+    {
+     "option": "D",
+     "desc": "quote",
+     "benefit": "赫格塞斯'获胜'心态、主教'野蛮宣传'、斯科特'圣战分子做法'等引语具代表性",
+     "cost": "需中英对齐"
+    }
+   ],
+   "chosen": "D",
+   "reason": "这些引语直接体现文章核心争议，且中英原文可对齐"
+  },
+  {
+   "id": "opp4",
+   "location": "p7-p9",
+   "need": "历史背景信息密集，读者可能难以消化",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "65年、1961年、二战等历史参照点不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01语义加粗",
+     "benefit": "强调'65年来首次''自1961年以来首次'等关键事实",
+     "cost": "需精确定位snippet"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这些历史参照点是理解案件意义的关键，加粗可帮助读者抓住重点"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p7",
+   "snippet": "65年来首次处决一名现役军人"
+  },
+  {
+   "type": "T01",
+   "block_id": "p9",
+   "snippet": "自1961年以来首次处决美国军人"
+  },
+  {
+   "type": "T01",
+   "block_id": "p9",
+   "snippet": "自二战以来首次以枪决的方式处决军人"
+  },
+  {
+   "type": "T03",
+   "block_id": "p4",
+   "snippet": "420发子弹"
+  },
+  {
+   "type": "T03",
+   "block_id": "p4",
+   "snippet": "13人"
+  },
+  {
+   "type": "T03",
+   "block_id": "p4",
+   "snippet": "32人受伤"
+  },
+  {
+   "type": "T06",
+   "block_id": "p10",
+   "snippet": "赫格塞斯说"
+  },
+  {
+   "type": "T06",
+   "block_id": "p14",
+   "snippet": "奥克利大主教保罗·S·库克利表示"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "items": [
+    {
+     "date": "1961年",
+     "event": "美国陆军士兵约翰·贝内特在利文沃思堡被处以绞刑"
+    },
+    {
+     "date": "2009年11月5日",
+     "event": "哈桑在胡德堡开枪，杀害13人，使32人受伤"
+    },
+    {
+     "date": "2013年",
+     "event": "军事法庭陪审团判处哈桑死刑"
+    },
+    {
+     "date": "10月2日",
+     "event": "特朗普总统批准哈桑的枪决死刑"
+    },
+    {
+     "date": "12月3日",
+     "event": "计划执行哈桑死刑"
+    }
+   ]
+  },
+  {
+   "type": "key_figures",
+   "items": [
+    {
+     "figure": "13人",
+     "description": "哈桑袭击中杀害的人数"
+    },
+    {
+     "figure": "32人",
+     "description": "哈桑袭击中受伤的人数"
+    },
+    {
+     "figure": "420发",
+     "description": "哈桑袭击时携带的子弹数量"
+    },
+    {
+     "figure": "65年",
+     "description": "距上次处决现役军人的年数"
+    },
+    {
+     "figure": "60天到150天",
+     "description": "陆军规定的死刑执行时间窗口"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "items": [
+    {
+     "speaker": "赫格塞斯",
+     "cn": "我有点喜欢我们在二战时期的心态，那就是'获胜'。",
+     "en": "I kind of like the mentality we had in World War II, which was: 'win'."
+    },
+    {
+     "speaker": "奥克利大主教保罗·S·库克利",
+     "cn": "这一决定是对死亡文化的野蛮宣传。",
+     "en": "This decision is a barbaric promotion of a culture of death."
+    },
+    {
+     "speaker": "众议员奥斯汀·斯科特",
+     "cn": "直播处决是圣战分子所做的事情。美国比这更好。",
+     "en": "Livestreaming executions is what jihadists do. America is better than that."
+    },
+    {
+     "speaker": "副总统J·D·万斯",
+     "cn": "如果一切都通过直播进行，我不会观看。",
+     "en": "If it's all through livestream, I'm not going to be watching it."
+    }
+   ]
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文没有明确的平行比较结构，反对意见是多方列举而非成对对照"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已对军事法庭、枪决等术语有基本解释，无需要边注补充的关键术语"
+  },
+  {
+   "pattern_id": "T09",
+   "reason_against": "各段落长度适中，无需要拆分的过长段落"
+  }
+ ]
+}

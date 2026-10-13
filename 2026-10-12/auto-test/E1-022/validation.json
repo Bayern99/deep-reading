@@ -1,0 +1,84 @@
+{
+ "article_id": "E1-022",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 1,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p4",
+     "snippet": "拜登政府任命的",
+     "reason": "法官政治背景是关键上下文"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p8",
+     "snippet": "国土安全部的联邦资金",
+     "reason": "资金来源是法律争议核心"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T06",
+     "block_id": "p11",
+     "snippet": "原告在回应裁决时表示",
+     "reason": "长引语需要明确归属"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L02",
+   "正文已提供足够解释，无需要边注补充的术语或身份"
+  ],
+  [
+   "L03",
+   "原文无平行比较结构，无成对数据需要对照"
+  ],
+  [
+   "L05",
+   "原文无配图"
+  ],
+  [
+   "L08",
+   "原文无图表"
+  ],
+  [
+   "key_figures",
+   "文中数字分散且不属于同一比较维度（四页长、九月份），无法形成有意义的对比"
+  ]
+ ]
+}

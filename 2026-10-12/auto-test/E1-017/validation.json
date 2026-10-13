@@ -1,0 +1,50 @@
+{
+ "article_id": "E1-017",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "原文无平行比较结构，不存在两组在相同维度上的成对数据"
+  ],
+  [
+   "L02",
+   "'二级飓风'为常见术语，正文语境已足够理解；P3简报不宜过度设计"
+  ],
+  [
+   "timeline",
+   "原文仅出现一个日期'周五'，不满足≥4个可定日期事件的要求"
+  ],
+  [
+   "key_figures",
+   "'四人'（伤亡数）与'二级'（强度等级）属于不同叙事维度，口径不一，不适合并列比较"
+  ],
+  [
+   "quote",
+   "原文无直接引语"
+  ]
+ ]
+}

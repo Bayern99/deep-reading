@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E1-020 自主选择测试</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
+@media(min-width:1200px){
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
+  /* 图表保持可读宽度，横向滚动而非压扁 */
+  .ly-wide .ly-wide-scroll img{min-width:560px;max-width:none}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E1-020" aria-label="E1-020">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">U.S. News · A3 版 · P2</span><span class="k-en" hidden>U.S. News · A3 版 · P2</span></div>
+    <h2 class="art-title"><span class="k-cn">地方政治阻碍硅谷对峙</span><span class="k-en" hidden>Local Politics Stymie Silicon Valley Standoff</span></h2>
+<p class="deck"><span class="k-cn"></span><span class="k-en" hidden>between county leaders and developers frustrates $3 billion project</span></p>
+<div class="byline">
+      <span class="who">BY ZUSHA ELINSON</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A3 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A3</span>
+    </div>
+</header>
+  <div class="arule"></div>
+<p class="ed-block" data-block="p2"><span class="k-cn">加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘请的游说者们加紧活动。在加文·纽森州长的支持下，斯拉梅克正力图实现一个目标：在计划建设的这座城市附近建造一个价值<span class="tt-num">30亿美元</span>的造船厂。</span><span class="k-en" hidden>SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for Silicon Valley-backed entrepreneur Jan Sramek were in overdrive. With Gov. Gavin Newsom's office in his corner, Sramek was chasing a prize: a $3 billion shipyard beside the city he wants to build from scratch here.</span></p>
+<p class="ed-block" data-block="p3"><span class="k-cn">“我们有一些好消息！！！”纽森的一位工作人员在项目入选候选名单后发邮件说道。“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”</span><span class="k-en" hidden>"WE HAVE SOME GREAT NEWS!!!!!!," a Newsom staffer emailed after the site made the shortlist. "We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago."</span></p>
+<p class="ed-block" data-block="p4"><span class="k-cn">但这种兴奋感并没有持续多久。一个小时后，斯拉梅克警告说，存在一个障碍：<strong class="tt-b">县政府的繁文缛节</strong>。十个月后，造船公司Saronic Technologies（造船公司）选择了得克萨斯州的布朗斯维尔，并带走了大约1万个就业岗位。</span><span class="k-en" hidden>The excitement didn't last. Within an hour, Sramek warned of an obstacle: county government red tape. Ten months later, the shipmaker, Saronic Technologies, chose Brownsville, Texas, taking with it an estimated 10,000 jobs.</span></p>
+<p class="ed-block" data-block="p5"><span class="k-cn"><span class="tt-num">39岁</span>的斯拉梅克并不陌生于大型交易。<span class="tt-num">22 岁</span>时，他就在伦敦的高盛经手数百万美元的交易。现在，他正试图建造一种可步行郊区乌托邦，包括住宅、高科技制造中心和造船厂，距离旧金山仅需90分钟车程。他的公司California Forever（开发公司）已从投资者那里筹集了约<span class="tt-num">10亿美元</span>，投资者包括风险投资公司安德里森·霍洛维茨和领英联合创始人里德·霍夫曼，并汇集了顶尖的城市规划师，赢得了包括纽森在内的州领导人的支持。</span><span class="k-en" hidden>Sramek, 39 years old, is no stranger to big deals. By 22, he was handling multimillion-dollar trades at Goldman Sachs in London. Now, he is trying to build a kind of walkable suburban utopia, with housing, a high-tech manufacturing hub and a shipyard, a 90-minute drive from San Francisco. His company California Forever has raised about $1 billion from investors, including venture firm Andreessen Horowitz and LinkedIn co-founder Reid Hoffman, assembled top urban planners and won over state leaders including Newsom.</span></p>
+<p class="ed-block" data-block="p6"><span class="k-cn">该团队希望解决旧金山周边地区的住房短缺问题，以及索拉诺县的就业岗位不足问题，今年该县失去了一家百威啤酒厂和一家Valero Energy炼油厂。</span><span class="k-en" hidden>The group wants to address a regional housing shortage around San Francisco, as well as a lack of jobs in Solano County, which this year lost a Budweiser brewery and a Valero Energy refinery.</span></p>
+<p class="ed-block" data-block="p7"><span class="k-cn">但它面临的最大障碍是<strong class="tt-b">该县本身</strong>。</span><span class="k-en" hidden>But its biggest hurdle is the county itself.</span></p>
+<p class="ed-block" data-block="p8"><span class="k-cn">反对派的代表是<span class="tt-attr">米奇·马什伯恩</span>，59岁，一位戴着牛仔帽的共和党县议员，也是当地农民的后裔，他抱怨说，推动建造造船厂的做法是在“强加于我们”。</span><span class="k-en" hidden>The face of the opposition is Mitch Mashburn, 59, a cowboy-hat-wearing Republican county supervisor and descendant of local farmers who has complained the push for the shipyard was being "crammed down our throat."</span></p>
+<p class="ed-block" data-block="p9"><span class="k-cn">斯拉梅克将这场对峙描述为与那些导致人们无力负担住房并阻碍当地经济发展的势力的斗争。“加利福尼亚州未来的战役正在索拉诺县进行，”他说。</span><span class="k-en" hidden>Sramek casts the standoff as a fight against forces that have priced people out of housing and stalled local economies. "The battle for the future of California is being fought in Solano County," he said.</span></p>
+<p class="ed-block" data-block="p10"><span class="k-cn">反对者认为这是一场科技亿万富翁的土地掠夺。“我称之为‘兄弟寡头城市’，因为这背后真正推动的是科技精英，”吉姆·德克洛说，他是一位社区大学教授和当地塞拉俱乐部（Sierra Club）的领导人。</span><span class="k-en" hidden>Opponents view it as a tech-billionaire land grab. "I call it broligarch city because it's really tech bros behind this," said Jim DeKloe, a community-college professor and local Sierra Club leader.</span></p>
+<p class="ed-block" data-block="p11"><span class="k-cn">《华尔街日报》看到的一些电子邮件显示，双方关系已经恶化到县政府官员似乎更倾向于阻止该项目，而不是进行谈判。</span><span class="k-en" hidden>Emails seen by The Wall Street Journal show relations have soured to the point where county officials appear more inclined to block the project than negotiate.</span></p>
+<p class="ed-block" data-block="p12"><span class="k-cn">前任郡议员吉姆·斯佩林认为双方都有过错。他说，像马什伯恩这样的郡领导人缺乏前瞻性，也不知道如何达成对该地区有益的协议。斯佩林还说，斯拉梅克是那些“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”的“梦想家开发商”之一。</span><span class="k-en" hidden>Former County Supervisor Jim Spering faults both sides. County leaders like Mashburn aren't forward-looking and don't know how to cut deals that would help the region, he said. And Sramek is one of those "dreamer developers that don't understand that you've got to build a relationship with the community" before "telling them what you want to do," Spering said.</span></p>
+<p class="ed-block" data-block="p13"><span class="k-cn">斯拉梅克表示，他认为无论采取何种方式，他的项目都会面临强烈的反对。从一开始，他为购买<span class="tt-num">6万英亩</span>土地，用于建设一个容纳<span class="tt-num">40万人</span>的大型规划社区的计划，就激怒了当地居民，尤其是在California Forever起诉了几代农民家庭，指控他们合谋抬高土地价格之后。他称反对者为“70多岁的塞拉俱乐部成员”。</span><span class="k-en" hidden>Sramek said he thinks his project would have faced stiff opposition no matter the approach. From the start, his campaign to buy up 60,000 acres for a master-planned community for 400,000 people enraged locals, especially after California Forever sued multigenerational farming families, alleging they conspired to inflate land prices. He called opponents the "70-year-old Sierra Club type."</span></p>
+<p class="ed-block" data-block="p14"><span class="k-cn">此后，斯拉梅克和马什伯恩承诺放慢速度并共同合作。这种缓和关系面临的第一个考验是Saronic计划在California Forever的土地上，沿着萨克拉门托河建造大型造船厂。在2025年，Saronic公司正在评估选址，该公司生产自主航行的海运船只。斯拉梅克的助手与当地领导人会面，并组织他们参观河畔，同时还邀请了退役的军方高级将领。</span><span class="k-en" hidden>Afterward, Sramek and Mashburn pledged to slow down and work together. The detente faced its first test in Saronic's planned large shipyard along the Sacramento River on California Forever's land. As Saronic, which makes autonomous sea vessels, weighed sites in 2025, Sramek's deputies courted local leaders with riverside tours alongside retired military brass.</span></p>
+<p class="ed-block" data-block="p15"><span class="k-cn">但到了四月份，郡官员们感到自己被边缘化了。当斯拉梅克的助手提醒当时的郡行政长官比尔·埃姆伦，他们与他、马什伯恩和其他人进行了六个月的会谈，并提供了相关记录时，埃姆伦反驳道：“发送邀请函参加公开会议，并不能代替在决策桌上的一席之地。”</span><span class="k-en" hidden>But by April, county officials were feeling sidelined. When a Sramek deputy reminded then-County Administrator Bill Emlen of six months of meetings with him, Mashburn and others, receipts attached, Emlen shot back. "Sending invites to public briefings does not substitute for a seat at the table," he wrote.</span></p>
+<p class="ed-block" data-block="p16"><span class="k-cn">斯拉梅克在<span class="tt-attr">布雷特·普雷布拉</span>身上找到了一位盟友。普雷布拉曾是一名政府官员，并且是一位积极的谈判者，后来出任Suisun市市政经理。Suisun市是索拉诺县最贫困的社区之一。43岁的普雷布拉看到了他所在的这座面积为4平方英里的城市的机会，这座城市拥有大量的黑人人口，并且长期以来在索拉诺县感到被忽视。在2025年初，他提议将Suisun市的边界扩大35平方英里，以吞并California Forever土地的重要部分。对于普雷布拉来说，这意味着增加城市的收入。对于斯拉梅克来说，这是一种绕过郡严格的城市边界外开发规则的方法。</span><span class="k-en" hidden>Sramek found an ally in Bret Prebula, a former government and restless dealmaker who became city manager of Suisun City, one of Solano County's poorest communities. Prebula, 43, saw an opportunity for his 4-square-mile city, which has a large Black population and has long felt overlooked in Solano County. In early 2025, he proposed expanding Suisun City's borders by 35 square miles to annex a significant portion of California Forever's land. For Prebula, it meant city revenue. For Sramek, it was a way around the county's strict rules on development outside city limits.</span></p>
+<p class="ed-block" data-block="p17"><span class="k-cn">2025年6月，斯拉梅克向Suisun市提供了一笔5.5万美元的拨款，用于当地的7月4日烟花庆祝活动和其他受到预算赤字威胁的活动。电子邮件显示，他提议购买价值150万美元的市中心房产，以帮助弥补资金缺口。</span><span class="k-en" hidden>In June 2025, Sramek offered Suisun City a $55,000 grant for the local July 4 fireworks celebration and other events threatened by a budget shortfall. He offered to buy $1.5 million in downtown properties to help close the gap, emails show.</span></p>
+<p class="ed-block" data-block="p18"><span class="k-cn">不久之后，他们达成了一项协议：California Forever将承担城市与项目相关的成本，并在吞并最终确定后向城市支付1000万美元。</span><span class="k-en" hidden>Soon after, they struck a deal: California Forever would cover the city's project-related costs and pay it $10 million if the annexation is finalized.</span></p>
+<p class="ed-block" data-block="p19"><span class="k-cn">反对者对此表示强烈不满。塞拉俱乐部的领导人德克洛称之为一种“狡猾的策略”，旨在绕过全郡的投票。</span><span class="k-en" hidden>Opponents cried foul. DeKloe, the Sierra Club leader, called it a "weasel tactic" intended to bypass a county-wide vote.</span></p>
+<p class="ed-block" data-block="p20"><span class="k-cn">去年8月，索拉诺县进入了候选名单，斯拉梅克推动通过特别立法，以加快项目进度。州议员们起草了一项法案，但他们希望郡政府批准。在一次会议上，马什伯恩批评California Forever推进速度过快，但他投票支持了一项妥协方案。</span><span class="k-en" hidden>When Solano County made the shortlist last August, Sramek pushed for special legislation to fast-track the project. State lawmakers worked up a bill but wanted the county to sign off. At a board meeting, Mashburn chastised California Forever for the rush but voted to endorse a compromise bill.</span></p>
+<p class="ed-block" data-block="p21"><span class="k-cn">据斯拉梅克称，该法案未能满足Saronic的需求。尽管斯拉梅克的团队、马什伯恩和议员们进行了数月的谈判，试图制定一项更好的方案，但Saronic在6月份表示，他们已经选择了德克萨斯州。</span><span class="k-en" hidden>The bill fell short for Saronic, according to Sramek. Despite months of talks between Sramek's team, Mashburn and lawmakers, trying to hammer out a better one, Saronic said in June it had picked Texas.</span></p>
+<p class="ed-block" data-block="p22"><span class="k-cn">斯拉梅克说：“我们不断举手发言，表示如果这项法案未能通过，他们就会前往布朗斯维尔。”“但实际上，并没有足够的政治意愿来推动这项法案的通过。”Saronic Technologies的一位发言人没有回应置评请求。</span><span class="k-en" hidden>"We kept raising our hand and saying, if we don't pass the legislation, they are going to go to Brownsville," Sramek said, "but there wasn't the political will to get it done." A Saronic spokeswoman didn't respond to requests to comment.</span></p>
+<p class="ed-block" data-block="p23"><span class="k-cn">斯拉梅克抵达California Forever（开发公司）那栋没有明显标识的办公楼后，称这次投票只是一个障碍。但邮件显示，California Forever的支持者们担心马什伯恩枪里还有子弹。Suisun市的扩张需要与索拉诺县达成税收分摊协议，而开发商们表示，马什伯恩曾公开表示，不能强迫索拉诺县做出让步。</span><span class="k-en" hidden>Pulling into California Forever's unmarked office, Sramek called the vote a speed bump. But the emails show California Forever boosters fear Mashburn has another bullet in the chamber. The Suisun City annexation requires a tax-sharing agreement with Solano County, one developers [say] Mashburn has said publicly the county can't be forced to make.</span></p>
+<p class="ed-block" data-block="p24"><span class="k-cn">普雷布拉在一封发给州政府官员的邮件中抱怨说：“这里发生的事情不仅仅是地方上的摩擦，这是一个明确的例子，说明各县如何把程序和惯性武器化。”</span><span class="k-en" hidden>"What's happening here is not just local friction," Prebula complained in an email to state officials. "it is a clear example of how counties can weaponize process and inertia."</span></p>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{
+ "article_id": "E2-019",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "无休止的战争",
+     "reason": "特朗普的核心承诺，与后文形成张力"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "注定会持续下去的冲突",
+     "reason": "文章核心论点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p3",
+     "snippet": "美洲之盾",
+     "reason": "关键政策名称，首次出现"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p7",
+     "snippet": "19个政府",
+     "reason": "量化'美洲之盾'的规模"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p9",
+     "snippet": "2023年",
+     "reason": "诺沃亚首次当选时间"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p9",
+     "snippet": "2025年",
+     "reason": "诺沃亚连任时间，显示政治连续性"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p11",
+     "snippet": "重建了权威",
+     "reason": "哥伦比亚模式的关键成就"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p11",
+     "snippet": "没有破坏民主",
+     "reason": "与萨尔瓦多模式的关键区别"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p11",
+     "snippet": "强人路线",
+     "reason": "萨尔瓦多模式的核心特征"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p11",
+     "snippet": "没有经过正当程序",
+     "reason": "民主缺陷的关键描述"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T13",
+     "block_id": "p7",
+     "items": [
+      "阿根廷",
+      "玻利维亚",
+      "智利",
+      "哥伦比亚",
+      "哥斯达黎加",
+      "危地马拉",
+      "洪都拉斯",
+      "秘鲁",
+      "巴拿马",
+      "四个加勒比国家，包括多米尼加共和国"
+     ],
+     "reason": "逐字提取南美洲和中美洲成员国，加勒比国家合并为一项保持原文结构"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L03",
+   "p11的哥伦比亚vs萨尔瓦多对比是叙事性的，不是结构化数据对照。原文没有给出相同维度上的成对数据，不符合L03适用条件。"
+  ],
+  [
+   "L02",
+   "文中所有术语（美洲之盾、美洲反卡特尔联盟、气球效应）在正文中都有足够解释，无需边注。"
+  ],
+  [
+   "timeline",
+   "文中可定日期的事件不足4个（仅有2000年代、2023年、2025年），不满足≥4的要求。"
+  ],
+  [
+   "key_figures",
+   "文中数字分散（19个政府、2000年代、2023年、2025年、三名贩毒分子），不属于同一叙事问题，无需比较。"
+  ]
+ ]
+}

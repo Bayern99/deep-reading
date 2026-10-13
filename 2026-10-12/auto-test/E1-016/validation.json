@@ -1,0 +1,50 @@
+{
+ "article_id": "E1-016",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L02",
+   "正文无术语/身份需要额外解释，所有信息已自足"
+  ],
+  [
+   "L03",
+   "原文无平行对比结构，无成对数据可对照"
+  ],
+  [
+   "key_figures",
+   "数字（八人、45岁、七名）不属于同一叙事问题的比较维度"
+  ],
+  [
+   "timeline",
+   "仅有一个时间点（周五），不满足≥4事件要求"
+  ],
+  [
+   "quote",
+   "全文无直接引语，仅有转述"
+  ]
+ ]
+}

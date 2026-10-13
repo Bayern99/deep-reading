@@ -1,0 +1,262 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "理解核心论点：厄瓜多尔部署值得更多关注，打击毒品供应是'无休止的战争'"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "background",
+   "reader_need": "了解'美洲之盾'倡议的背景和目标"
+  },
+  {
+   "block_ids": [
+    "p4"
+   ],
+   "function": "claim",
+   "reader_need": "理解作者的条件性支持立场和警告"
+  },
+  {
+   "block_ids": [
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "通过哥伦比亚历史案例理解美国传统做法"
+  },
+  {
+   "block_ids": [
+    "p6"
+   ],
+   "function": "evidence",
+   "reader_need": "了解犯罪网络的广泛影响，不仅是毒品"
+  },
+  {
+   "block_ids": [
+    "p7"
+   ],
+   "function": "evidence",
+   "reader_need": "了解'美洲之盾'的成员国范围和构成"
+  },
+  {
+   "block_ids": [
+    "p8"
+   ],
+   "function": "background",
+   "reader_need": "理解厄瓜多尔如何成为犯罪热点"
+  },
+  {
+   "block_ids": [
+    "p9"
+   ],
+   "function": "evidence",
+   "reader_need": "了解厄瓜多尔当前政治和安全状况"
+  },
+  {
+   "block_ids": [
+    "p10"
+   ],
+   "function": "analysis",
+   "reader_need": "理解为什么供应侧打击难以奏效（需求缺乏弹性）"
+  },
+  {
+   "block_ids": [
+    "p11"
+   ],
+   "function": "contrast",
+   "reader_need": "对比哥伦比亚民主路径与萨尔瓦多强人路径"
+  },
+  {
+   "block_ids": [
+    "p12"
+   ],
+   "function": "conclusion",
+   "reader_need": "理解作者对持久和平的建议"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p7",
+   "need": "p7列举了19个成员国，信息密集，读者难以快速把握地理分布",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "读者需自行解析长列表"
+    },
+    {
+     "option": "B",
+     "desc": "T13 并列列表",
+     "benefit": "清晰展示成员国，便于快速阅读和地理定位",
+     "cost": "轻微打断段落"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注",
+     "benefit": "不干扰正文",
+     "cost": "边注不适合纯列表"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T13最适合处理这种枚举信息，逐字提取，可逆，显著提升可读性"
+  },
+  {
+   "id": "opp2",
+   "location": "p2-p12",
+   "need": "文章包含多个关键事实和数字，需要强调以帮助读者抓住要点",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "关键信息可能被忽略"
+    },
+    {
+     "option": "B",
+     "desc": "T01+T03组合",
+     "benefit": "突出核心论点和关键数据",
+     "cost": "需要精确定位"
+    }
+   ],
+   "chosen": "B",
+   "reason": "选择性强调能引导读者关注文章核心论证结构"
+  },
+  {
+   "id": "opp3",
+   "location": "p11",
+   "need": "哥伦比亚vs萨尔瓦多的对比是文章核心论证，但埋在段落中",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持叙事流畅",
+     "cost": "对比不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01强调关键短语",
+     "benefit": "低成本突出对比要素",
+     "cost": "不如表格直观"
+    },
+    {
+     "option": "C",
+     "desc": "L03 双栏",
+     "benefit": "视觉化对比",
+     "cost": "原文是叙事性对比，非结构化数据，不适合L03"
+    }
+   ],
+   "chosen": "B",
+   "reason": "通过T01强调'重建了权威'、'没有破坏民主'、'强人路线'、'没有经过正当程序'等关键短语，足以突出对比"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "无休止的战争",
+   "reason": "特朗普的核心承诺，与后文形成张力"
+  },
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "注定会持续下去的冲突",
+   "reason": "文章核心论点"
+  },
+  {
+   "type": "T01",
+   "block_id": "p3",
+   "snippet": "美洲之盾",
+   "reason": "关键政策名称，首次出现"
+  },
+  {
+   "type": "T03",
+   "block_id": "p7",
+   "snippet": "19个政府",
+   "reason": "量化'美洲之盾'的规模"
+  },
+  {
+   "type": "T03",
+   "block_id": "p9",
+   "snippet": "2023年",
+   "reason": "诺沃亚首次当选时间"
+  },
+  {
+   "type": "T03",
+   "block_id": "p9",
+   "snippet": "2025年",
+   "reason": "诺沃亚连任时间，显示政治连续性"
+  },
+  {
+   "type": "T01",
+   "block_id": "p11",
+   "snippet": "重建了权威",
+   "reason": "哥伦比亚模式的关键成就"
+  },
+  {
+   "type": "T01",
+   "block_id": "p11",
+   "snippet": "没有破坏民主",
+   "reason": "与萨尔瓦多模式的关键区别"
+  },
+  {
+   "type": "T01",
+   "block_id": "p11",
+   "snippet": "强人路线",
+   "reason": "萨尔瓦多模式的核心特征"
+  },
+  {
+   "type": "T01",
+   "block_id": "p11",
+   "snippet": "没有经过正当程序",
+   "reason": "民主缺陷的关键描述"
+  },
+  {
+   "type": "T13",
+   "block_id": "p7",
+   "items": [
+    "阿根廷",
+    "玻利维亚",
+    "智利",
+    "哥伦比亚",
+    "哥斯达黎加",
+    "危地马拉",
+    "洪都拉斯",
+    "秘鲁",
+    "巴拿马",
+    "四个加勒比国家，包括多米尼加共和国"
+   ],
+   "reason": "逐字提取南美洲和中美洲成员国，加勒比国家合并为一项保持原文结构"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为纯论证性社论，无图表、无需要边注解释的术语、无适合双栏的平行数据。维持标准单栏布局最佳。"
+  }
+ ],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "p11的哥伦比亚vs萨尔瓦多对比是叙事性的，不是结构化数据对照。原文没有给出相同维度上的成对数据，不符合L03适用条件。"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "文中所有术语（美洲之盾、美洲反卡特尔联盟、气球效应）在正文中都有足够解释，无需边注。"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "文中可定日期的事件不足4个（仅有2000年代、2023年、2025年），不满足≥4的要求。"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "文中数字分散（19个政府、2000年代、2023年、2025年、三名贩毒分子），不属于同一叙事问题，无需比较。"
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "核心新闻点：法官下令停止广告"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4",
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "谁下令、具体内容、即时效果"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7"
+   ],
+   "function": "background",
+   "reader_need": "政府回应和原定计划"
+  },
+  {
+   "block_ids": [
+    "p8",
+    "p9"
+   ],
+   "function": "background",
+   "reader_need": "广告内容和资金来源"
+  },
+  {
+   "block_ids": [
+    "p10",
+    "p11"
+   ],
+   "function": "claim",
+   "reader_need": "诉讼方及其法律论据"
+  },
+  {
+   "block_ids": [
+    "p12"
+   ],
+   "function": "consequence",
+   "reader_need": "总统的替代方案"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p4",
+   "need": "读者需要理解法官身份的政治含义",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "读者可能忽略'拜登任命'的重要性"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出法官的政治背景，帮助理解潜在立场",
+     "cost": "轻微强调"
+    }
+   ],
+   "chosen": "B",
+   "reason": "法官的任命背景是理解裁决的重要上下文，加粗可引导读者注意"
+  },
+  {
+   "id": "opp2",
+   "location": "p8",
+   "need": "资金来源是关键事实",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "关键事实不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调争议核心——国土安全部资金被用于政治宣传",
+     "cost": "轻微强调"
+    }
+   ],
+   "chosen": "B",
+   "reason": "资金来源是法律争议的核心，需要突出"
+  },
+  {
+   "id": "opp3",
+   "location": "p11",
+   "need": "引语归属需要清晰",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "引语较长，归属可能模糊"
+    },
+    {
+     "option": "B",
+     "desc": "T06 引述归属",
+     "benefit": "明确引语来自原告方",
+     "cost": "增加标记"
+    }
+   ],
+   "chosen": "B",
+   "reason": "长引语需要明确归属，避免读者混淆说话人"
+  },
+  {
+   "id": "opp4",
+   "location": "全文时间线",
+   "need": "事件发生顺序需要梳理",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "时间线分散在文中"
+    },
+    {
+     "option": "D",
+     "desc": "timeline 阅读辅助",
+     "benefit": "4个可定日期事件，帮助读者理解时间脉络",
+     "cost": "需提取整理"
+    }
+   ],
+   "chosen": "D",
+   "reason": "有4个明确时间点：九月开始、上周宣布、周日晚间下令、周日晚些时候生效"
+  },
+  {
+   "id": "opp5",
+   "location": "p11",
+   "need": "原告引语是核心论据",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "重要引语未突出"
+    },
+    {
+     "option": "D",
+     "desc": "quote 阅读辅助",
+     "benefit": "中英对照呈现核心法律论据",
+     "cost": "需提取"
+    }
+   ],
+   "chosen": "D",
+   "reason": "这是文章中最完整的直接引语，具名且承载核心法律论点"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p4",
+   "snippet": "拜登政府任命的",
+   "reason": "法官政治背景是关键上下文"
+  },
+  {
+   "type": "T01",
+   "block_id": "p8",
+   "snippet": "国土安全部的联邦资金",
+   "reason": "资金来源是法律争议核心"
+  },
+  {
+   "type": "T06",
+   "block_id": "p11",
+   "snippet": "原告在回应裁决时表示",
+   "reason": "长引语需要明确归属"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "events": [
+    {
+     "date": "九月份",
+     "event": "广告开始在全国电视台播放"
+    },
+    {
+     "date": "上周",
+     "event": "总统表示计划用MAGA Inc.超级政治行动委员会资金支付广告"
+    },
+    {
+     "date": "周日晚间",
+     "event": "法官发布四页长命令禁止使用政府资金投放广告"
+    },
+    {
+     "date": "周日晚些时候",
+     "event": "命令立即适用于计划播放的任何广告"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "speaker": "原告",
+   "quote_cn": "总统利用政府的运作机制以及国会为其他用途拨出的资金来影响选举结果，以推进其个人议程，这在法律上没有任何依据，也没有任何先例。",
+   "quote_en": "There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda",
+   "context": "回应裁决时的声明"
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已提供足够解释，无需要边注补充的术语或身份"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行比较结构，无成对数据需要对照"
+  },
+  {
+   "pattern_id": "L05",
+   "reason_against": "原文无配图"
+  },
+  {
+   "pattern_id": "L08",
+   "reason_against": "原文无图表"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "文中数字分散且不属于同一比较维度（四页长、九月份），无法形成有意义的对比"
+  }
+ ]
+}

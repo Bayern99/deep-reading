@@ -1,0 +1,200 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim + evidence",
+   "reader_need": "识别说话人身份（急诊科医生）以建立论证可信度；理解核心主张（非紧急情况不去急诊室）及其依据（24/7生命支持的高运营成本）"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "evidence + consequence + recommendation",
+   "reader_need": "获取可操作的替代方案列表；理解25%折扣这一量化论据；把握最终建议（向真正医疗专家而非网红寻求建议）"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "说话人身份是论证可信度的关键，但作为信件格式，读者可能忽略这一信息",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文简洁",
+     "cost": "读者可能错过作者专业身份这一关键可信度标记"
+    },
+    {
+     "option": "B",
+     "desc": "T06 引述归属",
+     "benefit": "突出'作为一名急诊科医生'，强化论证权威性",
+     "cost": "极低，仅添加标注"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这是论证的核心可信度来源，必须强调"
+  },
+  {
+   "id": "opp2",
+   "location": "p2",
+   "need": "核心主张需要视觉突出，便于读者快速抓住文章主旨",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外处理",
+     "cost": "核心信息可能被淹没"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出核心主张'如果情况不紧急，就不要去急诊室'",
+     "cost": "极低"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这是全文唯一的核心主张，必须加粗"
+  },
+  {
+   "id": "opp3",
+   "location": "p3",
+   "need": "文中唯一的数字论据需要强调，作为量化支撑",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外处理",
+     "cost": "数字论据不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出'25%'这一唯一量化论据",
+     "cost": "极低"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这是全文唯一的数字，承担重要论证功能"
+  },
+  {
+   "id": "opp4",
+   "location": "p3",
+   "need": "替代方案以散句形式呈现，读者难以快速提取",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "替代方案不易识别和记忆"
+    },
+    {
+     "option": "B",
+     "desc": "T13 并列列表",
+     "benefit": "将四个替代方案结构化呈现，便于读者快速获取信息",
+     "cost": "需重组段落，但可逆"
+    }
+   ],
+   "chosen": "B",
+   "reason": "四个替代方案是并列关系，列表化显著提升可读性和实用性"
+  },
+  {
+   "id": "opp5",
+   "location": "全文",
+   "need": "评估是否需要边注或双栏布局",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "L01 默认布局",
+     "benefit": "保持简洁",
+     "cost": "无"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注",
+     "benefit": "可解释术语",
+     "cost": "正文已充分解释，无需额外边注"
+    },
+    {
+     "option": "C",
+     "desc": "L03 双栏比较",
+     "benefit": "可对比急诊室vs其他选择",
+     "cost": "原文无明确平行数据维度，不符合L03适用条件"
+    }
+   ],
+   "chosen": "A",
+   "reason": "文章短小精悍，正文已充分解释，无真实平行结构，L01最优"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "pattern_id": "T06",
+   "block_id": "p2",
+   "snippet": "作为一名急诊科医生",
+   "snippet_en": "As an ER physician",
+   "reason": "说话人身份是论证可信度的核心来源"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p2",
+   "snippet": "如果情况不紧急，就不要去急诊室",
+   "snippet_en": "Don't go to the emergency room when you don't need to",
+   "reason": "全文核心主张"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p3",
+   "snippet": "25%",
+   "snippet_en": "25%",
+   "reason": "全文唯一数字论据，承担量化论证功能"
+  },
+  {
+   "pattern_id": "T13",
+   "block_id": "p3",
+   "items": [
+    "去看全科医生或去诊所",
+    "使用在线患者门户",
+    "寻求远程医疗服务",
+    "查阅可靠的在线资源"
+   ],
+   "items_en": [
+    "see a primary-care physician or a walk-in clinic",
+    "Using patient portals for nonurgent questions",
+    "seeking telehealth services",
+    "consulting reputable online sources"
+   ],
+   "reason": "四个并列的替代方案，列表化提升可读性"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为短信件格式，正文已充分解释关键概念，无真实平行比较结构，无需特殊布局处理"
+  }
+ ],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已充分解释急诊室费用高昂的原因（24/7生命支持运营成本），无术语理解障碍需要边注解决"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文未提供急诊室与其他医疗选择在相同维度上的成对数据，仅有定性描述，不符合L03'明确给出两组在相同维度上的成对数据'的适用条件"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "全文仅有一个数字（25%），无法构成需要比较的数字集合"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "文中无可定日期的事件"
+  },
+  {
+   "pattern_id": "quote",
+   "reason_against": "文中无具名人物的直接引语"
+  }
+ ]
+}

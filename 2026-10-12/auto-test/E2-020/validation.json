@@ -1,0 +1,106 @@
+{
+ "article_id": "E2-020",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 0,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "这将是一个错误",
+     "reason": "核心论点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p4",
+     "snippet": "目前企业使用'个性化定价'的程度尚不清楚，'个性化定价'对消费者的影响也尚不明确",
+     "reason": "FTC自承不确定性"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T13",
+     "block_id": "p7",
+     "items": [
+      "一家连锁超市向有孩子的家庭收取更高的牛奶价格",
+      "一家酒店可以向因参加葬礼而旅行的人收取更高的价格"
+     ],
+     "reason": "FTC依赖的虚构假设"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p9",
+     "snippet": "实际上",
+     "reason": "理论与现实的转折"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p10",
+     "snippet": "60%",
+     "reason": "核心实证数据"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L02",
+   "p8的'完全价格歧视'在正文中已有充分解释（p8-p9详细说明），无需边注"
+  ],
+  [
+   "L03",
+   "原文无真正的平行对比结构。p8-p9是理论vs现实的对比，但非成对数据维度对照"
+  ],
+  [
+   "key_figures",
+   "全文仅有60%一个关键数字，不足以构成需要比较的数字集合"
+  ],
+  [
+   "timeline",
+   "仅有'8月'和'2022年'两个时间点，不满足≥4个事件的要求"
+  ]
+ ]
+}

@@ -1,0 +1,283 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "核心新闻点：哈里斯可能第三次竞选，但面临来自丈夫和捐助者的阻力"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4",
+    "p12",
+    "p13"
+   ],
+   "function": "evidence",
+   "reader_need": "她采取的具体行动（筹款、招聘、外访）及其公开表态"
+  },
+  {
+   "block_ids": [
+    "p5",
+    "p7"
+   ],
+   "function": "contrast",
+   "reader_need": "党内对她再次竞选的怀疑态度，以及2028年可能面临拥挤的候选人阵容"
+  },
+  {
+   "block_ids": [
+    "p8",
+    "p9",
+    "p10",
+    "p11"
+   ],
+   "function": "background",
+   "reader_need": "埃姆霍夫的角色、夫妻关系的背景，帮助理解家庭层面的考量"
+  },
+  {
+   "block_ids": [
+    "p6"
+   ],
+   "function": "non-response",
+   "reader_need": "官方不置可否的态度"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "全文",
+   "need": "时间线梳理：文章涉及2020、2024、2026、2028多个年份，读者需要清晰的时间框架",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "读者需自行梳理时间线"
+    },
+    {
+     "option": "D",
+     "desc": "timeline",
+     "benefit": "5个可定日期事件，帮助读者理解政治周期",
+     "cost": "需提取验证"
+    }
+   ],
+   "chosen": "D",
+   "reason": "满足≥4事件要求，年份逐字出现，叙事逻辑清晰"
+  },
+  {
+   "id": "opp2",
+   "location": "p2, p4, p7",
+   "need": "关键引语强调：哈里斯的表态是文章核心",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外成本",
+     "cost": "引语淹没在段落中"
+    },
+    {
+     "option": "D",
+     "desc": "quote",
+     "benefit": "突出核心表态，中英对照",
+     "cost": "需精确对齐"
+    }
+   ],
+   "chosen": "D",
+   "reason": "三处引语均为具名直接引语，承载核心信息"
+  },
+  {
+   "id": "opp3",
+   "location": "p2, p4",
+   "need": "核心事实加粗：身份和关键表态",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "关键信息不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "快速定位核心事实",
+     "cost": "轻微排版成本"
+    }
+   ],
+   "chosen": "B",
+   "reason": "前副总统身份和'第三次竞选'是文章核心，加粗有助于快速阅读"
+  },
+  {
+   "id": "opp4",
+   "location": "p4, p13",
+   "need": "数字强调：年份和规模数据",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "数字论证力未凸显"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出时间紧迫性和行动规模",
+     "cost": "轻微排版成本"
+    }
+   ],
+   "chosen": "B",
+   "reason": "2026/2028年份承载论证逻辑，2000名志愿者体现行动规模"
+  },
+  {
+   "id": "opp5",
+   "location": "p7",
+   "need": "段落过渡：从个人决定转向党内视角",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "转折不够清晰"
+    },
+    {
+     "option": "B",
+     "desc": "T11 编辑小标题",
+     "benefit": "明确叙事层次",
+     "cost": "新增文字"
+    }
+   ],
+   "chosen": "B",
+   "reason": "此处从哈里斯个人转向党内态度，小标题有助于读者理解结构变化"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "前副总统卡玛拉·哈里斯",
+   "reason": "核心人物身份"
+  },
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "第三次总统竞选",
+   "reason": "核心新闻点"
+  },
+  {
+   "type": "T01",
+   "block_id": "p4",
+   "snippet": "我还没有决定是否要再次竞选",
+   "reason": "核心表态"
+  },
+  {
+   "type": "T03",
+   "block_id": "p4",
+   "snippet": "2026 年",
+   "reason": "中期选举时间节点"
+  },
+  {
+   "type": "T03",
+   "block_id": "p4",
+   "snippet": "2028 年",
+   "reason": "总统选举时间节点"
+  },
+  {
+   "type": "T03",
+   "block_id": "p13",
+   "snippet": "2000 名",
+   "reason": "志愿者规模"
+  },
+  {
+   "type": "T03",
+   "block_id": "p13",
+   "snippet": "十二个州",
+   "reason": "竞选目标范围"
+  },
+  {
+   "type": "T11",
+   "before_block_id": "p7",
+   "title_cn": "党内分歧",
+   "title_en": "Party Division",
+   "editorial_added": true,
+   "reason": "标记叙事从个人转向党内视角"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为线性叙事，无术语需要边注解释，无平行比较结构，无图表需要并置。维持单栏布局最符合原文叙事节奏。",
+   "evidence": "全文为新闻叙事结构，人物和机构在上下文中已有足够说明"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "title": "哈里斯政治时间线",
+   "events": [
+    {
+     "date": "2020 年",
+     "event": "哈里斯被选为拜登的竞选伙伴",
+     "source": "p9"
+    },
+    {
+     "date": "2024 年",
+     "event": "拜登退出后，民主党团结在哈里斯周围",
+     "source": "p7"
+    },
+    {
+     "date": "2024 年 10 月",
+     "event": "哈里斯称攻击'开始产生影响'",
+     "source": "p10"
+    },
+    {
+     "date": "2026 年",
+     "event": "中期选举",
+     "source": "p4"
+    },
+    {
+     "date": "2028 年",
+     "event": "总统选举",
+     "source": "p4"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "title": "关键引语",
+   "quotes": [
+    {
+     "speaker": "卡玛拉·哈里斯",
+     "cn": "我还没有决定是否要再次竞选",
+     "en": "I have not decided if I'm going to run again",
+     "source": "p4"
+    },
+    {
+     "speaker": "卡玛拉·哈里斯",
+     "cn": "如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义",
+     "en": "'28 won't matter if we don't get through '26",
+     "source": "p4"
+    },
+    {
+     "speaker": "卡玛拉·哈里斯",
+     "cn": "努力工作是一件好事",
+     "en": "Hard work is good work",
+     "source": "p13"
+    }
+   ]
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "文章无平行比较结构。虽然提到2024年和2028年的对比，但只是单一维度的叙述（党内团结vs拥挤赛场），不构成需要在相同维度上逐项对照的成对数据。"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "文中人物（埃姆霍夫、哈里斯）和机构（Willkie Farr & Gallagher）在正文中已有足够背景说明，无需边注补充。埃姆霍夫的身份通过'丈夫'和回忆录引用已清晰呈现。"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "文章中的数字（107天、2000名志愿者、十二个州）属于不同叙事问题，不构成需要比较的同一组数据。"
+  }
+ ]
+}

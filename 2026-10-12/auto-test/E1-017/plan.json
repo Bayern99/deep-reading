@@ -1,0 +1,112 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "了解飓风造成的直接人员伤亡，建立事件严重性认知"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "background",
+   "reader_need": "理解飓风的基本信息：强度、登陆地点、移动路径"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "突出核心伤亡数字，让读者快速抓住新闻要点",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "关键数字不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调'至少有四人'这一核心事实，含限定词'至少'体现新闻严谨性",
+     "cost": "极低"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出数字'四人'",
+     "cost": "不如T01保留完整语义"
+    }
+   ],
+   "chosen": "B (T01)",
+   "reason": "T01保留'至少'这一重要限定词，既强调事实又体现新闻严谨性，适合P3简报的快速阅读需求"
+  },
+  {
+   "id": "opp2",
+   "location": "p3",
+   "need": "突出飓风强度这一关键信息",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "二级飓风这一重要信息不够醒目"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调'二级飓风'，让读者快速了解风暴强度级别",
+     "cost": "极低"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注解释",
+     "benefit": "可解释二级飓风含义",
+     "cost": "P3简报篇幅短，加边注显得过度；且'二级飓风'为常见术语，读者通常理解"
+    }
+   ],
+   "chosen": "B (T01)",
+   "reason": "T01轻量级处理，突出关键信息即可；L02对于P3简报和常见术语来说过度设计"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "pattern_id": "T01",
+   "block_id": "p2",
+   "snippet": "至少有四人",
+   "reason": "核心伤亡事实，含'至少'限定词体现新闻严谨性"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p3",
+   "snippet": "二级飓风",
+   "reason": "关键强度信息，帮助读者快速理解风暴级别"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行比较结构，不存在两组在相同维度上的成对数据"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "'二级飓风'为常见术语，正文语境已足够理解；P3简报不宜过度设计"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "原文仅出现一个日期'周五'，不满足≥4个可定日期事件的要求"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "'四人'（伤亡数）与'二级'（强度等级）属于不同叙事维度，口径不一，不适合并列比较"
+  },
+  {
+   "pattern_id": "quote",
+   "reason_against": "原文无直接引语"
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "article_id": "E1-027",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 1,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "前副总统卡玛拉·哈里斯",
+     "reason": "核心人物身份"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "第三次总统竞选",
+     "reason": "核心新闻点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p4",
+     "snippet": "我还没有决定是否要再次竞选",
+     "reason": "核心表态"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p4",
+     "snippet": "2026 年",
+     "reason": "中期选举时间节点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p4",
+     "snippet": "2028 年",
+     "reason": "总统选举时间节点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p13",
+     "snippet": "2000 名",
+     "reason": "志愿者规模"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p13",
+     "snippet": "十二个州",
+     "reason": "竞选目标范围"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T11",
+     "before_block_id": "p7",
+     "title_cn": "党内分歧",
+     "title_en": "Party Division",
+     "editorial_added": true,
+     "reason": "标记叙事从个人转向党内视角"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L03",
+   "文章无平行比较结构。虽然提到2024年和2028年的对比，但只是单一维度的叙述（党内团结vs拥挤赛场），不构成需要在相同维度上逐项对照的成对数据。"
+  ],
+  [
+   "L02",
+   "文中人物（埃姆霍夫、哈里斯）和机构（Willkie Farr & Gallagher）在正文中已有足够背景说明，无需边注补充。埃姆霍夫的身份通过'丈夫'和回忆录"
+  ],
+  [
+   "key_figures",
+   "文章中的数字（107天、2000名志愿者、十二个州）属于不同叙事问题，不构成需要比较的同一组数据。"
+  ]
+ ]
+}

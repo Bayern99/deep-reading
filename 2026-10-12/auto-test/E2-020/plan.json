@@ -1,0 +1,246 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "Establish thesis: FTC's proposed action is mistaken"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "background",
+   "reader_need": "Define personalized pricing and FTC's proposal"
+  },
+  {
+   "block_ids": [
+    "p4",
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "Show FTC admits uncertainty while acting"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7"
+   ],
+   "function": "evidence",
+   "reader_need": "Demonstrate FTC relies on weak hypotheticals"
+  },
+  {
+   "block_ids": [
+    "p8",
+    "p9"
+   ],
+   "function": "contrast",
+   "reader_need": "Contrast theoretical harm with empirical uncertainty"
+  },
+  {
+   "block_ids": [
+    "p10"
+   ],
+   "function": "evidence",
+   "reader_need": "Present empirical counter-evidence"
+  },
+  {
+   "block_ids": [
+    "p11"
+   ],
+   "function": "conclusion",
+   "reader_need": "Recommend pausing enforcement"
+  },
+  {
+   "block_ids": [
+    "p12"
+   ],
+   "function": "attribution",
+   "reader_need": "Establish author credibility"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "Highlight thesis statement for immediate reader orientation",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外成本",
+     "cost": "论点不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调核心立场，帮助读者快速把握文章主旨",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "Opinion文章需要在开篇明确立场，加粗'这将是一个错误'强化论点"
+  },
+  {
+   "id": "opp2",
+   "location": "p4",
+   "need": "Emphasize the irony of FTC admitting uncertainty while proposing regulation",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "原文流畅",
+     "cost": "FTC自承不确定性的讽刺性不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出FTC自己的承认，增强论证力度",
+     "cost": "minimal"
+    },
+    {
+     "option": "D",
+     "desc": "quote 引语",
+     "benefit": "作为pull quote展示FTC自承",
+     "cost": "需要额外排版空间"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T01加粗FTC的自承语句，让读者注意到论证的关键证据"
+  },
+  {
+   "id": "opp3",
+   "location": "p7",
+   "need": "Show the weakness of FTC's hypothetical examples as enumerated points",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "叙事连贯",
+     "cost": "假设案例的弱点不够结构化呈现"
+    },
+    {
+     "option": "B",
+     "desc": "T13 并列列表",
+     "benefit": "将两个假设案例并列展示，凸显其虚构性和薄弱性",
+     "cost": "轻微打断叙事流"
+    }
+   ],
+   "chosen": "B",
+   "reason": "列表形式让读者清楚看到FTC依赖的是虚构场景而非真实案例"
+  },
+  {
+   "id": "opp4",
+   "location": "p8",
+   "need": "Mark the transition from theory to reality",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "原文清晰",
+     "cost": "转折不够醒目"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "'实际上'作为转折词加粗，强调理论与现实的差距",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "强调理论框架与现实情况的对比"
+  },
+  {
+   "id": "opp5",
+   "location": "p10",
+   "need": "Highlight the key empirical finding that contradicts FTC's assumption",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "数字在文中可见",
+     "cost": "关键证据不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "60%是核心证据，加粗后强化论证",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "60%的消费者受益是反驳FTC假设的最有力证据"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "这将是一个错误",
+   "reason": "核心论点"
+  },
+  {
+   "type": "T01",
+   "block_id": "p4",
+   "snippet": "目前企业使用'个性化定价'的程度尚不清楚，'个性化定价'对消费者的影响也尚不明确",
+   "reason": "FTC自承不确定性"
+  },
+  {
+   "type": "T13",
+   "block_id": "p7",
+   "items": [
+    "一家连锁超市向有孩子的家庭收取更高的牛奶价格",
+    "一家酒店可以向因参加葬礼而旅行的人收取更高的价格"
+   ],
+   "reason": "FTC依赖的虚构假设"
+  },
+  {
+   "type": "T01",
+   "block_id": "p9",
+   "snippet": "实际上",
+   "reason": "理论与现实的转折"
+  },
+  {
+   "type": "T03",
+   "block_id": "p10",
+   "snippet": "60%",
+   "reason": "核心实证数据"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为纯观点论述，无术语需要边注解释（完全价格歧视在p8有上下文说明），无平行对比结构适合L03，无图表适合L05/L08。维持标准单栏布局最佳。",
+   "evidence": "全文无需要额外解释的术语；无成对对比数据；无配图"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "quote",
+   "block_id": "p4",
+   "cn_text": "目前企业使用'个性化定价'的程度尚不清楚，'个性化定价'对消费者的影响也尚不明确",
+   "en_text": "the extent to which businesses currently use personalized pricing is not well understood, and the effects of personalized pricing on consumers are unclear",
+   "speaker": "美国联邦贸易委员会",
+   "reason": "FTC自承不确定性的关键引语，支撑全文核心论证"
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "p8的'完全价格歧视'在正文中已有充分解释（p8-p9详细说明），无需边注"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无真正的平行对比结构。p8-p9是理论vs现实的对比，但非成对数据维度对照"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "全文仅有60%一个关键数字，不足以构成需要比较的数字集合"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "仅有'8月'和'2022年'两个时间点，不满足≥4个事件的要求"
+  }
+ ]
+}

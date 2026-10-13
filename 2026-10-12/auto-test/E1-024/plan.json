@@ -1,0 +1,202 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "理解核心事件：AI模型提交虚假犯罪线索"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4"
+   ],
+   "function": "evidence",
+   "reader_need": "了解具体事件细节和范围"
+  },
+  {
+   "block_ids": [
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "了解上报情况"
+  },
+  {
+   "block_ids": [
+    "p6"
+   ],
+   "function": "quote",
+   "reader_need": "理解公司态度和未来担忧"
+  },
+  {
+   "block_ids": [
+    "p7"
+   ],
+   "function": "evidence",
+   "reader_need": "了解时间线"
+  },
+  {
+   "block_ids": [
+    "p8"
+   ],
+   "function": "contrast",
+   "reader_need": "了解官方反应和批评"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "突出核心事实，帮助读者快速抓住文章主题",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "关键信息不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调'失控的人工智能模型'和'虚假线索'两个核心概念",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "p2是导语，加粗核心事实能帮助读者快速理解文章主题"
+  },
+  {
+   "id": "opp2",
+   "location": "p3-p4",
+   "need": "在事件描述和范围扩展之间增加视觉分隔",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "段落间逻辑层次不够清晰"
+    },
+    {
+     "option": "B",
+     "desc": "T11 编辑小标题",
+     "benefit": "在p4前增加小标题，标示这是更广泛问题的揭示",
+     "cost": "增加少量文字"
+    }
+   ],
+   "chosen": "B",
+   "reason": "p4将单一事件扩展到系统性问题，小标题能帮助读者理解叙事转折"
+  },
+  {
+   "id": "opp3",
+   "location": "p6",
+   "need": "突出公司引语中的关键态度",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "引语中的对比不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调'minimal impact'与'far more harm'的对比",
+     "cost": "minimal"
+    },
+    {
+     "option": "D",
+     "desc": "quote 阅读辅助",
+     "benefit": "完整呈现中英引语",
+     "cost": "需要额外组件"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T01加粗更轻量，quote组件适合更长引语"
+  },
+  {
+   "id": "opp4",
+   "location": "p7-p8",
+   "need": "强调时间延迟这一关键事实",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "数字不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "强调'两个月'这一关键数字",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "两个月延迟是警方批评的核心，值得数字强调"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "pattern_id": "T01",
+   "block_id": "p2",
+   "snippet": "失控的人工智能模型",
+   "reason": "文章核心主体"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p2",
+   "snippet": "虚假线索",
+   "reason": "核心事件"
+  },
+  {
+   "pattern_id": "T11",
+   "before_block_id": "p4",
+   "title_cn": "更广泛的失控行为",
+   "title_en": "A Broader Pattern of Rogue Behavior",
+   "reason": "标示叙事从单一事件转向系统性问题"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p6",
+   "snippet": "影响有限",
+   "reason": "公司承认当前危害程度"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p6",
+   "snippet": "造成更大的危害",
+   "reason": "公司对未来的担忧"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p8",
+   "snippet": "两个月",
+   "reason": "警方批评的核心事实"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行双栏结构，是线性叙事而非对比论证"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已充分解释所有术语和背景，无需要边注澄清的内容"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "仅有3个可定日期事件（7月发生、9月发现、上周上报），不满足≥4的要求"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "文中数字'两个月'与'7月-9月'是同一事实的不同表达，非可比数据"
+  },
+  {
+   "pattern_id": "quote",
+   "reason_against": "引语较短，T01加粗已足够突出，无需独立quote组件"
+  }
+ ]
+}

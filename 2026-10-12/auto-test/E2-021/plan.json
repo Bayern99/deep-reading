@@ -1,0 +1,289 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "Establishes central thesis: Trump's policy shift toward Putin is a moral and strategic error"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4",
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "Factual details of the diesel purchase deal and Trump's justification"
+  },
+  {
+   "block_ids": [
+    "p6"
+   ],
+   "function": "contrast",
+   "reader_need": "Skepticism about claimed price benefits, suggests election motivation"
+  },
+  {
+   "block_ids": [
+    "p7",
+    "p8"
+   ],
+   "function": "consequence",
+   "reader_need": "Deal directly funds Putin's war; potential intelligence cutoff threat"
+  },
+  {
+   "block_ids": [
+    "p9",
+    "p10",
+    "p11"
+   ],
+   "function": "claim",
+   "reader_need": "Energy ceasefire announcement and its limitations"
+  },
+  {
+   "block_ids": [
+    "p12"
+   ],
+   "function": "evidence",
+   "reader_need": "Specific civilian casualties to underscore ongoing Russian attacks"
+  },
+  {
+   "block_ids": [
+    "p13"
+   ],
+   "function": "contrast",
+   "reader_need": "Highlights strategic inconsistency with previous Graham bill"
+  },
+  {
+   "block_ids": [
+    "p14"
+   ],
+   "function": "evidence",
+   "reader_need": "Financial impact quantified: $4.5 billion to Russian oil companies"
+  },
+  {
+   "block_ids": [
+    "p15",
+    "p16"
+   ],
+   "function": "claim",
+   "reader_need": "Trump's pressure on Ukraine, not Russia"
+  },
+  {
+   "block_ids": [
+    "p17"
+   ],
+   "function": "conclusion",
+   "reader_need": "Final judgment: deal helps Russia, not peace"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p3-p4",
+   "need": "Readers need to grasp the scale of the diesel purchase and its staging",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "数字信息淹没在文本中"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出480万吨/3600万桶的规模",
+     "cost": "minimal"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures",
+     "benefit": "将采购量与全球日消耗量对比",
+     "cost": "需提取多处数据"
+    }
+   ],
+   "chosen": "D",
+   "reason": "key_figures能同时呈现采购规模(3600万桶)与全球日消耗(2800万桶)的对比，直观显示该交易的实际影响有限，支持p6的论点"
+  },
+  {
+   "id": "opp2",
+   "location": "p12",
+   "need": "三起平民伤亡事件需要清晰呈现以证明俄罗斯持续攻击",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "叙事连贯",
+     "cost": "伤亡数字不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "强调22人、33人、20人的死亡数字",
+     "cost": "minimal"
+    },
+    {
+     "option": "D",
+     "desc": "timeline",
+     "benefit": "按时间顺序呈现三起事件",
+     "cost": "日期不够精确"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T03数字强调能突出伤亡规模，强化p12的论证力度，成本最低"
+  },
+  {
+   "id": "opp3",
+   "location": "p2,p13",
+   "need": "林赛·格雷厄姆的提及对理解政策反转至关重要",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "读者可能不理解格雷厄姆的重要性"
+    },
+    {
+     "option": "B",
+     "desc": "T06 引述归属",
+     "benefit": "明确格雷厄姆的身份",
+     "cost": "minimal"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注",
+     "benefit": "解释格雷厄姆是谁及其法案内容",
+     "cost": "增加版面"
+    }
+   ],
+   "chosen": "C",
+   "reason": "L02边注能在p2首次提及处解释格雷厄姆是已故参议员，其法案原本针对购买俄能源的国家实施制裁，与p13的政策反转形成呼应"
+  },
+  {
+   "id": "opp4",
+   "location": "p14",
+   "need": "45亿美元的收入数字是核心论证点",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "数字不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出45亿美元的规模",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T03数字强调能突出这笔收入对俄罗斯战争机器的意义"
+  },
+  {
+   "id": "opp5",
+   "location": "p2",
+   "need": "开篇核心论点需要强调",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "论点不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调'道德和战略错误'这一核心判断",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T01语义加粗能突出文章的核心论点，为全文定调"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "道德和战略错误",
+   "reason": "文章核心论点"
+  },
+  {
+   "type": "T03",
+   "block_id": "p3",
+   "snippet": "480 万吨（近 3600 万桶）",
+   "reason": "交易规模"
+  },
+  {
+   "type": "T03",
+   "block_id": "p12",
+   "snippet": "22 人死亡",
+   "reason": "平民伤亡"
+  },
+  {
+   "type": "T03",
+   "block_id": "p12",
+   "snippet": "33 人死亡",
+   "reason": "平民伤亡"
+  },
+  {
+   "type": "T03",
+   "block_id": "p12",
+   "snippet": "至少 20 人死亡",
+   "reason": "平民伤亡"
+  },
+  {
+   "type": "T03",
+   "block_id": "p14",
+   "snippet": "45 亿美元",
+   "reason": "俄罗斯收入"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L02",
+   "anchor_block": "p2",
+   "reason": "林赛·格雷厄姆在p2首次出现，读者需要知道他是谁以及他的法案内容，这对理解p13的政策反转至关重要",
+   "evidence": "锚点p2'林赛·格雷厄姆'；边注内容：'已故共和党参议员，以亲乌立场著称。2024年9月，特朗普签署其提出的法案，允许对购买俄罗斯石油和天然气的国家实施新制裁和关税。'；editorial_added=true"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "key_figures",
+   "title": "柴油交易关键数据",
+   "items": [
+    {
+     "label": "美国采购量",
+     "value": "3600 万桶",
+     "source": "p3"
+    },
+    {
+     "label": "全球日消耗量",
+     "value": "2800 万桶",
+     "source": "p6"
+    },
+    {
+     "label": "俄罗斯预计收入",
+     "value": "45 亿美元",
+     "source": "p14"
+    }
+   ],
+   "reason": "三组数据同属'交易规模与影响'叙事问题，对比显示3600万桶仅略高于全球日消耗量，支持p6'对价格影响不会太大'的论点"
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文没有明确的平行双栏比较结构。虽然p12列出三起伤亡事件，但这是时间序列而非对比结构；p3-p4的采购分期是单一事件的分解，不是两组对比。"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "虽然有多处时间标记（周五、周六、周日、周三等），但日期不够精确（缺少具体日期），且事件分散在不同段落，难以形成连贯的时间线叙事。"
+  },
+  {
+   "pattern_id": "T11",
+   "reason_against": "文章结构清晰，段落不长，不需要编辑小标题来划分章节。"
+  }
+ ]
+}

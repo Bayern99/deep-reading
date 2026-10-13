@@ -1,0 +1,84 @@
+{
+ "article_id": "E1-019",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "反对一项备受关注的提案",
+     "reason": "纽森初始立场"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "支持另一项提案",
+     "reason": "纽森当前立场，形成对比"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p5",
+     "snippet": "5%",
+     "reason": "亿万富翁税税率"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p5",
+     "snippet": "10 亿美元",
+     "reason": "征税净资产门槛"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T06",
+     "block_id": "p3",
+     "snippet": "纽森表示",
+     "reason": "核心引语归属"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "原文未提供两组在相同维度上的成对数据。虽有'支持方vs反对方'，但缺乏平行对照的量化维度（如资金额、论点数量等），不符合L03适用条件。"
+  ],
+  [
+   "L02",
+   "正文对关键术语（如42号提案、亿万富翁税）已有足够解释，无需要边注补充的未定义术语。人物身份（纽森、布林）在正文中已明确。"
+  ]
+ ]
+}

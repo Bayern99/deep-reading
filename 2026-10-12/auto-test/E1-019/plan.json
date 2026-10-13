@@ -1,0 +1,252 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "理解纽森立场的戏剧性转变：从反对征税到支持禁止征税"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4"
+   ],
+   "function": "evidence",
+   "reader_need": "了解42号提案的支持者、资金来源和竞选背景"
+  },
+  {
+   "block_ids": [
+    "p5"
+   ],
+   "function": "background",
+   "reader_need": "理解亿万富翁税的具体设计：税率、门槛、目的"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7"
+   ],
+   "function": "contrast",
+   "reader_need": "把握民主党内部的分歧：州长vs州党部"
+  },
+  {
+   "block_ids": [
+    "p8",
+    "p9",
+    "p10"
+   ],
+   "function": "evidence",
+   "reader_need": "了解42号提案的法律机制和双方论点"
+  },
+  {
+   "block_ids": [
+    "p11",
+    "p12"
+   ],
+   "function": "consequence",
+   "reader_need": "理解潜在法律战和工会批评"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p5",
+   "need": "p5包含多项关键政策参数，读者需要快速抓住核心数字",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "关键数字淹没在长句中"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "突出5%税率和10亿美元门槛，便于读者记忆和比较",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这两个数字是政策的核心参数，强调后读者能立即理解征税范围和力度"
+  },
+  {
+   "id": "opp2",
+   "location": "p2",
+   "need": "标题段包含立场反转，需要强调对比",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "对比不够鲜明"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出'反对'到'支持'的立场转变",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这是文章的核心戏剧性冲突，加粗能立即吸引读者注意"
+  },
+  {
+   "id": "opp3",
+   "location": "p3",
+   "need": "纽森引语是核心论点，需要明确归属",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "引语归属不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T06 引述归属",
+     "benefit": "明确这是纽森本人的辩护理由",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这是纽森为立场辩护的核心引语，明确归属有助于理解其论证逻辑"
+  },
+  {
+   "id": "opp4",
+   "location": "p4,p5,p7",
+   "need": "文章涉及多个时间节点，读者需要时间线梳理",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "不增加组件",
+     "cost": "时间关系分散难追踪"
+    },
+    {
+     "option": "D",
+     "desc": "timeline 阅读辅助",
+     "benefit": "清晰展示事件发展顺序",
+     "cost": "需提取4个以上事件"
+    }
+   ],
+   "chosen": "D",
+   "reason": "可提取4个明确日期事件：去年提案提出、去年纽森反对、8月州党部支持、11月3日投票"
+  },
+  {
+   "id": "opp5",
+   "location": "p4,p5,p7,p10",
+   "need": "文章涉及多个关键数字，读者需要对比",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "数字分散"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures 阅读辅助",
+     "benefit": "集中展示关键数据便于比较",
+     "cost": "需确保口径一致"
+    }
+   ],
+   "chosen": "D",
+   "reason": "5%税率、10亿美元门槛、数千万美元筹款额同属'亿万富翁税争议'叙事问题"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "反对一项备受关注的提案",
+   "reason": "纽森初始立场"
+  },
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "支持另一项提案",
+   "reason": "纽森当前立场，形成对比"
+  },
+  {
+   "type": "T03",
+   "block_id": "p5",
+   "snippet": "5%",
+   "reason": "亿万富翁税税率"
+  },
+  {
+   "type": "T03",
+   "block_id": "p5",
+   "snippet": "10 亿美元",
+   "reason": "征税净资产门槛"
+  },
+  {
+   "type": "T06",
+   "block_id": "p3",
+   "snippet": "纽森表示",
+   "reason": "核心引语归属"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "title_cn": "加州亿万富翁税时间线",
+   "title_en": "California Billionaire Tax Timeline",
+   "items": [
+    {
+     "date": "去年",
+     "event_cn": "医护工作者工会提出亿万富翁税提案",
+     "event_en": "Healthcare union proposes billionaire tax"
+    },
+    {
+     "date": "去年",
+     "event_cn": "纽森反对该税收",
+     "event_en": "Newsom opposes the tax"
+    },
+    {
+     "date": "8 月",
+     "event_cn": "加州民主党投票支持该提案",
+     "event_en": "California Democratic Party endorses the measure"
+    },
+    {
+     "date": "11 月 3 日",
+     "event_cn": "选民就两项提案进行表决",
+     "event_en": "Voters decide on both ballot measures"
+    }
+   ]
+  },
+  {
+   "type": "key_figures",
+   "title_cn": "关键数字",
+   "title_en": "Key Figures",
+   "items": [
+    {
+     "figure": "5%",
+     "description_cn": "拟议的亿万富翁财富税税率",
+     "description_en": "Proposed billionaire wealth tax rate"
+    },
+    {
+     "figure": "10 亿美元",
+     "description_cn": "征税门槛（净资产）",
+     "description_en": "Tax threshold (net worth)"
+    },
+    {
+     "figure": "数千万美元",
+     "description_cn": "42 号提案已筹集资金",
+     "description_en": "Funds raised for Prop. 42"
+    }
+   ]
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文未提供两组在相同维度上的成对数据。虽有'支持方vs反对方'，但缺乏平行对照的量化维度（如资金额、论点数量等），不符合L03适用条件。"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文对关键术语（如42号提案、亿万富翁税）已有足够解释，无需要边注补充的未定义术语。人物身份（纽森、布林）在正文中已明确。"
+  }
+ ]
+}

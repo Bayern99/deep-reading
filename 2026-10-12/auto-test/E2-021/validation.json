@@ -1,0 +1,102 @@
+{
+ "article_id": "E2-021",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "道德和战略错误",
+     "reason": "文章核心论点"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p3",
+     "snippet": "480 万吨（近 3600 万桶）",
+     "reason": "交易规模"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p12",
+     "snippet": "22 人死亡",
+     "reason": "平民伤亡"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p12",
+     "snippet": "33 人死亡",
+     "reason": "平民伤亡"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p12",
+     "snippet": "至少 20 人死亡",
+     "reason": "平民伤亡"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p14",
+     "snippet": "45 亿美元",
+     "reason": "俄罗斯收入"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L02",
+   "p2"
+  ]
+ ],
+ "rejected": [
+  [
+   "L03",
+   "原文没有明确的平行双栏比较结构。虽然p12列出三起伤亡事件，但这是时间序列而非对比结构；p3-p4的采购分期是单一事件的分解，不是两组对比。"
+  ],
+  [
+   "timeline",
+   "虽然有多处时间标记（周五、周六、周日、周三等），但日期不够精确（缺少具体日期），且事件分散在不同段落，难以形成连贯的时间线叙事。"
+  ],
+  [
+   "T11",
+   "文章结构清晰，段落不长，不需要编辑小标题来划分章节。"
+  ]
+ ]
+}

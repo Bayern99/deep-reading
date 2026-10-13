@@ -1,0 +1,121 @@
+{
+ "article_id": "E1-020",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "pattern_id": "T03",
+     "block_id": "p4",
+     "snippet": "10000个就业岗位",
+     "reason": "失去的就业规模，体现失败代价"
+    },
+    "reason": "T03 exact match failed: 10000个就业岗位"
+   }
+  ],
+  "layouts": [],
+  "aids": [
+   {
+    "item": {
+     "pattern_id": "timeline",
+     "title": "Saronic造船厂项目时间线",
+     "events": [
+      {
+       "date": "2025年夏季",
+       "event": "斯拉梅克聘请游说者，推动造船厂项目"
+      },
+      {
+       "date": "一小时后",
+       "event": "斯拉梅克警告县政府繁文缛节是障碍"
+      },
+      {
+       "date": "十个月后",
+       "event": "Saronic选择得克萨斯州布朗斯维尔"
+      },
+      {
+       "date": "2025年4月",
+       "event": "县官员感到被边缘化"
+      },
+      {
+       "date": "2025年6月",
+       "event": "斯拉梅克向Suisun市提供5.5万美元拨款"
+      },
+      {
+       "date": "去年8月",
+       "event": "索拉诺县进入候选名单，推动特别立法"
+      },
+      {
+       "date": "6月",
+       "event": "Saronic最终确认选择德克萨斯州"
+      }
+     ],
+     "evidence": "日期均来自原文逐字提取"
+    },
+    "reason": "未知 aid "
+   },
+   {
+    "item": {
+     "pattern_id": "quote",
+     "title": "双方立场",
+     "quotes": [
+      {
+       "speaker": "扬·斯拉梅克",
+       "speaker_role": "California Forever创始人",
+       "quote_cn": "加利福尼亚州未来的战役正在索拉诺县进行",
+       "quote_en": "The battle for the future of California is being fought in Solano County",
+       "block_id": "p9"
+      },
+      {
+       "speaker": "吉姆·德克洛",
+       "speaker_role": "塞拉俱乐部领导人",
+       "quote_cn": "我称之为'兄弟寡头城市'，因为这背后真正推动的是科技精英",
+       "quote_en": "I call it broligarch city because it's really tech bros behind this",
+       "block_id": "p10"
+      },
+      {
+       "speaker": "布雷特·普雷布拉",
+       "speaker_role": "Suisun市市政经理",
+       "quote_cn": "这是一个明确的例子，说明各县如何把程序和惯性武器化",
+       "quote_en": "it is a clear example of how counties can weaponize process and inertia",
+       "block_id": "p24"
+      }
+     ]
+    },
+    "reason": "未知 aid "
+   }
+  ]
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "原文没有明确的平行双栏比较结构。虽然存在双方立场，但没有在相同维度上的成对数据对照，不符合L03适用条件。"
+  ],
+  [
+   "L02",
+   "正文已对关键人物和术语进行了充分解释。斯拉梅克、马什伯恩、普雷布拉的身份在首次出现时都有说明，不需要边注补充。"
+  ],
+  [
+   "key_figures",
+   "虽然文中有多个数字，但它们分散在不同叙事层面（融资、土地、就业、拨款），不属于同一叙事问题的可比数据，口径不一。"
+  ]
+ ]
+}

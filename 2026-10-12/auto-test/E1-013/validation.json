@@ -1,0 +1,56 @@
+{
+ "article_id": "E1-013",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": [
+    {
+     "level": "warn",
+     "code": "too_few_paras",
+     "detail": "正文仅 1 段（非 brief），需人工确认是否截断"
+    }
+   ]
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "T01",
+   "文本仅一句，核心信息自明，加粗无实质收益"
+  ],
+  [
+   "T13",
+   "仅两项内容，列表化过度设计"
+  ],
+  [
+   "L02",
+   "无术语或背景需要边注解释"
+  ],
+  [
+   "L03",
+   "无平行比较结构"
+  ],
+  [
+   "key_figures",
+   "电话号码是联系信息而非论证数据"
+  ]
+ ]
+}

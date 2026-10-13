@@ -1,0 +1,65 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "instruction",
+   "reader_need": "读者需要知道如何联系报社报告错误；信息已完整清晰呈现"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "评估是否需要对联系方式进行强调或重组",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样（T00/L01）",
+     "benefit": "文本已极简清晰；两个联系方式在一句话中自然呈现；无理解障碍",
+     "cost": "无"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗邮箱和电话",
+     "benefit": "突出关键联系信息",
+     "cost": "对如此简短的文本，加粗收益极低；可能过度设计"
+    },
+    {
+     "option": "B",
+     "desc": "T13 并列列表拆分",
+     "benefit": "结构化呈现两种方式",
+     "cost": "仅两项内容不值得列表化；破坏原文流畅性"
+    }
+   ],
+   "chosen": "A",
+   "reason": "这是标准更正通知的 boilerplate 文本，功能单一、信息完整、表达清晰。任何增强都是画蛇添足。根据铁律'不以组件数量衡量质量'，零处理是最佳选择。"
+  }
+ ],
+ "text_treatment_plan": [],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "T01",
+   "reason_against": "文本仅一句，核心信息自明，加粗无实质收益"
+  },
+  {
+   "pattern_id": "T13",
+   "reason_against": "仅两项内容，列表化过度设计"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "无术语或背景需要边注解释"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "无平行比较结构"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "电话号码是联系信息而非论证数据"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "article_id": "E1-023",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 1,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    },
+    {
+     "idx": 2,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "违反了联邦反托拉斯法",
+     "reason": "核心法律指控"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p7",
+     "snippet": "集体抵制",
+     "reason": "司法部认定的行为性质"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T13",
+     "block_id": "p4",
+     "items": [
+      "福克斯新闻",
+      "美国广播公司新闻",
+      "哥伦比亚广播公司新闻",
+      "CNN",
+      "美国全国广播公司新闻"
+     ],
+     "reason": "五家参与pool机制的电视台"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L02",
+   "p7"
+  ]
+ ],
+ "rejected": [
+  [
+   "L03",
+   "原文无平行对比结构，不存在两组在相同维度上的成对数据"
+  ],
+  [
+   "L05",
+   "原文无配图，无法应用图文并置"
+  ],
+  [
+   "key_figures",
+   "文中数字分散（日期、法案年份），不属于同一叙事问题，无需比较"
+  ]
+ ]
+}

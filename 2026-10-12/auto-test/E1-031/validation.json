@@ -1,0 +1,110 @@
+{
+ "article_id": "E1-031",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 2,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p4",
+     "snippet": "称司法部高层正在向调查团队施压，要求他们过早地提起刑事诉讼"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p4",
+     "snippet": "他没有对任何人提出指控"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p5",
+     "snippet": "他最近在政府的测谎测试中未能通过，导致他失去了安全许可"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p7",
+     "snippet": "这并不是一个切实可行的方案"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p11",
+     "snippet": "副司法部长办公室的律师正在直接从华盛顿监督在佛罗里达州进行的调查"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p16",
+     "snippet": "她没有找到起诉约翰·布伦南的依据"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p20",
+     "snippet": "帕特尔将这名特工从调查中调离"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L02",
+   "正文已对关键人物（迪杰诺瓦、奥尔森、基尼奥内斯）提供了充分背景说明，无需边注补充"
+  ],
+  [
+   "L03",
+   "文章无平行对比结构，离职原因、调查问题等均为单一列表而非成对数据"
+  ],
+  [
+   "T13",
+   "虽有多个并列项（如离职原因、调查目标），但原文未以列表形式呈现，强行转换会破坏叙事流畅性"
+  ]
+ ]
+}

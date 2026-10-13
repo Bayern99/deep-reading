@@ -1,0 +1,63 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "scene",
+   "reader_need": "识别照片中的人物身份、地点和正在进行的动作"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "图片说明已完整传达核心信息：人物、身份、地点、动作",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "内容简洁完整，符合P3优先级图片说明的标准长度；无冗余信息",
+     "cost": "无"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗（如'克利夫兰联储主席'）",
+     "benefit": "强调人物身份",
+     "cost": "对于仅20余字的图片说明，加粗收益有限；可能过度强调"
+    }
+   ],
+   "chosen": "A",
+   "reason": "这是标准的图片说明文本，信息密度高、无冗余。P3优先级内容不应过度编辑。人物身份（Cleveland Fed President）在原文中已清晰表达，无需额外强调。"
+  }
+ ],
+ "text_treatment_plan": [],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "这是独立的图片说明，没有主文需要边注辅助；无术语需要解释"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行比较结构，无成对数据"
+  },
+  {
+   "pattern_id": "T01",
+   "reason_against": "文本过短，加粗会破坏图片说明的简洁性；无核心事实需要特别强调"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "原文无数字"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "原文无日期事件"
+  },
+  {
+   "pattern_id": "quote",
+   "reason_against": "原文无直接引语"
+  }
+ ]
+}

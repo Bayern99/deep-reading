@@ -1,0 +1,98 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "header",
+   "reader_need": "识别文章类型和作者信息"
+  },
+  {
+   "block_ids": [
+    "p3",
+    "p4"
+   ],
+   "function": "content",
+   "reader_need": "获取填字游戏线索"
+  },
+  {
+   "block_ids": [
+    "p5"
+   ],
+   "function": "reference",
+   "reader_need": "查看前日答案"
+  },
+  {
+   "block_ids": [
+    "p6"
+   ],
+   "function": "explanation",
+   "reader_need": "理解竞赛题机制"
+  },
+  {
+   "block_ids": [
+    "p7"
+   ],
+   "function": "cta",
+   "reader_need": "获取在线解谜入口"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "全文",
+   "need": "评估是否需要对填字游戏内容进行编辑增强",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持填字游戏原有格式和可读性",
+     "cost": "无额外增强"
+    },
+    {
+     "option": "B",
+     "desc": "T11 添加小标题",
+     "benefit": "增加结构层次",
+     "cost": "可能破坏游戏原有格式"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注解释",
+     "benefit": "解释术语",
+     "cost": "填字游戏线索本身即为自包含内容，无需额外解释"
+    }
+   ],
+   "chosen": "A",
+   "reason": "本文为填字游戏内容而非新闻文章。游戏线索(p3-p4)已按标准格式组织，竞赛说明(p6)已清晰解释机制。标准编辑增强模式(T01/T03/L02/L03等)针对的是论证性文本，不适用于游戏内容。强行应用会破坏原有格式和用户体验。"
+  }
+ ],
+ "text_treatment_plan": [],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "无平行比较数据结构"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "无需要解释的术语或人物"
+  },
+  {
+   "pattern_id": "T01",
+   "reason_against": "非论证性文本，无核心事实需要加粗"
+  },
+  {
+   "pattern_id": "T03",
+   "reason_against": "文中数字为线索编号而非论证数据"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "无可比较的数值数据"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "无时间序列事件"
+  }
+ ]
+}

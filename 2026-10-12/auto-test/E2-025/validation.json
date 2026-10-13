@@ -1,0 +1,61 @@
+{
+ "article_id": "E2-025",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": [
+    {
+     "level": "warn",
+     "code": "too_few_paras",
+     "detail": "正文仅 2 段（非 brief），需人工确认是否截断"
+    }
+   ]
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L02",
+   "正文已充分解释急诊室费用高昂的原因（24/7生命支持运营成本），无术语理解障碍需要边注解决"
+  ],
+  [
+   "L03",
+   "原文未提供急诊室与其他医疗选择在相同维度上的成对数据，仅有定性描述，不符合L03'明确给出两组在相同维度上的成对数据'的适用条件"
+  ],
+  [
+   "key_figures",
+   "全文仅有一个数字（25%），无法构成需要比较的数字集合"
+  ],
+  [
+   "timeline",
+   "文中无可定日期的事件"
+  ],
+  [
+   "quote",
+   "文中无具名人物的直接引语"
+  ]
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "article_id": "E1-029",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 2,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p7",
+     "snippet": "65年来首次处决一名现役军人"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p9",
+     "snippet": "自1961年以来首次处决美国军人"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p9",
+     "snippet": "自二战以来首次以枪决的方式处决军人"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p4",
+     "snippet": "420发子弹"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p4",
+     "snippet": "13人"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T03",
+     "block_id": "p4",
+     "snippet": "32人受伤"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T06",
+     "block_id": "p10",
+     "snippet": "赫格塞斯说"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T06",
+     "block_id": "p14",
+     "snippet": "奥克利大主教保罗·S·库克利表示"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "原文没有明确的平行比较结构，反对意见是多方列举而非成对对照"
+  ],
+  [
+   "L02",
+   "正文已对军事法庭、枪决等术语有基本解释，无需要边注补充的关键术语"
+  ],
+  [
+   "T09",
+   "各段落长度适中，无需要拆分的过长段落"
+  ]
+ ]
+}

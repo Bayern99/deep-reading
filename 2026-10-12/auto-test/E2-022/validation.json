@@ -1,0 +1,72 @@
+{
+ "article_id": "E2-022",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": [
+    {
+     "idx": 1,
+     "ok": true,
+     "msg": "中英引语片段对齐 (0 对)"
+    }
+   ]
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p2",
+     "snippet": "public martyrdom he craves",
+     "reason": "核心论点短语"
+    },
+    "reason": "未知 pattern "
+   },
+   {
+    "item": {
+     "type": "T01",
+     "block_id": "p7",
+     "snippet": "YouTube recruiting video",
+     "reason": "论证结论，形象化表达"
+    },
+    "reason": "未知 pattern "
+   }
+  ],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [
+  [
+   "L01",
+   null
+  ]
+ ],
+ "rejected": [
+  [
+   "L03",
+   "原文无真实平行语义结构。文章是单一论点推进（反对公开处决），而非两组数据的逐项对照。赫格塞斯的观点vs现实不是成对数据，而是论证的起承转合。"
+  ],
+  [
+   "L02",
+   "正文已解释所有关键术语：哈桑身份在p3说明，赫格塞斯职务在p2说明，胡德堡事件在p3说明。无术语需要边注补充。"
+  ],
+  [
+   "timeline",
+   "仅有两个可定日期事件（2009年袭击、本周末利雅得袭击），不满足≥4个事件的要求。"
+  ]
+ ]
+}

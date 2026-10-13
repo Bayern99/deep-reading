@@ -1,0 +1,244 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "核心新闻点：司法部调查电视台反托拉斯违规"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "evidence",
+   "reader_need": "调查细节：何时得知、调查什么"
+  },
+  {
+   "block_ids": [
+    "p4"
+   ],
+   "function": "background",
+   "reader_need": "解释'pool'机制和参与方"
+  },
+  {
+   "block_ids": [
+    "p5"
+   ],
+   "function": "evidence",
+   "reader_need": "事件时间线：CNN被移除→电视台暂停报道"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7"
+   ],
+   "function": "evidence",
+   "reader_need": "司法部法律依据（谢尔曼法）"
+  },
+  {
+   "block_ids": [
+    "p8"
+   ],
+   "function": "consequence",
+   "reader_need": "白宫无回应"
+  },
+  {
+   "block_ids": [
+    "p9",
+    "p10"
+   ],
+   "function": "context",
+   "reader_need": "特朗普政府与媒体紧张关系背景"
+  },
+  {
+   "block_ids": [
+    "p11"
+   ],
+   "function": "contrast",
+   "reader_need": "新闻自由组织批评声音"
+  },
+  {
+   "block_ids": [
+    "p12"
+   ],
+   "function": "background",
+   "reader_need": "利益相关披露（WSJ母公司）"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p4",
+   "need": "五个电视台名称在长句中不易识别",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "读者需反复阅读才能提取名单"
+    },
+    {
+     "option": "B",
+     "desc": "T13 并列列表",
+     "benefit": "清晰呈现参与方，便于后续引用",
+     "cost": "轻微排版变化"
+    }
+   ],
+   "chosen": "B",
+   "reason": "低成本低收益，五家机构是核心事实要素"
+  },
+  {
+   "id": "opp2",
+   "location": "p5-p7",
+   "need": "事件因果链较复杂，涉及多个时间点",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "叙事流畅",
+     "cost": "读者可能混淆事件顺序"
+    },
+    {
+     "option": "D",
+     "desc": "timeline 组件",
+     "benefit": "可视化时间线，清晰展示升级过程",
+     "cost": "需提取≥4个事件"
+    }
+   ],
+   "chosen": "D",
+   "reason": "可提取7月讲话、9月禁令、9月UN轮换、暂停报道、周五调查五个节点"
+  },
+  {
+   "id": "opp3",
+   "location": "p7",
+   "need": "法律术语'谢尔曼反托拉斯法'对普通读者陌生",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "不增加篇幅",
+     "cost": "读者不理解法律含义"
+    },
+    {
+     "option": "C",
+     "desc": "L02 边注",
+     "benefit": "解释法律背景，降低理解门槛",
+     "cost": "需额外文字"
+    }
+   ],
+   "chosen": "C",
+   "reason": "谢尔曼法是1890年联邦反垄断基础法律，边注可简要说明"
+  },
+  {
+   "id": "opp4",
+   "location": "p2,p7",
+   "need": "关键事实需要强调",
+   "candidates": [
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "突出核心信息",
+     "cost": "过度加粗会稀释效果"
+    }
+   ],
+   "chosen": "B",
+   "reason": "选择'违反联邦反托拉斯法'和'集体抵制'两处关键短语"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p2",
+   "snippet": "违反了联邦反托拉斯法",
+   "reason": "核心法律指控"
+  },
+  {
+   "type": "T01",
+   "block_id": "p7",
+   "snippet": "集体抵制",
+   "reason": "司法部认定的行为性质"
+  },
+  {
+   "type": "T13",
+   "block_id": "p4",
+   "items": [
+    "福克斯新闻",
+    "美国广播公司新闻",
+    "哥伦比亚广播公司新闻",
+    "CNN",
+    "美国全国广播公司新闻"
+   ],
+   "reason": "五家参与pool机制的电视台"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L02",
+   "anchor_block": "p7",
+   "note_cn": "《谢尔曼反托拉斯法》（Sherman Antitrust Act）是美国1890年通过的第一部联邦反垄断法，禁止限制贸易的契约、联合或共谋行为。",
+   "note_en": "The Sherman Antitrust Act of 1890 is the first federal law prohibiting contracts, combinations, or conspiracies in restraint of trade.",
+   "reason": "法律术语首次出现，普通读者需要背景知识",
+   "evidence": "锚点p7；来源：公开法律资料；editorial_added=true"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "events": [
+    {
+     "date": "7月",
+     "event": "特朗普表示ABC和NBC应因未播出其关于选举舞弊讲话而被吊销广播许可"
+    },
+    {
+     "date": "9月",
+     "event": "特朗普禁止CNN、MS NOW和《政治报》进入白宫"
+    },
+    {
+     "date": "9月",
+     "event": "CNN被取消参与联合国大会报道轮换资格"
+    },
+    {
+     "date": "9月",
+     "event": "电视台短暂暂停对总统的部分报道"
+    },
+    {
+     "date": "周五",
+     "event": "电视台得知司法部正在调查其反托拉斯违规"
+    }
+   ],
+   "title_cn": "事件时间线",
+   "title_en": "Timeline of Events"
+  },
+  {
+   "type": "quote",
+   "speaker_cn": "司法部发言人艾米莉·卡温顿",
+   "speaker_en": "Justice Department spokeswoman Emily Covington",
+   "quote_cn": "商业竞争对手之间的集体抵制可能违反《谢尔曼反托拉斯法》。反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。",
+   "quote_en": "Group boycotts among commercial competitors can violate the Sherman Act. The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.",
+   "source_block": "p7"
+  },
+  {
+   "type": "quote",
+   "speaker_cn": "新闻自由记者委员会主席布鲁斯·布朗",
+   "speaker_en": "Bruce Brown, president of the Reporters Committee for Freedom of the Press",
+   "quote_cn": "在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的企图恐吓记者的行为。",
+   "quote_en": "Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists.",
+   "source_block": "p11"
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行对比结构，不存在两组在相同维度上的成对数据"
+  },
+  {
+   "pattern_id": "L05",
+   "reason_against": "原文无配图，无法应用图文并置"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "文中数字分散（日期、法案年份），不属于同一叙事问题，无需比较"
+  }
+ ]
+}

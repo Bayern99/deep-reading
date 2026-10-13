@@ -121,7 +121,7 @@ def call_planner(aid, meta, cn_blocks, en_blocks, model=None):
         section=meta['section'], page=meta['page'],
         cn_blocks=cn_blocks, en_blocks=en_blocks)
     body = json.dumps({
-        'model': model or 'Qwen3.8-27B-Claude-Opus-Distilled-oQ6-MLX',
+        'model': model or 'Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-6bit',
         'messages': [{'role': 'user', 'content': prompt}],
         'temperature': 0.2, 'max_tokens': 6000,
     }).encode()

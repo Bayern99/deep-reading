@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E2-013 自主选择测试</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
+@media(min-width:1200px){
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
+  /* 图表保持可读宽度，横向滚动而非压扁 */
+  .ly-wide .ly-wide-scroll img{min-width:560px;max-width:none}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E2-013" aria-label="E2-013">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">Data · A12 版 · P3</span><span class="k-en" hidden>Data · A12 版 · P3</span></div>
+    <h2 class="art-title"><span class="k-cn">《华尔街日报》每日填字游戏（最终版，作者：周钦·伯尼克尔；编辑：迈克·申克）</span><span class="k-en" hidden>The WSJ Daily Crossword (Final Count, by Zhouqin Burnikel; edited by Mike Shenk)</span></h2>
+</header>
+  <div class="arule"></div>
+<p class="ed-block" data-block="p2"><span class="k-cn"></span><span class="k-en" hidden>The WSJ Daily Crossword | Edited by Mike Shenk. FINAL COUNT | By Zhouqin Burnikel.</span></p>
+<p class="ed-block" data-block="p3"><span class="k-cn"></span><span class="k-en" hidden>Across: 1 Color of an igloo; 6 Foot division; 10 Plumbing piece; 14 Stand for an artist; 15 Revolutionary hero Nathan; 16 In the center of; 17 Neither gains nor loses money; 19 Nutmeg State school; 20 Blueprint detail; 21 Sandwich spread, familiarly; 22 Pale from fright; 23 Tech line caller; 25 Censorship-fighting org. since 1920; 26 Traveled hobo-style; 32 Wood for a model plane; 33 Run out of battery; 34 Fruit in a gift basket; 35 TV spots; 36 Station with shells; 40 Sch. in Tallahassee; 41 Honey bunch?; 43 Worn-down pencil; 44 Make overjoyed; 46 “Marty” Oscar winner; 50 New Mexico art town; 51 Teeny bit; 52 Cries like an infant; 54 Rum-soaked cake; 56 Analogy words; 60 Lake bordering Ontario; 61 Tune in just to complain; 63 Service bell sound; 64 Big brand in skin care; 65 Showing sulkiness; 66 Bratty attitude; 67 Motion of the ocean; 68 Take, as neighboring territory.</span></p>
+<p class="ed-block" data-block="p4"><span class="k-cn"></span><span class="k-en" hidden>Down: 1 Fly catchers, of a sort; 2 Instrument on a Guinness bottle; 3 “That clears things up”; 4 Saucer toppers; 5 State animal of Utah; 6 “Rumor has it...”; 7 Blue hue; 8 Jazz singer Laine; 9 Free-range fowl; 10 Record of wages; 11 “Really love your work!”; 12 Heap; 13 Garden in Genesis; 18 Captain Hook's helper; 22 Top card in a suit; 24 Minor quarrel; 25 Region; 26 Bill of HBO's “Barry”; 27 Small pair in “Full House”?; 28 Marinade in Filipino cuisine; 29 Little lie; 30 Excessive hurry; 31 “Can't argue with that!”; 32 Sheep-herding pig of film; 37 Crawlers in long lines; 38 Young panda; 39 Landlord's collection; 42 Steadiness on a ship; 45 Intermediary; 47 “Get me out of here!”; 48 Marbled steak cut; 49 Hockey score; 52 Some kings and queens; 53 Solo for a diva; 54 Indonesian island known for terraced rice fields; 55 Slightly speechless; 57 Leave; 58 Head, to Henri; 59 Stone found in cameos; 61 Fresh from the oven; 62 Craft brew, for short.</span></p>
+<p class="ed-block" data-block="p5"><span class="k-cn"></span><span class="k-en" hidden>Previous Puzzle's Solution (grid): A L L I N / C O P E / E M M A; S E E N O / E R I C / G A I T; E M E R Y C L O T H / O N T V; A S S U C H / O C T E T; S E A L S / E A R; D O H / F A I R Y R I N G S; B O L / E T N A / S P I R E; A V I D / S I N K S / S C A N; N E V I L / N E I L / K I T; C R A Z Y H O R S E / G S N; Z O O / S H A D Y; G W Y N N / Z O M B I E; S I R I / S P A D E P R E S S; G L E N / H I D E / E A T I T; T A N G / U C S F / S T A N D.</span></p>
+<p class="ed-block" data-block="p6"><span class="k-cn"></span><span class="k-en" hidden>Contest note: The contest answer is LONG. Removing the letters from both ends of each five-letter word of each theme answer yields a new six-letter word: EMERY CLOTH &gt; merlot, FAIRY RINGS &gt; airing, CRAZY HORSE &gt; razors, SPADE PRESS &gt; Padres. Those words start clues for other grid answers (LEES, ON TV, NICKS, GWYNN), and the first letters of those answers spell the contest answer.</span></p>
+<p class="ed-block" data-block="p7"><span class="k-cn"></span><span class="k-en" hidden>▶ Solve this puzzle online and discuss it at WSJ.com/Puzzles.</span></p>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

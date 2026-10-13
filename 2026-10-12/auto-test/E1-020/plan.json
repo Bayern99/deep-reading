@@ -1,0 +1,320 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2",
+    "p3"
+   ],
+   "function": "scene",
+   "reader_need": "建立时间、地点、人物和核心目标"
+  },
+  {
+   "block_ids": [
+    "p4"
+   ],
+   "function": "consequence",
+   "reader_need": "理解项目失败的转折点"
+  },
+  {
+   "block_ids": [
+    "p5",
+    "p6"
+   ],
+   "function": "background",
+   "reader_need": "了解斯拉梅克资历和项目愿景"
+  },
+  {
+   "block_ids": [
+    "p7",
+    "p8",
+    "p9",
+    "p10"
+   ],
+   "function": "contrast",
+   "reader_need": "把握双方对立立场"
+  },
+  {
+   "block_ids": [
+    "p11",
+    "p12",
+    "p13"
+   ],
+   "function": "evidence",
+   "reader_need": "理解关系恶化的原因"
+  },
+  {
+   "block_ids": [
+    "p14",
+    "p15"
+   ],
+   "function": "claim",
+   "reader_need": "看到缓和尝试及失败"
+  },
+  {
+   "block_ids": [
+    "p16",
+    "p17",
+    "p18"
+   ],
+   "function": "evidence",
+   "reader_need": "了解Suisun市联盟策略"
+  },
+  {
+   "block_ids": [
+    "p19",
+    "p20",
+    "p21"
+   ],
+   "function": "consequence",
+   "reader_need": "追踪立法努力及最终失败"
+  },
+  {
+   "block_ids": [
+    "p22",
+    "p23",
+    "p24"
+   ],
+   "function": "claim",
+   "reader_need": "理解深层冲突本质"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2-p4",
+   "need": "突出Saronic交易失败的关键数字，帮助读者理解规模",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "关键数字可能被忽略"
+    },
+    {
+     "option": "B",
+     "desc": "T03数字强调",
+     "benefit": "突出$30亿、10000个岗位等核心数据",
+     "cost": "需精确选择snippet"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures",
+     "benefit": "集中展示对比数据",
+     "cost": "需确保数字同属一叙事问题"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T03数字强调能直接在正文中突出关键数据，不打断叙事流"
+  },
+  {
+   "id": "opp2",
+   "location": "p2-p24全文",
+   "need": "梳理Saronic项目从希望到失败的时间线",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "读者自行理解",
+     "cost": "时间跨度大，事件分散"
+    },
+    {
+     "option": "D",
+     "desc": "timeline",
+     "benefit": "清晰呈现10个月失败历程",
+     "cost": "需提取≥4个可定日期事件"
+    }
+   ],
+   "chosen": "D",
+   "reason": "原文有明确日期标记，timeline能帮助读者把握失败节奏"
+  },
+  {
+   "id": "opp3",
+   "location": "p8-p10, p22, p24",
+   "need": "保留双方核心立场的直接引语",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "引语已在正文",
+     "cost": "分散不易对比"
+    },
+    {
+     "option": "D",
+     "desc": "quote",
+     "benefit": "提取关键引语便于读者把握对立观点",
+     "cost": "需中英对齐"
+    }
+   ],
+   "chosen": "D",
+   "reason": "双方引语体现核心冲突，提取后便于读者理解对立本质"
+  },
+  {
+   "id": "opp4",
+   "location": "p5",
+   "need": "突出斯拉梅克的关键资历数字",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "信息完整",
+     "cost": "资历数字被淹没"
+    },
+    {
+     "option": "B",
+     "desc": "T03数字强调",
+     "benefit": "突出39岁、22岁、$10亿等关键数字",
+     "cost": "需精确选择"
+    }
+   ],
+   "chosen": "B",
+   "reason": "这些数字建立斯拉梅克的可信度，值得强调"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "pattern_id": "T03",
+   "block_id": "p2",
+   "snippet": "30亿美元",
+   "reason": "造船厂价值，核心经济数据"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p4",
+   "snippet": "10000个就业岗位",
+   "reason": "失去的就业规模，体现失败代价"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p5",
+   "snippet": "39岁",
+   "reason": "斯拉梅克年龄，体现年轻企业家身份"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p5",
+   "snippet": "22 岁",
+   "reason": "高盛从业年龄，体现早期成就"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p5",
+   "snippet": "10亿美元",
+   "reason": "融资规模，体现项目资本实力"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p13",
+   "snippet": "6万英亩",
+   "reason": "土地规模，体现项目野心"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p13",
+   "snippet": "40万人",
+   "reason": "规划人口，体现社区规模"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p4",
+   "snippet": "县政府的繁文缛节",
+   "reason": "核心障碍，转折点"
+  },
+  {
+   "pattern_id": "T01",
+   "block_id": "p7",
+   "snippet": "该县本身",
+   "reason": "强调最大障碍即县政府"
+  },
+  {
+   "pattern_id": "T06",
+   "block_id": "p8",
+   "snippet": "米奇·马什伯恩",
+   "reason": "反对派核心人物，首次出现"
+  },
+  {
+   "pattern_id": "T06",
+   "block_id": "p16",
+   "snippet": "布雷特·普雷布拉",
+   "reason": "Suisun市盟友，关键角色"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [
+  {
+   "pattern_id": "timeline",
+   "title": "Saronic造船厂项目时间线",
+   "events": [
+    {
+     "date": "2025年夏季",
+     "event": "斯拉梅克聘请游说者，推动造船厂项目"
+    },
+    {
+     "date": "一小时后",
+     "event": "斯拉梅克警告县政府繁文缛节是障碍"
+    },
+    {
+     "date": "十个月后",
+     "event": "Saronic选择得克萨斯州布朗斯维尔"
+    },
+    {
+     "date": "2025年4月",
+     "event": "县官员感到被边缘化"
+    },
+    {
+     "date": "2025年6月",
+     "event": "斯拉梅克向Suisun市提供5.5万美元拨款"
+    },
+    {
+     "date": "去年8月",
+     "event": "索拉诺县进入候选名单，推动特别立法"
+    },
+    {
+     "date": "6月",
+     "event": "Saronic最终确认选择德克萨斯州"
+    }
+   ],
+   "evidence": "日期均来自原文逐字提取"
+  },
+  {
+   "pattern_id": "quote",
+   "title": "双方立场",
+   "quotes": [
+    {
+     "speaker": "扬·斯拉梅克",
+     "speaker_role": "California Forever创始人",
+     "quote_cn": "加利福尼亚州未来的战役正在索拉诺县进行",
+     "quote_en": "The battle for the future of California is being fought in Solano County",
+     "block_id": "p9"
+    },
+    {
+     "speaker": "吉姆·德克洛",
+     "speaker_role": "塞拉俱乐部领导人",
+     "quote_cn": "我称之为'兄弟寡头城市'，因为这背后真正推动的是科技精英",
+     "quote_en": "I call it broligarch city because it's really tech bros behind this",
+     "block_id": "p10"
+    },
+    {
+     "speaker": "布雷特·普雷布拉",
+     "speaker_role": "Suisun市市政经理",
+     "quote_cn": "这是一个明确的例子，说明各县如何把程序和惯性武器化",
+     "quote_en": "it is a clear example of how counties can weaponize process and inertia",
+     "block_id": "p24"
+    }
+   ]
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文没有明确的平行双栏比较结构。虽然存在双方立场，但没有在相同维度上的成对数据对照，不符合L03适用条件。"
+  },
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已对关键人物和术语进行了充分解释。斯拉梅克、马什伯恩、普雷布拉的身份在首次出现时都有说明，不需要边注补充。"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "虽然文中有多个数字，但它们分散在不同叙事层面（融资、土地、就业、拨款），不属于同一叙事问题的可比数据，口径不一。"
+  }
+ ]
+}

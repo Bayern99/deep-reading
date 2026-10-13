@@ -1,0 +1,60 @@
+{
+ "article_id": "E1-012",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": [
+    {
+     "level": "warn",
+     "code": "too_few_paras",
+     "detail": "正文仅 1 段（非 brief），需人工确认是否截断"
+    }
+   ]
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L02",
+   "这是独立的图片说明，没有主文需要边注辅助；无术语需要解释"
+  ],
+  [
+   "L03",
+   "原文无平行比较结构，无成对数据"
+  ],
+  [
+   "T01",
+   "文本过短，加粗会破坏图片说明的简洁性；无核心事实需要特别强调"
+  ],
+  [
+   "key_figures",
+   "原文无数字"
+  ],
+  [
+   "timeline",
+   "原文无日期事件"
+  ],
+  [
+   "quote",
+   "原文无直接引语"
+  ]
+ ]
+}

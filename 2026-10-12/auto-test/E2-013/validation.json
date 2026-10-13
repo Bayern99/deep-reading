@@ -1,0 +1,54 @@
+{
+ "article_id": "E2-013",
+ "gates": {
+  "integrity": {
+   "passed": true,
+   "issues": []
+  },
+  "plan_validate": {
+   "passed": true,
+   "errors": []
+  },
+  "quote_bilingual": {
+   "passed": true,
+   "results": []
+  },
+  "render_leak": {
+   "passed": true,
+   "issues": []
+  }
+ },
+ "status": "PASS",
+ "skipped": {
+  "treatments": [],
+  "layouts": [],
+  "aids": []
+ },
+ "layout_chosen": [],
+ "rejected": [
+  [
+   "L03",
+   "无平行比较数据结构"
+  ],
+  [
+   "L02",
+   "无需要解释的术语或人物"
+  ],
+  [
+   "T01",
+   "非论证性文本，无核心事实需要加粗"
+  ],
+  [
+   "T03",
+   "文中数字为线索编号而非论证数据"
+  ],
+  [
+   "key_figures",
+   "无可比较的数值数据"
+  ],
+  [
+   "timeline",
+   "无时间序列事件"
+  ]
+ ]
+}

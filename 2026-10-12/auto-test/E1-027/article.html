@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WSJ 深读 · E1-027 自主选择测试</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@400;700&family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* WSJ 深读 · 设计 token（v1.0，2026-10-13）
+   来源：reference/hybrid-v3（已验收）。修改 token 前先读 ../../DESIGN.md */
+
+:root{
+  --paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
+  --line:#e5e2da; --orange:#fa9000; --red:#c31833;
+  --serif:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --sans:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+}
+
+:root{
+  --font-display:"Noto Serif SC","Playfair Display","Songti SC",serif;
+  --font-body:"Noto Serif SC","Lora",Georgia,serif;
+  --font-meta:"Noto Sans SC","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-mono:"Noto Sans Mono","IBM Plex Mono",monospace;
+  --measure:640px;      /* 正文栏 */
+  --head-measure:760px; /* 标题头 */
+  --page:1080px;        /* 页面 */
+  --rail:180px;         /* 右 rail（≥1200px） */
+}
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--body);
+  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+::selection{background:#111;color:#fdfbf8}
+
+/* masthead */
+.masthead{border-bottom:1px solid var(--ink)}
+.mast-in{max-width:var(--page);margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.sq{width:18px;height:18px;background:var(--orange);display:inline-block;flex:none}
+.wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.mast-meta{font-size:13px;color:var(--mut)}
+.pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+.pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+.progress{position:sticky;top:0;height:2px;background:transparent;z-index:50}
+.progress span{display:block;height:100%;width:0;background:#111}
+
+/* issue hero */
+.issue-hero{max-width:var(--head-measure);margin:0 auto;padding:48px 24px 8px}
+.issue-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:16px}
+.issue-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.issue-dek{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0}
+
+/* toc */
+#issue{max-width:var(--page);margin:0 auto;padding:0 24px}
+.toc{max-width:var(--head-measure);margin:32px auto 0}
+.toc-head{font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+.toc-group{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--mut);margin:22px 0 4px}
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-list li{border-bottom:1px solid var(--line)}
+.toc-list a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:11px 2px;text-decoration:none;color:var(--ink)}
+.toc-t{font-family:var(--font-display);font-size:16px;font-weight:700}
+.toc-m{font-size:12px;color:var(--mut);flex:none}
+
+/* article */
+.story{position:relative;padding:0 0 8px}
+.story + .anav{margin-bottom:8px}
+.sheet{position:relative}
+.ahead{max-width:var(--head-measure);margin:0 auto;padding:40px 0 8px;text-align:left}
+.ahead-compact{padding:30px 0 4px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;
+  letter-spacing:.14em;color:var(--mut);margin-bottom:20px}
+.ahead-compact .kicker{margin-bottom:12px}
+.kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
+.art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
+.deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
+.deck-compact{font-size:16px;margin-bottom:12px}
+.byline{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;
+  font-family:var(--font-meta);font-size:13px;margin-bottom:26px}
+.ahead-compact .byline{margin-bottom:8px}
+.byline .who{font-weight:700;letter-spacing:.04em;color:var(--ink)}
+.byline .meta{color:var(--mut)}
+.arule{border-top:1px solid var(--ink);margin:0 auto;max-width:var(--head-measure)}
+
+/* right rail (per full article) */
+.rail{display:none}
+@media(min-width:1200px){
+  .rail{display:block;position:absolute;top:300px;right:0;width:var(--rail)}
+  .rail-in{position:sticky;top:80px}
+  .rail-t{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--mut);margin-bottom:10px}
+  .rail nav a{display:block;padding:7px 0;font-size:13px;color:var(--mut);text-decoration:none;
+    border-left:2px solid var(--line);padding-left:12px}
+  .rail nav a.on{color:var(--ink);font-weight:700;border-left-color:#111}
+}
+
+/* body */
+.sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
+.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
+  margin-top:0;margin-bottom:1.05em}
+html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
+.k-en{font-family:"Lora",Georgia,serif}
+p .k-en{font-size:.96em}
+.cap-lede{font-size:15px;color:var(--mut)}
+
+/* quote module (AJ scale, WIRED serif): direct quote only */
+.quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
+.quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
+html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+.quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
+
+/* modules */
+.mod{margin-top:2em;margin-bottom:2em}
+.mtag{display:flex;align-items:center;gap:10px;font-family:var(--font-meta);
+  font-size:13px;font-weight:700;letter-spacing:.16em;color:var(--ink);margin-bottom:8px}
+.kbar-sm{width:8px;height:18px;background:var(--orange);display:inline-block;flex:none}
+
+/* key figures: AJ ranked rows */
+.keyfig .krow{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.keyfig .krow:first-of-type{border-top:1px solid var(--line)}
+.kidx{font-family:var(--font-mono);font-size:13px;color:var(--mut);flex:none;width:28px}
+.kval{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.2;color:var(--ink);
+  flex:none;width:200px}
+.klabel{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.knote{font-size:13px;color:var(--mut);line-height:1.7}
+
+/* timeline: AJ live language */
+.timeline .tl{list-style:none;margin:18px 0 0;padding:0;position:relative}
+.timeline .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:#d9d9d9}
+.timeline li{position:relative;padding:0 0 16px 28px}
+.timeline .dot{position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--red)}
+.timeline .tt{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.timeline .tx{font-family:var(--font-body);font-size:15px;line-height:1.75;color:var(--body)}
+
+/* context: AJ bottom collapsible */
+.ctx{border:1px solid var(--line)}
+.ctx summary{list-style:none;cursor:pointer;padding:14px 18px;font-family:var(--font-meta);
+  font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;
+  align-items:center;gap:12px;min-height:44px}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";font-weight:300;font-size:22px;color:var(--mut);flex:none}
+.ctx[open] summary::after{content:"–"}
+.ctx .ctx-body{padding:0 18px 18px;font-family:var(--font-body);font-size:15px;line-height:1.8;
+  color:var(--body);border-top:1px solid var(--line);padding-top:14px}
+.ctx .ctx-body p{margin:0}
+
+/* figure */
+.fig{margin-top:2em;margin-bottom:2em}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{font-family:var(--font-meta);font-size:13px;line-height:1.7;color:var(--mut);margin-top:10px}
+.fig-note{font-family:var(--font-meta);font-size:12px;line-height:1.7;color:var(--mut);margin-top:6px;
+  border-top:1px solid var(--line);padding-top:8px}
+
+/* bargraph（自 build_r3.py 移植；填充用结构色 --ink，服从四色纪律） */
+.bargraph{margin-top:2em;margin-bottom:2em;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bar-row{display:grid;grid-template-columns:150px 1fr 76px;gap:14px;align-items:center;padding:9px 0}
+.bar-label{font-family:var(--font-mono);font-weight:600;font-size:12px;line-height:1.5;color:var(--mut)}
+html[lang="en"] .bar-label{font-family:var(--font-mono)}
+.bar-track{height:16px;background:var(--line);position:relative}
+.bar-fill{height:100%;background:var(--ink)}
+.bar-val{font-family:var(--font-mono);font-weight:700;font-size:15px;line-height:1.4;
+  font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.bar-note{font-family:var(--font-meta);font-size:12px;line-height:1.6;color:var(--mut);margin-top:10px}
+@media(max-width:430px){.bar-row{grid-template-columns:110px 1fr 64px;gap:10px}.bar-val{font-size:13px}}
+
+/* data tables */
+.tbl-cap{font-family:var(--font-meta);font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--ink);margin:0 0 12px}
+.tbl-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 10px}
+.table-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--line)}
+.table-wrap table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;min-width:560px}
+.table-wrap th,.table-wrap td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-wrap thead th{background:#f4f2ec;font-family:var(--font-meta);font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap tbody th[scope="row"]{font-weight:700;color:var(--ink);white-space:nowrap}
+.table-wrap td{font-variant-numeric:tabular-nums;color:var(--body);white-space:nowrap}
+.table-wrap tbody tr:last-child th,.table-wrap tbody tr:last-child td{border-bottom:0}
+
+.story-end{max-width:var(--measure);margin:0 auto;padding:4px 0 8px}
+.endmark{font-size:14px;color:#111}
+
+/* article nav */
+.anav{max-width:var(--head-measure);margin:0 auto;padding:6px 0 40px}
+.anav-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-top:1px solid var(--line);padding-top:16px}
+.anav a{text-decoration:none;color:var(--ink)}
+.anav-dir{display:block;font-family:var(--font-meta);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.anav-t{display:block;font-family:var(--font-display);font-size:15px;font-weight:700;line-height:1.5}
+.anav-prev{max-width:40%}
+.anav-next{max-width:40%;text-align:right}
+.anav-toc{flex:none;font-family:var(--font-meta);font-size:13px;font-weight:700;padding-top:2px}
+.anav-empty{flex:1;max-width:40%}
+
+/* issue footer */
+.issue-foot{max-width:var(--head-measure);margin:0 auto;padding:8px 24px 60px;text-align:left}
+.issue-foot .arule{max-width:none;margin-bottom:18px}
+.issue-foot p{font-size:13px;color:var(--mut);line-height:1.8;margin:0 0 22px}
+
+/* responsive */
+@media(max-width:768px){
+  .art-title{font-size:32px}
+  h2.art-title.art-compact{font-size:23px}
+  .ahead{padding:32px 0 8px}
+  .ahead-compact{padding:24px 0 4px}
+  .issue-hero{padding:36px 24px 8px}
+  .issue-title{font-size:32px}
+  .mast-meta{display:none}
+}
+@media(max-width:430px){
+  .art-title{font-size:30px;line-height:1.35}
+  h2.art-title.art-compact{font-size:21px}
+  .deck{font-size:17px}
+  .issue-title{font-size:28px}
+  .issue-dek{font-size:16px}
+  .sheet>p{font-size:16px;line-height:1.75}
+  .quote .qt{font-size:19px}
+  .kval{font-size:22px;width:165px}
+  .keyfig .krow{gap:12px}
+  #issue{padding:0 20px}
+  .toc-t{font-size:15px}
+  .anav-t{font-size:14px}
+}
+
+
+/* ---- Editorial Content Container 契约 ---- */
+.sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
+/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
+@media(max-width:430px){
+  .sheet{padding-left:20px;padding-right:20px}
+}
+/* ---- Text Treatment（阅读增强文字层） ---- */
+.tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
+.tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tt-attr{border-bottom:1px dotted var(--mut)}            /* T06 引述归属：点线下划线 */
+.tt-mix{font-family:var(--font-mix,inherit)}            /* T17 中英混排 */
+.tt-subhead{font:700 17px/1.5 var(--font-meta);color:var(--ink); /* T11 编辑小标题 */
+  margin:1.8em 0 .7em;padding-left:12px;position:relative}
+.tt-subhead::before{content:"";position:absolute;left:0;top:.25em;bottom:.25em;
+  width:3px;background:var(--orange)}
+.tt-group{margin:0 0 1.6em}                              /* T10 分组：组间留白 */
+.tt-group p:last-child{margin-bottom:0}
+ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
+ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
+  font:400 16px/1.8 var(--font-body);color:var(--body)}
+ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
+  font-weight:700}
+@media(max-width:430px){
+  .tt-subhead{font-size:16px}
+  ul.tt-list li{font-size:16px;line-height:1.75}
+}
+
+/* ---- Layout Grammar（布局层） ---- */
+/* L02 边注：默认（<1200px）锚点段后 inline；≥1200px 右栏 */
+/* 布局契约：.ly-anchor 是 ed-block（640px），note 相对它定位到右栏 */
+.ly-note{border-left:2px solid var(--line);padding:.2em 0 .2em 14px;margin:.8em 0;
+  font:400 14px/1.7 var(--font-meta);color:var(--mut)}
+.ly-note p{margin:0}
+@media(min-width:1200px){
+  .ly-anchor{position:relative}
+  .ly-anchor .ly-note{position:absolute;left:calc(100% + 32px);top:0;width:200px;
+    margin:0;border-left:2px solid var(--orange);padding-left:14px}
+}
+/* L03 平行双栏 */
+.ly-compare{margin:1.5em 0;border-top:1px solid var(--line)}
+.ly-pair{padding:.9em 0;border-bottom:1px solid var(--line)}
+.ly-dim{font:700 12px/1.6 var(--font-meta);letter-spacing:.1em;color:var(--mut);
+  margin-bottom:.5em}
+.ly-a,.ly-b{font:400 15px/1.75 var(--font-body);color:var(--body)}
+.ly-a{margin-bottom:.4em}
+.ly-a::before{content:"A";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--ink);border-radius:2px;padding:3px 6px;margin-right:8px}
+.ly-b::before{content:"B";display:inline-block;font:700 11px/1 var(--font-meta);
+  color:var(--paper);background:var(--mut);border-radius:2px;padding:3px 6px;margin-right:8px}
+@media(min-width:768px){
+  .ly-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .ly-dim{grid-column:1/-1}
+  .ly-a{margin-bottom:0}
+}
+/* L05 图文并置 */
+.ly-figtext{margin:1.5em 0}
+.ly-ft-text p{font:400 15px/1.75 var(--font-body);color:var(--body);margin:.8em 0 0}
+@media(min-width:768px){
+  .ly-figtext{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .ly-ft-text p{margin:0}
+}
+/* L08 跨栏图：桌面破栏宽于正文；手机全幅 */
+.ly-wide{margin:2em auto;max-width:960px;width:calc(100% - 48px)}
+.ly-wide .ly-wide-scroll{overflow-x:auto}
+.ly-wide img{display:block;max-width:100%;height:auto;margin:0 auto}
+.ly-wide figcaption{font:400 13px/1.7 var(--font-meta);color:var(--mut);
+  margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
+.ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
+@media(max-width:430px){
+  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
+  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
+  .ly-wide figcaption{padding:0 20px}
+  /* 图表保持可读宽度，横向滚动而非压扁 */
+  .ly-wide .ly-wide-scroll img{min-width:560px;max-width:none}
+}
+@media(max-width:430px){
+  .ly-note{font-size:13.5px}
+  .ly-a,.ly-b{font-size:15px}
+}
+
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="pbar"></span></div>
+<header class="masthead">
+  <div class="mast-in">
+    <div class="mast-left"><span class="mast-sq" aria-hidden="true"></span><span class="mast-wm">WSJ 深读</span></div>
+    <div class="mast-meta"><span class="k-cn">2026年10月12日 · Editorial Plan 测试</span><span class="k-en" hidden>Oct 12, 2026 · Editorial Plan test</span></div>
+    <button id="langToggle" class="pill" aria-pressed="false" aria-label="切换中英文"><span class="k-cn">EN</span><span class="k-en" hidden>中文</span></button>
+  </div>
+</header>
+<main id="testpage">
+<article class="story story-plan" id="s-E1-027" aria-label="E1-027">
+<div class="sheet">
+<header class="ahead">
+    <div class="kicker"><span class="kbar"></span><span class="k-cn">U.S. News · A4 版 · P2</span><span class="k-en" hidden>U.S. News · A4 版 · P2</span></div>
+    <h2 class="art-title"><span class="k-cn">卡玛拉·哈里斯的丈夫对她可能参加总统竞选一事持保留态度</span><span class="k-en" hidden>Harris’s Husband Has Reservations On Her Potential Presidential Run</span></h2>
+<div class="byline">
+      <span class="who">By Jessica Toonkel, Emily Glazer and Ken Thomas</span>
+      <span class="meta k-cn">2026年10月12日 · 《华尔街日报》A4 版</span>
+      <span class="meta k-en" hidden>Oct 12, 2026 · The Wall Street Journal, p.A4</span>
+    </div>
+</header>
+  <div class="arule"></div>
+<p class="ed-block" data-block="p2"><span class="k-cn">据了解情况的人士透露，前副总统卡玛拉·哈里斯正在为可能进行的第三次总统竞选做准备，她的丈夫道格·埃姆霍夫私下告诉一些人，他更希望她不要参加竞选，而且一些捐助者也直接告诉她，如果她参加竞选，成功的可能性很小。</span><span class="k-en" hidden>As former Vice President Kamala Harris lays the groundwork for a potential third presidential campaign, her husband Doug Emhoff has privately told some people he would prefer she didn't run and some donors have told her directly that a bid would be a long shot, said people familiar with the conversations.</span></p>
+<p class="ed-block" data-block="p3"><span class="k-cn">哈里斯曾表示，她尚未决定是否要再次竞选总统，但她已经采取了一些可能为竞选做准备的措施，包括与主要捐助者会面、招聘工作人员，并前往关键州，以支持在 11 月中期选举中参选的民主党候选人。</span><span class="k-en" hidden>Harris has said she is undecided on whether to launch another run for the White House, but she has taken steps that could be a precursor to such a bid, including speaking with major donors, hiring staff and traveling to battleground states to boost Democratic candidates in the November midterm elections.</span></p>
+<p class="ed-block" data-block="p4"><span class="k-cn">公开场合，她表示，她目前专注于中期选举，希望民主党能够赢得众议院和参议院的控制权，并赢得几个州长职位。“我还没有决定是否要再次竞选，”哈里斯上个月在密歇根州的一次全国有色人种协进会活动上说道，当时观众为她进行了长时间的起立鼓掌。“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”</span><span class="k-en" hidden>Publicly, she has said she remains focused on the midterms, in which Democrats hope to win control of the House and Senate and pick up several gubernatorial seats. "I have not decided if I'm going to run again," Harris said at a NAACP event in Michigan last month as the audience gave her a lengthy standing ovation. "I do sincerely believe '28 won't matter if we don't get through '26."</span></p>
+<p class="ed-block" data-block="p5"><span class="k-cn">一些了解哈里斯并与她共事的人对她是否会再次竞选持怀疑态度。</span><span class="k-en" hidden>Some people who have known and worked with Harris are skeptical she will mount another run.</span></p>
+<p class="ed-block" data-block="p6"><span class="k-cn">哈里斯的发言人拒绝发表评论。</span><span class="k-en" hidden>A spokesman for Harris declined to comment.</span></p>
+<p class="ed-block" data-block="p7"><span class="k-cn">许多民主党人，包括一些与她关系密切的人，认为该党需要在 2028 年的选举中推出一位新的候选人。与 2024 年不同，当时在拜登退出后，该党团结在哈里斯周围，如果她再次竞选，预计她将面临激烈的竞争。</span><span class="k-en" hidden>Many Democrats, including some who remain close to her, think the party needs to put forward a fresh candidate in the 2028 election. Unlike in 2024, when the party coalesced around Harris in the aftermath of Biden's exit, she is expected to face a crowded field if she were to run again.</span></p>
+<p class="ed-block" data-block="p8"><span class="k-cn">埃姆霍夫是那些向他人表达对再次竞选的担忧的人之一，但与他关系密切的人预计，如果她决定竞选，他会支持她。</span><span class="k-en" hidden>Emhoff is among those who have shared concerns with others about another run, though close to him expect he will support her if she decides to run.</span></p>
+<p class="ed-block" data-block="p9"><span class="k-cn">在她的回忆录《107 天》中，哈里斯描述她的丈夫既保护她，又支持她，并指出，当她于 2020 年被选为拜登的竞选伙伴时，“他欣然地做出了巨大的牺牲，而且没有丝毫怨恨。”她写道：“他知道，在我们的新职位中，必须避免任何利益冲突的出现。所以，那是在他律师事务所的最后一天。”</span><span class="k-en" hidden>In "107 Days," her memoir of the 2024 campaign, Harris describes her husband as protective and supportive, noting that when she was chosen to be Biden's running mate in 2020, "he made a huge sacrifice gladly and without bitterness." She wrote, "he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his last day at his law firm."</span></p>
+<p class="ed-block" data-block="p10"><span class="k-cn">她写道，在 2024 年 10 月，“对我发起的攻击，以及他所经历的许多人身攻击，最终开始产生影响。”她描述了他们之间的一次争论，埃姆霍夫告诉她：“我们不能互相攻击。”她写道：“面对来自四面八方的攻击，我们必须团结一致。”</span><span class="k-en" hidden>She writes that in October 2024, "the attacks on me, and the many personal assaults he'd been experiencing were finally taking a toll." She describes an argument they had and Emhoff telling her, "We can't turn on each other," he said. She wrote, "With the hits coming from every direction, we had to stay united."</span></p>
+<p class="ed-block" data-block="p11"><span class="k-cn">离开华盛顿后，埃姆霍夫返回洛杉矶，在著名的律师事务所 Willkie Farr &amp; Gallagher（律师事务所）担任律师。</span><span class="k-en" hidden>Since leaving Washington, Emhoff has returned to work as an attorney in Los Angeles at white shoe law firm Willkie Farr &amp; Gallagher LLP.</span></p>
+<p class="ed-block" data-block="p12"><span class="k-cn">据一些消息人士称，卡玛拉·哈里斯最近的一些举动让一些捐助者对她的意图感到不安。在选举前的几周里，哈里斯出现在加利福尼亚州的一些私人筹款活动中，其中包括在圣莫尼卡为密尔沃基县行政长官戴维·克劳利举办的活动，克劳利是民主党提名的威斯康星州州长候选人；以及为内华达州司法部长亚伦·福特举办的活动，福特是民主党提名的内华达州州长候选人。</span><span class="k-en" hidden>Some of Harris's recent moves have made some donors uneasy about her intentions, some of the people said. In the weeks leading up to the midterms, Harris has appeared at private fundraisers in California including an event in Santa Monica for Milwaukee County Executive David Crowley, the party's nominee for governor of Wisconsin, and another for Nevada Attorney General Aaron Ford, the Democratic nominee for governor of Nevada.</span></p>
+<p class="ed-block" data-block="p13"><span class="k-cn">她最近还参加了民主党全国委员会组织的动员选民活动，鼓励超过 2000 名在线参与的志愿者上门拜访选民，积极与选民沟通，以期在全国十二个州争取更多席位。“努力工作是一件好事，”哈里斯说道。</span><span class="k-en" hidden>She also joined a get-out-the-vote call with the Democratic National Committee recently, urging more than 2,000 volunteers listening live to knock on doors and engage with voters to flip seats in a dozen states across the country. "Hard work is good work," Harris said.</span></p>
+<div class="ed-block">
+<section id="timeline-E1-027" class="mod timeline" aria-label="时间线">
+<div class="mtag"><span class="kbar-sm"></span><span class="k-cn">时间线</span><span class="k-en" hidden>TIMELINE</span></div>
+<ol class="tl">
+</ol></section>
+</div>
+<div class="ed-block">
+<aside class="mod quote" aria-label="引语">
+    <div class="qt"><span class="k-cn"></span><span class="k-en" hidden></span></div>
+    <div class="qa"><span class="k-cn"></span><span class="k-en" hidden></span></div>
+  </aside>
+</div>
+</div>
+</article>
+</main>
+<footer class="issue-foot">
+  <div class="arule"></div>
+  <p><span class="k-cn">测试页 · Editorial Plan 驱动渲染验证。正文逐字来自内容定稿。</span><span class="k-en" hidden>Test page · Editorial-Plan-driven rendering. Body text verbatim from the proofed draft.</span></p>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('langToggle');
+  function setLang(en){
+    document.querySelectorAll('.k-cn').forEach(function(e){e.hidden=en});
+    document.querySelectorAll('.k-en').forEach(function(e){e.hidden=!en});
+    document.documentElement.lang=en?'en':'zh-CN';
+    btn.setAttribute('aria-pressed',en?'true':'false');
+  }
+  btn.addEventListener('click',function(){
+    setLang(btn.getAttribute('aria-pressed')!=='true');
+  });
+  var toTop=document.getElementById('toTop');
+  if(toTop){toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});}
+  var bar=document.getElementById('pbar');
+  function prog(){
+    var h=document.documentElement;
+    var m=h.scrollHeight-h.clientHeight;
+    bar.style.width=(m>0?(h.scrollTop/m*100):0)+'%';
+  }
+  window.addEventListener('scroll',prog,{passive:true});prog();
+  // rail scroll-spy (per-article rails)
+  var links=document.querySelectorAll('.rail nav a');
+  if(links.length&&'IntersectionObserver' in window){
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('data-spy')]=a});
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var rail=e.target.closest('.sheet').querySelectorAll('.rail nav a');
+          rail.forEach(function(a){a.classList.remove('on')});
+          var a=map[e.target.id];if(a)a.classList.add('on');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(function(a){
+      var el=document.getElementById(a.getAttribute('data-spy'));if(el)io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>

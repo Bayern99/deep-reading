@@ -1,0 +1,106 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2"
+   ],
+   "function": "claim",
+   "reader_need": "了解核心事件：发生了什么、地点、受害者类型、凶手结局"
+  },
+  {
+   "block_ids": [
+    "p3"
+   ],
+   "function": "evidence",
+   "reader_need": "了解受害者与凶手的具体关系，确认事件性质为家庭悲剧"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p2",
+   "need": "突出核心事实数字，帮助读者快速把握事件规模",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持简洁",
+     "cost": "关键数字不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T03 数字强调",
+     "benefit": "八人、自杀等核心事实更醒目，符合brief快速阅读需求",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "P3优先级brief需要快速传递核心信息，数字强调成本低收益高"
+  },
+  {
+   "id": "opp2",
+   "location": "p3",
+   "need": "明确信息来源，增强可信度",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "简洁",
+     "cost": "说话人身份不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T06 引述归属",
+     "benefit": "警察局局长作为权威信源更醒目",
+     "cost": "minimal"
+    }
+   ],
+   "chosen": "B",
+   "reason": "官方信源标注有助于读者判断信息可靠性"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "pattern_id": "T03",
+   "block_id": "p2",
+   "snippet": "八人",
+   "reason": "核心伤亡数字"
+  },
+  {
+   "pattern_id": "T03",
+   "block_id": "p2",
+   "snippet": "自杀",
+   "reason": "事件关键结局"
+  },
+  {
+   "pattern_id": "T06",
+   "block_id": "p3",
+   "snippet": "伊利市警察局局长里克·洛拉",
+   "reason": "权威信源，避免读者混淆信息来源"
+  }
+ ],
+ "layout_plan": [],
+ "reading_aid_plan": [],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文无术语/身份需要额外解释，所有信息已自足"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "原文无平行对比结构，无成对数据可对照"
+  },
+  {
+   "pattern_id": "key_figures",
+   "reason_against": "数字（八人、45岁、七名）不属于同一叙事问题的比较维度"
+  },
+  {
+   "pattern_id": "timeline",
+   "reason_against": "仅有一个时间点（周五），不满足≥4事件要求"
+  },
+  {
+   "pattern_id": "quote",
+   "reason_against": "全文无直接引语，仅有转述"
+  }
+ ]
+}

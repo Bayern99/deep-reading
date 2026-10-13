@@ -1,0 +1,279 @@
+{
+ "narrative_analysis": [
+  {
+   "block_ids": [
+    "p2",
+    "p3"
+   ],
+   "function": "claim",
+   "reader_need": "理解调查的核心主张及其政治背景"
+  },
+  {
+   "block_ids": [
+    "p4",
+    "p5"
+   ],
+   "function": "contrast",
+   "reader_need": "识别调查面临的人员问题，与期望形成反差"
+  },
+  {
+   "block_ids": [
+    "p6",
+    "p7"
+   ],
+   "function": "consequence",
+   "reader_need": "了解特朗普的反应和调查的实际进展"
+  },
+  {
+   "block_ids": [
+    "p8",
+    "p9",
+    "p10",
+    "p11"
+   ],
+   "function": "evidence",
+   "reader_need": "理解领导层问题和华盛顿的直接干预"
+  },
+  {
+   "block_ids": [
+    "p13",
+    "p14",
+    "p15"
+   ],
+   "function": "background",
+   "reader_need": "了解调查目标和范围"
+  },
+  {
+   "block_ids": [
+    "p16",
+    "p17",
+    "p18",
+    "p19",
+    "p20"
+   ],
+   "function": "evidence",
+   "reader_need": "理解调查的具体困难和程序问题"
+  }
+ ],
+ "editorial_opportunities": [
+  {
+   "id": "opp1",
+   "location": "p4-p5",
+   "need": "突出关键人物离职及其原因，这是文章的核心冲突",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文流畅",
+     "cost": "关键信息不够突出"
+    },
+    {
+     "option": "B",
+     "desc": "T01 语义加粗",
+     "benefit": "强调辞职原因和关键人物",
+     "cost": "minimal"
+    },
+    {
+     "option": "D",
+     "desc": "key_figures",
+     "benefit": "结构化呈现数字",
+     "cost": "数字分散，可比性弱"
+    }
+   ],
+   "chosen": "B",
+   "reason": "T01 加粗能直接突出核心冲突点，成本低效果好"
+  },
+  {
+   "id": "opp2",
+   "location": "p13-p14",
+   "need": "调查涉及多个时间点和事件，读者需要时间线来理解范围",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "无额外成本",
+     "cost": "时间关系不够清晰"
+    },
+    {
+     "option": "D",
+     "desc": "timeline",
+     "benefit": "清晰展示调查涵盖的历史事件",
+     "cost": "需要提取和整理"
+    }
+   ],
+   "chosen": "D",
+   "reason": "timeline 能有效帮助读者理解调查的时空范围"
+  },
+  {
+   "id": "opp3",
+   "location": "p4, p7, p20",
+   "need": "直接引语承载关键信息，值得突出",
+   "candidates": [
+    {
+     "option": "A",
+     "desc": "维持原样",
+     "benefit": "保持原文",
+     "cost": "引语不够突出"
+    },
+    {
+     "option": "D",
+     "desc": "quote",
+     "benefit": "突出说话人观点",
+     "cost": "需要中英对齐"
+    }
+   ],
+   "chosen": "D",
+   "reason": "三处引语分别代表不同立场，quote 组件能增强可读性"
+  }
+ ],
+ "text_treatment_plan": [
+  {
+   "type": "T01",
+   "block_id": "p4",
+   "snippet": "称司法部高层正在向调查团队施压，要求他们过早地提起刑事诉讼"
+  },
+  {
+   "type": "T01",
+   "block_id": "p4",
+   "snippet": "他没有对任何人提出指控"
+  },
+  {
+   "type": "T01",
+   "block_id": "p5",
+   "snippet": "他最近在政府的测谎测试中未能通过，导致他失去了安全许可"
+  },
+  {
+   "type": "T01",
+   "block_id": "p7",
+   "snippet": "这并不是一个切实可行的方案"
+  },
+  {
+   "type": "T01",
+   "block_id": "p11",
+   "snippet": "副司法部长办公室的律师正在直接从华盛顿监督在佛罗里达州进行的调查"
+  },
+  {
+   "type": "T01",
+   "block_id": "p16",
+   "snippet": "她没有找到起诉约翰·布伦南的依据"
+  },
+  {
+   "type": "T01",
+   "block_id": "p20",
+   "snippet": "帕特尔将这名特工从调查中调离"
+  }
+ ],
+ "layout_plan": [
+  {
+   "pattern_id": "L01",
+   "reason": "文章为线性叙事，无适合 L02/L03/L05/L08 的结构。L02 不适用因正文已解释关键术语；L03 不适用因无平行对比数据；L05/L08 不适用因无图表。",
+   "evidence": "全文为单一叙事线索，无并列结构或图文需求"
+  }
+ ],
+ "reading_aid_plan": [
+  {
+   "type": "timeline",
+   "title_cn": "调查时间线",
+   "title_en": "Investigation Timeline",
+   "items": [
+    {
+     "date": "2016 年",
+     "event": "情报部门评估俄罗斯干预选举"
+    },
+    {
+     "date": "2017 年",
+     "event": "布伦南就 2016 年评估作国会证词"
+    },
+    {
+     "date": "2022 年 8 月",
+     "event": "FBI 搜查马阿拉戈住宅"
+    },
+    {
+     "date": "2023 年",
+     "event": "布伦南再次作证；杰克·史密斯发起起诉"
+    },
+    {
+     "date": "2024 年",
+     "event": "杰克·史密斯继续起诉"
+    },
+    {
+     "date": "去年",
+     "event": "司法部宣布启动阴谋调查"
+    },
+    {
+     "date": "今年 4 月",
+     "event": "玛丽亚·梅德蒂斯·朗被撤职"
+    },
+    {
+     "date": "上个月",
+     "event": "迪杰诺瓦和奥尔森辞职"
+    }
+   ]
+  },
+  {
+   "type": "key_figures",
+   "title_cn": "关键数字",
+   "title_en": "Key Figures",
+   "items": [
+    {
+     "figure": "81 岁",
+     "description": "迪杰诺瓦的年龄"
+    },
+    {
+     "figure": "大约十几名",
+     "description": "继续推进调查的检察官人数"
+    },
+    {
+     "figure": "两位",
+     "description": "最近聘用的前检察官"
+    },
+    {
+     "figure": "2016-2024",
+     "description": "调查涵盖的时间跨度（年）"
+    }
+   ]
+  },
+  {
+   "type": "quote",
+   "title_cn": "关键引语",
+   "title_en": "Key Quotes",
+   "items": [
+    {
+     "speaker": "乔·迪杰诺瓦",
+     "speaker_en": "Joe diGenova",
+     "quote_cn": "司法部高层正在向调查团队施压，要求他们过早地提起刑事诉讼",
+     "quote_en": "top department officials were pressuring the team to bring criminal cases before they were ready",
+     "source": "p4"
+    },
+    {
+     "speaker": "司法部官员",
+     "speaker_en": "Justice Department official",
+     "quote_cn": "将所有这些看似无关的线索整合到一个大型的阴谋案件中……这并不是一个切实可行的方案",
+     "quote_en": "tying all those loose threads together in one big conspiracy case... isn't a practical approach",
+     "source": "p7"
+    },
+    {
+     "speaker": "FBI 特工",
+     "speaker_en": "FBI agent",
+     "quote_cn": "将这次搜查与从佛罗里达到华盛顿的更大范围的阴谋联系起来将是一项挑战",
+     "quote_en": "tying the search to a broader conspiracy spanning from Florida to Washington would be challenging",
+     "source": "p20"
+    }
+   ]
+  }
+ ],
+ "rejected_candidates": [
+  {
+   "pattern_id": "L02",
+   "reason_against": "正文已对关键人物（迪杰诺瓦、奥尔森、基尼奥内斯）提供了充分背景说明，无需边注补充"
+  },
+  {
+   "pattern_id": "L03",
+   "reason_against": "文章无平行对比结构，离职原因、调查问题等均为单一列表而非成对数据"
+  },
+  {
+   "pattern_id": "T13",
+   "reason_against": "虽有多个并列项（如离职原因、调查目标），但原文未以列表形式呈现，强行转换会破坏叙事流畅性"
+  }
+ ]
+}
