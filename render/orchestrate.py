@@ -184,8 +184,25 @@ def validate_quote_bilingual(plan):
         en_n = len(_quoted_segments(q.get('text_en', '')))
         if cn_n != en_n:
             results.append((i, False, '中英引语片段数不一致 CN=%d EN=%d' % (cn_n, en_n)))
-        else:
-            results.append((i, True, '中英引语片段对齐 (%d 对)' % cn_n))
+            continue
+        # 语义合理性：去重后单句的中英长度比应在翻译常理内
+        # 中文字符数 : 英文单词数 ≈ 1 : 0.6~2.5（超出则疑似错配）
+        qcn = q.get('text_cn', '')
+        qen = q.get('text_en', '')
+        cn_len = len([c for c in qcn if '\u4e00' <= c <= '\u9fff'])
+        en_words = len(qen.split())
+        if cn_len > 5 and en_words > 0:
+            ratio = en_words / cn_len
+            if ratio < 0.3 or ratio > 3.0:
+                results.append((i, False,
+                    '中英长度比异常 (%.2f)，疑似错配：CN%d字 EN%d词' % (ratio, cn_len, en_words)))
+                continue
+        # attribution 泄漏检查：英文单句不应是"X said"结构
+        import re as _re
+        if _re.match(r'^[“"]?\s*\w+\s+said\b', qen, _re.I):
+            results.append((i, False, '英文疑似 attribution 而非引语：%s' % qen[:40]))
+            continue
+        results.append((i, True, '中英引语片段对齐 (%d 对)' % cn_n))
     return results
 
 
