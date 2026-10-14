@@ -1,0 +1,622 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-020",
+  "final_id": "020",
+  "issue_date": "2026-10-12",
+  "content_digest": "8b845cee661b15110eeeca63b88f5b77da69e1824d732a291ada02a964e85b48",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A3",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A3 版",
+    "kicker_en": "WSJ · U.S. NEWS · A3",
+    "title_cn": "地方政治阻碍硅谷对峙",
+    "title_en": "Local Politics Stymie Silicon Valley Standoff",
+    "dek_cn": "",
+    "dek_en": "between county leaders and developers frustrates $3 billion project",
+    "byline": "BY ZUSHA ELINSON",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘请的游说者们加紧活动。在加文·纽森州长的支持下，斯拉梅克正力图实现一个目标：在计划建设的这座城市附近建造一个价值30亿美元的造船厂。",
+      "text_en": "SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for Silicon Valley-backed entrepreneur Jan Sramek were in overdrive. With Gov. Gavin Newsom's office in his corner, Sramek was chasing a prize: a $3 billion shipyard beside the city he wants to build from scratch here.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘请的游说者们加紧活动。在加文·纽森州长的支持下，斯拉梅克正力图实现一个目标：在计划建设的这座城市附近建造一个价值30亿美元的造船厂。",
+          "text_en": "SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for Silicon Valley-backed entrepreneur Jan Sramek were in overdrive. With Gov. Gavin Newsom's office in his corner, Sramek was chasing a prize: a $3 billion shipyard beside the city he wants to build from scratch here."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“我们有一些好消息！！！”纽森的一位工作人员在项目入选候选名单后发邮件说道。“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”",
+      "text_en": "\"WE HAVE SOME GREAT NEWS!!!!!!,\" a Newsom staffer emailed after the site made the shortlist. \"We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago.\"",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "“我们有一些好消息！！！”纽森的一位工作人员在项目入选候选名单后发邮件说道。“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”",
+          "text_en": "\"WE HAVE SOME GREAT NEWS!!!!!!,\" a Newsom staffer emailed after the site made the shortlist. \"We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago.\""
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "但这种兴奋感并没有持续多久。一个小时后，斯拉梅克警告说，存在一个障碍：县政府的繁文缛节。十个月后，造船公司Saronic Technologies（造船公司）选择了得克萨斯州的布朗斯维尔，并带走了大约1万个就业岗位。",
+      "text_en": "The excitement didn't last. Within an hour, Sramek warned of an obstacle: county government red tape. Ten months later, the shipmaker, Saronic Technologies, chose Brownsville, Texas, taking with it an estimated 10,000 jobs.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "但这种兴奋感并没有持续多久。",
+          "text_en": "The excitement didn't last."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "一个小时后，斯拉梅克警告说，存在一个障碍：县政府的繁文缛节。",
+          "text_en": "Within an hour, Sramek warned of an obstacle: county government red tape."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "十个月后，造船公司Saronic Technologies（造船公司）选择了得克萨斯州的布朗斯维尔，并带走了大约1万个就业岗位。",
+          "text_en": "Ten months later, the shipmaker, Saronic Technologies, chose Brownsville, Texas, taking with it an estimated 10,000 jobs."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "39岁的斯拉梅克并不陌生于大型交易。22 岁时，他就在伦敦的高盛经手数百万美元的交易。现在，他正试图建造一种可步行郊区乌托邦，包括住宅、高科技制造中心和造船厂，距离旧金山仅需90分钟车程。他的公司California Forever（开发公司）已从投资者那里筹集了约10亿美元，投资者包括风险投资公司安德里森·霍洛维茨和领英联合创始人里德·霍夫曼，并汇集了顶尖的城市规划师，赢得了包括纽森在内的州领导人的支持。",
+      "text_en": "Sramek, 39 years old, is no stranger to big deals. By 22, he was handling multimillion-dollar trades at Goldman Sachs in London. Now, he is trying to build a kind of walkable suburban utopia, with housing, a high-tech manufacturing hub and a shipyard, a 90-minute drive from San Francisco. His company California Forever has raised about $1 billion from investors, including venture firm Andreessen Horowitz and LinkedIn co-founder Reid Hoffman, assembled top urban planners and won over state leaders including Newsom.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "39岁的斯拉梅克并不陌生于大型交易。",
+          "text_en": "Sramek, 39 years old, is no stranger to big deals."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "22 岁时，他就在伦敦的高盛经手数百万美元的交易。",
+          "text_en": "By 22, he was handling multimillion-dollar trades at Goldman Sachs in London."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "现在，他正试图建造一种可步行郊区乌托邦，包括住宅、高科技制造中心和造船厂，距离旧金山仅需90分钟车程。",
+          "text_en": "Now, he is trying to build a kind of walkable suburban utopia, with housing, a high-tech manufacturing hub and a shipyard, a 90-minute drive from San Francisco."
+        },
+        {
+          "id": "p4.s4",
+          "text_cn": "他的公司California Forever（开发公司）已从投资者那里筹集了约10亿美元，投资者包括风险投资公司安德里森·霍洛维茨和领英联合创始人里德·霍夫曼，并汇集了顶尖的城市规划师，赢得了包括纽森在内的州领导人的支持。",
+          "text_en": "His company California Forever has raised about $1 billion from investors, including venture firm Andreessen Horowitz and LinkedIn co-founder Reid Hoffman, assembled top urban planners and won over state leaders including Newsom."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该团队希望解决旧金山周边地区的住房短缺问题，以及索拉诺县的就业岗位不足问题，今年该县失去了一家百威啤酒厂和一家Valero Energy炼油厂。",
+      "text_en": "The group wants to address a regional housing shortage around San Francisco, as well as a lack of jobs in Solano County, which this year lost a Budweiser brewery and a Valero Energy refinery.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "该团队希望解决旧金山周边地区的住房短缺问题，以及索拉诺县的就业岗位不足问题，今年该县失去了一家百威啤酒厂和一家Valero Energy炼油厂。",
+          "text_en": "The group wants to address a regional housing shortage around San Francisco, as well as a lack of jobs in Solano County, which this year lost a Budweiser brewery and a Valero Energy refinery."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "但它面临的最大障碍是该县本身。",
+      "text_en": "But its biggest hurdle is the county itself.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "但它面临的最大障碍是该县本身。",
+          "text_en": "But its biggest hurdle is the county itself."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "反对派的代表是米奇·马什伯恩，59岁，一位戴着牛仔帽的共和党县议员，也是当地农民的后裔，他抱怨说，推动建造造船厂的做法是在“强加于我们”。",
+      "text_en": "The face of the opposition is Mitch Mashburn, 59, a cowboy-hat-wearing Republican county supervisor and descendant of local farmers who has complained the push for the shipyard was being \"crammed down our throat.\"",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "反对派的代表是米奇·马什伯恩，59岁，一位戴着牛仔帽的共和党县议员，也是当地农民的后裔，他抱怨说，推动建造造船厂的做法是在“强加于我们”。",
+          "text_en": "The face of the opposition is Mitch Mashburn, 59, a cowboy-hat-wearing Republican county supervisor and descendant of local farmers who has complained the push for the shipyard was being \"crammed down our throat.\""
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "斯拉梅克将这场对峙描述为与那些导致人们无力负担住房并阻碍当地经济发展的势力的斗争。“加利福尼亚州未来的战役正在索拉诺县进行，”他说。",
+      "text_en": "Sramek casts the standoff as a fight against forces that have priced people out of housing and stalled local economies. \"The battle for the future of California is being fought in Solano County,\" he said.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "斯拉梅克将这场对峙描述为与那些导致人们无力负担住房并阻碍当地经济发展的势力的斗争。",
+          "text_en": "Sramek casts the standoff as a fight against forces that have priced people out of housing and stalled local economies."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "“加利福尼亚州未来的战役正在索拉诺县进行，”他说。",
+          "text_en": "\"The battle for the future of California is being fought in Solano County,\" he said."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "反对者认为这是一场科技亿万富翁的土地掠夺。“我称之为‘兄弟寡头城市’，因为这背后真正推动的是科技精英，”吉姆·德克洛说，他是一位社区大学教授和当地塞拉俱乐部（Sierra Club）的领导人。",
+      "text_en": "Opponents view it as a tech-billionaire land grab. \"I call it broligarch city because it's really tech bros behind this,\" said Jim DeKloe, a community-college professor and local Sierra Club leader.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "反对者认为这是一场科技亿万富翁的土地掠夺。",
+          "text_en": "Opponents view it as a tech-billionaire land grab."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "“我称之为‘兄弟寡头城市’，因为这背后真正推动的是科技精英，”吉姆·德克洛说，他是一位社区大学教授和当地塞拉俱乐部（Sierra Club）的领导人。",
+          "text_en": "\"I call it broligarch city because it's really tech bros behind this,\" said Jim DeKloe, a community-college professor and local Sierra Club leader."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "《华尔街日报》看到的一些电子邮件显示，双方关系已经恶化到县政府官员似乎更倾向于阻止该项目，而不是进行谈判。",
+      "text_en": "Emails seen by The Wall Street Journal show relations have soured to the point where county officials appear more inclined to block the project than negotiate.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "《华尔街日报》看到的一些电子邮件显示，双方关系已经恶化到县政府官员似乎更倾向于阻止该项目，而不是进行谈判。",
+          "text_en": "Emails seen by The Wall Street Journal show relations have soured to the point where county officials appear more inclined to block the project than negotiate."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "前任郡议员吉姆·斯佩林认为双方都有过错。他说，像马什伯恩这样的郡领导人缺乏前瞻性，也不知道如何达成对该地区有益的协议。斯佩林还说，斯拉梅克是那些“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”的“梦想家开发商”之一。",
+      "text_en": "Former County Supervisor Jim Spering faults both sides. County leaders like Mashburn aren't forward-looking and don't know how to cut deals that would help the region, he said. And Sramek is one of those \"dreamer developers that don't understand that you've got to build a relationship with the community\" before \"telling them what you want to do,\" Spering said.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "前任郡议员吉姆·斯佩林认为双方都有过错。",
+          "text_en": "Former County Supervisor Jim Spering faults both sides."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "他说，像马什伯恩这样的郡领导人缺乏前瞻性，也不知道如何达成对该地区有益的协议。",
+          "text_en": "County leaders like Mashburn aren't forward-looking and don't know how to cut deals that would help the region, he said."
+        },
+        {
+          "id": "p11.s3",
+          "text_cn": "斯佩林还说，斯拉梅克是那些“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”的“梦想家开发商”之一。",
+          "text_en": "And Sramek is one of those \"dreamer developers that don't understand that you've got to build a relationship with the community\" before \"telling them what you want to do,\" Spering said."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "斯拉梅克表示，他认为无论采取何种方式，他的项目都会面临强烈的反对。从一开始，他为购买6万英亩土地，用于建设一个容纳40万人的大型规划社区的计划，就激怒了当地居民，尤其是在California Forever起诉了几代农民家庭，指控他们合谋抬高土地价格之后。他称反对者为“70多岁的塞拉俱乐部成员”。",
+      "text_en": "Sramek said he thinks his project would have faced stiff opposition no matter the approach. From the start, his campaign to buy up 60,000 acres for a master-planned community for 400,000 people enraged locals, especially after California Forever sued multigenerational farming families, alleging they conspired to inflate land prices. He called opponents the \"70-year-old Sierra Club type.\"",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "斯拉梅克表示，他认为无论采取何种方式，他的项目都会面临强烈的反对。",
+          "text_en": "Sramek said he thinks his project would have faced stiff opposition no matter the approach."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "从一开始，他为购买6万英亩土地，用于建设一个容纳40万人的大型规划社区的计划，就激怒了当地居民，尤其是在California Forever起诉了几代农民家庭，指控他们合谋抬高土地价格之后。",
+          "text_en": "From the start, his campaign to buy up 60,000 acres for a master-planned community for 400,000 people enraged locals, especially after California Forever sued multigenerational farming families, alleging they conspired to inflate land prices."
+        },
+        {
+          "id": "p12.s3",
+          "text_cn": "他称反对者为“70多岁的塞拉俱乐部成员”。",
+          "text_en": "He called opponents the \"70-year-old Sierra Club type.\""
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此后，斯拉梅克和马什伯恩承诺放慢速度并共同合作。这种缓和关系面临的第一个考验是Saronic计划在California Forever的土地上，沿着萨克拉门托河建造大型造船厂。在2025年，Saronic公司正在评估选址，该公司生产自主航行的海运船只。斯拉梅克的助手与当地领导人会面，并组织他们参观河畔，同时还邀请了退役的军方高级将领。",
+      "text_en": "Afterward, Sramek and Mashburn pledged to slow down and work together. The detente faced its first test in Saronic's planned large shipyard along the Sacramento River on California Forever's land. As Saronic, which makes autonomous sea vessels, weighed sites in 2025, Sramek's deputies courted local leaders with riverside tours alongside retired military brass.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "此后，斯拉梅克和马什伯恩承诺放慢速度并共同合作。这种缓和关系面临的第一个考验是Saronic计划在California Forever的土地上，沿着萨克拉门托河建造大型造船厂。在2025年，Saronic公司正在评估选址，该公司生产自主航行的海运船只。斯拉梅克的助手与当地领导人会面，并组织他们参观河畔，同时还邀请了退役的军方高级将领。",
+          "text_en": "Afterward, Sramek and Mashburn pledged to slow down and work together. The detente faced its first test in Saronic's planned large shipyard along the Sacramento River on California Forever's land. As Saronic, which makes autonomous sea vessels, weighed sites in 2025, Sramek's deputies courted local leaders with riverside tours alongside retired military brass."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "但到了四月份，郡官员们感到自己被边缘化了。当斯拉梅克的助手提醒当时的郡行政长官比尔·埃姆伦，他们与他、马什伯恩和其他人进行了六个月的会谈，并提供了相关记录时，埃姆伦反驳道：“发送邀请函参加公开会议，并不能代替在决策桌上的一席之地。”",
+      "text_en": "But by April, county officials were feeling sidelined. When a Sramek deputy reminded then-County Administrator Bill Emlen of six months of meetings with him, Mashburn and others, receipts attached, Emlen shot back. \"Sending invites to public briefings does not substitute for a seat at the table,\" he wrote.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "但到了四月份，郡官员们感到自己被边缘化了。当斯拉梅克的助手提醒当时的郡行政长官比尔·埃姆伦，他们与他、马什伯恩和其他人进行了六个月的会谈，并提供了相关记录时，埃姆伦反驳道：“发送邀请函参加公开会议，并不能代替在决策桌上的一席之地。”",
+          "text_en": "But by April, county officials were feeling sidelined. When a Sramek deputy reminded then-County Administrator Bill Emlen of six months of meetings with him, Mashburn and others, receipts attached, Emlen shot back. \"Sending invites to public briefings does not substitute for a seat at the table,\" he wrote."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "斯拉梅克在布雷特·普雷布拉身上找到了一位盟友。普雷布拉曾是一名政府官员，并且是一位积极的谈判者，后来出任Suisun市市政经理。Suisun市是索拉诺县最贫困的社区之一。43岁的普雷布拉看到了他所在的这座面积为4平方英里的城市的机会，这座城市拥有大量的黑人人口，并且长期以来在索拉诺县感到被忽视。在2025年初，他提议将Suisun市的边界扩大35平方英里，以吞并California Forever土地的重要部分。对于普雷布拉来说，这意味着增加城市的收入。对于斯拉梅克来说，这是一种绕过郡严格的城市边界外开发规则的方法。",
+      "text_en": "Sramek found an ally in Bret Prebula, a former government and restless dealmaker who became city manager of Suisun City, one of Solano County's poorest communities. Prebula, 43, saw an opportunity for his 4-square-mile city, which has a large Black population and has long felt overlooked in Solano County. In early 2025, he proposed expanding Suisun City's borders by 35 square miles to annex a significant portion of California Forever's land. For Prebula, it meant city revenue. For Sramek, it was a way around the county's strict rules on development outside city limits.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "斯拉梅克在布雷特·普雷布拉身上找到了一位盟友。普雷布拉曾是一名政府官员，并且是一位积极的谈判者，后来出任Suisun市市政经理。Suisun市是索拉诺县最贫困的社区之一。43岁的普雷布拉看到了他所在的这座面积为4平方英里的城市的机会，这座城市拥有大量的黑人人口，并且长期以来在索拉诺县感到被忽视。在2025年初，他提议将Suisun市的边界扩大35平方英里，以吞并California Forever土地的重要部分。对于普雷布拉来说，这意味着增加城市的收入。对于斯拉梅克来说，这是一种绕过郡严格的城市边界外开发规则的方法。",
+          "text_en": "Sramek found an ally in Bret Prebula, a former government and restless dealmaker who became city manager of Suisun City, one of Solano County's poorest communities. Prebula, 43, saw an opportunity for his 4-square-mile city, which has a large Black population and has long felt overlooked in Solano County. In early 2025, he proposed expanding Suisun City's borders by 35 square miles to annex a significant portion of California Forever's land. For Prebula, it meant city revenue. For Sramek, it was a way around the county's strict rules on development outside city limits."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "2025年6月，斯拉梅克向Suisun市提供了一笔5.5万美元的拨款，用于当地的7月4日烟花庆祝活动和其他受到预算赤字威胁的活动。电子邮件显示，他提议购买价值150万美元的市中心房产，以帮助弥补资金缺口。",
+      "text_en": "In June 2025, Sramek offered Suisun City a $55,000 grant for the local July 4 fireworks celebration and other events threatened by a budget shortfall. He offered to buy $1.5 million in downtown properties to help close the gap, emails show.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "2025年6月，斯拉梅克向Suisun市提供了一笔5.5万美元的拨款，用于当地的7月4日烟花庆祝活动和其他受到预算赤字威胁的活动。",
+          "text_en": "In June 2025, Sramek offered Suisun City a $55,000 grant for the local July 4 fireworks celebration and other events threatened by a budget shortfall."
+        },
+        {
+          "id": "p16.s2",
+          "text_cn": "电子邮件显示，他提议购买价值150万美元的市中心房产，以帮助弥补资金缺口。",
+          "text_en": "He offered to buy $1.5 million in downtown properties to help close the gap, emails show."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "不久之后，他们达成了一项协议：California Forever将承担城市与项目相关的成本，并在吞并最终确定后向城市支付1000万美元。",
+      "text_en": "Soon after, they struck a deal: California Forever would cover the city's project-related costs and pay it $10 million if the annexation is finalized.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "不久之后，他们达成了一项协议：California Forever将承担城市与项目相关的成本，并在吞并最终确定后向城市支付1000万美元。",
+          "text_en": "Soon after, they struck a deal: California Forever would cover the city's project-related costs and pay it $10 million if the annexation is finalized."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "反对者对此表示强烈不满。塞拉俱乐部的领导人德克洛称之为一种“狡猾的策略”，旨在绕过全郡的投票。",
+      "text_en": "Opponents cried foul. DeKloe, the Sierra Club leader, called it a \"weasel tactic\" intended to bypass a county-wide vote.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "反对者对此表示强烈不满。",
+          "text_en": "Opponents cried foul."
+        },
+        {
+          "id": "p18.s2",
+          "text_cn": "塞拉俱乐部的领导人德克洛称之为一种“狡猾的策略”，旨在绕过全郡的投票。",
+          "text_en": "DeKloe, the Sierra Club leader, called it a \"weasel tactic\" intended to bypass a county-wide vote."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "去年8月，索拉诺县进入了候选名单，斯拉梅克推动通过特别立法，以加快项目进度。州议员们起草了一项法案，但他们希望郡政府批准。在一次会议上，马什伯恩批评California Forever推进速度过快，但他投票支持了一项妥协方案。",
+      "text_en": "When Solano County made the shortlist last August, Sramek pushed for special legislation to fast-track the project. State lawmakers worked up a bill but wanted the county to sign off. At a board meeting, Mashburn chastised California Forever for the rush but voted to endorse a compromise bill.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "去年8月，索拉诺县进入了候选名单，斯拉梅克推动通过特别立法，以加快项目进度。",
+          "text_en": "When Solano County made the shortlist last August, Sramek pushed for special legislation to fast-track the project."
+        },
+        {
+          "id": "p19.s2",
+          "text_cn": "州议员们起草了一项法案，但他们希望郡政府批准。",
+          "text_en": "State lawmakers worked up a bill but wanted the county to sign off."
+        },
+        {
+          "id": "p19.s3",
+          "text_cn": "在一次会议上，马什伯恩批评California Forever推进速度过快，但他投票支持了一项妥协方案。",
+          "text_en": "At a board meeting, Mashburn chastised California Forever for the rush but voted to endorse a compromise bill."
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "index": 20,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据斯拉梅克称，该法案未能满足Saronic的需求。尽管斯拉梅克的团队、马什伯恩和议员们进行了数月的谈判，试图制定一项更好的方案，但Saronic在6月份表示，他们已经选择了德克萨斯州。",
+      "text_en": "The bill fell short for Saronic, according to Sramek. Despite months of talks between Sramek's team, Mashburn and lawmakers, trying to hammer out a better one, Saronic said in June it had picked Texas.",
+      "sentences": [
+        {
+          "id": "p20.s1",
+          "text_cn": "据斯拉梅克称，该法案未能满足Saronic的需求。",
+          "text_en": "The bill fell short for Saronic, according to Sramek."
+        },
+        {
+          "id": "p20.s2",
+          "text_cn": "尽管斯拉梅克的团队、马什伯恩和议员们进行了数月的谈判，试图制定一项更好的方案，但Saronic在6月份表示，他们已经选择了德克萨斯州。",
+          "text_en": "Despite months of talks between Sramek's team, Mashburn and lawmakers, trying to hammer out a better one, Saronic said in June it had picked Texas."
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "index": 21,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "斯拉梅克说：“我们不断举手发言，表示如果这项法案未能通过，他们就会前往布朗斯维尔。”“但实际上，并没有足够的政治意愿来推动这项法案的通过。”Saronic Technologies的一位发言人没有回应置评请求。",
+      "text_en": "\"We kept raising our hand and saying, if we don't pass the legislation, they are going to go to Brownsville,\" Sramek said, \"but there wasn't the political will to get it done.\" A Saronic spokeswoman didn't respond to requests to comment.",
+      "sentences": [
+        {
+          "id": "p21.s1",
+          "text_cn": "斯拉梅克说：“我们不断举手发言，表示如果这项法案未能通过，他们就会前往布朗斯维尔。”“但实际上，并没有足够的政治意愿来推动这项法案的通过。”Saronic Technologies的一位发言人没有回应置评请求。",
+          "text_en": "\"We kept raising our hand and saying, if we don't pass the legislation, they are going to go to Brownsville,\" Sramek said, \"but there wasn't the political will to get it done.\" A Saronic spokeswoman didn't respond to requests to comment."
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "index": 22,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "斯拉梅克抵达California Forever（开发公司）那栋没有明显标识的办公楼后，称这次投票只是一个障碍。但邮件显示，California Forever的支持者们担心马什伯恩枪里还有子弹。Suisun市的扩张需要与索拉诺县达成税收分摊协议，而开发商们表示，马什伯恩曾公开表示，不能强迫索拉诺县做出让步。",
+      "text_en": "Pulling into California Forever's unmarked office, Sramek called the vote a speed bump. But the emails show California Forever boosters fear Mashburn has another bullet in the chamber. The Suisun City annexation requires a tax-sharing agreement with Solano County, one developers [say] Mashburn has said publicly the county can't be forced to make.",
+      "sentences": [
+        {
+          "id": "p22.s1",
+          "text_cn": "斯拉梅克抵达California Forever（开发公司）那栋没有明显标识的办公楼后，称这次投票只是一个障碍。",
+          "text_en": "Pulling into California Forever's unmarked office, Sramek called the vote a speed bump."
+        },
+        {
+          "id": "p22.s2",
+          "text_cn": "但邮件显示，California Forever的支持者们担心马什伯恩枪里还有子弹。",
+          "text_en": "But the emails show California Forever boosters fear Mashburn has another bullet in the chamber."
+        },
+        {
+          "id": "p22.s3",
+          "text_cn": "Suisun市的扩张需要与索拉诺县达成税收分摊协议，而开发商们表示，马什伯恩曾公开表示，不能强迫索拉诺县做出让步。",
+          "text_en": "The Suisun City annexation requires a tax-sharing agreement with Solano County, one developers [say] Mashburn has said publicly the county can't be forced to make."
+        }
+      ]
+    },
+    {
+      "id": "p23",
+      "index": 23,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "普雷布拉在一封发给州政府官员的邮件中抱怨说：“这里发生的事情不仅仅是地方上的摩擦，这是一个明确的例子，说明各县如何把程序和惯性武器化。”",
+      "text_en": "\"What's happening here is not just local friction,\" Prebula complained in an email to state officials. \"it is a clear example of how counties can weaponize process and inertia.\"",
+      "sentences": [
+        {
+          "id": "p23.s1",
+          "text_cn": "普雷布拉在一封发给州政府官员的邮件中抱怨说：“这里发生的事情不仅仅是地方上的摩擦，这是一个明确的例子，说明各县如何把程序和惯性武器化。”",
+          "text_en": "\"What's happening here is not just local friction,\" Prebula complained in an email to state officials. \"it is a clear example of how counties can weaponize process and inertia.\""
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p2",
+      "quote_cn": "“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”",
+      "quote_en": "“We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago.”",
+      "speaker_cn": "原文第 2 段直接引述",
+      "role_cn": "Source Block p2",
+      "speaker_en": "Direct Quote (p2)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p8",
+      "quote_cn": "“加利福尼亚州未来的战役正在索拉诺县进行，”",
+      "quote_en": "“The battle for the future of California is being fought in Solano County,”",
+      "speaker_cn": "原文第 8 段直接引述",
+      "role_cn": "Source Block p8",
+      "speaker_en": "Direct Quote (p8)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p9",
+      "quote_cn": "“我称之为‘兄弟寡头城市’，因为这背后真正推动的是科技精英，”",
+      "quote_en": "“I call it broligarch city because it's really tech bros behind this,”",
+      "speaker_cn": "原文第 9 段直接引述",
+      "role_cn": "Source Block p9",
+      "speaker_en": "Direct Quote (p9)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q4",
+      "source_block": "p11",
+      "quote_cn": "“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”",
+      "quote_en": "“telling them what you want to do,”",
+      "speaker_cn": "原文第 11 段直接引述",
+      "role_cn": "Source Block p11",
+      "speaker_en": "Direct Quote (p11)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q5",
+      "source_block": "p12",
+      "quote_cn": "“70多岁的塞拉俱乐部成员”",
+      "quote_en": "“70-year-old Sierra Club type.”",
+      "speaker_cn": "原文第 12 段直接引述",
+      "role_cn": "Source Block p12",
+      "speaker_en": "Direct Quote (p12)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p1",
+      "value": "$3 billion",
+      "value_cn": "30亿美元",
+      "label_cn": "加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘…",
+      "label_en": "SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for S…",
+      "note_cn": "源自正文 [p1]",
+      "note_en": "From paragraph [p1]"
+    },
+    {
+      "id": "m2",
+      "source_block": "p4",
+      "value": "$1 billion",
+      "value_cn": "10亿美元",
+      "label_cn": "39岁的斯拉梅克并不陌生于大型交易。22 岁时，他就在伦敦的高盛经手数百…",
+      "label_en": "Sramek, 39 years old, is no stranger to big deals. By 22, he…",
+      "note_cn": "源自正文 [p4]",
+      "note_en": "From paragraph [p4]"
+    },
+    {
+      "id": "m3",
+      "source_block": "p16",
+      "value": "$55",
+      "value_cn": "5.5万美元",
+      "label_cn": "2025年6月，斯拉梅克向Suisun市提供了一笔5.5万美元的拨款，用…",
+      "label_en": "In June 2025, Sramek offered Suisun City a $55,000 grant for…",
+      "note_cn": "源自正文 [p16]",
+      "note_en": "From paragraph [p16]"
+    },
+    {
+      "id": "m4",
+      "source_block": "p17",
+      "value": "$10 million",
+      "value_cn": "1000万美元",
+      "label_cn": "不久之后，他们达成了一项协议：California Forever将承担…",
+      "label_en": "Soon after, they struck a deal: California Forever would cov…",
+      "note_cn": "源自正文 [p17]",
+      "note_en": "From paragraph [p17]"
+    }
+  ],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Zusha Elinson",
+      "zh_suggested": "祖沙·埃林森",
+      "note": "待查"
+    },
+    {
+      "en": "Jan Sramek",
+      "zh_suggested": "扬·斯拉梅克",
+      "note": "待查"
+    },
+    {
+      "en": "Saronic Technologies",
+      "zh_suggested": "Saronic Technologies（造船公司）",
+      "note": "待查"
+    },
+    {
+      "en": "California Forever",
+      "zh_suggested": "California Forever（开发公司）",
+      "note": "待查"
+    },
+    {
+      "en": "Andreessen Horowitz",
+      "zh_suggested": "安德里森·霍洛维茨",
+      "note": "风投"
+    },
+    {
+      "en": "Reid Hoffman",
+      "zh_suggested": "里德·霍夫曼",
+      "note": "领英联合创始人"
+    },
+    {
+      "en": "Mitch Mashburn",
+      "zh_suggested": "米奇·马什伯恩",
+      "note": "待查"
+    },
+    {
+      "en": "Jim DeKloe",
+      "zh_suggested": "吉姆·德克洛",
+      "note": "待查"
+    },
+    {
+      "en": "Jim Spering",
+      "zh_suggested": "吉姆·斯佩林",
+      "note": "待查"
+    },
+    {
+      "en": "Bill Emlen",
+      "zh_suggested": "比尔·埃姆伦",
+      "note": "待查"
+    },
+    {
+      "en": "Bret Prebula",
+      "zh_suggested": "布雷特·普雷布拉",
+      "note": "待查"
+    },
+    {
+      "en": "Suisun City",
+      "zh_suggested": "Suisun市",
+      "note": "索拉诺县城市，待查"
+    }
+  ]
+}

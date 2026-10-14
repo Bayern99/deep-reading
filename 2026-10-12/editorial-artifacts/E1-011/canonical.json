@@ -1,0 +1,531 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-011",
+  "final_id": "011",
+  "issue_date": "2026-10-12",
+  "content_digest": "0fa75dcc3979e9d2aebaba3eb5f183e953efaa4ac4fa75271f1336ef774a383a",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A2",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A2 版",
+    "kicker_en": "WSJ · U.S. NEWS · A2",
+    "title_cn": "美联储的哈马克认为，通货膨胀的根源在于工厂生产环节",
+    "title_en": "Fed’s Hammack Sees Engine of Inflation on Factory Floor",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY NICK TIMIRAOS",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "克利夫兰——杰克·施龙上周花了一个多小时的时间，向克利夫兰联邦储备银行行长贝丝·哈马克展示了Jergens（工业五金制造商）的业务状况，这家公司是一家家族企业，坐落在城市东部原铁路建筑的旧址上。",
+      "text_en": "CLEVELAND—Jack Schron spent most of 90 minutes last week showing Cleveland Fed President Beth Hammack how good business has gotten at Jergens, a family-run manufacturer built on the site of old railroad buildings on the city's east side.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "克利夫兰——杰克·施龙上周花了一个多小时的时间，向克利夫兰联邦储备银行行长贝丝·哈马克展示了Jergens（工业五金制造商）的业务状况，这家公司是一家家族企业，坐落在城市东部原铁路建筑的旧址上。",
+          "text_en": "CLEVELAND—Jack Schron spent most of 90 minutes last week showing Cleveland Fed President Beth Hammack how good business has gotten at Jergens, a family-run manufacturer built on the site of old railroad buildings on the city's east side."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "来自航空航天公司的订单激增，关税使得中国竞争对手的零部件价格上涨，该公司即将进行其84年历史上最大规模的机床采购。",
+      "text_en": "Orders from aerospace companies are surging, tariffs have made a Chinese rival's parts more expensive, and the company is about to make the biggest machine-tool purchase in its 84-year history.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "来自航空航天公司的订单激增，关税使得中国竞争对手的零部件价格上涨，该公司即将进行其84年历史上最大规模的机床采购。",
+          "text_en": "Orders from aerospace companies are surging, tariffs have made a Chinese rival's parts more expensive, and the company is about to make the biggest machine-tool purchase in its 84-year history."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "Jergens生产各种工业五金产品，如夹具和快卸销，用于将从飞机面板到音乐会扬声器等各种部件固定到位。施龙告诉这位央行官员，他的客户最看重的因素已经发生了变化。质量仍然是进入大型航空航天公司的大门的基本要求。“过去，价格是下一个重要的考量因素，”他说。",
+      "text_en": "Jergens makes industrial hardware such as clamps and quick-release pins that lock everything from aircraft panels to concert speakers into position. What matters most to his customers has shifted, Schron told the central banker. Quality is still the minimum for getting in the door at the aerospace giants. \"The next threshold used to be price,\" he said.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "Jergens生产各种工业五金产品，如夹具和快卸销，用于将从飞机面板到音乐会扬声器等各种部件固定到位。",
+          "text_en": "Jergens makes industrial hardware such as clamps and quick-release pins that lock everything from aircraft panels to concert speakers into position."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "施龙告诉这位央行官员，他的客户最看重的因素已经发生了变化。",
+          "text_en": "What matters most to his customers has shifted, Schron told the central banker."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "质量仍然是进入大型航空航天公司的大门的基本要求。",
+          "text_en": "Quality is still the minimum for getting in the door at the aerospace giants."
+        },
+        {
+          "id": "p3.s4",
+          "text_cn": "“过去，价格是下一个重要的考量因素，”他说。",
+          "text_en": "\"The next threshold used to be price,\" he said."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "现在，速度才是关键。“没有人愿意再等待，”施龙说，他是该公司的总裁。买家愿意支付更高的价格，以在几周内获得产品，而不是几个月，这有助于提高Jergens的盈利能力。",
+      "text_en": "Now it is speed. \"No one wants to wait on anything anymore,\" said Schron, the company's president. Buyers will pay a premium to get products in weeks instead of months, and that has helped Jergens' bottom line.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "现在，速度才是关键。",
+          "text_en": "Now it is speed."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "“没有人愿意再等待，”施龙说，他是该公司的总裁。",
+          "text_en": "\"No one wants to wait on anything anymore,\" said Schron, the company's president."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "买家愿意支付更高的价格，以在几周内获得产品，而不是几个月，这有助于提高Jergens的盈利能力。",
+          "text_en": "Buyers will pay a premium to get products in weeks instead of months, and that has helped Jergens' bottom line."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这种定价能力让像哈马克这样的通胀控制者感到担忧。这表明需求超过了供应商的生产能力，而更高的利率本应抑制这种趋势。然而，在她的访问期间，利率问题并没有被提及，她的访问以参观繁忙的工厂车间结束。",
+      "text_en": "That kind of pricing power worries inflation fighters like Hammack. It suggests demand is outrunning what suppliers can make, a dynamic that higher interest rates are supposed to tamp down. Yet interest rates never came up during her visit, which ended with a tour of the busy factory floor.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "这种定价能力让像哈马克这样的通胀控制者感到担忧。",
+          "text_en": "That kind of pricing power worries inflation fighters like Hammack."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "这表明需求超过了供应商的生产能力，而更高的利率本应抑制这种趋势。",
+          "text_en": "It suggests demand is outrunning what suppliers can make, a dynamic that higher interest rates are supposed to tamp down."
+        },
+        {
+          "id": "p5.s3",
+          "text_cn": "然而，在她的访问期间，利率问题并没有被提及，她的访问以参观繁忙的工厂车间结束。",
+          "text_en": "Yet interest rates never came up during her visit, which ended with a tour of the busy factory floor."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "Jergens只是众多公司中的一家，但它的经历与哈马克所说的情况相符，即她从整个辖区听到的情况。“你们从杰克那里听到了。他正在购买昂贵的机器。他正在投资。他看到了大量的需求。增长是存在的，”哈马克在参观结束后的一次采访中说。",
+      "text_en": "Jergens is one company, but its experience fits what Hammack said she is hearing from across her district. \"You heard it from Jack. He's buying expensive machinery. He's investing. He sees a lot of demand. The growth is there,\" Hammack said in an interview after the tour.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "Jergens只是众多公司中的一家，但它的经历与哈马克所说的情况相符，即她从整个辖区听到的情况。",
+          "text_en": "Jergens is one company, but its experience fits what Hammack said she is hearing from across her district."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "“你们从杰克那里听到了。",
+          "text_en": "\"You heard it from Jack."
+        },
+        {
+          "id": "p6.s3",
+          "text_cn": "他正在购买昂贵的机器。",
+          "text_en": "He's buying expensive machinery."
+        },
+        {
+          "id": "p6.s4",
+          "text_cn": "他正在投资。",
+          "text_en": "He's investing."
+        },
+        {
+          "id": "p6.s5",
+          "text_cn": "他看到了大量的需求。",
+          "text_en": "He sees a lot of demand."
+        },
+        {
+          "id": "p6.s6",
+          "text_cn": "增长是存在的，”哈马克在参观结束后的一次采访中说。",
+          "text_en": "The growth is there,\" Hammack said in an interview after the tour."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这是她认为美联储需要进一步提高利率的一个重要原因。上个月，美联储将其基准利率提高到3.75%至4%的区间。哈马克表示，由于通胀已经超过美联储设定的2%目标五年多，她从低收入家庭那里了解到，他们不仅开始在杂货店购买更便宜的商品，而且还在选择支付哪些账单。",
+      "text_en": "It is a big reason she thinks the Fed, which raised its benchmark rate last month to a range of 3.75% to 4%, needs to go higher still. With inflation above the Fed's 2% target for more than five years, Hammack says she hears from lower-income households that are no longer just trading down at the grocery store but choosing which bills to pay.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "这是她认为美联储需要进一步提高利率的一个重要原因。上个月，美联储将其基准利率提高到3.75%至4%的区间。哈马克表示，由于通胀已经超过美联储设定的2%目标五年多，她从低收入家庭那里了解到，他们不仅开始在杂货店购买更便宜的商品，而且还在选择支付哪些账单。",
+          "text_en": "It is a big reason she thinks the Fed, which raised its benchmark rate last month to a range of 3.75% to 4%, needs to go higher still. With inflation above the Fed's 2% target for more than five years, Hammack says she hears from lower-income households that are no longer just trading down at the grocery store but choosing which bills to pay."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "上个月，她的许多同事认为通胀将在2029年恢复到目标水平。“我认为，这时间太长了，”她说。",
+      "text_en": "Most of her colleagues last month saw inflation returning to target in 2029. \"To me, that's far too long,\" she said.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "上个月，她的许多同事认为通胀将在2029年恢复到目标水平。",
+          "text_en": "Most of her colleagues last month saw inflation returning to target in 2029."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "“我认为，这时间太长了，”她说。",
+          "text_en": "\"To me, that's far too long,\" she said."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈马克在2024年加入美联储之前，曾在高盛工作了30多年，她一直是主张提高利率的最直言不讳的官员之一。“我成长于一个交易的世界，如果我49%的时间判断错误，那也是一个相当不错的结果，所以我并不害怕提出预测，”她说。",
+      "text_en": "Hammack, who spent more than 30 years at Goldman Sachs before joining the Fed in 2024, has been among the most outspoken officials in pushing for higher rates. \"I grew up in a world as a trader where if I was wrong 49% of the time, that was a pretty good day, so I'm not afraid of putting out a forecast,\" she said.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "哈马克在2024年加入美联储之前，曾在高盛工作了30多年，她一直是主张提高利率的最直言不讳的官员之一。",
+          "text_en": "Hammack, who spent more than 30 years at Goldman Sachs before joining the Fed in 2024, has been among the most outspoken officials in pushing for higher rates."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "“我成长于一个交易的世界，如果我49%的时间判断错误，那也是一个相当不错的结果，所以我并不害怕提出预测，”她说。",
+          "text_en": "\"I grew up in a world as a trader where if I was wrong 49% of the time, that was a pretty good day, so I'm not afraid of putting out a forecast,\" she said."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈马克很早就提出，利率可能并没有像美联储官员认为的那样有效地抑制经济，并且人工智能相关支出在工业和技术领域的激增，也让她的更多同事开始认同她的观点。",
+      "text_en": "Hammack was early to argue that rates might not be restraining the economy as much as Fed officials thought, and the boom in AI-related spending rippling through the industrial and technology sectors has since brought more of her colleagues around to that view.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "哈马克很早就提出，利率可能并没有像美联储官员认为的那样有效地抑制经济，并且人工智能相关支出在工业和技术领域的激增，也让她的更多同事开始认同她的观点。",
+          "text_en": "Hammack was early to argue that rates might not be restraining the economy as much as Fed officials thought, and the boom in AI-related spending rippling through the industrial and technology sectors has since brought more of her colleagues around to that view."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "现在的问题是，应该以多快的速度进行调整。美联储9月份会议的纪要显示，大多数官员认为，到年底再加息一次可能是合适的，而且有几位官员表示，他们认为美联储本月无需再次加息。",
+      "text_en": "The question now is how quickly to adjust. Minutes of the Fed's September meeting showed most officials thought another increase would likely be appropriate by year-end, and several have signaled they think the Fed doesn't need to raise rates again this month.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "现在的问题是，应该以多快的速度进行调整。",
+          "text_en": "The question now is how quickly to adjust."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "美联储9月份会议的纪要显示，大多数官员认为，到年底再加息一次可能是合适的，而且有几位官员表示，他们认为美联储本月无需再次加息。",
+          "text_en": "Minutes of the Fed's September meeting showed most officials thought another increase would likely be appropriate by year-end, and several have signaled they think the Fed doesn't need to raise rates again this month."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈马克的语气听起来没那么耐心。“相比于幅度较大的调整，更小、更频繁的调整是更好的选择”，哈马克说，部分原因是，大幅度的调整可能会给企业做好准备带来更大的困难。",
+      "text_en": "Hammack didn't sound as patient. \"Smaller, more frequent adjustments are preferable to larger\" ones, in part because making bigger moves can be harder for businesses to prepare for, said Hammack.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "哈马克的语气听起来没那么耐心。",
+          "text_en": "Hammack didn't sound as patient."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "“相比于幅度较大的调整，更小、更频繁的调整是更好的选择”，哈马克说，部分原因是，大幅度的调整可能会给企业做好准备带来更大的困难。",
+          "text_en": "\"Smaller, more frequent adjustments are preferable to larger\" ones, in part because making bigger moves can be harder for businesses to prepare for, said Hammack."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "7 月美联储维持利率不变时，她是三名投反对票的决策者之一，主张加息。",
+      "text_en": "In July, when the Fed held rates steady, she was one of three policymakers who dissented in favor of a rate increase.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "7 月美联储维持利率不变时，她是三名投反对票的决策者之一，主张加息。",
+          "text_en": "In July, when the Fed held rates steady, she was one of three policymakers who dissented in favor of a rate increase."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "官员们通常会评估他们对经济的抑制程度，并将其与一个无法直接观察到的“中性”利率进行比较，这个利率既不会刺激也不会抑制经济增长。哈马克表示，她的估算值是委员会中最高的，如果她的估算有误，那么这个值就太低了。",
+      "text_en": "Officials often gauge how much they are restraining the economy against some estimate of an unobservable \"neutral\" rate, the level that neither spurs nor slows growth. Hammack said her estimate is among the highest on the committee, and that if she is wrong, it is too low.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "官员们通常会评估他们对经济的抑制程度，并将其与一个无法直接观察到的“中性”利率进行比较，这个利率既不会刺激也不会抑制经济增长。",
+          "text_en": "Officials often gauge how much they are restraining the economy against some estimate of an unobservable \"neutral\" rate, the level that neither spurs nor slows growth."
+        },
+        {
+          "id": "p14.s2",
+          "text_cn": "哈马克表示，她的估算值是委员会中最高的，如果她的估算有误，那么这个值就太低了。",
+          "text_en": "Hammack said her estimate is among the highest on the committee, and that if she is wrong, it is too low."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "她说：“当你看到流入的资金量，当你看到创造的利润时，在我看来，这并不是一个受到抑制的经济。”",
+      "text_en": "\"When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint,\" she said.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "她说：“当你看到流入的资金量，当你看到创造的利润时，在我看来，这并不是一个受到抑制的经济。”",
+          "text_en": "\"When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint,\" she said."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "自夏季以来，长期国债收益率一直在上涨，这导致了整个经济体的借贷成本上升。哈马克表示，这使得金融状况更接近中性水平，但她否决了这样一种观点，即债券市场可以代替美联储完成其工作。“绝对不是”，她说，“这不是一种替代方案，而是一种补充。”",
+      "text_en": "Long-term Treasury yields have been on the march since the summer, raising borrowing costs across the economy. Hammack said that has moved financial conditions closer to neutral, but she rejected the suggestion that the bond market could do the Fed's work for it. \"Absolutely not,\" she said. \"It's not a substitute, it's a complement.\"",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "自夏季以来，长期国债收益率一直在上涨，这导致了整个经济体的借贷成本上升。哈马克表示，这使得金融状况更接近中性水平，但她否决了这样一种观点，即债券市场可以代替美联储完成其工作。“绝对不是”，她说，“这不是一种替代方案，而是一种补充。”",
+          "text_en": "Long-term Treasury yields have been on the march since the summer, raising borrowing costs across the economy. Hammack said that has moved financial conditions closer to neutral, but she rejected the suggestion that the bond market could do the Fed's work for it. \"Absolutely not,\" she said. \"It's not a substitute, it's a complement.\""
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在美联储之外，批评人士认为，提高利率并不是解决问题的正确方法。他们无法生产更多的石油，而且可能无法立即抑制科技巨头利用其现金和债券市场进行的人工智能支出。哈马克承认了这一点。“我不认为提高利率会显著抑制数据中心的需求”，她说。",
+      "text_en": "Outside the Fed, critics argue that higher rates are the wrong tool for the job. They can't produce more oil and may not immediately slow AI spending financed by tech giants' cash and the bond market. Hammack conceded the point. \"I do not think that raising rates is going to materially slow the data-center demand,\" she said.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "在美联储之外，批评人士认为，提高利率并不是解决问题的正确方法。",
+          "text_en": "Outside the Fed, critics argue that higher rates are the wrong tool for the job."
+        },
+        {
+          "id": "p17.s2",
+          "text_cn": "他们无法生产更多的石油，而且可能无法立即抑制科技巨头利用其现金和债券市场进行的人工智能支出。",
+          "text_en": "They can't produce more oil and may not immediately slow AI spending financed by tech giants' cash and the bond market."
+        },
+        {
+          "id": "p17.s3",
+          "text_cn": "哈马克承认了这一点。",
+          "text_en": "Hammack conceded the point."
+        },
+        {
+          "id": "p17.s4",
+          "text_cn": "“我不认为提高利率会显著抑制数据中心的需求”，她说。",
+          "text_en": "\"I do not think that raising rates is going to materially slow the data-center demand,\" she said."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈马克愿意明确表达自己的观点，这使她与美联储主席凯文·沃什有所不同。沃什曾表示，他希望美联储不要再发布关于其行动的信号，也不要再阐述其预测，因为他认为，这样做会使官员们陷入捍卫预测的境地，而不是根据经济的实际发展情况做出反应。",
+      "text_en": "Hammack's willingness to say where she stands sets her apart from Fed Chairman Kevin Warsh. Warsh has said he wants to move the Fed away from signaling its own moves or narrating its forecasts, which he has argued locks officials into defending a projection instead of responding to the economy as it unfolds.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "哈马克愿意明确表达自己的观点，这使她与美联储主席凯文·沃什有所不同。",
+          "text_en": "Hammack's willingness to say where she stands sets her apart from Fed Chairman Kevin Warsh."
+        },
+        {
+          "id": "p18.s2",
+          "text_cn": "沃什曾表示，他希望美联储不要再发布关于其行动的信号，也不要再阐述其预测，因为他认为，这样做会使官员们陷入捍卫预测的境地，而不是根据经济的实际发展情况做出反应。",
+          "text_en": "Warsh has said he wants to move the Fed away from signaling its own moves or narrating its forecasts, which he has argued locks officials into defending a projection instead of responding to the economy as it unfolds."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈马克说，减少沟通只会让企业和家庭自行猜测。她的工作是“尽可能多地向公众提供信息”，并“将他们视为成熟的成年人”。",
+      "text_en": "Saying less just leaves businesses and households to guess, Hammack said. Her job is to \"arm the public with as much information as possible\" and to \"treat them like mature grown-ups.\"",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "哈马克说，减少沟通只会让企业和家庭自行猜测。",
+          "text_en": "Saying less just leaves businesses and households to guess, Hammack said."
+        },
+        {
+          "id": "p19.s2",
+          "text_cn": "她的工作是“尽可能多地向公众提供信息”，并“将他们视为成熟的成年人”。",
+          "text_en": "Her job is to \"arm the public with as much information as possible\" and to \"treat them like mature grown-ups.\""
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p3",
+      "quote_cn": "“过去，价格是下一个重要的考量因素，”",
+      "quote_en": "“The next threshold used to be price,”",
+      "speaker_cn": "原文第 3 段直接引述",
+      "role_cn": "Source Block p3",
+      "speaker_en": "Direct Quote (p3)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p6",
+      "quote_cn": "“你们从杰克那里听到了。他正在购买昂贵的机器。他正在投资。他看到了大量的需求。增长是存在的，”",
+      "quote_en": "“You heard it from Jack. He's buying expensive machinery. He's investing. He sees a lot of demand. The growth is there,”",
+      "speaker_cn": "原文第 6 段直接引述",
+      "role_cn": "Source Block p6",
+      "speaker_en": "Direct Quote (p6)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p9",
+      "quote_cn": "“我成长于一个交易的世界，如果我49%的时间判断错误，那也是一个相当不错的结果，所以我并不害怕提出预测，”",
+      "quote_en": "“I grew up in a world as a trader where if I was wrong 49% of the time, that was a pretty good day, so I'm not afraid of putting out a forecast,”",
+      "speaker_cn": "原文第 9 段直接引述",
+      "role_cn": "Source Block p9",
+      "speaker_en": "Direct Quote (p9)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q4",
+      "source_block": "p12",
+      "quote_cn": "“相比于幅度较大的调整，更小、更频繁的调整是更好的选择”",
+      "quote_en": "“Smaller, more frequent adjustments are preferable to larger”",
+      "speaker_cn": "原文第 12 段直接引述",
+      "role_cn": "Source Block p12",
+      "speaker_en": "Direct Quote (p12)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q5",
+      "source_block": "p15",
+      "quote_cn": "“当你看到流入的资金量，当你看到创造的利润时，在我看来，这并不是一个受到抑制的经济。”",
+      "quote_en": "“When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint,”",
+      "speaker_cn": "原文第 15 段直接引述",
+      "role_cn": "Source Block p15",
+      "speaker_en": "Direct Quote (p15)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p7",
+      "value": "3.75%",
+      "value_cn": "3.75%",
+      "label_cn": "这是她认为美联储需要进一步提高利率的一个重要原因。上个月，美联储将其基准…",
+      "label_en": "It is a big reason she thinks the Fed, which raised its benc…",
+      "note_cn": "源自正文 [p7]",
+      "note_en": "From paragraph [p7]"
+    },
+    {
+      "id": "m2",
+      "source_block": "p9",
+      "value": "49%",
+      "value_cn": "49%",
+      "label_cn": "哈马克在2024年加入美联储之前，曾在高盛工作了30多年，她一直是主张提…",
+      "label_en": "Hammack, who spent more than 30 years at Goldman Sachs befor…",
+      "note_cn": "源自正文 [p9]",
+      "note_en": "From paragraph [p9]"
+    }
+  ],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Nick Timiraos",
+      "zh_suggested": "尼克·蒂米拉奥斯",
+      "note": "待查"
+    },
+    {
+      "en": "Beth Hammack",
+      "zh_suggested": "贝丝·哈马克",
+      "note": "克利夫兰联储主席"
+    },
+    {
+      "en": "Jack Schron",
+      "zh_suggested": "杰克·施龙",
+      "note": "待查"
+    },
+    {
+      "en": "Jergens",
+      "zh_suggested": "Jergens（工业五金制造商）",
+      "note": "待查"
+    },
+    {
+      "en": "Goldman Sachs",
+      "zh_suggested": "高盛"
+    },
+    {
+      "en": "Kevin Warsh",
+      "zh_suggested": "凯文·沃什",
+      "note": "美联储主席"
+    }
+  ]
+}

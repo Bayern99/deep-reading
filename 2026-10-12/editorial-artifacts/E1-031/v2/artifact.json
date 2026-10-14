@@ -1,0 +1,383 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-031",
+  "artifact_version": "v2",
+  "created_at": "2026-10-14T14:10:58Z",
+  "status": "verified",
+  "notes": "Queue task task-37e0747a (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+    "paragraph_count": 19,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 19329,
+    "completion_chars": 56817,
+    "input_tokens": 6411,
+    "output_tokens": 20953,
+    "total_tokens": 27364,
+    "latency_seconds": 148.279
+  },
+  "files": {
+    "raw_html": "E1-031/v2/raw.html",
+    "compiled_html": "E1-031/v2/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #eae3d5;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c8c0b0;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.12);\n    --crimson: #8f2424;\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --navy-line: #294057;\n    --gold-ink: #e2b877;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;\n    background-color: var(--paper);\n    color: var(--body);\n    line-height: 1.85;\n    overflow-x: hidden;\n  }\n\n  /* Sticky Top Masthead */\n  .wsj-masthead {\n    position: sticky;\n    top: 0;\n    z-index: 100;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line-strong);\n  }\n\n  .masthead-inner {\n    max-width: 1220px;\n    margin: 0 auto;\n    padding: 0.65rem 1.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-cluster {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n    flex-wrap: wrap;\n  }\n\n  .wsj-monogram {\n    font-family: 'Playfair Display', Georgia, serif;\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .masthead-divider {\n    width: 1px;\n    height: 16px;\n    background: var(--line-strong);\n  }\n\n  .section-pill {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 600;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    background: var(--accent-soft);\n    padding: 0.2rem 0.55rem;\n    border-radius: 2px;\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    align-items: center;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-radius: 3px;\n    padding: 2px;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.75rem;\n    font-weight: 600;\n    color: var(--muted);\n    padding: 0.28rem 0.68rem;\n    cursor: pointer;\n    border-radius: 2px;\n    transition: all 0.18s ease;\n  }\n\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  .reading-progress {\n    height: 2px;\n    background: transparent;\n    width: 100%;\n    overflow: hidden;\n  }\n\n  .reading-progress-bar {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s linear;\n  }\n\n  /* Hero Header */\n  .hero-header {\n    max-width: 1220px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 3px double var(--line-strong);\n  }\n\n  .hero-kicker-bar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n    padding-bottom: 0.75rem;\n    border-bottom: 1px solid var(--line);\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.76rem;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--muted);\n  }\n\n  .hero-kicker-left {\n    display: flex;\n    align-items: center;\n    gap: 0.65rem;\n    color: var(--accent);\n    font-weight: 700;\n  }\n\n  .hero-title {\n    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    font-weight: 800;\n    font-size: clamp(2.15rem, 4.4vw, 3.65rem);\n    line-height: 1.16;\n    color: var(--ink);\n    letter-spacing: -0.015em;\n    margin-bottom: 1.25rem;\n    max-width: 1020px;\n  }\n\n  .hero-dek {\n    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;\n    font-size: clamp(1.12rem, 1.9vw, 1.42rem);\n    line-height: 1.6;\n    color: var(--muted);\n    max-width: 860px;\n    margin-bottom: 2rem;\n    font-weight: 400;\n  }\n\n  .hero-meta-grid {\n    display: grid;\n    grid-template-columns: 1fr 1.25fr;\n    gap: 2rem;\n    align-items: stretch;\n    padding-top: 1.5rem;\n    border-top: 1px solid var(--line);\n  }\n\n  .byline-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .byline-authors {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.9rem;\n    font-weight: 600;\n    color: var(--ink);\n    letter-spacing: 0.01em;\n  }\n\n  .byline-date {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.76rem;\n    color: var(--muted);\n    margin-top: 0.25rem;\n  }\n\n  .key-telemetry-strip {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 0.75rem;\n    padding-top: 0.75rem;\n    border-top: 1px dashed var(--line-strong);\n  }\n\n  .telemetry-item {\n    background: var(--paper-card);\n    padding: 0.7rem 0.85rem;\n    border-left: 3px solid var(--accent);\n  }\n\n  .telemetry-num {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 1.25rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.2;\n  }\n\n  .telemetry-caption {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.72rem;\n    color: var(--muted);\n    margin-top: 0.2rem;\n    line-height: 1.35;\n  }\n\n  .dossier-brief-box {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.25rem 1.4rem;\n    position: relative;\n  }\n\n  .dossier-brief-tag {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.7rem;\n    font-weight: 700;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--accent);\n    margin-bottom: 0.55rem;\n    display: flex;\n    align-items: center;\n    gap: 0.45rem;\n  }\n\n  .dossier-brief-text {\n    font-family: 'Noto Sans SC', 'Inter', sans-serif;\n    font-size: 0.88rem;\n    line-height: 1.72;\n    color: var(--body);\n  }\n\n  /* Main Editorial Container & Asymmetric Rails */\n  .editorial-shell {\n    max-width: 1220px;\n    margin: 0 auto;\n    padding: 2.75rem 1.5rem 4.5rem;\n  }\n\n  .act-band {\n    display: grid;\n    grid-template-columns: minmax(0, 720px) minmax(280px, 380px);\n    justify-content: space-between;\n    gap: 3rem;\n    margin-bottom: 3.5rem;\n  }\n\n  .act-header-banner {\n    grid-column: 1 / -1;\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 1rem;\n    padding-bottom: 0.85rem;\n    margin-bottom: 0.5rem;\n    border-bottom: 2px solid var(--ink);\n  }\n\n  .act-index {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.78rem;\n    font-weight: 700;\n    letter-spacing: 0.12em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n\n  .act-title {\n    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    font-size: clamp(1.35rem, 2.2vw, 1.75rem);\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  .narrative-col {\n    min-width: 0;\n  }\n\n  .forensic-rail {\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n  }\n\n  /* Prose Styling (Strict Chinese & English Rules) */\n  .prose-p {\n    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;\n    font-size: 1.09rem;\n    line-height: 1.9;\n    color: var(--body);\n    margin-bottom: 1.45rem;\n  }\n\n  .prose-p.lead-p {\n    font-size: 1.2rem;\n    line-height: 1.85;\n    color: var(--ink);\n    border-left: 4px solid var(--accent);\n    padding-left: 1.15rem;\n    background: linear-gradient(90deg, rgba(184, 93, 25, 0.06) 0%, rgba(184, 93, 25, 0) 100%);\n    padding-top: 0.35rem;\n    padding-bottom: 0.35rem;\n  }\n\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);\n    color: inherit;\n    padding: 0 0.12em;\n    font-weight: 600;\n  }\n\n  /* Split Sentence Callout Box */\n  .pivot-admission-box {\n    margin: 1.75rem 0;\n    padding: 1.45rem 1.65rem;\n    background: var(--paper-card);\n    border-left: 4px solid var(--crimson);\n    border-top: 1px solid var(--line-strong);\n    border-right: 1px solid var(--line-strong);\n    border-bottom: 1px solid var(--line-strong);\n  }\n\n  .pivot-admission-kicker {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 700;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--crimson);\n    margin-bottom: 0.55rem;\n  }\n\n  .pivot-admission-text {\n    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    font-size: 1.18rem;\n    font-weight: 700;\n    line-height: 1.68;\n    color: var(--ink);\n  }\n\n  /* Forensic Sidebar Cards */\n  .rail-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.35rem;\n  }\n\n  .rail-card-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding-bottom: 0.65rem;\n    margin-bottom: 1rem;\n    border-bottom: 1px solid var(--line-strong);\n  }\n\n  .rail-card-title {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.74rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n  }\n\n  .rail-badge {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 0.68rem;\n    padding: 0.15rem 0.45rem;\n    background: var(--ink);\n    color: var(--paper);\n    font-weight: 600;\n  }\n\n  .roster-list {\n    display: flex;\n    flex-direction: column;\n    gap: 0.95rem;\n  }\n\n  .roster-entry {\n    padding-bottom: 0.95rem;\n    border-bottom: 1px dashed var(--line-strong);\n  }\n\n  .roster-entry:last-child {\n    padding-bottom: 0;\n    border-bottom: none;\n  }\n\n  .roster-top {\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 0.5rem;\n    margin-bottom: 0.25rem;\n  }\n\n  .roster-name {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-weight: 700;\n    font-size: 0.92rem;\n    color: var(--ink);\n  }\n\n  .roster-status {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.68rem;\n    font-weight: 700;\n    padding: 0.12rem 0.42rem;\n    border-radius: 2px;\n  }\n\n  .status-quit {\n    background: rgba(143, 36, 36, 0.13);\n    color: var(--crimson);\n  }\n\n  .status-sidelined {\n    background: rgba(184, 93, 25, 0.15);\n    color: var(--accent);\n  }\n\n  .status-active {\n    background: rgba(15, 29, 43, 0.12);\n    color: var(--navy-bg);\n  }\n\n  .roster-role {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.78rem;\n    color: var(--muted);\n    line-height: 1.5;\n  }\n\n  /* Full-Bleed Architectural SVG Canvas */\n  .architectural-plate {\n    margin: 1rem 0 3.75rem;\n    background: var(--navy-bg);\n    color: #f4f1ea;\n    border: 1px solid var(--navy-line);\n    padding: 2rem;\n    border-radius: 2px;\n  }\n\n  .plate-header {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 1rem;\n    padding-bottom: 1.25rem;\n    margin-bottom: 1.5rem;\n    border-bottom: 1px solid var(--navy-line);\n  }\n\n  .plate-eyebrow {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.73rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--gold-ink);\n    margin-bottom: 0.35rem;\n  }\n\n  .plate-title {\n    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    font-size: clamp(1.3rem, 2.2vw, 1.7rem);\n    font-weight: 700;\n    color: #ffffff;\n  }\n\n  .plate-sub {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.84rem;\n    color: #b0becd;\n    max-width: 680px;\n    margin-top: 0.35rem;\n    line-height: 1.55;\n  }\n\n  .svg-wrapper {\n    width: 100%;\n    overflow: hidden;\n    background: var(--navy-card);\n    border: 1px solid var(--navy-line);\n    padding: 0.75rem;\n  }\n\n  .svg-wrapper svg {\n    display: block;\n    width: 100%;\n    height: auto;\n  }\n\n  .plate-footnote {\n    margin-top: 1rem;\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    color: #8fa3b8;\n  }\n\n  /* Interactive Dossier Filter Tabs in Act III */\n  .friction-explorer {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.35rem;\n  }\n\n  .friction-tabs {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 0.4rem;\n    margin-bottom: 1rem;\n  }\n\n  .friction-tab {\n    border: 1px solid var(--line-strong);\n    background: var(--paper);\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.71rem;\n    font-weight: 600;\n    padding: 0.48rem 0.35rem;\n    cursor: pointer;\n    color: var(--muted);\n    text-align: center;\n    transition: all 0.16s ease;\n  }\n\n  .friction-tab.active {\n    background: var(--ink);\n    color: var(--paper);\n    border-color: var(--ink);\n  }\n\n  .friction-panel {\n    display: none;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.83rem;\n    line-height: 1.65;\n    color: var(--body);\n    background: var(--paper);\n    padding: 1rem;\n    border-left: 3px solid var(--accent);\n  }\n\n  .friction-panel.active {\n    display: block;\n  }\n\n  .friction-panel-title {\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.35rem;\n    font-size: 0.9rem;\n  }\n\n  /* Climactic Final Verdict Box */\n  .climactic-verdict {\n    margin-top: 1.75rem;\n    background: var(--navy-bg);\n    color: #f7f4ed;\n    padding: 1.75rem 1.85rem;\n    border-left: 5px solid var(--gold-ink);\n  }\n\n  .climactic-verdict-label {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--gold-ink);\n    margin-bottom: 0.65rem;\n  }\n\n  .climactic-verdict-quote {\n    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;\n    font-size: 1.12rem;\n    line-height: 1.82;\n    color: #ffffff;\n  }\n\n  /* Editorial Footer */\n  .wsj-footer {\n    border-top: 2px solid var(--ink);\n    max-width: 1220px;\n    margin: 0 auto;\n    padding: 2rem 1.5rem 3.5rem;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 1rem;\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.75rem;\n    color: var(--muted);\n  }\n\n  @media (max-width: 960px) {\n    .hero-meta-grid {\n      grid-template-columns: 1fr;\n    }\n    .act-band {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n  }\n\n  @media (max-width: 560px) {\n    .masthead-inner {\n      padding: 0.55rem 1rem;\n    }\n    .hero-header {\n      padding: 2rem 1rem 1.75rem;\n    }\n    .editorial-shell {\n      padding: 1.75rem 1rem 3rem;\n    }\n    .key-telemetry-strip {\n      grid-template-columns: 1fr;\n    }\n    .architectural-plate {\n      padding: 1.15rem 0.9rem;\n    }\n    .climactic-verdict {\n      padding: 1.25rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><header class=\"wsj-masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <span class=\"wsj-monogram\">The Wall Street Journal</span>\n      <span class=\"masthead-divider\"></span>\n      <span class=\"section-pill\">\n        <span class=\"lang-cn\">美国新闻 · 司法深读 · A6版</span>\n        <span class=\"lang-en\">U.S. News · DOJ Inquiry · Page A6</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n  <div class=\"reading-progress\">\n    <div class=\"reading-progress-bar\" id=\"progressBar\"></div>\n  </div>\n</header>\n\n\n<section class=\"hero-header\">\n  <div class=\"hero-kicker-bar\">\n    <div class=\"hero-kicker-left\">\n      <span>DOJ GRAND-CONSPIRACY PROBE</span>\n      <span>•</span>\n      <span class=\"lang-cn\">华盛顿与迈阿密双线追踪</span>\n      <span class=\"lang-en\">Washington &amp; South Florida Dossier</span>\n    </div>\n    <div>\n      <span class=\"lang-cn\">档案编号 E1-031 · 2026年10月12日</span>\n      <span class=\"lang-en\">FILE E1-031 · OCTOBER 12, 2026</span>\n    </div>\n  </div>\n\n  <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">针对特朗普的政治对手的调查进展受阻。</span><span class=\"lang-en\">Probe of Trump Foes Falters</span></h1>\n  <p class=\"hero-dek\" data-ref=\"dek\"><span class=\"lang-cn\">人员离职、内部纷争、缺乏经验等问题困扰着美国司法部对所谓阴谋案的调查。</span><span class=\"lang-en\">Departures, infighting, inexperience beset DOJ inquiry into alleged conspiracy</span></p>\n\n  <div class=\"hero-meta-grid\">\n    <div class=\"byline-block\">\n      <div>\n        <div class=\"byline-authors\">\n          <span class=\"lang-cn\">作者：Sadie Gurman / Dave Michaels / Josh Dawsey</span>\n          <span class=\"lang-en\">By Sadie Gurman, Dave Michaels and Josh Dawsey</span>\n        </div>\n        <div class=\"byline-date\">\n          <span class=\"lang-cn\">发布于 2026年10月12日 · 华盛顿</span>\n          <span class=\"lang-en\">Published October 12, 2026 · Washington</span>\n        </div>\n      </div>\n\n      <div class=\"key-telemetry-strip\">\n        <div class=\"telemetry-item\">\n          <div class=\"telemetry-num\">81<span style=\"font-size:0.8rem;font-weight:500;\"> yrs</span></div>\n          <div class=\"telemetry-caption\">\n            <span class=\"lang-cn\">里根时代检察官迪杰诺瓦出山后未起诉一人即辞职</span>\n            <span class=\"lang-en\">Reagan-era prosecutor Joe diGenova quit with 0 charges brought</span>\n          </div>\n        </div>\n        <div class=\"telemetry-item\">\n          <div class=\"telemetry-num\">3</div>\n          <div class=\"telemetry-caption\">\n            <span class=\"lang-cn\">重叠督导负责人先后离职或由华盛顿直接接管</span>\n            <span class=\"lang-en\">Overlapping supervisors quit or bypassed by Washington DAG oversight</span>\n          </div>\n        </div>\n        <div class=\"telemetry-item\">\n          <div class=\"telemetry-num\">~12</div>\n          <div class=\"telemetry-caption\">\n            <span class=\"lang-cn\">名检察官仍在分头推进相关调查，放弃单一巨型阴谋案</span>\n            <span class=\"lang-en\">Prosecutors pursuing separate inquiries after grand-conspiracy theory stalls</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <aside class=\"dossier-brief-box\">\n      <div class=\"dossier-brief-tag\">\n        <span class=\"lang-cn\">记者背景简报 · REPORTER'S BRIEFING</span>\n        <span class=\"lang-en\">REPORTER'S CONTEXT BRIEFING</span>\n      </div>\n      <p class=\"dossier-brief-text\" data-ref=\"ctx1\"><span class=\"lang-cn\">背景：该调查是特朗普第二任期司法部主导的所谓“大阴谋”调查，目标是过去十年中调查过特朗普的国家安全官员，包括前CIA局长约翰·布伦南、前FBI局长詹姆斯·科米，以及参与2022年搜查马阿拉戈的官员。调查由81岁的里根时代检察官乔·迪杰诺瓦挂帅，但他上个月辞职，称司法部高层施压要求过早起诉。司法部一度试图把2016年情报界评估、FBI通俄调查和特别检察官杰克·史密斯的起诉串成一个在南佛罗里达审理的大阴谋案，但官员私下承认此路行不通。目前约十几名检察官仍在推进一系列相关调查，可能在未来几周内提出指控。</span><span class=\"lang-en\">背景：该调查是特朗普第二任期司法部主导的所谓“大阴谋”调查，目标是过去十年中调查过特朗普的国家安全官员，包括前CIA局长约翰·布伦南、前FBI局长詹姆斯·科米，以及参与2022年搜查马阿拉戈的官员。调查由81岁的里根时代检察官乔·迪杰诺瓦挂帅，但他上个月辞职，称司法部高层施压要求过早起诉。司法部一度试图把2016年情报界评估、FBI通俄调查和特别检察官杰克·史密斯的起诉串成一个在南佛罗里达审理的大阴谋案，但官员私下承认此路行不通。目前约十几名检察官仍在推进一系列相关调查，可能在未来几周内提出指控。</span></p>\n    </aside>\n  </div>\n</section>\n\n\n<main class=\"editorial-shell\">\n\n  <!-- ACT I: p1 .. p7 -->\n  <section class=\"act-band\" id=\"act-1\">\n    <div class=\"act-header-banner\">\n      <span class=\"act-index\">\n        <span class=\"lang-cn\">第一幕 · 宏大承诺与高层接连挂冠</span>\n        <span class=\"lang-en\">ACT I · THE GRAND PREMISE &amp; SUPERVISORY EXODUS</span>\n      </span>\n      <h2 class=\"act-title\">\n        <span class=\"lang-cn\">从“揭露国安阴谋集团”到无人被起诉的辞职潮</span>\n        <span class=\"lang-en\">From Unraveling a Cabal to High-Profile Resignations</span>\n      </h2>\n    </div>\n\n    <div class=\"narrative-col\">\n      <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"阴谋集团 | grand conspiracy\"><span class=\"lang-cn\">去年，司法部官员表示，一项调查将揭露一个由多名国家安全官员组成的<mark class=\"ed-hl\">阴谋集团</mark>，他们试图破坏特朗普总统的执政。</span><span class=\"lang-en\">Last year, Justice Department officials said an investigation would unravel a <mark class=\"ed-hl\">grand conspiracy</mark> by a cabal of national security officials who sought to undermine President Trump.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\"><span class=\"lang-cn\">特朗普的支持者希望这项调查能够证实他们多年来一直提出的说法：过去十年中，负责调查特朗普总统的官员实际上进行了一场有组织的行动，以侵犯他的公民权利。</span><span class=\"lang-en\">Trump allies hoped it would confirm what they have been alleging for years: Officials who investigated the president over the past decade engaged in what was essentially a coordinated effort to violate his civil rights.</span></p>\n      <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"81岁的里根时代检察官乔·迪杰诺瓦 | 过早地提起刑事诉讼 | 81-year-old Reagan-era prosecutor | Joe diGenova\"><span class=\"lang-cn\">然而，这项调查却面临着人员离职、内部矛盾和缺乏经验等问题。<mark class=\"ed-hl\">81岁的里根时代检察官乔·迪杰诺瓦</mark>被说服从退休状态回归，负责领导这项工作，但他上个月辞职，称司法部高层正在向调查团队施压，要求他们<mark class=\"ed-hl\">过早地提起刑事诉讼</mark>。他没有对任何人提出指控。相关官员否认了向他施压的说法。</span><span class=\"lang-en\">Instead, the probe has been beset by departures, infighting and inexperience. The <mark class=\"ed-hl\">81-year-old Reagan-era prosecutor</mark> coaxed out of retirement to lead the effort, <mark class=\"ed-hl\">Joe diGenova</mark>, quit last month, saying top department officials were pressuring the team to bring criminal cases before they were ready. He hadn't charged anyone. Officials denied pressuring him.</span></p>\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"库尔特·奥尔森 | 测谎测试中未能通过 | Kurt Olsen | failing government polygraph tests\"><span class=\"lang-cn\">迪杰诺瓦是这项调查中多位负责人的其中之一，他们各自有着不同的利益和任务，这进一步加剧了这项工作的混乱局面。上个月，另一位高级顾问<mark class=\"ed-hl\">库尔特·奥尔森</mark>，他此前从白宫加入调查，也辞去了调查工作，知情人士透露。他最近在政府的<mark class=\"ed-hl\">测谎测试中未能通过</mark>，导致他失去了安全许可，该测试旨在评估他与外国的联系。奥尔森表示，安全许可问题并非他离职的原因，但他拒绝进一步说明。</span><span class=\"lang-en\">DiGenova was one of several overlapping supervisors of the probe, with different interests and marching orders, adding to the chaotic nature of the effort. Last month, another senior counsel, <mark class=\"ed-hl\">Kurt Olsen</mark>, who had joined the probe from the White House, resigned from the inquiry, people familiar with the matter said. He had recently lost a security clearance after <mark class=\"ed-hl\">failing government polygraph tests</mark> about his foreign contacts. Olsen said the security clearance issue wasn't a factor in his departure but declined to elaborate.</span></p>\n      <p class=\"prose-p\" data-ref=\"p5\"><span class=\"lang-cn\">特朗普对调查进展缓慢感到沮丧，并向他的盟友抱怨了这一点，一位知情人士透露。</span><span class=\"lang-en\">Trump is frustrated by the lack of progress and has complained about it to allies, a person familiar with the conversations said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p6.s1\" data-hl=\"十几名检察官 | roughly a dozen prosecutors\"><span class=\"lang-cn\">一些司法部官员表示，调查正在顺利进行，大约有<mark class=\"ed-hl\">十几名检察官</mark>继续推进一系列相关的调查，这些调查可能会在未来几周内导致起诉。</span><span class=\"lang-en\">A number of the Justice Department officials said the case is proceeding apace, with <mark class=\"ed-hl\">roughly a dozen prosecutors</mark> continuing to pursue a set of related investigations that could result in charges in coming weeks.</span></p>\n\n      <div class=\"pivot-admission-box\">\n        <div class=\"pivot-admission-kicker\">\n          <span class=\"lang-cn\">关键转折 · 司法部官员私下承认</span>\n          <span class=\"lang-en\">PRIVATE ADMISSION · THE SOUTH FLORIDA BOTTLE-NECK</span>\n        </div>\n        <p class=\"pivot-admission-text\" data-ref=\"p6.s2\"><span class=\"lang-cn\">但他们私下承认，将所有这些看似无关的线索整合到一个大型的阴谋案件中，就像他们最初试图做的那样，在南佛罗里达州进行，这并不是一个切实可行的方案。</span><span class=\"lang-en\">But they privately acknowledge the idea of tying all those loose threads together in one big conspiracy case in South Florida, as they had initially attempted, isn't a practical approach.</span></p>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"托德·布兰奇 | Todd Blanche\"><span class=\"lang-cn\">一位官员表示，领导层仍然对继续参与调查的人员充满信心，并最近聘用了两位前检察官。一位白宫发言人表示，特朗普对司法部长<mark class=\"ed-hl\">托德·布兰奇</mark>能够让相关人员承担责任充满信心。</span><span class=\"lang-en\">One of the officials said leadership is still confident in the people who continue to work on the inquiry, and recently brought on two former prosecutors. A White House spokeswoman said Trump has full confidence in Attorney General <mark class=\"ed-hl\">Todd Blanche</mark> to hold people accountable.</span></p>\n    </div>\n\n    <aside class=\"forensic-rail\">\n      <div class=\"rail-card\">\n        <div class=\"rail-card-header\">\n          <span class=\"rail-card-title\">\n            <span class=\"lang-cn\">督导层与核心人员去向档案</span>\n            <span class=\"lang-en\">SUPERVISORY &amp; TEAM LEDGER</span>\n          </span>\n          <span class=\"rail-badge\">DOJ / FBI</span>\n        </div>\n        <div class=\"roster-list\">\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Joe diGenova (81)</span>\n              <span class=\"roster-status status-quit\">\n                <span class=\"lang-cn\">上月辞职</span>\n                <span class=\"lang-en\">QUIT</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">里根时代检察官，被说服复出挂帅；称高层施压过早提起刑事诉讼，未起诉一人即离职。</span>\n              <span class=\"lang-en\">Reagan-era prosecutor coaxed out of retirement; quit citing pressure to bring cases prematurely. Zero charges filed.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Kurt Olsen</span>\n              <span class=\"roster-status status-quit\">\n                <span class=\"lang-cn\">上月辞职</span>\n                <span class=\"lang-en\">RESIGNED</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">前白宫成员、调查高级顾问；因未能通过涉外国联系的政府测谎测试而失去安全许可（本人称非离职原因）。</span>\n              <span class=\"lang-en\">Senior counsel from White House; resigned after losing security clearance following failed polygraph on foreign contacts.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Jason Reding Quiñones</span>\n              <span class=\"roster-status status-sidelined\">\n                <span class=\"lang-cn\">华盛顿接管督导</span>\n                <span class=\"lang-en\">BYPASSED</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">迈阿密联邦检察官（第三位负责人）；一线检察官抱怨其毫无指导，目前副司法部长办公室直接从华盛顿监督调查。</span>\n              <span class=\"lang-en\">Miami U.S. attorney; prosecutors complained of zero guidance. DAG's office in Washington took direct oversight.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Maria Medetis Long</span>\n              <span class=\"roster-status status-quit\">\n                <span class=\"lang-cn\">4月被撤职</span>\n                <span class=\"lang-en\">REMOVED</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">资深国家安全检察官；告知高层未找到起诉前CIA局长布伦南的依据后，于4月被撤离调查组。</span>\n              <span class=\"lang-en\">Veteran national-security prosecutor; removed in April after finding no basis to indict former CIA Director Brennan.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Todd Blanche</span>\n              <span class=\"roster-status status-active\">\n                <span class=\"lang-cn\">现任司法部长</span>\n                <span class=\"lang-en\">AG IN CHARGE</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">白宫发言人表示特朗普对其问责能力充满信心；约十几名检察官仍在继续相关调查。</span>\n              <span class=\"lang-en\">Attorney General; White House says Trump retains full confidence as ~12 prosecutors pursue related inquiries.</span>\n            </p>\n          </div>\n        </div>\n      </div>\n    </aside>\n  </section>\n\n  <!-- BESPOKE ARCHITECTURAL SVG DIAGRAM -->\n  <section class=\"architectural-plate\" aria-label=\"Grand Conspiracy Investigation Architecture\">\n    <div class=\"plate-header\">\n      <div>\n        <div class=\"plate-eyebrow\">\n          <span class=\"lang-cn\">司法取证图谱 · FORENSIC ARCHITECTURE</span>\n          <span class=\"lang-en\">FORENSIC CASE ARCHITECTURE · SOUTH FLORIDA TO WASHINGTON</span>\n        </div>\n        <h3 class=\"plate-title\">\n          <span class=\"lang-cn\">“大型阴谋调查”如何试图串联十年旧案——又为何在实操中受阻</span>\n          <span class=\"lang-en\">How the “Grand-Conspiracy Probe” Tried to Fuse a Decade of Episodes—and Where It Fractured</span>\n        </h3>\n        <p class=\"plate-sub\">\n          <span class=\"lang-cn\">调查人员最初试图将跨越2016至2024年的三组独立历史事件，在南佛罗里达州整合为单一大型阴谋案；但指挥链重叠、证据断层与程序失误迫使华盛顿直接接管并拆解办案路径。</span>\n          <span class=\"lang-en\">Investigators initially sought to tie three distinct historical episodes (2016–2024) into one overarching South Florida conspiracy case, before supervisory chaos and evidentiary bottlenecks forced a structural retreat.</span>\n        </p>\n      </div>\n    </div>\n\n    <div class=\"svg-wrapper\">\n      <svg viewbox=\"0 0 1080 430\" width=\"100%\" role=\"img\" aria-label=\"Diagram of DOJ Grand Conspiracy Inquiry\" viewBox=\"0 0 1141 430\" data-repaired-viewbox=\"0 0 1080 430\">\n        <defs>\n          <marker id=\"arrowGold\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n            <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#e2b877\"></path>\n          </marker>\n          <marker id=\"arrowRed\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n            <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#e06c6c\"></path>\n          </marker>\n        </defs>\n\n        <!-- Background Grid Lines -->\n        <line x1=\"40\" y1=\"65\" x2=\"1040\" y2=\"65\" stroke=\"#294057\" stroke-dasharray=\"3 3\"></line>\n        <line x1=\"40\" y1=\"365\" x2=\"1040\" y2=\"365\" stroke=\"#294057\" stroke-dasharray=\"3 3\"></line>\n\n        <!-- Column Headers -->\n        <text x=\"50\" y=\"48\" fill=\"#e2b877\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"12\" font-weight=\"700\" letter-spacing=\"1\">\n          <tspan class=\"lang-cn\">01. 试图串联的三大历史事件 (2016–2024)</tspan>\n          <tspan class=\"lang-en\">01. PAST EPISODES TARGETED (2016–2024)</tspan>\n        </text>\n        <text x=\"415\" y=\"48\" fill=\"#e2b877\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"12\" font-weight=\"700\" letter-spacing=\"1\">\n          <tspan class=\"lang-cn\">02. 原定构想：南佛罗里达“大阴谋案”</tspan>\n          <tspan class=\"lang-en\">02. INITIAL THEORY: SOUTH FLORIDA HUB</tspan>\n        </text>\n        <text x=\"755\" y=\"48\" fill=\"#e2b877\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"12\" font-weight=\"700\" letter-spacing=\"1\">\n          <tspan class=\"lang-cn\">03. 现实受阻与案件分流结果</tspan>\n          <tspan class=\"lang-en\">03. OPERATIONAL FRACTURE &amp; FALLOUT</tspan>\n        </text>\n\n        <!-- Left Column: 3 Episodes -->\n        <rect x=\"45\" y=\"82\" width=\"290\" height=\"78\" rx=\"3\" fill=\"#1d334a\" stroke=\"#3d5a78\"></rect>\n        <text x=\"60\" y=\"106\" fill=\"#e2b877\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">EPISODE A · 2016–2023</text>\n        <text x=\"60\" y=\"127\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"13\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">2016情报评估与布伦南国会证词</tspan>\n          <tspan class=\"lang-en\">2016 Russia Assessment &amp; Brennan</tspan>\n        </text>\n        <text x=\"60\" y=\"147\" fill=\"#b0becd\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">前CIA局长2017/2023年证词及随后FBI通俄调查</tspan>\n          <tspan class=\"lang-en\">2017/2023 testimony &amp; subsequent FBI inquiry</tspan>\n        </text>\n\n        <rect x=\"45\" y=\"178\" width=\"290\" height=\"78\" rx=\"3\" fill=\"#1d334a\" stroke=\"#3d5a78\"></rect>\n        <text x=\"60\" y=\"202\" fill=\"#e2b877\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">EPISODE B · AUG 2022</text>\n        <text x=\"60\" y=\"223\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"13\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">2022年8月马阿拉戈庄园搜查行动</tspan>\n          <tspan class=\"lang-en\">Aug. 2022 Mar-a-Lago Search</tspan>\n        </text>\n        <text x=\"60\" y=\"243\" fill=\"#b0becd\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">试图证明法院授权的搜查本身违法并属跨州阴谋</tspan>\n          <tspan class=\"lang-en\">Effort to prove court-authorized search unlawful</tspan>\n        </text>\n\n        <rect x=\"45\" y=\"274\" width=\"290\" height=\"78\" rx=\"3\" fill=\"#1d334a\" stroke=\"#3d5a78\"></rect>\n        <text x=\"60\" y=\"298\" fill=\"#e2b877\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">EPISODE C · 2023–2024</text>\n        <text x=\"60\" y=\"319\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"13\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">特别检察官杰克·史密斯刑事起诉及科米</tspan>\n          <tspan class=\"lang-en\">Jack Smith Cases &amp; James Comey</tspan>\n        </text>\n        <text x=\"60\" y=\"339\" fill=\"#b0becd\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">源于2020大选的起诉；科米另涉贝壳照片案</tspan>\n          <tspan class=\"lang-en\">2023–24 Smith prosecutions &amp; Comey targets</tspan>\n        </text>\n\n        <!-- Connectors Left to Center -->\n        <path d=\"M 335 121 L 405 185\" stroke=\"#e2b877\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowGold)\"></path>\n        <path d=\"M 335 217 L 405 217\" stroke=\"#e2b877\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowGold)\"></path>\n        <path d=\"M 335 313 L 405 248\" stroke=\"#e2b877\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowGold)\"></path>\n\n        <!-- Center Hub: Grand Conspiracy Theory -->\n        <rect x=\"415\" y=\"96\" width=\"265\" height=\"242\" rx=\"4\" fill=\"#132232\" stroke=\"#e2b877\" stroke-width=\"1.8\" stroke-dasharray=\"5 3\"></rect>\n        <text x=\"433\" y=\"124\" fill=\"#e2b877\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">SOUTH FLORIDA VENUE</text>\n        <text x=\"433\" y=\"148\" fill=\"#ffffff\" font-family=\"Noto Serif SC, Playfair Display, serif\" font-size=\"15\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">南佛罗里达“单一巨型阴谋案”</tspan>\n          <tspan class=\"lang-en\">One Big Conspiracy Case</tspan>\n        </text>\n        <line x1=\"433\" y1=\"162\" x2=\"660\" y2=\"162\" stroke=\"#294057\"></line>\n        <text x=\"433\" y=\"185\" fill=\"#f0d290\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11.5\">\n          <tspan class=\"lang-cn\">• 两位联邦检察官先后婉拒，基尼奥内斯接手</tspan>\n          <tspan class=\"lang-en\">• Passed on by 2 U.S. attorneys before Quiñones</tspan>\n        </text>\n        <text x=\"433\" y=\"210\" fill=\"#f0d290\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11.5\">\n          <tspan class=\"lang-cn\">• 多头督导（迪杰诺瓦 / 奥尔森 / 基尼奥内斯）</tspan>\n          <tspan class=\"lang-en\">• Overlapping supervisors &amp; conflicting orders</tspan>\n        </text>\n        <text x=\"433\" y=\"235\" fill=\"#f0d290\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11.5\">\n          <tspan class=\"lang-cn\">• 临时聘用无联邦经验人员，紧急培训大陪审团流程</tspan>\n          <tspan class=\"lang-en\">• Temp hires given grand-jury crash course</tspan>\n        </text>\n        <rect x=\"433\" y=\"258\" width=\"228\" height=\"62\" rx=\"3\" fill=\"#3a1d22\" stroke=\"#e06c6c\"></rect>\n        <text x=\"445\" y=\"280\" fill=\"#ff9e9e\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"11\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">内部评估：此路不通</tspan>\n          <tspan class=\"lang-en\">INTERNAL VERDICT: IMPRACTICAL</tspan>\n        </text>\n        <text x=\"445\" y=\"302\" fill=\"#f4f1ea\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">私下承认难以捆绑成单一阴谋案</tspan>\n          <tspan class=\"lang-en\">Tying loose threads deemed impractical</tspan>\n        </text>\n\n        <!-- Connectors Center to Right -->\n        <path d=\"M 680 155 L 745 121\" stroke=\"#e06c6c\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowRed)\"></path>\n        <path d=\"M 680 217 L 745 217\" stroke=\"#e06c6c\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowRed)\"></path>\n        <path d=\"M 680 280 L 745 313\" stroke=\"#e2b877\" stroke-width=\"1.6\" fill=\"none\" marker-end=\"url(#arrowGold)\"></path>\n\n        <!-- Right Column: 3 Fallout Realities -->\n        <rect x=\"755\" y=\"82\" width=\"285\" height=\"78\" rx=\"3\" fill=\"#2b1d24\" stroke=\"#e06c6c\"></rect>\n        <text x=\"770\" y=\"105\" fill=\"#ff9e9e\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">EVIDENTIARY PUSHBACK</text>\n        <text x=\"770\" y=\"126\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">提出异议的资深检察官与特工被调离</tspan>\n          <tspan class=\"lang-en\">Skeptical Prosecutor &amp; Agent Removed</tspan>\n        </text>\n        <text x=\"770\" y=\"146\" fill=\"#d8c4c4\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">朗因无依据起诉布伦南被撤；帕特尔调离质疑特工</tspan>\n          <tspan class=\"lang-en\">Long removed in April; Kash Patel moves FBI agent</tspan>\n        </text>\n\n        <rect x=\"755\" y=\"178\" width=\"285\" height=\"78\" rx=\"3\" fill=\"#2b1d24\" stroke=\"#e06c6c\"></rect>\n        <text x=\"770\" y=\"201\" fill=\"#ff9e9e\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">PROCEDURAL MISFIRE</text>\n        <text x=\"770\" y=\"222\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">跳过FBI问询直接传唤证人后被迫撤回</tspan>\n          <tspan class=\"lang-en\">Grand-Jury Subpoenas Withdrawn</tspan>\n        </text>\n        <text x=\"770\" y=\"242\" fill=\"#d8c4c4\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">事后才意识到证人需与大陪审团讨论机密信息</tspan>\n          <tspan class=\"lang-en\">Withdrawn after realizing testimony involved classified info</tspan>\n        </text>\n\n        <rect x=\"755\" y=\"274\" width=\"285\" height=\"78\" rx=\"3\" fill=\"#1d334a\" stroke=\"#e2b877\"></rect>\n        <text x=\"770\" y=\"297\" fill=\"#e2b877\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">CURRENT STATUS · WASHINGTON</text>\n        <text x=\"770\" y=\"318\" fill=\"#ffffff\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">副部长办公室直接接管，分拆推进子案</tspan>\n          <tspan class=\"lang-en\">DAG Direct Oversight &amp; Separate Cases</tspan>\n        </text>\n        <text x=\"770\" y=\"338\" fill=\"#b0becd\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"11\">\n          <tspan class=\"lang-cn\">约12名检察官加新聘2名前检察官继续推进相关指控</tspan>\n          <tspan class=\"lang-en\">~12 prosecutors + 2 new hires pursue separate charges</tspan>\n        </text>\n\n        <!-- Bottom Timeline Bar -->\n        <text x=\"50\" y=\"398\" fill=\"#8fa3b8\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"11\">\n          <tspan class=\"lang-cn\">注：詹姆斯·科米另因发布贝壳照片被单独起诉，法官已驳回针对他的第二起案件；科米否认指控并称系政治报复。</tspan>\n          <tspan class=\"lang-en\">Note: James Comey was separately charged over a seashell photo; a judge dismissed a second case targeting him.</tspan>\n        </text>\n      </svg>\n    </div>\n\n    <div class=\"plate-footnote\">\n      <span>\n        <span class=\"lang-cn\">数据与事实来源：《华尔街日报》对知情人士及司法部官员的采访</span>\n        <span class=\"lang-en\">Source: WSJ reporting from people familiar with the matter and Justice Department officials</span>\n      </span>\n      <span>WSJ EDITORIAL GRAPHICS · E1-031</span>\n    </div>\n  </section>\n\n  <!-- ACT II: p8 .. p14 -->\n  <section class=\"act-band\" id=\"act-2\">\n    <div class=\"act-header-banner\">\n      <span class=\"act-index\">\n        <span class=\"lang-cn\">第二幕 · 迈阿密指挥失灵与“大阴谋”靶心</span>\n        <span class=\"lang-en\">ACT II · MIAMI MANAGEMENT BREAKDOWN &amp; TARGET SCOPE</span>\n      </span>\n      <h2 class=\"act-title\">\n        <span class=\"lang-cn\">两位联邦检察官婉拒之后：华盛顿被迫直接接管佛州调查</span>\n        <span class=\"lang-en\">After Two U.S. Attorneys Passed, Washington Stepped In to Oversee Miami</span>\n      </h2>\n    </div>\n\n    <div class=\"narrative-col\">\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"杰森·雷丁·基尼奥内斯 | Jason Reding Quiñones\"><span class=\"lang-cn\">除了奥尔森和迪杰诺瓦的离职之外，司法部官员还认为，负责该案件的第三位负责人，迈阿密美国检察官<mark class=\"ed-hl\">杰森·雷丁·基尼奥内斯</mark>，没有妥善管理调查工作，也没有妥善管理他的办公室。</span><span class=\"lang-en\">In addition to the departures of Olsen and diGenova, Justice Department officials came to believe a third supervisor of the case, Miami U.S. attorney <mark class=\"ed-hl\">Jason Reding Quiñones</mark>, wasn't appropriately managing the investigation and his office more broadly.</span></p>\n      <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"没有向他们提供任何指导 | given them no guidance\"><span class=\"lang-cn\">一些参与调查的检察官向华盛顿的高级官员抱怨说，基尼奥内斯<mark class=\"ed-hl\">没有向他们提供任何指导</mark>，一些知情人士透露。</span><span class=\"lang-en\">A number of the prosecutors on the probe complained to senior officials in Washington that Quiñones had <mark class=\"ed-hl\">given them no guidance</mark>, some of the people said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"副司法部长办公室 | deputy attorney general's office\"><span class=\"lang-cn\">官员表示，现在，<mark class=\"ed-hl\">副司法部长办公室</mark>的律师正在直接从华盛顿监督在佛罗里达州进行的调查。</span><span class=\"lang-en\">Lawyers in the <mark class=\"ed-hl\">deputy attorney general's office</mark> are now directly overseeing the Florida-based investigation from Washington, officials said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p11\"><span class=\"lang-cn\">杰森·雷丁·基尼奥内斯的发言人为他过去的工作表现辩护，并表示他为能在特朗普政府任职感到自豪，但他拒绝就此阴谋调查发表评论。</span><span class=\"lang-en\">A spokeswoman for Quiñones defended his record on the job and said he was proud to serve in the Trump administration but declined to comment on the conspiracy investigation.</span></p>\n      <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"约翰·布伦南 | 詹姆斯·科米 | 马阿拉戈 | John Brennan | James Comey | Mar-a-Lago\"><span class=\"lang-cn\">此次调查的潜在目标包括特朗普长期以来不屑一顾的许多人，其中包括前中央情报局局长<mark class=\"ed-hl\">约翰·布伦南</mark>、前联邦调查局局长<mark class=\"ed-hl\">詹姆斯·科米</mark>以及参与2022年8月搜查他位于<mark class=\"ed-hl\">马阿拉戈</mark>的住宅的官员。（科米还因发布一张贝壳照片而被单独起诉，特朗普声称该照片具有威胁意味；法官驳回了针对他的第二起案件。他否认了这些指控，并表示这些案件是针对他的政治报复。）</span><span class=\"lang-en\">The putative targets of the probe include a raft of people Trump has long disdained, including former CIA Director <mark class=\"ed-hl\">John Brennan</mark>, former FBI Director <mark class=\"ed-hl\">James Comey</mark> and officials involved in the August 2022 search of his <mark class=\"ed-hl\">Mar-a-Lago</mark> home. (Comey was separately charged in connection with a photo he posted of seashells that Trump alleged was threatening, and a judge dismissed a second case targeting him. He has denied the charges and said the cases were an attempt at political retribution.)</span></p>\n      <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"大型阴谋调查 | 杰克·史密斯 | grand-conspiracy probe | Jack Smith\"><span class=\"lang-cn\">此次调查，官员们非正式地将其称为“<mark class=\"ed-hl\">大型阴谋调查</mark>”，旨在将一系列过去的事件联系起来，包括2016年情报部门的评估，该评估认为俄罗斯干预了当年的选举，以支持特朗普；联邦调查局随后对特朗普竞选团队与俄罗斯干预之间的关系进行调查；以及特别检察官<mark class=\"ed-hl\">杰克·史密斯</mark>在2023年和2024年发起的更近期的刑事起诉，这些起诉源于特朗普在2020年大选中失败。</span><span class=\"lang-en\">The investigation, which officials informally referred to as the <mark class=\"ed-hl\">grand-conspiracy probe</mark>, sought to tie together a series of past episodes, including the 2016 intelligence community assessment that Russia interfered in that year's election to boost Trump; the FBI's subsequent investigation into alleged Trump campaign ties to that Russian meddling; and the more recent criminal prosecutions by special counsel <mark class=\"ed-hl\">Jack Smith</mark> in 2023 and 2024 that stemmed from Trump's 2020 election loss.</span></p>\n      <p class=\"prose-p\" data-ref=\"p14\" data-hl=\"另外两位美国联邦检察官 | two other U.S. attorneys\"><span class=\"lang-cn\">据熟悉此事的人士称，在杰森·雷丁·基尼奥内斯主动承担这项工作之前，这项调查已经交给了<mark class=\"ed-hl\">另外两位美国联邦检察官</mark>。</span><span class=\"lang-en\">The probes went to <mark class=\"ed-hl\">two other U.S. attorneys</mark> before Quiñones raised his hand to oversee it, people familiar with the assignment said.</span></p>\n    </div>\n\n    <aside class=\"forensic-rail\">\n      <div class=\"rail-card\">\n        <div class=\"rail-card-header\">\n          <span class=\"rail-card-title\">\n            <span class=\"lang-cn\">潜在调查目标与关联案件矩阵</span>\n            <span class=\"lang-en\">PUTATIVE TARGETS &amp; EPISODES</span>\n          </span>\n          <span class=\"rail-badge\">TARGETS</span>\n        </div>\n        <div class=\"roster-list\">\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">John Brennan</span>\n              <span class=\"roster-status status-active\">\n                <span class=\"lang-cn\">前CIA局长</span>\n                <span class=\"lang-en\">EX-CIA DIR.</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">调查首要目标之一：2017年和2023年就2016年俄罗斯干预大选评估所作的国会证词。资深检察官未找到起诉依据。</span>\n              <span class=\"lang-en\">First target: 2017 and 2023 congressional testimony on the 2016 Russia assessment. Veteran prosecutor found no basis to indict.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">James Comey</span>\n              <span class=\"roster-status status-active\">\n                <span class=\"lang-cn\">前FBI局长</span>\n                <span class=\"lang-en\">EX-FBI DIR.</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">潜在目标之一；另因发布贝壳照片被单独起诉（特朗普称具威胁意味），法官已驳回针对他的第二起案件。</span>\n              <span class=\"lang-en\">Putative target; separately charged over seashell photo post; judge dismissed a second case targeting him.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Mar-a-Lago Search Officials</span>\n              <span class=\"roster-status status-active\">\n                <span class=\"lang-cn\">2022年8月搜查</span>\n                <span class=\"lang-en\">AUG 2022 SEARCH</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">检察官试图证明法院授权的2022年8月搜查不合法，并将其与从佛州到华盛顿的更大阴谋挂钩。</span>\n              <span class=\"lang-en\">Prosecutors tried to argue the court-authorized August 2022 search was unlawful and tied to a broader conspiracy.</span>\n            </p>\n          </div>\n\n          <div class=\"roster-entry\">\n            <div class=\"roster-top\">\n              <span class=\"roster-name\">Jack Smith Prosecutions</span>\n              <span class=\"roster-status status-active\">\n                <span class=\"lang-cn\">2023–2024起诉</span>\n                <span class=\"lang-en\">2023–24 CASES</span>\n              </span>\n            </div>\n            <p class=\"roster-role\">\n              <span class=\"lang-cn\">源于特朗普2020年大选失利的特别检察官刑事起诉，被纳入“大型阴谋调查”试图串联的链条。</span>\n              <span class=\"lang-en\">Special counsel criminal prosecutions stemming from Trump's 2020 election loss sought to be tied into the grand-conspiracy theory.</span>\n            </p>\n          </div>\n        </div>\n      </div>\n    </aside>\n  </section>\n\n  <!-- ACT III: p15 .. p19 -->\n  <section class=\"act-band\" id=\"act-3\">\n    <div class=\"act-header-banner\">\n      <span class=\"act-index\">\n        <span class=\"lang-cn\">第三幕 · 取证碰壁、大陪审团乱象与内部清洗</span>\n        <span class=\"lang-en\">ACT III · GRAND JURY MISSTEPS &amp; REMOVAL OF SKEPTICS</span>\n      </span>\n      <h2 class=\"act-title\">\n        <span class=\"lang-cn\">速成培训、撤回机密传票，以及质疑者为何被调离</span>\n        <span class=\"lang-en\">Crash Courses, Withdrawn Subpoenas, and Ousting Internal Skeptics</span>\n      </h2>\n    </div>\n\n    <div class=\"narrative-col\">\n      <p class=\"prose-p\" data-ref=\"p15\" data-hl=\"玛丽亚·梅德蒂斯·朗 | 没有找到起诉约翰·布伦南的依据 | Maria Medetis Long | hadn't found a basis to indict Brennan\"><span class=\"lang-cn\">此次调查的首要目标之一是：约翰·布伦南在2017年和2023年就2016年评估所做的国会证词。一位负责调查该线索的资深国家安全检察官<mark class=\"ed-hl\">玛丽亚·梅德蒂斯·朗</mark>很快告诉高级官员，她<mark class=\"ed-hl\">没有找到起诉约翰·布伦南的依据</mark>，一些知情人士表示。四月份，她被从调查中撤职。</span><span class=\"lang-en\">One of the investigation's first targets: congressional testimony Brennan had given in 2017 and 2023 about the 2016 assessment. A veteran national-security prosecutor working on that line of inquiry, <mark class=\"ed-hl\">Maria Medetis Long</mark>, soon told senior officials she <mark class=\"ed-hl\">hadn't found a basis to indict Brennan</mark>, some of the people said. In April, she was removed from the probe.</span></p>\n      <p class=\"prose-p\" data-ref=\"p16\" data-hl=\"从未担任过联邦检察官 | 快速培训 | never worked as federal prosecutors | crash course\"><span class=\"lang-cn\">司法部一直难以找到并留住其他检察官来参与这项工作，因此他们聘用了临时人员；其中一些人<mark class=\"ed-hl\">从未担任过联邦检察官</mark>。据熟悉调查的知情人士称，该部门不得不对他们进行<mark class=\"ed-hl\">快速培训</mark>，让他们了解如何向大陪审团提供证据。</span><span class=\"lang-en\">The Justice Department had struggled to find and retain other prosecutors to work on it and brought on temporary hires; some of them had <mark class=\"ed-hl\">never worked as federal prosecutors</mark>. The office had to give them a <mark class=\"ed-hl\">crash course</mark> on presenting evidence to grand juries, some people familiar with the probe said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p17\" data-hl=\"无需事先进行联邦调查局的问询 | without any FBI interview first\"><span class=\"lang-cn\">当时在华盛顿的司法部官员希望检察官加快调查进度，包括传唤证人直接向大陪审团作证，而<mark class=\"ed-hl\">无需事先进行联邦调查局的问询</mark>，他们表示。</span><span class=\"lang-en\">Justice Department officials in Washington at the time wanted prosecutors to speed up their process, including by subpoenaing witnesses to testify directly before a grand jury, <mark class=\"ed-hl\">without any FBI interview first</mark>, they said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p18\" data-hl=\"撤回传票 | 机密信息 | withdraw the subpoenas | classified\"><span class=\"lang-cn\">检察官通常会避免这样做，以确保他们知道证人会说什么，并在大陪审团面前避免出现意外情况。检察官后来不得不<mark class=\"ed-hl\">撤回传票</mark>，因为他们意识到证人需要与大陪审团讨论的信息是<mark class=\"ed-hl\">机密信息</mark>。</span><span class=\"lang-en\">Prosecutors usually avoid doing that to make sure they know what to expect a witness to say and avoid surprises before the grand jury. Prosecutors had to later <mark class=\"ed-hl\">withdraw the subpoenas</mark> after realizing information the witnesses would need to discuss with grand jurors was <mark class=\"ed-hl\">classified</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p19.s1\"><span class=\"lang-cn\">检察官一直在试图证明，联邦调查局在2022年8月对特朗普位于马阿拉戈的住宅进行的授权搜查，导致他被指控非法持有机密信息，是不合法的。</span><span class=\"lang-en\">Prosecutors had been trying to make the case that the FBI's court-authorized August 2022 search of Trump's Mar-a-Lago home, which led to charges that he illegally retained classified information, was unlawful.</span></p>\n\n      <blockquote class=\"climactic-verdict\">\n        <div class=\"climactic-verdict-label\">\n          <span class=\"lang-cn\">终局还原 · 直通FBI局长的撤换电话</span>\n          <span class=\"lang-en\">CLIMACTIC SCENE · DIRECT CALL TO FBI DIRECTOR KASH PATEL</span>\n        </div>\n        <p class=\"climactic-verdict-quote\" data-ref=\"p19.s2\" data-hl=\"卡什·帕特尔 | 将这名特工从调查中调离 | Kash Patel | moved the agent off the investigation\"><span class=\"lang-cn\">但联邦调查局的一名特工告诉乔·迪杰诺瓦，将这次搜查与从佛罗里达到华盛顿的更大范围的阴谋联系起来将是一项挑战；迪杰诺瓦不同意，并致电联邦调查局局长<mark class=\"ed-hl\">卡什·帕特尔</mark>，帕特尔<mark class=\"ed-hl\">将这名特工从调查中调离</mark>。</span><span class=\"lang-en\">But an FBI agent told diGenova that tying the search to a broader conspiracy spanning from Florida to Washington would be challenging; diGenova disagreed and called FBI Director <mark class=\"ed-hl\">Kash Patel</mark>, who <mark class=\"ed-hl\">moved the agent off the investigation</mark>.</span></p>\n      </blockquote>\n    </div>\n\n    <aside class=\"forensic-rail\">\n      <div class=\"friction-explorer\">\n        <div class=\"rail-card-header\">\n          <span class=\"rail-card-title\">\n            <span class=\"lang-cn\">三大办案梗阻交互拆解</span>\n            <span class=\"lang-en\">THREE OPERATIONAL BOTTLENECKS</span>\n          </span>\n          <span class=\"rail-badge\">INTERACTIVE</span>\n        </div>\n\n        <div class=\"friction-tabs\" role=\"tablist\">\n          <button type=\"button\" class=\"friction-tab active\">\n            <span class=\"lang-cn\">01. 人手断层</span>\n            <span class=\"lang-en\">01. Staffing</span>\n          </button>\n          <button type=\"button\" class=\"friction-tab\">\n            <span class=\"lang-cn\">02. 传票乌龙</span>\n            <span class=\"lang-en\">02. Subpoenas</span>\n          </button>\n          <button type=\"button\" class=\"friction-tab\">\n            <span class=\"lang-cn\">03. 异议排除</span>\n            <span class=\"lang-en\">03. Ousters</span>\n          </button>\n        </div>\n\n        <div class=\"friction-panel active\" id=\"fpanel-0\">\n          <div class=\"friction-panel-title\">\n            <span class=\"lang-cn\">临时聘用与大陪审团“速成班”</span>\n            <span class=\"lang-en\">Temp Hires &amp; Grand-Jury Crash Course</span>\n          </div>\n          <p>\n            <span class=\"lang-cn\">由于难以招募并留住经验丰富的联邦检察官，司法部不得不引进临时聘用人员——其中部分人从未担任过联邦检察官，办公室甚至需要为他们紧急补课培训如何向大陪审团举证。</span>\n            <span class=\"lang-en\">Struggling to recruit and retain career prosecutors, the department brought on temporary hires—some with zero federal prosecutorial experience—requiring a crash course on grand-jury evidence presentation.</span>\n          </p>\n        </div>\n\n        <div class=\"friction-panel\" id=\"fpanel-1\">\n          <div class=\"friction-panel-title\">\n            <span class=\"lang-cn\">跳过FBI问询引发机密信息冲突</span>\n            <span class=\"lang-en\">Skipping FBI Interviews Backfires Over Classified Info</span>\n          </div>\n          <p>\n            <span class=\"lang-cn\">华盛顿官员一度要求跳过常规的FBI预先问询、直接传唤证人上大陪审团以加快进度；但检察官随后意识到证人需讨论的内容涉及机密信息，不得不尴尬撤回传票。</span>\n            <span class=\"lang-en\">Pushed by Washington officials to subpoena witnesses directly to a grand jury without prior FBI interviews, prosecutors later had to withdraw the subpoenas upon realizing the testimony involved classified information.</span>\n          </p>\n        </div>\n\n        <div class=\"friction-panel\" id=\"fpanel-2\">\n          <div class=\"friction-panel-title\">\n            <span class=\"lang-cn\">质疑起诉依据的检察官与FBI特工接连出局</span>\n            <span class=\"lang-en\">Removal of Skeptical Prosecutor &amp; FBI Agent</span>\n          </div>\n          <p>\n            <span class=\"lang-cn\">资深国安检察官玛丽亚·梅德蒂斯·朗因指出无依据起诉布伦南于4月被撤；一名FBI特工向迪杰诺瓦坦言难以将马阿拉戈搜查串入跨州大阴谋后，被FBI局长卡什·帕特尔调离。</span>\n            <span class=\"lang-en\">Veteran prosecutor Maria Medetis Long was removed in April after finding no basis to indict Brennan; an FBI agent who warned diGenova about the difficulty of tying the Mar-a-Lago search to a wider conspiracy was removed by FBI Director Kash Patel.</span>\n          </p>\n        </div>\n      </div>\n    </aside>\n  </section>\n\n</main>\n\n\n<footer class=\"wsj-footer\">\n  <div>\n    <span class=\"lang-cn\">© 2026 华尔街日报 (The Wall Street Journal) · 双语深读典藏版</span>\n    <span class=\"lang-en\">© 2026 The Wall Street Journal · Bilingual Editorial Renaissance Edition</span>\n  </div>\n  <div>\n    <span>SECTION A6 · U.S. NEWS · 19/19 CANONICAL BLOCKS VERIFIED</span>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-031",
+        "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+        "exact_match_cn": "19/19",
+        "exact_match_en": "19/19",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 19,
+        "observed_narrative_elements": 24,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 0,
+        "derived_items": [],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "阴谋集团"
+            ],
+            "applied_en": [
+              "grand conspiracy"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "81岁的里根时代检察官乔·迪杰诺瓦",
+              "过早地提起刑事诉讼"
+            ],
+            "applied_en": [
+              "81-year-old Reagan-era prosecutor",
+              "Joe diGenova"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "测谎测试中未能通过",
+              "库尔特·奥尔森"
+            ],
+            "applied_en": [
+              "failing government polygraph tests",
+              "Kurt Olsen"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6.s1",
+            "applied_cn": [
+              "十几名检察官"
+            ],
+            "applied_en": [
+              "roughly a dozen prosecutors"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "托德·布兰奇"
+            ],
+            "applied_en": [
+              "Todd Blanche"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "杰森·雷丁·基尼奥内斯"
+            ],
+            "applied_en": [
+              "Jason Reding Quiñones"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "没有向他们提供任何指导"
+            ],
+            "applied_en": [
+              "given them no guidance"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "副司法部长办公室"
+            ],
+            "applied_en": [
+              "deputy attorney general's office"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "约翰·布伦南",
+              "詹姆斯·科米",
+              "马阿拉戈"
+            ],
+            "applied_en": [
+              "John Brennan",
+              "James Comey",
+              "Mar-a-Lago"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "大型阴谋调查",
+              "杰克·史密斯"
+            ],
+            "applied_en": [
+              "grand-conspiracy probe",
+              "Jack Smith"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14",
+            "applied_cn": [
+              "另外两位美国联邦检察官"
+            ],
+            "applied_en": [
+              "two other U.S. attorneys"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p15",
+            "applied_cn": [
+              "没有找到起诉约翰·布伦南的依据",
+              "玛丽亚·梅德蒂斯·朗"
+            ],
+            "applied_en": [
+              "hadn't found a basis to indict Brennan",
+              "Maria Medetis Long"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p16",
+            "applied_cn": [
+              "从未担任过联邦检察官",
+              "快速培训"
+            ],
+            "applied_en": [
+              "never worked as federal prosecutors",
+              "crash course"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p17",
+            "applied_cn": [
+              "无需事先进行联邦调查局的问询"
+            ],
+            "applied_en": [
+              "without any FBI interview first"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p18",
+            "applied_cn": [
+              "撤回传票",
+              "机密信息"
+            ],
+            "applied_en": [
+              "withdraw the subpoenas",
+              "classified"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p19.s2",
+            "applied_cn": [
+              "将这名特工从调查中调离",
+              "卡什·帕特尔"
+            ],
+            "applied_en": [
+              "moved the agent off the investigation",
+              "Kash Patel"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 5,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "0 0 1141 430",
+            "text_labels": [
+              "01. 试图串联的三大历史事件 (2016–2024)",
+              "01. PAST EPISODES TARGETED (2016–2024)",
+              "02. 原定构想：南佛罗里达“大阴谋案”",
+              "02. INITIAL THEORY: SOUTH FLORIDA HUB",
+              "03. 现实受阻与案件分流结果",
+              "03. OPERATIONAL FRACTURE & FALLOUT",
+              "EPISODE A · 2016–2023",
+              "2016情报评估与布伦南国会证词",
+              "2016 Russia Assessment & Brennan",
+              "前CIA局长2017/2023年证词及随后FBI通俄调查",
+              "2017/2023 testimony & subsequent FBI inquiry",
+              "EPISODE B · AUG 2022",
+              "2022年8月马阿拉戈庄园搜查行动",
+              "Aug. 2022 Mar-a-Lago Search",
+              "试图证明法院授权的搜查本身违法并属跨州阴谋",
+              "Effort to prove court-authorized search unlawful",
+              "EPISODE C · 2023–2024",
+              "特别检察官杰克·史密斯刑事起诉及科米",
+              "Jack Smith Cases & James Comey",
+              "源于2020大选的起诉；科米另涉贝壳照片案",
+              "2023–24 Smith prosecutions & Comey targets",
+              "SOUTH FLORIDA VENUE",
+              "南佛罗里达“单一巨型阴谋案”",
+              "One Big Conspiracy Case",
+              "• 两位联邦检察官先后婉拒，基尼奥内斯接手",
+              "• Passed on by 2 U.S. attorneys before Quiñones",
+              "• 多头督导（迪杰诺瓦 / 奥尔森 / 基尼奥内斯）",
+              "• Overlapping supervisors & conflicting orders",
+              "• 临时聘用无联邦经验人员，紧急培训大陪审团流程",
+              "• Temp hires given grand-jury crash course",
+              "内部评估：此路不通",
+              "INTERNAL VERDICT: IMPRACTICAL",
+              "私下承认难以捆绑成单一阴谋案",
+              "Tying loose threads deemed impractical",
+              "EVIDENTIARY PUSHBACK",
+              "提出异议的资深检察官与特工被调离",
+              "Skeptical Prosecutor & Agent Removed",
+              "朗因无依据起诉布伦南被撤；帕特尔调离质疑特工",
+              "Long removed in April; Kash Patel moves FBI agent",
+              "PROCEDURAL MISFIRE",
+              "跳过FBI问询直接传唤证人后被迫撤回",
+              "Grand-Jury Subpoenas Withdrawn",
+              "事后才意识到证人需与大陪审团讨论机密信息",
+              "Withdrawn after realizing testimony involved classified info",
+              "CURRENT STATUS · WASHINGTON",
+              "副部长办公室直接接管，分拆推进子案",
+              "DAG Direct Oversight & Separate Cases",
+              "约12名检察官加新聘2名前检察官继续推进相关指控",
+              "~12 prosecutors + 2 new hires pursue separate charges",
+              "注：詹姆斯·科米另因发布贝壳照片被单独起诉，法官已驳回针对他的第二起案件；科米否认指控并称系政治报复。",
+              "Note: James Comey was separately charged over a seashell photo; a judge dismissed a second case targeting him."
+            ],
+            "numbers_found": [
+              "01",
+              "2016",
+              "2024",
+              "01",
+              "2016",
+              "2024",
+              "02",
+              "02",
+              "03",
+              "03",
+              "2016",
+              "2023",
+              "2016",
+              "2016",
+              "2017",
+              "2023",
+              "2017",
+              "2023",
+              "2022",
+              "2022",
+              "8",
+              "2022",
+              "2023",
+              "2024",
+              "2020",
+              "2023",
+              "24",
+              "2",
+              "12",
+              "2",
+              "12",
+              "2"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "从“揭露国安阴谋集团”到无人被起诉的辞职潮",
+            "en": "From Unraveling a Cabal to High-Profile Resignations",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "“大型阴谋调查”如何试图串联十年旧案——又为何在实操中受阻",
+            "en": "How the “Grand-Conspiracy Probe” Tried to Fuse a Decade of Episodes—and Where It Fractured",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "两位联邦检察官婉拒之后：华盛顿被迫直接接管佛州调查",
+            "en": "After Two U.S. Attorneys Passed, Washington Stepped In to Oversee Miami",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "速成培训、撤回机密传票，以及质疑者为何被调离",
+            "en": "Crash Courses, Withdrawn Subpoenas, and Ousting Internal Skeptics",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 1,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 1080 430",
+          "repaired_viewBox": "0 0 1141 430",
+          "repaired": true,
+          "offending_nodes": [
+            "text('事后才意识到证人需与大陪审团讨' right=1133>1080)"
+          ]
+        }
+      ],
+      "sanitization_log": [
+        "Removed inline event handler onclick on <button>",
+        "Removed inline event handler onclick on <button>",
+        "Removed inline event handler onclick on <button>"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

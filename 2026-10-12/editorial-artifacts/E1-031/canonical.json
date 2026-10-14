@@ -1,0 +1,445 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-031",
+  "final_id": "031",
+  "issue_date": "2026-10-12",
+  "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A6",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "U.S. News · A6 版",
+    "kicker_en": "WSJ · U.S. NEWS · A6",
+    "title_cn": "针对特朗普的政治对手的调查进展受阻。",
+    "title_en": "Probe of Trump Foes Falters",
+    "dek_cn": "人员离职、内部纷争、缺乏经验等问题困扰着美国司法部对所谓阴谋案的调查。",
+    "dek_en": "Departures, infighting, inexperience beset DOJ inquiry into alleged conspiracy",
+    "byline": "By Sadie Gurman, Dave Michaels and Josh Dawsey",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "去年，司法部官员表示，一项调查将揭露一个由多名国家安全官员组成的阴谋集团，他们试图破坏特朗普总统的执政。",
+      "text_en": "Last year, Justice Department officials said an investigation would unravel a grand conspiracy by a cabal of national security officials who sought to undermine President Trump.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "去年，司法部官员表示，一项调查将揭露一个由多名国家安全官员组成的阴谋集团，他们试图破坏特朗普总统的执政。",
+          "text_en": "Last year, Justice Department officials said an investigation would unravel a grand conspiracy by a cabal of national security officials who sought to undermine President Trump."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "特朗普的支持者希望这项调查能够证实他们多年来一直提出的说法：过去十年中，负责调查特朗普总统的官员实际上进行了一场有组织的行动，以侵犯他的公民权利。",
+      "text_en": "Trump allies hoped it would confirm what they have been alleging for years: Officials who investigated the president over the past decade engaged in what was essentially a coordinated effort to violate his civil rights.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "特朗普的支持者希望这项调查能够证实他们多年来一直提出的说法：过去十年中，负责调查特朗普总统的官员实际上进行了一场有组织的行动，以侵犯他的公民权利。",
+          "text_en": "Trump allies hoped it would confirm what they have been alleging for years: Officials who investigated the president over the past decade engaged in what was essentially a coordinated effort to violate his civil rights."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "然而，这项调查却面临着人员离职、内部矛盾和缺乏经验等问题。81岁的里根时代检察官乔·迪杰诺瓦被说服从退休状态回归，负责领导这项工作，但他上个月辞职，称司法部高层正在向调查团队施压，要求他们过早地提起刑事诉讼。他没有对任何人提出指控。相关官员否认了向他施压的说法。",
+      "text_en": "Instead, the probe has been beset by departures, infighting and inexperience. The 81-year-old Reagan-era prosecutor coaxed out of retirement to lead the effort, Joe diGenova, quit last month, saying top department officials were pressuring the team to bring criminal cases before they were ready. He hadn't charged anyone. Officials denied pressuring him.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "然而，这项调查却面临着人员离职、内部矛盾和缺乏经验等问题。",
+          "text_en": "Instead, the probe has been beset by departures, infighting and inexperience."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "81岁的里根时代检察官乔·迪杰诺瓦被说服从退休状态回归，负责领导这项工作，但他上个月辞职，称司法部高层正在向调查团队施压，要求他们过早地提起刑事诉讼。",
+          "text_en": "The 81-year-old Reagan-era prosecutor coaxed out of retirement to lead the effort, Joe diGenova, quit last month, saying top department officials were pressuring the team to bring criminal cases before they were ready."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "他没有对任何人提出指控。",
+          "text_en": "He hadn't charged anyone."
+        },
+        {
+          "id": "p3.s4",
+          "text_cn": "相关官员否认了向他施压的说法。",
+          "text_en": "Officials denied pressuring him."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "迪杰诺瓦是这项调查中多位负责人的其中之一，他们各自有着不同的利益和任务，这进一步加剧了这项工作的混乱局面。上个月，另一位高级顾问库尔特·奥尔森，他此前从白宫加入调查，也辞去了调查工作，知情人士透露。他最近在政府的测谎测试中未能通过，导致他失去了安全许可，该测试旨在评估他与外国的联系。奥尔森表示，安全许可问题并非他离职的原因，但他拒绝进一步说明。",
+      "text_en": "DiGenova was one of several overlapping supervisors of the probe, with different interests and marching orders, adding to the chaotic nature of the effort. Last month, another senior counsel, Kurt Olsen, who had joined the probe from the White House, resigned from the inquiry, people familiar with the matter said. He had recently lost a security clearance after failing government polygraph tests about his foreign contacts. Olsen said the security clearance issue wasn't a factor in his departure but declined to elaborate.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "迪杰诺瓦是这项调查中多位负责人的其中之一，他们各自有着不同的利益和任务，这进一步加剧了这项工作的混乱局面。",
+          "text_en": "DiGenova was one of several overlapping supervisors of the probe, with different interests and marching orders, adding to the chaotic nature of the effort."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "上个月，另一位高级顾问库尔特·奥尔森，他此前从白宫加入调查，也辞去了调查工作，知情人士透露。",
+          "text_en": "Last month, another senior counsel, Kurt Olsen, who had joined the probe from the White House, resigned from the inquiry, people familiar with the matter said."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "他最近在政府的测谎测试中未能通过，导致他失去了安全许可，该测试旨在评估他与外国的联系。",
+          "text_en": "He had recently lost a security clearance after failing government polygraph tests about his foreign contacts."
+        },
+        {
+          "id": "p4.s4",
+          "text_cn": "奥尔森表示，安全许可问题并非他离职的原因，但他拒绝进一步说明。",
+          "text_en": "Olsen said the security clearance issue wasn't a factor in his departure but declined to elaborate."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "特朗普对调查进展缓慢感到沮丧，并向他的盟友抱怨了这一点，一位知情人士透露。",
+      "text_en": "Trump is frustrated by the lack of progress and has complained about it to allies, a person familiar with the conversations said.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "特朗普对调查进展缓慢感到沮丧，并向他的盟友抱怨了这一点，一位知情人士透露。",
+          "text_en": "Trump is frustrated by the lack of progress and has complained about it to allies, a person familiar with the conversations said."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些司法部官员表示，调查正在顺利进行，大约有十几名检察官继续推进一系列相关的调查，这些调查可能会在未来几周内导致起诉。但他们私下承认，将所有这些看似无关的线索整合到一个大型的阴谋案件中，就像他们最初试图做的那样，在南佛罗里达州进行，这并不是一个切实可行的方案。",
+      "text_en": "A number of the Justice Department officials said the case is proceeding apace, with roughly a dozen prosecutors continuing to pursue a set of related investigations that could result in charges in coming weeks. But they privately acknowledge the idea of tying all those loose threads together in one big conspiracy case in South Florida, as they had initially attempted, isn't a practical approach.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "一些司法部官员表示，调查正在顺利进行，大约有十几名检察官继续推进一系列相关的调查，这些调查可能会在未来几周内导致起诉。",
+          "text_en": "A number of the Justice Department officials said the case is proceeding apace, with roughly a dozen prosecutors continuing to pursue a set of related investigations that could result in charges in coming weeks."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "但他们私下承认，将所有这些看似无关的线索整合到一个大型的阴谋案件中，就像他们最初试图做的那样，在南佛罗里达州进行，这并不是一个切实可行的方案。",
+          "text_en": "But they privately acknowledge the idea of tying all those loose threads together in one big conspiracy case in South Florida, as they had initially attempted, isn't a practical approach."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一位官员表示，领导层仍然对继续参与调查的人员充满信心，并最近聘用了两位前检察官。一位白宫发言人表示，特朗普对司法部长托德·布兰奇能够让相关人员承担责任充满信心。",
+      "text_en": "One of the officials said leadership is still confident in the people who continue to work on the inquiry, and recently brought on two former prosecutors. A White House spokeswoman said Trump has full confidence in Attorney General Todd Blanche to hold people accountable.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "一位官员表示，领导层仍然对继续参与调查的人员充满信心，并最近聘用了两位前检察官。",
+          "text_en": "One of the officials said leadership is still confident in the people who continue to work on the inquiry, and recently brought on two former prosecutors."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "一位白宫发言人表示，特朗普对司法部长托德·布兰奇能够让相关人员承担责任充满信心。",
+          "text_en": "A White House spokeswoman said Trump has full confidence in Attorney General Todd Blanche to hold people accountable."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "除了奥尔森和迪杰诺瓦的离职之外，司法部官员还认为，负责该案件的第三位负责人，迈阿密美国检察官杰森·雷丁·基尼奥内斯，没有妥善管理调查工作，也没有妥善管理他的办公室。",
+      "text_en": "In addition to the departures of Olsen and diGenova, Justice Department officials came to believe a third supervisor of the case, Miami U.S. attorney Jason Reding Quiñones, wasn't appropriately managing the investigation and his office more broadly.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "除了奥尔森和迪杰诺瓦的离职之外，司法部官员还认为，负责该案件的第三位负责人，迈阿密美国检察官杰森·雷丁·基尼奥内斯，没有妥善管理调查工作，也没有妥善管理他的办公室。",
+          "text_en": "In addition to the departures of Olsen and diGenova, Justice Department officials came to believe a third supervisor of the case, Miami U.S. attorney Jason Reding Quiñones, wasn't appropriately managing the investigation and his office more broadly."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些参与调查的检察官向华盛顿的高级官员抱怨说，基尼奥内斯没有向他们提供任何指导，一些知情人士透露。",
+      "text_en": "A number of the prosecutors on the probe complained to senior officials in Washington that Quiñones had given them no guidance, some of the people said.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "一些参与调查的检察官向华盛顿的高级官员抱怨说，基尼奥内斯没有向他们提供任何指导，一些知情人士透露。",
+          "text_en": "A number of the prosecutors on the probe complained to senior officials in Washington that Quiñones had given them no guidance, some of the people said."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "官员表示，现在，副司法部长办公室的律师正在直接从华盛顿监督在佛罗里达州进行的调查。",
+      "text_en": "Lawyers in the deputy attorney general's office are now directly overseeing the Florida-based investigation from Washington, officials said.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "官员表示，现在，副司法部长办公室的律师正在直接从华盛顿监督在佛罗里达州进行的调查。",
+          "text_en": "Lawyers in the deputy attorney general's office are now directly overseeing the Florida-based investigation from Washington, officials said."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "杰森·雷丁·基尼奥内斯的发言人为他过去的工作表现辩护，并表示他为能在特朗普政府任职感到自豪，但他拒绝就此阴谋调查发表评论。",
+      "text_en": "A spokeswoman for Quiñones defended his record on the job and said he was proud to serve in the Trump administration but declined to comment on the conspiracy investigation.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "杰森·雷丁·基尼奥内斯的发言人为他过去的工作表现辩护，并表示他为能在特朗普政府任职感到自豪，但他拒绝就此阴谋调查发表评论。",
+          "text_en": "A spokeswoman for Quiñones defended his record on the job and said he was proud to serve in the Trump administration but declined to comment on the conspiracy investigation."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此次调查的潜在目标包括特朗普长期以来不屑一顾的许多人，其中包括前中央情报局局长约翰·布伦南、前联邦调查局局长詹姆斯·科米以及参与2022年8月搜查他位于马阿拉戈的住宅的官员。（科米还因发布一张贝壳照片而被单独起诉，特朗普声称该照片具有威胁意味；法官驳回了针对他的第二起案件。他否认了这些指控，并表示这些案件是针对他的政治报复。）",
+      "text_en": "The putative targets of the probe include a raft of people Trump has long disdained, including former CIA Director John Brennan, former FBI Director James Comey and officials involved in the August 2022 search of his Mar-a-Lago home. (Comey was separately charged in connection with a photo he posted of seashells that Trump alleged was threatening, and a judge dismissed a second case targeting him. He has denied the charges and said the cases were an attempt at political retribution.)",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "此次调查的潜在目标包括特朗普长期以来不屑一顾的许多人，其中包括前中央情报局局长约翰·布伦南、前联邦调查局局长詹姆斯·科米以及参与2022年8月搜查他位于马阿拉戈的住宅的官员。（科米还因发布一张贝壳照片而被单独起诉，特朗普声称该照片具有威胁意味；法官驳回了针对他的第二起案件。他否认了这些指控，并表示这些案件是针对他的政治报复。）",
+          "text_en": "The putative targets of the probe include a raft of people Trump has long disdained, including former CIA Director John Brennan, former FBI Director James Comey and officials involved in the August 2022 search of his Mar-a-Lago home. (Comey was separately charged in connection with a photo he posted of seashells that Trump alleged was threatening, and a judge dismissed a second case targeting him. He has denied the charges and said the cases were an attempt at political retribution.)"
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此次调查，官员们非正式地将其称为“大型阴谋调查”，旨在将一系列过去的事件联系起来，包括2016年情报部门的评估，该评估认为俄罗斯干预了当年的选举，以支持特朗普；联邦调查局随后对特朗普竞选团队与俄罗斯干预之间的关系进行调查；以及特别检察官杰克·史密斯在2023年和2024年发起的更近期的刑事起诉，这些起诉源于特朗普在2020年大选中失败。",
+      "text_en": "The investigation, which officials informally referred to as the grand-conspiracy probe, sought to tie together a series of past episodes, including the 2016 intelligence community assessment that Russia interfered in that year's election to boost Trump; the FBI's subsequent investigation into alleged Trump campaign ties to that Russian meddling; and the more recent criminal prosecutions by special counsel Jack Smith in 2023 and 2024 that stemmed from Trump's 2020 election loss.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "此次调查，官员们非正式地将其称为“大型阴谋调查”，旨在将一系列过去的事件联系起来，包括2016年情报部门的评估，该评估认为俄罗斯干预了当年的选举，以支持特朗普；联邦调查局随后对特朗普竞选团队与俄罗斯干预之间的关系进行调查；以及特别检察官杰克·史密斯在2023年和2024年发起的更近期的刑事起诉，这些起诉源于特朗普在2020年大选中失败。",
+          "text_en": "The investigation, which officials informally referred to as the grand-conspiracy probe, sought to tie together a series of past episodes, including the 2016 intelligence community assessment that Russia interfered in that year's election to boost Trump; the FBI's subsequent investigation into alleged Trump campaign ties to that Russian meddling; and the more recent criminal prosecutions by special counsel Jack Smith in 2023 and 2024 that stemmed from Trump's 2020 election loss."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据熟悉此事的人士称，在杰森·雷丁·基尼奥内斯主动承担这项工作之前，这项调查已经交给了另外两位美国联邦检察官。",
+      "text_en": "The probes went to two other U.S. attorneys before Quiñones raised his hand to oversee it, people familiar with the assignment said.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "据熟悉此事的人士称，在杰森·雷丁·基尼奥内斯主动承担这项工作之前，这项调查已经交给了另外两位美国联邦检察官。",
+          "text_en": "The probes went to two other U.S. attorneys before Quiñones raised his hand to oversee it, people familiar with the assignment said."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此次调查的首要目标之一是：约翰·布伦南在2017年和2023年就2016年评估所做的国会证词。一位负责调查该线索的资深国家安全检察官玛丽亚·梅德蒂斯·朗很快告诉高级官员，她没有找到起诉约翰·布伦南的依据，一些知情人士表示。四月份，她被从调查中撤职。",
+      "text_en": "One of the investigation's first targets: congressional testimony Brennan had given in 2017 and 2023 about the 2016 assessment. A veteran national-security prosecutor working on that line of inquiry, Maria Medetis Long, soon told senior officials she hadn't found a basis to indict Brennan, some of the people said. In April, she was removed from the probe.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "此次调查的首要目标之一是：约翰·布伦南在2017年和2023年就2016年评估所做的国会证词。",
+          "text_en": "One of the investigation's first targets: congressional testimony Brennan had given in 2017 and 2023 about the 2016 assessment."
+        },
+        {
+          "id": "p15.s2",
+          "text_cn": "一位负责调查该线索的资深国家安全检察官玛丽亚·梅德蒂斯·朗很快告诉高级官员，她没有找到起诉约翰·布伦南的依据，一些知情人士表示。",
+          "text_en": "A veteran national-security prosecutor working on that line of inquiry, Maria Medetis Long, soon told senior officials she hadn't found a basis to indict Brennan, some of the people said."
+        },
+        {
+          "id": "p15.s3",
+          "text_cn": "四月份，她被从调查中撤职。",
+          "text_en": "In April, she was removed from the probe."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "司法部一直难以找到并留住其他检察官来参与这项工作，因此他们聘用了临时人员；其中一些人从未担任过联邦检察官。据熟悉调查的知情人士称，该部门不得不对他们进行快速培训，让他们了解如何向大陪审团提供证据。",
+      "text_en": "The Justice Department had struggled to find and retain other prosecutors to work on it and brought on temporary hires; some of them had never worked as federal prosecutors. The office had to give them a crash course on presenting evidence to grand juries, some people familiar with the probe said.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "司法部一直难以找到并留住其他检察官来参与这项工作，因此他们聘用了临时人员；其中一些人从未担任过联邦检察官。",
+          "text_en": "The Justice Department had struggled to find and retain other prosecutors to work on it and brought on temporary hires; some of them had never worked as federal prosecutors."
+        },
+        {
+          "id": "p16.s2",
+          "text_cn": "据熟悉调查的知情人士称，该部门不得不对他们进行快速培训，让他们了解如何向大陪审团提供证据。",
+          "text_en": "The office had to give them a crash course on presenting evidence to grand juries, some people familiar with the probe said."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "当时在华盛顿的司法部官员希望检察官加快调查进度，包括传唤证人直接向大陪审团作证，而无需事先进行联邦调查局的问询，他们表示。",
+      "text_en": "Justice Department officials in Washington at the time wanted prosecutors to speed up their process, including by subpoenaing witnesses to testify directly before a grand jury, without any FBI interview first, they said.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "当时在华盛顿的司法部官员希望检察官加快调查进度，包括传唤证人直接向大陪审团作证，而无需事先进行联邦调查局的问询，他们表示。",
+          "text_en": "Justice Department officials in Washington at the time wanted prosecutors to speed up their process, including by subpoenaing witnesses to testify directly before a grand jury, without any FBI interview first, they said."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "检察官通常会避免这样做，以确保他们知道证人会说什么，并在大陪审团面前避免出现意外情况。检察官后来不得不撤回传票，因为他们意识到证人需要与大陪审团讨论的信息是机密信息。",
+      "text_en": "Prosecutors usually avoid doing that to make sure they know what to expect a witness to say and avoid surprises before the grand jury. Prosecutors had to later withdraw the subpoenas after realizing information the witnesses would need to discuss with grand jurors was classified.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "检察官通常会避免这样做，以确保他们知道证人会说什么，并在大陪审团面前避免出现意外情况。",
+          "text_en": "Prosecutors usually avoid doing that to make sure they know what to expect a witness to say and avoid surprises before the grand jury."
+        },
+        {
+          "id": "p18.s2",
+          "text_cn": "检察官后来不得不撤回传票，因为他们意识到证人需要与大陪审团讨论的信息是机密信息。",
+          "text_en": "Prosecutors had to later withdraw the subpoenas after realizing information the witnesses would need to discuss with grand jurors was classified."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "检察官一直在试图证明，联邦调查局在2022年8月对特朗普位于马阿拉戈的住宅进行的授权搜查，导致他被指控非法持有机密信息，是不合法的。但联邦调查局的一名特工告诉乔·迪杰诺瓦，将这次搜查与从佛罗里达到华盛顿的更大范围的阴谋联系起来将是一项挑战；迪杰诺瓦不同意，并致电联邦调查局局长卡什·帕特尔，帕特尔将这名特工从调查中调离。",
+      "text_en": "Prosecutors had been trying to make the case that the FBI's court-authorized August 2022 search of Trump's Mar-a-Lago home, which led to charges that he illegally retained classified information, was unlawful. But an FBI agent told diGenova that tying the search to a broader conspiracy spanning from Florida to Washington would be challenging; diGenova disagreed and called FBI Director Kash Patel, who moved the agent off the investigation.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "检察官一直在试图证明，联邦调查局在2022年8月对特朗普位于马阿拉戈的住宅进行的授权搜查，导致他被指控非法持有机密信息，是不合法的。",
+          "text_en": "Prosecutors had been trying to make the case that the FBI's court-authorized August 2022 search of Trump's Mar-a-Lago home, which led to charges that he illegally retained classified information, was unlawful."
+        },
+        {
+          "id": "p19.s2",
+          "text_cn": "但联邦调查局的一名特工告诉乔·迪杰诺瓦，将这次搜查与从佛罗里达到华盛顿的更大范围的阴谋联系起来将是一项挑战；迪杰诺瓦不同意，并致电联邦调查局局长卡什·帕特尔，帕特尔将这名特工从调查中调离。",
+          "text_en": "But an FBI agent told diGenova that tying the search to a broader conspiracy spanning from Florida to Washington would be challenging; diGenova disagreed and called FBI Director Kash Patel, who moved the agent off the investigation."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [],
+  "derived_metrics": [],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "背景：该调查是特朗普第二任期司法部主导的所谓“大阴谋”调查，目标是过去十年中调查过特朗普的国家安全官员，包括前CIA局长约翰·布伦南、前FBI局长詹姆斯·科米，以及参与2022年搜查马阿拉戈的官员。调查由81岁的里根时代检察官乔·迪杰诺瓦挂帅，但他上个月辞职，称司法部高层施压要求过早起诉。司法部一度试图把2016年情报界评估、FBI通俄调查和特别检察官杰克·史密斯的起诉串成一个在南佛罗里达审理的大阴谋案，但官员私下承认此路行不通。目前约十几名检察官仍在推进一系列相关调查，可能在未来几周内提出指控。",
+    "text_en": "背景：该调查是特朗普第二任期司法部主导的所谓“大阴谋”调查，目标是过去十年中调查过特朗普的国家安全官员，包括前CIA局长约翰·布伦南、前FBI局长詹姆斯·科米，以及参与2022年搜查马阿拉戈的官员。调查由81岁的里根时代检察官乔·迪杰诺瓦挂帅，但他上个月辞职，称司法部高层施压要求过早起诉。司法部一度试图把2016年情报界评估、FBI通俄调查和特别检察官杰克·史密斯的起诉串成一个在南佛罗里达审理的大阴谋案，但官员私下承认此路行不通。目前约十几名检察官仍在推进一系列相关调查，可能在未来几周内提出指控。"
+  },
+  "media": [],
+  "terms": [
+    {
+      "en": "Sadie Gurman",
+      "zh_suggested": "萨迪·格曼",
+      "note": "待查"
+    },
+    {
+      "en": "Josh Dawsey",
+      "zh_suggested": "乔希·道西",
+      "note": "待查"
+    },
+    {
+      "en": "Joe diGenova",
+      "zh_suggested": "乔·迪杰诺瓦",
+      "note": "里根时代检察官"
+    },
+    {
+      "en": "Kurt Olsen",
+      "zh_suggested": "库尔特·奥尔森",
+      "note": "待查"
+    },
+    {
+      "en": "Jason Reding Quiñones",
+      "zh_suggested": "杰森·雷丁·基尼奥内斯",
+      "note": "迈阿密联邦检察官，待查"
+    },
+    {
+      "en": "Todd Blanche",
+      "zh_suggested": "托德·布兰奇",
+      "note": "司法部长"
+    },
+    {
+      "en": "John Brennan",
+      "zh_suggested": "约翰·布伦南",
+      "note": "前CIA局长"
+    },
+    {
+      "en": "James Comey",
+      "zh_suggested": "詹姆斯·科米",
+      "note": "前FBI局长"
+    },
+    {
+      "en": "Maria Medetis Long",
+      "zh_suggested": "玛丽亚·梅德蒂斯·朗",
+      "note": "待查"
+    },
+    {
+      "en": "Jack Smith",
+      "zh_suggested": "杰克·史密斯",
+      "note": "前特别检察官"
+    },
+    {
+      "en": "Kash Patel",
+      "zh_suggested": "卡什·帕特尔",
+      "note": "FBI局长"
+    }
+  ]
+}

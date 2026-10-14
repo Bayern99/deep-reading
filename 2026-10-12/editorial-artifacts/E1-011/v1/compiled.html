@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美联储的哈马克认为，通货膨胀的根源在于工厂生产环节 | Fed’s Hammack Sees Engine of Inflation on Factory Floor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,800;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ece6d9;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c1b0;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.12);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #284159;
+    --gold-ink: #e5b97f;
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-body-en: 'Lora', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Language Switching Protocol */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    font-family: var(--font-serif-cn);
+    background-color: var(--paper);
+    color: var(--body);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-body-en);
+    line-height: 1.75;
+  }
+
+  /* Top Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 1.5rem;
+  }
+
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .wsj-logo {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    padding: 0.15rem 0.5rem;
+    background: var(--accent-soft);
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper-card);
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--font-serif-cn);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.2vw, 3.35rem);
+    line-height: 1.22;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    max-width: 960px;
+  }
+
+  html[lang="en"] .hero-title {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 780px;
+    margin-bottom: 2rem;
+    font-family: var(--font-serif-cn);
+  }
+
+  html[lang="en"] .hero-subtitle {
+    font-family: var(--font-body-en);
+    font-style: italic;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .byline-name {
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+
+  .dateline-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .dateline-pill {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+    color: var(--body);
+  }
+
+  /* Main Container & Editorial Grid */
+  .editorial-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  .chapter-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .chapter-banner {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .chapter-title {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.85fr) minmax(280px, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Prose Styling */
+  .prose-col {
+    min-width: 0;
+  }
+
+  .prose-p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--body);
+    margin-bottom: 1.45rem;
+  }
+
+  html[lang="en"] .prose-p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .prose-p.lead-para {
+    font-size: 1.24rem;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 600;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+
+  html[lang="en"] .prose-p.lead-para {
+    font-weight: 400;
+    font-size: 1.22rem;
+  }
+
+  /* Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(120deg, rgba(184, 93, 25, 0.16) 0%, rgba(184, 93, 25, 0.24) 100%);
+    color: var(--ink);
+    padding: 0.08em 0.28em;
+    border-radius: 2px;
+    border-bottom: 1px solid rgba(184, 93, 25, 0.45);
+    font-weight: inherit;
+  }
+
+  /* Side Rail Dossiers & Callouts */
+  .side-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    min-width: 0;
+  }
+
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 1.35rem;
+    border-radius: 2px;
+  }
+
+  .dossier-header {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dossier-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .dossier-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--body);
+  }
+
+  .dossier-list li {
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--line-strong);
+  }
+
+  .dossier-list li:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .dossier-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.15rem;
+    text-transform: uppercase;
+  }
+
+  /* Derived Pull Quotes & Metric Cards */
+  .pull-quote {
+    background: var(--paper-card);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.35rem;
+    margin: 0;
+  }
+
+  .pull-quote .quote-text {
+    font-family: var(--font-serif-cn);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+  }
+
+  html[lang="en"] .pull-quote .quote-text {
+    font-family: var(--font-serif-en);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .pull-quote .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .metric-card {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.4rem;
+    border-radius: 2px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .metric-card .metric-val {
+    font-family: var(--font-mono);
+    font-size: 2.35rem;
+    font-weight: 700;
+    color: var(--gold-ink);
+    line-height: 1.1;
+    margin-bottom: 0.45rem;
+  }
+
+  .metric-card .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-card .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #b0beca;
+  }
+
+  /* Interactive / Bespoke SVG Diagrams */
+  .figure-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.75rem;
+    margin: 2.25rem 0;
+    border-radius: 2px;
+  }
+
+  .figure-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .figure-title {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .figure-desc {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+  }
+
+  .figure-caption {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Split Sentence Callout Block inside Primary Flow */
+  .inline-verdict-box {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.65rem 1.85rem;
+    margin: 1.65rem 0;
+    border-left: 4px solid var(--accent);
+    border-radius: 2px;
+  }
+
+  .inline-verdict-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-ink);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .inline-verdict-quote {
+    font-family: var(--font-serif-cn);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+
+  html[lang="en"] .inline-verdict-quote {
+    font-family: var(--font-serif-en);
+    font-style: italic;
+  }
+
+  /* Policy Comparison Matrix (Warsh vs Hammack) */
+  .comparison-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .matrix-col {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem;
+    border-radius: 2px;
+  }
+
+  .matrix-col.hammack-col {
+    border-top: 3px solid var(--accent);
+  }
+
+  .matrix-col.warsh-col {
+    border-top: 3px solid var(--navy-bg);
+  }
+
+  .matrix-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .matrix-head {
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .matrix-body {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  /* Footer */
+  .ed-footer {
+    border-top: 2px solid var(--ink);
+    padding: 2.5rem 1.5rem 4rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 860px) {
+    .asymmetric-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .comparison-matrix {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      padding: 2.25rem 1.15rem 1.75rem;
+    }
+    .editorial-container {
+      padding: 1.75rem 1.15rem 3.5rem;
+    }
+    .figure-panel {
+      padding: 1.15rem;
+    }
+  }
+</style>
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btns = document.querySelectorAll('.lang-btn');
+    btns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+  }
+</script>
+</head>
+<body>
+
+  <!-- Sticky Masthead -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand-group">
+        <span class="wsj-logo">The Wall Street Journal</span>
+        <span class="section-tag">
+          <span class="lang-cn">美国新闻 · 货币政策深读</span>
+          <span class="lang-en">U.S. News · Monetary Policy Dispatch</span>
+        </span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language Selector">
+        <button type="button" class="lang-btn active" data-lang="zh-CN" onclick="setLang('zh-CN')">中文</button>
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-kicker">
+      <span class="lang-cn">美联储观察 · 俄亥俄州克利夫兰实地调研</span>
+      <span class="lang-en">Fed Watch · Field Report from Cleveland, Ohio</span>
+    </div>
+    <h1 class="hero-title" data-ref="title"><span class="lang-cn">美联储的哈马克认为，通货膨胀的根源在于工厂生产环节</span><span class="lang-en">Fed’s Hammack Sees Engine of Inflation on Factory Floor</span></h1>
+    <p class="hero-subtitle">
+      <span class="lang-cn">在克利夫兰东区的一家84年历史的工业五金制造厂里，客户不再为价格讨价还价，而是为交货速度支付溢价。对克利夫兰联储行长贝丝·哈马克而言，这正是美联储利率尚未真正抑制住经济需求的现场铁证。</span>
+      <span class="lang-en">Inside an 84-year-old industrial hardware plant on Cleveland’s east side, buyers are paying a premium for speed over price. For Cleveland Fed President Beth Hammack, it is firsthand evidence that benchmark interest rates have yet to restrain an overheating economy.</span>
+    </p>
+    <div class="hero-meta-bar">
+      <div>
+        <span class="lang-cn">作者：</span><span class="lang-en">By </span>
+        <span class="byline-name">NICK TIMIRAOS</span>
+        <span style="margin: 0 0.5rem;">·</span>
+        <span class="lang-cn">2026年10月12日</span><span class="lang-en">October 12, 2026</span>
+      </div>
+      <div class="dateline-pills">
+        <span class="dateline-pill">CLEVELAND · JERGENS INC.</span>
+        <span class="dateline-pill">FED FUNDS: 3.75%–4.00%</span>
+        <span class="dateline-pill">PAGE A2</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Narrative Content -->
+  <main class="editorial-container">
+
+    <!-- CHAPTER I: THE FACTORY FLOOR -->
+    <section class="chapter-section" id="chapter-1">
+      <div class="chapter-banner">
+        <span class="chapter-num">01 / SCENE</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">克利夫兰车间实录：当速度取代价格成为第一门槛</span>
+          <span class="lang-en">The Factory Floor: When Speed Eclipses Price</span>
+        </h2>
+      </div>
+
+      <div class="asymmetric-grid">
+        <div class="prose-col">
+          <p class="prose-p lead-para" data-ref="p1" data-hl="克利夫兰联邦储备银行行长贝丝·哈马克 | Cleveland Fed President Beth Hammack"><span class="lang-cn">克利夫兰——杰克·施龙上周花了一个多小时的时间，向<mark class="ed-hl">克利夫兰联邦储备银行行长贝丝·哈马克</mark>展示了Jergens（工业五金制造商）的业务状况，这家公司是一家家族企业，坐落在城市东部原铁路建筑的旧址上。</span><span class="lang-en">CLEVELAND—Jack Schron spent most of 90 minutes last week showing <mark class="ed-hl">Cleveland Fed President Beth Hammack</mark> how good business has gotten at Jergens, a family-run manufacturer built on the site of old railroad buildings on the city's east side.</span></p>
+          <p class="prose-p" data-ref="p2" data-hl="84年历史上最大规模的机床采购 | biggest machine-tool purchase in its 84-year history"><span class="lang-cn">来自航空航天公司的订单激增，关税使得中国竞争对手的零部件价格上涨，该公司即将进行其<mark class="ed-hl">84年历史上最大规模的机床采购</mark>。</span><span class="lang-en">Orders from aerospace companies are surging, tariffs have made a Chinese rival's parts more expensive, and the company is about to make the <mark class="ed-hl">biggest machine-tool purchase in its 84-year history</mark>.</span></p>
+          <p class="prose-p" data-ref="p3"><span class="lang-cn">Jergens生产各种工业五金产品，如夹具和快卸销，用于将从飞机面板到音乐会扬声器等各种部件固定到位。施龙告诉这位央行官员，他的客户最看重的因素已经发生了变化。质量仍然是进入大型航空航天公司的大门的基本要求。“过去，价格是下一个重要的考量因素，”他说。</span><span class="lang-en">Jergens makes industrial hardware such as clamps and quick-release pins that lock everything from aircraft panels to concert speakers into position. What matters most to his customers has shifted, Schron told the central banker. Quality is still the minimum for getting in the door at the aerospace giants. "The next threshold used to be price," he said.</span></p>
+          <p class="prose-p" data-ref="p4" data-hl="现在，速度才是关键 | Now it is speed | 在几周内获得产品，而不是几个月 | in weeks instead of months"><span class="lang-cn"><mark class="ed-hl">现在，速度才是关键</mark>。“没有人愿意再等待，”施龙说，他是该公司的总裁。买家愿意支付更高的价格，以<mark class="ed-hl">在几周内获得产品，而不是几个月</mark>，这有助于提高Jergens的盈利能力。</span><span class="lang-en"><mark class="ed-hl">Now it is speed</mark>. "No one wants to wait on anything anymore," said Schron, the company's president. Buyers will pay a premium to get products <mark class="ed-hl">in weeks instead of months</mark>, and that has helped Jergens' bottom line.</span></p>
+
+          <!-- Bespoke SVG 1: Industrial Buyer Threshold Shift -->
+          <figure class="figure-panel">
+            <div class="figure-kicker">
+              <span class="lang-cn">车间微观信号 · 定价权演变机制</span>
+              <span class="lang-en">Microeconomic Signal · Evolution of Pricing Power</span>
+            </div>
+            <h3 class="figure-title">
+              <span class="lang-cn">从“价格敏感”到“速度溢价”：Jergens 客户的采购门槛迁移</span>
+              <span class="lang-en">From Price Threshold to Speed Premium: How Buyer Priorities Shifted at Jergens</span>
+            </h3>
+            <p class="figure-desc">
+              <span class="lang-cn">当供应链需求超过现有产能，买方愿意为“数周而非数月”的交付周期支付溢价，直接赋予制造商更强的定价能力。</span>
+              <span class="lang-en">With aerospace orders surging and tariffs raising foreign rivals' costs, buyers willingly pay a premium to compress delivery from months to weeks.</span>
+            </p>
+            <svg viewbox="0 0 720 265" width="100%" role="img" aria-label="Industrial Buyer Priority Shift Diagram" viewBox="0 0 738 265" data-repaired-viewbox="0 0 720 265">
+              <rect x="0" y="0" width="720" height="265" fill="#faf8f4" rx="3" stroke="#e4dfd3" stroke-width="1"></rect>
+              
+              <!-- Left Column: Past Regime -->
+              <rect x="30" y="30" width="290" height="205" fill="#f3efe6" stroke="#c9c1b0" stroke-width="1.5" rx="3"></rect>
+              <text x="50" y="58" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#646059">
+                <tspan class="lang-cn">过去常态 / HISTORICAL NORM</tspan>
+                <tspan class="lang-en">HISTORICAL THRESHOLD</tspan>
+              </text>
+              
+              <!-- Step 1 -->
+              <rect x="50" y="75" width="250" height="44" fill="#ffffff" stroke="#c9c1b0" rx="2"></rect>
+              <text x="65" y="95" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">第一门槛：质量达标 (Quality)</tspan>
+                <tspan class="lang-en">1. Entry Ticket: Quality</tspan>
+              </text>
+              <text x="65" y="111" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#646059">
+                <tspan class="lang-cn">进入大型航空航天巨头的基本要求</tspan>
+                <tspan class="lang-en">Minimum to get in the door at aerospace giants</tspan>
+              </text>
+
+              <!-- Step 2 -->
+              <rect x="50" y="132" width="250" height="48" fill="#ece6d9" stroke="#646059" stroke-width="1.5" rx="2"></rect>
+              <text x="65" y="153" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">第二门槛：价格竞争 (Price)</tspan>
+                <tspan class="lang-en">2. Deciding Factor: Price</tspan>
+              </text>
+              <text x="65" y="170" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#646059">
+                <tspan class="lang-cn">“过去，价格是下一个重要的考量因素”</tspan>
+                <tspan class="lang-en">"The next threshold used to be price"</tspan>
+              </text>
+
+              <text x="50" y="210" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#646059">
+                <tspan class="lang-cn">交付周期：数月等待 · 利润受压</tspan>
+                <tspan class="lang-en">Wait times in months · Constrained margins</tspan>
+              </text>
+
+              <!-- Center Arrow -->
+              <path d="M 335 132 L 380 132" stroke="#b85d19" stroke-width="2.5" marker-end="url(#arrow-accent)"></path>
+              <defs>
+                <marker id="arrow-accent" viewbox="0 0 10 10" refx="7" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#b85d19"></path>
+                </marker>
+              </defs>
+
+              <!-- Right Column: Current Regime -->
+              <rect x="395" y="30" width="295" height="205" fill="#0f1d2b" stroke="#b85d19" stroke-width="2" rx="3"></rect>
+              <text x="415" y="58" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#e5b97f">
+                <tspan class="lang-cn">当前现实 / CURRENT FACTORY FLOOR</tspan>
+                <tspan class="lang-en">TODAY'S REALITY (2026)</tspan>
+              </text>
+
+              <!-- Step 1 Right -->
+              <rect x="415" y="75" width="255" height="44" fill="#16283a" stroke="#284159" rx="2"></rect>
+              <text x="430" y="95" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#ffffff">
+                <tspan class="lang-cn">第一门槛：质量达标 (Quality)</tspan>
+                <tspan class="lang-en">1. Entry Ticket: Quality</tspan>
+              </text>
+              <text x="430" y="111" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#b0beca">
+                <tspan class="lang-cn">航空面板与演艺设备紧固件准入底线</tspan>
+                <tspan class="lang-en">Clamps &amp; quick-release pins baseline</tspan>
+              </text>
+
+              <!-- Step 2 Right -->
+              <rect x="415" y="132" width="255" height="48" fill="#b85d19" rx="2"></rect>
+              <text x="430" y="153" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#ffffff">
+                <tspan class="lang-cn">第二门槛：交付速度 (Speed Premium)</tspan>
+                <tspan class="lang-en">2. New Priority: Speed</tspan>
+              </text>
+              <text x="430" y="170" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#faf8f4">
+                <tspan class="lang-cn">买家愿付溢价，将交付从“数月缩至数周”</tspan>
+                <tspan class="lang-en">Premium paid for delivery in weeks vs. months</tspan>
+              </text>
+
+              <text x="415" y="210" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#e5b97f">
+                <tspan class="lang-cn">结果：利润率走高 · 需求超越产能信号</tspan>
+                <tspan class="lang-en">Result: Stronger bottom line · Pricing power</tspan>
+              </text>
+            </svg>
+            <figcaption class="figure-caption">
+              <span class="lang-cn">数据及事实来源：Jergens 总裁杰克·施龙向克利夫兰联储行长贝丝·哈马克的汇报（原文第 1–5 段）。</span>
+              <span class="lang-en">Source: Jergens President Jack Schron’s briefing to Cleveland Fed President Beth Hammack (Paragraphs 1–5).</span>
+            </figcaption>
+          </figure>
+
+          <p class="prose-p" data-ref="p5" data-hl="需求超过了供应商的生产能力 | demand is outrunning what suppliers can make"><span class="lang-cn">这种定价能力让像哈马克这样的通胀控制者感到担忧。这表明<mark class="ed-hl">需求超过了供应商的生产能力</mark>，而更高的利率本应抑制这种趋势。然而，在她的访问期间，利率问题并没有被提及，她的访问以参观繁忙的工厂车间结束。</span><span class="lang-en">That kind of pricing power worries inflation fighters like Hammack. It suggests <mark class="ed-hl">demand is outrunning what suppliers can make</mark>, a dynamic that higher interest rates are supposed to tamp down. Yet interest rates never came up during her visit, which ended with a tour of the busy factory floor.</span></p>
+          <p class="prose-p" data-ref="p6"><span class="lang-cn">Jergens只是众多公司中的一家，但它的经历与哈马克所说的情况相符，即她从整个辖区听到的情况。“你们从杰克那里听到了。他正在购买昂贵的机器。他正在投资。他看到了大量的需求。增长是存在的，”哈马克在参观结束后的一次采访中说。</span><span class="lang-en">Jergens is one company, but its experience fits what Hammack said she is hearing from across her district. "You heard it from Jack. He's buying expensive machinery. He's investing. He sees a lot of demand. The growth is there," Hammack said in an interview after the tour.</span></p>
+        </div>
+
+        <!-- Side Rail: Jergens Field Dossier & Derived Pull Quotes -->
+        <aside class="side-rail">
+          <div class="dossier-card">
+            <div class="dossier-header">
+              <span>FIELD DOSSIER · 01</span>
+              <span>CLEVELAND, OH</span>
+            </div>
+            <h3 class="dossier-title">
+              <span class="lang-cn">Jergens 制造厂实地调研档案</span>
+              <span class="lang-en">Jergens Manufacturing Site Brief</span>
+            </h3>
+            <ul class="dossier-list">
+              <li>
+                <span class="dossier-label"><span class="lang-cn">企业背景</span><span class="lang-en">COMPANY PROFILE</span></span>
+                <span class="lang-cn">创立84年的家族工业五金制造商，位于克利夫兰东区原铁路建筑旧址，总裁为杰克·施龙（Jack Schron）。</span>
+                <span class="lang-en">84-year-old family-run manufacturer on the site of old railroad buildings on Cleveland's east side, led by President Jack Schron.</span>
+              </li>
+              <li>
+                <span class="dossier-label"><span class="lang-cn">核心产品</span><span class="lang-en">CORE HARDWARE</span></span>
+                <span class="lang-cn">工业夹具（clamps）与快卸销（quick-release pins），用于固定飞机面板至音乐会扬声器等各类部件。</span>
+                <span class="lang-en">Industrial clamps and quick-release pins locking aircraft panels to concert speakers into position.</span>
+              </li>
+              <li>
+                <span class="dossier-label"><span class="lang-cn">三大顺风驱动</span><span class="lang-en">THREE DEMAND DRIVERS</span></span>
+                <span class="lang-cn">航空航天公司订单激增；关税推高中国竞争对手零部件价格；客户愿为数周内交货支付溢价。</span>
+                <span class="lang-en">Surging aerospace orders; tariffs making a Chinese rival's parts costlier; buyers paying premiums for delivery in weeks.</span>
+              </li>
+              <li>
+                <span class="dossier-label"><span class="lang-cn">资本开支信号</span><span class="lang-en">CAPEX MILESTONE</span></span>
+                <span class="lang-cn">即将进行公司84年历史上最大规模的机床采购——且在90分钟参访中从未提及高利率阻碍。</span>
+                <span class="lang-en">About to make the largest machine-tool purchase in its 84-year history—with interest rates never coming up during the 90-minute visit.</span>
+              </li>
+            </ul>
+          </div>
+
+          <blockquote class="pull-quote" data-derive="q1"><p class="quote-text" data-field="quote"><span class="lang-cn">“过去，价格是下一个重要的考量因素，”</span><span class="lang-en">“The next threshold used to be price,”</span></p><footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 3 段直接引述 · Source Block p3</span><span class="lang-en">— Direct Quote (p3), Reported in article text</span></footer></blockquote>
+
+          <blockquote class="pull-quote" data-derive="q2"><p class="quote-text" data-field="quote"><span class="lang-cn">“你们从杰克那里听到了。他正在购买昂贵的机器。他正在投资。他看到了大量的需求。增长是存在的，”</span><span class="lang-en">“You heard it from Jack. He's buying expensive machinery. He's investing. He sees a lot of demand. The growth is there,”</span></p><footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 6 段直接引述 · Source Block p6</span><span class="lang-en">— Direct Quote (p6), Reported in article text</span></footer></blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CHAPTER II: FIVE YEARS ABOVE TARGET & THE HAWKISH TRADER -->
+    <section class="chapter-section" id="chapter-2">
+      <div class="chapter-banner">
+        <span class="chapter-num">02 / THE HAWKISH CASE</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">五年超标与2029年争议：高盛交易员出身的鹰派逻辑</span>
+          <span class="lang-en">Five Years Above Target: A Veteran Trader’s Impatience</span>
+        </h2>
+      </div>
+
+      <div class="asymmetric-grid">
+        <div class="prose-col">
+          <p class="prose-p" data-ref="p7" data-hl="3.75%至4% | 3.75% to 4% | 超过美联储设定的2%目标五年多 | above the Fed's 2% target for more than five years"><span class="lang-cn">这是她认为美联储需要进一步提高利率的一个重要原因。上个月，美联储将其基准利率提高到<mark class="ed-hl">3.75%至4%</mark>的区间。哈马克表示，由于通胀已经<mark class="ed-hl">超过美联储设定的2%目标五年多</mark>，她从低收入家庭那里了解到，他们不仅开始在杂货店购买更便宜的商品，而且还在选择支付哪些账单。</span><span class="lang-en">It is a big reason she thinks the Fed, which raised its benchmark rate last month to a range of <mark class="ed-hl">3.75% to 4%</mark>, needs to go higher still. With inflation <mark class="ed-hl">above the Fed's 2% target for more than five years</mark>, Hammack says she hears from lower-income households that are no longer just trading down at the grocery store but choosing which bills to pay.</span></p>
+
+          <!-- Sentence-split highlight for p8 -->
+          <p class="prose-p" data-ref="p8.s1" data-hl="2029年 | 2029"><span class="lang-cn">上个月，她的许多同事认为通胀将在<mark class="ed-hl"><mark class="ed-hl">2029</mark>年</mark>恢复到目标水平。</span><span class="lang-en">Most of her colleagues last month saw inflation returning to target in <mark class="ed-hl">2029</mark>.</span></p>
+          <div class="inline-verdict-box">
+            <span class="inline-verdict-kicker">
+              <span class="lang-cn">哈马克对2029年通胀达标时间表的直接表态</span>
+              <span class="lang-en">HAMMACK ON WAIT UNTIL 2029 TO HIT 2% TARGET</span>
+            </span>
+            <blockquote class="inline-verdict-quote" data-ref="p8.s2"><span class="lang-cn">“我认为，这时间太长了，”她说。</span><span class="lang-en">"To me, that's far too long," she said.</span></blockquote>
+          </div>
+
+          <p class="prose-p" data-ref="p9" data-hl="高盛工作了30多年 | 30 years at Goldman Sachs | 49%"><span class="lang-cn">哈马克在2024年加入美联储之前，曾在<mark class="ed-hl">高盛工作了30多年</mark>，她一直是主张提高利率的最直言不讳的官员之一。“我成长于一个交易的世界，如果我<mark class="ed-hl">49%</mark>的时间判断错误，那也是一个相当不错的结果，所以我并不害怕提出预测，”她说。</span><span class="lang-en">Hammack, who spent more than <mark class="ed-hl">30 years at Goldman Sachs</mark> before joining the Fed in 2024, has been among the most outspoken officials in pushing for higher rates. "I grew up in a world as a trader where if I was wrong <mark class="ed-hl">49%</mark> of the time, that was a pretty good day, so I'm not afraid of putting out a forecast," she said.</span></p>
+          <p class="prose-p" data-ref="p10" data-hl="人工智能相关支出在工业和技术领域的激增 | boom in AI-related spending rippling through the industrial and technology sectors"><span class="lang-cn">哈马克很早就提出，利率可能并没有像美联储官员认为的那样有效地抑制经济，并且<mark class="ed-hl">人工智能相关支出在工业和技术领域的激增</mark>，也让她的更多同事开始认同她的观点。</span><span class="lang-en">Hammack was early to argue that rates might not be restraining the economy as much as Fed officials thought, and the <mark class="ed-hl">boom in AI-related spending rippling through the industrial and technology sectors</mark> has since brought more of her colleagues around to that view.</span></p>
+          <p class="prose-p" data-ref="p11"><span class="lang-cn">现在的问题是，应该以多快的速度进行调整。美联储9月份会议的纪要显示，大多数官员认为，到年底再加息一次可能是合适的，而且有几位官员表示，他们认为美联储本月无需再次加息。</span><span class="lang-en">The question now is how quickly to adjust. Minutes of the Fed's September meeting showed most officials thought another increase would likely be appropriate by year-end, and several have signaled they think the Fed doesn't need to raise rates again this month.</span></p>
+          <p class="prose-p" data-ref="p12" data-hl="更小、更频繁的调整是更好的选择 | Smaller, more frequent adjustments are preferable"><span class="lang-cn">哈马克的语气听起来没那么耐心。“相比于幅度较大的调整，<mark class="ed-hl">更小、更频繁的调整是更好的选择</mark>”，哈马克说，部分原因是，大幅度的调整可能会给企业做好准备带来更大的困难。</span><span class="lang-en">Hammack didn't sound as patient. "<mark class="ed-hl">Smaller, more frequent adjustments are preferable</mark> to larger" ones, in part because making bigger moves can be harder for businesses to prepare for, said Hammack.</span></p>
+          <p class="prose-p" data-ref="p13" data-hl="三名投反对票的决策者之一 | one of three policymakers who dissented"><span class="lang-cn">7 月美联储维持利率不变时，她是<mark class="ed-hl">三名投反对票的决策者之一</mark>，主张加息。</span><span class="lang-en">In July, when the Fed held rates steady, she was <mark class="ed-hl">one of three policymakers who dissented</mark> in favor of a rate increase.</span></p>
+        </div>
+
+        <!-- Side Rail: Verified Metrics & Quotes -->
+        <aside class="side-rail">
+          <div class="metric-card" data-derive="m1">
+            <div class="metric-val" data-field="value"><span class="lang-cn">3.75%</span><span class="lang-en">3.75%</span></div>
+            <div class="metric-lbl" data-field="label"><span class="lang-cn">这是她认为美联储需要进一步提高利率的一个重要原因。上个月，美联储将其基准…</span><span class="lang-en">It is a big reason she thinks the Fed, which raised its benc…</span></div>
+            <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p7]</span><span class="lang-en">From paragraph [p7]</span></div>
+          </div>
+
+          <div class="metric-card" data-derive="m2">
+            <div class="metric-val" data-field="value"><span class="lang-cn">49%</span><span class="lang-en">49%</span></div>
+            <div class="metric-lbl" data-field="label"><span class="lang-cn">哈马克在2024年加入美联储之前，曾在高盛工作了30多年，她一直是主张提…</span><span class="lang-en">Hammack, who spent more than 30 years at Goldman Sachs befor…</span></div>
+            <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p9]</span><span class="lang-en">From paragraph [p9]</span></div>
+          </div>
+
+          <blockquote class="pull-quote" data-derive="q3"><p class="quote-text" data-field="quote"><span class="lang-cn">“我成长于一个交易的世界，如果我49%的时间判断错误，那也是一个相当不错的结果，所以我并不害怕提出预测，”</span><span class="lang-en">“I grew up in a world as a trader where if I was wrong 49% of the time, that was a pretty good day, so I'm not afraid of putting out a forecast,”</span></p><footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 9 段直接引述 · Source Block p9</span><span class="lang-en">— Direct Quote (p9), Reported in article text</span></footer></blockquote>
+
+          <blockquote class="pull-quote" data-derive="q4"><p class="quote-text" data-field="quote"><span class="lang-cn">“相比于幅度较大的调整，更小、更频繁的调整是更好的选择”</span><span class="lang-en">“Smaller, more frequent adjustments are preferable to larger”</span></p><footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 12 段直接引述 · Source Block p12</span><span class="lang-en">— Direct Quote (p12), Reported in article text</span></footer></blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CHAPTER III: THE ELUSIVE NEUTRAL RATE & MARKET DEBATES -->
+    <section class="chapter-section" id="chapter-3">
+      <div class="chapter-banner">
+        <span class="chapter-num">03 / NEUTRAL RATE &amp; COMMUNICATION</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">无形的中性利率、债市角色与央行沟通哲学之争</span>
+          <span class="lang-en">The Unobservable Neutral Rate, Bond Yields, and the Warsh Debate</span>
+        </h2>
+      </div>
+
+      <div class="asymmetric-grid">
+        <div class="prose-col">
+          <p class="prose-p" data-ref="p14" data-hl='“中性”利率 | "neutral" rate | 她的估算值是委员会中最高的 | her estimate is among the highest on the committee'><span class="lang-cn">官员们通常会评估他们对经济的抑制程度，并将其与一个无法直接观察到的<mark class="ed-hl">“中性”利率</mark>进行比较，这个利率既不会刺激也不会抑制经济增长。哈马克表示，<mark class="ed-hl">她的估算值是委员会中最高的</mark>，如果她的估算有误，那么这个值就太低了。</span><span class="lang-en">Officials often gauge how much they are restraining the economy against some estimate of an unobservable <mark class="ed-hl">"neutral" rate</mark>, the level that neither spurs nor slows growth. Hammack said <mark class="ed-hl">her estimate is among the highest on the committee</mark>, and that if she is wrong, it is too low.</span></p>
+          <p class="prose-p" data-ref="p15"><span class="lang-cn">她说：“当你看到流入的资金量，当你看到创造的利润时，在我看来，这并不是一个受到抑制的经济。”</span><span class="lang-en">"When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint," she said.</span></p>
+          <p class="prose-p" data-ref="p16" data-hl="长期国债收益率 | Long-term Treasury yields | 这不是一种替代方案，而是一种补充 | It's not a substitute, it's a complement"><span class="lang-cn">自夏季以来，<mark class="ed-hl">长期国债收益率</mark>一直在上涨，这导致了整个经济体的借贷成本上升。哈马克表示，这使得金融状况更接近中性水平，但她否决了这样一种观点，即债券市场可以代替美联储完成其工作。“绝对不是”，她说，“<mark class="ed-hl">这不是一种替代方案，而是一种补充</mark>。”</span><span class="lang-en"><mark class="ed-hl">Long-term Treasury yields</mark> have been on the march since the summer, raising borrowing costs across the economy. Hammack said that has moved financial conditions closer to neutral, but she rejected the suggestion that the bond market could do the Fed's work for it. "Absolutely not," she said. "<mark class="ed-hl">It's not a substitute, it's a complement</mark>."</span></p>
+
+          <!-- Bespoke SVG 2: Policy Timeline & Rate Restraint Gauge -->
+          <figure class="figure-panel">
+            <div class="figure-kicker">
+              <span class="lang-cn">政策时间轴与分歧图谱 · 2024–2029</span>
+              <span class="lang-en">Policy Timeline &amp; Restraint Spectrum · 2024–2029</span>
+            </div>
+            <h3 class="figure-title">
+              <span class="lang-cn">哈马克的政策轨迹与美联储内部的关键张力</span>
+              <span class="lang-en">Hammack’s Hawkish Trajectory vs. FOMC Consensus</span>
+            </h3>
+            <p class="figure-desc">
+              <span class="lang-cn">从7月会议投下赞成加息的反对票，到9月上调基准利率至3.75%–4.00%，哈马克认为中性利率远高于同僚预期，且不接受等到2029年才让通胀回到2%。</span>
+              <span class="lang-en">From dissenting in July in favor of a hike to pushing past the 3.75%–4% range, Hammack argues the neutral rate is higher and waiting until 2029 for 2% inflation is unacceptable.</span>
+            </p>
+            <svg viewbox="0 0 720 250" width="100%" role="img" aria-label="Fed Policy Timeline and Neutral Rate Spectrum" viewBox="-44 0 915 250" data-repaired-viewbox="0 0 720 250">
+              <rect x="0" y="0" width="720" height="250" fill="#faf8f4" rx="3" stroke="#e4dfd3" stroke-width="1"></rect>
+              
+              <!-- Horizontal Timeline Axis -->
+              <line x1="45" y1="85" x2="675" y2="85" stroke="#141413" stroke-width="2"></line>
+
+              <!-- Node 1: 2024 -->
+              <circle cx="80" cy="85" r="6" fill="#141413"></circle>
+              <text x="80" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#141413">2024</text>
+              <text x="80" y="110" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#242220">
+                <tspan x="80" dy="0" class="lang-cn">告别高盛30余年交易生涯</tspan>
+                <tspan x="80" dy="14" class="lang-cn">出任克利夫兰联储行长</tspan>
+                <tspan x="80" dy="0" class="lang-en">Joins Fed after 30+ yrs</tspan>
+                <tspan x="80" dy="14" class="lang-en">at Goldman Sachs</tspan>
+              </text>
+
+              <!-- Node 2: July 2026 -->
+              <circle cx="250" cy="85" r="7" fill="#b85d19"></circle>
+              <text x="250" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#b85d19">2026.07</text>
+              <text x="250" y="110" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#242220">
+                <tspan x="250" dy="0" class="lang-cn">美联储按兵不动，哈马克</tspan>
+                <tspan x="250" dy="14" class="lang-cn">成为3名投反对票主张加息者之一</tspan>
+                <tspan x="250" dy="0" class="lang-en">Fed holds steady; 1 of 3</tspan>
+                <tspan x="250" dy="14" class="lang-en">dissenting for a rate hike</tspan>
+              </text>
+
+              <!-- Node 3: Sept 2026 -->
+              <circle cx="445" cy="85" r="7" fill="#0f1d2b"></circle>
+              <text x="445" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#0f1d2b">2026.09</text>
+              <text x="445" y="110" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#242220">
+                <tspan x="445" dy="0" class="lang-cn">加息至 3.75%–4.00% 区间</tspan>
+                <tspan x="445" dy="14" class="lang-cn">多数官员预计年底前再加一次</tspan>
+                <tspan x="445" dy="0" class="lang-en">Hike to 3.75%–4.00%;</tspan>
+                <tspan x="445" dy="14" class="lang-en">most see 1 more by yr-end</tspan>
+              </text>
+
+              <!-- Node 4: 2029 Horizon -->
+              <circle cx="635" cy="85" r="7" fill="#b85d19" stroke="#141413" stroke-width="2"></circle>
+              <text x="635" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#b85d19">2029</text>
+              <text x="635" y="110" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" fill="#242220">
+                <tspan x="635" dy="0" class="lang-cn">同僚预计回到2%目标年份</tspan>
+                <tspan x="635" dy="14" class="lang-cn">哈马克：“这时间太长了”</tspan>
+                <tspan x="635" dy="0" class="lang-en">Colleagues see 2% target;</tspan>
+                <tspan x="635" dy="14" class="lang-en">Hammack: "Far too long"</tspan>
+              </text>
+
+              <!-- Bottom Bar: Neutral Rate Assessment -->
+              <rect x="40" y="160" width="640" height="65" fill="#f3efe6" stroke="#c9c1b0" rx="3"></rect>
+              <text x="58" y="183" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700" fill="#b85d19">
+                <tspan class="lang-cn">核心诊断：为何 3.75%–4.00% 仍未抑制经济？</tspan>
+                <tspan class="lang-en">CORE DIAGNOSIS: WHY 3.75%–4.00% IS NOT RESTRAINING GROWTH</tspan>
+              </text>
+              <text x="58" y="205" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#242220">
+                <tspan class="lang-cn">1) 哈马克对“中性利率”的估算居委员会最高之列  ·  2) AI资本开支与工业订单激增  ·  3) 长债收益率上升只是补充而非替代</tspan>
+                <tspan class="lang-en">1) Highest neutral-rate estimate on committee  ·  2) AI &amp; industrial capex boom  ·  3) Bond yields are a complement, not a substitute</tspan>
+              </text>
+            </svg>
+            <figcaption class="figure-caption">
+              <span class="lang-cn">资料来源：根据原文第 7–16 段整理的货币政策决策节点与中性利率评估框架。</span>
+              <span class="lang-en">Source: Monetary policy milestones and neutral-rate framework synthesized from Paragraphs 7–16.</span>
+            </figcaption>
+          </figure>
+
+          <p class="prose-p" data-ref="p17" data-hl="我不认为提高利率会显著抑制数据中心的需求 | I do not think that raising rates is going to materially slow the data-center demand"><span class="lang-cn">在美联储之外，批评人士认为，提高利率并不是解决问题的正确方法。他们无法生产更多的石油，而且可能无法立即抑制科技巨头利用其现金和债券市场进行的人工智能支出。哈马克承认了这一点。“<mark class="ed-hl">我不认为提高利率会显著抑制数据中心的需求</mark>”，她说。</span><span class="lang-en">Outside the Fed, critics argue that higher rates are the wrong tool for the job. They can't produce more oil and may not immediately slow AI spending financed by tech giants' cash and the bond market. Hammack conceded the point. "<mark class="ed-hl">I do not think that raising rates is going to materially slow the data-center demand</mark>," she said.</span></p>
+          <p class="prose-p" data-ref="p18" data-hl="美联储主席凯文·沃什 | Fed Chairman Kevin Warsh"><span class="lang-cn">哈马克愿意明确表达自己的观点，这使她与<mark class="ed-hl">美联储主席凯文·沃什</mark>有所不同。沃什曾表示，他希望美联储不要再发布关于其行动的信号，也不要再阐述其预测，因为他认为，这样做会使官员们陷入捍卫预测的境地，而不是根据经济的实际发展情况做出反应。</span><span class="lang-en">Hammack's willingness to say where she stands sets her apart from <mark class="ed-hl">Fed Chairman Kevin Warsh</mark>. Warsh has said he wants to move the Fed away from signaling its own moves or narrating its forecasts, which he has argued locks officials into defending a projection instead of responding to the economy as it unfolds.</span></p>
+          <p class="prose-p" data-ref="p19" data-hl="尽可能多地向公众提供信息 | arm the public with as much information as possible | 将他们视为成熟的成年人 | treat them like mature grown-ups"><span class="lang-cn">哈马克说，减少沟通只会让企业和家庭自行猜测。她的工作是“<mark class="ed-hl">尽可能多地向公众提供信息</mark>”，并“<mark class="ed-hl">将他们视为成熟的成年人</mark>”。</span><span class="lang-en">Saying less just leaves businesses and households to guess, Hammack said. Her job is to "<mark class="ed-hl">arm the public with as much information as possible</mark>" and to "<mark class="ed-hl">treat them like mature grown-ups</mark>."</span></p>
+
+          <!-- Analytical Comparison Matrix: Hammack vs Warsh on Fed Communication -->
+          <div class="comparison-matrix">
+            <div class="matrix-col hammack-col">
+              <div class="matrix-tag">BETH HAMMACK · CLEVELAND FED</div>
+              <h4 class="matrix-head">
+                <span class="lang-cn">透明预期派：“把公众当作近乎成熟的成年人”</span>
+                <span class="lang-en">Radical Transparency: "Treat Public Like Mature Grown-Ups"</span>
+              </h4>
+              <p class="matrix-body">
+                <span class="lang-cn">受30余年交易员生涯影响，不惧怕公开预测。认为减少沟通只会迫使企业和家庭盲目猜测，央行职责是向公众提供尽可能充分的信息，并通过更小、更频繁的利率调整帮助企业做好准备。</span>
+                <span class="lang-en">Shaped by 30+ years as a trader, unafraid of putting out forecasts. Argues saying less leaves businesses and households to guess; favors smaller, more frequent adjustments so firms can prepare.</span>
+              </p>
+            </div>
+            <div class="matrix-col warsh-col">
+              <div class="matrix-tag">KEVIN WARSH · FED CHAIRMAN</div>
+              <h4 class="matrix-head">
+                <span class="lang-cn">审慎缄默派：摆脱“前瞻指引与预测叙事”束缚</span>
+                <span class="lang-en">Signal Restraint: Move Away from Narrating Forecasts</span>
+              </h4>
+              <p class="matrix-body">
+                <span class="lang-cn">主张美联储停止预先释放行动信号或详述预测路径，认为过度沟通会让决策者陷入“捍卫自身预测”的被动局面，削弱根据实际经济演变灵活应对的能力。</span>
+                <span class="lang-en">Wants to move the Fed away from signaling its own moves or narrating forecasts, arguing that doing so locks officials into defending projections rather than responding as the economy unfolds.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Rail: Quote 5 & Policy Dossier -->
+        <aside class="side-rail">
+          <blockquote class="pull-quote" data-derive="q5"><p class="quote-text" data-field="quote"><span class="lang-cn">“当你看到流入的资金量，当你看到创造的利润时，在我看来，这并不是一个受到抑制的经济。”</span><span class="lang-en">“When you see the amount of capital that's flowing in, when you see the profits that are being created, to me, this does not look like an economy that has restraint,”</span></p><footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 15 段直接引述 · Source Block p15</span><span class="lang-en">— Direct Quote (p15), Reported in article text</span></footer></blockquote>
+
+          <div class="dossier-card">
+            <div class="dossier-header">
+              <span>POLICY DEBATE · 02</span>
+              <span>RATE TOOLS &amp; LIMITS</span>
+            </div>
+            <h3 class="dossier-title">
+              <span class="lang-cn">加息工具的边界与外部批评</span>
+              <span class="lang-en">Limits of Rate Hikes &amp; External Critiques</span>
+            </h3>
+            <ul class="dossier-list">
+              <li>
+                <span class="dossier-label"><span class="lang-cn">债券收益率的角色</span><span class="lang-en">BOND MARKET ROLE</span></span>
+                <span class="lang-cn">自夏季以来长债收益率走高使金融状况更接近中性，但哈马克强调债市只是美联储行动的“补充”而非“替代”。</span>
+                <span class="lang-en">Rising long-term Treasury yields since summer moved financial conditions closer to neutral, which Hammack calls a "complement," not a "substitute."</span>
+              </li>
+              <li>
+                <span class="dossier-label"><span class="lang-cn">批评者的质疑</span><span class="lang-en">EXTERNAL CRITICS' VIEW</span></span>
+                <span class="lang-cn">更高利率无法凭空开采更多石油，也难以立即放缓由科技巨头丰厚现金流与发债融资支撑的AI资本开支。</span>
+                <span class="lang-en">Higher rates cannot produce more oil or immediately slow AI spending financed by tech giants' cash and bond issuance.</span>
+              </li>
+              <li>
+                <span class="dossier-label"><span class="lang-cn">哈马克的务实承认</span><span class="lang-en">HAMMACK'S CONCESSION</span></span>
+                <span class="lang-cn">承认加息不会显著抑制数据中心需求，但坚持在整体资本流入与企业利润高企的背景下，经济远未受到足够抑制。</span>
+                <span class="lang-en">Concedes rate hikes won't materially slow data-center demand, yet maintains overall capital inflows and profits show an unrestrained economy.</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="ed-footer">
+    <div>
+      <strong>THE WALL STREET JOURNAL</strong> · <span class="lang-cn">华尔街日报中文深读版 · 印刷版第 A2 版</span><span class="lang-en">WSJ Editorial Renaissance · Print Edition Page A2</span>
+    </div>
+    <div>
+      <span class="lang-cn">作者：Nick Timiraos · 2026年10月12日</span>
+      <span class="lang-en">By Nick Timiraos · October 12, 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>

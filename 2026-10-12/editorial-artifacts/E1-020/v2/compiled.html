@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地方政治阻碍硅谷对峙 · Local Politics Stymie Silicon Valley Standoff | WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,800;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #eae4d6;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c8c0af;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.12);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283b;
+    --navy-line: #294057;
+    --crimson: #8f2d23;
+    --sage: #2e5a44;
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-body-en: 'Lora', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    font-family: var(--font-serif-cn);
+    background-color: var(--paper);
+    color: var(--body);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-body-en);
+    line-height: 1.75;
+  }
+
+  /* Reading Progress Bar */
+  .progress-bar-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 1001;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 1.5rem;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand-cluster {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+  .wsj-monogram {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .brand-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--line-strong);
+  }
+  .section-tag {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .lang-switch {
+    display: inline-flex;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Section */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+  .hero-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: var(--font-serif-cn);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 4.5vw, 3.6rem);
+    line-height: 1.18;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+    max-width: 960px;
+  }
+  html[lang="en"] .hero-title {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    line-height: 1.08;
+  }
+  .hero-dek {
+    font-family: var(--font-serif-cn);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  html[lang="en"] .hero-dek {
+    font-family: var(--font-body-en);
+    font-style: italic;
+  }
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .byline-name {
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Stakes Ledger Strip */
+  .stakes-strip {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(243, 239, 230, 0.5) 0%, rgba(250, 248, 244, 0) 100%);
+  }
+  .stakes-header {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stakes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  .metric-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .metric-card.highlight-accent {
+    border-top-color: var(--accent);
+  }
+  .metric-val {
+    font-family: var(--font-mono);
+    font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 0.45rem;
+  }
+  .metric-card.highlight-accent .metric-val {
+    color: var(--accent);
+  }
+  .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--body);
+    margin-bottom: 0.35rem;
+  }
+  .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Main Editorial Layout Container */
+  .editorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  /* Asymmetric 2-Column Rail */
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(280px, 4.5fr);
+    gap: 3.5rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+  .prose-col {
+    max-width: 680px;
+  }
+  .rail-col {
+    position: sticky;
+    top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Prose Styling */
+  .prose-p {
+    font-size: 1.125rem;
+    margin-bottom: 1.55rem;
+    color: var(--body);
+    text-align: left;
+  }
+  html[lang="zh-CN"] .prose-p {
+    line-height: 1.92;
+    letter-spacing: 0.01em;
+  }
+  html[lang="en"] .prose-p {
+    font-size: 1.14rem;
+    line-height: 1.78;
+  }
+
+  /* Lead Paragraph Styling (No ::first-letter on Chinese!) */
+  .prose-lead {
+    font-size: 1.26rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding-left: 1.25rem;
+    margin-bottom: 1.85rem;
+  }
+  html[lang="en"] .prose-lead {
+    font-size: 1.28rem;
+  }
+
+  /* Pivot Short Paragraph */
+  .prose-pivot {
+    font-size: 1.32rem;
+    font-weight: 700;
+    color: var(--crimson);
+    background: var(--paper-card);
+    border-left: 4px solid var(--crimson);
+    padding: 1rem 1.35rem;
+    margin: 2rem 0;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(120deg, rgba(184, 93, 25, 0.18) 0%, rgba(184, 93, 25, 0.18) 100%);
+    color: inherit;
+    padding: 0.05em 0.25em;
+    border-bottom: 1.5px solid var(--accent);
+    font-weight: 600;
+  }
+
+  /* Chapter Headers */
+  .chapter-banner {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 0;
+    margin: 3.5rem 0 2.5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+  .chapter-title {
+    font-family: var(--font-serif-cn);
+    font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  html[lang="en"] .chapter-title {
+    font-family: var(--font-serif-en);
+  }
+  .chapter-sub {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* Pull Quotes */
+  .pull-quote {
+    background: var(--paper-card);
+    border-top: 3px solid var(--accent);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 1.6rem 1.5rem;
+    position: relative;
+  }
+  .pull-quote::before {
+    content: "“";
+    font-family: var(--font-serif-en);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.35;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.85rem;
+  }
+  .quote-text {
+    font-family: var(--font-serif-cn);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.85rem;
+  }
+  html[lang="en"] .quote-text {
+    font-family: var(--font-serif-en);
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+  .quote-attrib {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  /* Dossier & Sidebar Cards */
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.5rem;
+  }
+  .dossier-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .dossier-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .dossier-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .dossier-item {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--body);
+  }
+  .dossier-item strong {
+    color: var(--ink);
+    display: block;
+    font-size: 0.86rem;
+    margin-bottom: 0.15rem;
+  }
+
+  /* Bespoke SVG Visual Exhibits */
+  .exhibit-box {
+    background: var(--navy-bg);
+    color: #f4f1ea;
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin: 2.75rem 0;
+    border: 1px solid var(--navy-line);
+    box-shadow: 0 12px 30px rgba(15, 29, 43, 0.12);
+  }
+  .exhibit-box.light-exhibit {
+    background: var(--paper-card);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    box-shadow: none;
+  }
+  .exhibit-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+  .light-exhibit .exhibit-head {
+    border-bottom-color: var(--line-strong);
+  }
+  .exhibit-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #e89954;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .light-exhibit .exhibit-tag {
+    color: var(--accent);
+  }
+  .exhibit-title {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .light-exhibit .exhibit-title {
+    color: var(--ink);
+  }
+  .exhibit-sub {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: #b0becf;
+    margin-top: 0.25rem;
+  }
+  .light-exhibit .exhibit-sub {
+    color: var(--muted);
+  }
+  .exhibit-foot {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #8fa3b8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .light-exhibit .exhibit-foot {
+    border-top-color: var(--line);
+    color: var(--muted);
+  }
+
+  /* Verdict Climax Box */
+  .verdict-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2.5rem 2rem;
+    margin-top: 2.5rem;
+    border-left: 6px solid var(--accent);
+  }
+  .verdict-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #e89954;
+    margin-bottom: 0.85rem;
+  }
+  .verdict-box .prose-p {
+    color: var(--paper);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .editorial-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .stakes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .chapter-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .rail-col {
+      position: static;
+    }
+    .prose-col {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .masthead {
+      padding: 0.6rem 1rem;
+    }
+    .hero {
+      padding: 2.25rem 1rem 1.75rem;
+    }
+    .stakes-strip,
+    .editorial-container,
+    .editorial-footer {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .stakes-grid {
+      grid-template-columns: 1fr;
+    }
+    .exhibit-box {
+      padding: 1.35rem 1rem;
+    }
+    .verdict-box {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar-wrap">
+  <div class="progress-bar" id="readProgress"></div>
+</div>
+
+<!-- Sticky Masthead -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-cluster">
+      <span class="wsj-monogram">The Wall Street Journal</span>
+      <span class="brand-divider"></span>
+      <span class="section-tag">
+        <span class="lang-cn">美国新闻 · 深度调查 (A3版)</span>
+        <span class="lang-en">U.S. News · Deep Read (Page A3)</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Selector">
+      <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Header -->
+<section class="hero">
+  <div class="hero-kicker">
+    <span class="lang-cn">硅谷造城梦 vs. 县政红线 · 索拉诺县纪实</span>
+    <span class="lang-en">SILICON VALLEY UTOPIA VS. COUNTY RED TAPE · SOLANO COUNTY DISPATCH</span>
+  </div>
+  <h1 class="hero-title" data-ref="title"><span class="lang-cn">地方政治阻碍硅谷对峙</span><span class="lang-en">Local Politics Stymie Silicon Valley Standoff</span></h1>
+  <p class="hero-dek" data-ref="dek"><span class="lang-cn"></span><span class="lang-en">between county leaders and developers frustrates $3 billion project</span></p>
+  <div class="hero-meta-bar">
+    <div>
+      <span class="byline-name">BY ZUSHA ELINSON</span>
+      <span> · </span>
+      <span class="lang-cn">2026年10月12日</span>
+      <span class="lang-en">October 12, 2026</span>
+    </div>
+    <div>
+      <span class="lang-cn">地点：加利福尼亚州索拉诺县 (Solano County, Calif.)</span>
+      <span class="lang-en">Dateline: SOLANO COUNTY, Calif.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Key Quantitative Ledger Strip (Derived Metrics m1..m4) -->
+<section class="stakes-strip" aria-label="Key Financial Stakes">
+  <div class="stakes-header">
+    <span>
+      <span class="lang-cn">核心筹码与资本账本 · KEY STAKES &amp; CAPITAL LEDGER</span>
+      <span class="lang-en">KEY STAKES &amp; CAPITAL LEDGER · VERIFIED FIGURES</span>
+    </span>
+    <span>E1-020</span>
+  </div>
+  <div class="stakes-grid">
+    <div class="metric-card highlight-accent" data-derive="m1">
+      <div class="metric-val" data-field="value"><span class="lang-cn">30亿美元</span><span class="lang-en">$3 billion</span></div>
+      <div class="metric-lbl" data-field="label"><span class="lang-cn">加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘…</span><span class="lang-en">SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for S…</span></div>
+      <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p1]</span><span class="lang-en">From paragraph [p1]</span></div>
+    </div>
+    <div class="metric-card" data-derive="m2">
+      <div class="metric-val" data-field="value"><span class="lang-cn">10亿美元</span><span class="lang-en">$1 billion</span></div>
+      <div class="metric-lbl" data-field="label"><span class="lang-cn">39岁的斯拉梅克并不陌生于大型交易。22 岁时，他就在伦敦的高盛经手数百…</span><span class="lang-en">Sramek, 39 years old, is no stranger to big deals. By 22, he…</span></div>
+      <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p4]</span><span class="lang-en">From paragraph [p4]</span></div>
+    </div>
+    <div class="metric-card" data-derive="m3">
+      <div class="metric-val" data-field="value"><span class="lang-cn">5.5万美元</span><span class="lang-en">$55</span></div>
+      <div class="metric-lbl" data-field="label"><span class="lang-cn">2025年6月，斯拉梅克向Suisun市提供了一笔5.5万美元的拨款，用…</span><span class="lang-en">In June 2025, Sramek offered Suisun City a $55,000 grant for…</span></div>
+      <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p16]</span><span class="lang-en">From paragraph [p16]</span></div>
+    </div>
+    <div class="metric-card highlight-accent" data-derive="m4">
+      <div class="metric-val" data-field="value"><span class="lang-cn">1000万美元</span><span class="lang-en">$10 million</span></div>
+      <div class="metric-lbl" data-field="label"><span class="lang-cn">不久之后，他们达成了一项协议：California Forever将承担…</span><span class="lang-en">Soon after, they struck a deal: California Forever would cov…</span></div>
+      <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p17]</span><span class="lang-en">From paragraph [p17]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Narrative Container -->
+<main class="editorial-container">
+
+  <!-- ACT I: THE $3B WHALE SLIPS TO TEXAS (p1 - p6) -->
+  <div class="chapter-grid">
+    <div class="prose-col">
+      <p class="prose-p prose-lead" data-ref="p1" data-hl="30亿美元的造船厂 | $3 billion shipyard"><span class="lang-cn">加利福尼亚州索拉诺县——2025年夏季，由硅谷支持的企业家扬·斯拉梅克聘请的游说者们加紧活动。在加文·纽森州长的支持下，斯拉梅克正力图实现一个目标：在计划建设的这座城市附近建造一个价值<mark class="ed-hl">30亿美元的造船厂</mark>。</span><span class="lang-en">SOLANO COUNTY, Calif.—In the summer of 2025, lobbyists for Silicon Valley-backed entrepreneur Jan Sramek were in overdrive. With Gov. Gavin Newsom's office in his corner, Sramek was chasing a prize: a <mark class="ed-hl">$3 billion shipyard</mark> beside the city he wants to build from scratch here.</span></p>
+      <p class="prose-p" data-ref="p2"><span class="lang-cn">“我们有一些好消息！！！”纽森的一位工作人员在项目入选候选名单后发邮件说道。“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”</span><span class="lang-en">"WE HAVE SOME GREAT NEWS!!!!!!," a Newsom staffer emailed after the site made the shortlist. "We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago."</span></p>
+      <p class="prose-p" data-ref="p3" data-hl="县政府的繁文缛节 | county government red tape | 1万个就业岗位 | 10,000 jobs"><span class="lang-cn">但这种兴奋感并没有持续多久。一个小时后，斯拉梅克警告说，存在一个障碍：<mark class="ed-hl">县政府的繁文缛节</mark>。十个月后，造船公司Saronic Technologies（造船公司）选择了得克萨斯州的布朗斯维尔，并带走了大约<mark class="ed-hl">1万个就业岗位</mark>。</span><span class="lang-en">The excitement didn't last. Within an hour, Sramek warned of an obstacle: <mark class="ed-hl">county government red tape</mark>. Ten months later, the shipmaker, Saronic Technologies, chose Brownsville, Texas, taking with it an estimated <mark class="ed-hl">10,000 jobs</mark>.</span></p>
+      <p class="prose-p" data-ref="p4" data-hl="10亿美元 | $1 billion"><span class="lang-cn">39岁的斯拉梅克并不陌生于大型交易。22 岁时，他就在伦敦的高盛经手数百万美元的交易。现在，他正试图建造一种可步行郊区乌托邦，包括住宅、高科技制造中心和造船厂，距离旧金山仅需90分钟车程。他的公司California Forever（开发公司）已从投资者那里筹集了约<mark class="ed-hl">10亿美元</mark>，投资者包括风险投资公司安德里森·霍洛维茨和领英联合创始人里德·霍夫曼，并汇集了顶尖的城市规划师，赢得了包括纽森在内的州领导人的支持。</span><span class="lang-en">Sramek, 39 years old, is no stranger to big deals. By 22, he was handling multimillion-dollar trades at Goldman Sachs in London. Now, he is trying to build a kind of walkable suburban utopia, with housing, a high-tech manufacturing hub and a shipyard, a 90-minute drive from San Francisco. His company California Forever has raised about <mark class="ed-hl">$1 billion</mark> from investors, including venture firm Andreessen Horowitz and LinkedIn co-founder Reid Hoffman, assembled top urban planners and won over state leaders including Newsom.</span></p>
+      <p class="prose-p" data-ref="p5"><span class="lang-cn">该团队希望解决旧金山周边地区的住房短缺问题，以及索拉诺县的就业岗位不足问题，今年该县失去了一家百威啤酒厂和一家Valero Energy炼油厂。</span><span class="lang-en">The group wants to address a regional housing shortage around San Francisco, as well as a lack of jobs in Solano County, which this year lost a Budweiser brewery and a Valero Energy refinery.</span></p>
+      <p class="prose-p prose-pivot" data-ref="p6"><span class="lang-cn">但它面临的最大障碍是该县本身。</span><span class="lang-en">But its biggest hurdle is the county itself.</span></p>
+    </div>
+
+    <aside class="rail-col">
+      <blockquote class="pull-quote" data-derive="q1">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“自特斯拉十多年前在此落户以来，我们还没有机会争取到如此重要的项目。”</span><span class="lang-en">“We have not had the chance to land a WHALE of a project like this since Tesla more than a decade ago.”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 2 段直接引述 · Source Block p2</span><span class="lang-en">— Direct Quote (p2), Reported in article text</span></footer>
+      </blockquote>
+
+      <div class="dossier-card">
+        <div class="dossier-kicker">
+          <span class="lang-cn">项目档案 · PROJECT DOSSIER</span>
+          <span class="lang-en">PROJECT DOSSIER · CALIFORNIA FOREVER</span>
+        </div>
+        <h3 class="dossier-title">
+          <span class="lang-cn">硅谷乌托邦蓝图与地方现实</span>
+          <span class="lang-en">Silicon Valley Blueprint vs. Local Reality</span>
+        </h3>
+        <ul class="dossier-list">
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">操盘手与资本后盾</span>
+              <span class="lang-en">Founder &amp; Venture Backing</span>
+            </strong>
+            <span class="lang-cn">39岁前高盛交易员扬·斯拉梅克（Jan Sramek），获安德里森·霍洛维茨（a16z）与里德·霍夫曼等注资约10亿美元，并获州长纽森支持。</span>
+            <span class="lang-en">Led by 39-year-old ex-Goldman trader Jan Sramek with ~$1B from Andreessen Horowitz, Reid Hoffman, and backing from Gov. Gavin Newsom.</span>
+          </li>
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">索拉诺县产业空心化压力</span>
+              <span class="lang-en">Solano County Industrial Losses</span>
+            </strong>
+            <span class="lang-cn">该县今年相继失去百威啤酒厂（Budweiser）和Valero Energy炼油厂，更痛失Saronic造船厂约1万个潜在就业岗位。</span>
+            <span class="lang-en">Lost a Budweiser brewery and a Valero Energy refinery this year, followed by Saronic Technologies' 10,000-job shipyard moving to Brownsville, Texas.</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- CHAPTER II BANNER -->
+  <div class="chapter-banner">
+    <span class="chapter-num">CHAPTER 02</span>
+    <h2 class="chapter-title">
+      <span class="lang-cn">牛仔帽与“兄弟寡头城”：6万英亩土地上的正面交锋</span>
+      <span class="lang-en">Cowboy Hats vs. ‘Broligarch City’: Collision Over 60,000 Acres</span>
+    </h2>
+    <span class="chapter-sub">
+      <span class="lang-cn">开发商起诉世代务农家庭，地方官员质疑“决策桌席位”</span>
+      <span class="lang-en">Lawsuits against farming families &amp; sidelined county leaders</span>
+    </span>
+  </div>
+
+  <!-- ACT II: CULTURE CLASH & SOURING DETENTE (p7 - p14) -->
+  <div class="chapter-grid">
+    <div class="prose-col">
+      <p class="prose-p" data-ref="p7" data-hl="强加于我们 | crammed down our throat"><span class="lang-cn">反对派的代表是米奇·马什伯恩，59岁，一位戴着牛仔帽的共和党县议员，也是当地农民的后裔，他抱怨说，推动建造造船厂的做法是在“<mark class="ed-hl">强加于我们</mark>”。</span><span class="lang-en">The face of the opposition is Mitch Mashburn, 59, a cowboy-hat-wearing Republican county supervisor and descendant of local farmers who has complained the push for the shipyard was being "<mark class="ed-hl">crammed down our throat</mark>."</span></p>
+      <p class="prose-p" data-ref="p8"><span class="lang-cn">斯拉梅克将这场对峙描述为与那些导致人们无力负担住房并阻碍当地经济发展的势力的斗争。“加利福尼亚州未来的战役正在索拉诺县进行，”他说。</span><span class="lang-en">Sramek casts the standoff as a fight against forces that have priced people out of housing and stalled local economies. "The battle for the future of California is being fought in Solano County," he said.</span></p>
+      <p class="prose-p" data-ref="p9" data-hl="兄弟寡头城市 | broligarch city"><span class="lang-cn">反对者认为这是一场科技亿万富翁的土地掠夺。“我称之为‘<mark class="ed-hl">兄弟寡头城市</mark>’，因为这背后真正推动的是科技精英，”吉姆·德克洛说，他是一位社区大学教授和当地塞拉俱乐部（Sierra Club）的领导人。</span><span class="lang-en">Opponents view it as a tech-billionaire land grab. "I call it <mark class="ed-hl">broligarch city</mark> because it's really tech bros behind this," said Jim DeKloe, a community-college professor and local Sierra Club leader.</span></p>
+      <p class="prose-p" data-ref="p10"><span class="lang-cn">《华尔街日报》看到的一些电子邮件显示，双方关系已经恶化到县政府官员似乎更倾向于阻止该项目，而不是进行谈判。</span><span class="lang-en">Emails seen by The Wall Street Journal show relations have soured to the point where county officials appear more inclined to block the project than negotiate.</span></p>
+      <p class="prose-p" data-ref="p11" data-hl="梦想家开发商 | dreamer developers"><span class="lang-cn">前任郡议员吉姆·斯佩林认为双方都有过错。他说，像马什伯恩这样的郡领导人缺乏前瞻性，也不知道如何达成对该地区有益的协议。斯佩林还说，斯拉梅克是那些“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”的“<mark class="ed-hl">梦想家开发商</mark>”之一。</span><span class="lang-en">Former County Supervisor Jim Spering faults both sides. County leaders like Mashburn aren't forward-looking and don't know how to cut deals that would help the region, he said. And Sramek is one of those "<mark class="ed-hl">dreamer developers</mark> that don't understand that you've got to build a relationship with the community" before "telling them what you want to do," Spering said.</span></p>
+      <p class="prose-p" data-ref="p12" data-hl="6万英亩土地 | 60,000 acres | 40万人 | 400,000 people"><span class="lang-cn">斯拉梅克表示，他认为无论采取何种方式，他的项目都会面临强烈的反对。从一开始，他为购买<mark class="ed-hl">6万英亩土地</mark>，用于建设一个容纳<mark class="ed-hl">40万人</mark>的大型规划社区的计划，就激怒了当地居民，尤其是在California Forever起诉了几代农民家庭，指控他们合谋抬高土地价格之后。他称反对者为“70多岁的塞拉俱乐部成员”。</span><span class="lang-en">Sramek said he thinks his project would have faced stiff opposition no matter the approach. From the start, his campaign to buy up <mark class="ed-hl">60,000 acres</mark> for a master-planned community for <mark class="ed-hl">400,000 people</mark> enraged locals, especially after California Forever sued multigenerational farming families, alleging they conspired to inflate land prices. He called opponents the "70-year-old Sierra Club type."</span></p>
+      <p class="prose-p" data-ref="p13"><span class="lang-cn">此后，斯拉梅克和马什伯恩承诺放慢速度并共同合作。这种缓和关系面临的第一个考验是Saronic计划在California Forever的土地上，沿着萨克拉门托河建造大型造船厂。在2025年，Saronic公司正在评估选址，该公司生产自主航行的海运船只。斯拉梅克的助手与当地领导人会面，并组织他们参观河畔，同时还邀请了退役的军方高级将领。</span><span class="lang-en">Afterward, Sramek and Mashburn pledged to slow down and work together. The detente faced its first test in Saronic's planned large shipyard along the Sacramento River on California Forever's land. As Saronic, which makes autonomous sea vessels, weighed sites in 2025, Sramek's deputies courted local leaders with riverside tours alongside retired military brass.</span></p>
+      <p class="prose-p" data-ref="p14" data-hl="决策桌上的一席之地 | a seat at the table"><span class="lang-cn">但到了四月份，郡官员们感到自己被边缘化了。当斯拉梅克的助手提醒当时的郡行政长官比尔·埃姆伦，他们与他、马什伯恩和其他人进行了六个月的会谈，并提供了相关记录时，埃姆伦反驳道：“发送邀请函参加公开会议，并不能代替在<mark class="ed-hl">决策桌上的一席之地</mark>。”</span><span class="lang-en">But by April, county officials were feeling sidelined. When a Sramek deputy reminded then-County Administrator Bill Emlen of six months of meetings with him, Mashburn and others, receipts attached, Emlen shot back. "Sending invites to public briefings does not substitute for <mark class="ed-hl">a seat at the table</mark>," he wrote.</span></p>
+    </div>
+
+    <aside class="rail-col">
+      <blockquote class="pull-quote" data-derive="q2">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“加利福尼亚州未来的战役正在索拉诺县进行，”</span><span class="lang-en">“The battle for the future of California is being fought in Solano County,”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 8 段直接引述 · Source Block p8</span><span class="lang-en">— Direct Quote (p8), Reported in article text</span></footer>
+      </blockquote>
+
+      <blockquote class="pull-quote" data-derive="q3">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“我称之为‘兄弟寡头城市’，因为这背后真正推动的是科技精英，”</span><span class="lang-en">“I call it broligarch city because it's really tech bros behind this,”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 9 段直接引述 · Source Block p9</span><span class="lang-en">— Direct Quote (p9), Reported in article text</span></footer>
+      </blockquote>
+
+      <div class="dossier-card">
+        <div class="dossier-kicker">
+          <span class="lang-cn">关键人物谱系 · KEY DRAMATIS PERSONAE</span>
+          <span class="lang-en">DRAMATIS PERSONAE · THE STANDOFF</span>
+        </div>
+        <h3 class="dossier-title">
+          <span class="lang-cn">索拉诺县权力棋局的四方角色</span>
+          <span class="lang-en">Four Voices Defining the Solano Impasse</span>
+        </h3>
+        <ul class="dossier-list">
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">米奇·马什伯恩 (Mitch Mashburn, 59岁)</span>
+              <span class="lang-en">Mitch Mashburn, 59 · County Supervisor</span>
+            </strong>
+            <span class="lang-cn">戴牛仔帽的共和党县议员、当地农民后裔，反对派代表人物，抗议造船厂被“强加于我们”。</span>
+            <span class="lang-en">Cowboy-hat-wearing Republican supervisor and farmer descendant leading opposition to a project "crammed down our throat."</span>
+          </li>
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">吉姆·德克洛 (Jim DeKloe)</span>
+              <span class="lang-en">Jim DeKloe · Sierra Club Leader</span>
+            </strong>
+            <span class="lang-cn">社区大学教授兼当地塞拉俱乐部领导人，斥该项目为科技亿万富翁的土地掠夺与“兄弟寡头城市”。</span>
+            <span class="lang-en">Community-college professor who labels the project a tech-billionaire land grab and "broligarch city."</span>
+          </li>
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">吉姆·斯佩林 (Jim Spering)</span>
+              <span class="lang-en">Jim Spering · Former County Supervisor</span>
+            </strong>
+            <span class="lang-cn">批评县领导缺乏远见，同时也指责斯拉梅克是不懂得先与社区建立关系的“梦想家开发商”。</span>
+            <span class="lang-en">Faults both sides: county leaders lack dealmaking vision, while Sramek failed to build community trust first.</span>
+          </li>
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">比尔·埃姆伦 (Bill Emlen)</span>
+              <span class="lang-en">Bill Emlen · Then-County Administrator</span>
+            </strong>
+            <span class="lang-cn">在邮件中反驳开发商助手：“发送邀请函参加公开会议，并不能代替在决策桌上的一席之地。”</span>
+            <span class="lang-en">Shot back in April emails: "Sending invites to public briefings does not substitute for a seat at the table."</span>
+          </li>
+        </ul>
+      </div>
+
+      <blockquote class="pull-quote" data-derive="q4">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“不了解在‘告诉他们你想做什么’之前，必须先与社区建立关系”</span><span class="lang-en">“telling them what you want to do,”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 11 段直接引述 · Source Block p11</span><span class="lang-en">— Direct Quote (p11), Reported in article text</span></footer>
+      </blockquote>
+    </aside>
+  </div>
+
+  <!-- BESPOKE SVG EXHIBIT 1: THE SUISUN CITY ANNEXATION BYPASS & SCALE -->
+  <figure class="exhibit-box" aria-label="Suisun City Annexation Diagram">
+    <div class="exhibit-head">
+      <div>
+        <span class="exhibit-tag">
+          <span class="lang-cn">制度博弈图解 · EXHIBIT A · JURISDICTIONAL WORKAROUND</span>
+          <span class="lang-en">EXHIBIT A · JURISDICTIONAL WORKAROUND &amp; SCALE</span>
+        </span>
+        <h3 class="exhibit-title">
+          <span class="lang-cn">“绕开全郡投票”：Suisun市从4平方英里扩界35平方英里的吞并交易</span>
+          <span class="lang-en">The Suisun City Bypass: Expanding a 4-Sq-Mile City by 35 Square Miles</span>
+        </h3>
+        <p class="exhibit-sub">
+          <span class="lang-cn">为规避索拉诺县对城市边界外开发的严格限制，斯拉梅克与Suisun市市政经理普雷布拉达成财政与土地吞并同盟</span>
+          <span class="lang-en">How California Forever and Suisun City Manager Bret Prebula structured a municipal annexation to bypass county rural zoning rules</span>
+        </p>
+      </div>
+    </div>
+
+    <svg viewbox="0 0 920 350" width="100%" role="img" aria-label="Diagram comparing Suisun City's 4 sq miles with the proposed 35 sq mile expansion and financial terms" viewBox="0 0 1066 350" data-repaired-viewbox="0 0 920 350">
+      <defs>
+        <pattern id="gridPat" width="20" height="20" patternunits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#23374d" stroke-width="0.7"></path>
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="920" height="350" fill="url(#gridPat)" rx="4"></rect>
+
+      <!-- Left Panel: Spatial Scale Comparison -->
+      <rect x="30" y="28" width="415" height="294" fill="#16283b" stroke="#2e4760" stroke-width="1.5" rx="4"></rect>
+      <text x="50" y="58" fill="#e89954" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" letter-spacing="1">
+        <tspan class="lang-cn">01. 空间吞并规模对比 (SPATIAL EXPANSION)</tspan>
+        <tspan class="lang-en">01. SPATIAL ANNEXATION SCALE</tspan>
+      </text>
+
+      <!-- 35 Sq Mile Proposed Expansion Box -->
+      <rect x="52" y="78" width="230" height="190" fill="rgba(184, 93, 25, 0.18)" stroke="#e89954" stroke-width="2" stroke-dasharray="6,4" rx="3"></rect>
+      <text x="68" y="108" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="15" font-weight="700">
+        <tspan class="lang-cn">提议扩大边界：+35 平方英里</tspan>
+        <tspan class="lang-en">Proposed Expansion: +35 Sq. Miles</tspan>
+      </text>
+      <text x="68" y="130" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+        <tspan class="lang-cn">吞并 California Forever 土地的重要部分</tspan>
+        <tspan class="lang-en">Annexing major portion of California Forever's</tspan>
+      </text>
+      <text x="68" y="148" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+        <tspan class="lang-cn">（开发商总购地计划：60,000英亩 / 40万人口）</tspan>
+        <tspan class="lang-en">land (Total campaign: 60,000 acres / 400k pop.)</tspan>
+      </text>
+
+      <!-- Existing 4 Sq Mile Suisun City Box nested inside/adjacent -->
+      <rect x="68" y="178" width="76" height="72" fill="#e89954" stroke="#ffffff" stroke-width="1.5" rx="2"></rect>
+      <text x="106" y="210" text-anchor="middle" fill="#0f1d2b" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700">4 sq mi</text>
+      <text x="106" y="230" text-anchor="middle" fill="#0f1d2b" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" font-weight="700">Suisun</text>
+
+      <text x="158" y="205" fill="#f8fafc" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="600">
+        <tspan class="lang-cn">← 现有Suisun市 (4平方英里)</tspan>
+        <tspan class="lang-en">← Existing Suisun City (4 sq mi)</tspan>
+      </text>
+      <text x="158" y="225" fill="#94a3b8" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+        <tspan class="lang-cn">索拉诺县最贫困社区之一</tspan>
+        <tspan class="lang-en">One of Solano's poorest cities</tspan>
+      </text>
+
+      <!-- Bottom Caption in Left Panel -->
+      <text x="52" y="296" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="11">
+        <tspan class="lang-cn">战略目的：绕过索拉诺县严格的城市边界外开发规则</tspan>
+        <tspan class="lang-en">GOAL: Bypass strict county rules on development outside city limits</tspan>
+      </text>
+
+      <!-- Right Panel: Financial Deal & Final Veto Gate -->
+      <rect x="475" y="28" width="415" height="294" fill="#16283b" stroke="#2e4760" stroke-width="1.5" rx="4"></rect>
+      <text x="495" y="58" fill="#e89954" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" letter-spacing="1">
+        <tspan class="lang-cn">02. 财政筹码与最后关卡 (DEAL TERMS &amp; VETO CHOKEPOINT)</tspan>
+        <tspan class="lang-en">02. DEAL TERMS &amp; COUNTY CHOKEPOINT</tspan>
+      </text>
+
+      <!-- Step 1 -->
+      <rect x="495" y="76" width="375" height="62" fill="#1e344b" stroke="#3b5978" rx="3"></rect>
+      <text x="510" y="99" fill="#e89954" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">
+        <tspan class="lang-cn">2025年6月 · 紧急示好资金 ($55K + $1.5M)</tspan>
+        <tspan class="lang-en">JUNE 2025 · GOODWILL INJECTION ($55K + $1.5M)</tspan>
+      </text>
+      <text x="510" y="121" fill="#e2e8f0" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+        <tspan class="lang-cn">5.5万美元独立日烟花等活动拨款 + 提议购买150万美元市中心房产</tspan>
+        <tspan class="lang-en">$55,000 grant for July 4 fireworks + offer to buy $1.5M downtown properties</tspan>
+      </text>
+
+      <!-- Step 2 -->
+      <rect x="495" y="152" width="375" height="62" fill="#1e344b" stroke="#3b5978" rx="3"></rect>
+      <text x="510" y="175" fill="#6ee7b7" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">
+        <tspan class="lang-cn">吞并协议条款 · 承担成本 + 1000万美元 ($10M)</tspan>
+        <tspan class="lang-en">ANNEXATION PACT · COSTS COVERED + $10 MILLION</tspan>
+      </text>
+      <text x="510" y="197" fill="#e2e8f0" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+        <tspan class="lang-cn">承担城市项目相关成本，并在吞并最终确定后支付1000万美元</tspan>
+        <tspan class="lang-en">Cover project-related city costs and pay $10M once annexation is finalized</tspan>
+      </text>
+
+      <!-- Step 3: Choke point -->
+      <rect x="495" y="228" width="375" height="74" fill="rgba(143, 45, 35, 0.35)" stroke="#ef4444" stroke-width="1.5" rx="3"></rect>
+      <text x="510" y="252" fill="#fca5a5" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">
+        <tspan class="lang-cn">阻击关卡 · 县级税收分摊协议 (TAX-SHARING BLOCK)</tspan>
+        <tspan class="lang-en">THE BULLET IN THE CHAMBER · TAX-SHARING AGREEMENT</tspan>
+      </text>
+      <text x="510" y="273" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+        <tspan class="lang-cn">扩张需与索拉诺县达成税收分摊协议；马什伯恩公开表示不能强迫该县让步</tspan>
+        <tspan class="lang-en">Annexation requires a county tax-sharing pact; Mashburn says county can't be forced</tspan>
+      </text>
+    </svg>
+
+    <div class="exhibit-foot">
+      <span>
+        <span class="lang-cn">数据来源：《华尔街日报》查阅的内部邮件与采访记录（正文第12、15–18、22段）</span>
+        <span class="lang-en">Source: WSJ reporting and emails reviewed by The Wall Street Journal (Paragraphs 12, 15–18, 22)</span>
+      </span>
+      <span>SOLANO COUNTY ANNEXATION MECHANICS</span>
+    </div>
+  </figure>
+
+  <!-- CHAPTER III BANNER -->
+  <div class="chapter-banner">
+    <span class="chapter-num">CHAPTER 03</span>
+    <h2 class="chapter-title">
+      <span class="lang-cn">Suisun市借道突围与“枪膛里的另一颗子弹”</span>
+      <span class="lang-en">The Suisun City Gambit and ‘Another Bullet in the Chamber’</span>
+    </h2>
+    <span class="chapter-sub">
+      <span class="lang-cn">从特别立法流产到税收分摊协议的制度死结</span>
+      <span class="lang-en">From failed fast-track legislation to the tax-sharing stalemate</span>
+    </span>
+  </div>
+
+  <!-- ACT III: ANNEXATION GAMBIT & LEGISLATIVE FAILURE (p15 - p23) -->
+  <div class="chapter-grid">
+    <div class="prose-col">
+      <p class="prose-p" data-ref="p15" data-hl="扩大35平方英里 | expanding Suisun City's borders by 35 square miles"><span class="lang-cn">斯拉梅克在布雷特·普雷布拉身上找到了一位盟友。普雷布拉曾是一名政府官员，并且是一位积极的谈判者，后来出任Suisun市市政经理。Suisun市是索拉诺县最贫困的社区之一。43岁的普雷布拉看到了他所在的这座面积为4平方英里的城市的机会，这座城市拥有大量的黑人人口，并且长期以来在索拉诺县感到被忽视。在2025年初，他提议将Suisun市的边界<mark class="ed-hl">扩大35平方英里</mark>，以吞并California Forever土地的重要部分。对于普雷布拉来说，这意味着增加城市的收入。对于斯拉梅克来说，这是一种绕过郡严格的城市边界外开发规则的方法。</span><span class="lang-en">Sramek found an ally in Bret Prebula, a former government and restless dealmaker who became city manager of Suisun City, one of Solano County's poorest communities. Prebula, 43, saw an opportunity for his 4-square-mile city, which has a large Black population and has long felt overlooked in Solano County. In early 2025, he proposed <mark class="ed-hl">expanding Suisun City's borders by 35 square miles</mark> to annex a significant portion of California Forever's land. For Prebula, it meant city revenue. For Sramek, it was a way around the county's strict rules on development outside city limits.</span></p>
+      <p class="prose-p" data-ref="p16" data-hl="5.5万美元 | $55,000 | 150万美元 | $1.5 million"><span class="lang-cn">2025年6月，斯拉梅克向Suisun市提供了一笔<mark class="ed-hl">5.5万美元</mark>的拨款，用于当地的7月4日烟花庆祝活动和其他受到预算赤字威胁的活动。电子邮件显示，他提议购买价值<mark class="ed-hl">150万美元</mark>的市中心房产，以帮助弥补资金缺口。</span><span class="lang-en">In June 2025, Sramek offered Suisun City a <mark class="ed-hl">$55,000</mark> grant for the local July 4 fireworks celebration and other events threatened by a budget shortfall. He offered to buy <mark class="ed-hl">$1.5 million</mark> in downtown properties to help close the gap, emails show.</span></p>
+      <p class="prose-p" data-ref="p17" data-hl="1000万美元 | $10 million"><span class="lang-cn">不久之后，他们达成了一项协议：California Forever将承担城市与项目相关的成本，并在吞并最终确定后向城市支付<mark class="ed-hl">1000万美元</mark>。</span><span class="lang-en">Soon after, they struck a deal: California Forever would cover the city's project-related costs and pay it <mark class="ed-hl">$10 million</mark> if the annexation is finalized.</span></p>
+      <p class="prose-p" data-ref="p18" data-hl="狡猾的策略 | weasel tactic"><span class="lang-cn">反对者对此表示强烈不满。塞拉俱乐部的领导人德克洛称之为一种“<mark class="ed-hl">狡猾的策略</mark>”，旨在绕过全郡的投票。</span><span class="lang-en">Opponents cried foul. DeKloe, the Sierra Club leader, called it a "<mark class="ed-hl">weasel tactic</mark>" intended to bypass a county-wide vote.</span></p>
+      <p class="prose-p" data-ref="p19"><span class="lang-cn">去年8月，索拉诺县进入了候选名单，斯拉梅克推动通过特别立法，以加快项目进度。州议员们起草了一项法案，但他们希望郡政府批准。在一次会议上，马什伯恩批评California Forever推进速度过快，但他投票支持了一项妥协方案。</span><span class="lang-en">When Solano County made the shortlist last August, Sramek pushed for special legislation to fast-track the project. State lawmakers worked up a bill but wanted the county to sign off. At a board meeting, Mashburn chastised California Forever for the rush but voted to endorse a compromise bill.</span></p>
+      <p class="prose-p" data-ref="p20" data-hl="选择了德克萨斯州 | picked Texas"><span class="lang-cn">据斯拉梅克称，该法案未能满足Saronic的需求。尽管斯拉梅克的团队、马什伯恩和议员们进行了数月的谈判，试图制定一项更好的方案，但Saronic在6月份表示，他们已经<mark class="ed-hl">选择了德克萨斯州</mark>。</span><span class="lang-en">The bill fell short for Saronic, according to Sramek. Despite months of talks between Sramek's team, Mashburn and lawmakers, trying to hammer out a better one, Saronic said in June it had <mark class="ed-hl">picked Texas</mark>.</span></p>
+      <p class="prose-p" data-ref="p21" data-hl="布朗斯维尔 | Brownsville"><span class="lang-cn">斯拉梅克说：“我们不断举手发言，表示如果这项法案未能通过，他们就会前往<mark class="ed-hl">布朗斯维尔</mark>。”“但实际上，并没有足够的政治意愿来推动这项法案的通过。”Saronic Technologies的一位发言人没有回应置评请求。</span><span class="lang-en">"We kept raising our hand and saying, if we don't pass the legislation, they are going to go to <mark class="ed-hl">Brownsville</mark>," Sramek said, "but there wasn't the political will to get it done." A Saronic spokeswoman didn't respond to requests to comment.</span></p>
+
+      <!-- BESPOKE SVG EXHIBIT 2: CHRONOLOGY OF HOW A $3B SHIPYARD WAS LOST -->
+      <figure class="exhibit-box light-exhibit" aria-label="Timeline of the Saronic Shipyard Standoff">
+        <div class="exhibit-head">
+          <div>
+            <span class="exhibit-tag">
+              <span class="lang-cn">时间线复盘 · EXHIBIT B · ANATOMY OF A LOST WHALE</span>
+              <span class="lang-en">EXHIBIT B · CHRONOLOGY OF A LOST $3B SHIPYARD</span>
+            </span>
+            <h3 class="exhibit-title">
+              <span class="lang-cn">从“候选名单惊喜”到远走得州：十个月政商拉锯全记录</span>
+              <span class="lang-en">Ten Months from Shortlist Euphoria to Brownsville, Texas</span>
+            </h3>
+          </div>
+        </div>
+
+        <svg viewbox="0 0 640 310" width="100%" role="img" aria-label="Timeline of events from early 2025 to Saronic choosing Texas" viewBox="0 0 795 310" data-repaired-viewbox="0 0 640 310">
+          <!-- Vertical Spine -->
+          <line x1="48" y1="25" x2="48" y2="285" stroke="#b85d19" stroke-width="2.5"></line>
+
+          <!-- Node 1 -->
+          <circle cx="48" cy="40" r="7" fill="#b85d19"></circle>
+          <text x="72" y="36" fill="#b85d19" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+            <tspan class="lang-cn">2025年初 — 2025年4月 · 河畔游说与决裂</tspan>
+            <tspan class="lang-en">EARLY 2025 – APRIL 2025 · RIVERSIDE TOURS &amp; FRICTION</tspan>
+          </text>
+          <text x="72" y="55" fill="#242220" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5">
+            <tspan class="lang-cn">普雷布拉提议Suisun市扩界35平方英里；4月县行政长官埃姆伦抱怨被边缘化。</tspan>
+            <tspan class="lang-en">Prebula proposes 35-sq-mi expansion; by April, County Admin Emlen says county feels sidelined.</tspan>
+          </text>
+
+          <!-- Node 2 -->
+          <circle cx="48" cy="105" r="7" fill="#b85d19"></circle>
+          <text x="72" y="101" fill="#b85d19" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+            <tspan class="lang-cn">2025年6月 · 财政驰援Suisun市与吞并协议</tspan>
+            <tspan class="lang-en">JUNE 2025 · SUISUN GRANTS &amp; $10M ANNEXATION DEAL</tspan>
+          </text>
+          <text x="72" y="120" fill="#242220" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5">
+            <tspan class="lang-cn">斯拉梅克提供5.5万美元烟花拨款并提议购入150万美元房产，随后敲定1000万美元吞并协议。</tspan>
+            <tspan class="lang-en">Sramek offers $55K fireworks grant and $1.5M property buyout, striking a $10M annexation pact.</tspan>
+          </text>
+
+          <!-- Node 3 -->
+          <circle cx="48" cy="170" r="7" fill="#b85d19"></circle>
+          <text x="72" y="166" fill="#b85d19" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+            <tspan class="lang-cn">2025年8月 · 入选候选名单与妥协法案受挫</tspan>
+            <tspan class="lang-en">AUGUST 2025 · SHORTLIST EUPHORIA &amp; COMPROMISE BILL</tspan>
+          </text>
+          <text x="72" y="185" fill="#242220" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5">
+            <tspan class="lang-cn">纽森幕僚欢呼入选，斯拉梅克1小时内警告县级繁文缛节；马什伯恩投票支持妥协法案但未达Saronic要求。</tspan>
+            <tspan class="lang-en">Newsom staffer cheers shortlist; Sramek warns of red tape within an hour; compromise bill falls short.</tspan>
+          </text>
+
+          <!-- Node 4 -->
+          <circle cx="48" cy="240" r="8" fill="#8f2d23"></circle>
+          <text x="72" y="236" fill="#8f2d23" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+            <tspan class="lang-cn">10个月后（6月） · 30亿美元造船厂与1万岗位落户得州</tspan>
+            <tspan class="lang-en">10 MONTHS LATER (JUNE) · SARONIC PICKS BROWNSVILLE, TEXAS</tspan>
+          </text>
+          <text x="72" y="255" fill="#141413" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="600">
+            <tspan class="lang-cn">历经数月谈判无果，Saronic宣布选择得州布朗斯维尔，带走约1万个就业岗位。</tspan>
+            <tspan class="lang-en">After months of talks fail to pass fast-track legislation, Saronic chooses Texas and ~10,000 jobs leave.</tspan>
+          </text>
+        </svg>
+
+        <div class="exhibit-foot">
+          <span>
+            <span class="lang-cn">基于《华尔街日报》报道梳理 · CHRONOLOGY OF EVENTS</span>
+            <span class="lang-en">Compiled from WSJ reporting · CHRONOLOGY OF EVENTS</span>
+          </span>
+        </div>
+      </figure>
+
+      <p class="prose-p" data-ref="p22" data-hl="枪里还有子弹 | another bullet in the chamber | 税收分摊协议 | tax-sharing agreement"><span class="lang-cn">斯拉梅克抵达California Forever（开发公司）那栋没有明显标识的办公楼后，称这次投票只是一个障碍。但邮件显示，California Forever的支持者们担心马什伯恩<mark class="ed-hl">枪里还有子弹</mark>。Suisun市的扩张需要与索拉诺县达成<mark class="ed-hl">税收分摊协议</mark>，而开发商们表示，马什伯恩曾公开表示，不能强迫索拉诺县做出让步。</span><span class="lang-en">Pulling into California Forever's unmarked office, Sramek called the vote a speed bump. But the emails show California Forever boosters fear Mashburn has <mark class="ed-hl">another bullet in the chamber</mark>. The Suisun City annexation requires a <mark class="ed-hl">tax-sharing agreement</mark> with Solano County, one developers [say] Mashburn has said publicly the county can't be forced to make.</span></p>
+
+      <!-- CLIMACTIC VERDICT BOX (p23) -->
+      <div class="verdict-box">
+        <div class="verdict-kicker">
+          <span class="lang-cn">终局判词 · THE INSTITUTIONAL VERDICT</span>
+          <span class="lang-en">THE INSTITUTIONAL VERDICT · WEAPONIZED PROCESS</span>
+        </div>
+        <p class="prose-p" data-ref="p23" data-hl="把程序和惯性武器化 | weaponize process and inertia"><span class="lang-cn">普雷布拉在一封发给州政府官员的邮件中抱怨说：“这里发生的事情不仅仅是地方上的摩擦，这是一个明确的例子，说明各县如何<mark class="ed-hl">把程序和惯性武器化</mark>。”</span><span class="lang-en">"What's happening here is not just local friction," Prebula complained in an email to state officials. "it is a clear example of how counties can <mark class="ed-hl">weaponize process and inertia</mark>."</span></p>
+      </div>
+    </div>
+
+    <aside class="rail-col">
+      <blockquote class="pull-quote" data-derive="q5">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“70多岁的塞拉俱乐部成员”</span><span class="lang-en">“70-year-old Sierra Club type.”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 12 段直接引述 · Source Block p12</span><span class="lang-en">— Direct Quote (p12), Reported in article text</span></footer>
+      </blockquote>
+
+      <div class="dossier-card">
+        <div class="dossier-kicker">
+          <span class="lang-cn">制度观察 · GOVERNANCE FRICTION</span>
+          <span class="lang-en">GOVERNANCE FRICTION · WHY THE DEAL STALLED</span>
+        </div>
+        <h3 class="dossier-title">
+          <span class="lang-cn">两场平行的否决战</span>
+          <span class="lang-en">Two Parallel Veto Fronts</span>
+        </h3>
+        <ul class="dossier-list">
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">第一回合：州级特别立法受阻</span>
+              <span class="lang-en">Round 1: State Fast-Track Bill Diluted</span>
+            </strong>
+            <span class="lang-cn">州议员起草加速法案但要求郡政府批准；县议会仅支持妥协方案，最终未能满足Saronic的进度需求。</span>
+            <span class="lang-en">State lawmakers wanted county sign-off on a fast-track bill; the board's compromise version fell short for Saronic.</span>
+          </li>
+          <li class="dossier-item">
+            <strong>
+              <span class="lang-cn">第二回合：Suisun吞并案的税收卡脖子</span>
+              <span class="lang-en">Round 2: Annexation Tax-Sharing Bottleneck</span>
+            </strong>
+            <span class="lang-cn">即便通过Suisun市扩界绕开全郡公投，扩张仍需与索拉诺县达成税收分摊协议，县方依然握有实质阻击权。</span>
+            <span class="lang-en">Even bypassing a county-wide vote via Suisun City annexation still requires a tax-sharing agreement with Solano County.</span>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="editorial-footer">
+  <div>
+    <strong>THE WALL STREET JOURNAL · WSJ 深读</strong> ·
+    <span class="lang-cn">双语数字精编版（E1-020 · A3版）</span>
+    <span class="lang-en">Bilingual Interactive Edition (E1-020 · Page A3)</span>
+  </div>
+  <div>
+    <span class="lang-cn">作者：Zusha Elinson · 原文100%完整呈现</span>
+    <span class="lang-en">By Zusha Elinson · 100% Verbatim Canonical Text</span>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+    try {
+      localStorage.setItem('wsj-preferred-lang', lang);
+    } catch (e) {}
+  }
+
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
+    var bar = document.getElementById('readProgress');
+    if (bar) bar.style.width = pct + '%';
+  }, { passive: true });
+</script>
+
+</body>
+</html>

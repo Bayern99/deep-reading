@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美联储的哈马克认为，通货膨胀的根源在于工厂生产环节 | WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ece6d9;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c8c0af;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.13);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #294057;
+    --gold-ink: #e2b878;
+    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    --font-serif: 'Lora', 'Noto Serif SC', Georgia, serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.82;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(20, 20, 19, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* Reading Progress Bar */
+  .progress-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(228, 223, 211, 0.5);
+    z-index: 1001;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.65rem 1.5rem;
+  }
+  .masthead-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .wsj-monogram {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    border-right: 1px solid var(--line-strong);
+    padding-right: 0.75rem;
+  }
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .lang-switch {
+    display: inline-flex;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 3px double var(--line-strong);
+  }
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--accent);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 4.2vw, 3.35rem);
+    line-height: 1.18;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    max-width: 980px;
+    margin-bottom: 1.35rem;
+  }
+  .hero-dek {
+    font-family: var(--font-serif);
+    font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 2rem;
+  }
+
+  /* Dateline & Telemetry Strip */
+  .hero-meta-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    align-items: center;
+  }
+  .byline-block {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .byline-author {
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .byline-date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+  .telemetry-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 0.85rem 1.1rem;
+  }
+  .telemetry-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .telemetry-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .telemetry-value {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .telemetry-sub {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Layout Containers */
+  .editorial-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .chapter-banner {
+    margin: 3.2rem 0 1.8rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 0.65rem;
+  }
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .chapter-title {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* Asymmetric Editorial Grid */
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(280px, 380px);
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .prose-col {
+    min-width: 0;
+  }
+
+  .prose-p {
+    margin-bottom: 1.45rem;
+    color: var(--body);
+    font-size: 1.04rem;
+    line-height: 1.86;
+  }
+
+  /* Lead paragraph styling (no ::first-letter on Chinese) */
+  .prose-p.lead-p {
+    font-size: 1.15rem;
+    line-height: 1.82;
+    color: var(--ink);
+    font-weight: 500;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.65rem;
+  }
+
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);
+    color: inherit;
+    padding: 0 0.12em;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(184, 93, 25, 0.45);
+  }
+
+  /* Side Rail Components */
+  .side-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem;
+    position: relative;
+  }
+  .dossier-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--ink);
+  }
+  .dossier-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .dossier-title {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+    line-height: 1.35;
+  }
+  .dossier-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+  .dossier-list li {
+    padding-top: 0.65rem;
+    border-top: 1px dashed var(--line-strong);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .dossier-list li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .dossier-key {
+    color: var(--muted);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .dossier-val {
+    color: var(--ink);
+    font-weight: 600;
+    text-align: right;
+  }
+
+  /* Derived Pull Quote */
+  .pull-quote {
+    background: var(--paper);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 1.35rem 0.25rem;
+    margin: 0.5rem 0;
+  }
+  .pull-quote .quote-text {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .pull-quote .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* Derived Metric Card */
+  .metric-card {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.35rem;
+    border-left: 4px solid var(--accent);
+  }
+  .metric-card .metric-val {
+    font-family: var(--font-mono);
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--gold-ink);
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+  .metric-card .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    margin-bottom: 0.45rem;
+  }
+  .metric-card .metric-note {
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #c5ced6;
+  }
+
+  /* Primary Split Blockquote inside Narrative Flow */
+  .narrative-quote-box {
+    margin: 1.85rem 0;
+    padding: 1.4rem 1.6rem;
+    background: var(--paper-card);
+    border-left: 4px solid var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.22rem;
+    line-height: 1.58;
+    color: var(--ink);
+  }
+
+  /* SVG Exhibit Card */
+  .exhibit-panel {
+    margin: 2.6rem 0;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.65rem;
+  }
+  .exhibit-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.8rem;
+  }
+  .exhibit-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .exhibit-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .exhibit-sub {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .exhibit-footnote {
+    margin-top: 0.85rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Dark Navy Full-Bleed Breakout for Fed Policy Tension */
+  .navy-breakout {
+    background: var(--navy-bg);
+    color: var(--paper);
+    margin: 3.5rem 0;
+    padding: 3.2rem 1.5rem;
+    border-top: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+  .navy-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .navy-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--navy-line);
+    padding-bottom: 1rem;
+  }
+  .navy-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+    margin-bottom: 0.4rem;
+  }
+  .navy-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* Policy Comparison Matrix */
+  .policy-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+  .matrix-col {
+    background: var(--navy-card);
+    border: 1px solid var(--navy-line);
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .matrix-col.highlight-col {
+    border-top: 3px solid var(--gold-ink);
+  }
+  .matrix-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-ink);
+  }
+  .matrix-actor {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    color: #fff;
+    font-weight: 700;
+  }
+  .matrix-desc {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: #d2dbe4;
+  }
+
+  /* Final Governance Duel Box */
+  .duel-panel {
+    margin: 2.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.5rem;
+  }
+  .duel-side {
+    padding: 0.5rem;
+  }
+  .duel-side:first-child {
+    border-right: 1px dashed var(--line-strong);
+    padding-right: 1.5rem;
+  }
+  .duel-role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .duel-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.55rem;
+  }
+  .duel-philosophy {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  /* Footer */
+  .ed-footer {
+    max-width: 1180px;
+    margin: 4rem auto 0;
+    padding: 2rem 1.5rem 3.5rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 920px) {
+    .hero-meta-grid,
+    .asymmetric-grid,
+    .policy-matrix,
+    .duel-panel {
+      grid-template-columns: 1fr;
+    }
+    .side-rail {
+      position: static;
+      margin-top: 1rem;
+    }
+    .duel-side:first-child {
+      border-right: none;
+      border-bottom: 1px dashed var(--line-strong);
+      padding-right: 0.5rem;
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    html {
+      font-size: 16.5px;
+    }
+    .masthead {
+      padding: 0.55rem 1rem;
+    }
+    .hero {
+      padding: 2.2rem 1rem 1.8rem;
+    }
+    .editorial-container {
+      padding: 0 1rem;
+    }
+    .telemetry-strip {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .exhibit-panel {
+      padding: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-rail" aria-hidden="true">
+  <div class="progress-fill" id="progressBar"></div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-group">
+      <span class="wsj-monogram">THE WALL STREET JOURNAL.</span>
+      <span class="section-tag">
+        <span class="lang-cn">美国新闻 · 宏观与货币政策深读</span>
+        <span class="lang-en">U.S. NEWS · MACRO &amp; MONETARY DISPATCH</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Selector">
+      <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO HEADER -->
+  <section class="hero">
+    <div class="hero-kicker">
+      <span class="lang-cn">克利夫兰现场调研 · 利率与实体经济温差</span>
+      <span class="lang-en">CLEVELAND DISPATCH · RATES VS. REAL ECONOMY</span>
+    </div>
+    <h1 class="hero-title" data-ref="title"></h1>
+    <p class="hero-dek">
+      <span class="lang-cn">在俄亥俄州繁忙的工业五金车间里，航空订单激增、客户为抢交期不惜支付溢价。克利夫兰联储行长贝丝·哈马克从机床轰鸣声中读出了通胀信号：3.75%至4%的基准利率尚未真正抑制经济。</span>
+      <span class="lang-en">Inside a bustling Ohio industrial hardware plant, aerospace orders are surging and buyers gladly pay a premium for faster delivery. For Cleveland Fed President Beth Hammack, the factory floor reveals a stark monetary reality: a 3.75%–4% benchmark rate isn't restraining growth yet.</span>
+    </p>
+
+    <div class="hero-meta-grid">
+      <div class="byline-block">
+        <div class="byline-author">BY NICK TIMIRAOS</div>
+        <div class="byline-date">
+          <span class="lang-cn">2026年10月12日 · 华尔街日报 E1-011 (A2版)</span>
+          <span class="lang-en">OCTOBER 12, 2026 · WSJ PAGE A2 (E1-011)</span>
+        </div>
+      </div>
+
+      <div class="telemetry-strip">
+        <div class="telemetry-item">
+          <span class="telemetry-label">
+            <span class="lang-cn">联邦基金利率区间</span>
+            <span class="lang-en">FED BENCHMARK RATE</span>
+          </span>
+          <span class="telemetry-value">3.75%–4.00%</span>
+          <span class="telemetry-sub">
+            <span class="lang-cn">上月刚上调，哈马克主张继续加息</span>
+            <span class="lang-en">Raised last month; Hammack seeks more</span>
+          </span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">
+            <span class="lang-cn">通胀偏离2%目标时长</span>
+            <span class="lang-en">ABOVE 2% TARGET</span>
+          </span>
+          <span class="telemetry-value">&gt; 5 Years</span>
+          <span class="telemetry-sub">
+            <span class="lang-cn">多数官员预计2029年才回归目标</span>
+            <span class="lang-en">Colleagues see 2029 return to target</span>
+          </span>
+        </div>
+        <div class="telemetry-item">
+          <span class="telemetry-label">
+            <span class="lang-cn">Jergens 资本开支里程碑</span>
+            <span class="lang-en">JERGENS CAPEX MILESTONE</span>
+          </span>
+          <span class="telemetry-value">84-Yr High</span>
+          <span class="telemetry-sub">
+            <span class="lang-cn">公司成立84年来最大规模机床采购</span>
+            <span class="lang-en">Largest machine-tool purchase in history</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER I: ON THE FACTORY FLOOR -->
+  <div class="editorial-container">
+    <div class="chapter-banner">
+      <span class="chapter-num">CHAPTER 01</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">旧铁路厂房里的机床轰鸣与“速度溢价”</span>
+        <span class="lang-en">Surging Orders &amp; The Speed Premium on the Factory Floor</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="prose-col">
+        <p class="prose-p lead-p" data-ref="p1" data-hl="90 minutes | 一个多小时的时间 | Jergens"></p>
+        <p class="prose-p" data-ref="p2" data-hl="84年历史上最大规模的机床采购 | biggest machine-tool purchase in its 84-year history"></p>
+        <p class="prose-p" data-ref="p3" data-hl="价格是下一个重要的考量因素 | The next threshold used to be price"></p>
+        <p class="prose-p" data-ref="p4" data-hl="速度才是关键 | Now it is speed | 几周内获得产品，而不是几个月 | weeks instead of months"></p>
+
+        <!-- SVG Exhibit 1: Factory Floor Shift -->
+        <figure class="exhibit-panel">
+          <div class="exhibit-head">
+            <div>
+              <div class="exhibit-kicker">
+                <span class="lang-cn">图表 01 · 微观定价权传导机制</span>
+                <span class="lang-en">EXHIBIT 01 · MICRO-FOUNDATIONS OF PRICING POWER</span>
+              </div>
+              <h3 class="exhibit-title">
+                <span class="lang-cn">从“比拼价格”到“为速度买单”：工厂车间的通胀引擎</span>
+                <span class="lang-en">From Price Threshold to Speed Premium: The Factory Inflation Engine</span>
+              </h3>
+              <p class="exhibit-sub">
+                <span class="lang-cn">Jergens 客户采购优先级的迁移如何转化为企业利润率与宏观通胀压力</span>
+                <span class="lang-en">How shifting buyer priorities at Jergens translate into bottom-line margins and macro inflation pressure</span>
+              </p>
+            </div>
+          </div>
+
+          <svg viewBox="0 0 740 270" width="100%" role="img" aria-label="Industrial Pricing Power Shift Diagram">
+            <defs>
+              <marker id="arrow-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 9 5 L 0 9 z" fill="#b85d19"/>
+              </marker>
+            </defs>
+
+            <!-- Background comparison lanes -->
+            <rect x="20" y="20" width="700" height="96" rx="4" fill="#ece6d9" stroke="#c8c0af" stroke-width="1"/>
+            <rect x="20" y="136" width="700" height="112" rx="4" fill="#faf8f4" stroke="#b85d19" stroke-width="1.5"/>
+
+            <!-- Lane 1: Past Regime -->
+            <text x="38" y="46" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#646059">
+              <tspan class="lang-cn">过去常态 (PAST REGIME)</tspan>
+              <tspan class="lang-en">PAST REGIME · COST-SENSITIVE EQUILIBRIUM</tspan>
+            </text>
+
+            <rect x="38" y="58" width="185" height="44" rx="3" fill="#faf8f4" stroke="#c8c0af"/>
+            <text x="50" y="77" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#141413">
+              <tspan class="lang-cn">1. 质量达标准入</tspan>
+              <tspan class="lang-en">1. Quality Threshold</tspan>
+            </text>
+            <text x="50" y="94" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">大型航空巨头基本门槛</tspan>
+              <tspan class="lang-en">Entry ticket at aerospace giants</tspan>
+            </text>
+
+            <line x1="228" y1="80" x2="262" y2="80" stroke="#646059" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+            <rect x="268" y="58" width="205" height="44" rx="3" fill="#faf8f4" stroke="#c8c0af"/>
+            <text x="282" y="77" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#141413">
+              <tspan class="lang-cn">2. 价格是第二道门槛</tspan>
+              <tspan class="lang-en">2. Next Threshold: Price</tspan>
+            </text>
+            <text x="282" y="94" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">海外低价零部件构成竞争约束</tspan>
+              <tspan class="lang-en">Rival imports cap pricing power</tspan>
+            </text>
+
+            <line x1="478" y1="80" x2="512" y2="80" stroke="#646059" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+            <rect x="518" y="58" width="184" height="44" rx="3" fill="#faf8f4" stroke="#c8c0af"/>
+            <text x="530" y="77" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#646059">
+              <tspan class="lang-cn">常规排产（按月等待）</tspan>
+              <tspan class="lang-en">Months-Long Lead Time</tspan>
+            </text>
+            <text x="530" y="94" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">供需基本平衡，涨价受限</tspan>
+              <tspan class="lang-en">Restrained industrial margins</tspan>
+            </text>
+
+            <!-- Lane 2: Current Regime -->
+            <text x="38" y="162" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#b85d19">
+              <tspan class="lang-cn">当前车间实况 (CURRENT REALITY · DEMAND OUTRUNS SUPPLY)</tspan>
+              <tspan class="lang-en">CURRENT FACTORY FLOOR · DEMAND OUTRUNS SUPPLY</tspan>
+            </text>
+
+            <rect x="38" y="175" width="195" height="56" rx="3" fill="#f3efe6" stroke="#b85d19"/>
+            <text x="50" y="196" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#141413">
+              <tspan class="lang-cn">航空订单激增 + 关税壁垒</tspan>
+              <tspan class="lang-en">Aerospace Boom + Tariffs</tspan>
+            </text>
+            <text x="50" y="216" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">中国竞争对手零部件变贵</tspan>
+              <tspan class="lang-en">Chinese rival parts costlier</tspan>
+            </text>
+
+            <line x1="238" y1="203" x2="268" y2="203" stroke="#b85d19" stroke-width="2" marker-end="url(#arrow-ink)"/>
+
+            <rect x="275" y="175" width="205" height="56" rx="3" fill="#f3efe6" stroke="#b85d19"/>
+            <text x="287" y="196" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#b85d19">
+              <tspan class="lang-cn">速度压倒价格（几周交付）</tspan>
+              <tspan class="lang-en">Speed Over Price (Weeks)</tspan>
+            </text>
+            <text x="287" y="216" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#242220">
+              <tspan class="lang-cn">“没有人愿意再等待” · 溢价成交</tspan>
+              <tspan class="lang-en">Buyers pay premium to skip wait</tspan>
+            </text>
+
+            <line x1="485" y1="203" x2="515" y2="203" stroke="#b85d19" stroke-width="2" marker-end="url(#arrow-ink)"/>
+
+            <rect x="522" y="175" width="180" height="56" rx="3" fill="#0f1d2b"/>
+            <text x="534" y="196" font-family="Noto Sans SC, Inter, sans-serif" font-size="12" font-weight="700" fill="#e2b878">
+              <tspan class="lang-cn">84年最大机床投资</tspan>
+              <tspan class="lang-en">Record 84-Yr Capex</tspan>
+            </text>
+            <text x="534" y="216" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#ffffff">
+              <tspan class="lang-cn">无视3.75%-4%利率扩张</tspan>
+              <tspan class="lang-en">Zero rate-talk on tour</tspan>
+            </text>
+          </svg>
+
+          <div class="exhibit-footnote">
+            <span>
+              <span class="lang-cn">资料来源：克利夫兰联储行长贝丝·哈马克对 Jergens 的实地调研记录</span>
+              <span class="lang-en">Source: Cleveland Fed President Beth Hammack's factory visit at Jergens</span>
+            </span>
+            <span>WSJ GRAPHIC</span>
+          </div>
+        </figure>
+
+        <p class="prose-p" data-ref="p5" data-hl="需求超过了供应商的生产能力 | demand is outrunning what suppliers can make | 利率问题并没有被提及 | interest rates never came up"></p>
+        <p class="prose-p" data-ref="p6" data-hl="增长是存在的 | The growth is there"></p>
+      </div>
+
+      <!-- SIDE RAIL FOR CHAPTER 1 -->
+      <aside class="side-rail">
+        <div class="dossier-card">
+          <div class="dossier-kicker">
+            <span class="lang-cn">企业实地档案 · FIELD DOSSIER</span>
+            <span class="lang-en">COMPANY DOSSIER · CLEVELAND</span>
+          </div>
+          <h3 class="dossier-title">
+            <span class="lang-cn">Jergens 工业五金制造商</span>
+            <span class="lang-en">Jergens Inc. (Est. 84 Years)</span>
+          </h3>
+          <ul class="dossier-list">
+            <li>
+              <span class="dossier-key"><span class="lang-cn">厂址位置</span><span class="lang-en">Location</span></span>
+              <span class="dossier-val"><span class="lang-cn">克利夫兰东区原铁路旧址</span><span class="lang-en">Cleveland East Side (Old Rail Site)</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">企业总裁</span><span class="lang-en">President</span></span>
+              <span class="dossier-val"><span class="lang-cn">杰克·施龙 (Jack Schron)</span><span class="lang-en">Jack Schron</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">核心产品</span><span class="lang-en">Core Hardware</span></span>
+              <span class="dossier-val"><span class="lang-cn">夹具与快卸销（航空面板/音响固定）</span><span class="lang-en">Clamps &amp; Quick-Release Pins</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">竞争顺风</span><span class="lang-en">Tailwinds</span></span>
+              <span class="dossier-val"><span class="lang-cn">航空订单激增 + 关税推高中国对手价格</span><span class="lang-en">Aerospace surge + Tariffs on rival</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">央行调研盲点</span><span class="lang-en">Tour Anomaly</span></span>
+              <span class="dossier-val"><span class="lang-cn">90分钟参访中从未提及“利率”</span><span class="lang-en">Interest rates never came up once</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <blockquote class="pull-quote" data-derive="q1">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <blockquote class="pull-quote" data-derive="q2">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+      </aside>
+    </div>
+  </div>
+
+  <!-- CHAPTER II: THE 2029 HORIZON & TRADING INSTINCTS -->
+  <div class="editorial-container">
+    <div class="chapter-banner">
+      <span class="chapter-num">CHAPTER 02</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">五年超标与“2029太漫长”：一位前高盛交易员的鹰派直觉</span>
+        <span class="lang-en">Five Years Above Target &amp; A Former Goldman Trader’s Hawkish Instinct</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="prose-col">
+        <p class="prose-p" data-ref="p7" data-hl="3.75%至4% | 3.75% to 4% | 选择支付哪些账单 | choosing which bills to pay"></p>
+        <p class="prose-p" data-ref="p8.s1"></p>
+        <blockquote class="narrative-quote-box" data-ref="p8.s2"></blockquote>
+        <p class="prose-p" data-ref="p9" data-hl="高盛工作了30多年 | 30 years at Goldman Sachs | 49%"></p>
+        <p class="prose-p" data-ref="p10" data-hl="人工智能相关支出 | AI-related spending"></p>
+        <p class="prose-p" data-ref="p11"></p>
+        <p class="prose-p" data-ref="p12" data-hl="更小、更频繁的调整 | Smaller, more frequent adjustments"></p>
+        <p class="prose-p" data-ref="p13" data-hl="三名投反对票的决策者之一 | one of three policymakers who dissented"></p>
+
+        <!-- SVG Exhibit 2: Inflation Timeline & Policy Horizon -->
+        <figure class="exhibit-panel">
+          <div class="exhibit-head">
+            <div>
+              <div class="exhibit-kicker">
+                <span class="lang-cn">图表 02 · 美联储政策时间轴与分歧</span>
+                <span class="lang-en">EXHIBIT 02 · MONETARY HORIZON &amp; DISSENT TIMELINE</span>
+              </div>
+              <h3 class="exhibit-title">
+                <span class="lang-cn">超标五年的通胀耐力赛：为什么哈马克拒绝等待2029年</span>
+                <span class="lang-en">Five Years Above 2%: Why Hammack Rejects Waiting Until 2029</span>
+              </h3>
+            </div>
+          </div>
+
+          <svg viewBox="0 0 740 245" width="100%" role="img" aria-label="Inflation Target Horizon Timeline">
+            <!-- Horizontal Axis -->
+            <line x1="40" y1="125" x2="700" y2="125" stroke="#141413" stroke-width="2"/>
+
+            <!-- Span Bar: >5 Years Above Target -->
+            <rect x="45" y="75" width="335" height="32" rx="3" fill="rgba(184, 93, 25, 0.16)" stroke="#b85d19" stroke-width="1.2"/>
+            <text x="212" y="95" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#b85d19">
+              <tspan class="lang-cn">通胀持续高于 2% 目标已逾 5 年（低收入家庭被迫筛选账单）</tspan>
+              <tspan class="lang-en">Inflation &gt; 2% Target for 5+ Years (Households choosing which bills to pay)</tspan>
+            </text>
+
+            <!-- Node 1: 2024 Joined Fed -->
+            <circle cx="85" cy="125" r="6" fill="#141413"/>
+            <text x="85" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#141413">2024</text>
+            <text x="85" y="168" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">告别30年高盛生涯</tspan>
+              <tspan class="lang-en">Joins Fed after 30+ yrs</tspan>
+            </text>
+            <text x="85" y="183" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">加入克利夫兰联储</tspan>
+              <tspan class="lang-en">at Goldman Sachs</tspan>
+            </text>
+
+            <!-- Node 2: July 2026 Dissent -->
+            <circle cx="245" cy="125" r="7" fill="#b85d19"/>
+            <text x="245" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#b85d19">2026.07</text>
+            <text x="245" y="168" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" font-weight="600" fill="#141413">
+              <tspan class="lang-cn">投下反对票主张加息</tspan>
+              <tspan class="lang-en">Dissents in July</tspan>
+            </text>
+            <text x="245" y="183" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">3名反对维持利率者之一</tspan>
+              <tspan class="lang-en">1 of 3 hawks voting to hike</tspan>
+            </text>
+
+            <!-- Node 3: Sept 2026 Hike to 3.75%-4% -->
+            <circle cx="385" cy="125" r="8" fill="#0f1d2b" stroke="#b85d19" stroke-width="2.5"/>
+            <text x="385" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#0f1d2b">2026.09</text>
+            <text x="385" y="168" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" font-weight="700" fill="#141413">
+              <tspan class="lang-cn">加息至 3.75%–4%</tspan>
+              <tspan class="lang-en">Rate Raised to 3.75%–4%</tspan>
+            </text>
+            <text x="385" y="183" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">纪要显示年内或再加一次</tspan>
+              <tspan class="lang-en">Minutes: 1 more hike by yr-end</tspan>
+            </text>
+
+            <!-- Dashed Projection to 2029 -->
+            <line x1="393" y1="125" x2="645" y2="125" stroke="#b85d19" stroke-width="2" stroke-dasharray="5,4"/>
+
+            <!-- Callout Box for Hammack vs Consensus -->
+            <rect x="425" y="42" width="265" height="62" rx="3" fill="#0f1d2b"/>
+            <text x="438" y="64" font-family="Noto Sans SC, Inter, sans-serif" font-size="11.5" font-weight="700" fill="#e2b878">
+              <tspan class="lang-cn">哈马克主张：更小、更频繁的调整</tspan>
+              <tspan class="lang-en">Hammack: "Smaller, more frequent"</tspan>
+            </text>
+            <text x="438" y="84" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#ffffff">
+              <tspan class="lang-cn">反对拖延至2029年：“这时间太长了”</tspan>
+              <tspan class="lang-en">On 2029 target return: "Far too long"</tspan>
+            </text>
+
+            <!-- Node 4: 2029 FOMC Consensus -->
+            <circle cx="655" cy="125" r="7" fill="#faf8f4" stroke="#646059" stroke-width="2.5"/>
+            <text x="655" y="150" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#646059">2029</text>
+            <text x="655" y="168" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">多数同僚预计</tspan>
+              <tspan class="lang-en">Colleagues' projection</tspan>
+            </text>
+            <text x="655" y="183" text-anchor="middle" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" fill="#646059">
+              <tspan class="lang-cn">重回 2% 目标年份</tspan>
+              <tspan class="lang-en">for 2% target return</tspan>
+            </text>
+          </svg>
+
+          <div class="exhibit-footnote">
+            <span>
+              <span class="lang-cn">注：美联储上月将基准利率上调至3.75%–4%区间；7月会议上哈马克是三名投反对票要求加息的官员之一。</span>
+              <span class="lang-en">Note: The Fed raised its benchmark rate last month to 3.75%–4%; Hammack was one of three dissenters in July.</span>
+            </span>
+          </div>
+        </figure>
+      </div>
+
+      <!-- SIDE RAIL FOR CHAPTER 2 -->
+      <aside class="side-rail">
+        <div class="metric-card" data-derive="m1">
+          <div class="metric-val" data-field="value"></div>
+          <div class="metric-lbl" data-field="label"></div>
+          <div class="metric-note" data-field="note"></div>
+        </div>
+
+        <div class="metric-card" data-derive="m2">
+          <div class="metric-val" data-field="value"></div>
+          <div class="metric-lbl" data-field="label"></div>
+          <div class="metric-note" data-field="note"></div>
+        </div>
+
+        <blockquote class="pull-quote" data-derive="q4">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+      </aside>
+    </div>
+  </div>
+
+  <!-- DARK NAVY BREAKOUT: THE NEUTRAL RATE & MACRO DEBATE -->
+  <section class="navy-breakout">
+    <div class="navy-inner">
+      <div class="navy-header">
+        <div class="navy-kicker">
+          <span class="lang-cn">宏观机制解剖 · THE NEUTRAL RATE CONUNDRUM</span>
+          <span class="lang-en">MACRO DIAGNOSTIC · THE NEUTRAL RATE CONUNDRUM</span>
+        </div>
+        <h2 class="navy-title">
+          <span class="lang-cn">三大核心交锋：中性利率、美债收益率与AI资本狂潮</span>
+          <span class="lang-en">Three Fault Lines: Neutral Rates, Bond Yields &amp; The AI Capex Boom</span>
+        </h2>
+      </div>
+
+      <div class="policy-matrix">
+        <div class="matrix-col highlight-col">
+          <span class="matrix-tag">01 · UNOBSERVABLE R-STAR</span>
+          <h3 class="matrix-actor">
+            <span class="lang-cn">无法直接观测的“中性利率”</span>
+            <span class="lang-en">The Unobservable "Neutral" Rate</span>
+          </h3>
+          <p class="matrix-desc">
+            <span class="lang-cn">哈马克对中性利率的估算值位居委员会最高之列——而且她认为，如果自己的估算有误，那也是估得太低了。涌入的资金与创造的利润表明经济并未受到抑制。</span>
+            <span class="lang-en">Hammack's estimate of neutral is among the highest on the committee—and she warns that if she's wrong, her estimate is still too low. Capital inflows and profits show an unrestrained economy.</span>
+          </p>
+        </div>
+
+        <div class="matrix-col">
+          <span class="matrix-tag">02 · BOND MARKET YIELDS</span>
+          <h3 class="matrix-actor">
+            <span class="lang-cn">长债收益率：是补充而非替代</span>
+            <span class="lang-en">Treasury Yields: Complement, Not Substitute</span>
+          </h3>
+          <p class="matrix-desc">
+            <span class="lang-cn">自夏季以来长期国债收益率持续走高，推升了全社会借贷成本并使金融状况更接近中性。但哈马克断然否决“债市可替美联储代劳”的观点。</span>
+            <span class="lang-en">Long-term Treasury yields have marched higher since summer, tightening conditions closer to neutral. Yet Hammack flatly rejects the idea that the bond market can do the Fed's job.</span>
+          </p>
+        </div>
+
+        <div class="matrix-col">
+          <span class="matrix-tag">03 · AI &amp; DATA CENTERS</span>
+          <h3 class="matrix-actor">
+            <span class="lang-cn">利率工具的边界：AI与石油</span>
+            <span class="lang-en">Limits of Rate Hikes: Oil &amp; AI Spend</span>
+          </h3>
+          <p class="matrix-desc">
+            <span class="lang-cn">外部批评者指出加息无法产出更多石油，也难以立即放缓科技巨头用现金和发债融资的AI开支。哈马克亦坦承：加息不会显著抑制数据中心需求。</span>
+            <span class="lang-en">Critics note higher rates can't pump more oil or immediately slow cash- and bond-financed tech AI spending. Hammack concedes raising rates won't materially slow data-center demand.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER III: NEUTRAL RATE, BOND YIELDS & CENTRAL BANK TRANSPARENCY -->
+  <div class="editorial-container">
+    <div class="chapter-banner">
+      <span class="chapter-num">CHAPTER 03</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">中性利率之辩与央行沟通哲学：哈马克与主席沃什的分歧</span>
+        <span class="lang-en">Unobservable Restraint &amp; Central Bank Voice: Hammack vs. Chairman Warsh</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="prose-col">
+        <p class="prose-p" data-ref="p14" data-hl="“中性”利率 | &quot;neutral&quot; rate | 委员会中最高的 | highest on the committee"></p>
+        <blockquote class="narrative-quote-box" data-ref="p15"></blockquote>
+        <p class="prose-p" data-ref="p16" data-hl="长期国债收益率 | Long-term Treasury yields | 这不是一种替代方案，而是一种补充 | It's not a substitute, it's a complement"></p>
+        <p class="prose-p" data-ref="p17" data-hl="数据中心的需求 | data-center demand"></p>
+        <p class="prose-p" data-ref="p18" data-hl="凯文·沃什 | Kevin Warsh"></p>
+        <p class="prose-p" data-ref="p19" data-hl="尽可能多地向公众提供信息 | arm the public with as much information as possible | 将他们视为成熟的成年人 | treat them like mature grown-ups"></p>
+
+        <!-- Final Governance Duel Card -->
+        <div class="duel-panel">
+          <div class="duel-side">
+            <div class="duel-role">
+              <span class="lang-cn">克利夫兰联储行长 · CLEVELAND FED PRESIDENT</span>
+              <span class="lang-en">CLEVELAND FED PRESIDENT</span>
+            </div>
+            <div class="duel-name">
+              <span class="lang-cn">贝丝·哈马克 (Beth Hammack)</span>
+              <span class="lang-en">Beth Hammack</span>
+            </div>
+            <p class="duel-philosophy">
+              <span class="lang-cn">主张直率发声与透明预测：认为减少沟通只会让企业和家庭自行猜测，央行的职责是向公众提供尽可能多的信息，把公众当作“成熟的成年人”对待。</span>
+              <span class="lang-en">Advocates candid forward guidance: argues saying less leaves businesses and households guessing. Sees her job as arming the public with maximum information like "mature grown-ups."</span>
+            </p>
+          </div>
+
+          <div class="duel-side">
+            <div class="duel-role">
+              <span class="lang-cn">美联储主席 · FED CHAIRMAN</span>
+              <span class="lang-en">FEDERAL RESERVE CHAIRMAN</span>
+            </div>
+            <div class="duel-name">
+              <span class="lang-cn">凯文·沃什 (Kevin Warsh)</span>
+              <span class="lang-en">Kevin Warsh</span>
+            </div>
+            <p class="duel-philosophy">
+              <span class="lang-cn">主张淡化信号与预测叙事：希望美联储停止提前释放行动信号或阐述预测，认为过度预告会让官员陷入“捍卫预测”的被动境地，而非根据实际经济演化相机抉择。</span>
+              <span class="lang-en">Advocates stepping back from signaling: wants the Fed to stop narrating forecasts, arguing it locks officials into defending projections rather than responding as the economy unfolds.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDE RAIL FOR CHAPTER 3 -->
+      <aside class="side-rail">
+        <blockquote class="pull-quote" data-derive="q3">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <div class="dossier-card">
+          <div class="dossier-kicker">
+            <span class="lang-cn">决策者履历 · POLICYMAKER PROFILE</span>
+            <span class="lang-en">POLICYMAKER PROFILE · BETH HAMMACK</span>
+          </div>
+          <h3 class="dossier-title">
+            <span class="lang-cn">从华尔街交易台到克利夫兰联储</span>
+            <span class="lang-en">From Wall Street Desk to Monetary Hawk</span>
+          </h3>
+          <ul class="dossier-list">
+            <li>
+              <span class="dossier-key"><span class="lang-cn">华尔街资历</span><span class="lang-en">Wall St. Tenure</span></span>
+              <span class="dossier-val"><span class="lang-cn">高盛集团逾30年交易生涯</span><span class="lang-en">30+ Years at Goldman Sachs</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">出任联储行长</span><span class="lang-en">Fed Appointment</span></span>
+              <span class="dossier-val"><span class="lang-cn">2024年加入美联储</span><span class="lang-en">Joined the Fed in 2024</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">投票记录</span><span class="lang-en">Voting Record</span></span>
+              <span class="dossier-val"><span class="lang-cn">7月暂停加息时投下反对票</span><span class="lang-en">Dissented in July for a hike</span></span>
+            </li>
+            <li>
+              <span class="dossier-key"><span class="lang-cn">中性利率定位</span><span class="lang-en">Neutral Estimate</span></span>
+              <span class="dossier-val"><span class="lang-cn">FOMC委员会中最高估算之一</span><span class="lang-en">Among highest on FOMC</span></span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="ed-footer">
+  <div>
+    <span class="lang-cn">THE WALL STREET JOURNAL · 华尔街日报双语精读版 · 100% 忠实原文编译</span>
+    <span class="lang-en">THE WALL STREET JOURNAL · BILINGUAL EDITORIAL EDITION · VERBATIM CANONICAL ARCHIVE</span>
+  </div>
+  <div>E1-011 · BY NICK TIMIRAOS · OCT 12, 2026</div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+    try {
+      localStorage.setItem('wsj-ed-lang', lang);
+    } catch (e) {}
+  }
+
+  (function initReadingExperience() {
+    try {
+      var saved = localStorage.getItem('wsj-ed-lang');
+      if (saved === 'en' || saved === 'zh-CN') {
+        setLang(saved);
+      }
+    } catch (e) {}
+
+    var progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', function() {
+      if (!progressBar) return;
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

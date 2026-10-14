@@ -1,0 +1,440 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-029",
+  "final_id": "029",
+  "issue_date": "2026-10-12",
+  "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A5",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "U.S. News · A5 版",
+    "kicker_en": "WSJ · U.S. NEWS · A5",
+    "title_cn": "赫格塞斯因直播行刑队而被批评",
+    "title_en": "Hegseth Gets Heat Over Livestream Firing Squad",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY LARA SELIGMAN AND YOKO KUBOTA",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "原定于12月3日执行的尼达尔·哈桑死刑，引发了全国性的讨论。尼达尔·哈桑是一名原陆军军官，他在2009年的一次袭击中杀害了13人。五角大楼宣布，他的死刑将以枪决的形式进行，并且会进行直播。",
+      "text_en": "The planned Dec. 3 execution of Nidal Hasan, a former Army officer who killed 13 people in a 2009 attack, has sparked a national debate after the Pentagon announced that his death by firing squad would be livestreamed.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "原定于12月3日执行的尼达尔·哈桑死刑，引发了全国性的讨论。尼达尔·哈桑是一名原陆军军官，他在2009年的一次袭击中杀害了13人。五角大楼宣布，他的死刑将以枪决的形式进行，并且会进行直播。",
+          "text_en": "The planned Dec. 3 execution of Nidal Hasan, a former Army officer who killed 13 people in a 2009 attack, has sparked a national debate after the Pentagon announced that his death by firing squad would be livestreamed."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "当被问及直播计划时，特朗普总统周五下午对记者表示，他的政府“正在对此进行评估，但他将被处决”。",
+      "text_en": "When asked about the livestream, President Trump told reporters Friday afternoon that his administration \"is making a determination about that, but he will be killed.\"",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "当被问及直播计划时，特朗普总统周五下午对记者表示，他的政府“正在对此进行评估，但他将被处决”。",
+          "text_en": "When asked about the livestream, President Trump told reporters Friday afternoon that his administration \"is making a determination about that, but he will be killed.\""
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "尼达尔·哈桑是一位出生在美国的穆斯林，也是在德克萨斯州胡德堡服役的陆军精神科医生。他声称，他开枪是因为他试图保护其他穆斯林。根据证词，哈桑于2009年11月5日走入胡德堡的一栋拥挤的建筑物，他的口袋里装有420发子弹，并用纸巾来降低子弹射击的声音。他大喊“真主至大”，然后有条不紊地向士兵射击，并多次向试图逃脱的受伤士兵射击。哈桑最终在袭击中被击中，并从腰部以下瘫痪。他杀害了13人，并使32人受伤。",
+      "text_en": "Nidal Hasan was a U.S.-born Muslim and Army psychiatrist working at Fort Hood in Texas who said he opened fire because he was trying to defend fellow Muslims. According to testimony, Hasan walked into a crowded building at Fort Hood on Nov. 5, 2009, with 420 rounds of ammunition stuffed in his pockets and paper towels to muffle the sound of the bullets. He yelled \"Allahu akbar\"—Arabic for \"God is great\"—and methodically shot at soldiers, repeatedly shooting wounded soldiers as they tried to escape. Hasan was eventually shot and paralyzed from the waist down in the attack. He killed 13 people and wounded 32 more.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "尼达尔·哈桑是一位出生在美国的穆斯林，也是在德克萨斯州胡德堡服役的陆军精神科医生。他声称，他开枪是因为他试图保护其他穆斯林。根据证词，哈桑于2009年11月5日走入胡德堡的一栋拥挤的建筑物，他的口袋里装有420发子弹，并用纸巾来降低子弹射击的声音。他大喊“真主至大”，然后有条不紊地向士兵射击，并多次向试图逃脱的受伤士兵射击。哈桑最终在袭击中被击中，并从腰部以下瘫痪。他杀害了13人，并使32人受伤。",
+          "text_en": "Nidal Hasan was a U.S.-born Muslim and Army psychiatrist working at Fort Hood in Texas who said he opened fire because he was trying to defend fellow Muslims. According to testimony, Hasan walked into a crowded building at Fort Hood on Nov. 5, 2009, with 420 rounds of ammunition stuffed in his pockets and paper towels to muffle the sound of the bullets. He yelled \"Allahu akbar\"—Arabic for \"God is great\"—and methodically shot at soldiers, repeatedly shooting wounded soldiers as they tried to escape. Hasan was eventually shot and paralyzed from the waist down in the attack. He killed 13 people and wounded 32 more."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在军事法庭审判期间，哈桑承认他实施了枪击事件，因为他认为军队正在与伊斯兰教作战。在审判期间，他担任自己的律师，并且没有为袭击事件进行辩护。2013年，由其他军官组成的陪审团判处他死刑。",
+      "text_en": "Hasan admitted during his court-martial that he carried out the shooting because he believed the military was at war with Islam. During the trial, he acted as his own lawyer and offered no defense for the attack. He was sentenced to death in 2013 by a jury of fellow officers.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "在军事法庭审判期间，哈桑承认他实施了枪击事件，因为他认为军队正在与伊斯兰教作战。",
+          "text_en": "Hasan admitted during his court-martial that he carried out the shooting because he believed the military was at war with Islam."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "在审判期间，他担任自己的律师，并且没有为袭击事件进行辩护。",
+          "text_en": "During the trial, he acted as his own lawyer and offered no defense for the attack."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "2013年，由其他军官组成的陪审团判处他死刑。",
+          "text_en": "He was sentenced to death in 2013 by a jury of fellow officers."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此后，哈桑一直被关押在堪萨斯州利文沃思堡的军事监狱的死刑牢房。陆军有义务为他提供法律援助，但拒绝就此发表评论。",
+      "text_en": "Hasan has since been held on death row at the military prison in Fort Leavenworth, Kan. The Army, which is required to provide him legal counsel, declined to comment on his behalf.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "此后，哈桑一直被关押在堪萨斯州利文沃思堡的军事监狱的死刑牢房。",
+          "text_en": "Hasan has since been held on death row at the military prison in Fort Leavenworth, Kan."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "陆军有义务为他提供法律援助，但拒绝就此发表评论。",
+          "text_en": "The Army, which is required to provide him legal counsel, declined to comment on his behalf."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这将是65年来首次处决一名现役军人。只有总统才能批准处决美国现役军人，他们受到军队自身法律体系的管辖。五角大楼表示，特朗普总统于10月2日批准了哈桑的枪决死刑，这是在国防部长皮特·赫格塞斯的建议之后做出的决定。",
+      "text_en": "It would be the first execution of a servicemember in 65 years. Only a president can approve the execution of U.S. servicemembers, who are subject to the military's own legal system. Trump approved Hasan's firing squad execution on Oct. 2 upon Defense Secretary Pete Hegseth's recommendation, the Pentagon said.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "这将是65年来首次处决一名现役军人。",
+          "text_en": "It would be the first execution of a servicemember in 65 years."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "只有总统才能批准处决美国现役军人，他们受到军队自身法律体系的管辖。",
+          "text_en": "Only a president can approve the execution of U.S. servicemembers, who are subject to the military's own legal system."
+        },
+        {
+          "id": "p6.s3",
+          "text_cn": "五角大楼表示，特朗普总统于10月2日批准了哈桑的枪决死刑，这是在国防部长皮特·赫格塞斯的建议之后做出的决定。",
+          "text_en": "Trump approved Hasan's firing squad execution on Oct. 2 upon Defense Secretary Pete Hegseth's recommendation, the Pentagon said."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "陆军规定，死刑必须在总统批准后的60天到150天之间执行。在哈桑的案件中，他的死刑将在总统批准后的60天后几乎立即执行。",
+      "text_en": "Army regulation says the execution must take place no sooner than 60 days and no later than 150 days after the president's approval. In the case of Hasan, his Dec. 3 execution would be almost immediately after the 60-day mark.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "陆军规定，死刑必须在总统批准后的60天到150天之间执行。",
+          "text_en": "Army regulation says the execution must take place no sooner than 60 days and no later than 150 days after the president's approval."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "在哈桑的案件中，他的死刑将在总统批准后的60天后几乎立即执行。",
+          "text_en": "In the case of Hasan, his Dec. 3 execution would be almost immediately after the 60-day mark."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "如果按照计划执行，这将是自1961年以来首次处决美国军人，当时美国陆军士兵约翰·贝内特在利文沃思堡被处以绞刑，此前他因强奸和试图谋杀罪被军事法庭判有罪。根据死刑信息中心的数据，这也是自二战以来首次以枪决的方式处决军人。",
+      "text_en": "If carried out as planned, it would be the first U.S. military execution since 1961, when U.S. Army Pvt. John Bennett was hanged at Leavenworth after a court-martial convicted him of rape and attempted murder. It also would be the first military death by firing squad since World War II, according to the Death Penalty Information Center.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "如果按照计划执行，这将是自1961年以来首次处决美国军人，当时美国陆军士兵约翰·贝内特在利文沃思堡被处以绞刑，此前他因强奸和试图谋杀罪被军事法庭判有罪。根据死刑信息中心的数据，这也是自二战以来首次以枪决的方式处决军人。",
+          "text_en": "If carried out as planned, it would be the first U.S. military execution since 1961, when U.S. Army Pvt. John Bennett was hanged at Leavenworth after a court-martial convicted him of rape and attempted murder. It also would be the first military death by firing squad since World War II, according to the Death Penalty Information Center."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "赫格塞斯说：“自二战以来，我们已经很久没有这样做过了。嗯，我有点喜欢我们在二战时期的心态，那就是‘获胜’。”",
+      "text_en": "\"It hadn't been since World War II since we've done that. Well, I kind of like the mentality we had in World War II, which was: 'win,' \" Hegseth said.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "赫格塞斯说：“自二战以来，我们已经很久没有这样做过了。",
+          "text_en": "\"It hadn't been since World War II since we've done that."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "嗯，我有点喜欢我们在二战时期的心态，那就是‘获胜’。”",
+          "text_en": "Well, I kind of like the mentality we had in World War II, which was: 'win,' \" Hegseth said."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "赫格塞斯表示，死刑计划在胡德堡执行，时间是哈桑在那里开枪的同一天和同一时间。",
+      "text_en": "Hegseth said the execution was planned to take place at Fort Hood on the same day of the week and time of day that Hasan opened fire there.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "赫格塞斯表示，死刑计划在胡德堡执行，时间是哈桑在那里开枪的同一天和同一时间。",
+          "text_en": "Hegseth said the execution was planned to take place at Fort Hood on the same day of the week and time of day that Hasan opened fire there."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "民主党人和一些共和党人对赫格塞斯直播处决的计划表示反对，一位共和党人表示，这会将事件变成娱乐，另一些人则认为，这会将美国与“圣战分子”相提并论。哈桑曾告诉军方官员，他希望成为一名殉道者。",
+      "text_en": "Democrats and some Republicans have recoiled at Hegseth's plan to livestream the execution, with one Republican saying it turns the event into entertainment and others suggesting it puts America on par with \"jihadists.\" Hasan had told military officials he hoped to become a martyr.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "民主党人和一些共和党人对赫格塞斯直播处决的计划表示反对，一位共和党人表示，这会将事件变成娱乐，另一些人则认为，这会将美国与“圣战分子”相提并论。",
+          "text_en": "Democrats and some Republicans have recoiled at Hegseth's plan to livestream the execution, with one Republican saying it turns the event into entertainment and others suggesting it puts America on par with \"jihadists.\""
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "哈桑曾告诉军方官员，他希望成为一名殉道者。",
+          "text_en": "Hasan had told military officials he hoped to become a martyr."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "副总统J·D·万斯周五表示，他质疑直播是否会发生。如果真的发生，他说，他不会观看。他对记者说：“我不确定这是否真的会发生。”他后来补充说：“如果一切都通过直播进行，我不会观看。”",
+      "text_en": "Vice President JD Vance on Friday questioned whether the livestream would happen. If it did, he said, he wouldn't be watching. \"I don't know that's actually going to happen,\" he told reporters. He later added: \"Look, if it's all through livestream, I'm not going to be watching it.\"",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "副总统J·D·万斯周五表示，他质疑直播是否会发生。",
+          "text_en": "Vice President JD Vance on Friday questioned whether the livestream would happen."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "如果真的发生，他说，他不会观看。",
+          "text_en": "If it did, he said, he wouldn't be watching."
+        },
+        {
+          "id": "p12.s3",
+          "text_cn": "他对记者说：“我不确定这是否真的会发生。”",
+          "text_en": "\"I don't know that's actually going to happen,\" he told reporters."
+        },
+        {
+          "id": "p12.s4",
+          "text_cn": "他后来补充说：“如果一切都通过直播进行，我不会观看。”",
+          "text_en": "He later added: \"Look, if it's all through livestream, I'm not going to be watching it.\""
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "主教们呼吁五角大楼重新考虑这一计划。奥克利大主教保罗·S·库克利表示：“这一决定是对死亡文化的野蛮宣传。”美国天主教主教会议的主席呼吁五角大楼重新考虑这一计划。",
+      "text_en": "Bishops called on the Pentagon to reconsider the plan. \"This decision is a barbaric promotion of a culture of death,\" Archbishop Paul S. Coakley said. The president of the United States Conference of Catholic Bishops called on the Pentagon to reconsider the plan.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "主教们呼吁五角大楼重新考虑这一计划。奥克利大主教保罗·S·库克利表示：“这一决定是对死亡文化的野蛮宣传。”美国天主教主教会议的主席呼吁五角大楼重新考虑这一计划。",
+          "text_en": "Bishops called on the Pentagon to reconsider the plan. \"This decision is a barbaric promotion of a culture of death,\" Archbishop Paul S. Coakley said. The president of the United States Conference of Catholic Bishops called on the Pentagon to reconsider the plan."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "表达反对意见的共和党人包括来自宾夕法尼亚州的众议员罗布·布雷斯纳汉，他在X平台上写道，重点不应放在“将处决变成娱乐”。来自佐治亚州的众议员奥斯汀·斯科特表示，他支持死刑，并在X平台上写道：“直播处决是圣战分子所做的事情。美国比这更好。”来自犹他州的参议员约翰·柯蒂斯在X平台上发帖，敦促赫格塞斯重新考虑，并写道：“直播处决会贬低我们，而且不是一种有效的威慑手段。”",
+      "text_en": "Republicans expressing opposition include Rep. Rob Bresnahan of Pennsylvania, who wrote on X that the focus shouldn't be \"turning an execution into entertainment.\" Rep. Austin Scott of Georgia, who noted he supports the death sentence, said on X: \"Livestreaming executions is what jihadists do. America is better than that.\" Sen. John Curtis of Utah urged Hegseth in a post on X to reconsider, writing that, \"Broadcasting a death diminishes us and is not an effective deterrent.\"",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "表达反对意见的共和党人包括来自宾夕法尼亚州的众议员罗布·布雷斯纳汉，他在X平台上写道，重点不应放在“将处决变成娱乐”。来自佐治亚州的众议员奥斯汀·斯科特表示，他支持死刑，并在X平台上写道：“直播处决是圣战分子所做的事情。美国比这更好。”来自犹他州的参议员约翰·柯蒂斯在X平台上发帖，敦促赫格塞斯重新考虑，并写道：“直播处决会贬低我们，而且不是一种有效的威慑手段。”",
+          "text_en": "Republicans expressing opposition include Rep. Rob Bresnahan of Pennsylvania, who wrote on X that the focus shouldn't be \"turning an execution into entertainment.\" Rep. Austin Scott of Georgia, who noted he supports the death sentence, said on X: \"Livestreaming executions is what jihadists do. America is better than that.\" Sen. John Curtis of Utah urged Hegseth in a post on X to reconsider, writing that, \"Broadcasting a death diminishes us and is not an effective deterrent.\""
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "五角大楼和陆军拒绝透露视频将在哪里进行直播，以及是否会将其发布在互联网上，或者仅供选定的公众观看。根据陆军的规定，任何未满18岁的人都不得观看美国军人的处决。如果军队在互联网上直播处决，那么遵守这一规定将是不可能的。",
+      "text_en": "The Pentagon and Army have declined to say where the video will be livestreamed and whether it would be put on the internet or a closed circuit for select members of the public to view. Under Army regulations, no one under the age of 18 is allowed to witness an execution of a U.S. servicemember. That rule would be impossible to follow if the military livestreams the execution on the internet.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "五角大楼和陆军拒绝透露视频将在哪里进行直播，以及是否会将其发布在互联网上，或者仅供选定的公众观看。",
+          "text_en": "The Pentagon and Army have declined to say where the video will be livestreamed and whether it would be put on the internet or a closed circuit for select members of the public to view."
+        },
+        {
+          "id": "p15.s2",
+          "text_cn": "根据陆军的规定，任何未满18岁的人都不得观看美国军人的处决。",
+          "text_en": "Under Army regulations, no one under the age of 18 is allowed to witness an execution of a U.S. servicemember."
+        },
+        {
+          "id": "p15.s3",
+          "text_cn": "如果军队在互联网上直播处决，那么遵守这一规定将是不可能的。",
+          "text_en": "That rule would be impossible to follow if the military livestreams the execution on the internet."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p2",
+      "quote_cn": "“正在对此进行评估，但他将被处决”",
+      "quote_en": "“is making a determination about that, but he will be killed.”",
+      "speaker_cn": "原文第 2 段直接引述",
+      "role_cn": "Source Block p2",
+      "speaker_en": "Direct Quote (p2)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p9",
+      "quote_cn": "“自二战以来，我们已经很久没有这样做过了。嗯，我有点喜欢我们在二战时期的心态，那就是‘获胜’。”",
+      "quote_en": "“It hadn't been since World War II since we've done that. Well, I kind of like the mentality we had in World War II, which was: 'win,' ”",
+      "speaker_cn": "原文第 9 段直接引述",
+      "role_cn": "Source Block p9",
+      "speaker_en": "Direct Quote (p9)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p12",
+      "quote_cn": "“如果一切都通过直播进行，我不会观看。”",
+      "quote_en": "“Look, if it's all through livestream, I'm not going to be watching it.”",
+      "speaker_cn": "原文第 12 段直接引述",
+      "role_cn": "Source Block p12",
+      "speaker_en": "Direct Quote (p12)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q4",
+      "source_block": "p13",
+      "quote_cn": "“这一决定是对死亡文化的野蛮宣传。”",
+      "quote_en": "“This decision is a barbaric promotion of a culture of death,”",
+      "speaker_cn": "原文第 13 段直接引述",
+      "role_cn": "Source Block p13",
+      "speaker_en": "Direct Quote (p13)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q5",
+      "source_block": "p14",
+      "quote_cn": "“直播处决会贬低我们，而且不是一种有效的威慑手段。”",
+      "quote_en": "“Broadcasting a death diminishes us and is not an effective deterrent.”",
+      "speaker_cn": "原文第 14 段直接引述",
+      "role_cn": "Source Block p14",
+      "speaker_en": "Direct Quote (p14)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "尼达尔·哈桑 2009 年 11 月 5 日在胡德堡开枪，造成 13 死 32 伤，2013 年被军官陪审团判处死刑。特朗普 10 月 2 日根据国防部长赫格塞斯的建议批准以行刑队执行；陆军规定须在总统批准后 60 至 150 天内执行，12 月 3 日的行刑日紧随 60 天下限。若执行，将是 65 年来美军首次处决现役军人，也是二战以来首次以行刑队执行。",
+    "text_en": "尼达尔·哈桑 2009 年 11 月 5 日在胡德堡开枪，造成 13 死 32 伤，2013 年被军官陪审团判处死刑。特朗普 10 月 2 日根据国防部长赫格塞斯的建议批准以行刑队执行；陆军规定须在总统批准后 60 至 150 天内执行，12 月 3 日的行刑日紧随 60 天下限。若执行，将是 65 年来美军首次处决现役军人，也是二战以来首次以行刑队执行。"
+  },
+  "media": [],
+  "terms": [
+    {
+      "en": "Lara Seligman",
+      "zh_suggested": "拉拉·塞利格曼",
+      "note": "待查"
+    },
+    {
+      "en": "Yoko Kubota",
+      "zh_suggested": "久保田阳子"
+    },
+    {
+      "en": "Nidal Hasan",
+      "zh_suggested": "尼达尔·哈桑",
+      "note": "胡德堡枪击案凶手"
+    },
+    {
+      "en": "Fort Hood",
+      "zh_suggested": "胡德堡",
+      "note": "得州陆军基地"
+    },
+    {
+      "en": "Pete Hegseth",
+      "zh_suggested": "皮特·赫格塞斯",
+      "note": "国防部长"
+    },
+    {
+      "en": "JD Vance",
+      "zh_suggested": "J·D·万斯",
+      "note": "副总统"
+    },
+    {
+      "en": "John Bennett",
+      "zh_suggested": "约翰·贝内特",
+      "note": "待查"
+    },
+    {
+      "en": "Death Penalty Information Center",
+      "zh_suggested": "死刑信息中心",
+      "note": "待查"
+    },
+    {
+      "en": "Rob Bresnahan",
+      "zh_suggested": "罗布·布雷斯纳汉",
+      "note": "待查"
+    },
+    {
+      "en": "Austin Scott",
+      "zh_suggested": "奥斯汀·斯科特",
+      "note": "待查"
+    },
+    {
+      "en": "Paul S. Coakley",
+      "zh_suggested": "保罗·S·库克利",
+      "note": "大主教，待查"
+    },
+    {
+      "en": "United States Conference of Catholic Bishops",
+      "zh_suggested": "美国天主教主教会议",
+      "note": "待查"
+    }
+  ]
+}

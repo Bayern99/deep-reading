@@ -1,0 +1,383 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-029",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T14:07:49Z",
+  "status": "verified",
+  "notes": "Queue task task-cd8222cc (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+    "paragraph_count": 15,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 17107,
+    "completion_chars": 40817,
+    "input_tokens": 5957,
+    "output_tokens": 14377,
+    "total_tokens": 20334,
+    "latency_seconds": 103.732
+  },
+  "files": {
+    "raw_html": "E1-029/v1/raw.html",
+    "compiled_html": "E1-029/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-dark: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c9c1b0;\n    --accent: #b85d19;\n    --crimson: #8f281e;\n    --navy-bg: #0f1d2b;\n    --navy-card: #16293b;\n    --navy-line: #274059;\n    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;\n    --font-sans-cn: 'Noto Sans SC', 'PingFang SC', sans-serif;\n    --font-display: 'Playfair Display', 'Noto Serif SC', serif;\n    --font-serif-en: 'Lora', 'Noto Serif SC', Georgia, serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    scroll-behavior: smooth;\n  }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    font-family: var(--font-serif-cn);\n    line-height: 1.85;\n    overflow-x: hidden;\n  }\n\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: var(--font-serif-en);\n    line-height: 1.78;\n  }\n\n  /* Language Switching Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  /* Sticky Top Masthead */\n  .wsj-masthead {\n    position: sticky;\n    top: 0;\n    z-index: 100;\n    background: rgba(250, 248, 244, 0.96);\n    backdrop-filter: blur(8px);\n    border-bottom: 1px solid var(--ink);\n    box-shadow: 0 1px 0 var(--line);\n  }\n\n  .masthead-inner {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0.7rem 1.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .masthead-brand {\n    display: flex;\n    align-items: baseline;\n    gap: 0.85rem;\n  }\n\n  .wsj-logo {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .wsj-section-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    border-left: 1px solid var(--line-strong);\n    padding-left: 0.85rem;\n    font-weight: 600;\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    border: 1px solid var(--ink);\n    border-radius: 2px;\n    overflow: hidden;\n    background: var(--paper-card);\n  }\n\n  .lang-btn {\n    appearance: none;\n    border: none;\n    background: transparent;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    font-weight: 600;\n    padding: 0.35rem 0.75rem;\n    cursor: pointer;\n    color: var(--muted);\n    transition: all 0.18s ease;\n  }\n\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Hero Header */\n  .hero-header {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 3px double var(--line-strong);\n  }\n\n  .hero-kicker-row {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--crimson);\n  }\n\n  .kicker-pill {\n    background: var(--crimson);\n    color: #fff;\n    padding: 0.18rem 0.55rem;\n    font-weight: 700;\n    letter-spacing: 0.1em;\n  }\n\n  .hero-title {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: clamp(2.1rem, 4.3vw, 3.55rem);\n    line-height: 1.18;\n    color: var(--ink);\n    margin-bottom: 1.35rem;\n    max-width: 980px;\n    letter-spacing: -0.015em;\n  }\n\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.26;\n    letter-spacing: 0.01em;\n  }\n\n  .hero-dek {\n    font-size: clamp(1.06rem, 1.6vw, 1.28rem);\n    line-height: 1.65;\n    color: var(--muted);\n    max-width: 840px;\n    margin-bottom: 2rem;\n    font-weight: 400;\n    border-left: 3px solid var(--accent);\n    padding-left: 1.1rem;\n  }\n\n  .hero-meta-bar {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1rem;\n    padding-top: 1.2rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: var(--muted);\n  }\n\n  .byline-name {\n    font-weight: 700;\n    color: var(--ink);\n    letter-spacing: 0.03em;\n    text-transform: uppercase;\n  }\n\n  .meta-Specs {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    display: flex;\n    gap: 1.25rem;\n  }\n\n  /* Quick Key Numbers Strip */\n  .key-figures-strip {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    border-bottom: 1px solid var(--line-strong);\n    background: var(--paper-card);\n  }\n\n  .figure-cell {\n    padding: 1.35rem 1.5rem;\n    border-right: 1px solid var(--line);\n  }\n\n  .figure-cell:last-child {\n    border-right: none;\n  }\n\n  .figure-num {\n    font-family: var(--font-display);\n    font-size: 1.9rem;\n    font-weight: 800;\n    color: var(--ink);\n    line-height: 1.1;\n    margin-bottom: 0.35rem;\n  }\n\n  .figure-num span.accent-unit {\n    color: var(--crimson);\n    font-size: 1.1rem;\n    font-family: var(--font-mono);\n    margin-left: 0.2rem;\n  }\n\n  .figure-label {\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    font-weight: 600;\n    color: var(--body);\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n    margin-bottom: 0.2rem;\n  }\n\n  .figure-sub {\n    font-family: var(--font-sans);\n    font-size: 0.74rem;\n    color: var(--muted);\n    line-height: 1.4;\n  }\n\n  /* Main Editorial Grid */\n  .editorial-container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 3rem 1.5rem 4.5rem;\n  }\n\n  .asymmetric-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 7fr) minmax(280px, 4.2fr);\n    gap: 3.5rem;\n    align-items: start;\n  }\n\n  .narrative-col {\n    min-width: 0;\n  }\n\n  .sidebar-rail {\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 2rem;\n    position: sticky;\n    top: 4.5rem;\n  }\n\n  /* Prose Styling */\n  .prose-p {\n    font-size: 1.125rem;\n    color: var(--body);\n    margin-bottom: 1.55rem;\n    letter-spacing: 0.005em;\n  }\n\n  .prose-p.lead-para {\n    font-size: 1.26rem;\n    line-height: 1.75;\n    color: var(--ink);\n    font-weight: 600;\n    border-left: 4px solid var(--crimson);\n    padding-left: 1.15rem;\n    margin-bottom: 1.85rem;\n  }\n\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);\n    color: inherit;\n    padding: 0 0.12em;\n    font-weight: 600;\n  }\n\n  /* Section Dividers */\n  .section-marker {\n    margin: 2.8rem 0 1.6rem;\n    padding-top: 1.5rem;\n    border-top: 2px solid var(--ink);\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .section-num {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n  }\n\n  .section-heading {\n    font-family: var(--font-display);\n    font-size: 1.45rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  /* Dossier & Callout Cards in Sidebar */\n  .rail-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 1.5rem;\n  }\n\n  .rail-card-header {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    margin-bottom: 0.65rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n\n  .rail-card-title {\n    font-family: var(--font-display);\n    font-size: 1.15rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.9rem;\n    padding-bottom: 0.65rem;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .ctx-text {\n    font-family: var(--font-sans);\n    font-size: 0.88rem;\n    line-height: 1.68;\n    color: var(--body);\n  }\n\n  /* Derived Pull Quote */\n  .pull-quote {\n    background: var(--paper-card);\n    border-left: 4px solid var(--accent);\n    padding: 1.4rem 1.5rem;\n    margin: 0;\n  }\n\n  .pull-quote .quote-text {\n    font-family: var(--font-display);\n    font-size: 1.18rem;\n    line-height: 1.52;\n    color: var(--ink);\n    font-weight: 700;\n    margin-bottom: 0.75rem;\n  }\n\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n  }\n\n  /* Bespoke SVG Diagram Container */\n  .diagram-panel {\n    margin: 2.5rem 0;\n    background: var(--navy-bg);\n    color: #f4f1ea;\n    padding: 2rem 1.75rem;\n    border-radius: 2px;\n    border-top: 4px solid var(--accent);\n    box-shadow: 0 10px 28px rgba(15, 29, 43, 0.12);\n  }\n\n  .diagram-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: #e3924f;\n    margin-bottom: 0.35rem;\n  }\n\n  .diagram-title {\n    font-family: var(--font-display);\n    font-size: 1.32rem;\n    font-weight: 700;\n    color: #ffffff;\n    margin-bottom: 0.45rem;\n  }\n\n  .diagram-subtitle {\n    font-family: var(--font-sans);\n    font-size: 0.84rem;\n    color: #b4c2d0;\n    margin-bottom: 1.5rem;\n    line-height: 1.5;\n  }\n\n  .svg-wrapper {\n    width: 100%;\n    overflow: hidden;\n  }\n\n  .diagram-footnote {\n    margin-top: 1rem;\n    padding-top: 0.85rem;\n    border-top: 1px solid var(--navy-line);\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    color: #8fa3b8;\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n  }\n\n  /* Full-Bleed Mid-Article Feature Quote Box (for p9) */\n  .pentagon-statement-box {\n    margin: 2.25rem 0;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-left: 5px solid var(--ink);\n    padding: 1.75rem 2rem;\n    position: relative;\n  }\n\n  .statement-label {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--crimson);\n    font-weight: 700;\n    margin-bottom: 0.65rem;\n  }\n\n  .statement-prose {\n    font-family: var(--font-display);\n    font-size: 1.28rem;\n    line-height: 1.55;\n    color: var(--ink);\n    font-weight: 700;\n    margin-bottom: 0;\n  }\n\n  /* Political & Moral Backlash Matrix */\n  .backlash-matrix {\n    margin: 2.5rem 0;\n    border: 1px solid var(--line-strong);\n    background: #fffdf9;\n  }\n\n  .matrix-header {\n    background: var(--ink);\n    color: var(--paper);\n    padding: 1rem 1.35rem;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n  }\n\n  .matrix-title {\n    font-family: var(--font-sans);\n    font-size: 0.88rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n  }\n\n  .matrix-tag {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    color: #e3924f;\n  }\n\n  .matrix-grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  .matrix-cell {\n    padding: 1.25rem 1.35rem;\n    border-bottom: 1px solid var(--line);\n    border-right: 1px solid var(--line);\n  }\n\n  .matrix-cell:nth-child(2n) {\n    border-right: none;\n  }\n\n  .matrix-speaker {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.2rem;\n  }\n\n  .matrix-role {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    color: var(--crimson);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    margin-bottom: 0.65rem;\n  }\n\n  .matrix-stance {\n    font-family: var(--font-serif-cn);\n    font-size: 0.92rem;\n    line-height: 1.55;\n    color: var(--body);\n  }\n\n  :host([lang=\"en\"]) .matrix-stance {\n    font-family: var(--font-serif-en);\n  }\n\n  /* Legal Rule Conflict Callout (Closing) */\n  .regulation-conflict-box {\n    margin-top: 2rem;\n    background: var(--paper-dark);\n    border: 1px solid var(--line-strong);\n    padding: 1.6rem 1.75rem;\n  }\n\n  .reg-badge {\n    display: inline-block;\n    background: var(--ink);\n    color: var(--paper);\n    font-family: var(--font-mono);\n    font-size: 0.68rem;\n    font-weight: 700;\n    padding: 0.2rem 0.55rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    margin-bottom: 0.85rem;\n  }\n\n  /* Footer */\n  .wsj-footer {\n    border-top: 3px double var(--line-strong);\n    background: var(--paper-card);\n    padding: 2.5rem 1.5rem;\n    font-family: var(--font-sans);\n    font-size: 0.8rem;\n    color: var(--muted);\n  }\n\n  .footer-inner {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 1rem;\n  }\n\n  /* Responsive Reflow */\n  @media (max-width: 960px) {\n    .key-figures-strip {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    .figure-cell:nth-child(2) {\n      border-right: none;\n    }\n    .figure-cell:nth-child(1),\n    .figure-cell:nth-child(2) {\n      border-bottom: 1px solid var(--line);\n    }\n    .asymmetric-grid {\n      grid-template-columns: 1fr;\n      gap: 2.5rem;\n    }\n    .sidebar-rail {\n      position: static;\n    }\n  }\n\n  @media (max-width: 600px) {\n    .masthead-inner {\n      padding: 0.6rem 1rem;\n    }\n    .wsj-section-tag {\n      display: none;\n    }\n    .hero-header {\n      padding: 2.2rem 1rem 1.8rem;\n    }\n    .key-figures-strip {\n      grid-template-columns: 1fr;\n    }\n    .figure-cell {\n      border-right: none !important;\n      border-bottom: 1px solid var(--line);\n      padding: 1.1rem 1rem;\n    }\n    .editorial-container {\n      padding: 2rem 1rem 3.5rem;\n    }\n    .matrix-grid {\n      grid-template-columns: 1fr;\n    }\n    .matrix-cell {\n      border-right: none !important;\n    }\n    .diagram-panel {\n      padding: 1.35rem 1rem;\n    }\n    .pentagon-statement-box {\n      padding: 1.35rem 1.2rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><!-- Top Sticky Masthead -->\n  \n<header class=\"wsj-masthead\">\n    <div class=\"masthead-inner\">\n      <div class=\"masthead-brand\">\n        <span class=\"wsj-logo\">The Wall Street Journal</span>\n        <span class=\"wsj-section-tag\">\n          <span class=\"lang-cn\">美国新闻 · 军事司法与宪政争议 · A5版</span>\n          <span class=\"lang-en\">U.S. News · Military Justice · Page A5</span>\n        </span>\n      </div>\n      <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n        <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n        <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n      </div>\n    </div>\n  </header>\n\n  \n<!-- Editorial Hero Header -->\n  \n<section class=\"hero-header\">\n    <div class=\"hero-kicker-row\">\n      <span class=\"kicker-pill\">\n        <span class=\"lang-cn\">五角大楼深读</span>\n        <span class=\"lang-en\">PENTAGON DISPATCH</span>\n      </span>\n      <span>\n        <span class=\"lang-cn\">死刑执行令 · 军法管辖与公共伦理</span>\n        <span class=\"lang-en\">CAPITAL PUNISHMENT · UCMJ &amp; PUBLIC ETHICS</span>\n      </span>\n    </div>\n\n    <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">赫格塞斯因直播行刑队而被批评</span><span class=\"lang-en\">Hegseth Gets Heat Over Livestream Firing Squad</span></h1>\n\n    <div class=\"hero-dek\">\n      <span class=\"lang-cn\">五角大楼宣布将在12月3日以行刑队枪决2009年胡德堡枪击案凶手尼达尔·哈桑并全程直播。这一65年来首例美军现役军人死刑计划，在白宫内部、国会两党与天主教会间掀起轩然大波。</span>\n      <span class=\"lang-en\">The Pentagon's plan to execute 2009 Fort Hood shooter Nidal Hasan by firing squad on Dec. 3—and livestream the event—marks the first military execution in 65 years, drawing sharp rebukes from lawmakers, Catholic bishops, and skepticism inside the White House.</span>\n    </div>\n\n    <div class=\"hero-meta-bar\">\n      <div>\n        <span class=\"byline-name\">BY LARA SELIGMAN AND YOKO KUBOTA</span>\n      </div>\n      <div class=\"meta-Specs\">\n        <span>\n          <span class=\"lang-cn\">发布日期：2026年10月12日</span>\n          <span class=\"lang-en\">Oct. 12, 2026</span>\n        </span>\n        <span>E1-029 · PAGE A5</span>\n      </div>\n    </div>\n  </section>\n\n  \n<!-- Key Quantitative Anchors Strip (Grounded in Article Facts) -->\n  \n<section class=\"key-figures-strip\" aria-label=\"Key Case Figures\">\n    <div class=\"figure-cell\">\n      <div class=\"figure-num\">12.03<span class=\"accent-unit\">DEC 3</span></div>\n      <div class=\"figure-label\">\n        <span class=\"lang-cn\">原定枪决执行日</span>\n        <span class=\"lang-en\">Planned Execution Date</span>\n      </div>\n      <div class=\"figure-sub\">\n        <span class=\"lang-cn\">总统10月2日批准后紧贴60天法定下限执行</span>\n        <span class=\"lang-en\">Immediately after the 60-day statutory mark following Oct. 2 approval</span>\n      </div>\n    </div>\n    <div class=\"figure-cell\">\n      <div class=\"figure-num\">65<span class=\"accent-unit\">YRS</span></div>\n      <div class=\"figure-label\">\n        <span class=\"lang-cn\">美军死刑冻结跨度</span>\n        <span class=\"lang-en\">Since Last Military Execution</span>\n      </div>\n      <div class=\"figure-sub\">\n        <span class=\"lang-cn\">自1961年利文沃思堡绞刑以来首次处决现役军人</span>\n        <span class=\"lang-en\">First execution of a U.S. servicemember since 1961 hanging at Leavenworth</span>\n      </div>\n    </div>\n    <div class=\"figure-cell\">\n      <div class=\"figure-num\">13<span class=\"accent-unit\">DEAD</span> / 32<span class=\"accent-unit\">WOUNDED</span></div>\n      <div class=\"figure-label\">\n        <span class=\"lang-cn\">2009年胡德堡袭击伤亡</span>\n        <span class=\"lang-en\">2009 Fort Hood Attack Toll</span>\n      </div>\n      <div class=\"figure-sub\">\n        <span class=\"lang-cn\">哈桑携带420发子弹向士兵射击，2013年被判死刑</span>\n        <span class=\"lang-en\">Hasan carried 420 rounds on Nov. 5, 2009; sentenced to death in 2013</span>\n      </div>\n    </div>\n    <div class=\"figure-cell\">\n      <div class=\"figure-num\">18<span class=\"accent-unit\">AGE LIMIT</span></div>\n      <div class=\"figure-label\">\n        <span class=\"lang-cn\">陆军观刑年龄红线</span>\n        <span class=\"lang-en\">Army Witness Age Restriction</span>\n      </div>\n      <div class=\"figure-sub\">\n        <span class=\"lang-cn\">陆军规定未满18岁不得观看处决，互联网直播将无法落实</span>\n        <span class=\"lang-en\">Regulations bar anyone under 18 from witnessing a military execution</span>\n      </div>\n    </div>\n  </section>\n\n  \n<!-- Main Asymmetric Editorial Layout -->\n  \n<main class=\"editorial-container\">\n    <div class=\"asymmetric-grid\">\n\n      <!-- Left Primary Narrative Column (p1..p15 in strict sequential order) -->\n      <article class=\"narrative-col\">\n\n        <!-- Lead Section: p1 - p2 -->\n        <p class=\"prose-p lead-para\" data-ref=\"p1\" data-hl=\"12月3日 | Dec. 3 | 13人 | 13 people | 枪决 | firing squad | 直播 | livestreamed\"><span class=\"lang-cn\">原定于<mark class=\"ed-hl\">12月3日</mark>执行的尼达尔·哈桑死刑，引发了全国性的讨论。尼达尔·哈桑是一名原陆军军官，他在2009年的一次袭击中杀害了<mark class=\"ed-hl\">13人</mark>。五角大楼宣布，他的死刑将以<mark class=\"ed-hl\">枪决</mark>的形式进行，并且会进行<mark class=\"ed-hl\">直播</mark>。</span><span class=\"lang-en\">The planned <mark class=\"ed-hl\">Dec. 3</mark> execution of Nidal Hasan, a former Army officer who killed <mark class=\"ed-hl\">13 people</mark> in a 2009 attack, has sparked a national debate after the Pentagon announced that his death by <mark class=\"ed-hl\">firing squad</mark> would be <mark class=\"ed-hl\">livestreamed</mark>.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"正在对此进行评估，但他将被处决 | is making a determination about that, but he will be killed\"><span class=\"lang-cn\">当被问及直播计划时，特朗普总统周五下午对记者表示，他的政府“<mark class=\"ed-hl\">正在对此进行评估，但他将被处决</mark>”。</span><span class=\"lang-en\">When asked about the livestream, President Trump told reporters Friday afternoon that his administration \"<mark class=\"ed-hl\">is making a determination about that, but he will be killed</mark>.\"</span></p>\n\n        <!-- Chapter I: The 2009 Fort Hood Attack & Court-Martial (p3 - p5) -->\n        <div class=\"section-marker\">\n          <span class=\"section-heading\">\n            <span class=\"lang-cn\">胡德堡血案与利文沃思堡死囚牢房</span>\n            <span class=\"lang-en\">The 2009 Fort Hood Attack &amp; Death Row</span>\n          </span>\n          <span class=\"section-num\">CHAPTER 01 · CASE RECORD</span>\n        </div>\n\n        <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"2009年11月5日 | Nov. 5, 2009 | 420发子弹 | 420 rounds of ammunition | 杀害了13人，并使32人受伤 | killed 13 people and wounded 32 more\"><span class=\"lang-cn\">尼达尔·哈桑是一位出生在美国的穆斯林，也是在德克萨斯州胡德堡服役的陆军精神科医生。他声称，他开枪是因为他试图保护其他穆斯林。根据证词，哈桑于<mark class=\"ed-hl\">2009年11月5日</mark>走入胡德堡的一栋拥挤的建筑物，他的口袋里装有<mark class=\"ed-hl\">420发子弹</mark>，并用纸巾来降低子弹射击的声音。他大喊“真主至大”，然后有条不紊地向士兵射击，并多次向试图逃脱的受伤士兵射击。哈桑最终在袭击中被击中，并从腰部以下瘫痪。他<mark class=\"ed-hl\">杀害了13人，并使32人受伤</mark>。</span><span class=\"lang-en\">Nidal Hasan was a U.S.-born Muslim and Army psychiatrist working at Fort Hood in Texas who said he opened fire because he was trying to defend fellow Muslims. According to testimony, Hasan walked into a crowded building at Fort Hood on <mark class=\"ed-hl\">Nov. 5, 2009</mark>, with <mark class=\"ed-hl\">420 rounds of ammunition</mark> stuffed in his pockets and paper towels to muffle the sound of the bullets. He yelled \"Allahu akbar\"—Arabic for \"God is great\"—and methodically shot at soldiers, repeatedly shooting wounded soldiers as they tried to escape. Hasan was eventually shot and paralyzed from the waist down in the attack. He <mark class=\"ed-hl\">killed 13 people and wounded 32 more</mark>.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"2013年 | 2013\"><span class=\"lang-cn\">在军事法庭审判期间，哈桑承认他实施了枪击事件，因为他认为军队正在与伊斯兰教作战。在审判期间，他担任自己的律师，并且没有为袭击事件进行辩护。<mark class=\"ed-hl\"><mark class=\"ed-hl\">2013</mark>年</mark>，由其他军官组成的陪审团判处他死刑。</span><span class=\"lang-en\">Hasan admitted during his court-martial that he carried out the shooting because he believed the military was at war with Islam. During the trial, he acted as his own lawyer and offered no defense for the attack. He was sentenced to death in <mark class=\"ed-hl\">2013</mark> by a jury of fellow officers.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"利文沃思堡 | Fort Leavenworth\"><span class=\"lang-cn\">此后，哈桑一直被关押在堪萨斯州<mark class=\"ed-hl\">利文沃思堡</mark>的军事监狱的死刑牢房。陆军有义务为他提供法律援助，但拒绝就此发表评论。</span><span class=\"lang-en\">Hasan has since been held on death row at the military prison in <mark class=\"ed-hl\">Fort Leavenworth</mark>, Kan. The Army, which is required to provide him legal counsel, declined to comment on his behalf.</span></p>\n\n        <!-- Chapter II: Presidential Approval & The 65-Year Precedent (p6 - p10) -->\n        <div class=\"section-marker\">\n          <span class=\"section-heading\">\n            <span class=\"lang-cn\">总统核准令、60天窗口与二战先例</span>\n            <span class=\"lang-en\">Presidential Approval, the 60-Day Window &amp; WWII Precedent</span>\n          </span>\n          <span class=\"section-num\">CHAPTER 02 · MILITARY LAW</span>\n        </div>\n\n        <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"65年来首次 | first execution of a servicemember in 65 years | 10月2日 | Oct. 2 | 皮特·赫格塞斯 | Pete Hegseth\"><span class=\"lang-cn\">这将是<mark class=\"ed-hl\">65年来首次</mark>处决一名现役军人。只有总统才能批准处决美国现役军人，他们受到军队自身法律体系的管辖。五角大楼表示，特朗普总统于<mark class=\"ed-hl\">10月2日</mark>批准了哈桑的枪决死刑，这是在国防部长<mark class=\"ed-hl\">皮特·赫格塞斯</mark>的建议之后做出的决定。</span><span class=\"lang-en\">It would be the <mark class=\"ed-hl\">first execution of a servicemember in 65 years</mark>. Only a president can approve the execution of U.S. servicemembers, who are subject to the military's own legal system. Trump approved Hasan's firing squad execution on <mark class=\"ed-hl\">Oct. 2</mark> upon Defense Secretary <mark class=\"ed-hl\">Pete Hegseth</mark>'s recommendation, the Pentagon said.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"60天到150天之间 | 60 days and no later than 150 days\"><span class=\"lang-cn\">陆军规定，死刑必须在总统批准后的<mark class=\"ed-hl\">60天到150天之间</mark>执行。在哈桑的案件中，他的死刑将在总统批准后的60天后几乎立即执行。</span><span class=\"lang-en\">Army regulation says the execution must take place no sooner than <mark class=\"ed-hl\">60 days and no later than 150 days</mark> after the president's approval. In the case of Hasan, his Dec. 3 execution would be almost immediately after the 60-day mark.</span></p>\n\n        <!-- Bespoke Inline SVG Diagram: Statutory Execution Timeline & 65-Year Historical Span -->\n        <figure class=\"diagram-panel\" aria-label=\"Military Execution Timeline and Statutory Window\">\n          <div class=\"diagram-kicker\">\n            <span class=\"lang-cn\">军法程序与历史坐标图解</span>\n            <span class=\"lang-en\">MILITARY JUSTICE CHRONOLOGY &amp; STATUTORY WINDOW</span>\n          </div>\n          <h3 class=\"diagram-title\">\n            <span class=\"lang-cn\">从胡德堡枪击案到60天法定行刑下限</span>\n            <span class=\"lang-en\">From the Fort Hood Attack to the 60-Day Statutory Execution Window</span>\n          </h3>\n          <p class=\"diagram-subtitle\">\n            <span class=\"lang-cn\">根据陆军条例，死刑须在总统批准后的60至150天内执行。哈桑定于12月3日的枪决紧贴60天法定下限。</span>\n            <span class=\"lang-en\">Under Army regulations, execution must occur between 60 and 150 days after presidential approval. Hasan's Dec. 3 date falls right after the 60-day mark.</span>\n          </p>\n\n          <div class=\"svg-wrapper\">\n            <svg viewbox=\"0 0 760 320\" width=\"100%\" role=\"img\" aria-label=\"Execution Timeline Diagram\">\n              <!-- Background Grid Lines -->\n              <line x1=\"40\" y1=\"65\" x2=\"720\" y2=\"65\" stroke=\"#274059\" stroke-width=\"1\" stroke-dasharray=\"3,3\"></line>\n              <line x1=\"40\" y1=\"195\" x2=\"720\" y2=\"195\" stroke=\"#274059\" stroke-width=\"1\" stroke-dasharray=\"3,3\"></line>\n\n              <!-- PART 1: Historical Context Timeline (Top Track) -->\n              <text x=\"40\" y=\"34\" fill=\"#e3924f\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" letter-spacing=\"1\">\n                <tspan class=\"lang-cn\">I. 历史与案件轨迹 (1940s – 2026)</tspan>\n                <tspan class=\"lang-en\">I. HISTORICAL &amp; CASE TRAJECTORY (1940s – 2026)</tspan>\n              </text>\n\n              <line x1=\"55\" y1=\"95\" x2=\"705\" y2=\"95\" stroke=\"#536f8a\" stroke-width=\"2.5\"></line>\n\n              <!-- Node 1: WWII -->\n              <circle cx=\"65\" cy=\"95\" r=\"6\" fill=\"#0f1d2b\" stroke=\"#e3924f\" stroke-width=\"2.5\"></circle>\n              <text x=\"65\" y=\"78\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">WWII</text>\n              <text x=\"65\" y=\"118\" fill=\"#b4c2d0\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">上一次美军枪决</tspan>\n                <tspan class=\"lang-en\">Last Firing Squad</tspan>\n              </text>\n\n              <!-- Node 2: 1961 -->\n              <circle cx=\"215\" cy=\"95\" r=\"6\" fill=\"#0f1d2b\" stroke=\"#e3924f\" stroke-width=\"2.5\"></circle>\n              <text x=\"215\" y=\"78\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">1961</text>\n              <text x=\"215\" y=\"118\" fill=\"#b4c2d0\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">约翰·贝内特绞刑</tspan>\n                <tspan class=\"lang-en\">Pvt. Bennett Hanged</tspan>\n              </text>\n              <text x=\"215\" y=\"133\" fill=\"#8fa3b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">(65年前)</tspan>\n                <tspan class=\"lang-en\">(65 Years Ago)</tspan>\n              </text>\n\n              <!-- Node 3: Nov 5, 2009 -->\n              <circle cx=\"390\" cy=\"95\" r=\"6\" fill=\"#0f1d2b\" stroke=\"#ffffff\" stroke-width=\"2.5\"></circle>\n              <text x=\"390\" y=\"78\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">2009.11.05</text>\n              <text x=\"390\" y=\"118\" fill=\"#b4c2d0\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">胡德堡袭击 (13死32伤)</tspan>\n                <tspan class=\"lang-en\">Fort Hood (13 Killed)</tspan>\n              </text>\n\n              <!-- Node 4: 2013 -->\n              <circle cx=\"545\" cy=\"95\" r=\"6\" fill=\"#0f1d2b\" stroke=\"#ffffff\" stroke-width=\"2.5\"></circle>\n              <text x=\"545\" y=\"78\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">2013</text>\n              <text x=\"545\" y=\"118\" fill=\"#b4c2d0\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">军事法庭判处死刑</tspan>\n                <tspan class=\"lang-en\">Court-Martial Death Verdict</tspan>\n              </text>\n\n              <!-- Node 5: Oct 2, 2026 -->\n              <circle cx=\"685\" cy=\"95\" r=\"7\" fill=\"#e3924f\" stroke=\"#ffffff\" stroke-width=\"2\"></circle>\n              <text x=\"685\" y=\"78\" fill=\"#e3924f\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">2026.10.02</text>\n              <text x=\"685\" y=\"118\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" font-weight=\"600\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">特朗普总统批准</tspan>\n                <tspan class=\"lang-en\">Trump Approves</tspan>\n              </text>\n\n              <!-- PART 2: Army Regulation 60-to-150 Day Statutory Window (Bottom Track) -->\n              <text x=\"40\" y=\"176\" fill=\"#e3924f\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" letter-spacing=\"1\">\n                <tspan class=\"lang-cn\">II. 陆军条例法定执行窗口 (总统批准后 60 至 150 天)</tspan>\n                <tspan class=\"lang-en\">II. ARMY REGULATION EXECUTION WINDOW (DAY 60 TO DAY 150 POST-APPROVAL)</tspan>\n              </text>\n\n              <!-- Forbidden Zone (< 60 days) -->\n              <rect x=\"55\" y=\"218\" width=\"230\" height=\"28\" fill=\"#1d3247\" stroke=\"#365370\" stroke-width=\"1\"></rect>\n              <text x=\"170\" y=\"236\" fill=\"#8fa3b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"10.5\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">禁行期：未满 60 天</tspan>\n                <tspan class=\"lang-en\">BARRED: &lt; 60 DAYS</tspan>\n              </text>\n\n              <!-- Statutory Legal Window (60 to 150 days) -->\n              <rect x=\"285\" y=\"218\" width=\"420\" height=\"28\" fill=\"rgba(184, 93, 25, 0.25)\" stroke=\"#e3924f\" stroke-width=\"1.5\"></rect>\n              <text x=\"515\" y=\"236\" fill=\"#f4f1ea\" font-family=\"JetBrains Mono, monospace\" font-size=\"10.5\" font-weight=\"600\" text-anchor=\"middle\">\n                <tspan class=\"lang-cn\">法定允许执行期 (第 60 天 – 第 150 天)</tspan>\n                <tspan class=\"lang-en\">PERMITTED WINDOW (DAY 60 – DAY 150)</tspan>\n              </text>\n\n              <!-- Day 0 Marker (Oct 2) -->\n              <line x1=\"55\" y1=\"208\" x2=\"55\" y2=\"262\" stroke=\"#ffffff\" stroke-width=\"2\"></line>\n              <text x=\"55\" y=\"280\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"start\">\n                <tspan class=\"lang-cn\">第0天 (10月2日)</tspan>\n                <tspan class=\"lang-en\">DAY 0 (OCT. 2)</tspan>\n              </text>\n\n              <!-- Day 60 Marker -->\n              <line x1=\"285\" y1=\"208\" x2=\"285\" y2=\"262\" stroke=\"#b4c2d0\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"></line>\n              <text x=\"278\" y=\"280\" fill=\"#b4c2d0\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" text-anchor=\"end\">\n                <tspan class=\"lang-cn\">第60天下限</tspan>\n                <tspan class=\"lang-en\">DAY 60 MIN</tspan>\n              </text>\n\n              <!-- Planned Dec 3 Execution Marker (Day 62) -->\n              <line x1=\"302\" y1=\"200\" x2=\"302\" y2=\"268\" stroke=\"#ff5a4f\" stroke-width=\"3\"></line>\n              <circle cx=\"302\" cy=\"200\" r=\"5\" fill=\"#ff5a4f\"></circle>\n              <text x=\"312\" y=\"280\" fill=\"#ff7b72\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"start\">\n                <tspan class=\"lang-cn\">★ 12月3日：计划枪决并直播 (紧贴60天期限后)</tspan>\n                <tspan class=\"lang-en\">★ DEC. 3: PLANNED FIRING SQUAD (JUST PAST 60-DAY MARK)</tspan>\n              </text>\n\n              <!-- Day 150 Marker -->\n              <line x1=\"705\" y1=\"208\" x2=\"705\" y2=\"262\" stroke=\"#b4c2d0\" stroke-width=\"1.5\"></line>\n              <text x=\"705\" y=\"280\" fill=\"#b4c2d0\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" text-anchor=\"end\">\n                <tspan class=\"lang-cn\">第150天上限</tspan>\n                <tspan class=\"lang-en\">DAY 150 MAX</tspan>\n              </text>\n            </svg>\n          </div>\n\n          <div class=\"diagram-footnote\">\n            <span>\n              <span class=\"lang-cn\">资料来源：五角大楼声明、陆军法规及死刑信息中心</span>\n              <span class=\"lang-en\">Source: Pentagon announcements, Army regulations, Death Penalty Information Center</span>\n            </span>\n            <span>WSJ GRAPHIC</span>\n          </div>\n        </figure>\n\n        <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"1961年以来首次 | first U.S. military execution since 1961 | 约翰·贝内特 | John Bennett | 自二战以来首次以枪决的方式 | first military death by firing squad since World War II\"><span class=\"lang-cn\">如果按照计划执行，这将是自<mark class=\"ed-hl\">1961年以来首次</mark>处决美国军人，当时美国陆军士兵<mark class=\"ed-hl\">约翰·贝内特</mark>在利文沃思堡被处以绞刑，此前他因强奸和试图谋杀罪被军事法庭判有罪。根据死刑信息中心的数据，这也是<mark class=\"ed-hl\">自二战以来首次以枪决的方式</mark>处决军人。</span><span class=\"lang-en\">If carried out as planned, it would be the <mark class=\"ed-hl\">first U.S. military execution since 1961</mark>, when U.S. Army Pvt. <mark class=\"ed-hl\">John Bennett</mark> was hanged at Leavenworth after a court-martial convicted him of rape and attempted murder. It also would be the <mark class=\"ed-hl\">first military death by firing squad since World War II</mark>, according to the Death Penalty Information Center.</span></p>\n\n        <!-- Highlighted Statement Box for p9 (Hegseth's WWII quote) -->\n        <div class=\"pentagon-statement-box\">\n          <div class=\"statement-label\">\n            <span class=\"lang-cn\">国防部长皮特·赫格塞斯谈恢复行刑队枪决</span>\n            <span class=\"lang-en\">DEFENSE SECRETARY PETE HEGSETH ON THE FIRING SQUAD</span>\n          </div>\n          <p class=\"prose-p statement-prose\" data-ref=\"p9\" data-hl=\"二战时期的心态，那就是‘获胜’ | mentality we had in World War II, which was: 'win'\"><span class=\"lang-cn\">赫格塞斯说：“自二战以来，我们已经很久没有这样做过了。嗯，我有点喜欢我们在<mark class=\"ed-hl\">二战时期的心态，那就是‘获胜’</mark>。”</span><span class=\"lang-en\">\"It hadn't been since World War II since we've done that. Well, I kind of like the mentality we had in World War II, which was: 'win,' \" Hegseth said.</span></p>\n        </div>\n\n        <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"胡德堡 | Fort Hood | 同一天和同一时间 | same day of the week and time of day\"><span class=\"lang-cn\">赫格塞斯表示，死刑计划在<mark class=\"ed-hl\">胡德堡</mark>执行，时间是哈桑在那里开枪的<mark class=\"ed-hl\">同一天和同一时间</mark>。</span><span class=\"lang-en\">Hegseth said the execution was planned to take place at <mark class=\"ed-hl\">Fort Hood</mark> on the <mark class=\"ed-hl\">same day of the week and time of day</mark> that Hasan opened fire there.</span></p>\n\n        <!-- Chapter III: Bipartisan, White House & Religious Backlash (p11 - p14) -->\n        <div class=\"section-marker\">\n          <span class=\"section-heading\">\n            <span class=\"lang-cn\">直播风波：两党反弹、万斯质疑与教会谴责</span>\n            <span class=\"lang-en\">The Livestream Backlash: Vance, Lawmakers &amp; Catholic Bishops</span>\n          </span>\n          <span class=\"section-num\">CHAPTER 03 · NATIONAL DEBATE</span>\n        </div>\n\n        <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"变成娱乐 | turns the event into entertainment | 圣战分子 | jihadists | 殉道者 | martyr\"><span class=\"lang-cn\">民主党人和一些共和党人对赫格塞斯直播处决的计划表示反对，一位共和党人表示，这会将事件<mark class=\"ed-hl\">变成娱乐</mark>，另一些人则认为，这会将美国与“<mark class=\"ed-hl\">圣战分子</mark>”相提并论。哈桑曾告诉军方官员，他希望成为一名<mark class=\"ed-hl\">殉道者</mark>。</span><span class=\"lang-en\">Democrats and some Republicans have recoiled at Hegseth's plan to livestream the execution, with one Republican saying it <mark class=\"ed-hl\">turns the event into entertainment</mark> and others suggesting it puts America on par with \"<mark class=\"ed-hl\">jihadists</mark>.\" Hasan had told military officials he hoped to become a <mark class=\"ed-hl\">martyr</mark>.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"J·D·万斯 | JD Vance | 如果一切都通过直播进行，我不会观看 | Look, if it's all through livestream, I'm not going to be watching it\"><span class=\"lang-cn\">副总统<mark class=\"ed-hl\">J·D·万斯</mark>周五表示，他质疑直播是否会发生。如果真的发生，他说，他不会观看。他对记者说：“我不确定这是否真的会发生。”他后来补充说：“<mark class=\"ed-hl\">如果一切都通过直播进行，我不会观看</mark>。”</span><span class=\"lang-en\">Vice President <mark class=\"ed-hl\">JD Vance</mark> on Friday questioned whether the livestream would happen. If it did, he said, he wouldn't be watching. \"I don't know that's actually going to happen,\" he told reporters. He later added: \"<mark class=\"ed-hl\">Look, if it's all through livestream, I'm not going to be watching it</mark>.\"</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"保罗·S·库克利 | Paul S. Coakley | 对死亡文化的野蛮宣传 | barbaric promotion of a culture of death\"><span class=\"lang-cn\">主教们呼吁五角大楼重新考虑这一计划。奥克利大主教<mark class=\"ed-hl\">保罗·S·库克利</mark>表示：“这一决定是<mark class=\"ed-hl\">对死亡文化的野蛮宣传</mark>。”美国天主教主教会议的主席呼吁五角大楼重新考虑这一计划。</span><span class=\"lang-en\">Bishops called on the Pentagon to reconsider the plan. \"This decision is a <mark class=\"ed-hl\">barbaric promotion of a culture of death</mark>,\" Archbishop <mark class=\"ed-hl\">Paul S. Coakley</mark> said. The president of the United States Conference of Catholic Bishops called on the Pentagon to reconsider the plan.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p14\" data-hl=\"罗布·布雷斯纳汉 | Rob Bresnahan | 奥斯汀·斯科特 | Austin Scott | 约翰·柯蒂斯 | John Curtis\"><span class=\"lang-cn\">表达反对意见的共和党人包括来自宾夕法尼亚州的众议员<mark class=\"ed-hl\">罗布·布雷斯纳汉</mark>，他在X平台上写道，重点不应放在“将处决变成娱乐”。来自佐治亚州的众议员<mark class=\"ed-hl\">奥斯汀·斯科特</mark>表示，他支持死刑，并在X平台上写道：“直播处决是圣战分子所做的事情。美国比这更好。”来自犹他州的参议员<mark class=\"ed-hl\">约翰·柯蒂斯</mark>在X平台上发帖，敦促赫格塞斯重新考虑，并写道：“直播处决会贬低我们，而且不是一种有效的威慑手段。”</span><span class=\"lang-en\">Republicans expressing opposition include Rep. <mark class=\"ed-hl\">Rob Bresnahan</mark> of Pennsylvania, who wrote on X that the focus shouldn't be \"turning an execution into entertainment.\" Rep. <mark class=\"ed-hl\">Austin Scott</mark> of Georgia, who noted he supports the death sentence, said on X: \"Livestreaming executions is what jihadists do. America is better than that.\" Sen. <mark class=\"ed-hl\">John Curtis</mark> of Utah urged Hegseth in a post on X to reconsider, writing that, \"Broadcasting a death diminishes us and is not an effective deterrent.\"</span></p>\n\n        <!-- Analytical Matrix: Spectrum of Official & Moral Reactions -->\n        <section class=\"backlash-matrix\" aria-label=\"Official Positions on Livestreamed Execution\">\n          <div class=\"matrix-header\">\n            <span class=\"matrix-title\">\n              <span class=\"lang-cn\">各方表态谱系：围绕“直播处决”的分歧与批评</span>\n              <span class=\"lang-en\">SPECTRUM OF REACTION: THE DEBATE OVER LIVESTREAMING</span>\n            </span>\n            <span class=\"matrix-tag\">ON THE RECORD</span>\n          </div>\n          <div class=\"matrix-grid\">\n            <div class=\"matrix-cell\">\n              <div class=\"matrix-speaker\">\n                <span class=\"lang-cn\">唐纳德·特朗普 (Donald Trump) · 总统</span>\n                <span class=\"lang-en\">President Donald Trump</span>\n              </div>\n              <div class=\"matrix-role\">\n                <span class=\"lang-cn\">白宫最终核准权</span>\n                <span class=\"lang-en\">White House · Final Authority</span>\n              </div>\n              <div class=\"matrix-stance\">\n                <span class=\"lang-cn\">10月2日依赫格塞斯建议批准枪决；周五表示政府对直播计划“正在进行评估，但他将被处决”。</span>\n                <span class=\"lang-en\">Approved the firing squad on Oct. 2; said Friday the administration \"is making a determination\" on the livestream, \"but he will be killed.\"</span>\n              </div>\n            </div>\n\n            <div class=\"matrix-cell\">\n              <div class=\"matrix-speaker\">\n                <span class=\"lang-cn\">J·D·万斯 (JD Vance) · 副总统</span>\n                <span class=\"lang-en\">Vice President JD Vance</span>\n              </div>\n              <div class=\"matrix-role\">\n                <span class=\"lang-cn\">公开质疑与个人划界</span>\n                <span class=\"lang-en\">Skepticism &amp; Refusal to Watch</span>\n              </div>\n              <div class=\"matrix-stance\">\n                <span class=\"lang-cn\">质疑直播是否真会发生（“我不确定这是否真的会发生”），并明确表态若全程直播，他本人不会观看。</span>\n                <span class=\"lang-en\">Questioned whether the livestream would happen and stated: \"Look, if it's all through livestream, I'm not going to be watching it.\"</span>\n              </div>\n            </div>\n\n            <div class=\"matrix-cell\">\n              <div class=\"matrix-speaker\">\n                <span class=\"lang-cn\">奥斯汀·斯科特 / 约翰·柯蒂斯 / 罗布·布雷斯纳汉</span>\n                <span class=\"lang-en\">Reps. Austin Scott &amp; Rob Bresnahan; Sen. John Curtis</span>\n              </div>\n              <div class=\"matrix-role\">\n                <span class=\"lang-cn\">国会共和党批评声音</span>\n                <span class=\"lang-en\">Congressional GOP Critics</span>\n              </div>\n              <div class=\"matrix-stance\">\n                <span class=\"lang-cn\">警告勿将处决“变成娱乐”；指责直播处决是“圣战分子所做的事情”；敦促赫格塞斯重新考虑，称广播死亡“贬低我们且非有效威慑”。</span>\n                <span class=\"lang-en\">Warned against \"turning an execution into entertainment,\" equated livestreaming executions to \"what jihadists do,\" and argued it \"diminishes us.\"</span>\n              </div>\n            </div>\n\n            <div class=\"matrix-cell\">\n              <div class=\"matrix-speaker\">\n                <span class=\"lang-cn\">保罗·S·库克利大主教 (Archbishop Paul S. Coakley)</span>\n                <span class=\"lang-en\">Archbishop Paul S. Coakley · USCCB</span>\n              </div>\n              <div class=\"matrix-role\">\n                <span class=\"lang-cn\">宗教与伦理抗议</span>\n                <span class=\"lang-en\">Catholic Bishops Conference</span>\n              </div>\n              <div class=\"matrix-stance\">\n                <span class=\"lang-cn\">呼吁五角大楼重新考虑该计划，严厉谴责该决定是“对死亡文化的野蛮宣传”。</span>\n                <span class=\"lang-en\">Called on the Pentagon to reconsider the plan, condemning the decision as \"a barbaric promotion of a culture of death.\"</span>\n              </div>\n            </div>\n          </div>\n        </section>\n\n        <!-- Chapter IV: The Unresolved Regulatory Paradox (p15) -->\n        <div class=\"section-marker\">\n          <span class=\"section-heading\">\n            <span class=\"lang-cn\">法规悖论：互联网传播与陆军未成年人禁令</span>\n            <span class=\"lang-en\">The Regulatory Paradox: Internet Broadcast vs. Army Rules</span>\n          </span>\n          <span class=\"section-num\">CHAPTER 04 · LEGAL PARADOX</span>\n        </div>\n\n        <div class=\"regulation-conflict-box\">\n          <span class=\"reg-badge\">\n            <span class=\"lang-cn\">陆军观刑条例冲突 · UNRESOLVED COMPLIANCE</span>\n            <span class=\"lang-en\">ARMY REGULATION CONFLICT · AGE 18 RULE</span>\n          </span>\n          <p class=\"prose-p\" style=\"margin-bottom: 0;\" data-ref=\"p15\" data-hl=\"未满18岁的人都不得观看 | no one under the age of 18 is allowed to witness | 不可能的 | impossible to follow\"><span class=\"lang-cn\">五角大楼和陆军拒绝透露视频将在哪里进行直播，以及是否会将其发布在互联网上，或者仅供选定的公众观看。根据陆军的规定，任何<mark class=\"ed-hl\">未满18岁的人都不得观看</mark>美国军人的处决。如果军队在互联网上直播处决，那么遵守这一规定将是<mark class=\"ed-hl\">不可能的</mark>。</span><span class=\"lang-en\">The Pentagon and Army have declined to say where the video will be livestreamed and whether it would be put on the internet or a closed circuit for select members of the public to view. Under Army regulations, <mark class=\"ed-hl\">no one under the age of 18 is allowed to witness</mark> an execution of a U.S. servicemember. That rule would be <mark class=\"ed-hl\">impossible to follow</mark> if the military livestreams the execution on the internet.</span></p>\n        </div>\n\n      </article>\n\n      <!-- Right Asymmetric Forensic & Context Rail -->\n      <aside class=\"sidebar-rail\" aria-label=\"Editorial Context and Verified Quotes\">\n\n        <!-- Reporter's Background Context Card (ctx1) -->\n        <div class=\"rail-card\">\n          <div class=\"rail-card-header\">\n            <span>CASE DOSSIER</span>\n            <span>FORT HOOD · 2009–2026</span>\n          </div>\n          <h2 class=\"rail-card-title\">\n            <span class=\"lang-cn\">案件背景与军法程序档案</span>\n            <span class=\"lang-en\">Case Background &amp; Military Procedure</span>\n          </h2>\n          <p class=\"ctx-text\" data-ref=\"ctx1\"><span class=\"lang-cn\">尼达尔·哈桑 2009 年 11 月 5 日在胡德堡开枪，造成 13 死 32 伤，2013 年被军官陪审团判处死刑。特朗普 10 月 2 日根据国防部长赫格塞斯的建议批准以行刑队执行；陆军规定须在总统批准后 60 至 150 天内执行，12 月 3 日的行刑日紧随 60 天下限。若执行，将是 65 年来美军首次处决现役军人，也是二战以来首次以行刑队执行。</span><span class=\"lang-en\">尼达尔·哈桑 2009 年 11 月 5 日在胡德堡开枪，造成 13 死 32 伤，2013 年被军官陪审团判处死刑。特朗普 10 月 2 日根据国防部长赫格塞斯的建议批准以行刑队执行；陆军规定须在总统批准后 60 至 150 天内执行，12 月 3 日的行刑日紧随 60 天下限。若执行，将是 65 年来美军首次处决现役军人，也是二战以来首次以行刑队执行。</span></p>\n        </div>\n\n        <!-- Derived Quote Card q1 (Trump) -->\n        <blockquote class=\"pull-quote\" data-derive=\"q1\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“正在对此进行评估，但他将被处决”</span><span class=\"lang-en\">“is making a determination about that, but he will be killed.”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 2 段直接引述 · Source Block p2</span><span class=\"lang-en\">— Direct Quote (p2), Reported in article text</span></footer>\n        </blockquote>\n\n        <!-- Derived Quote Card q3 (JD Vance) -->\n        <blockquote class=\"pull-quote\" data-derive=\"q3\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“如果一切都通过直播进行，我不会观看。”</span><span class=\"lang-en\">“Look, if it's all through livestream, I'm not going to be watching it.”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 12 段直接引述 · Source Block p12</span><span class=\"lang-en\">— Direct Quote (p12), Reported in article text</span></footer>\n        </blockquote>\n\n        <!-- Derived Quote Card q4 (Archbishop Coakley) -->\n        <blockquote class=\"pull-quote\" data-derive=\"q4\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“这一决定是对死亡文化的野蛮宣传。”</span><span class=\"lang-en\">“This decision is a barbaric promotion of a culture of death,”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 13 段直接引述 · Source Block p13</span><span class=\"lang-en\">— Direct Quote (p13), Reported in article text</span></footer>\n        </blockquote>\n\n        <!-- Derived Quote Card q5 (Sen. John Curtis) -->\n        <blockquote class=\"pull-quote\" data-derive=\"q5\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“直播处决会贬低我们，而且不是一种有效的威慑手段。”</span><span class=\"lang-en\">“Broadcasting a death diminishes us and is not an effective deterrent.”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 14 段直接引述 · Source Block p14</span><span class=\"lang-en\">— Direct Quote (p14), Reported in article text</span></footer>\n        </blockquote>\n\n        <!-- Institutional Jurisdiction Breakdown Note -->\n        <div class=\"rail-card\">\n          <div class=\"rail-card-header\">\n            <span>UCMJ PROTOCOL</span>\n            <span>EXECUTION AUTHORITY</span>\n          </div>\n          <h2 class=\"rail-card-title\">\n            <span class=\"lang-cn\">美军死刑核准链条</span>\n            <span class=\"lang-en\">Chain of Execution Authority</span>\n          </h2>\n          <div class=\"ctx-text\">\n            <p style=\"margin-bottom: 0.75rem;\">\n              <strong style=\"color: var(--ink);\">\n                <span class=\"lang-cn\">1. 军事法庭定罪与量刑：</span>\n                <span class=\"lang-en\">1. Court-Martial Verdict:</span>\n              </strong>\n              <span class=\"lang-cn\">哈桑在审判期间自行辩护且未作无罪抗辩，2013年由军官陪审团判处死刑，关押于堪萨斯州利文沃思堡。</span>\n              <span class=\"lang-en\">Hasan acted as his own lawyer and offered no defense; sentenced to death in 2013 by a jury of fellow officers and held at Fort Leavenworth, Kan.</span>\n            </p>\n            <p style=\"margin-bottom: 0.75rem;\">\n              <strong style=\"color: var(--ink);\">\n                <span class=\"lang-cn\">2. 国防部长建议与总统专属批准权：</span>\n                <span class=\"lang-en\">2. SecDef Recommendation &amp; Presidential Approval:</span>\n              </strong>\n              <span class=\"lang-cn\">现役军人受军队自身法律体系管辖，仅总统有权批准死刑。特朗普于10月2日依赫格塞斯建议批准。</span>\n              <span class=\"lang-en\">Servicemembers fall under the military's legal system; only a president can approve execution. Trump approved it Oct. 2 upon Hegseth's recommendation.</span>\n            </p>\n            <p>\n              <strong style=\"color: var(--ink);\">\n                <span class=\"lang-cn\">3. 地点与时间设定：</span>\n                <span class=\"lang-en\">3. Site &amp; Timing Selection:</span>\n              </strong>\n              <span class=\"lang-cn\">赫格塞斯计划在胡德堡执行，并选在哈桑当年开枪的同一星期几与同一时间点。</span>\n              <span class=\"lang-en\">Hegseth planned the execution at Fort Hood on the exact same day of the week and time of day that Hasan opened fire.</span>\n            </p>\n          </div>\n        </div>\n\n      </aside>\n\n    </div>\n  </main>\n\n  \n<!-- Editorial Footer -->\n  \n<footer class=\"wsj-footer\">\n    <div class=\"footer-inner\">\n      <div>\n        <strong>THE WALL STREET JOURNAL</strong> ·\n        <span class=\"lang-cn\">华尔街日报中文深读版 · 版权所有 © 2026 Dow Jones &amp; Company, Inc.</span>\n        <span class=\"lang-en\">WSJ Editorial Renaissance · Copyright © 2026 Dow Jones &amp; Company, Inc.</span>\n      </div>\n      <div>\n        <span class=\"lang-cn\">原文版面：2026年10月12日 A5版 (U.S. News)</span>\n        <span class=\"lang-en\">Print Edition: Oct. 12, 2026 · Page A5 (U.S. News)</span>\n      </div>\n    </div>\n  </footer>\n\n  </div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-029",
+        "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+        "exact_match_cn": "15/15",
+        "exact_match_en": "15/15",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 15,
+        "observed_narrative_elements": 17,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 4,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p2"
+          },
+          {
+            "id": "q3",
+            "kind": "quote",
+            "source_block": "p12"
+          },
+          {
+            "id": "q4",
+            "kind": "quote",
+            "source_block": "p13"
+          },
+          {
+            "id": "q5",
+            "kind": "quote",
+            "source_block": "p14"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "12月3日",
+              "13人",
+              "枪决",
+              "直播"
+            ],
+            "applied_en": [
+              "firing squad",
+              "livestreamed",
+              "13 people",
+              "Dec. 3"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "正在对此进行评估，但他将被处决"
+            ],
+            "applied_en": [
+              "is making a determination about that, but he will be killed"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "杀害了13人，并使32人受伤",
+              "2009年11月5日",
+              "420发子弹"
+            ],
+            "applied_en": [
+              "killed 13 people and wounded 32 more",
+              "420 rounds of ammunition",
+              "Nov. 5, 2009"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "2013年",
+              "2013"
+            ],
+            "applied_en": [
+              "2013"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "利文沃思堡"
+            ],
+            "applied_en": [
+              "Fort Leavenworth"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "皮特·赫格塞斯",
+              "65年来首次",
+              "10月2日"
+            ],
+            "applied_en": [
+              "first execution of a servicemember in 65 years",
+              "Pete Hegseth",
+              "Oct. 2"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "60天到150天之间"
+            ],
+            "applied_en": [
+              "60 days and no later than 150 days"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "自二战以来首次以枪决的方式",
+              "1961年以来首次",
+              "约翰·贝内特"
+            ],
+            "applied_en": [
+              "first military death by firing squad since World War II",
+              "first U.S. military execution since 1961",
+              "John Bennett"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "二战时期的心态，那就是‘获胜’"
+            ],
+            "applied_en": [],
+            "ignored_unmatched": [
+              "mentality we had in World War II, which was: 'win'",
+              "mentality we had in World War II, which was: 'win'"
+            ]
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "同一天和同一时间",
+              "胡德堡"
+            ],
+            "applied_en": [
+              "same day of the week and time of day",
+              "Fort Hood"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "变成娱乐",
+              "圣战分子",
+              "殉道者"
+            ],
+            "applied_en": [
+              "turns the event into entertainment",
+              "jihadists",
+              "martyr"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "如果一切都通过直播进行，我不会观看",
+              "J·D·万斯"
+            ],
+            "applied_en": [
+              "Look, if it's all through livestream, I'm not going to be watching it",
+              "JD Vance"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "对死亡文化的野蛮宣传",
+              "保罗·S·库克利"
+            ],
+            "applied_en": [
+              "barbaric promotion of a culture of death",
+              "Paul S. Coakley"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14",
+            "applied_cn": [
+              "罗布·布雷斯纳汉",
+              "奥斯汀·斯科特",
+              "约翰·柯蒂斯"
+            ],
+            "applied_en": [
+              "Rob Bresnahan",
+              "Austin Scott",
+              "John Curtis"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p15",
+            "applied_cn": [
+              "未满18岁的人都不得观看",
+              "不可能的"
+            ],
+            "applied_en": [
+              "no one under the age of 18 is allowed to witness",
+              "impossible to follow"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 4,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "I. 历史与案件轨迹 (1940s – 2026)",
+              "I. HISTORICAL & CASE TRAJECTORY (1940s – 2026)",
+              "WWII",
+              "上一次美军枪决",
+              "Last Firing Squad",
+              "1961",
+              "约翰·贝内特绞刑",
+              "Pvt. Bennett Hanged",
+              "(65年前)",
+              "(65 Years Ago)",
+              "2009.11.05",
+              "胡德堡袭击 (13死32伤)",
+              "Fort Hood (13 Killed)",
+              "2013",
+              "军事法庭判处死刑",
+              "Court-Martial Death Verdict",
+              "2026.10.02",
+              "特朗普总统批准",
+              "Trump Approves",
+              "II. 陆军条例法定执行窗口 (总统批准后 60 至 150 天)",
+              "II. ARMY REGULATION EXECUTION WINDOW (DAY 60 TO DAY 150 POST-APPROVAL)",
+              "禁行期：未满 60 天",
+              "BARRED: < 60 DAYS",
+              "法定允许执行期 (第 60 天 – 第 150 天)",
+              "PERMITTED WINDOW (DAY 60 – DAY 150)",
+              "第0天 (10月2日)",
+              "DAY 0 (OCT. 2)",
+              "第60天下限",
+              "DAY 60 MIN",
+              "★ 12月3日：计划枪决并直播 (紧贴60天期限后)",
+              "★ DEC. 3: PLANNED FIRING SQUAD (JUST PAST 60-DAY MARK)",
+              "第150天上限",
+              "DAY 150 MAX"
+            ],
+            "numbers_found": [
+              "1940",
+              "2026",
+              "1940",
+              "2026",
+              "1961",
+              "65",
+              "65",
+              "2009.11",
+              "05",
+              "13",
+              "32",
+              "13",
+              "2013",
+              "2026.10",
+              "02",
+              "60",
+              "150",
+              "60",
+              "150",
+              "60",
+              "60",
+              "60",
+              "150",
+              "60",
+              "150",
+              "0",
+              "10",
+              "2",
+              "0",
+              "2",
+              "60",
+              "60",
+              "12",
+              "3",
+              "60",
+              "3",
+              "60",
+              "150",
+              "150"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "从胡德堡枪击案到60天法定行刑下限",
+            "en": "From the Fort Hood Attack to the 60-Day Statutory Execution Window",
+            "numbers_found": [
+              "60",
+              "60"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "案件背景与军法程序档案",
+            "en": "Case Background & Military Procedure",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "美军死刑核准链条",
+            "en": "Chain of Execution Authority",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

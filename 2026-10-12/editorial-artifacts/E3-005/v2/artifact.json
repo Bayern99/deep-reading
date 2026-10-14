@@ -1,0 +1,345 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E3-005",
+  "artifact_version": "v2",
+  "created_at": "2026-10-14T13:47:57Z",
+  "status": "verified",
+  "notes": "Queue task task-9ae143a1 (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+    "paragraph_count": 22,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 17605,
+    "completion_chars": 33354,
+    "input_tokens": 5696,
+    "output_tokens": 12225,
+    "total_tokens": 17921,
+    "latency_seconds": 92.694
+  },
+  "files": {
+    "raw_html": "E3-005/v2/raw.html",
+    "compiled_html": "E3-005/v2/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-elevated: #ece6d9;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-dark: #c5beb0;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.12);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283b;\n    --navy-line: #284058;\n    --gold: #d49b4b;\n    --font-serif-en: 'Playfair Display', Georgia, serif;\n    --font-body-en: 'Lora', Georgia, serif;\n    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* Strict Language Switching Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    font-family: var(--font-serif-cn);\n    background-color: var(--paper);\n    color: var(--body);\n    line-height: 1.85;\n    overflow-x: hidden;\n  }\n\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: var(--font-body-en);\n    line-height: 1.78;\n  }\n\n  /* Sticky Masthead & Progress Bar */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line);\n  }\n\n  .masthead-inner {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 0.75rem 1.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-group {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n  }\n\n  .wsj-monogram {\n    font-family: var(--font-serif-en);\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n    text-decoration: none;\n  }\n\n  .brand-divider {\n    width: 1px;\n    height: 14px;\n    background: var(--line-dark);\n  }\n\n  .desk-tag {\n    font-family: var(--font-sans);\n    font-size: 0.72rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-radius: 999px;\n    padding: 2px;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-sans);\n    font-size: 0.75rem;\n    font-weight: 600;\n    padding: 0.28rem 0.75rem;\n    border-radius: 999px;\n    color: var(--muted);\n    cursor: pointer;\n    transition: all 0.2s ease;\n  }\n\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  .progress-track {\n    height: 2px;\n    width: 100%;\n    background: transparent;\n  }\n\n  .progress-bar {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s linear;\n  }\n\n  /* Hero Header */\n  .hero {\n    max-width: 1120px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 1px solid var(--ink);\n  }\n\n  .hero-kicker {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n    margin-bottom: 1.25rem;\n  }\n\n  .hero-kicker::before {\n    content: \"\";\n    display: inline-block;\n    width: 24px;\n    height: 2px;\n    background: var(--accent);\n  }\n\n  .article-title {\n    font-family: var(--font-serif-cn);\n    font-weight: 700;\n    font-size: clamp(2rem, 4.2vw, 3.35rem);\n    line-height: 1.24;\n    color: var(--ink);\n    letter-spacing: -0.01em;\n    margin-bottom: 1.5rem;\n    max-width: 960px;\n  }\n\n  :host([lang=\"en\"]) .article-title {\n    font-family: var(--font-serif-en);\n    font-weight: 800;\n    line-height: 1.12;\n  }\n\n  .hero-meta-bar {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1rem;\n    padding-top: 1.25rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: var(--muted);\n  }\n\n  .byline-name {\n    color: var(--ink);\n    font-weight: 600;\n  }\n\n  /* Executive Metric Strip */\n  .telemetry-strip {\n    max-width: 1120px;\n    margin: 0 auto;\n    padding: 1.75rem 1.5rem;\n    border-bottom: 1px solid var(--line);\n    background: linear-gradient(180deg, rgba(243, 239, 230, 0.55) 0%, rgba(250, 248, 244, 0) 100%);\n  }\n\n  .telemetry-grid {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 1.5rem;\n  }\n\n  .telemetry-item {\n    border-left: 2px solid var(--accent);\n    padding-left: 1rem;\n  }\n\n  .telemetry-num {\n    font-family: var(--font-mono);\n    font-size: 1.65rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.15;\n    margin-bottom: 0.25rem;\n  }\n\n  .telemetry-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    color: var(--muted);\n    line-height: 1.4;\n  }\n\n  /* Main Editorial Grid */\n  .editorial-container {\n    max-width: 1120px;\n    margin: 0 auto;\n    padding: 2.75rem 1.5rem 4rem;\n  }\n\n  .section-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 680px) minmax(260px, 340px);\n    justify-content: space-between;\n    gap: 3rem;\n    align-items: start;\n  }\n\n  .prose-col {\n    min-width: 0;\n  }\n\n  .rail-col {\n    min-width: 0;\n    position: sticky;\n    top: 5rem;\n    display: flex;\n    flex-direction: column;\n    gap: 1.75rem;\n  }\n\n  /* Prose Styling (No drop-caps or text-wrap:pretty on Chinese!) */\n  .prose-p {\n    font-size: 1.125rem;\n    color: var(--body);\n    margin-bottom: 1.5rem;\n    letter-spacing: 0.01em;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    font-size: 1.1rem;\n    letter-spacing: 0;\n  }\n\n  .prose-p.lead-p {\n    font-size: 1.24rem;\n    font-weight: 600;\n    color: var(--ink);\n    border-left: 3px solid var(--accent);\n    padding-left: 1.15rem;\n    margin-bottom: 1.75rem;\n    line-height: 1.75;\n  }\n\n  .prose-p.question-callout {\n    font-family: var(--font-serif-cn);\n    font-size: 1.22rem;\n    font-style: italic;\n    color: var(--accent);\n    background: var(--paper-card);\n    padding: 1rem 1.35rem;\n    border-radius: 4px;\n    border-left: 3px solid var(--ink);\n    margin: 1.5rem 0;\n  }\n\n  :host([lang=\"en\"]) .prose-p.question-callout {\n    font-family: var(--font-body-en);\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(120deg, rgba(184, 93, 25, 0.16) 0%, rgba(184, 93, 25, 0.24) 100%);\n    color: var(--ink);\n    padding: 0.08em 0.28em;\n    border-radius: 2px;\n    font-weight: 600;\n    box-decoration-break: clone;\n    -webkit-box-decoration-break: clone;\n  }\n\n  /* Chapter Divider */\n  .chapter-divider {\n    margin: 3rem 0 2rem;\n    padding-top: 1.75rem;\n    border-top: 1px solid var(--line-dark);\n    display: flex;\n    align-items: baseline;\n    gap: 0.85rem;\n  }\n\n  .chapter-num {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    font-weight: 700;\n    color: var(--accent);\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n  }\n\n  .chapter-title {\n    font-family: var(--font-sans);\n    font-size: 0.95rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n  }\n\n  /* Sidebar Callout Cards (Pull Quotes & Metrics) */\n  .pull-quote {\n    background: var(--paper-card);\n    border-top: 3px solid var(--ink);\n    border-bottom: 1px solid var(--line-dark);\n    padding: 1.5rem 1.35rem;\n  }\n\n  .pull-quote .quote-text {\n    font-family: var(--font-serif-cn);\n    font-size: 1.12rem;\n    font-weight: 600;\n    line-height: 1.6;\n    color: var(--ink);\n    margin-bottom: 0.85rem;\n  }\n\n  :host([lang=\"en\"]) .pull-quote .quote-text {\n    font-family: var(--font-serif-en);\n    font-size: 1.15rem;\n    line-height: 1.45;\n  }\n\n  .pull-quote .quote-attrib {\n    font-family: var(--font-sans);\n    font-size: 0.76rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    color: var(--accent);\n  }\n\n  .metric-card {\n    background: var(--navy-bg);\n    color: var(--paper);\n    padding: 1.6rem 1.4rem;\n    border-radius: 4px;\n    border-left: 4px solid var(--gold);\n    box-shadow: 0 8px 24px rgba(15, 29, 43, 0.08);\n  }\n\n  .metric-card .metric-val {\n    font-family: var(--font-mono);\n    font-size: 2.5rem;\n    font-weight: 700;\n    color: var(--gold);\n    line-height: 1.05;\n    margin-bottom: 0.5rem;\n  }\n\n  .metric-card .metric-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.85rem;\n    font-weight: 600;\n    color: #ffffff;\n    margin-bottom: 0.4rem;\n    line-height: 1.4;\n  }\n\n  .metric-card .metric-note {\n    font-family: var(--font-sans);\n    font-size: 0.74rem;\n    color: #b0c0d0;\n    line-height: 1.45;\n  }\n\n  /* Bespoke Editorial Dossier Box */\n  .dossier-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    padding: 1.35rem;\n    border-radius: 4px;\n  }\n\n  .dossier-head {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    padding-bottom: 0.65rem;\n    margin-bottom: 0.85rem;\n    border-bottom: 1px solid var(--line-dark);\n  }\n\n  .dossier-list {\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 0.75rem;\n  }\n\n  .dossier-list li {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    line-height: 1.5;\n    color: var(--body);\n    display: flex;\n    justify-content: space-between;\n    gap: 0.75rem;\n    border-bottom: 1px dashed var(--line);\n    padding-bottom: 0.5rem;\n  }\n\n  .dossier-list li:last-child {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n\n  .dossier-key {\n    color: var(--muted);\n    font-weight: 500;\n  }\n\n  .dossier-val {\n    font-family: var(--font-mono);\n    font-weight: 600;\n    color: var(--ink);\n    text-align: right;\n  }\n\n  /* Full-Bleed Visual Feature: China Social Commerce Funnel & Shanghai Studios */\n  .visual-breakout {\n    margin: 3rem 0;\n    background: var(--navy-bg);\n    color: var(--paper);\n    border-radius: 6px;\n    padding: 2.25rem 2rem;\n    border: 1px solid var(--navy-line);\n  }\n\n  .visual-header {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1rem;\n    margin-bottom: 1.5rem;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid var(--navy-line);\n  }\n\n  .visual-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--gold);\n    margin-bottom: 0.35rem;\n  }\n\n  .visual-title {\n    font-family: var(--font-sans);\n    font-size: 1.25rem;\n    font-weight: 700;\n    color: #ffffff;\n  }\n\n  .visual-sub {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: #a8b9ca;\n  }\n\n  .svg-container {\n    width: 100%;\n    overflow: hidden;\n  }\n\n  .svg-container svg {\n    display: block;\n    width: 100%;\n    height: auto;\n  }\n\n  /* Photo Caption Frame for p22 */\n  .studio-caption-frame {\n    margin-top: 2.5rem;\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-radius: 6px;\n    overflow: hidden;\n  }\n\n  .studio-diagram-wrap {\n    background: #192736;\n    padding: 1.5rem;\n    border-bottom: 1px solid var(--line-dark);\n  }\n\n  .photo-caption-text {\n    padding: 1.1rem 1.4rem;\n    font-family: var(--font-sans);\n    font-size: 0.86rem;\n    color: var(--muted);\n    line-height: 1.55;\n    margin-bottom: 0;\n    display: flex;\n    align-items: center;\n    gap: 0.65rem;\n  }\n\n  .photo-caption-text::before {\n    content: \"STUDIO LOG\";\n    font-family: var(--font-mono);\n    font-size: 0.68rem;\n    font-weight: 700;\n    letter-spacing: 0.08em;\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.18rem 0.5rem;\n    border-radius: 2px;\n    flex-shrink: 0;\n  }\n\n  /* Footer */\n  .ed-footer {\n    max-width: 1120px;\n    margin: 0 auto;\n    padding: 2.5rem 1.5rem 4rem;\n    border-top: 2px solid var(--ink);\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 1rem;\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Reflow */\n  @media (max-width: 920px) {\n    .telemetry-grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    .section-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n    .rail-col {\n      position: static;\n      order: 2;\n    }\n  }\n\n  @media (max-width: 540px) {\n    .hero {\n      padding: 2.25rem 1.15rem 1.75rem;\n    }\n    .telemetry-strip,\n    .editorial-container,\n    .ed-footer {\n      padding-left: 1.15rem;\n      padding-right: 1.15rem;\n    }\n    .telemetry-grid {\n      grid-template-columns: 1fr 1fr;\n      gap: 1rem;\n    }\n    .telemetry-num {\n      font-size: 1.35rem;\n    }\n    .visual-breakout {\n      padding: 1.35rem 1rem;\n    }\n    .prose-p {\n      font-size: 1.05rem;\n    }\n    .prose-p.lead-p {\n      font-size: 1.12rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><!-- Sticky Masthead -->\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-group\">\n      <a href=\"#\" class=\"wsj-monogram\">THE WALL STREET JOURNAL.</a>\n      <span class=\"brand-divider\"></span>\n      <span class=\"desk-tag\">\n        <span class=\"lang-cn\">商业与金融 · PAGE B1</span>\n        <span class=\"lang-en\">BUSINESS &amp; FINANCE · PAGE B1</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language selector\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n  <div class=\"progress-track\">\n    <div class=\"progress-bar\" id=\"read-progress\"></div>\n  </div>\n</header>\n\n\n<!-- Hero Header -->\n\n<header class=\"hero\">\n  <div class=\"hero-kicker\">\n    <span class=\"lang-cn\">消费品战略转型 · 社交电商深读</span>\n    <span class=\"lang-en\">CORPORATE STRATEGY · SOCIAL COMMERCE PLAYBOOK</span>\n  </div>\n  <h1 class=\"article-title\" data-ref=\"title\"><span class=\"lang-cn\">利洁时（英国消费品巨头）在中国社交媒体平台上蓬勃发展</span><span class=\"lang-en\">Reckitt Thrives on China Social Media</span></h1>\n  <div class=\"hero-meta-bar\">\n    <div>\n      <span class=\"lang-cn\">作者：</span><span class=\"lang-en\">By </span>\n      <span class=\"byline-name\">Natasha Khan</span>\n    </div>\n    <div>\n      <span class=\"lang-cn\">2026年10月12日 · 华尔街日报精编</span>\n      <span class=\"lang-en\">October 12, 2026 · WSJ Editorial Feature</span>\n    </div>\n  </div>\n</header>\n\n\n<!-- Key Quantitative Telemetry Strip (All figures strictly from canonical text) -->\n\n<section class=\"telemetry-strip\" aria-label=\"Key Article Metrics\">\n  <div class=\"telemetry-grid\">\n    <div class=\"telemetry-item\">\n      <div class=\"telemetry-num\">12 QTRS</div>\n      <div class=\"telemetry-lbl\">\n        <span class=\"lang-cn\">中国市场连续12个季度实现两位数销售增长</span>\n        <span class=\"lang-en\">Consecutive quarters of double-digit China sales growth</span>\n      </div>\n    </div>\n    <div class=\"telemetry-item\">\n      <div class=\"telemetry-num\">18 STUDIOS</div>\n      <div class=\"telemetry-lbl\">\n        <span class=\"lang-cn\">上海郊区自建直播与短剧工作室，每日直播12小时</span>\n        <span class=\"lang-en\">Shanghai outskirts studios broadcasting 12 hours a day</span>\n      </div>\n    </div>\n    <div class=\"telemetry-item\">\n      <div class=\"telemetry-num\">15B VIEWS</div>\n      <div class=\"telemetry-lbl\">\n        <span class=\"lang-cn\">去年短视频播放量达150亿次，吸引4000万新客户</span>\n        <span class=\"lang-en\">Short-video views last year, driving 40M new customers</span>\n      </div>\n    </div>\n    <div class=\"telemetry-item\">\n      <div class=\"telemetry-num\">£2.23B</div>\n      <div class=\"telemetry-lbl\">\n        <span class=\"lang-cn\">今年上半年新兴市场销售额（同比增长8.5%）</span>\n        <span class=\"lang-en\">First-half emerging-market sales (+8.5% growth)</span>\n      </div>\n    </div>\n  </div>\n</section>\n\n\n<!-- Main Narrative Container -->\n\n<main class=\"editorial-container\">\n\n  <!-- ACT I: THE BOARDROOM AWAKENING (p1 - p7) -->\n  <section class=\"section-grid\">\n    <div class=\"prose-col\">\n      <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"不再去超市购物，而是在浏览手机时购买日常家居用品 | skipping supermarket runs and buying household staples while they scrolled on phones\"><span class=\"lang-cn\">几年前，总部位于中国的利洁时（英国消费品巨头）高管们向他们的老板坦诚地表达了自己的看法。这些高管表示，越来越多的消费者<mark class=\"ed-hl\">不再去超市购物，而是在浏览手机时购买日常家居用品</mark>。</span><span class=\"lang-en\">Several years ago, China-based executives of Lysol maker Reckitt leveled with their boss. More consumers were <mark class=\"ed-hl\">skipping supermarket runs and buying household staples while they scrolled on phones</mark>, the executives said.</span></p>\n      <p class=\"prose-p question-callout\" data-ref=\"p2\"><span class=\"lang-cn\">他们能否获得一些资金，以便抢先抓住这一趋势？</span><span class=\"lang-en\">Could they have some funds to get ahead of the trend?</span></p>\n      <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"电子商务已经是一种过时的技术 | e-commerce was a yesterday technology\"><span class=\"lang-cn\">首席执行官傅乐宏认为，他们所说的可能是中国版的亚马逊和沃尔玛会员计划。但傅乐宏回忆说：“后来我被告知，<mark class=\"ed-hl\">电子商务已经是一种过时的技术</mark>。”</span><span class=\"lang-en\">Chief Executive Kris Licht figured they were talking about China's equivalents of Amazon.com and Walmart+. \"But no,\" Licht recalled, \"I was told that <mark class=\"ed-hl\">e-commerce was a yesterday technology</mark>.\"</span></p>\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"连续12个季度两位数的销售增长 | 12 consecutive quarters of double-digit sales growth\"><span class=\"lang-cn\">结果是，利洁时调整了其在中国市场的销售策略，从而实现了<mark class=\"ed-hl\">连续12个季度两位数的销售增长</mark>，并帮助这家英国公司应对了成熟市场销售额的放缓。</span><span class=\"lang-en\">The result: a pivot in Reckitt's China sales tactics, one that propelled <mark class=\"ed-hl\">12 consecutive quarters of double-digit sales growth</mark> in the country and helped the British firm weather a sales slowdown in established markets.</span></p>\n      <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"社交电商模式 | social commerce\"><span class=\"lang-cn\">首席执行官的同事们认为，利洁时需要抓住的是中国市场购物方式的快速转变。在所谓的<mark class=\"ed-hl\">社交电商模式</mark>中，人们在浏览社交媒体应用程序时，看到广告后会顺便购买商品。</span><span class=\"lang-en\">What the CEO's colleagues said Reckitt needed to jump on was the rapid rise of a different venue for shopping in China. In what's known as <mark class=\"ed-hl\">social commerce</mark>, people scrolling through social-media apps for entertainment end up buying after seeing an ad.</span></p>\n      <p class=\"prose-p\" data-ref=\"p6\"><span class=\"lang-cn\">利洁时成功地利用了中国消费者购物习惯的转变，这表明，曾经依赖中国市场实现增长的西方公司，即使面临本土竞争对手的挑战，仍然可以在中国市场取得成功。这同时也是社交媒体和购物融合的一个例子。</span><span class=\"lang-en\">Reckitt's success capitalizing on Chinese consumers' shift points to how Western firms that once counted on China for growth can thrive there though local competitors have made it a tougher place to do business. It's also an example of how social media and shopping are converging.</span></p>\n      <p class=\"prose-p\" data-ref=\"p7\"><span class=\"lang-cn\">在利洁时中国团队与傅乐宏进行了一次深入交流后，利洁时全力以赴，进驻了许多中国消费者经常使用的社交媒体应用程序。</span><span class=\"lang-en\">After its China team's tête-à-tête with Licht, Reckitt pulled out the stops to go to the social-media apps where many Chinese shop.</span></p>\n    </div>\n\n    <aside class=\"rail-col\">\n      <blockquote class=\"pull-quote\" data-derive=\"q1\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“后来我被告知，电子商务已经是一种过时的技术。”</span><span class=\"lang-en\">“I was told that e-commerce was a yesterday technology.”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 3 段直接引述 · Source Block p3</span><span class=\"lang-en\">— Direct Quote (p3), Reported in article text</span></footer>\n      </blockquote>\n\n      <div class=\"dossier-card\">\n        <div class=\"dossier-head\">\n          <span class=\"lang-cn\">零售范式代际对比</span>\n          <span class=\"lang-en\">RETAIL PARADIGM SHIFT</span>\n        </div>\n        <ul class=\"dossier-list\">\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">传统商超模式</span><span class=\"lang-en\">Supermarket Runs</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">线下计划采购</span><span class=\"lang-en\">Brick-and-Mortar</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">第一代电子商务</span><span class=\"lang-en\">Legacy E-Commerce</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">亚马逊 / 沃尔玛+</span><span class=\"lang-en\">Amazon / Walmart+</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">中国社交电商</span><span class=\"lang-en\">Social Commerce</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">刷视频顺便购买</span><span class=\"lang-en\">Scroll &amp; Impulse Buy</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">核心代表品牌</span><span class=\"lang-en\">Featured Brands</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">滴露 · 薇婷</span><span class=\"lang-en\">Dettol · Veet</span></span>\n          </li>\n        </ul>\n      </div>\n    </aside>\n  </section>\n\n  <!-- ACT II: THE 800-MILLION USER ECOSYSTEM (p8 - p14) -->\n  <div class=\"chapter-divider\">\n    <span class=\"chapter-num\">CHAPTER 02</span>\n    <h2 class=\"chapter-title\">\n      <span class=\"lang-cn\">8亿日活与90分钟注意力经济：为什么传统货架正在失效</span>\n      <span class=\"lang-en\">THE 800-MILLION USER FUNNEL &amp; THE 90-MINUTE SCROLL</span>\n    </h2>\n  </div>\n\n  <section class=\"section-grid\">\n    <div class=\"prose-col\">\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"18个工作室 | 18 studios\"><span class=\"lang-cn\">该公司在上海郊区的一栋建筑内建立了<mark class=\"ed-hl\">18个工作室</mark>。通过从这些工作室直播的视频，员工在中国流行的社交媒体平台上销售薇婷（脱毛膏品牌）、滴露（Lysol的国际版）以及其他利洁时产品。</span><span class=\"lang-en\">The company built <mark class=\"ed-hl\">18 studios</mark> inside a building on the outskirts of Shanghai. On videos broadcast from there, employees sell Veet hair-removal cream, Lysol's international equivalent Dettol and other Reckitt goods on China's popular social-media platforms.</span></p>\n      <p class=\"prose-p\" data-ref=\"p9\"><span class=\"lang-cn\">在一些工作室中，公司的员工会与客座演员和网红一起，制作关于家庭生活的短喜剧和迷你剧，其中会融入利洁时的品牌。</span><span class=\"lang-en\">In some of the studios, company staffers join guest actors and influencers making quick comedies and mini-dramas about domestic life featuring a Reckitt brand.</span></p>\n      <p class=\"prose-p\" data-ref=\"p10\"><span class=\"lang-cn\">傅乐宏（利洁时CEO）表示：“这是未来的发展方向，如果不能抓住这一趋势，就会被远远甩在后面。”</span><span class=\"lang-en\">\"This is the way forward,\" Licht said. \"Those that don't figure this out will be left behind.\"</span></p>\n\n      <!-- Bespoke SVG Diagram: China Social Media Conversion Funnel (p11 data) -->\n      <div class=\"visual-breakout\" role=\"region\" aria-label=\"China Social Commerce Conversion Funnel\">\n        <div class=\"visual-header\">\n          <div>\n            <div class=\"visual-kicker\">WSJ DATA GRAPHIC · SOURCE: RECKITT ESTIMATES</div>\n            <div class=\"visual-title\">\n              <span class=\"lang-cn\">从刷视频到一键下单：中国社交电商的漏斗转化规模</span>\n              <span class=\"lang-en\">From Entertainment Scroll to Instant Checkout: China's Social Commerce Scale</span>\n            </div>\n          </div>\n          <div class=\"visual-sub\">\n            <span class=\"lang-cn\">日均浏览短视频时长：约 90 分钟</span>\n            <span class=\"lang-en\">Avg. Daily Short-Video Scroll: ~90 Minutes</span>\n          </div>\n        </div>\n        <div class=\"svg-container\">\n          <svg viewbox=\"0 0 720 270\" width=\"100%\">\n            <defs>\n              <lineargradient id=\"barPop\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n                <stop offset=\"0%\" stop-color=\"#3a526b\"></stop>\n                <stop offset=\"100%\" stop-color=\"#4f6d8c\"></stop>\n              </lineargradient>\n              <lineargradient id=\"barSocial\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n                <stop offset=\"0%\" stop-color=\"#b85d19\"></stop>\n                <stop offset=\"100%\" stop-color=\"#d47a34\"></stop>\n              </lineargradient>\n              <lineargradient id=\"barBuyers\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n                <stop offset=\"0%\" stop-color=\"#d49b4b\"></stop>\n                <stop offset=\"100%\" stop-color=\"#eab668\"></stop>\n              </lineargradient>\n            </defs>\n\n            <!-- Grid lines -->\n            <line x1=\"210\" y1=\"30\" x2=\"210\" y2=\"230\" stroke=\"#284058\" stroke-width=\"1\"></line>\n            <line x1=\"370\" y1=\"30\" x2=\"370\" y2=\"230\" stroke=\"#284058\" stroke-stroke-dasharray=\"3,3\" stroke-width=\"1\"></line>\n            <line x1=\"530\" y1=\"30\" x2=\"530\" y2=\"230\" stroke=\"#284058\" stroke-stroke-dasharray=\"3,3\" stroke-width=\"1\"></line>\n            <line x1=\"670\" y1=\"30\" x2=\"670\" y2=\"230\" stroke=\"#284058\" stroke-stroke-dasharray=\"3,3\" stroke-width=\"1\"></line>\n\n            <!-- Row 1: Total Population (1.4 Billion) -->\n            <text x=\"35\" y=\"65\" fill=\"#d0dce8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"600\">\n              <tspan class=\"lang-cn\">中国总人口规模</tspan>\n              <tspan class=\"lang-en\">China Total Population</tspan>\n            </text>\n            <text x=\"35\" y=\"83\" fill=\"#8ca0b5\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">100% BASE</text>\n            <rect x=\"210\" y=\"48\" width=\"460\" height=\"34\" rx=\"3\" fill=\"url(#barPop)\"></rect>\n            <text x=\"658\" y=\"70\" text-anchor=\"end\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">1.4B (14亿)</text>\n\n            <!-- Row 2: Daily Social Video Users (800 Million) -->\n            <text x=\"35\" y=\"135\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"600\">\n              <tspan class=\"lang-cn\">抖音/快手等日活用户</tspan>\n              <tspan class=\"lang-en\">Daily Douyin / Kuaishou Users</tspan>\n            </text>\n            <text x=\"35\" y=\"153\" fill=\"#d49b4b\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">~90 MIN / DAY SCROLL</text>\n            <rect x=\"210\" y=\"118\" width=\"263\" height=\"34\" rx=\"3\" fill=\"url(#barSocial)\"></rect>\n            <text x=\"483\" y=\"140\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">~800M (约8亿)</text>\n\n            <!-- Row 3: Platform Buyers (Half of 800M = 400M) -->\n            <text x=\"35\" y=\"205\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"600\">\n              <tspan class=\"lang-cn\">已在平台购物用户 (50%)</tspan>\n              <tspan class=\"lang-en\">Purchased on Platforms (50%)</tspan>\n            </text>\n            <text x=\"35\" y=\"223\" fill=\"#eab668\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">ACTIVE SOCIAL SHOPPERS</text>\n            <rect x=\"210\" y=\"188\" width=\"131.5\" height=\"34\" rx=\"3\" fill=\"url(#barBuyers)\"></rect>\n            <text x=\"352\" y=\"210\" fill=\"#eab668\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">1/2 (~400M / 半数用户)</text>\n          </svg>\n        </div>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"约有8亿人每天使用抖音等社交媒体平台 | 800 million of China's 1.4 billion people now each day use social media | 平均每天花费约90分钟 | average of about 90 minutes a day\"><span class=\"lang-cn\">中国有14亿人口，其中<mark class=\"ed-hl\">约有8亿人每天使用抖音等社交媒体平台</mark>，抖音是中国版的TikTok，还有快手等应用。利洁时估计，用户<mark class=\"ed-hl\">平均每天花费约90分钟</mark>浏览短视频。这对消费品公司来说至关重要：其中一半的用户已经在这些平台上购买了商品。</span><span class=\"lang-en\">Some <mark class=\"ed-hl\">800 million of China's 1.4 billion people now each day use social media</mark> like Douyin, the Chinese version of TikTok, and apps like Kuaishou. The users spend an <mark class=\"ed-hl\">average of about 90 minutes a day</mark> scrolling through short videos, Reckitt estimated. Key for consumer-good companies: Half of them have bought items on the platforms.</span></p>\n      <p class=\"prose-p\" data-ref=\"p12\"><span class=\"lang-cn\">社交电商在美国开始流行，购物者现在可以通过点击TikTok和Instagram视频中的链接来购买产品，并通过Whatnot等应用观看直播购物。</span><span class=\"lang-en\">Social commerce is starting to catch on in the U.S., where shoppers are now buying products by clicking links in TikTok and Instagram videos, and watching live-shopping streams on apps like Whatnot.</span></p>\n      <p class=\"prose-p\" data-ref=\"p13\"><span class=\"lang-cn\">利洁时中国市场营销总监黄薇薇表示：“我们都有这样的经历，一天工作结束后，放松地坐在沙发上，观看视频，然后毫不犹豫地点击‘购买’。”</span><span class=\"lang-en\">\"We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,\" said Vivien Huang, Reckitt's director of marketing in China.</span></p>\n      <p class=\"prose-p\" data-ref=\"p14\" data-hl=\"2022年 | 2022\"><span class=\"lang-cn\">大约在<mark class=\"ed-hl\"><mark class=\"ed-hl\">2022</mark>年</mark>，利洁时中国团队向傅乐宏寻求支持，希望利洁时能够投资社交电商。</span><span class=\"lang-en\">It was around <mark class=\"ed-hl\">2022</mark> that Reckitt's team in China sought Licht's support getting Reckitt to invest in social commerce.</span></p>\n    </div>\n\n    <aside class=\"rail-col\">\n      <blockquote class=\"pull-quote\" data-derive=\"q2\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“这是未来的发展方向，如果不能抓住这一趋势，就会被远远甩在后面。”</span><span class=\"lang-en\">“Those that don't figure this out will be left behind.”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 10 段直接引述 · Source Block p10</span><span class=\"lang-en\">— Direct Quote (p10), Reported in article text</span></footer>\n      </blockquote>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q3\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“我们都有这样的经历，一天工作结束后，放松地坐在沙发上，观看视频，然后毫不犹豫地点击‘购买’。”</span><span class=\"lang-en\">“We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 13 段直接引述 · Source Block p13</span><span class=\"lang-en\">— Direct Quote (p13), Reported in article text</span></footer>\n      </blockquote>\n    </aside>\n  </section>\n\n  <!-- ACT III: INSIDE THE SHANGHAI LIVESTREAM FACTORY & GLOBAL PLAYBOOK (p15 - p22) -->\n  <div class=\"chapter-divider\">\n    <span class=\"chapter-num\">CHAPTER 03</span>\n    <h2 class=\"chapter-title\">\n      <span class=\"lang-cn\">从临时会议室到上海18间直播室：实时互动推销与全球复制</span>\n      <span class=\"lang-en\">INSIDE THE SHANGHAI STUDIO ENGINE &amp; GLOBAL EXPORT</span>\n    </h2>\n  </div>\n\n  <section class=\"section-grid\">\n    <div class=\"prose-col\">\n      <p class=\"prose-p\" data-ref=\"p15\" data-hl=\"将一个会议室改造成一个临时工作室 | conference room converted into a makeshift studio\"><span class=\"lang-cn\">最初，团队在招聘具有相关经验的网红或代理机构方面遇到困难，因此员工们决定自己动手。他们<mark class=\"ed-hl\">将一个会议室改造成一个临时工作室</mark>，客户服务人员在视频中回答有关消毒剂化学成分的问题。</span><span class=\"lang-en\">The team initially struggled to hire influencers or agencies with the right experience, so staff did it themselves. Out of a <mark class=\"ed-hl\">conference room converted into a makeshift studio</mark>, customer-service staff answered questions on video about the chemical composition of disinfectants.</span></p>\n      <p class=\"prose-p\" data-ref=\"p16\" data-hl=\"增长了8.5%，达到22.3亿英镑 | grew 8.5% to 2.23 billion pounds\"><span class=\"lang-cn\">销售额大幅增长，这在一定程度上弥补了公司在美国和其他发达市场面临的销售停滞问题。今年上半年，利洁时在新兴市场的销售额<mark class=\"ed-hl\">增长了8.5%，达到22.3亿英镑</mark>。</span><span class=\"lang-en\">Sales shot up, boosting the company while it grappled with stagnating sales in the U.S. and other developed markets. Reckitt's emerging-market sales <mark class=\"ed-hl\">grew 8.5% to 2.23 billion pounds</mark> in the first half of this year.</span></p>\n      <p class=\"prose-p\" data-ref=\"p17\" data-hl=\"每天在应用程序上进行12小时的直播 | broadcast live on the apps for 12 hours a day\"><span class=\"lang-cn\">从该公司位于上海的工作室，团队<mark class=\"ed-hl\">每天在应用程序上进行12小时的直播</mark>，同时，购物者通过聊天功能向他们发送大量评论和问题，聊天内容占据了屏幕的一部分。</span><span class=\"lang-en\">From the company's Shanghai studios, crews <mark class=\"ed-hl\">broadcast live on the apps for 12 hours a day</mark>, while shoppers bombard them with comments and questions in a chat that dominates part of the screen.</span></p>\n      <p class=\"prose-p\" data-ref=\"p18\" data-hl=\"实时调整他们所介绍的产品 | adjusts the featured products they talk about in real-time\"><span class=\"lang-cn\">利洁时的主持人会迅速做出回应，这就像一种互动式的产品推销。一个团队负责监控直播，为主持人提供指导，并<mark class=\"ed-hl\">实时调整他们所介绍的产品</mark>。</span><span class=\"lang-en\">The Reckitt hosts respond rapidly, a sort of interactive infomercial. A team monitoring the livestreams guides the hosts and <mark class=\"ed-hl\">adjusts the featured products they talk about in real-time</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p19\" data-hl=\"不到一分钟 | under a minute\"><span class=\"lang-cn\">在其他工作室，他们会拍摄短剧和短片。这些视频通常时长<mark class=\"ed-hl\">不到一分钟</mark>，可能会描绘客厅中的场景，或者突出家庭纠纷。其中一个视频中，一位家长与自己的青少年孩子就鞋子的异味问题争论，这时滴露（Dettol）就派上用场了。</span><span class=\"lang-en\">In other studios, short dramas and skits are filmed. The videos, which are often <mark class=\"ed-hl\">under a minute</mark>, might depict a scene from a living room or highlight a domestic dispute. In one, a parent argues with their teenager about smelly shoes—and Dettol comes to the rescue.</span></p>\n      <p class=\"prose-p\" data-ref=\"p20\" data-hl=\"吸引了4000万新客户 | 40 million new customers | 150亿次 | 15 billion times\"><span class=\"lang-cn\">去年，该公司的短视频团队为利洁时<mark class=\"ed-hl\">吸引了4000万新客户</mark>，这些客户被他们制作的视频所吸引，该公司表示这些视频的观看次数达到了<mark class=\"ed-hl\">150亿次</mark>。</span><span class=\"lang-en\">The short-form video team drove <mark class=\"ed-hl\">40 million new customers</mark> to Reckitt last year, drawn by videos they produced that the company said were viewed <mark class=\"ed-hl\">15 billion times</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p21\" data-hl=\"100多个国家 | 100 other countries | 巴西、墨西哥和马来西亚 | Brazil, Mexico and Malaysia\"><span class=\"lang-cn\">利洁时预测，社交电商将在其销售产品的<mark class=\"ed-hl\">100多个国家</mark>中以某种形式流行起来，并已开始在包括<mark class=\"ed-hl\">巴西、墨西哥和马来西亚</mark>在内的市场复制其在中国市场的成功模式。</span><span class=\"lang-en\">Reckitt predicts social commerce will catch on in some form in the more than <mark class=\"ed-hl\">100 other countries</mark> where it sells its products, and has begun replicating its China playbook in markets including <mark class=\"ed-hl\">Brazil, Mexico and Malaysia</mark>.</span></p>\n\n      <!-- Studio Operations Schematic & Photo Caption Block [p22] -->\n      <figure class=\"studio-caption-frame\">\n        <div class=\"studio-diagram-wrap\">\n          <svg viewbox=\"0 0 680 185\" width=\"100%\" viewBox=\"0 0 724 185\" data-repaired-viewbox=\"0 0 680 185\">\n            <!-- Node 1: Origin (2022) -->\n            <rect x=\"30\" y=\"30\" width=\"180\" height=\"125\" rx=\"4\" fill=\"#101c29\" stroke=\"#3c5670\" stroke-width=\"1.5\"></rect>\n            <text x=\"46\" y=\"56\" fill=\"#d49b4b\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">PHASE 01 · ~2022</text>\n            <text x=\"46\" y=\"82\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">会议室改造临时直播间</tspan>\n              <tspan class=\"lang-en\">Makeshift Conf. Room</tspan>\n            </text>\n            <text x=\"46\" y=\"106\" fill=\"#a9bdd1\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">客服人员亲自出镜解答</tspan>\n              <tspan class=\"lang-en\">Customer-service staff</tspan>\n            </text>\n            <text x=\"46\" y=\"124\" fill=\"#a9bdd1\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">消毒剂化学成分问题</tspan>\n              <tspan class=\"lang-en\">explain disinfectant chemistry</tspan>\n            </text>\n\n            <!-- Arrow 1 -->\n            <line x1=\"210\" y1=\"92\" x2=\"245\" y2=\"92\" stroke=\"#d49b4b\" stroke-width=\"2\"></line>\n            <polygon points=\"245,87 253,92 245,97\" fill=\"#d49b4b\"></polygon>\n\n            <!-- Node 2: Shanghai 18 Studios -->\n            <rect x=\"255\" y=\"30\" width=\"180\" height=\"125\" rx=\"4\" fill=\"#1b2f44\" stroke=\"#b85d19\" stroke-width=\"1.5\"></rect>\n            <text x=\"271\" y=\"56\" fill=\"#eab668\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">PHASE 02 · SHANGHAI</text>\n            <text x=\"271\" y=\"82\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">上海郊区18个专业工作室</tspan>\n              <tspan class=\"lang-en\">18 Outskirts Studios</tspan>\n            </text>\n            <text x=\"271\" y=\"106\" fill=\"#d0dce8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">每日12小时实时互动直播</tspan>\n              <tspan class=\"lang-en\">12-hr/day live chat streams</tspan>\n            </text>\n            <text x=\"271\" y=\"124\" fill=\"#d0dce8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">+ 1分钟家庭情景短剧</tspan>\n              <tspan class=\"lang-en\">+ &lt;1 min domestic mini-dramas</tspan>\n            </text>\n\n            <!-- Arrow 2 -->\n            <line x1=\"435\" y1=\"92\" x2=\"470\" y2=\"92\" stroke=\"#d49b4b\" stroke-width=\"2\"></line>\n            <polygon points=\"470,87 478,92 470,97\" fill=\"#d49b4b\"></polygon>\n\n            <!-- Node 3: Global Rollout -->\n            <rect x=\"480\" y=\"30\" width=\"170\" height=\"125\" rx=\"4\" fill=\"#101c29\" stroke=\"#3c5670\" stroke-width=\"1.5\"></rect>\n            <text x=\"496\" y=\"56\" fill=\"#d49b4b\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">PHASE 03 · 100+ MKTS</text>\n            <text x=\"496\" y=\"82\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">中国手册输出全球市场</tspan>\n              <tspan class=\"lang-en\">Global Playbook Export</tspan>\n            </text>\n            <text x=\"496\" y=\"106\" fill=\"#a9bdd1\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">率先复制至巴西、墨西哥</tspan>\n              <tspan class=\"lang-en\">Replicating in Brazil,</tspan>\n            </text>\n            <text x=\"496\" y=\"124\" fill=\"#a9bdd1\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n              <tspan class=\"lang-cn\">以及马来西亚等市场</tspan>\n              <tspan class=\"lang-en\">Mexico &amp; Malaysia</tspan>\n            </text>\n          </svg>\n        </div>\n        <p class=\"prose-p photo-caption-text\" data-ref=\"p22\"><span class=\"lang-cn\">[图片说明：从该公司位于上海的工作室，团队每天在应用程序上进行12小时的直播。]</span><span class=\"lang-en\">[Photo caption: From the company's Shanghai studios, crews broadcast live on apps for 12 hours a day.]</span></p>\n      </figure>\n    </div>\n\n    <aside class=\"rail-col\">\n      <div class=\"metric-card\" data-derive=\"m1\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">8.5%</span><span class=\"lang-en\">8.5%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">销售额大幅增长，这在一定程度上弥补了公司在美国和其他发达市场面临的销售停…</span><span class=\"lang-en\">Sales shot up, boosting the company while it grappled with s…</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p16]</span><span class=\"lang-en\">From paragraph [p16]</span></div>\n      </div>\n\n      <div class=\"dossier-card\">\n        <div class=\"dossier-head\">\n          <span class=\"lang-cn\">上海直播与短剧工场配置</span>\n          <span class=\"lang-en\">SHANGHAI STUDIO OPERATIONS</span>\n        </div>\n        <ul class=\"dossier-list\">\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">基础设施</span><span class=\"lang-en\">Facility</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">上海郊区18个工作室</span><span class=\"lang-en\">18 Studios (Shanghai)</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">直播强度</span><span class=\"lang-en\">Live Cadence</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">每天12小时不间断</span><span class=\"lang-en\">12 Hours / Day</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">内容形态A</span><span class=\"lang-en\">Format A</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">实时监控弹幕互动推销</span><span class=\"lang-en\">Real-Time Chat Infomercial</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">内容形态B</span><span class=\"lang-en\">Format B</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">&lt;1分钟家庭生活微短剧</span><span class=\"lang-en\">&lt;1 Min Domestic Skits</span></span>\n          </li>\n          <li>\n            <span class=\"dossier-key\"><span class=\"lang-cn\">年度战果</span><span class=\"lang-en\">Annual Impact</span></span>\n            <span class=\"dossier-val\"><span class=\"lang-cn\">150亿播放 / 4000万新客</span><span class=\"lang-en\">15B Views / 40M New Cust.</span></span>\n          </li>\n        </ul>\n      </div>\n    </aside>\n  </section>\n\n</main>\n\n\n<footer class=\"ed-footer\">\n  <div>\n    <strong>THE WALL STREET JOURNAL.</strong> · WSJ 深读 · Editorial Renaissance Edition\n  </div>\n  <div>\n    <span class=\"lang-cn\">原文刊载于《华尔街日报》商业与金融版 (Page B1) · 双语对照交互版</span>\n    <span class=\"lang-en\">Originally published in The Wall Street Journal Business &amp; Finance (Page B1) · Bilingual Interactive Edition</span>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E3-005",
+        "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+        "exact_match_cn": "22/22",
+        "exact_match_en": "22/22",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 22,
+        "observed_narrative_elements": 23,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 4,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p3"
+          },
+          {
+            "id": "q2",
+            "kind": "quote",
+            "source_block": "p10"
+          },
+          {
+            "id": "q3",
+            "kind": "quote",
+            "source_block": "p13"
+          },
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p16"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "不再去超市购物，而是在浏览手机时购买日常家居用品"
+            ],
+            "applied_en": [
+              "skipping supermarket runs and buying household staples while they scrolled on phones"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "电子商务已经是一种过时的技术"
+            ],
+            "applied_en": [
+              "e-commerce was a yesterday technology"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "连续12个季度两位数的销售增长"
+            ],
+            "applied_en": [
+              "12 consecutive quarters of double-digit sales growth"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "社交电商模式"
+            ],
+            "applied_en": [
+              "social commerce"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "18个工作室"
+            ],
+            "applied_en": [
+              "18 studios"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "约有8亿人每天使用抖音等社交媒体平台",
+              "平均每天花费约90分钟"
+            ],
+            "applied_en": [
+              "800 million of China's 1.4 billion people now each day use social media",
+              "average of about 90 minutes a day"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14",
+            "applied_cn": [
+              "2022年",
+              "2022"
+            ],
+            "applied_en": [
+              "2022"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p15",
+            "applied_cn": [
+              "将一个会议室改造成一个临时工作室"
+            ],
+            "applied_en": [
+              "conference room converted into a makeshift studio"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p16",
+            "applied_cn": [
+              "增长了8.5%，达到22.3亿英镑"
+            ],
+            "applied_en": [
+              "grew 8.5% to 2.23 billion pounds"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p17",
+            "applied_cn": [
+              "每天在应用程序上进行12小时的直播"
+            ],
+            "applied_en": [
+              "broadcast live on the apps for 12 hours a day"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p18",
+            "applied_cn": [
+              "实时调整他们所介绍的产品"
+            ],
+            "applied_en": [
+              "adjusts the featured products they talk about in real-time"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p19",
+            "applied_cn": [
+              "不到一分钟"
+            ],
+            "applied_en": [
+              "under a minute"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p20",
+            "applied_cn": [
+              "吸引了4000万新客户",
+              "150亿次"
+            ],
+            "applied_en": [
+              "40 million new customers",
+              "15 billion times"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p21",
+            "applied_cn": [
+              "巴西、墨西哥和马来西亚",
+              "100多个国家"
+            ],
+            "applied_en": [
+              "Brazil, Mexico and Malaysia",
+              "100 other countries"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 4,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "中国总人口规模",
+              "China Total Population",
+              "100% BASE",
+              "1.4B (14亿)",
+              "抖音/快手等日活用户",
+              "Daily Douyin / Kuaishou Users",
+              "~90 MIN / DAY SCROLL",
+              "~800M (约8亿)",
+              "已在平台购物用户 (50%)",
+              "Purchased on Platforms (50%)",
+              "ACTIVE SOCIAL SHOPPERS",
+              "1/2 (~400M / 半数用户)"
+            ],
+            "numbers_found": [
+              "100%",
+              "1.4",
+              "14",
+              "90",
+              "800",
+              "8",
+              "50%",
+              "50%",
+              "1",
+              "2",
+              "400"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "0 0 724 185",
+            "text_labels": [
+              "PHASE 01 · ~2022",
+              "会议室改造临时直播间",
+              "Makeshift Conf. Room",
+              "客服人员亲自出镜解答",
+              "Customer-service staff",
+              "消毒剂化学成分问题",
+              "explain disinfectant chemistry",
+              "PHASE 02 · SHANGHAI",
+              "上海郊区18个专业工作室",
+              "18 Outskirts Studios",
+              "每日12小时实时互动直播",
+              "12-hr/day live chat streams",
+              "+ 1分钟家庭情景短剧",
+              "+ <1 min domestic mini-dramas",
+              "PHASE 03 · 100+ MKTS",
+              "中国手册输出全球市场",
+              "Global Playbook Export",
+              "率先复制至巴西、墨西哥",
+              "Replicating in Brazil,",
+              "以及马来西亚等市场",
+              "Mexico & Malaysia"
+            ],
+            "numbers_found": [
+              "01",
+              "2022",
+              "02",
+              "18",
+              "18",
+              "12",
+              "12",
+              "1",
+              "1",
+              "03",
+              "100"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "8亿日活与90分钟注意力经济：为什么传统货架正在失效",
+            "en": "THE 800-MILLION USER FUNNEL & THE 90-MINUTE SCROLL",
+            "numbers_found": [
+              "8",
+              "90",
+              "800",
+              "90"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "从临时会议室到上海18间直播室：实时互动推销与全球复制",
+            "en": "INSIDE THE SHANGHAI STUDIO ENGINE & GLOBAL EXPORT",
+            "numbers_found": [
+              "18"
+            ]
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 2,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 680 185",
+          "repaired_viewBox": "0 0 724 185",
+          "repaired": true,
+          "offending_nodes": [
+            "text('PHASE 03 · 100+' right=716>680)"
+          ]
+        }
+      ],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

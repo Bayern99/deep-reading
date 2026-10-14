@@ -1,0 +1,283 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-023",
+  "final_id": "023",
+  "issue_date": "2026-10-12",
+  "content_digest": "5622250ecf3b012f93c0dd564e07c0290f4d73ec415e2c29297321af1d51f6b2",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A3",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A3 版",
+    "kicker_en": "WSJ · U.S. NEWS · A3",
+    "title_cn": "美国司法部调查电视台停播是否违反反垄断法",
+    "title_en": "DOJ Probes Networks on Halting Coverage",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY JOE FLINT AND DAVE MICHAELS",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "美国司法部正在调查，主要电视台是否违反了联邦反托拉斯法，此前，在CNN被取消参与报道白宫事务的计划后，这些电视台曾短暂暂停了轮流派遣记者报道白宫事务。",
+      "text_en": "The Justice Department is investigating whether major TV networks violated federal antitrust laws when they briefly suspended a rotation of broadcast journalists covering the White House last month following CNN's removal from a planned assignment.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "美国司法部正在调查，主要电视台是否违反了联邦反托拉斯法，此前，在CNN被取消参与报道白宫事务的计划后，这些电视台曾短暂暂停了轮流派遣记者报道白宫事务。",
+          "text_en": "The Justice Department is investigating whether major TV networks violated federal antitrust laws when they briefly suspended a rotation of broadcast journalists covering the White House last month following CNN's removal from a planned assignment."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据知情人士透露，这些电视台于周五得知了此次调查，司法部官员正在寻求这些电视台之间关于新闻报道轮换机制的沟通记录。",
+      "text_en": "Networks learned of the probe Friday, with Justice Department officials seeking records of communication among them regarding the pool, people familiar with the matter said.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "据知情人士透露，这些电视台于周五得知了此次调查，司法部官员正在寻求这些电视台之间关于新闻报道轮换机制的沟通记录。",
+          "text_en": "Networks learned of the probe Friday, with Justice Department officials seeking records of communication among them regarding the pool, people familiar with the matter said."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "福克斯新闻、美国广播公司新闻、哥伦比亚广播公司新闻、CNN和美国全国广播公司新闻都属于一个记者、摄像师、摄影师和技术人员组成的团队，他们负责报道特朗普总统的行程，或者报道在空间有限的情况下无法容纳所有媒体记者参加的活动。",
+      "text_en": "Fox News, ABC News, CBS News, CNN and NBC News are part of a group of reporters, videographers, photographers and technicians who cover President Trump when he travels or when events take place in spaces that are too small for the entire press corps.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "福克斯新闻、美国广播公司新闻、哥伦比亚广播公司新闻、CNN和美国全国广播公司新闻都属于一个记者、摄像师、摄影师和技术人员组成的团队，他们负责报道特朗普总统的行程，或者报道在空间有限的情况下无法容纳所有媒体记者参加的活动。",
+          "text_en": "Fox News, ABC News, CBS News, CNN and NBC News are part of a group of reporters, videographers, photographers and technicians who cover President Trump when he travels or when events take place in spaces that are too small for the entire press corps."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "9月份，在特朗普总统前往纽约参加联合国大会期间，CNN被取消了参与报道的资格——此前，特朗普已经禁止CNN、MS NOW和《政治报》进入白宫——电视台们短暂暂停了对总统的部分报道。",
+      "text_en": "When CNN was taken out of the rotation for Trump's trip to New York for the United Nations General Assembly in September—days after Trump banned the network, MS NOW and Politico from the White House—the TV pool briefly halted some coverage of the president.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "9月份，在特朗普总统前往纽约参加联合国大会期间，CNN被取消了参与报道的资格——此前，特朗普已经禁止CNN、MS NOW和《政治报》进入白宫——电视台们短暂暂停了对总统的部分报道。",
+          "text_en": "When CNN was taken out of the rotation for Trump's trip to New York for the United Nations General Assembly in September—days after Trump banned the network, MS NOW and Politico from the White House—the TV pool briefly halted some coverage of the president."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“电视台新闻报道团队的成员抵制报道白宫活动。”",
+      "text_en": "\"Members of the television press pool have boycotted covering White House events.\"",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "“电视台新闻报道团队的成员抵制报道白宫活动。”",
+          "text_en": "\"Members of the television press pool have boycotted covering White House events.\""
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "司法部发言人艾米莉·卡温顿表示：“商业竞争对手之间的集体抵制可能违反《谢尔曼反托拉斯法》。反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。”",
+      "text_en": "\"Group boycotts among commercial competitors can violate the Sherman Act,\" Justice Department spokeswoman Emily Covington said. \"The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.\"",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "司法部发言人艾米莉·卡温顿表示：“商业竞争对手之间的集体抵制可能违反《谢尔曼反托拉斯法》。",
+          "text_en": "\"Group boycotts among commercial competitors can violate the Sherman Act,\" Justice Department spokeswoman Emily Covington said."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。”",
+          "text_en": "\"The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.\""
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "白宫未对此事发表评论。",
+      "text_en": "The White House didn't respond to a request for comment.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "白宫未对此事发表评论。",
+          "text_en": "The White House didn't respond to a request for comment."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "司法部的调查进一步加剧了特朗普政府与媒体之间的紧张关系。特朗普在7月表示，美国广播公司和美国全国广播公司应该因为在其频道中没有播出他关于所谓选举舞弊的讲话而被吊销广播许可。",
+      "text_en": "The Justice Department's investigation further escalates tensions between the Trump administration and the media. Trump said in July that ABC and NBC should lose their broadcast licenses for not carrying his speech on alleged election fraud on their networks.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "司法部的调查进一步加剧了特朗普政府与媒体之间的紧张关系。",
+          "text_en": "The Justice Department's investigation further escalates tensions between the Trump administration and the media."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "特朗普在7月表示，美国广播公司和美国全国广播公司应该因为在其频道中没有播出他关于所谓选举舞弊的讲话而被吊销广播许可。",
+          "text_en": "Trump said in July that ABC and NBC should lose their broadcast licenses for not carrying his speech on alleged election fraud on their networks."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他还称不利的报道为叛国行为，他的政府还向记者发出传票，并限制了记者进入政府场所。",
+      "text_en": "He has also called unfavorable coverage treasonous, and his administration has subpoenaed journalists and limited access to government spaces.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "他还称不利的报道为叛国行为，他的政府还向记者发出传票，并限制了记者进入政府场所。",
+          "text_en": "He has also called unfavorable coverage treasonous, and his administration has subpoenaed journalists and limited access to government spaces."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "新闻自由记者委员会主席布鲁斯·布朗表示：“在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的企图恐吓记者的行为。”",
+      "text_en": "\"Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists,\" said Bruce Brown, president of the Reporters Committee for Freedom of the Press.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "新闻自由记者委员会主席布鲁斯·布朗表示：“在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的企图恐吓记者的行为。”",
+          "text_en": "\"Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists,\" said Bruce Brown, president of the Reporters Committee for Freedom of the Press."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "福克斯新闻的母公司福克斯公司和《华尔街日报》的母公司新闻集团拥有共同的控股方。",
+      "text_en": "Fox News parent Fox Corp. and Wall Street Journal parent News Corp share common ownership.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "福克斯新闻的母公司福克斯公司和《华尔街日报》的母公司新闻集团拥有共同的控股方。",
+          "text_en": "Fox News parent Fox Corp. and Wall Street Journal parent News Corp share common ownership."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p5",
+      "quote_cn": "“电视台新闻报道团队的成员抵制报道白宫活动。”",
+      "quote_en": "“Members of the television press pool have boycotted covering White House events.”",
+      "speaker_cn": "原文第 5 段直接引述",
+      "role_cn": "Source Block p5",
+      "speaker_en": "Direct Quote (p5)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p6",
+      "quote_cn": "“商业竞争对手之间的集体抵制可能违反《谢尔曼反托拉斯法》。反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。”",
+      "quote_en": "“The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.”",
+      "speaker_cn": "原文第 6 段直接引述",
+      "role_cn": "Source Block p6",
+      "speaker_en": "Direct Quote (p6)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p10",
+      "quote_cn": "“在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的企图恐吓记者的行为。”",
+      "quote_en": "“Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists,”",
+      "speaker_cn": "原文第 10 段直接引述",
+      "role_cn": "Source Block p10",
+      "speaker_en": "Direct Quote (p10)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Joe Flint",
+      "zh_suggested": "乔·弗林特",
+      "note": "待查"
+    },
+    {
+      "en": "Dave Michaels",
+      "zh_suggested": "戴夫·迈克尔斯",
+      "note": "待查"
+    },
+    {
+      "en": "Emily Covington",
+      "zh_suggested": "艾米莉·卡温顿",
+      "note": "司法部发言人，待查"
+    },
+    {
+      "en": "Bruce Brown",
+      "zh_suggested": "布鲁斯·布朗",
+      "note": "待查"
+    },
+    {
+      "en": "Reporters Committee for Freedom of the Press",
+      "zh_suggested": "新闻自由记者委员会",
+      "note": "待查"
+    },
+    {
+      "en": "Sherman Act",
+      "zh_suggested": "谢尔曼反托拉斯法"
+    },
+    {
+      "en": "MS NOW",
+      "zh_suggested": "MS NOW（媒体）",
+      "note": "待查"
+    },
+    {
+      "en": "Fox Corp",
+      "zh_suggested": "福克斯公司"
+    },
+    {
+      "en": "News Corp",
+      "zh_suggested": "新闻集团"
+    }
+  ]
+}

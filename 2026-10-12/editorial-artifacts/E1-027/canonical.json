@@ -1,0 +1,334 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-027",
+  "final_id": "027",
+  "issue_date": "2026-10-12",
+  "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A4",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A4 版",
+    "kicker_en": "WSJ · U.S. NEWS · A4",
+    "title_cn": "卡玛拉·哈里斯的丈夫对她可能参加总统竞选一事持保留态度",
+    "title_en": "Harris’s Husband Has Reservations On Her Potential Presidential Run",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "By Jessica Toonkel, Emily Glazer and Ken Thomas",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据了解情况的人士透露，前副总统卡玛拉·哈里斯正在为可能进行的第三次总统竞选做准备，她的丈夫道格·埃姆霍夫私下告诉一些人，他更希望她不要参加竞选，而且一些捐助者也直接告诉她，如果她参加竞选，成功的可能性很小。",
+      "text_en": "As former Vice President Kamala Harris lays the groundwork for a potential third presidential campaign, her husband Doug Emhoff has privately told some people he would prefer she didn't run and some donors have told her directly that a bid would be a long shot, said people familiar with the conversations.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "据了解情况的人士透露，前副总统卡玛拉·哈里斯正在为可能进行的第三次总统竞选做准备，她的丈夫道格·埃姆霍夫私下告诉一些人，他更希望她不要参加竞选，而且一些捐助者也直接告诉她，如果她参加竞选，成功的可能性很小。",
+          "text_en": "As former Vice President Kamala Harris lays the groundwork for a potential third presidential campaign, her husband Doug Emhoff has privately told some people he would prefer she didn't run and some donors have told her directly that a bid would be a long shot, said people familiar with the conversations."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈里斯曾表示，她尚未决定是否要再次竞选总统，但她已经采取了一些可能为竞选做准备的措施，包括与主要捐助者会面、招聘工作人员，并前往关键州，以支持在 11 月中期选举中参选的民主党候选人。",
+      "text_en": "Harris has said she is undecided on whether to launch another run for the White House, but she has taken steps that could be a precursor to such a bid, including speaking with major donors, hiring staff and traveling to battleground states to boost Democratic candidates in the November midterm elections.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "哈里斯曾表示，她尚未决定是否要再次竞选总统，但她已经采取了一些可能为竞选做准备的措施，包括与主要捐助者会面、招聘工作人员，并前往关键州，以支持在 11 月中期选举中参选的民主党候选人。",
+          "text_en": "Harris has said she is undecided on whether to launch another run for the White House, but she has taken steps that could be a precursor to such a bid, including speaking with major donors, hiring staff and traveling to battleground states to boost Democratic candidates in the November midterm elections."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "公开场合，她表示，她目前专注于中期选举，希望民主党能够赢得众议院和参议院的控制权，并赢得几个州长职位。“我还没有决定是否要再次竞选，”哈里斯上个月在密歇根州的一次全国有色人种协进会活动上说道，当时观众为她进行了长时间的起立鼓掌。“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”",
+      "text_en": "Publicly, she has said she remains focused on the midterms, in which Democrats hope to win control of the House and Senate and pick up several gubernatorial seats. \"I have not decided if I'm going to run again,\" Harris said at a NAACP event in Michigan last month as the audience gave her a lengthy standing ovation. \"I do sincerely believe '28 won't matter if we don't get through '26.\"",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "公开场合，她表示，她目前专注于中期选举，希望民主党能够赢得众议院和参议院的控制权，并赢得几个州长职位。",
+          "text_en": "Publicly, she has said she remains focused on the midterms, in which Democrats hope to win control of the House and Senate and pick up several gubernatorial seats."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "“我还没有决定是否要再次竞选，”哈里斯上个月在密歇根州的一次全国有色人种协进会活动上说道，当时观众为她进行了长时间的起立鼓掌。",
+          "text_en": "\"I have not decided if I'm going to run again,\" Harris said at a NAACP event in Michigan last month as the audience gave her a lengthy standing ovation."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”",
+          "text_en": "\"I do sincerely believe '28 won't matter if we don't get through '26.\""
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些了解哈里斯并与她共事的人对她是否会再次竞选持怀疑态度。",
+      "text_en": "Some people who have known and worked with Harris are skeptical she will mount another run.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "一些了解哈里斯并与她共事的人对她是否会再次竞选持怀疑态度。",
+          "text_en": "Some people who have known and worked with Harris are skeptical she will mount another run."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈里斯的发言人拒绝发表评论。",
+      "text_en": "A spokesman for Harris declined to comment.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "哈里斯的发言人拒绝发表评论。",
+          "text_en": "A spokesman for Harris declined to comment."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "许多民主党人，包括一些与她关系密切的人，认为该党需要在 2028 年的选举中推出一位新的候选人。与 2024 年不同，当时在拜登退出后，该党团结在哈里斯周围，如果她再次竞选，预计她将面临激烈的竞争。",
+      "text_en": "Many Democrats, including some who remain close to her, think the party needs to put forward a fresh candidate in the 2028 election. Unlike in 2024, when the party coalesced around Harris in the aftermath of Biden's exit, she is expected to face a crowded field if she were to run again.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "许多民主党人，包括一些与她关系密切的人，认为该党需要在 2028 年的选举中推出一位新的候选人。",
+          "text_en": "Many Democrats, including some who remain close to her, think the party needs to put forward a fresh candidate in the 2028 election."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "与 2024 年不同，当时在拜登退出后，该党团结在哈里斯周围，如果她再次竞选，预计她将面临激烈的竞争。",
+          "text_en": "Unlike in 2024, when the party coalesced around Harris in the aftermath of Biden's exit, she is expected to face a crowded field if she were to run again."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "埃姆霍夫是那些向他人表达对再次竞选的担忧的人之一，但与他关系密切的人预计，如果她决定竞选，他会支持她。",
+      "text_en": "Emhoff is among those who have shared concerns with others about another run, though close to him expect he will support her if she decides to run.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "埃姆霍夫是那些向他人表达对再次竞选的担忧的人之一，但与他关系密切的人预计，如果她决定竞选，他会支持她。",
+          "text_en": "Emhoff is among those who have shared concerns with others about another run, though close to him expect he will support her if she decides to run."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在她的回忆录《107 天》中，哈里斯描述她的丈夫既保护她，又支持她，并指出，当她于 2020 年被选为拜登的竞选伙伴时，“他欣然地做出了巨大的牺牲，而且没有丝毫怨恨。”她写道：“他知道，在我们的新职位中，必须避免任何利益冲突的出现。所以，那是在他律师事务所的最后一天。”",
+      "text_en": "In \"107 Days,\" her memoir of the 2024 campaign, Harris describes her husband as protective and supportive, noting that when she was chosen to be Biden's running mate in 2020, \"he made a huge sacrifice gladly and without bitterness.\" She wrote, \"he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his last day at his law firm.\"",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "在她的回忆录《107 天》中，哈里斯描述她的丈夫既保护她，又支持她，并指出，当她于 2020 年被选为拜登的竞选伙伴时，“他欣然地做出了巨大的牺牲，而且没有丝毫怨恨。”",
+          "text_en": "In \"107 Days,\" her memoir of the 2024 campaign, Harris describes her husband as protective and supportive, noting that when she was chosen to be Biden's running mate in 2020, \"he made a huge sacrifice gladly and without bitterness.\""
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "她写道：“他知道，在我们的新职位中，必须避免任何利益冲突的出现。",
+          "text_en": "She wrote, \"he knew it was essential that there be no appearance of conflicts of interest in our new roles."
+        },
+        {
+          "id": "p8.s3",
+          "text_cn": "所以，那是在他律师事务所的最后一天。”",
+          "text_en": "So that was his last day at his law firm.\""
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "她写道，在 2024 年 10 月，“对我发起的攻击，以及他所经历的许多人身攻击，最终开始产生影响。”她描述了他们之间的一次争论，埃姆霍夫告诉她：“我们不能互相攻击。”她写道：“面对来自四面八方的攻击，我们必须团结一致。”",
+      "text_en": "She writes that in October 2024, \"the attacks on me, and the many personal assaults he'd been experiencing were finally taking a toll.\" She describes an argument they had and Emhoff telling her, \"We can't turn on each other,\" he said. She wrote, \"With the hits coming from every direction, we had to stay united.\"",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "她写道，在 2024 年 10 月，“对我发起的攻击，以及他所经历的许多人身攻击，最终开始产生影响。”",
+          "text_en": "She writes that in October 2024, \"the attacks on me, and the many personal assaults he'd been experiencing were finally taking a toll.\""
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "她描述了他们之间的一次争论，埃姆霍夫告诉她：“我们不能互相攻击。”",
+          "text_en": "She describes an argument they had and Emhoff telling her, \"We can't turn on each other,\" he said."
+        },
+        {
+          "id": "p9.s3",
+          "text_cn": "她写道：“面对来自四面八方的攻击，我们必须团结一致。”",
+          "text_en": "She wrote, \"With the hits coming from every direction, we had to stay united.\""
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "离开华盛顿后，埃姆霍夫返回洛杉矶，在著名的律师事务所 Willkie Farr & Gallagher（律师事务所）担任律师。",
+      "text_en": "Since leaving Washington, Emhoff has returned to work as an attorney in Los Angeles at white shoe law firm Willkie Farr & Gallagher LLP.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "离开华盛顿后，埃姆霍夫返回洛杉矶，在著名的律师事务所 Willkie Farr & Gallagher（律师事务所）担任律师。",
+          "text_en": "Since leaving Washington, Emhoff has returned to work as an attorney in Los Angeles at white shoe law firm Willkie Farr & Gallagher LLP."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据一些消息人士称，卡玛拉·哈里斯最近的一些举动让一些捐助者对她的意图感到不安。在选举前的几周里，哈里斯出现在加利福尼亚州的一些私人筹款活动中，其中包括在圣莫尼卡为密尔沃基县行政长官戴维·克劳利举办的活动，克劳利是民主党提名的威斯康星州州长候选人；以及为内华达州司法部长亚伦·福特举办的活动，福特是民主党提名的内华达州州长候选人。",
+      "text_en": "Some of Harris's recent moves have made some donors uneasy about her intentions, some of the people said. In the weeks leading up to the midterms, Harris has appeared at private fundraisers in California including an event in Santa Monica for Milwaukee County Executive David Crowley, the party's nominee for governor of Wisconsin, and another for Nevada Attorney General Aaron Ford, the Democratic nominee for governor of Nevada.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "据一些消息人士称，卡玛拉·哈里斯最近的一些举动让一些捐助者对她的意图感到不安。",
+          "text_en": "Some of Harris's recent moves have made some donors uneasy about her intentions, some of the people said."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "在选举前的几周里，哈里斯出现在加利福尼亚州的一些私人筹款活动中，其中包括在圣莫尼卡为密尔沃基县行政长官戴维·克劳利举办的活动，克劳利是民主党提名的威斯康星州州长候选人；以及为内华达州司法部长亚伦·福特举办的活动，福特是民主党提名的内华达州州长候选人。",
+          "text_en": "In the weeks leading up to the midterms, Harris has appeared at private fundraisers in California including an event in Santa Monica for Milwaukee County Executive David Crowley, the party's nominee for governor of Wisconsin, and another for Nevada Attorney General Aaron Ford, the Democratic nominee for governor of Nevada."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "她最近还参加了民主党全国委员会组织的动员选民活动，鼓励超过 2000 名在线参与的志愿者上门拜访选民，积极与选民沟通，以期在全国十二个州争取更多席位。“努力工作是一件好事，”哈里斯说道。",
+      "text_en": "She also joined a get-out-the-vote call with the Democratic National Committee recently, urging more than 2,000 volunteers listening live to knock on doors and engage with voters to flip seats in a dozen states across the country. \"Hard work is good work,\" Harris said.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "她最近还参加了民主党全国委员会组织的动员选民活动，鼓励超过 2000 名在线参与的志愿者上门拜访选民，积极与选民沟通，以期在全国十二个州争取更多席位。",
+          "text_en": "She also joined a get-out-the-vote call with the Democratic National Committee recently, urging more than 2,000 volunteers listening live to knock on doors and engage with voters to flip seats in a dozen states across the country."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "“努力工作是一件好事，”哈里斯说道。",
+          "text_en": "\"Hard work is good work,\" Harris said."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p3",
+      "quote_cn": "“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”",
+      "quote_en": "“I do sincerely believe '28 won't matter if we don't get through '26.”",
+      "speaker_cn": "原文第 3 段直接引述",
+      "role_cn": "Source Block p3",
+      "speaker_en": "Direct Quote (p3)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p8",
+      "quote_cn": "“他知道，在我们的新职位中，必须避免任何利益冲突的出现。所以，那是在他律师事务所的最后一天。”",
+      "quote_en": "“he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his last day at his law firm.”",
+      "speaker_cn": "原文第 8 段直接引述",
+      "role_cn": "Source Block p8",
+      "speaker_en": "Direct Quote (p8)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p9",
+      "quote_cn": "“面对来自四面八方的攻击，我们必须团结一致。”",
+      "quote_en": "“With the hits coming from every direction, we had to stay united.”",
+      "speaker_cn": "原文第 9 段直接引述",
+      "role_cn": "Source Block p9",
+      "speaker_en": "Direct Quote (p9)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Jessica Toonkel",
+      "zh_suggested": "杰西卡·通克尔",
+      "note": "待查"
+    },
+    {
+      "en": "Emily Glazer",
+      "zh_suggested": "艾米莉·格莱泽",
+      "note": "待查"
+    },
+    {
+      "en": "Ken Thomas",
+      "zh_suggested": "肯·托马斯",
+      "note": "待查"
+    },
+    {
+      "en": "Kamala Harris",
+      "zh_suggested": "卡玛拉·哈里斯",
+      "note": "前副总统"
+    },
+    {
+      "en": "Doug Emhoff",
+      "zh_suggested": "道格·埃姆霍夫"
+    },
+    {
+      "en": "Willkie Farr & Gallagher",
+      "zh_suggested": "Willkie Farr & Gallagher（律师事务所）",
+      "note": "待查"
+    },
+    {
+      "en": "David Crowley",
+      "zh_suggested": "戴维·克劳利",
+      "note": "待查"
+    },
+    {
+      "en": "Aaron Ford",
+      "zh_suggested": "亚伦·福特",
+      "note": "待查"
+    },
+    {
+      "en": "NAACP",
+      "zh_suggested": "全国有色人种协进会"
+    }
+  ]
+}

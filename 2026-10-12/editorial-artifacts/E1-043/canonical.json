@@ -1,0 +1,300 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-043",
+  "final_id": "043",
+  "issue_date": "2026-10-12",
+  "content_digest": "1d6d006ee067a2962672e5357daca406c220e56887dd8965f30b45442f3775db",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A9",
+    "section": "World News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "World News · A9 版",
+    "kicker_en": "WSJ · WORLD NEWS · A9",
+    "title_cn": "肯尼亚一家俱乐部否决了允许女性进入酒吧的提议。",
+    "title_en": "Kenyan Club Rejects Bid To Allow Women Into Bar",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY CAROLINE KIMEU",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "肯尼亚最负盛名的社交俱乐部之一投票决定，在可预见的未来，继续禁止女性进入其仅限男性使用的酒吧。",
+      "text_en": "One of Kenya's most prestigious social clubs has voted to keep women out of its men-only bar for the foreseeable future.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "肯尼亚最负盛名的社交俱乐部之一投票决定，在可预见的未来，继续禁止女性进入其仅限男性使用的酒吧。",
+          "text_en": "One of Kenya's most prestigious social clubs has voted to keep women out of its men-only bar for the foreseeable future."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这项政策在一部虚构的电影场景中有所体现，在1985年的电影《走出非洲》中，梅丽尔·斯特里普饰演的角色被冷漠地拒之门外。这一政策在穆泰加乡村俱乐部引发了数月的激烈争论，并成为今年早些时候《华尔街日报》的一篇文章主题。",
+      "text_en": "The policy, reflected in a fictional scene where Meryl Streep's character is coldly turned away in the 1985 film \"Out of Africa,\" has spurred rancorous debates at the exclusive club for months and was the subject of an article in The Wall Street Journal earlier this year.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "这项政策在一部虚构的电影场景中有所体现，在1985年的电影《走出非洲》中，梅丽尔·斯特里普饰演的角色被冷漠地拒之门外。这一政策在穆泰加乡村俱乐部引发了数月的激烈争论，并成为今年早些时候《华尔街日报》的一篇文章主题。",
+          "text_en": "The policy, reflected in a fictional scene where Meryl Streep's character is coldly turned away in the 1985 film \"Out of Africa,\" has spurred rancorous debates at the exclusive club for months and was the subject of an article in The Wall Street Journal earlier this year."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "位于内罗毕的穆泰加乡村俱乐部成立于1913年，最初是为英国精英阶层服务的。如今，它已发展成为一个仅限高级政府官员、富裕商人以及成功人士加入的专属俱乐部。会员制仅限邀请，入会费高达4000美元以上。",
+      "text_en": "Muthaiga Country Club in Nairobi, opened in 1913 for the British elite, has evolved into an exclusive club for top government officials, wealthy businesspeople and successful professionals. Membership is by invitation only, with admission fees upward of $4,000.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "位于内罗毕的穆泰加乡村俱乐部成立于1913年，最初是为英国精英阶层服务的。如今，它已发展成为一个仅限高级政府官员、富裕商人以及成功人士加入的专属俱乐部。会员制仅限邀请，入会费高达4000美元以上。",
+          "text_en": "Muthaiga Country Club in Nairobi, opened in 1913 for the British elite, has evolved into an exclusive club for top government officials, wealthy businesspeople and successful professionals. Membership is by invitation only, with admission fees upward of $4,000."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "然而，这家百年历史的会员酒吧依然只对男性开放，女性一年中只能在几次大型俱乐部活动期间进入一两次。",
+      "text_en": "Yet its century-old Member's Bar has remained strictly reserved for men, and women can only go in once or twice a year during major club events.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "然而，这家百年历史的会员酒吧依然只对男性开放，女性一年中只能在几次大型俱乐部活动期间进入一两次。",
+          "text_en": "Yet its century-old Member's Bar has remained strictly reserved for men, and women can only go in once or twice a year during major club events."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "对于一些会员来说，这项酒吧政策是一个令人沮丧的根源，这种不满情绪已经持续了数十年。对于另一些人来说，它“在俱乐部的起源故事中具有神圣的意义”。",
+      "text_en": "For some members, the bar policy is a source of frustration that has been simmering for decades. For others, it is \"hallowed ground in terms of the genesis story of the club.\"",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "对于一些会员来说，这项酒吧政策是一个令人沮丧的根源，这种不满情绪已经持续了数十年。",
+          "text_en": "For some members, the bar policy is a source of frustration that has been simmering for decades."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "对于另一些人来说，它“在俱乐部的起源故事中具有神圣的意义”。",
+          "text_en": "For others, it is \"hallowed ground in terms of the genesis story of the club.\""
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "周四，超过700名俱乐部会员投票决定维持仅限男性使用的酒吧，并设立一个独立的女性空间，反对的会员有200人，他们支持将男性酒吧向所有人开放。“这是一场惨败，”一位男性会员说，他只能在外面关注事态发展，因为投票发生的舞厅里挤满了人。超过1000名会员在线观看了会议。",
+      "text_en": "More than 700 club members voted on Thursday to keep the men-only bar and set up a separate space for women, against 200 who supported the idea of opening up the men's bar to everyone. \"It was a slaughter,\" said one male member, who had to follow events from outside because the ballroom, where the vote happened, was packed. Over 1,000 members followed the meeting online.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "周四，超过700名俱乐部会员投票决定维持仅限男性使用的酒吧，并设立一个独立的女性空间，反对的会员有200人，他们支持将男性酒吧向所有人开放。",
+          "text_en": "More than 700 club members voted on Thursday to keep the men-only bar and set up a separate space for women, against 200 who supported the idea of opening up the men's bar to everyone."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "“这是一场惨败，”一位男性会员说，他只能在外面关注事态发展，因为投票发生的舞厅里挤满了人。",
+          "text_en": "\"It was a slaughter,\" said one male member, who had to follow events from outside because the ballroom, where the vote happened, was packed."
+        },
+        {
+          "id": "p6.s3",
+          "text_cn": "超过1000名会员在线观看了会议。",
+          "text_en": "Over 1,000 members followed the meeting online."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "俱乐部没有回应置评请求。",
+      "text_en": "The club didn't respond to a request for comment.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "俱乐部没有回应置评请求。",
+          "text_en": "The club didn't respond to a request for comment."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一位女性会员率先发声，为男性酒吧辩护，称这是为数不多的男性可以自由活动的场所之一，并坚持认为俱乐部有更重要的事情要做，而不是纠结于酒吧问题，其他会员回忆道。另一位一直反对男性酒吧的女性会员突然改变立场。",
+      "text_en": "One female member opened the debate by defending the men's bar as one of the few remaining spaces men could be men, and insisted that the club had bigger fish to fry than the bar, members recounted. Another woman member who had been campaigning against the men's bar suddenly decamped to the other side.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "一位女性会员率先发声，为男性酒吧辩护，称这是为数不多的男性可以自由活动的场所之一，并坚持认为俱乐部有更重要的事情要做，而不是纠结于酒吧问题，其他会员回忆道。",
+          "text_en": "One female member opened the debate by defending the men's bar as one of the few remaining spaces men could be men, and insisted that the club had bigger fish to fry than the bar, members recounted."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "另一位一直反对男性酒吧的女性会员突然改变立场。",
+          "text_en": "Another woman member who had been campaigning against the men's bar suddenly decamped to the other side."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "其他会员，包括许多女性，认为她们不应该为她们无法使用的酒吧支付运营费用。",
+      "text_en": "Other members, including many women, argued that they shouldn't have to pay for the running of a bar they couldn't use.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "其他会员，包括许多女性，认为她们不应该为她们无法使用的酒吧支付运营费用。",
+          "text_en": "Other members, including many women, argued that they shouldn't have to pay for the running of a bar they couldn't use."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些会员担心这次投票可能会危及与100多家附属国际俱乐部之间的互惠协议。伦敦的改革俱乐部已经因为这项政策终止了协议，据知情人士透露，一家美国俱乐部最近也撤回了建立互惠关系的意向。",
+      "text_en": "Some members worry the vote could jeopardize reciprocal privileges with over 100 affiliated international clubs. London's Reform Club already ended its agreement over the policy, and an American club recently withdrew its interest in having a reciprocal arrangement, members familiar with the matter said.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "一些会员担心这次投票可能会危及与100多家附属国际俱乐部之间的互惠协议。",
+          "text_en": "Some members worry the vote could jeopardize reciprocal privileges with over 100 affiliated international clubs."
+        },
+        {
+          "id": "p10.s2",
+          "text_cn": "伦敦的改革俱乐部已经因为这项政策终止了协议，据知情人士透露，一家美国俱乐部最近也撤回了建立互惠关系的意向。",
+          "text_en": "London's Reform Club already ended its agreement over the policy, and an American club recently withdrew its interest in having a reciprocal arrangement, members familiar with the matter said."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "法国女商人克洛艾·斯波重新提交了将酒吧向所有会员开放的方案，并得出结论：穆泰加“仍然是一个男人的俱乐部”。",
+      "text_en": "Chloé Spo, the French businesswoman who resubmitted the proposal to open up the bar to all members, concluded that Muthaiga is \"still a man's club.\"",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "法国女商人克洛艾·斯波重新提交了将酒吧向所有会员开放的方案，并得出结论：穆泰加“仍然是一个男人的俱乐部”。",
+          "text_en": "Chloé Spo, the French businesswoman who resubmitted the proposal to open up the bar to all members, concluded that Muthaiga is \"still a man's club.\""
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p5",
+      "quote_cn": "“在俱乐部的起源故事中具有神圣的意义”",
+      "quote_en": "“hallowed ground in terms of the genesis story of the club.”",
+      "speaker_cn": "原文第 5 段直接引述",
+      "role_cn": "Source Block p5",
+      "speaker_en": "Direct Quote (p5)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Caroline Kimeu",
+      "zh_suggested": "卡罗琳·基梅乌",
+      "note": "待查"
+    },
+    {
+      "en": "Muthaiga Country Club",
+      "zh_suggested": "穆泰加乡村俱乐部",
+      "note": "内罗毕，待查"
+    },
+    {
+      "en": "Meryl Streep",
+      "zh_suggested": "梅丽尔·斯特里普"
+    },
+    {
+      "en": "Out of Africa",
+      "zh_suggested": "《走出非洲》（1985）"
+    },
+    {
+      "en": "Chloé Spo",
+      "zh_suggested": "克洛艾·斯波",
+      "note": "姓氏在版面栏位处被截断，待查"
+    },
+    {
+      "en": "Reform Club",
+      "zh_suggested": "改革俱乐部",
+      "note": "伦敦，待查"
+    }
+  ],
+  "claim_provenance": {
+    "schema_version": "claim-evidence-v1",
+    "passed": false,
+    "source_digest": "79136bc019ecd988e2c0b100b4cc2b398ba911e7a0bc11521382b7cf19abc3a6",
+    "compiled_digest": null,
+    "claims": [
+      {
+        "target": "derive:q1",
+        "kind": "quote",
+        "payload": {
+          "id": "q1",
+          "source_block": "p5",
+          "quote_cn": "“在俱乐部的起源故事中具有神圣的意义”",
+          "quote_en": "“hallowed ground in terms of the genesis story of the club.”",
+          "speaker_cn": "原文第 5 段直接引述",
+          "role_cn": "Source Block p5",
+          "speaker_en": "Direct Quote (p5)",
+          "role_en": "Reported in article text"
+        },
+        "claim_digest": "6e7c19d447e8842bf6bb31178f093c7f45c8acd0e803cda7ca2a675ed7da2ef8",
+        "source_blocks": [
+          "p5"
+        ],
+        "active": true,
+        "status": "needs_review",
+        "errors": [],
+        "review_needed": [
+          "Missing host evidence record"
+        ]
+      }
+    ],
+    "evidence_records": [],
+    "errors": [
+      "derive:q1: needs_review: Missing host evidence record"
+    ]
+  }
+}

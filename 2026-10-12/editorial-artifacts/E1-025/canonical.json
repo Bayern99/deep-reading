@@ -1,0 +1,676 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-025",
+  "final_id": "025",
+  "issue_date": "2026-10-12",
+  "content_digest": "4525a92d88fdd637b20b8e2683d11ff4b8eb3065bd7fdeeae9b3a928ffee6567",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A4",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "U.S. News · A4 版",
+    "kicker_en": "WSJ · U.S. NEWS · A4",
+    "title_cn": "在达沃斯，吉尔福伊尔炫耀所享特权",
+    "title_en": "At Davos, Guilfoyle Boasted About Perks",
+    "dek_cn": "在一份录音中，这位大使表示，一些商人为她的奢华旅行支付了费用。",
+    "dek_en": "On a recording, ambassador said businessmen paid for her luxury travel",
+    "byline": "By Rebecca Ballhaus, Joe Parkinson, Drew Hinshaw and Dana Mattioli",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "金伯莉·吉尔福伊尔作为美国新任驻希腊大使，在达沃斯论坛上炫耀自己与两位希腊富豪的关系，并表示他们为她资助了她环游世界的奢华旅行。",
+      "text_en": "Kimberly Guilfoyle, as America's newly minted ambassador to Greece, boasted at Davos about her ties to two Greek tycoons and said they were bankrolling her high-rolling trips around the world.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "金伯莉·吉尔福伊尔作为美国新任驻希腊大使，在达沃斯论坛上炫耀自己与两位希腊富豪的关系，并表示他们为她资助了她环游世界的奢华旅行。",
+          "text_en": "Kimberly Guilfoyle, as America's newly minted ambassador to Greece, boasted at Davos about her ties to two Greek tycoons and said they were bankrolling her high-rolling trips around the world."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据参与对话的人士和《华尔街日报》审查的一段录音显示，吉尔福伊尔在今年一月，在提出紧急请求时，炫耀自己与富有的希腊商人的关系。她被阻止参加为埃里克·特朗普举办的即将到来的晚宴，她希望请一位在邀请名单上的美国商人帮忙，让她能够参加。",
+      "text_en": "According to people who heard the conversation and an audio recording reviewed by The Wall Street Journal, Guilfoyle was flexing her connections to wealthy Greek businessmen in January as she made an urgent request. She was being blocked from attending an upcoming dinner being held for Eric Trump, and she wanted to enlist an American businessman who was on the guest list to help get her in the door.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "据参与对话的人士和《华尔街日报》审查的一段录音显示，吉尔福伊尔在今年一月，在提出紧急请求时，炫耀自己与富有的希腊商人的关系。",
+          "text_en": "According to people who heard the conversation and an audio recording reviewed by The Wall Street Journal, Guilfoyle was flexing her connections to wealthy Greek businessmen in January as she made an urgent request."
+        },
+        {
+          "id": "p2.s2",
+          "text_cn": "她被阻止参加为埃里克·特朗普举办的即将到来的晚宴，她希望请一位在邀请名单上的美国商人帮忙，让她能够参加。",
+          "text_en": "She was being blocked from attending an upcoming dinner being held for Eric Trump, and she wanted to enlist an American businessman who was on the guest list to help get her in the door."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "根据录音，她说：“你知道，我可以为你提供一切。你值得拥有。”她在与这位商人的交流中，还在另一个时刻说：“我将为你赚很多钱。”",
+      "text_en": "\"You know, I can deliver the world to you. Which you deserve,\" she said, according to the recording. \"I'm going to make you a lot of f—ing money,\" she said at another point in the exchange with the businessman.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "根据录音，她说：“你知道，我可以为你提供一切。",
+          "text_en": "\"You know, I can deliver the world to you."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "你值得拥有。”",
+          "text_en": "Which you deserve,\" she said, according to the recording."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "她在与这位商人的交流中，还在另一个时刻说：“我将为你赚很多钱。”",
+          "text_en": "\"I'm going to make you a lot of f—ing money,\" she said at another point in the exchange with the businessman."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "她对未能被列入晚宴邀请名单表示愤怒，这场晚宴由达沃斯希腊之家组织。“你们不能不邀请美国驻希腊大使，你知道吗？她应该来亲我的屁股，”吉尔福伊尔对该活动的组织者说。",
+      "text_en": "She expressed fury at not being on the list for the dinner, which was being organized by Greek House Davos. \"You don't have the f—ing U.S., you know, ambassador to Greece not come. She should be kissing my f—ing ass,\" Guilfoyle said of the event's organizer.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "她对未能被列入晚宴邀请名单表示愤怒，这场晚宴由达沃斯希腊之家组织。",
+          "text_en": "She expressed fury at not being on the list for the dinner, which was being organized by Greek House Davos."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "“你们不能不邀请美国驻希腊大使，你知道吗？",
+          "text_en": "\"You don't have the f—ing U.S., you know, ambassador to Greece not come."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "她应该来亲我的屁股，”吉尔福伊尔对该活动的组织者说。",
+          "text_en": "She should be kissing my f—ing ass,\" Guilfoyle said of the event's organizer."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "最终，吉尔福伊尔成功获得了最后一刻的席位。达沃斯希腊之家的主席艾琳·万塔拉基表示，她的团队“不得不应对一场小危机，这场危机影响到了一些知名人士”，并且“有些人感到失望”。她说，吉尔福伊尔“表现得很有礼貌，也很谨慎”，并且提前离开了晚宴。",
+      "text_en": "In the end, Guilfoyle was able to score a last-minute seat. The chairwoman of Greek House Davos, Irene Vantaraki, said that her team \"had to manage a small crisis [that] affected a number of high-profile guests\" and that \"some were disappointed.\" Guilfoyle was \"gracious and discreet\" and left the dinner early, she said.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "最终，吉尔福伊尔成功获得了最后一刻的席位。",
+          "text_en": "In the end, Guilfoyle was able to score a last-minute seat."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "达沃斯希腊之家的主席艾琳·万塔拉基表示，她的团队“不得不应对一场小危机，这场危机影响到了一些知名人士”，并且“有些人感到失望”。",
+          "text_en": "The chairwoman of Greek House Davos, Irene Vantaraki, said that her team \"had to manage a small crisis [that] affected a number of high-profile guests\" and that \"some were disappointed.\""
+        },
+        {
+          "id": "p5.s3",
+          "text_cn": "她说，吉尔福伊尔“表现得很有礼貌，也很谨慎”，并且提前离开了晚宴。",
+          "text_en": "Guilfoyle was \"gracious and discreet\" and left the dinner early, she said."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "吉尔福伊尔承认，她乘坐私人飞机与希腊建筑公司Aktor集团的首席执行官亚历山德罗斯·埃克萨尔霍乌一起，飞往2026年1月的达沃斯世界经济论坛。",
+      "text_en": "Guilfoyle had flown to the January 2026 World Economic Forum on a private jet with Alexandros Exarchou, chief executive of the Greek construction company Aktor Group, she acknowledged on the recording.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "吉尔福伊尔承认，她乘坐私人飞机与希腊建筑公司Aktor集团的首席执行官亚历山德罗斯·埃克萨尔霍乌一起，飞往2026年1月的达沃斯世界经济论坛。",
+          "text_en": "Guilfoyle had flown to the January 2026 World Economic Forum on a private jet with Alexandros Exarchou, chief executive of the Greek construction company Aktor Group, she acknowledged on the recording."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "《华尔街日报》报道称，吉尔福伊尔鼓励保加利亚和阿尔巴尼亚等国的政府与埃克萨尔霍乌开展业务，并从他的公司购买数十亿美元的美国天然气。她在录音中说，这位希腊商人是“我的人”。",
+      "text_en": "Governments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy billions of dollars of American natural gas from his company, the Journal has reported. The Greek businessman was, she said in the recording, \"my people.\"",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "《华尔街日报》报道称，吉尔福伊尔鼓励保加利亚和阿尔巴尼亚等国的政府与埃克萨尔霍乌开展业务，并从他的公司购买数十亿美元的美国天然气。",
+          "text_en": "Governments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy billions of dollars of American natural gas from his company, the Journal has reported."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "她在录音中说，这位希腊商人是“我的人”。",
+          "text_en": "The Greek businessman was, she said in the recording, \"my people.\""
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他并不是唯一帮助吉尔福伊尔安排旅行的商人。她在录音中还说，她计划在本月晚些时候乘坐一架飞机，与希腊航运巨头尼古拉斯·察科斯一起飞往巴黎，并参加他妻子的时装秀。他们一起在瑞士奢华度假胜地格施塔德度过了一部分假期。“我每天都见到他，”她说。“我将和他一起飞往巴黎。我这周和他在一起……他和他一起度过了圣诞节。好吗？格施塔德。几乎无处不在。”",
+      "text_en": "He wasn't the only businessman facilitating Guilfoyle's travels. She was also planning to fly later that month to and out of Paris, on a jet with a Greek shipping tycoon, Nikolas Tsakos, to attend his wife's fashion show, she said in the recording. They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of Gstaad. \"I see him every f—ing day,\" she said. \"I'm flying with him to Paris. I'm with him this week.… He spent Christmas with him. OK? Gstaad. Like, everywhere.\"",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "他并不是唯一帮助吉尔福伊尔安排旅行的商人。",
+          "text_en": "He wasn't the only businessman facilitating Guilfoyle's travels."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "她在录音中还说，她计划在本月晚些时候乘坐一架飞机，与希腊航运巨头尼古拉斯·察科斯一起飞往巴黎，并参加他妻子的时装秀。",
+          "text_en": "She was also planning to fly later that month to and out of Paris, on a jet with a Greek shipping tycoon, Nikolas Tsakos, to attend his wife's fashion show, she said in the recording."
+        },
+        {
+          "id": "p8.s3",
+          "text_cn": "他们一起在瑞士奢华度假胜地格施塔德度过了一部分假期。",
+          "text_en": "They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of Gstaad."
+        },
+        {
+          "id": "p8.s4",
+          "text_cn": "“我每天都见到他，”她说。",
+          "text_en": "\"I see him every f—ing day,\" she said."
+        },
+        {
+          "id": "p8.s5",
+          "text_cn": "“我将和他一起飞往巴黎。",
+          "text_en": "\"I'm flying with him to Paris."
+        },
+        {
+          "id": "p8.s6",
+          "text_cn": "我这周和他在一起……他和他一起度过了圣诞节。",
+          "text_en": "I'm with him this week.… He spent Christmas with him."
+        },
+        {
+          "id": "p8.s7",
+          "text_cn": "好吗？",
+          "text_en": "OK?"
+        },
+        {
+          "id": "p8.s8",
+          "text_cn": "格施塔德。",
+          "text_en": "Gstaad."
+        },
+        {
+          "id": "p8.s9",
+          "text_cn": "几乎无处不在。”",
+          "text_en": "Like, everywhere.\""
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据知情人士透露，当这位大使入住巴黎四季酒店乔治五世酒店——这是好莱坞明星和非洲及中东领导人最喜欢的酒店时，账单由Tsakos Energy Navigation（船运公司）首席执行官尼古拉斯·察科斯支付。",
+      "text_en": "When the ambassador checked in to Paris's Four Seasons Hotel George V—a favorite hotel of Hollywood A-listers and African and Middle Eastern leaders—the bill fell to Nikos Tsakos, CEO of Tsakos Energy Navigation, according to people familiar with the matter.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "据知情人士透露，当这位大使入住巴黎四季酒店乔治五世酒店——这是好莱坞明星和非洲及中东领导人最喜欢的酒店时，账单由Tsakos Energy Navigation（船运公司）首席执行官尼古拉斯·察科斯支付。",
+          "text_en": "When the ambassador checked in to Paris's Four Seasons Hotel George V—a favorite hotel of Hollywood A-listers and African and Middle Eastern leaders—the bill fell to Nikos Tsakos, CEO of Tsakos Energy Navigation, according to people familiar with the matter."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "吉尔福伊尔身穿几件设计师礼服，在社交媒体上发布了她的照片，其中包括两张与察科斯的合影，分享给她的200万Instagram粉丝。",
+      "text_en": "Guilfoyle, dressed in several designer gowns, would post photos of herself—including two with Tsakos—at the event to her 2 million Instagram followers.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "吉尔福伊尔身穿几件设计师礼服，在社交媒体上发布了她的照片，其中包括两张与察科斯的合影，分享给她的200万Instagram粉丝。",
+          "text_en": "Guilfoyle, dressed in several designer gowns, would post photos of herself—including two with Tsakos—at the event to her 2 million Instagram followers."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此前未曾报道过察科斯为她的旅行提供资金的事实。察科斯和他的妻子未对置评请求做出回应。",
+      "text_en": "Tsakos's financing of her travel hasn't been previously reported. Tsakos and his wife didn't respond to requests for comment.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "此前未曾报道过察科斯为她的旅行提供资金的事实。",
+          "text_en": "Tsakos's financing of her travel hasn't been previously reported."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "察科斯和他的妻子未对置评请求做出回应。",
+          "text_en": "Tsakos and his wife didn't respond to requests for comment."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "Aktor集团（希腊建筑公司）通过律师表示不予置评。Aktor的律师表示，吉尔福伊尔并未不正当地推广Aktor的商业利益。",
+      "text_en": "Aktor Group, through lawyers, declined to comment. The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "Aktor集团（希腊建筑公司）通过律师表示不予置评。",
+          "text_en": "Aktor Group, through lawyers, declined to comment."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "Aktor的律师表示，吉尔福伊尔并未不正当地推广Aktor的商业利益。",
+          "text_en": "The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "美国驻雅典大使馆的一位发言人表示，大使的“公共服务生涯以深厚的价值观为指导”，并且她“忠实地遵守了国务院的道德规范和礼品申报指南”。",
+      "text_en": "A spokesman for the U.S. Embassy in Athens said the ambassador's \"career in public service is guided by deep and abiding values\" and that she had \"faithfully followed State Department ethics and gift reporting guidelines.\"",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "美国驻雅典大使馆的一位发言人表示，大使的“公共服务生涯以深厚的价值观为指导”，并且她“忠实地遵守了国务院的道德规范和礼品申报指南”。",
+          "text_en": "A spokesman for the U.S. Embassy in Athens said the ambassador's \"career in public service is guided by deep and abiding values\" and that she had \"faithfully followed State Department ethics and gift reporting guidelines.\""
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这位发言人表示：“这些未经证实的说法仅仅是为了转移人们对她在希腊和更广泛的东地中海地区所做出的出色工作的注意力。”",
+      "text_en": "\"The unsubstantiated claims are simply a distraction from the great work she is doing in Greece and the broader Eastern Mediterranean,\" the spokesman said.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "这位发言人表示：“这些未经证实的说法仅仅是为了转移人们对她在希腊和更广泛的东地中海地区所做出的出色工作的注意力。”",
+          "text_en": "\"The unsubstantiated claims are simply a distraction from the great work she is doing in Greece and the broader Eastern Mediterranean,\" the spokesman said."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这些新消息的曝光正值特朗普政府的高层官员正在商讨如何处理这位曾计划嫁入特朗普家族，但现在却可能成为2026年中期选举前的一项政治负担的大使。政府官员正在讨论是否应该撤换她，助手表示，预计特朗普总统很快就会做出决定。",
+      "text_en": "The new revelations come as top Trump administration officials are deliberating what to do about an ambassador who was once set to marry into the first family, yet is now evolving into a political liability ahead of the 2026 midterms. Administration officials are discussing whether she should be removed, and a decision is expected by President Trump soon, aides said.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "这些新消息的曝光正值特朗普政府的高层官员正在商讨如何处理这位曾计划嫁入特朗普家族，但现在却可能成为2026年中期选举前的一项政治负担的大使。",
+          "text_en": "The new revelations come as top Trump administration officials are deliberating what to do about an ambassador who was once set to marry into the first family, yet is now evolving into a political liability ahead of the 2026 midterms."
+        },
+        {
+          "id": "p15.s2",
+          "text_cn": "政府官员正在讨论是否应该撤换她，助手表示，预计特朗普总统很快就会做出决定。",
+          "text_en": "Administration officials are discussing whether she should be removed, and a decision is expected by President Trump soon, aides said."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一位知情人士表示，国务院的监察长正在调查吉尔福伊尔是否收到了私人商人的礼品或好处。",
+      "text_en": "The State Department's inspector general is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "一位知情人士表示，国务院的监察长正在调查吉尔福伊尔是否收到了私人商人的礼品或好处。",
+          "text_en": "The State Department's inspector general is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "周三，《华尔街日报》首次发表了短信记录，显示吉尔福伊尔曾要求一位特朗普的捐助者向她的美国运通账户汇款10万美元，作为回报，她承诺帮助这位捐助者，促使特朗普政府调查该捐助者的个人税务和法律问题。吉尔福伊尔的律师对短信的真实性提出了质疑，但拒绝提供具体细节。",
+      "text_en": "On Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send $100,000 to her American Express account, and in return offered help in getting the Trump administration to look into the donor's personal tax and legal issues. A lawyer for Guilfoyle disputed the authenticity of the messages but declined to provide specifics.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "周三，《华尔街日报》首次发表了短信记录，显示吉尔福伊尔曾要求一位特朗普的捐助者向她的美国运通账户汇款10万美元，作为回报，她承诺帮助这位捐助者，促使特朗普政府调查该捐助者的个人税务和法律问题。",
+          "text_en": "On Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send $100,000 to her American Express account, and in return offered help in getting the Trump administration to look into the donor's personal tax and legal issues."
+        },
+        {
+          "id": "p17.s2",
+          "text_cn": "吉尔福伊尔的律师对短信的真实性提出了质疑，但拒绝提供具体细节。",
+          "text_en": "A lawyer for Guilfoyle disputed the authenticity of the messages but declined to provide specifics."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "特朗普在周五离开白宫时对记者说：“我刚听说这件事，这真是太糟糕了。我的意思是，我知道。她是一位大使。她一直都非常友善。”",
+      "text_en": "\"I just heard about it. It's too bad,\" Trump told reporters of the reporting on Guilfoyle as he left the White House on Friday. \"I mean, I know. She's an ambassador. She was always very nice.\"",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "特朗普在周五离开白宫时对记者说：“我刚听说这件事，这真是太糟糕了。我的意思是，我知道。她是一位大使。她一直都非常友善。”",
+          "text_en": "\"I just heard about it. It's too bad,\" Trump told reporters of the reporting on Guilfoyle as he left the White House on Friday. \"I mean, I know. She's an ambassador. She was always very nice.\""
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "上周，吉尔福伊尔受到了参议院和众议院外交事务委员会的民主党人的批评，他们敦促国务院审查她的行为，此前《华尔街日报》的调查显示，这位大使曾试图推广Aktor，这家希腊公司的首席执行官曾乘坐飞机将她送往达沃斯。",
+      "text_en": "Last week, Guilfoyle came under fire from Democrats on Senate and House foreign affairs committees, who urged the State Department to review her conduct after the Journal investigation revealed the ambassador's efforts to promote Aktor, the Greek firm whose CEO had flown her to Davos.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "上周，吉尔福伊尔受到了参议院和众议院外交事务委员会的民主党人的批评，他们敦促国务院审查她的行为，此前《华尔街日报》的调查显示，这位大使曾试图推广Aktor，这家希腊公司的首席执行官曾乘坐飞机将她送往达沃斯。",
+          "text_en": "Last week, Guilfoyle came under fire from Democrats on Senate and House foreign affairs committees, who urged the State Department to review her conduct after the Journal investigation revealed the ambassador's efforts to promote Aktor, the Greek firm whose CEO had flown her to Davos."
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "index": 20,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这些消息的曝光对白宫和国务院造成了干扰。吉尔福伊尔花费了几天时间联系白宫内部和周边的人，否认她曾发送过短信，要求提供信用卡方面的帮助，并寻求他们的支持。",
+      "text_en": "The revelations have been a disruption for the White House and State Department. Guilfoyle spent several days reaching out to people in and around the administration, denying that she had sent the texts soliciting credit-card relief, and seeking their support.",
+      "sentences": [
+        {
+          "id": "p20.s1",
+          "text_cn": "这些消息的曝光对白宫和国务院造成了干扰。",
+          "text_en": "The revelations have been a disruption for the White House and State Department."
+        },
+        {
+          "id": "p20.s2",
+          "text_cn": "吉尔福伊尔花费了几天时间联系白宫内部和周边的人，否认她曾发送过短信，要求提供信用卡方面的帮助，并寻求他们的支持。",
+          "text_en": "Guilfoyle spent several days reaching out to people in and around the administration, denying that she had sent the texts soliciting credit-card relief, and seeking their support."
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "index": 21,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "国务卿马尔科·鲁比奥在乘坐飞机前往雅典的途中，得知《华尔街日报》就此事要求发表评论。他在雅典将发表一篇演讲，演讲地点设在雅典卫城前，主题是“西方是否仍能保持其在世界中的领导地位”。据知情人士透露，助手们对此感到沮丧，并担心这些消息会掩盖鲁比奥的重要演讲。在鲁比奥访问期间，金伯莉·吉尔福伊尔参加了他组织的几次活动。然而，在鲁比奥周四离开雅典时，他拒绝就《华尔街日报》报道的短信内容发表评论。“我们不会在外国机场举行新闻发布会来讨论此事，因为你们写了一篇报道，”他对记者说。金伯莉·吉尔福伊尔在机场为他送行。",
+      "text_en": "Secretary of State Marco Rubio learned about her text messages from the Journal's request for comment as he was on a plane to Athens, where he would deliver a speech standing before the Acropolis, \"on whether the West maintains its place at the head of the world.\" Aides were frustrated and feared the revelations would overshadow Rubio's marquee address, according to people familiar with the discussions. Guilfoyle joined Rubio for multiple events during his visit. Yet as Rubio departed Athens on Thursday, he declined to discuss the text messages reported by the Journal. \"We don't conduct these things in a press conference on a tarmac in a foreign country because you wrote a story,\" he told reporters. Guilfoyle was on the tarmac to see him off.",
+      "sentences": [
+        {
+          "id": "p21.s1",
+          "text_cn": "国务卿马尔科·鲁比奥在乘坐飞机前往雅典的途中，得知《华尔街日报》就此事要求发表评论。他在雅典将发表一篇演讲，演讲地点设在雅典卫城前，主题是“西方是否仍能保持其在世界中的领导地位”。据知情人士透露，助手们对此感到沮丧，并担心这些消息会掩盖鲁比奥的重要演讲。在鲁比奥访问期间，金伯莉·吉尔福伊尔参加了他组织的几次活动。然而，在鲁比奥周四离开雅典时，他拒绝就《华尔街日报》报道的短信内容发表评论。“我们不会在外国机场举行新闻发布会来讨论此事，因为你们写了一篇报道，”他对记者说。金伯莉·吉尔福伊尔在机场为他送行。",
+          "text_en": "Secretary of State Marco Rubio learned about her text messages from the Journal's request for comment as he was on a plane to Athens, where he would deliver a speech standing before the Acropolis, \"on whether the West maintains its place at the head of the world.\" Aides were frustrated and feared the revelations would overshadow Rubio's marquee address, according to people familiar with the discussions. Guilfoyle joined Rubio for multiple events during his visit. Yet as Rubio departed Athens on Thursday, he declined to discuss the text messages reported by the Journal. \"We don't conduct these things in a press conference on a tarmac in a foreign country because you wrote a story,\" he told reporters. Guilfoyle was on the tarmac to see him off."
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "index": 22,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "副总统J·D·万斯在周五被问及《华尔街日报》的报道时，拒绝表明立场。“这些都是指控，”他说。“让我们看看真相是什么。而且，如果发生了不好的事情，那么相关人员必须承担后果。”",
+      "text_en": "Vice President JD Vance, asked about the Journal's reporting on Friday, declined to take a stance. \"These are accusations,\" he said. \"Let's see what the truth is. And obviously, if there was something bad that happened, then people have to suffer consequences.\"",
+      "sentences": [
+        {
+          "id": "p22.s1",
+          "text_cn": "副总统J·D·万斯在周五被问及《华尔街日报》的报道时，拒绝表明立场。",
+          "text_en": "Vice President JD Vance, asked about the Journal's reporting on Friday, declined to take a stance."
+        },
+        {
+          "id": "p22.s2",
+          "text_cn": "“这些都是指控，”他说。",
+          "text_en": "\"These are accusations,\" he said."
+        },
+        {
+          "id": "p22.s3",
+          "text_cn": "“让我们看看真相是什么。",
+          "text_en": "\"Let's see what the truth is."
+        },
+        {
+          "id": "p22.s4",
+          "text_cn": "而且，如果发生了不好的事情，那么相关人员必须承担后果。”",
+          "text_en": "And obviously, if there was something bad that happened, then people have to suffer consequences.\""
+        }
+      ]
+    },
+    {
+      "id": "p23",
+      "index": 23,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些前特朗普政府官员表示，他们对金伯莉·吉尔福伊尔是否会受到惩罚表示怀疑。斯蒂芬妮·格里沙姆，前第一夫人梅拉尼娅·特朗普的发言人，在X平台（原推特）上写道：“她对特朗普家族/核心圈子了解得太多了，我想他们希望她尽可能远离。一个愤怒的金伯莉·吉尔福伊尔在美国国内可能会对特朗普阵营造成不利影响。”",
+      "text_en": "Some former Trump officials expressed skepticism that Guilfoyle would face consequences. Stephanie Grisham, first lady Melania Trump's former spokeswoman, wrote in a post on X: \"She knows far too much about the Trump family/inner circle & I imagine they like her as far away as possible. An angry KG stateside would not be a good thing for Trumpworld.\"",
+      "sentences": [
+        {
+          "id": "p23.s1",
+          "text_cn": "一些前特朗普政府官员表示，他们对金伯莉·吉尔福伊尔是否会受到惩罚表示怀疑。",
+          "text_en": "Some former Trump officials expressed skepticism that Guilfoyle would face consequences."
+        },
+        {
+          "id": "p23.s2",
+          "text_cn": "斯蒂芬妮·格里沙姆，前第一夫人梅拉尼娅·特朗普的发言人，在X平台（原推特）上写道：“她对特朗普家族/核心圈子了解得太多了，我想他们希望她尽可能远离。",
+          "text_en": "Stephanie Grisham, first lady Melania Trump's former spokeswoman, wrote in a post on X: \"She knows far too much about the Trump family/inner circle & I imagine they like her as far away as possible."
+        },
+        {
+          "id": "p23.s3",
+          "text_cn": "一个愤怒的金伯莉·吉尔福伊尔在美国国内可能会对特朗普阵营造成不利影响。”",
+          "text_en": "An angry KG stateside would not be a good thing for Trumpworld.\""
+        }
+      ]
+    },
+    {
+      "id": "p24",
+      "index": 24,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "近几天，国会民主党人加大了呼吁对金伯莉·吉尔福伊尔进行调查或将其从现任职位上解职的力度——或者两者兼而有之。在周五写给金伯莉·吉尔福伊尔的信中，众议院外交事务委员会的首席民主党人、纽约州众议员格雷戈里·米克斯呼吁对大使是否违反了联邦反贿赂和公共腐败法进行“立即调查”。米克斯还要求国务院监察长调查金伯莉·吉尔福伊尔是否违反了联邦法律、部门规章或道德要求。加利福尼亚州众议员罗伯特·加西亚，众议院监督委员会的首席民主党人，在周四写给金伯莉·吉尔福伊尔的信中表示，报道中的行为“引发了对严重公共腐败和国家安全的担忧”，并要求她提供财务记录以及与某些政府官员的通讯副本。",
+      "text_en": "In recent days, congressional Democrats have intensified their calls for Guilfoyle to face an investigation or be ousted from her role—or both. In a letter to Guilfoyle on Friday, Rep. Gregory Meeks (D., N.Y.), the top Democrat on the House Foreign Affairs Committee, called for an \"immediate investigation\" into whether the ambassador had violated federal bribery and public corruption laws. Meeks also requested the State Department inspector general investigate whether Guilfoyle had violated federal law, department regulations or ethics requirements. California Rep. Robert Garcia, the top Democrat on the House oversight committee, in a letter to Guilfoyle on Thursday said the reported conduct \"raises serious public corruption and national security concerns\" and requested she provide financial records and copies of her communications with certain government officials.",
+      "sentences": [
+        {
+          "id": "p24.s1",
+          "text_cn": "近几天，国会民主党人加大了呼吁对金伯莉·吉尔福伊尔进行调查或将其从现任职位上解职的力度——或者两者兼而有之。在周五写给金伯莉·吉尔福伊尔的信中，众议院外交事务委员会的首席民主党人、纽约州众议员格雷戈里·米克斯呼吁对大使是否违反了联邦反贿赂和公共腐败法进行“立即调查”。米克斯还要求国务院监察长调查金伯莉·吉尔福伊尔是否违反了联邦法律、部门规章或道德要求。加利福尼亚州众议员罗伯特·加西亚，众议院监督委员会的首席民主党人，在周四写给金伯莉·吉尔福伊尔的信中表示，报道中的行为“引发了对严重公共腐败和国家安全的担忧”，并要求她提供财务记录以及与某些政府官员的通讯副本。",
+          "text_en": "In recent days, congressional Democrats have intensified their calls for Guilfoyle to face an investigation or be ousted from her role—or both. In a letter to Guilfoyle on Friday, Rep. Gregory Meeks (D., N.Y.), the top Democrat on the House Foreign Affairs Committee, called for an \"immediate investigation\" into whether the ambassador had violated federal bribery and public corruption laws. Meeks also requested the State Department inspector general investigate whether Guilfoyle had violated federal law, department regulations or ethics requirements. California Rep. Robert Garcia, the top Democrat on the House oversight committee, in a letter to Guilfoyle on Thursday said the reported conduct \"raises serious public corruption and national security concerns\" and requested she provide financial records and copies of her communications with certain government officials."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p3",
+      "quote_cn": "“你知道，我可以为你提供一切。你值得拥有。”",
+      "quote_en": "“I'm going to make you a lot of f—ing money,”",
+      "speaker_cn": "原文第 3 段直接引述",
+      "role_cn": "Source Block p3",
+      "speaker_en": "Direct Quote (p3)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p4",
+      "quote_cn": "“你们不能不邀请美国驻希腊大使，你知道吗？她应该来亲我的屁股，”",
+      "quote_en": "“You don't have the f—ing U.S., you know, ambassador to Greece not come. She should be kissing my f—ing ass,”",
+      "speaker_cn": "原文第 4 段直接引述",
+      "role_cn": "Source Block p4",
+      "speaker_en": "Direct Quote (p4)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p5",
+      "quote_cn": "“表现得很有礼貌，也很谨慎”",
+      "quote_en": "“gracious and discreet”",
+      "speaker_cn": "原文第 5 段直接引述",
+      "role_cn": "Source Block p5",
+      "speaker_en": "Direct Quote (p5)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q4",
+      "source_block": "p8",
+      "quote_cn": "“我将和他一起飞往巴黎。我这周和他在一起……他和他一起度过了圣诞节。好吗？格施塔德。几乎无处不在。”",
+      "quote_en": "“I'm flying with him to Paris. I'm with him this week.… He spent Christmas with him. OK? Gstaad. Like, everywhere.”",
+      "speaker_cn": "原文第 8 段直接引述",
+      "role_cn": "Source Block p8",
+      "speaker_en": "Direct Quote (p8)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q5",
+      "source_block": "p13",
+      "quote_cn": "“忠实地遵守了国务院的道德规范和礼品申报指南”",
+      "quote_en": "“faithfully followed State Department ethics and gift reporting guidelines.”",
+      "speaker_cn": "原文第 13 段直接引述",
+      "role_cn": "Source Block p13",
+      "speaker_en": "Direct Quote (p13)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p17",
+      "value": "$100",
+      "value_cn": "10万美元",
+      "label_cn": "周三，《华尔街日报》首次发表了短信记录，显示吉尔福伊尔曾要求一位特朗普的…",
+      "label_en": "On Wednesday, the Journal first published text messages show…",
+      "note_cn": "源自正文 [p17]",
+      "note_en": "From paragraph [p17]"
+    }
+  ],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "吉尔福伊尔 2026 年 1 月乘 Aktor 集团 CEO 的私人飞机前往达沃斯，并在录音中承认两位希腊富商资助其奢华旅行。《华尔街日报》此前还披露她曾要求特朗普捐助者向其美国运通账户汇款 10 万美元。特朗普政府高层正在商讨是否将其撤职，预计特朗普很快做决定；国务院监察长正在调查她是否收受私人商人的礼品或好处。",
+    "text_en": "吉尔福伊尔 2026 年 1 月乘 Aktor 集团 CEO 的私人飞机前往达沃斯，并在录音中承认两位希腊富商资助其奢华旅行。《华尔街日报》此前还披露她曾要求特朗普捐助者向其美国运通账户汇款 10 万美元。特朗普政府高层正在商讨是否将其撤职，预计特朗普很快做决定；国务院监察长正在调查她是否收受私人商人的礼品或好处。"
+  },
+  "media": [],
+  "terms": [
+    {
+      "en": "Rebecca Ballhaus",
+      "zh_suggested": "丽贝卡·巴尔豪斯",
+      "note": "待查"
+    },
+    {
+      "en": "Joe Parkinson",
+      "zh_suggested": "乔·帕金森",
+      "note": "待查"
+    },
+    {
+      "en": "Drew Hinshaw",
+      "zh_suggested": "德鲁·欣肖",
+      "note": "待查"
+    },
+    {
+      "en": "Dana Mattioli",
+      "zh_suggested": "达娜·马蒂奥利",
+      "note": "待查"
+    },
+    {
+      "en": "Kimberly Guilfoyle",
+      "zh_suggested": "金伯莉·吉尔福伊尔",
+      "note": "美国驻希腊大使"
+    },
+    {
+      "en": "Alexandros Exarchou",
+      "zh_suggested": "亚历山德罗斯·埃克萨尔霍乌",
+      "note": "待查"
+    },
+    {
+      "en": "Aktor Group",
+      "zh_suggested": "Aktor集团（希腊建筑公司）",
+      "note": "待查"
+    },
+    {
+      "en": "Nikolas Tsakos",
+      "zh_suggested": "尼古拉斯·察科斯",
+      "note": "希腊船运大亨，待查"
+    },
+    {
+      "en": "Tsakos Energy Navigation",
+      "zh_suggested": "Tsakos Energy Navigation（船运公司）",
+      "note": "待查"
+    },
+    {
+      "en": "Eric Trump",
+      "zh_suggested": "埃里克·特朗普"
+    },
+    {
+      "en": "Irene Vantaraki",
+      "zh_suggested": "艾琳·万塔拉基",
+      "note": "待查"
+    },
+    {
+      "en": "Greek House Davos",
+      "zh_suggested": "达沃斯希腊之家",
+      "note": "待查"
+    },
+    {
+      "en": "Marco Rubio",
+      "zh_suggested": "马尔科·鲁比奥",
+      "note": "国务卿"
+    },
+    {
+      "en": "Gregory Meeks",
+      "zh_suggested": "格雷戈里·米克斯",
+      "note": "待查"
+    },
+    {
+      "en": "Robert Garcia",
+      "zh_suggested": "罗伯特·加西亚",
+      "note": "待查"
+    },
+    {
+      "en": "Stephanie Grisham",
+      "zh_suggested": "斯蒂芬妮·格里沙姆",
+      "note": "待查"
+    },
+    {
+      "en": "World Economic Forum",
+      "zh_suggested": "世界经济论坛",
+      "note": "达沃斯"
+    }
+  ]
+}

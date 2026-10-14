@@ -1,0 +1,317 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-027",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T14:05:54Z",
+  "status": "verified",
+  "notes": "Queue task task-ef521893 (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+    "paragraph_count": 12,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 14575,
+    "completion_chars": 51069,
+    "input_tokens": 4846,
+    "output_tokens": 18536,
+    "total_tokens": 23382,
+    "latency_seconds": 136.368
+  },
+  "files": {
+    "raw_html": "E1-027/v1/raw.html",
+    "compiled_html": "E1-027/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-subtle: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c8c0af;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.13);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --navy-text: #eef2f6;\n    --navy-muted: #9eb0c2;\n    --font-serif-cn: 'Noto Serif SC', serif;\n    --font-sans-cn: 'Noto Sans SC', sans-serif;\n    --font-serif-en: 'Lora', Georgia, serif;\n    --font-display: 'Playfair Display', 'Noto Serif SC', serif;\n    --font-ui: 'Inter', 'Noto Sans SC', sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    scroll-behavior: smooth;\n  }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    min-height: 100vh;\n    overflow-x: hidden;\n  }\n\n  /* Language Switching Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  :host([lang=\"zh-CN\"]) .wsj-shadow-body {\n    font-family: var(--font-serif-cn);\n  }\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: var(--font-serif-en);\n  }\n\n  /* Progress Bar */\n  .reading-progress {\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 3px;\n    background: var(--accent);\n    width: 0%;\n    z-index: 1001;\n    transition: width 0.1s ease-out;\n  }\n\n  /* Sticky Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(8px);\n    border-bottom: 1px solid var(--line);\n    padding: 0.75rem 1.5rem;\n  }\n\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-cluster {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n  }\n\n  .wsj-monogram {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.25rem;\n    letter-spacing: 0.04em;\n    color: var(--ink);\n    text-decoration: none;\n  }\n\n  .brand-divider {\n    width: 1px;\n    height: 16px;\n    background: var(--line-strong);\n  }\n\n  .section-badge {\n    font-family: var(--font-ui);\n    font-size: 0.75rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n  }\n\n  .lang-toggle {\n    display: inline-flex;\n    align-items: center;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-radius: 999px;\n    padding: 2px;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-ui);\n    font-size: 0.75rem;\n    font-weight: 600;\n    padding: 0.3rem 0.75rem;\n    border-radius: 999px;\n    cursor: pointer;\n    color: var(--muted);\n    transition: all 0.2s ease;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-btn[data-lang=\"zh-CN\"],\n  :host([lang=\"en\"]) .lang-btn[data-lang=\"en\"] {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Hero Header */\n  .article-hero {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 1px solid var(--ink);\n  }\n\n  .hero-kicker-row {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n  }\n\n  .kicker-pill {\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.2rem 0.55rem;\n    font-weight: 600;\n    letter-spacing: 0.08em;\n  }\n\n  .article-title {\n    font-family: var(--font-display);\n    font-weight: 800;\n    color: var(--ink);\n    line-height: 1.22;\n    font-size: clamp(2rem, 4.2vw, 3.35rem);\n    max-width: 980px;\n    margin-bottom: 1.35rem;\n  }\n\n  :host([lang=\"en\"]) .article-title {\n    line-height: 1.12;\n    letter-spacing: -0.015em;\n  }\n\n  .article-dek {\n    font-size: clamp(1.08rem, 1.6vw, 1.3rem);\n    line-height: 1.68;\n    color: var(--muted);\n    max-width: 840px;\n    margin-bottom: 2rem;\n    font-weight: 400;\n  }\n\n  .byline-bar {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n    padding-top: 1.25rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-ui);\n    font-size: 0.85rem;\n    color: var(--muted);\n  }\n\n  .byline-authors strong {\n    color: var(--ink);\n    font-weight: 600;\n  }\n\n  .byline-meta {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n  }\n\n  /* Main Container & Asymmetric Editorial Grid */\n  .editorial-container {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2.75rem 1.5rem 4.5rem;\n  }\n\n  .editorial-chapter {\n    display: grid;\n    grid-template-columns: minmax(0, 1fr) 340px;\n    gap: 3.5rem;\n    align-items: start;\n    margin-bottom: 3.5rem;\n  }\n\n  .prose-column {\n    max-width: 680px;\n  }\n\n  .rail-column {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    gap: 1.75rem;\n  }\n\n  /* Prose Typography */\n  .prose-p {\n    font-size: 1.125rem;\n    line-height: 1.88;\n    color: var(--body);\n    margin-bottom: 1.55rem;\n    letter-spacing: 0.01em;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    font-size: 1.14rem;\n    line-height: 1.8;\n    letter-spacing: 0;\n  }\n\n  /* Lead paragraph styling (NO ::first-letter on Chinese) */\n  .prose-lead {\n    font-size: 1.24rem;\n    line-height: 1.82;\n    color: var(--ink);\n    font-weight: 600;\n    border-left: 3px solid var(--accent);\n    padding-left: 1.15rem;\n    margin-bottom: 1.85rem;\n  }\n\n  :host([lang=\"en\"]) .prose-lead {\n    font-size: 1.25rem;\n    line-height: 1.72;\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);\n    color: inherit;\n    padding: 0 2px;\n    font-weight: 600;\n    border-bottom: 1px solid rgba(184, 93, 25, 0.45);\n  }\n\n  /* Official Response Micro-Callout (for p5) */\n  .official-note {\n    font-family: var(--font-ui);\n    font-size: 0.95rem;\n    line-height: 1.6;\n    color: var(--muted);\n    background: var(--paper-card);\n    border-left: 3px solid var(--ink);\n    padding: 0.85rem 1.15rem;\n    margin: 1.5rem 0 1.75rem;\n  }\n\n  /* Split Sentence Climactic Quote Box */\n  .stage-quote-box {\n    margin: 1.75rem 0 2rem;\n    padding: 1.5rem 1.75rem;\n    background: var(--paper-card);\n    border-top: 2px solid var(--ink);\n    border-bottom: 1px solid var(--line-strong);\n  }\n\n  .stage-quote-box .prose-p {\n    margin-bottom: 0.85rem;\n    font-size: 1.05rem;\n    color: var(--muted);\n  }\n\n  .verdict-quote {\n    font-family: var(--font-display);\n    font-size: clamp(1.3rem, 2vw, 1.58rem);\n    font-weight: 700;\n    line-height: 1.45;\n    color: var(--ink);\n    border-left: 3px solid var(--accent);\n    padding-left: 1rem;\n    margin-top: 0.5rem;\n  }\n\n  /* Sidebar Dossier & Derived Quote Cards */\n  .dossier-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem 1.4rem;\n  }\n\n  .dossier-header {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n    margin-bottom: 0.45rem;\n    font-weight: 700;\n  }\n\n  .dossier-title {\n    font-family: var(--font-display);\n    font-size: 1.08rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.9rem;\n    padding-bottom: 0.6rem;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .dossier-list {\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 0.85rem;\n  }\n\n  .dossier-item {\n    font-family: var(--font-ui);\n    font-size: 0.84rem;\n    line-height: 1.55;\n    color: var(--body);\n  }\n\n  .dossier-item strong {\n    display: block;\n    color: var(--ink);\n    font-weight: 600;\n    margin-bottom: 0.15rem;\n  }\n\n  .pull-quote {\n    background: var(--paper-card);\n    border-top: 2px solid var(--accent);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 1.35rem 1.35rem;\n  }\n\n  .pull-quote .quote-text {\n    font-family: var(--font-display);\n    font-size: 1.08rem;\n    font-weight: 700;\n    line-height: 1.58;\n    color: var(--ink);\n    margin-bottom: 0.75rem;\n  }\n\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n  }\n\n  /* Bespoke Graphic Interlude (Political Calculus SVG) */\n  .graphic-interlude {\n    margin: 1rem 0 3.75rem;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 2rem 1.75rem;\n  }\n\n  .graphic-header {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1rem;\n    margin-bottom: 1.5rem;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid var(--line-strong);\n  }\n\n  .graphic-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--accent);\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    font-weight: 700;\n    margin-bottom: 0.35rem;\n  }\n\n  .graphic-title {\n    font-family: var(--font-display);\n    font-size: 1.4rem;\n    color: var(--ink);\n    font-weight: 800;\n  }\n\n  .graphic-sub {\n    font-family: var(--font-ui);\n    font-size: 0.86rem;\n    color: var(--muted);\n    max-width: 520px;\n  }\n\n  .svg-wrapper {\n    width: 100%;\n    overflow: hidden;\n  }\n\n  .svg-wrapper svg {\n    width: 100%;\n    height: auto;\n    display: block;\n  }\n\n  /* Memoir Feature Box (107 Days) */\n  .memoir-chapter {\n    background: var(--navy-bg);\n    color: var(--navy-text);\n    padding: 3rem 2.25rem;\n    margin-bottom: 3.75rem;\n    border-top: 4px solid var(--accent);\n  }\n\n  .memoir-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 1fr) 320px;\n    gap: 3rem;\n    align-items: start;\n  }\n\n  .memoir-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: #e58d4e;\n    margin-bottom: 0.5rem;\n  }\n\n  .memoir-heading {\n    font-family: var(--font-display);\n    font-size: 1.65rem;\n    font-weight: 700;\n    color: #ffffff;\n    margin-bottom: 1.5rem;\n    padding-bottom: 0.85rem;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.16);\n  }\n\n  .memoir-chapter .prose-p {\n    color: #e6ecf2;\n  }\n\n  .memoir-chapter mark.ed-hl {\n    background: rgba(229, 141, 78, 0.22);\n    border-bottom-color: #e58d4e;\n    color: #ffffff;\n  }\n\n  .memoir-chapter .pull-quote {\n    background: var(--navy-card);\n    border-top: 2px solid #e58d4e;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.15);\n  }\n\n  .memoir-chapter .pull-quote .quote-text {\n    color: #ffffff;\n  }\n\n  .memoir-chapter .pull-quote .quote-attrib {\n    color: var(--navy-muted);\n  }\n\n  .career-timeline {\n    background: var(--navy-card);\n    border: 1px solid rgba(255, 255, 255, 0.14);\n    padding: 1.25rem;\n  }\n\n  .career-timeline-title {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: #e58d4e;\n    margin-bottom: 0.85rem;\n  }\n\n  .timeline-step {\n    position: relative;\n    padding-left: 1rem;\n    border-left: 2px solid rgba(229, 141, 78, 0.45);\n    margin-bottom: 0.9rem;\n    font-family: var(--font-ui);\n    font-size: 0.82rem;\n    line-height: 1.5;\n    color: #dbe3ec;\n  }\n\n  .timeline-step:last-child {\n    margin-bottom: 0;\n  }\n\n  .timeline-step span.year {\n    display: block;\n    font-family: var(--font-mono);\n    font-weight: 700;\n    color: #ffffff;\n    font-size: 0.76rem;\n  }\n\n  /* Final Chapter Closing Quote */\n  .closing-coda {\n    margin-top: 1.25rem;\n    padding: 1.35rem 1.5rem;\n    background: var(--paper-card);\n    border-left: 4px solid var(--ink);\n  }\n\n  .closing-coda .prose-p {\n    margin-bottom: 0;\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  /* Footer */\n  .editorial-footer {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2rem 1.5rem 4rem;\n    border-top: 1px solid var(--line-strong);\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 1rem;\n    font-family: var(--font-ui);\n    font-size: 0.8rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Design */\n  @media (max-width: 960px) {\n    .editorial-chapter,\n    .memoir-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n\n    .prose-column {\n      max-width: 100%;\n    }\n  }\n\n  @media (max-width: 600px) {\n    .masthead {\n      padding: 0.65rem 1rem;\n    }\n    .article-hero {\n      padding: 2.25rem 1rem 1.75rem;\n    }\n    .editorial-container {\n      padding: 2rem 1rem 3rem;\n    }\n    .memoir-chapter {\n      padding: 2rem 1.15rem;\n    }\n    .graphic-interlude {\n      padding: 1.35rem 1rem;\n    }\n    .prose-p {\n      font-size: 1.06rem;\n      line-height: 1.82;\n    }\n    .prose-lead {\n      font-size: 1.14rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div class=\"reading-progress\" id=\"progressBar\"></div>\n\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <a href=\"#top\" class=\"wsj-monogram\">WSJ</a>\n      <span class=\"brand-divider\"></span>\n      <span class=\"section-badge\">\n        <span class=\"lang-cn\">美国新闻 · 2028 选战前瞻</span>\n        <span class=\"lang-en\">U.S. News · 2028 Campaign Watch</span>\n      </span>\n    </div>\n    <div class=\"lang-toggle\" role=\"group\" aria-label=\"Language switcher\">\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"zh-CN\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<article id=\"top\">\n  <!-- Editorial Hero Header -->\n  <header class=\"article-hero\">\n    <div class=\"hero-kicker-row\">\n      <span class=\"kicker-pill\">\n        <span class=\"lang-cn\">独家内幕</span>\n        <span class=\"lang-en\">Inside Politics</span>\n      </span>\n      <span>E1-027 · Page A4</span>\n      <span>•</span>\n      <span>\n        <span class=\"lang-cn\">民主党战略与家族抉择</span>\n        <span class=\"lang-en\">Democratic Strategy &amp; Personal Calculus</span>\n      </span>\n    </div>\n\n    <h1 class=\"article-title\" data-ref=\"title\"><span class=\"lang-cn\">卡玛拉·哈里斯的丈夫对她可能参加总统竞选一事持保留态度</span><span class=\"lang-en\">Harris’s Husband Has Reservations On Her Potential Presidential Run</span></h1>\n\n    <p class=\"article-dek\">\n      <span class=\"lang-cn\">在前副总统哈里斯通过中期选举筹款、招聘团队与奔赴摇摆州为潜在的第三次白宫竞选铺路之际，她的丈夫道格·埃姆霍夫及部分党内捐助者私下流露出审慎与保留。</span>\n      <span class=\"lang-en\">As the former vice president tests the waters through midterm fundraising, staff hires, and battleground travel, Doug Emhoff and key party donors privately weigh the steep odds of a third White House bid.</span>\n    </p>\n\n    <div class=\"byline-bar\">\n      <div class=\"byline-authors\">\n        <span class=\"lang-cn\">作者：<strong>Jessica Toonkel</strong>、<strong>Emily Glazer</strong> 及 <strong>Ken Thomas</strong></span>\n        <span class=\"lang-en\">By <strong>Jessica Toonkel</strong>, <strong>Emily Glazer</strong> and <strong>Ken Thomas</strong></span>\n      </div>\n      <div class=\"byline-meta\">\n        <span class=\"lang-cn\">2026年10月12日 · 华盛顿 / 洛杉矶</span>\n        <span class=\"lang-en\">October 12, 2026 · Washington / Los Angeles</span>\n      </div>\n    </div>\n  </header>\n\n  <main class=\"editorial-container\">\n\n    <!-- CHAPTER I: The Pre-Campaign Groundwork & Private Reservations (p1 .. p5) -->\n    <section class=\"editorial-chapter\" aria-label=\"Opening Narrative\">\n      <div class=\"prose-column\">\n        <p class=\"prose-p prose-lead\" data-ref=\"p1\" data-hl=\"第三次总统竞选 | 道格·埃姆霍夫 | 成功的可能性很小 | third presidential campaign | Doug Emhoff | long shot\"><span class=\"lang-cn\">据了解情况的人士透露，前副总统卡玛拉·哈里斯正在为可能进行的<mark class=\"ed-hl\">第三次总统竞选</mark>做准备，她的丈夫<mark class=\"ed-hl\">道格·埃姆霍夫</mark>私下告诉一些人，他更希望她不要参加竞选，而且一些捐助者也直接告诉她，如果她参加竞选，<mark class=\"ed-hl\">成功的可能性很小</mark>。</span><span class=\"lang-en\">As former Vice President Kamala Harris lays the groundwork for a potential <mark class=\"ed-hl\">third presidential campaign</mark>, her husband <mark class=\"ed-hl\">Doug Emhoff</mark> has privately told some people he would prefer she didn't run and some donors have told her directly that a bid would be a <mark class=\"ed-hl\">long shot</mark>, said people familiar with the conversations.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"与主要捐助者会面、招聘工作人员 | 11 月中期选举 | speaking with major donors, hiring staff | November midterm elections\"><span class=\"lang-cn\">哈里斯曾表示，她尚未决定是否要再次竞选总统，但她已经采取了一些可能为竞选做准备的措施，包括<mark class=\"ed-hl\">与主要捐助者会面、招聘工作人员</mark>，并前往关键州，以支持在 <mark class=\"ed-hl\">11 月中期选举</mark>中参选的民主党候选人。</span><span class=\"lang-en\">Harris has said she is undecided on whether to launch another run for the White House, but she has taken steps that could be a precursor to such a bid, including <mark class=\"ed-hl\">speaking with major donors, hiring staff</mark> and traveling to battleground states to boost Democratic candidates in the <mark class=\"ed-hl\">November midterm elections</mark>.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p3.s1\"><span class=\"lang-cn\">公开场合，她表示，她目前专注于中期选举，希望民主党能够赢得众议院和参议院的控制权，并赢得几个州长职位。</span><span class=\"lang-en\">Publicly, she has said she remains focused on the midterms, in which Democrats hope to win control of the House and Senate and pick up several gubernatorial seats.</span></p>\n\n        <div class=\"stage-quote-box\">\n          <p class=\"prose-p\" data-ref=\"p3.s2\" data-hl=\"密歇根州 | 全国有色人种协进会 | NAACP event in Michigan\"><span class=\"lang-cn\">“我还没有决定是否要再次竞选，”哈里斯上个月在<mark class=\"ed-hl\">密歇根州</mark>的一次<mark class=\"ed-hl\">全国有色人种协进会</mark>活动上说道，当时观众为她进行了长时间的起立鼓掌。</span><span class=\"lang-en\">\"I have not decided if I'm going to run again,\" Harris said at a <mark class=\"ed-hl\">NAACP event in Michigan</mark> last month as the audience gave her a lengthy standing ovation.</span></p>\n          <blockquote class=\"verdict-quote\" data-ref=\"p3.s3\"><span class=\"lang-cn\">“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”</span><span class=\"lang-en\">\"I do sincerely believe '28 won't matter if we don't get through '26.\"</span></blockquote>\n        </div>\n\n        <p class=\"prose-p\" data-ref=\"p4\"><span class=\"lang-cn\">一些了解哈里斯并与她共事的人对她是否会再次竞选持怀疑态度。</span><span class=\"lang-en\">Some people who have known and worked with Harris are skeptical she will mount another run.</span></p>\n\n        <div class=\"official-note\">\n          <p class=\"prose-p\" style=\"margin-bottom:0; font-size:0.95rem;\" data-ref=\"p5\"><span class=\"lang-cn\">哈里斯的发言人拒绝发表评论。</span><span class=\"lang-en\">A spokesman for Harris declined to comment.</span></p>\n        </div>\n      </div>\n\n      <aside class=\"rail-column\">\n        <div class=\"dossier-card\">\n          <div class=\"dossier-header\">\n            <span class=\"lang-cn\">档案摘要 · 竞选前哨信号</span>\n            <span class=\"lang-en\">Dossier · Pre-Campaign Signals</span>\n          </div>\n          <h3 class=\"dossier-title\">\n            <span class=\"lang-cn\">公开表态与私下阻力</span>\n            <span class=\"lang-en\">Public Posture vs. Private Headwinds</span>\n          </h3>\n          <ul class=\"dossier-list\">\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">铺路动作已启动</span>\n                <span class=\"lang-en\">Groundwork Underway</span>\n              </strong>\n              <span class=\"lang-cn\">会见主要捐助者、招募工作团队，并赴关键摇摆州为 11 月中期选举候选人助阵。</span>\n              <span class=\"lang-en\">Meeting major donors, hiring staff, and traveling to battleground states ahead of the November midterms.</span>\n            </li>\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">配偶私下保留意见</span>\n                <span class=\"lang-en\">Spousal Reservations</span>\n              </strong>\n              <span class=\"lang-cn\">丈夫道格·埃姆霍夫私下向部分人士透露，他更倾向于哈里斯不再参选。</span>\n              <span class=\"lang-en\">Husband Doug Emhoff has privately told associates he would prefer she not launch another run.</span>\n            </li>\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">金主直言胜算渺茫</span>\n                <span class=\"lang-en\">Blunt Donor Warnings</span>\n              </strong>\n              <span class=\"lang-cn\">部分捐助者已直接向哈里斯表明，再次竞选总统的成功概率极低。</span>\n              <span class=\"lang-en\">Some donors have told Harris directly that a third presidential bid would be a long shot.</span>\n            </li>\n          </ul>\n        </div>\n      </aside>\n    </section>\n\n    <!-- BESPOKE SVG DIAGRAM: 2024 Coalescence vs. 2028 Crowded Field & 2026 Midterm Pivot -->\n    <section class=\"graphic-interlude\" aria-label=\"Strategic Calculus Diagram\">\n      <div class=\"graphic-header\">\n        <div>\n          <div class=\"graphic-kicker\">\n            <span class=\"lang-cn\">政治格局对比 · 2024 vs. 2028</span>\n            <span class=\"lang-en\">Political Landscape · 2024 vs. 2028</span>\n          </div>\n          <h2 class=\"graphic-title\">\n            <span class=\"lang-cn\">从“全党迅速集结”到“多方阻力与激烈初选”</span>\n            <span class=\"lang-en\">From Rapid Party Coalescence to a Crowded Field</span>\n          </h2>\n        </div>\n        <p class=\"graphic-sub\">\n          <span class=\"lang-cn\">哈里斯若决定冲击第三次总统竞选，所面临的党内生态与 2024 年拜登退选后的紧急接棒截然不同。</span>\n          <span class=\"lang-en\">A potential third White House bid faces a fundamentally different Democratic ecosystem than the rapid 2024 handoff.</span>\n        </p>\n      </div>\n\n      <div class=\"svg-wrapper\">\n        <svg viewbox=\"0 0 920 340\" width=\"100%\" role=\"img\" aria-label=\"Comparison of 2024 and 2028 campaign dynamics\">\n          <defs>\n            <marker id=\"arrow-ink\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n              <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#141413\"></path>\n            </marker>\n            <marker id=\"arrow-accent\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n              <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#b85d19\"></path>\n            </marker>\n          </defs>\n\n          <!-- Background Panels -->\n          <rect x=\"30\" y=\"30\" width=\"265\" height=\"275\" rx=\"4\" fill=\"#faf8f4\" stroke=\"#c8c0af\" stroke-width=\"1.5\"></rect>\n          <rect x=\"330\" y=\"30\" width=\"260\" height=\"275\" rx=\"4\" fill=\"#faf8f4\" stroke=\"#141413\" stroke-width=\"2\"></rect>\n          <rect x=\"625\" y=\"30\" width=\"265\" height=\"275\" rx=\"4\" fill=\"#faf8f4\" stroke=\"#b85d19\" stroke-width=\"2\"></rect>\n\n          <!-- Top Header Bars -->\n          <rect x=\"30\" y=\"30\" width=\"265\" height=\"36\" fill=\"#ebe5d8\"></rect>\n          <rect x=\"330\" y=\"30\" width=\"260\" height=\"36\" fill=\"#141413\"></rect>\n          <rect x=\"625\" y=\"30\" width=\"265\" height=\"36\" fill=\"#b85d19\"></rect>\n\n          <!-- Stage 1 Text (2024) -->\n          <text x=\"46\" y=\"53\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">01 · 2024年（《107天》周期）</tspan>\n            <tspan class=\"lang-en\">01 · 2024 (\"107 DAYS\" CYCLE)</tspan>\n          </text>\n          <text x=\"48\" y=\"96\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"15\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">拜登退选后全党团结一致</tspan>\n            <tspan class=\"lang-en\">Party Coalesced After Biden Exit</tspan>\n          </text>\n          <line x1=\"48\" y1=\"112\" x2=\"275\" y2=\"112\" stroke=\"#e4dfd3\" stroke-width=\"1\"></line>\n          <circle cx=\"56\" cy=\"140\" r=\"4\" fill=\"#646059\"></circle>\n          <text x=\"68\" y=\"144\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">无党内竞争性初选消耗</tspan>\n            <tspan class=\"lang-en\">Uncontested rapid nomination</tspan>\n          </text>\n          <circle cx=\"56\" cy=\"178\" r=\"4\" fill=\"#646059\"></circle>\n          <text x=\"68\" y=\"182\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">2020年埃姆霍夫辞去律所职务</tspan>\n            <tspan class=\"lang-en\">Emhoff left law firm in 2020</tspan>\n          </text>\n          <circle cx=\"56\" cy=\"216\" r=\"4\" fill=\"#b85d19\"></circle>\n          <text x=\"68\" y=\"220\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">2024年10月人身攻击带来沉重压力</tspan>\n            <tspan class=\"lang-en\">Oct. 2024 personal attacks took toll</tspan>\n          </text>\n          <rect x=\"48\" y=\"246\" width=\"228\" height=\"38\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#e4dfd3\"></rect>\n          <text x=\"60\" y=\"270\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" fill=\"#646059\">\n            <tspan class=\"lang-cn\">核心回忆：“我们必须团结一致”</tspan>\n            <tspan class=\"lang-en\">Memoir: \"We had to stay united\"</tspan>\n          </text>\n\n          <!-- Connector 1 -> 2 -->\n          <line x1=\"295\" y1=\"168\" x2=\"326\" y2=\"168\" stroke=\"#141413\" stroke-width=\"1.8\" marker-end=\"url(#arrow-ink)\"></line>\n\n          <!-- Stage 2 Text (2026 Midterms) -->\n          <text x=\"346\" y=\"53\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\" fill=\"#faf8f4\">\n            <tspan class=\"lang-cn\">02 · 2026年11月（中期选举前哨）</tspan>\n            <tspan class=\"lang-en\">02 · NOV. 2026 (MIDTERM PIVOT)</tspan>\n          </text>\n          <text x=\"348\" y=\"96\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"15\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">公开聚焦中期选举、私下铺路</tspan>\n            <tspan class=\"lang-en\">Public Focus vs. Groundwork</tspan>\n          </text>\n          <line x1=\"348\" y1=\"112\" x2=\"572\" y2=\"112\" stroke=\"#e4dfd3\" stroke-width=\"1\"></line>\n          <circle cx=\"356\" cy=\"140\" r=\"4\" fill=\"#141413\"></circle>\n          <text x=\"368\" y=\"144\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">争夺参众两院控制权及州长席位</tspan>\n            <tspan class=\"lang-en\">Target House, Senate &amp; Governors</tspan>\n          </text>\n          <circle cx=\"356\" cy=\"178\" r=\"4\" fill=\"#141413\"></circle>\n          <text x=\"368\" y=\"182\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">加州私人筹款助阵威州、内州州长</tspan>\n            <tspan class=\"lang-en\">CA fundraisers for WI &amp; NV nominees</tspan>\n          </text>\n          <circle cx=\"356\" cy=\"216\" r=\"4\" fill=\"#141413\"></circle>\n          <text x=\"368\" y=\"220\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">DNC 连线超 2,000 名志愿者催票</tspan>\n            <tspan class=\"lang-en\">DNC call with 2,000+ volunteers</tspan>\n          </text>\n          <rect x=\"348\" y=\"246\" width=\"224\" height=\"38\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#c8c0af\"></rect>\n          <text x=\"360\" y=\"270\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">表态：“尚未决定是否再次参选”</tspan>\n            <tspan class=\"lang-en\">Status: \"Undecided\" on 2028 bid</tspan>\n          </text>\n\n          <!-- Connector 2 -> 3 -->\n          <line x1=\"590\" y1=\"168\" x2=\"621\" y2=\"168\" stroke=\"#b85d19\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" marker-end=\"url(#arrow-accent)\"></line>\n\n          <!-- Stage 3 Text (2028) -->\n          <text x=\"641\" y=\"53\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\" fill=\"#faf8f4\">\n            <tspan class=\"lang-cn\">03 · 2028年（潜在第三次竞选）</tspan>\n            <tspan class=\"lang-en\">03 · 2028 (POTENTIAL 3RD RUN)</tspan>\n          </text>\n          <text x=\"643\" y=\"96\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"15\" font-weight=\"700\" fill=\"#b85d19\">\n            <tspan class=\"lang-cn\">多重党内疑虑与激烈竞争</tspan>\n            <tspan class=\"lang-en\">Steep Skepticism &amp; Crowded Field</tspan>\n          </text>\n          <line x1=\"643\" y1=\"112\" x2=\"870\" y2=\"112\" stroke=\"#e4dfd3\" stroke-width=\"1\"></line>\n          <circle cx=\"651\" cy=\"140\" r=\"4\" fill=\"#b85d19\"></circle>\n          <text x=\"663\" y=\"144\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">党内呼唤推出全新候选人面孔</tspan>\n            <tspan class=\"lang-en\">Calls for a fresh 2028 candidate</tspan>\n          </text>\n          <circle cx=\"651\" cy=\"178\" r=\"4\" fill=\"#b85d19\"></circle>\n          <text x=\"663\" y=\"182\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">部分金主对她近期意图感到不安</tspan>\n            <tspan class=\"lang-en\">Donors uneasy; warn of \"long shot\"</tspan>\n          </text>\n          <circle cx=\"651\" cy=\"216\" r=\"4\" fill=\"#b85d19\"></circle>\n          <text x=\"663\" y=\"220\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"12.5\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">埃姆霍夫虽有担忧但若参选仍会支持</tspan>\n            <tspan class=\"lang-en\">Emhoff wary, yet expected to back her</tspan>\n          </text>\n          <rect x=\"643\" y=\"246\" width=\"228\" height=\"38\" rx=\"3\" fill=\"#faf0e6\" stroke=\"#b85d19\"></rect>\n          <text x=\"655\" y=\"270\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" fill=\"#b85d19\">\n            <tspan class=\"lang-cn\">前景：预计面临拥挤且激烈的竞争</tspan>\n            <tspan class=\"lang-en\">Outlook: Expected crowded primary</tspan>\n          </text>\n        </svg>\n      </div>\n    </section>\n\n    <!-- CHAPTER II: Party Skepticism & Emhoff's Stance (p6 .. p7) -->\n    <section class=\"editorial-chapter\" aria-label=\"Party Dynamics\">\n      <div class=\"prose-column\">\n        <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"推出一位新的候选人 | 面临激烈的竞争 | fresh candidate in the 2028 election | crowded field\"><span class=\"lang-cn\">许多民主党人，包括一些与她关系密切的人，认为该党需要在 2028 年的选举中<mark class=\"ed-hl\">推出一位新的候选人</mark>。与 2024 年不同，当时在拜登退出后，该党团结在哈里斯周围，如果她再次竞选，预计她将<mark class=\"ed-hl\">面临激烈的竞争</mark>。</span><span class=\"lang-en\">Many Democrats, including some who remain close to her, think the party needs to put forward a <mark class=\"ed-hl\">fresh candidate in the 2028 election</mark>. Unlike in 2024, when the party coalesced around Harris in the aftermath of Biden's exit, she is expected to face a <mark class=\"ed-hl\">crowded field</mark> if she were to run again.</span></p>\n        <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"表达对再次竞选的担忧 | 如果她决定竞选，他会支持她 | shared concerns with others | support her if she decides to run\"><span class=\"lang-cn\">埃姆霍夫是那些向他人<mark class=\"ed-hl\">表达对再次竞选的担忧</mark>的人之一，但与他关系密切的人预计，<mark class=\"ed-hl\">如果她决定竞选，他会支持她</mark>。</span><span class=\"lang-en\">Emhoff is among those who have <mark class=\"ed-hl\">shared concerns with others</mark> about another run, though close to him expect he will <mark class=\"ed-hl\">support her if she decides to run</mark>.</span></p>\n      </div>\n\n      <aside class=\"rail-column\">\n        <blockquote class=\"pull-quote\" data-derive=\"q1\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“我真诚地认为，如果我们在 2026 年不能取得成功，那么 2028 年将毫无意义。”</span><span class=\"lang-en\">“I do sincerely believe '28 won't matter if we don't get through '26.”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 3 段直接引述 · Source Block p3</span><span class=\"lang-en\">— Direct Quote (p3), Reported in article text</span></footer>\n        </blockquote>\n      </aside>\n    </section>\n\n    <!-- CHAPTER III: Inside \"107 Days\" — Sacrifice, Toll & Return to Law (p8 .. p10) -->\n    <section class=\"memoir-chapter\" aria-label=\"107 Days Memoir Excerpt\">\n      <div class=\"memoir-grid\">\n        <div class=\"prose-column\">\n          <div class=\"memoir-kicker\">\n            <span class=\"lang-cn\">回忆录透视 · 《107 天》</span>\n            <span class=\"lang-en\">Memoir Insight · \"107 Days\"</span>\n          </div>\n          <h2 class=\"memoir-heading\">\n            <span class=\"lang-cn\">从律所辞职的牺牲到选战风暴中的家庭防线</span>\n            <span class=\"lang-en\">Sacrifice, Personal Assaults, and Staying United</span>\n          </h2>\n\n          <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"《107 天》 | 巨大的牺牲 | 他律师事务所的最后一天 | 107 Days | huge sacrifice | last day at his law firm\"><span class=\"lang-cn\">在她的回忆录<mark class=\"ed-hl\">《107 天》</mark>中，哈里斯描述她的丈夫既保护她，又支持她，并指出，当她于 2020 年被选为拜登的竞选伙伴时，“他欣然地做出了<mark class=\"ed-hl\">巨大的牺牲</mark>，而且没有丝毫怨恨。”她写道：“他知道，在我们的新职位中，必须避免任何利益冲突的出现。所以，那是在<mark class=\"ed-hl\">他律师事务所的最后一天</mark>。”</span><span class=\"lang-en\">In \"<mark class=\"ed-hl\">107 Days</mark>,\" her memoir of the 2024 campaign, Harris describes her husband as protective and supportive, noting that when she was chosen to be Biden's running mate in 2020, \"he made a <mark class=\"ed-hl\">huge sacrifice</mark> gladly and without bitterness.\" She wrote, \"he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his <mark class=\"ed-hl\">last day at his law firm</mark>.\"</span></p>\n\n          <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"2024 年 10 月 | 人身攻击 | 我们不能互相攻击 | October 2024 | personal assaults | We can't turn on each other\"><span class=\"lang-cn\">她写道，在 <mark class=\"ed-hl\">2024 年 10 月</mark>，“对我发起的攻击，以及他所经历的许多<mark class=\"ed-hl\">人身攻击</mark>，最终开始产生影响。”她描述了他们之间的一次争论，埃姆霍夫告诉她：“<mark class=\"ed-hl\">我们不能互相攻击</mark>。”她写道：“面对来自四面八方的攻击，我们必须团结一致。”</span><span class=\"lang-en\">She writes that in <mark class=\"ed-hl\">October 2024</mark>, \"the attacks on me, and the many <mark class=\"ed-hl\">personal assaults</mark> he'd been experiencing were finally taking a toll.\" She describes an argument they had and Emhoff telling her, \"<mark class=\"ed-hl\">We can't turn on each other</mark>,\" he said. She wrote, \"With the hits coming from every direction, we had to stay united.\"</span></p>\n\n          <p class=\"prose-p\" style=\"margin-bottom: 0;\" data-ref=\"p10\" data-hl=\"洛杉矶 | Willkie Farr &amp; Gallagher | Los Angeles\"><span class=\"lang-cn\">离开华盛顿后，埃姆霍夫返回<mark class=\"ed-hl\">洛杉矶</mark>，在著名的律师事务所 <mark class=\"ed-hl\">Willkie Farr &amp; Gallagher</mark>（律师事务所）担任律师。</span><span class=\"lang-en\">Since leaving Washington, Emhoff has returned to work as an attorney in <mark class=\"ed-hl\">Los Angeles</mark> at white shoe law firm <mark class=\"ed-hl\">Willkie Farr &amp; Gallagher</mark> LLP.</span></p>\n        </div>\n\n        <aside class=\"rail-column\">\n          <blockquote class=\"pull-quote\" data-derive=\"q2\">\n            <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“他知道，在我们的新职位中，必须避免任何利益冲突的出现。所以，那是在他律师事务所的最后一天。”</span><span class=\"lang-en\">“he knew it was essential that there be no appearance of conflicts of interest in our new roles. So that was his last day at his law firm.”</span></p>\n            <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 8 段直接引述 · Source Block p8</span><span class=\"lang-en\">— Direct Quote (p8), Reported in article text</span></footer>\n          </blockquote>\n\n          <blockquote class=\"pull-quote\" data-derive=\"q3\">\n            <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“面对来自四面八方的攻击，我们必须团结一致。”</span><span class=\"lang-en\">“With the hits coming from every direction, we had to stay united.”</span></p>\n            <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 9 段直接引述 · Source Block p9</span><span class=\"lang-en\">— Direct Quote (p9), Reported in article text</span></footer>\n          </blockquote>\n\n          <div class=\"career-timeline\">\n            <div class=\"career-timeline-title\">\n              <span class=\"lang-cn\">道格·埃姆霍夫轨迹</span>\n              <span class=\"lang-en\">Doug Emhoff Trajectory</span>\n            </div>\n            <div class=\"timeline-step\">\n              <span class=\"year\">2020</span>\n              <span class=\"lang-cn\">哈里斯获选为拜登竞选伙伴后，为避免利益冲突离开原律师事务所。</span>\n              <span class=\"lang-en\">Leaves his law firm to avoid any appearance of conflicts of interest.</span>\n            </div>\n            <div class=\"timeline-step\">\n              <span class=\"year\">2024.10</span>\n              <span class=\"lang-cn\">竞选冲刺期承受大量人身攻击，夫妻二人在争执后强调“必须团结一致”。</span>\n              <span class=\"lang-en\">Personal assaults take a toll during the campaign; urges unity under pressure.</span>\n            </div>\n            <div class=\"timeline-step\">\n              <span class=\"year\">Post-D.C.</span>\n              <span class=\"lang-cn\">离开华盛顿返回洛杉矶，加入著名律所 Willkie Farr &amp; Gallagher 执业。</span>\n              <span class=\"lang-en\">Returns to Los Angeles to practice at white shoe firm Willkie Farr &amp; Gallagher LLP.</span>\n            </div>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <!-- CHAPTER IV: Donor Unease, California Fundraisers & DNC Mobilization (p11 .. p12) -->\n    <section class=\"editorial-chapter\" style=\"margin-bottom: 1rem;\" aria-label=\"Fundraising and Mobilization\">\n      <div class=\"prose-column\">\n        <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"让一些捐助者对她的意图感到不安 | 圣莫尼卡 | 戴维·克劳利 | 亚伦·福特 | donors uneasy about her intentions | Santa Monica | David Crowley | Aaron Ford\"><span class=\"lang-cn\">据一些消息人士称，卡玛拉·哈里斯最近的一些举动<mark class=\"ed-hl\">让一些捐助者对她的意图感到不安</mark>。在选举前的几周里，哈里斯出现在加利福尼亚州的一些私人筹款活动中，其中包括在<mark class=\"ed-hl\">圣莫尼卡</mark>为密尔沃基县行政长官<mark class=\"ed-hl\">戴维·克劳利</mark>举办的活动，克劳利是民主党提名的威斯康星州州长候选人；以及为内华达州司法部长<mark class=\"ed-hl\">亚伦·福特</mark>举办的活动，福特是民主党提名的内华达州州长候选人。</span><span class=\"lang-en\">Some of Harris's recent moves have made some <mark class=\"ed-hl\">donors uneasy about her intentions</mark>, some of the people said. In the weeks leading up to the midterms, Harris has appeared at private fundraisers in California including an event in <mark class=\"ed-hl\">Santa Monica</mark> for Milwaukee County Executive <mark class=\"ed-hl\">David Crowley</mark>, the party's nominee for governor of Wisconsin, and another for Nevada Attorney General <mark class=\"ed-hl\">Aaron Ford</mark>, the Democratic nominee for governor of Nevada.</span></p>\n\n        <p class=\"prose-p\" data-ref=\"p12.s1\" data-hl=\"民主党全国委员会 | 超过 2000 名在线参与的志愿者 | 十二个州 | Democratic National Committee | more than 2,000 volunteers | dozen states\"><span class=\"lang-cn\">她最近还参加了<mark class=\"ed-hl\">民主党全国委员会</mark>组织的动员选民活动，鼓励<mark class=\"ed-hl\">超过 2000 名在线参与的志愿者</mark>上门拜访选民，积极与选民沟通，以期在全国<mark class=\"ed-hl\">十二个州</mark>争取更多席位。</span><span class=\"lang-en\">She also joined a get-out-the-vote call with the <mark class=\"ed-hl\">Democratic National Committee</mark> recently, urging <mark class=\"ed-hl\">more than 2,000 volunteers</mark> listening live to knock on doors and engage with voters to flip seats in a <mark class=\"ed-hl\">dozen states</mark> across the country.</span></p>\n\n        <div class=\"closing-coda\">\n          <p class=\"prose-p\" data-ref=\"p12.s2\"><span class=\"lang-cn\">“努力工作是一件好事，”哈里斯说道。</span><span class=\"lang-en\">\"Hard work is good work,\" Harris said.</span></p>\n        </div>\n      </div>\n\n      <aside class=\"rail-column\">\n        <div class=\"dossier-card\">\n          <div class=\"dossier-header\">\n            <span class=\"lang-cn\">中期选举行动 · 2026</span>\n            <span class=\"lang-en\">Midterm Footprint · 2026</span>\n          </div>\n          <h3 class=\"dossier-title\">\n            <span class=\"lang-cn\">私人筹款与全国催票网络</span>\n            <span class=\"lang-en\">Private Fundraisers &amp; DNC Mobilization</span>\n          </h3>\n          <ul class=\"dossier-list\">\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">威斯康星州州长竞选筹款</span>\n                <span class=\"lang-en\">Wisconsin Gubernatorial Race</span>\n              </strong>\n              <span class=\"lang-cn\">出席在加州圣莫尼卡为密尔沃基县行政长官、民主党威州州长候选人戴维·克劳利（David Crowley）举办的私人筹款活动。</span>\n              <span class=\"lang-en\">Appeared at a Santa Monica private fundraiser for Milwaukee County Executive David Crowley, the Democratic nominee for Wisconsin governor.</span>\n            </li>\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">内华达州州长竞选筹款</span>\n                <span class=\"lang-en\">Nevada Gubernatorial Race</span>\n              </strong>\n              <span class=\"lang-cn\">出席在加州为内华达州司法部长、民主党内州州长候选人亚伦·福特（Aaron Ford）举办的私人筹款活动。</span>\n              <span class=\"lang-en\">Attended a California fundraiser for Nevada Attorney General Aaron Ford, the party's nominee for governor of Nevada.</span>\n            </li>\n            <li class=\"dossier-item\">\n              <strong>\n                <span class=\"lang-cn\">DNC 12 州选民动员连线</span>\n                <span class=\"lang-en\">12-State DNC Volunteer Call</span>\n              </strong>\n              <span class=\"lang-cn\">连线激励逾 2,000 名志愿者挨家挨户拜访选民，力争在全美 12 个州翻转席位。</span>\n              <span class=\"lang-en\">Urged over 2,000 live volunteers on a DNC call to knock on doors and flip seats across a dozen states.</span>\n            </li>\n          </ul>\n        </div>\n      </aside>\n    </section>\n\n  </main>\n</article>\n\n\n<footer class=\"editorial-footer\">\n  <div>\n    <strong>The Wall Street Journal · WSJ 深读</strong> — E1-027 · U.S. News · Page A4\n  </div>\n  <div>\n    <span class=\"lang-cn\">双语数字精装版 · 保留所有原文段落与引述精确锚点</span>\n    <span class=\"lang-en\">Bilingual Digital Edition · Verbatim Canonical Source Architecture</span>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-027",
+        "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+        "exact_match_cn": "12/12",
+        "exact_match_en": "12/12",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 12,
+        "observed_narrative_elements": 16,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 3,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p3"
+          },
+          {
+            "id": "q2",
+            "kind": "quote",
+            "source_block": "p8"
+          },
+          {
+            "id": "q3",
+            "kind": "quote",
+            "source_block": "p9"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "成功的可能性很小",
+              "第三次总统竞选",
+              "道格·埃姆霍夫"
+            ],
+            "applied_en": [
+              "third presidential campaign",
+              "Doug Emhoff",
+              "long shot"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "与主要捐助者会面、招聘工作人员",
+              "11 月中期选举"
+            ],
+            "applied_en": [
+              "speaking with major donors, hiring staff",
+              "November midterm elections"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3.s2",
+            "applied_cn": [
+              "全国有色人种协进会",
+              "密歇根州"
+            ],
+            "applied_en": [
+              "NAACP event in Michigan"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "推出一位新的候选人",
+              "面临激烈的竞争"
+            ],
+            "applied_en": [
+              "fresh candidate in the 2028 election",
+              "crowded field"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "如果她决定竞选，他会支持她",
+              "表达对再次竞选的担忧"
+            ],
+            "applied_en": [
+              "support her if she decides to run",
+              "shared concerns with others"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "他律师事务所的最后一天",
+              "《107 天》",
+              "巨大的牺牲"
+            ],
+            "applied_en": [
+              "last day at his law firm",
+              "huge sacrifice",
+              "107 Days"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "2024 年 10 月",
+              "我们不能互相攻击",
+              "人身攻击"
+            ],
+            "applied_en": [
+              "We can't turn on each other",
+              "personal assaults",
+              "October 2024"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "Willkie Farr & Gallagher",
+              "洛杉矶"
+            ],
+            "applied_en": [
+              "Willkie Farr & Gallagher",
+              "Los Angeles"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "让一些捐助者对她的意图感到不安",
+              "戴维·克劳利",
+              "亚伦·福特",
+              "圣莫尼卡"
+            ],
+            "applied_en": [
+              "donors uneasy about her intentions",
+              "David Crowley",
+              "Santa Monica",
+              "Aaron Ford"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12.s1",
+            "applied_cn": [
+              "超过 2000 名在线参与的志愿者",
+              "民主党全国委员会",
+              "十二个州"
+            ],
+            "applied_en": [
+              "Democratic National Committee",
+              "more than 2,000 volunteers",
+              "dozen states"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 5,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "01 · 2024年（《107天》周期）",
+              "01 · 2024 (\"107 DAYS\" CYCLE)",
+              "拜登退选后全党团结一致",
+              "Party Coalesced After Biden Exit",
+              "无党内竞争性初选消耗",
+              "Uncontested rapid nomination",
+              "2020年埃姆霍夫辞去律所职务",
+              "Emhoff left law firm in 2020",
+              "2024年10月人身攻击带来沉重压力",
+              "Oct. 2024 personal attacks took toll",
+              "核心回忆：“我们必须团结一致”",
+              "Memoir: \"We had to stay united\"",
+              "02 · 2026年11月（中期选举前哨）",
+              "02 · NOV. 2026 (MIDTERM PIVOT)",
+              "公开聚焦中期选举、私下铺路",
+              "Public Focus vs. Groundwork",
+              "争夺参众两院控制权及州长席位",
+              "Target House, Senate & Governors",
+              "加州私人筹款助阵威州、内州州长",
+              "CA fundraisers for WI & NV nominees",
+              "DNC 连线超 2,000 名志愿者催票",
+              "DNC call with 2,000+ volunteers",
+              "表态：“尚未决定是否再次参选”",
+              "Status: \"Undecided\" on 2028 bid",
+              "03 · 2028年（潜在第三次竞选）",
+              "03 · 2028 (POTENTIAL 3RD RUN)",
+              "多重党内疑虑与激烈竞争",
+              "Steep Skepticism & Crowded Field",
+              "党内呼唤推出全新候选人面孔",
+              "Calls for a fresh 2028 candidate",
+              "部分金主对她近期意图感到不安",
+              "Donors uneasy; warn of \"long shot\"",
+              "埃姆霍夫虽有担忧但若参选仍会支持",
+              "Emhoff wary, yet expected to back her",
+              "前景：预计面临拥挤且激烈的竞争",
+              "Outlook: Expected crowded primary"
+            ],
+            "numbers_found": [
+              "01",
+              "2024",
+              "107",
+              "01",
+              "2024",
+              "107",
+              "2020",
+              "2020",
+              "2024",
+              "10",
+              "2024",
+              "02",
+              "2026",
+              "11",
+              "02",
+              "2026",
+              "2,000",
+              "2,000",
+              "2028",
+              "03",
+              "2028",
+              "03",
+              "2028",
+              "3",
+              "2028"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "公开表态与私下阻力",
+            "en": "Public Posture vs. Private Headwinds",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "从“全党迅速集结”到“多方阻力与激烈初选”",
+            "en": "From Rapid Party Coalescence to a Crowded Field",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "从律所辞职的牺牲到选战风暴中的家庭防线",
+            "en": "Sacrifice, Personal Assaults, and Staying United",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "私人筹款与全国催票网络",
+            "en": "Private Fundraisers & DNC Mobilization",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [],
+      "sanitization_log": [
+        "Removed unnecessary client-side script block (>1200 chars or self-hydration script)"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-041",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T14:15:27Z",
+  "status": "verified",
+  "notes": "Queue task task-97519a0b (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+    "paragraph_count": 13,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 13354,
+    "completion_chars": 52879,
+    "input_tokens": 4252,
+    "output_tokens": 19374,
+    "total_tokens": 23626,
+    "latency_seconds": 142.131
+  },
+  "files": {
+    "raw_html": "E1-041/v1/raw.html",
+    "compiled_html": "E1-041/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #eae4d7;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c8c0af;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.13);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --navy-line: #283f56;\n    --crimson: #8f2d24;\n    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    --font-serif-cn: 'Noto Serif SC', 'Lora', Georgia, serif;\n    --font-serif-en: 'Lora', 'Noto Serif SC', Georgia, serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    scroll-behavior: smooth;\n  }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    color: var(--body);\n    overflow-x: hidden;\n    min-height: 100vh;\n    position: relative;\n  }\n\n  /* Strict Bilingual Display Control */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 55%, rgba(184, 93, 25, 0.22) 55%);\n    color: inherit;\n    padding: 0 2px;\n    font-weight: 600;\n  }\n\n  /* Reading Progress Bar */\n  .progress-rail {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 3px;\n    background: rgba(20, 20, 19, 0.08);\n    z-index: 1000;\n  }\n  .progress-fill {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s ease-out;\n  }\n\n  /* Sticky Top Masthead */\n  .wsj-masthead {\n    position: sticky;\n    top: 0;\n    z-index: 900;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    -webkit-backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line);\n    padding: 0.7rem 1.5rem;\n  }\n  .masthead-inner {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n  .brand-cluster {\n    display: flex;\n    align-items: baseline;\n    gap: 0.75rem;\n    flex-wrap: wrap;\n  }\n  .wsj-wordmark {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.05rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n  .wsj-divider {\n    color: var(--line-strong);\n    font-weight: 300;\n  }\n  .wsj-section-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    font-weight: 600;\n  }\n  .lang-switch {\n    display: inline-flex;\n    align-items: center;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-radius: 999px;\n    padding: 2px;\n  }\n  .lang-btn {\n    appearance: none;\n    border: none;\n    background: transparent;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 600;\n    color: var(--muted);\n    padding: 0.28rem 0.72rem;\n    border-radius: 999px;\n    cursor: pointer;\n    transition: all 0.2s ease;\n  }\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Hero Header */\n  .article-hero {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 2px solid var(--ink);\n  }\n  .hero-kicker-row {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n    flex-wrap: wrap;\n  }\n  .kicker-pill {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.24rem 0.6rem;\n    font-weight: 600;\n  }\n  .kicker-meta {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n    letter-spacing: 0.04em;\n  }\n  .hero-title {\n    font-family: var(--font-display);\n    color: var(--ink);\n    font-weight: 800;\n    font-size: clamp(2.1rem, 4.4vw, 3.6rem);\n    line-height: 1.18;\n    letter-spacing: -0.015em;\n    margin-bottom: 1.35rem;\n    max-width: 24ch;\n  }\n  :host([lang=\"en\"]) .hero-title {\n    max-width: 22ch;\n    line-height: 1.08;\n  }\n  .hero-standfirst {\n    font-family: var(--font-serif-cn);\n    font-size: clamp(1.08rem, 1.6vw, 1.28rem);\n    line-height: 1.75;\n    color: var(--muted);\n    max-width: 760px;\n    margin-bottom: 1.85rem;\n    padding-left: 1rem;\n    border-left: 3px solid var(--accent);\n  }\n  :host([lang=\"en\"]) .hero-standfirst {\n    font-family: var(--font-serif-en);\n    line-height: 1.6;\n  }\n  .hero-byline-bar {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n    padding-top: 1.15rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: var(--muted);\n  }\n  .byline-authors strong {\n    color: var(--ink);\n    font-weight: 700;\n    letter-spacing: 0.03em;\n  }\n  .byline-dateline {\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n  }\n\n  /* Key Figures Strip (Analytical Dispatch Ledger) */\n  .dispatch-ledger {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 1.75rem 1.5rem;\n    border-bottom: 1px solid var(--line);\n    background: linear-gradient(180deg, rgba(243, 239, 230, 0.55) 0%, rgba(250, 248, 244, 0) 100%);\n  }\n  .ledger-grid {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 1.25rem;\n  }\n  .ledger-cell {\n    border-left: 2px solid var(--line-strong);\n    padding-left: 1rem;\n  }\n  .ledger-cell.highlight-cell {\n    border-left-color: var(--accent);\n  }\n  .ledger-num {\n    font-family: var(--font-mono);\n    font-size: 1.65rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.15;\n    margin-bottom: 0.3rem;\n  }\n  .ledger-cell.highlight-cell .ledger-num {\n    color: var(--accent);\n  }\n  .ledger-label {\n    font-family: var(--font-sans);\n    font-size: 0.8rem;\n    font-weight: 600;\n    color: var(--ink);\n    margin-bottom: 0.2rem;\n  }\n  .ledger-sub {\n    font-family: var(--font-sans);\n    font-size: 0.74rem;\n    color: var(--muted);\n    line-height: 1.45;\n  }\n\n  /* Main Editorial Container & Asymmetric Grid */\n  .editorial-stage {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 2.75rem 1.5rem 4rem;\n  }\n  .editorial-chapter {\n    display: grid;\n    grid-template-columns: minmax(0, 700px) minmax(280px, 380px);\n    justify-content: space-between;\n    gap: 3rem;\n    margin-bottom: 3.25rem;\n    align-items: start;\n  }\n  .editorial-chapter.single-flow {\n    grid-template-columns: minmax(0, 740px);\n    justify-content: center;\n  }\n\n  /* Chapter Dividers */\n  .chapter-banner {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n    margin-bottom: 1.6rem;\n    padding-bottom: 0.65rem;\n    border-bottom: 1px solid var(--ink);\n  }\n  .chapter-index {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    font-weight: 700;\n    color: var(--accent);\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n  }\n  .chapter-heading {\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  /* Prose Typography (Strict CJK Compliance: No text-wrap:pretty, No ::first-letter) */\n  .prose-column {\n    width: 100%;\n  }\n  .prose-p {\n    font-family: var(--font-serif-cn);\n    font-size: 1.125rem;\n    line-height: 1.92;\n    color: var(--body);\n    margin-bottom: 1.5rem;\n    letter-spacing: 0.01em;\n  }\n  :host([lang=\"en\"]) .prose-p {\n    font-family: var(--font-serif-en);\n    font-size: 1.1rem;\n    line-height: 1.78;\n    letter-spacing: 0;\n  }\n  /* Lead Paragraph Scale + Border Treatment instead of ::first-letter */\n  .prose-p.lead-para {\n    font-size: 1.24rem;\n    line-height: 1.85;\n    color: var(--ink);\n    font-weight: 600;\n    padding: 1.15rem 1.35rem;\n    background: var(--paper-card);\n    border-left: 4px solid var(--ink);\n    margin-bottom: 1.85rem;\n  }\n  :host([lang=\"en\"]) .prose-p.lead-para {\n    font-size: 1.2rem;\n    line-height: 1.72;\n  }\n\n  /* Sidebar Dossiers & Cards */\n  .sidebar-rail {\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n    position: sticky;\n    top: 4.5rem;\n  }\n  .dossier-box {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem;\n  }\n  .dossier-box.accent-top {\n    border-top-color: var(--accent);\n  }\n  .dossier-eyebrow {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.09em;\n    color: var(--accent);\n    margin-bottom: 0.5rem;\n  }\n  .dossier-title {\n    font-family: var(--font-display);\n    font-size: 1.08rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.85rem;\n    line-height: 1.35;\n  }\n  .dossier-list {\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 0.8rem;\n  }\n  .dossier-item {\n    padding-top: 0.75rem;\n    border-top: 1px dashed var(--line-strong);\n    font-family: var(--font-sans);\n    font-size: 0.83rem;\n    line-height: 1.55;\n    color: var(--body);\n  }\n  .dossier-item:first-child {\n    padding-top: 0;\n    border-top: none;\n  }\n  .dossier-item strong {\n    display: block;\n    color: var(--ink);\n    font-weight: 700;\n    margin-bottom: 0.15rem;\n  }\n\n  /* Contrasting Claims Table inside Chapter 1 */\n  .claims-matrix {\n    margin: 2rem 0;\n    border: 1px solid var(--line-strong);\n    background: var(--paper-card);\n  }\n  .claims-header {\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.7rem 1.15rem;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n  }\n  .claims-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n  }\n  .claim-col {\n    padding: 1.25rem;\n  }\n  .claim-col:first-child {\n    border-right: 1px solid var(--line-strong);\n  }\n  .claim-badge {\n    display: inline-block;\n    font-family: var(--font-mono);\n    font-size: 0.68rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    padding: 0.18rem 0.5rem;\n    margin-bottom: 0.6rem;\n    background: var(--paper-deep);\n    color: var(--ink);\n  }\n  .claim-badge.critic {\n    background: var(--accent-soft);\n    color: var(--accent);\n  }\n  .claim-heading {\n    font-family: var(--font-sans);\n    font-size: 0.92rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.45rem;\n  }\n  .claim-desc {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    line-height: 1.55;\n    color: var(--muted);\n  }\n\n  /* Dark Navy Security Lockdown Dossier (Chapter 2 Visual Break) */\n  .lockdown-canvas {\n    background: var(--navy-bg);\n    color: #f2efe9;\n    padding: 2.25rem;\n    margin: 2.25rem 0 2.75rem;\n    border-top: 4px solid var(--accent);\n    box-shadow: 0 14px 34px rgba(15, 29, 43, 0.12);\n  }\n  .lockdown-top {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1rem;\n    padding-bottom: 1.15rem;\n    border-bottom: 1px solid var(--navy-line);\n    margin-bottom: 1.5rem;\n  }\n  .lockdown-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: #e89554;\n    margin-bottom: 0.35rem;\n  }\n  .lockdown-title {\n    font-family: var(--font-display);\n    font-size: 1.45rem;\n    font-weight: 700;\n    color: #ffffff;\n  }\n  .lockdown-note {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: #9cb0c4;\n  }\n  .svg-wrapper {\n    width: 100%;\n    background: var(--navy-card);\n    border: 1px solid var(--navy-line);\n    padding: 0.75rem;\n  }\n  .lockdown-caption {\n    margin-top: 0.9rem;\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    color: #b0c0d0;\n    line-height: 1.5;\n  }\n\n  /* Split Sentence Dramatic Callout (p7.s2) */\n  .dramatic-shout-box {\n    margin: 1.5rem 0 1.85rem;\n    padding: 1.35rem 1.6rem;\n    background: var(--paper-card);\n    border-left: 4px solid var(--crimson);\n    font-family: var(--font-display);\n    font-size: 1.35rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.45;\n  }\n\n  /* Human Feature / Name Discrepancy Forensic Diagram (Chapter 3) */\n  .forensic-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.5rem;\n    margin: 1.75rem 0;\n  }\n  .forensic-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-bottom: 1px solid var(--line-strong);\n    padding-bottom: 0.75rem;\n    margin-bottom: 1rem;\n  }\n  .forensic-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n  }\n  .forensic-loc {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    color: var(--muted);\n  }\n\n  /* Climactic Direct Quote (p12.s4) */\n  .verdict-quote {\n    margin: 1.75rem 0 2rem;\n    padding: 1.65rem 1.85rem;\n    background: var(--ink);\n    color: var(--paper);\n    border-left: 5px solid var(--accent);\n    font-family: var(--font-display);\n    font-size: clamp(1.3rem, 2.2vw, 1.65rem);\n    font-weight: 700;\n    line-height: 1.45;\n  }\n\n  /* Derived Pull Quote Styling (when used in separate section) */\n  .pull-quote {\n    background: var(--paper-card);\n    border-top: 2px solid var(--ink);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 1.35rem 1.15rem;\n  }\n  .pull-quote .quote-text {\n    font-family: var(--font-serif-cn);\n    font-size: 0.95rem;\n    font-style: italic;\n    line-height: 1.65;\n    color: var(--ink);\n    margin-bottom: 0.65rem;\n  }\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n  }\n\n  /* Footer */\n  .wsj-footer {\n    border-top: 2px solid var(--ink);\n    background: var(--paper-card);\n    padding: 2.5rem 1.5rem;\n    margin-top: 2rem;\n  }\n  .footer-inner {\n    max-width: 1200px;\n    margin: 0 auto;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1rem;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow (390px and below) */\n  @media (max-width: 960px) {\n    .ledger-grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    .editorial-chapter {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n    .sidebar-rail {\n      position: static;\n    }\n  }\n\n  @media (max-width: 600px) {\n    .wsj-masthead {\n      padding: 0.6rem 1rem;\n    }\n    .article-hero {\n      padding: 2.25rem 1rem 1.75rem;\n    }\n    .dispatch-ledger {\n      padding: 1.35rem 1rem;\n    }\n    .ledger-grid {\n      grid-template-columns: 1fr;\n      gap: 1rem;\n    }\n    .editorial-stage {\n      padding: 2rem 1rem 3rem;\n    }\n    .claims-grid {\n      grid-template-columns: 1fr;\n    }\n    .claim-col:first-child {\n      border-right: none;\n      border-bottom: 1px solid var(--line-strong);\n    }\n    .lockdown-canvas {\n      padding: 1.35rem 1rem;\n    }\n    .prose-p.lead-para {\n      padding: 1rem;\n      font-size: 1.12rem;\n    }\n    .verdict-quote {\n      padding: 1.25rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div class=\"progress-rail\" aria-hidden=\"true\">\n  <div class=\"progress-fill\" id=\"progressFill\"></div>\n</div>\n\n\n<header class=\"wsj-masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <span class=\"wsj-wordmark\">The Wall Street Journal</span>\n      <span class=\"wsj-divider\">·</span>\n      <span class=\"wsj-section-tag\">\n        <span class=\"lang-cn\">世界新闻 · 第 A9 版 · 深度纪实</span>\n        <span class=\"lang-en\">World News · Page A9 · Dispatch</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language switcher\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<section class=\"article-hero\">\n  <div class=\"hero-kicker-row\">\n    <span class=\"kicker-pill\">\n      <span class=\"lang-cn\">新德里现场报道</span>\n      <span class=\"lang-en\">New Delhi Dispatch</span>\n    </span>\n    <span class=\"kicker-meta\">E1-041 · WORLD NEWS</span>\n  </div>\n\n  <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">新德里因选民抗议活动不断升级而实施封锁。</span><span class=\"lang-en\">New Delhi Locks Down As Voter Protests Grow</span></h1>\n\n  <p class=\"hero-standfirst\">\n    <span class=\"lang-cn\">一场二十年来首次启动的选民名册清理行动，据活动人士称导致约1.3亿人从初步或最终名单中被剔除。当选民资格争议与青年就业焦虑交汇，数千名安全部队在黎明前封锁了印度首都。</span>\n    <span class=\"lang-en\">A voter-roll cleanup—the first in two decades—has cut some 130 million people from preliminary or final lists according to activists. As franchise grievances converge with youth unemployment anger, thousands of security forces locked down India's capital before dawn.</span>\n  </p>\n\n  <div class=\"hero-byline-bar\">\n    <div class=\"byline-authors\">\n      <span class=\"lang-cn\">作者：<strong>TRIPTI LAHIRI</strong> 及 <strong>KRISHNA POKHAREL</strong></span>\n      <span class=\"lang-en\">BY <strong>TRIPTI LAHIRI</strong> AND <strong>KRISHNA POKHAREL</strong></span>\n    </div>\n    <div class=\"byline-dateline\">\n      <span class=\"lang-cn\">2026年10月12日 · 新德里电</span>\n      <span class=\"lang-en\">October 12, 2026 · NEW DELHI</span>\n    </div>\n  </div>\n</section>\n\n\n<section class=\"dispatch-ledger\" aria-label=\"Key Report Metrics\">\n  <div class=\"ledger-grid\">\n    <div class=\"ledger-cell highlight-cell\">\n      <div class=\"ledger-num\">\n        <span class=\"lang-cn\">~1.3亿</span>\n        <span class=\"lang-en\">~130M</span>\n      </div>\n      <div class=\"ledger-label\">\n        <span class=\"lang-cn\">选民名单被删减规模</span>\n        <span class=\"lang-en\">Cut From Voter Rolls</span>\n      </div>\n      <div class=\"ledger-sub\">\n        <span class=\"lang-cn\">据活动人士称从初步或最终选民名单中被删除的人数</span>\n        <span class=\"lang-en\">People cut from preliminary or final rolls, according to activists</span>\n      </div>\n    </div>\n\n    <div class=\"ledger-cell\">\n      <div class=\"ledger-num\">\n        <span class=\"lang-cn\">20年</span>\n        <span class=\"lang-en\">20 Yrs</span>\n      </div>\n      <div class=\"ledger-label\">\n        <span class=\"lang-cn\">首次全国性名册清理</span>\n        <span class=\"lang-en\">First Cleanup in Two Decades</span>\n      </div>\n      <div class=\"ledger-sub\">\n        <span class=\"lang-cn\">选举委员会去年启动，政府称旨在删除已故、重复或虚假选民</span>\n        <span class=\"lang-en\">Initiated last year by the election commission to remove deceased or duplicate entries</span>\n      </div>\n    </div>\n\n    <div class=\"ledger-cell\">\n      <div class=\"ledger-num\">\n        <span class=\"lang-cn\">~100人 / 2小时</span>\n        <span class=\"lang-en\">~100 / 2 Hrs</span>\n      </div>\n      <div class=\"ledger-label\">\n        <span class=\"lang-cn\">《华尔街日报》现场目击拘留</span>\n        <span class=\"lang-en\">WSJ Witnessed Detentions</span>\n      </div>\n      <div class=\"ledger-sub\">\n        <span class=\"lang-cn\">记者在两小时内亲眼目睹约100人被拘留；活动人士称全天达数千人</span>\n        <span class=\"lang-en\">Reporters saw ~100 detained over two hours; activists claimed thousands citywide</span>\n      </div>\n    </div>\n\n    <div class=\"ledger-cell\">\n      <div class=\"ledger-num\">\n        <span class=\"lang-cn\">9 英里</span>\n        <span class=\"lang-en\">9 Miles</span>\n      </div>\n      <div class=\"ledger-label\">\n        <span class=\"lang-cn\">黎明徒步赴会距离</span>\n        <span class=\"lang-en\">Dawn March to Protest Site</span>\n      </div>\n      <div class=\"ledger-sub\">\n        <span class=\"lang-cn\">49岁社工伊什拉特·安萨里在地铁关闭与路障封锁下步行抵达抗议区</span>\n        <span class=\"lang-en\">Walked by 49-year-old social worker Ishrat Ansari from northern Delhi</span>\n      </div>\n    </div>\n  </div>\n</section>\n\n\n<main class=\"editorial-stage\">\n\n  <!-- CHAPTER I: THE VOTER ROLL PURGE & YOUTH CONVERGENCE (p1 .. p5) -->\n  <div class=\"chapter-banner\">\n    <span class=\"chapter-index\">01 / DISPATCH</span>\n    <h2 class=\"chapter-heading\">\n      <span class=\"lang-cn\">1.3亿选民名册争议与青年愤怒合流</span>\n      <span class=\"lang-en\">The 130-Million Voter-Roll Dispute &amp; Youth Convergence</span>\n    </h2>\n  </div>\n\n  <section class=\"editorial-chapter\">\n    <div class=\"prose-column\">\n      <p class=\"prose-p lead-para\" data-ref=\"p1\" data-hl=\"数千名安全部队 | 封锁了印度首都 | thousands of security forces | locked down India's capital\"><span class=\"lang-cn\">新德里——印度总理纳伦德拉·莫迪政府调动<mark class=\"ed-hl\">数千名安全部队</mark>，<mark class=\"ed-hl\">封锁了印度首都</mark>，以阻止一场大规模抗议活动，这场抗议活动源于政府试图清理选民名单，而批评人士认为，此举剥夺了数百万印度人的投票权。</span><span class=\"lang-en\">NEW DELHI—The government of Indian Prime Minister Narendra Modi <mark class=\"ed-hl\">locked down India's capital</mark> with <mark class=\"ed-hl\">thousands of security forces</mark> in a bid to thwart a mass protest over an effort to clean up voter lists that critics say is stripping millions of Indians of the right to vote.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"约1.3亿人 | some 130 million people\"><span class=\"lang-cn\">去年，印度的选举委员会开始清理选民名单，据活动人士称，此举导致<mark class=\"ed-hl\">约1.3亿人</mark>从初步或最终的选民名单中被删除。</span><span class=\"lang-en\">Last year, India's election commission began a cleanup of voter lists that, according to activists, have resulted in <mark class=\"ed-hl\">some 130 million people</mark> being cut from preliminary or final voter rolls.</span></p>\n      <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"二十年来首次 | 孟加拉国东部边界 | the first in two decades | eastern border with Bangladesh\"><span class=\"lang-cn\">莫迪政府及其执政的印度人民党表示，此次清理——这是<mark class=\"ed-hl\">二十年来首次</mark>——是为了维护名单的完整性，并删除已故、重复或虚假选民，例如他们声称从印度与<mark class=\"ed-hl\">孟加拉国东部边界</mark>进入的非法移民。</span><span class=\"lang-en\">Modi's government and his ruling Bharatiya Janata Party have said the cleanup—<mark class=\"ed-hl\">the first in two decades</mark>—was needed to preserve the integrity of the lists and remove deceased, duplicate or fraudulent voters, such as illegal immigrants they say have entered from India's <mark class=\"ed-hl\">eastern border with Bangladesh</mark>.</span></p>\n\n      <!-- Analytical Comparison Matrix: Government Rationale vs. Critics & Activists -->\n      <div class=\"claims-matrix\">\n        <div class=\"claims-header\">\n          <span>\n            <span class=\"lang-cn\">核心争议焦点对照 · 选民名册清理行动</span>\n            <span class=\"lang-en\">Core Contention · The Voter-Roll Cleanup</span>\n          </span>\n          <span>WSJ DOSSIER</span>\n        </div>\n        <div class=\"claims-grid\">\n          <div class=\"claim-col\">\n            <span class=\"claim-badge\">\n              <span class=\"lang-cn\">莫迪政府与印度人民党立场</span>\n              <span class=\"lang-en\">Modi Govt &amp; BJP Stance</span>\n            </span>\n            <div class=\"claim-heading\">\n              <span class=\"lang-cn\">维护选民名单完整性</span>\n              <span class=\"lang-en\">Preserving List Integrity</span>\n            </div>\n            <p class=\"claim-desc\">\n              <span class=\"lang-cn\">声称这是二十年来首次必要清理，旨在删除已故、重复或虚假选民，包括其所指称的从印度与孟加拉国东部边界进入的非法移民。</span>\n              <span class=\"lang-en\">Says the cleanup—the first in 20 years—is needed to remove deceased, duplicate, or fraudulent voters, including alleged illegal immigrants from the eastern border with Bangladesh.</span>\n            </p>\n          </div>\n          <div class=\"claim-col\">\n            <span class=\"claim-badge critic\">\n              <span class=\"lang-cn\">批评人士与活动人士指控</span>\n              <span class=\"lang-en\">Critics &amp; Activists' Account</span>\n            </span>\n            <div class=\"claim-heading\">\n              <span class=\"lang-cn\">剥夺数百万印度人投票权</span>\n              <span class=\"lang-en\">Stripping Millions of Voting Rights</span>\n            </div>\n            <p class=\"claim-desc\">\n              <span class=\"lang-cn\">活动人士称去年启动的清理已导致约1.3亿人从初步或最终名单中被删，并与年轻人求职受挫的不满情绪交织，对莫迪构成严峻挑战。</span>\n              <span class=\"lang-en\">Activists say some 130 million people have been cut from preliminary or final rolls, melding with youth joblessness grievances to pose a stiff challenge to Modi.</span>\n            </p>\n          </div>\n        </div>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"寻找工作而苦恼 | 严峻的挑战 | struggling to find work | stiff challenge to Modi\"><span class=\"lang-cn\">对选民名单的愤怒与印度年轻人为<mark class=\"ed-hl\">寻找工作而苦恼</mark>的不满情绪相结合，这对莫迪构成了<mark class=\"ed-hl\">严峻的挑战</mark>。</span><span class=\"lang-en\">The anger over the voting lists has melded with grievances from young Indians <mark class=\"ed-hl\">struggling to find work</mark>, together presenting a <mark class=\"ed-hl\">stiff challenge to Modi</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"Cockroach Janta Party | 大学入学考试丑闻 | scandal over a university entrance exam\"><span class=\"lang-cn\">在一次<mark class=\"ed-hl\">大学入学考试丑闻</mark>之后，一个名为“<mark class=\"ed-hl\">Cockroach Janta Party</mark>（青年运动组织）”的青年运动在春季应运而生。该组织公开支持那些抗议选民名单问题的人，并加入了周六在新德里举行的抗议活动。</span><span class=\"lang-en\">A youth movement called the <mark class=\"ed-hl\">Cockroach Janta Party</mark> emerged in the spring following a <mark class=\"ed-hl\">scandal over a university entrance exam</mark>. The group has thrown its support behind those protesting the voting issue, joining in Saturday's protests in New Delhi.</span></p>\n    </div>\n\n    <aside class=\"sidebar-rail\">\n      <div class=\"dossier-box accent-top\">\n        <div class=\"dossier-eyebrow\">\n          <span class=\"lang-cn\">组织档案 · 抗议力量</span>\n          <span class=\"lang-en\">Movement Dossier · Protest Coalition</span>\n        </div>\n        <h3 class=\"dossier-title\">\n          <span class=\"lang-cn\">“Cockroach Janta Party”青年运动</span>\n          <span class=\"lang-en\">The \"Cockroach Janta Party\" Youth Movement</span>\n        </h3>\n        <ul class=\"dossier-list\">\n          <li class=\"dossier-item\">\n            <strong>\n              <span class=\"lang-cn\">起源背景（春季）</span>\n              <span class=\"lang-en\">Spring Origins</span>\n            </strong>\n            <span class=\"lang-cn\">在一次大学入学考试丑闻之后于今年春季应运而生，凝聚了苦于寻找工作的印度年轻群体的不满。</span>\n            <span class=\"lang-en\">Emerged in the spring following a university entrance exam scandal, channeling frustration among young Indians struggling to find work.</span>\n          </li>\n          <li class=\"dossier-item\">\n            <strong>\n              <span class=\"lang-cn\">创始人与核心人物</span>\n              <span class=\"lang-en\">Founder &amp; Leadership</span>\n            </strong>\n            <span class=\"lang-cn\">由阿布希吉特·迪普克（Abhijeet Dipke）创立，该组织公开支持选民名单抗议者并加入周六新德里集会。</span>\n            <span class=\"lang-en\">Founded by Abhijeet Dipke; threw its support behind voter-roll protesters and joined Saturday's New Delhi demonstrations.</span>\n          </li>\n        </ul>\n      </div>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q1\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“是因为我的名字是伊什拉特，所以我的名字被从名单中删除了吗？”</span><span class=\"lang-en\">“ often used by Muslim women, which doesn't appear on her current identification. The social worker, who mainly goes by her first name, feared that she may have received the notice because she is a Muslim. ”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 12 段直接引述 · Source Block p12</span><span class=\"lang-en\">— Direct Quote (p12), Reported in article text</span></footer>\n      </blockquote>\n    </aside>\n  </section>\n\n  <!-- CHAPTER II: DAWN BARRICADES & AIRPORT DETENTIONS (p6 .. p10) -->\n  <div class=\"chapter-banner\">\n    <span class=\"chapter-index\">02 / LOCKDOWN</span>\n    <h2 class=\"chapter-heading\">\n      <span class=\"lang-cn\">黎明前的黄色路障与机舱内的拘捕</span>\n      <span class=\"lang-en\">Pre-Dawn Yellow Barricades &amp; Airport Custody</span>\n    </h2>\n  </div>\n\n  <section class=\"editorial-chapter\">\n    <div class=\"prose-column\">\n      <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"黎明前就开始部署 | 黄色金属路障 | 数十个地铁站关闭 | deployed starting before dawn | yellow metal barricades | Dozens of metro stations were closed\"><span class=\"lang-cn\">在印度首都，警察从<mark class=\"ed-hl\">黎明前就开始部署</mark>，并在<mark class=\"ed-hl\">黄色金属路障</mark>处拦截车辆和行人。<mark class=\"ed-hl\">数十个地铁站关闭</mark>，许多城际列车也被取消。</span><span class=\"lang-en\">In the Indian capital, police—who were <mark class=\"ed-hl\">deployed starting before dawn</mark>—stopped vehicles and pedestrians at <mark class=\"ed-hl\">yellow metal barricades</mark>. <mark class=\"ed-hl\">Dozens of metro stations were closed</mark> and many intercity trains were canceled.</span></p>\n\n      <p class=\"prose-p\" data-ref=\"p7.s1\" data-hl=\"阿布希吉特·迪普克 | 新德里机场 | Abhijeet Dipke | New Delhi's airport\"><span class=\"lang-cn\">该青年运动的创始人<mark class=\"ed-hl\">阿布希吉特·迪普克</mark>发布了一段视频，视频中他和多位抗议领袖在抵达<mark class=\"ed-hl\">新德里机场</mark>时被带走拘留。</span><span class=\"lang-en\"><mark class=\"ed-hl\">Abhijeet Dipke</mark>, the founder of the Cockroach party, posted a video of himself and fellow protest leaders being taken into custody on their arrival at <mark class=\"ed-hl\">New Delhi's airport</mark>.</span></p>\n      <blockquote class=\"dramatic-shout-box\" data-ref=\"p7.s2\"><span class=\"lang-cn\">迪普克在警察进入飞机时喊道：“这是独裁！”</span><span class=\"lang-en\">\"This is dictatorship,\" Dipke shouted as the police officers entered the plane.</span></blockquote>\n\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"两个小时内，约有100人被拘留 | about 100 people being detained over the course of two hours\"><span class=\"lang-cn\">《华尔街日报》的记者看到，在<mark class=\"ed-hl\">两个小时内，约有100人被拘留</mark>。</span><span class=\"lang-en\">Wall Street Journal reporters saw <mark class=\"ed-hl\">about 100 people being detained over the course of two hours</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"数千人在首都被拘留 | 无法独立核实 | thousands were detained in the capital | couldn't independently verify\"><span class=\"lang-cn\">据该青年运动的活动人士和多家当地新闻报道称，当天，<mark class=\"ed-hl\">数千人在首都被拘留</mark>。《华尔街日报》<mark class=\"ed-hl\">无法独立核实</mark>这些数字。德里警察发言人没有回应置评请求。</span><span class=\"lang-en\">Over the course of the day, <mark class=\"ed-hl\">thousands were detained in the capital</mark>, according to Cockroach party activists and multiple local news accounts. The Journal <mark class=\"ed-hl\">couldn't independently verify</mark> the numbers. A Delhi police spokesman didn't respond to requests for comment.</span></p>\n      <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"周日出庭后获释 | released following a court appearance Sunday\"><span class=\"lang-cn\">迪普克和他的两位同伴在<mark class=\"ed-hl\">周日出庭后获释</mark>。</span><span class=\"lang-en\">Dipke and his two fellow activists were <mark class=\"ed-hl\">released following a court appearance Sunday</mark>.</span></p>\n    </div>\n\n    <aside class=\"sidebar-rail\">\n      <div class=\"dossier-box\">\n        <div class=\"dossier-eyebrow\">\n          <span class=\"lang-cn\">核实说明 · 拘留人数差异</span>\n          <span class=\"lang-en\">Verification Ledger · Detention Tally</span>\n        </div>\n        <h3 class=\"dossier-title\">\n          <span class=\"lang-cn\">现场目击与各方通报记录</span>\n          <span class=\"lang-en\">Eyewitness vs. Reported Figures</span>\n        </h3>\n        <ul class=\"dossier-list\">\n          <li class=\"dossier-item\">\n            <strong>\n              <span class=\"lang-cn\">《华尔街日报》记者现场目击</span>\n              <span class=\"lang-en\">WSJ Reporters On-Scene</span>\n            </strong>\n            <span class=\"lang-cn\">在两个小时的时间里，记者亲眼看到约有 100 人被警方拘留。</span>\n            <span class=\"lang-en\">Saw about 100 people being detained over the course of two hours.</span>\n          </li>\n          <li class=\"dossier-item\">\n            <strong>\n              <span class=\"lang-cn\">活动人士与当地媒体称</span>\n              <span class=\"lang-en\">Activists &amp; Local News Accounts</span>\n            </strong>\n            <span class=\"lang-cn\">称当天有数千人在首都被拘留；《华尔街日报》无法独立核实这些数字。</span>\n            <span class=\"lang-en\">Claimed thousands were detained across the capital; the Journal couldn't independently verify the numbers.</span>\n          </li>\n          <li class=\"dossier-item\">\n            <strong>\n              <span class=\"lang-cn\">官方回应状态</span>\n              <span class=\"lang-en\">Official Police Response</span>\n            </strong>\n            <span class=\"lang-cn\">德里警察发言人没有回应置评请求。迪普克与两名同伴于周日出庭后获释。</span>\n            <span class=\"lang-en\">A Delhi police spokesman didn't respond to requests for comment. Dipke and two fellow activists were released Sunday after court.</span>\n          </li>\n        </ul>\n      </div>\n    </aside>\n  </section>\n\n  <!-- BESPOKE INLINE SVG DIAGRAM: NEW DELHI LOCKDOWN TIMELINE & CHOKEPOINTS -->\n  <div class=\"lockdown-canvas\" role=\"region\" aria-label=\"New Delhi Security Lockdown Diagram\">\n    <div class=\"lockdown-top\">\n      <div>\n        <div class=\"lockdown-kicker\">\n          <span class=\"lang-cn\">战术封锁图解 · 周六至周日行动轨迹</span>\n          <span class=\"lang-en\">Tactical Lockdown Schematic · Saturday–Sunday Sequence</span>\n        </div>\n        <h3 class=\"lockdown-title\">\n          <span class=\"lang-cn\">新德里多维封锁网：从城际铁路、地铁站到机场机舱</span>\n          <span class=\"lang-en\">New Delhi's Multi-Layer Cordon: From Rail &amp; Metro to Airport Cabin</span>\n        </h3>\n      </div>\n      <div class=\"lockdown-note\">SOURCE: WSJ REPORTING</div>\n    </div>\n\n    <div class=\"svg-wrapper\">\n      <svg viewbox=\"0 0 920 310\" width=\"100%\" height=\"auto\" xmlns=\"http://www.w3.org/2000/svg\">\n        <defs>\n          <pattern id=\"gridPattern\" width=\"24\" height=\"24\" patternunits=\"userSpaceOnUse\">\n            <path d=\"M 24 0 L 0 0 0 24\" fill=\"none\" stroke=\"#1e344b\" stroke-width=\"1\"></path>\n          </pattern>\n        </defs>\n        <rect x=\"0\" y=\"0\" width=\"920\" height=\"310\" fill=\"url(#gridPattern)\"></rect>\n\n        <!-- Horizontal Timeline Axis -->\n        <line x1=\"60\" y1=\"155\" x2=\"860\" y2=\"155\" stroke=\"#476482\" stroke-width=\"2\" stroke-dasharray=\"6,4\"></line>\n\n        <!-- Node 1: Pre-Dawn Barricades & Transit Shutdown -->\n        <g transform=\"translate(60, 40)\">\n          <rect x=\"0\" y=\"0\" width=\"185\" height=\"92\" rx=\"4\" fill=\"#1b3148\" stroke=\"#e89554\" stroke-width=\"1.5\"></rect>\n          <text x=\"14\" y=\"24\" fill=\"#e89554\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">STAGE 01 · PRE-DAWN</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">黎明前部署与路障拦截</text>\n          <text class=\"lang-en\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">Pre-Dawn Barricades</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">黄色金属路障拦截车流与行人</text>\n          <text class=\"lang-en\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">Yellow metal barricades halt</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"84\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">数十地铁站关闭·城际列车取消</text>\n          <text class=\"lang-en\" x=\"14\" y=\"83\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">traffic; metro &amp; trains cut</text>\n        </g>\n        <circle cx=\"152\" cy=\"155\" r=\"7\" fill=\"#e89554\" stroke=\"#0f1d2b\" stroke-width=\"2.5\"></circle>\n        <line x1=\"152\" y1=\"132\" x2=\"152\" y2=\"148\" stroke=\"#e89554\" stroke-width=\"1.5\"></line>\n\n        <!-- Node 2: Dawn 9-Mile Foot March -->\n        <g transform=\"translate(265, 180)\">\n          <rect x=\"0\" y=\"0\" width=\"185\" height=\"92\" rx=\"4\" fill=\"#1b3148\" stroke=\"#688db0\" stroke-width=\"1.5\"></rect>\n          <text x=\"14\" y=\"24\" fill=\"#9bc2e6\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">STAGE 02 · DAWN MARCH</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">首都北部清晨徒步 9 英里</text>\n          <text class=\"lang-en\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">9-Mile Walk at Dawn</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">49岁伊什拉特·安萨里清晨出发</text>\n          <text class=\"lang-en\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">Ishrat Ansari, 49, walks 9 mi</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"84\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">徒步穿越封锁线前往抗议地点</text>\n          <text class=\"lang-en\" x=\"14\" y=\"83\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">from north Delhi to protest</text>\n        </g>\n        <circle cx=\"357\" cy=\"155\" r=\"7\" fill=\"#9bc2e6\" stroke=\"#0f1d2b\" stroke-width=\"2.5\"></circle>\n        <line x1=\"357\" y1=\"162\" x2=\"357\" y2=\"180\" stroke=\"#9bc2e6\" stroke-width=\"1.5\"></line>\n\n        <!-- Node 3: Airport Cabin Arrest & Street Detentions -->\n        <g transform=\"translate(470, 40)\">\n          <rect x=\"0\" y=\"0\" width=\"190\" height=\"92\" rx=\"4\" fill=\"#2a1f28\" stroke=\"#d96b62\" stroke-width=\"1.5\"></rect>\n          <text x=\"14\" y=\"24\" fill=\"#f08c84\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">STAGE 03 · DETENTIONS</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">机场机舱带走与街头拘留</text>\n          <text class=\"lang-en\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">Airport &amp; Street Custody</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"68\" fill=\"#e2c2bf\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">迪普克抵新德里机场在机上被拘</text>\n          <text class=\"lang-en\" x=\"14\" y=\"68\" fill=\"#e2c2bf\" font-family=\"Inter, sans-serif\" font-size=\"11\">Dipke detained on plane; WSJ</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"84\" fill=\"#e2c2bf\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">WSJ目击2小时内约100人被拘留</text>\n          <text class=\"lang-en\" x=\"14\" y=\"83\" fill=\"#e2c2bf\" font-family=\"Inter, sans-serif\" font-size=\"11\">sees ~100 held in two hours</text>\n        </g>\n        <circle cx=\"565\" cy=\"155\" r=\"7\" fill=\"#d96b62\" stroke=\"#0f1d2b\" stroke-width=\"2.5\"></circle>\n        <line x1=\"565\" y1=\"132\" x2=\"565\" y2=\"148\" stroke=\"#d96b62\" stroke-width=\"1.5\"></line>\n\n        <!-- Node 4: Sunday Court Appearance & Release -->\n        <g transform=\"translate(680, 180)\">\n          <rect x=\"0\" y=\"0\" width=\"185\" height=\"92\" rx=\"4\" fill=\"#1b3148\" stroke=\"#7ab893\" stroke-width=\"1.5\"></rect>\n          <text x=\"14\" y=\"24\" fill=\"#8fd4ab\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">STAGE 04 · SUNDAY COURT</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">周日出庭后获释</text>\n          <text class=\"lang-en\" x=\"14\" y=\"46\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"12.5\" font-weight=\"700\">Released After Court</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">青年运动创始人迪普克与两位</text>\n          <text class=\"lang-en\" x=\"14\" y=\"68\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">Dipke and two fellow protest</text>\n          <text class=\"lang-cn\" x=\"14\" y=\"84\" fill=\"#b0c4d8\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">同伴在周日出庭后获准释放</text>\n          <text class=\"lang-en\" x=\"14\" y=\"83\" fill=\"#b0c4d8\" font-family=\"Inter, sans-serif\" font-size=\"11\">activists released on Sunday</text>\n        </g>\n        <circle cx=\"772\" cy=\"155\" r=\"7\" fill=\"#7ab893\" stroke=\"#0f1d2b\" stroke-width=\"2.5\"></circle>\n        <line x1=\"772\" y1=\"162\" x2=\"772\" y2=\"180\" stroke=\"#7ab893\" stroke-width=\"1.5\"></line>\n      </svg>\n    </div>\n\n    <p class=\"lockdown-caption\">\n      <span class=\"lang-cn\">注：据该青年运动的活动人士和多家当地新闻报道称，当天数千人在首都被拘留；《华尔街日报》无法独立核实这些数字，德里警察发言人未回应置评请求。</span>\n      <span class=\"lang-en\">Note: Activists and local news accounts reported thousands detained across the capital over the course of the day; The Wall Street Journal couldn't independently verify those numbers, and a Delhi police spokesman didn't respond to requests for comment.</span>\n    </p>\n  </div>\n\n  <!-- CHAPTER III: NINE MILES ON FOOT & THE NAME DISCREPANCY FEAR (p11 .. p13) -->\n  <div class=\"chapter-banner\">\n    <span class=\"chapter-index\">03 / THE HUMAN COST</span>\n    <h2 class=\"chapter-heading\">\n      <span class=\"lang-cn\">九英里清晨徒步与“卡图恩”敬称之惑</span>\n      <span class=\"lang-en\">A Nine-Mile Walk at Dawn &amp; The \"Khatun\" Honorific Discrepancy</span>\n    </h2>\n  </div>\n\n  <section class=\"editorial-chapter single-flow\">\n    <div class=\"prose-column\">\n      <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"49岁的伊什拉特·安萨里 | 步行9英里 | Ishrat Ansari, 49 | walking 9 miles\"><span class=\"lang-cn\">周六，<mark class=\"ed-hl\">49岁的伊什拉特·安萨里</mark>表示，她当天清晨从首都北部家中出发，<mark class=\"ed-hl\">步行9英里</mark>到达抗议地点。</span><span class=\"lang-en\">On Saturday, <mark class=\"ed-hl\">Ishrat Ansari, 49</mark>, said she set off at dawn from her home in the north of the capital, <mark class=\"ed-hl\">walking 9 miles</mark> to reach the protest area.</span></p>\n\n      <p class=\"prose-p\" data-ref=\"p12.s1\" data-hl=\"她、她的儿子和女儿 | 因存在差异而被标记 | she, her son and her daughter | flagged for discrepancies\"><span class=\"lang-cn\">她说，<mark class=\"ed-hl\">她、她的儿子和女儿</mark>今年都收到了选举管理部门的通知，称他们的名字<mark class=\"ed-hl\">因存在差异而被标记</mark>。</span><span class=\"lang-en\">She said <mark class=\"ed-hl\">she, her son and her daughter</mark> received notices this year from election authorities that their names had been <mark class=\"ed-hl\">flagged for discrepancies</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p12.s2\" data-hl=\"2002年的选民登记册 | 卡图恩 | Khatun | 2002 voter rolls\"><span class=\"lang-cn\">在她看来，这可能是因为她的名字出现在<mark class=\"ed-hl\">2002年的选民登记册</mark>上，并且使用了“<mark class=\"ed-hl\">卡图恩</mark>”这一敬称，而这个敬称通常由穆斯林女性使用，但她的当前身份证件上没有这个敬称。</span><span class=\"lang-en\">In her case, she thinks it was because her name appeared on <mark class=\"ed-hl\">2002 voter rolls</mark> with the honorific \"<mark class=\"ed-hl\">Khatun</mark>,\" often used by Muslim women, which doesn't appear on her current identification.</span></p>\n      <p class=\"prose-p\" data-ref=\"p12.s3\" data-hl=\"社会工作者 | 因为她是一名穆斯林 | social worker | because she is a Muslim\"><span class=\"lang-cn\">这位主要以名字称呼自己的<mark class=\"ed-hl\">社会工作者</mark>担心，她可能收到了通知，是<mark class=\"ed-hl\">因为她是一名穆斯林</mark>。</span><span class=\"lang-en\">The <mark class=\"ed-hl\">social worker</mark>, who mainly goes by her first name, feared that she may have received the notice <mark class=\"ed-hl\">because she is a Muslim</mark>.</span></p>\n\n      <!-- Forensic Document Comparison SVG: 2002 Voter Roll vs. Current ID -->\n      <div class=\"forensic-card\" role=\"region\" aria-label=\"Voter Roll Name Discrepancy Case Study\">\n        <div class=\"forensic-header\">\n          <span class=\"forensic-tag\">\n            <span class=\"lang-cn\">个案核查档案 · 选民身份差异标记机制</span>\n            <span class=\"lang-en\">Case File · How An Honorific Triggered A Discrepancy Notice</span>\n          </span>\n          <span class=\"forensic-loc\">NORTHERN DELHI · CASE: ISHRAT ANSARI (49)</span>\n        </div>\n\n        <svg viewbox=\"0 0 760 210\" width=\"100%\" height=\"auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 903 210\" data-repaired-viewbox=\"0 0 760 210\">\n          <!-- Left Box: 2002 Voter Roll -->\n          <rect x=\"20\" y=\"20\" width=\"290\" height=\"170\" rx=\"4\" fill=\"#faf8f4\" stroke=\"#c8c0af\" stroke-width=\"1.5\"></rect>\n          <rect x=\"20\" y=\"20\" width=\"290\" height=\"32\" fill=\"#eae4d7\"></rect>\n          <text x=\"36\" y=\"41\" fill=\"#141413\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">1. 2002 VOTER ROLL ENTRY</text>\n          <text class=\"lang-cn\" x=\"36\" y=\"78\" fill=\"#646059\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"12\">登记姓名包含穆斯林女性常用敬称：</text>\n          <text class=\"lang-en\" x=\"36\" y=\"78\" fill=\"#646059\" font-family=\"Inter, sans-serif\" font-size=\"11.5\">Recorded with Muslim female honorific:</text>\n          <rect x=\"36\" y=\"92\" width=\"258\" height=\"42\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#b85d19\" stroke-width=\"1.2\"></rect>\n          <text x=\"50\" y=\"118\" fill=\"#141413\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">Ishrat + \"Khatun\" (卡图恩)</text>\n          <text class=\"lang-cn\" x=\"36\" y=\"160\" fill=\"#646059\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\">通常由穆斯林女性使用的传统敬称</text>\n          <text class=\"lang-en\" x=\"36\" y=\"160\" fill=\"#646059\" font-family=\"Inter, sans-serif\" font-size=\"11\">Honorific often used by Muslim women</text>\n\n          <!-- Center Connector: Flagged Notice -->\n          <line x1=\"310\" y1=\"105\" x2=\"450\" y2=\"105\" stroke=\"#b85d19\" stroke-width=\"2\" stroke-dasharray=\"4,4\"></line>\n          <rect x=\"332\" y=\"78\" width=\"96\" height=\"54\" rx=\"4\" fill=\"#b85d19\"></rect>\n          <text x=\"380\" y=\"100\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" font-weight=\"700\">FLAGGED</text>\n          <text class=\"lang-cn\" x=\"380\" y=\"118\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11\" font-weight=\"700\">差异通知标记</text>\n          <text class=\"lang-en\" x=\"380\" y=\"118\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"10\" font-weight=\"700\">DISCREPANCY</text>\n\n          <!-- Right Box: Current Identification -->\n          <rect x=\"450\" y=\"20\" width=\"290\" height=\"170\" rx=\"4\" fill=\"#faf8f4\" stroke=\"#c8c0af\" stroke-width=\"1.5\"></rect>\n          <rect x=\"450\" y=\"20\" width=\"290\" height=\"32\" fill=\"#eae4d7\"></rect>\n          <text x=\"466\" y=\"41\" fill=\"#141413\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">2. CURRENT IDENTIFICATION</text>\n          <text class=\"lang-cn\" x=\"466\" y=\"78\" fill=\"#646059\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"12\">当前身份证件上未包含该敬称：</text>\n          <text class=\"lang-en\" x=\"466\" y=\"78\" fill=\"#646059\" font-family=\"Inter, sans-serif\" font-size=\"11.5\">Current ID omits the honorific:</text>\n          <rect x=\"466\" y=\"92\" width=\"258\" height=\"42\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#141413\" stroke-width=\"1.2\"></rect>\n          <text x=\"480\" y=\"118\" fill=\"#141413\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">Ishrat [No \"Khatun\"]</text>\n          <text class=\"lang-cn\" x=\"466\" y=\"160\" fill=\"#8f2d24\" font-family=\"Noto Sans SC, sans-serif\" font-size=\"11.5\" font-weight=\"700\">结果：本人、儿子与女儿今年均收到通知</text>\n          <text class=\"lang-en\" x=\"466\" y=\"160\" fill=\"#8f2d24\" font-family=\"Inter, sans-serif\" font-size=\"11\" font-weight=\"700\">Result: She, son &amp; daughter all flagged</text>\n        </svg>\n      </div>\n\n      <!-- Climactic Quote Split from p12.s4 -->\n      <blockquote class=\"verdict-quote\" data-ref=\"p12.s4\"><span class=\"lang-cn\">“是因为我的名字是伊什拉特，所以我的名字被从名单中删除了吗？”</span><span class=\"lang-en\">\"Is it because my name is Ishrat that I was cut?\"</span></blockquote>\n\n      <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"印度教民族主义 | 所有印度人的共同发展 | Hindu nationalism | progress of all Indians\"><span class=\"lang-cn\">纳伦德拉·莫迪领导的印度人民党一直在推行一种<mark class=\"ed-hl\">印度教民族主义</mark>，他的批评者认为这种民族主义歧视了印度穆斯林少数群体。政府对此予以否认，并表示其政策的重点是<mark class=\"ed-hl\">所有印度人的共同发展</mark>。</span><span class=\"lang-en\">Modi's BJP has promoted a form of <mark class=\"ed-hl\">Hindu nationalism</mark> that his critics say discriminates against India's Muslim minority. The government denies that, and says its policies are focused on the <mark class=\"ed-hl\">progress of all Indians</mark>.</span></p>\n    </div>\n  </section>\n\n</main>\n\n\n<footer class=\"wsj-footer\">\n  <div class=\"footer-inner\">\n    <div>\n      <span class=\"lang-cn\">© 2026 华尔街日报 (The Wall Street Journal) · 深度双语数字版 (E1-041)</span>\n      <span class=\"lang-en\">© 2026 The Wall Street Journal · Bilingual Digital Edition (E1-041)</span>\n    </div>\n    <div>\n      <span class=\"lang-cn\">版面：世界新闻 (Page A9) · 新德里电</span>\n      <span class=\"lang-en\">Section: World News (Page A9) · New Delhi</span>\n    </div>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-041",
+        "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+        "exact_match_cn": "13/13",
+        "exact_match_en": "13/13",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 13,
+        "observed_narrative_elements": 18,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 1,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p12"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "数千名安全部队",
+              "封锁了印度首都"
+            ],
+            "applied_en": [
+              "thousands of security forces",
+              "locked down India's capital"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "约1.3亿人"
+            ],
+            "applied_en": [
+              "some 130 million people"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "孟加拉国东部边界",
+              "二十年来首次"
+            ],
+            "applied_en": [
+              "eastern border with Bangladesh",
+              "the first in two decades"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "寻找工作而苦恼",
+              "严峻的挑战"
+            ],
+            "applied_en": [
+              "struggling to find work",
+              "stiff challenge to Modi"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "Cockroach Janta Party",
+              "大学入学考试丑闻"
+            ],
+            "applied_en": [
+              "scandal over a university entrance exam",
+              "Cockroach Janta Party"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "黎明前就开始部署",
+              "数十个地铁站关闭",
+              "黄色金属路障"
+            ],
+            "applied_en": [
+              "Dozens of metro stations were closed",
+              "deployed starting before dawn",
+              "yellow metal barricades"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7.s1",
+            "applied_cn": [
+              "阿布希吉特·迪普克",
+              "新德里机场"
+            ],
+            "applied_en": [
+              "New Delhi's airport",
+              "Abhijeet Dipke"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "两个小时内，约有100人被拘留"
+            ],
+            "applied_en": [
+              "about 100 people being detained over the course of two hours"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "数千人在首都被拘留",
+              "无法独立核实"
+            ],
+            "applied_en": [
+              "thousands were detained in the capital",
+              "couldn't independently verify"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "周日出庭后获释"
+            ],
+            "applied_en": [
+              "released following a court appearance Sunday"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "49岁的伊什拉特·安萨里",
+              "步行9英里"
+            ],
+            "applied_en": [
+              "Ishrat Ansari, 49",
+              "walking 9 miles"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12.s1",
+            "applied_cn": [
+              "她、她的儿子和女儿",
+              "因存在差异而被标记"
+            ],
+            "applied_en": [
+              "she, her son and her daughter",
+              "flagged for discrepancies"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12.s2",
+            "applied_cn": [
+              "2002年的选民登记册",
+              "卡图恩"
+            ],
+            "applied_en": [
+              "2002 voter rolls",
+              "Khatun"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12.s3",
+            "applied_cn": [
+              "因为她是一名穆斯林",
+              "社会工作者"
+            ],
+            "applied_en": [
+              "because she is a Muslim",
+              "social worker"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "所有印度人的共同发展",
+              "印度教民族主义"
+            ],
+            "applied_en": [
+              "progress of all Indians",
+              "Hindu nationalism"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 8,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "STAGE 01 · PRE-DAWN",
+              "黎明前部署与路障拦截",
+              "Pre-Dawn Barricades",
+              "黄色金属路障拦截车流与行人",
+              "Yellow metal barricades halt",
+              "数十地铁站关闭·城际列车取消",
+              "traffic; metro & trains cut",
+              "STAGE 02 · DAWN MARCH",
+              "首都北部清晨徒步 9 英里",
+              "9-Mile Walk at Dawn",
+              "49岁伊什拉特·安萨里清晨出发",
+              "Ishrat Ansari, 49, walks 9 mi",
+              "徒步穿越封锁线前往抗议地点",
+              "from north Delhi to protest",
+              "STAGE 03 · DETENTIONS",
+              "机场机舱带走与街头拘留",
+              "Airport & Street Custody",
+              "迪普克抵新德里机场在机上被拘",
+              "Dipke detained on plane; WSJ",
+              "WSJ目击2小时内约100人被拘留",
+              "sees ~100 held in two hours",
+              "STAGE 04 · SUNDAY COURT",
+              "周日出庭后获释",
+              "Released After Court",
+              "青年运动创始人迪普克与两位",
+              "Dipke and two fellow protest",
+              "同伴在周日出庭后获准释放",
+              "activists released on Sunday"
+            ],
+            "numbers_found": [
+              "01",
+              "02",
+              "9",
+              "9",
+              "49",
+              "49",
+              "9",
+              "03",
+              "2",
+              "100",
+              "100",
+              "04"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "0 0 903 210",
+            "text_labels": [
+              "1. 2002 VOTER ROLL ENTRY",
+              "登记姓名包含穆斯林女性常用敬称：",
+              "Recorded with Muslim female honorific:",
+              "Ishrat + \"Khatun\" (卡图恩)",
+              "通常由穆斯林女性使用的传统敬称",
+              "Honorific often used by Muslim women",
+              "FLAGGED",
+              "差异通知标记",
+              "DISCREPANCY",
+              "2. CURRENT IDENTIFICATION",
+              "当前身份证件上未包含该敬称：",
+              "Current ID omits the honorific:",
+              "Ishrat [No \"Khatun\"]",
+              "结果：本人、儿子与女儿今年均收到通知",
+              "Result: She, son & daughter all flagged"
+            ],
+            "numbers_found": [
+              "1",
+              "2002",
+              "2"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "1.3亿选民名册争议与青年愤怒合流",
+            "en": "The 130-Million Voter-Roll Dispute & Youth Convergence",
+            "numbers_found": [
+              "1.3",
+              "130"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "“Cockroach Janta Party”青年运动",
+            "en": "The \"Cockroach Janta Party\" Youth Movement",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "黎明前的黄色路障与机舱内的拘捕",
+            "en": "Pre-Dawn Yellow Barricades & Airport Custody",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "现场目击与各方通报记录",
+            "en": "Eyewitness vs. Reported Figures",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "新德里多维封锁网：从城际铁路、地铁站到机场机舱",
+            "en": "New Delhi's Multi-Layer Cordon: From Rail & Metro to Airport Cabin",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "九英里清晨徒步与“卡图恩”敬称之惑",
+            "en": "A Nine-Mile Walk at Dawn & The \"Khatun\" Honorific Discrepancy",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 2,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 760 210",
+          "repaired_viewBox": "0 0 903 210",
+          "repaired": true,
+          "offending_nodes": [
+            "text('Current ID omit' right=822>760)",
+            "text('Result: She, so' right=895>760)"
+          ]
+        }
+      ],
+      "sanitization_log": [
+        "Removed unnecessary client-side script block (>1200 chars or self-hydration script)",
+        "Removed unnecessary client-side script block (>1200 chars or self-hydration script)"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

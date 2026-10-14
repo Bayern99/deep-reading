@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战争中，监控摄像头遭到黑客入侵 | Video Cameras Are Hacked for War — WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-dark: #ebe5d8;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c1b1;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.13);
+    --alert-red: #9e2a2b;
+    --alert-red-soft: rgba(158, 42, 43, 0.1);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #284159;
+    --cyber-green: #2b7a4b;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans-cn: 'Noto Sans SC', -apple-system, sans-serif;
+    --font-serif-en: 'Lora', Georgia, serif;
+    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    --font-sans-en: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    font-family: var(--font-serif-cn);
+    background-color: var(--paper);
+    color: var(--body);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-serif-en);
+    line-height: 1.78;
+  }
+
+  /* Reading Progress Bar */
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--alert-red));
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Top Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.65rem 1.5rem;
+  }
+
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .wsj-monogram {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+    border-right: 1px solid var(--line-strong);
+    padding-right: 0.85rem;
+  }
+
+  .section-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--alert-red);
+    display: inline-block;
+    box-shadow: 0 0 0 3px rgba(158, 42, 43, 0.2);
+  }
+
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .chapter-jumps {
+    display: flex;
+    gap: 0.9rem;
+    font-family: var(--font-sans-cn);
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  .chapter-jumps a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .chapter-jumps a:hover {
+    color: var(--accent);
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 0.3rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.2rem 1.5rem 2.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .hero-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .hero-kicker span.sep {
+    color: var(--line-strong);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.15rem, 4.4vw, 3.65rem);
+    font-weight: 800;
+    line-height: 1.18;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.15rem;
+    max-width: 980px;
+  }
+
+  .hero-dek {
+    font-family: var(--font-serif-cn);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    line-height: 1.55;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 840px;
+    margin-bottom: 1.75rem;
+  }
+
+  html[lang="en"] .hero-dek {
+    font-family: var(--font-serif-en);
+  }
+
+  .byline-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans-en);
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .byline-authors strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .byline-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* Telemetry Scale Strip */
+  .telemetry-strip {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--line-strong);
+    background: var(--paper-card);
+  }
+
+  .telemetry-cell {
+    padding: 1.35rem 1.5rem;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .telemetry-cell:last-child {
+    border-right: none;
+  }
+
+  .telemetry-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .telemetry-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .telemetry-num.accent {
+    color: var(--accent);
+  }
+
+  .telemetry-num.red {
+    color: var(--alert-red);
+  }
+
+  .telemetry-desc {
+    font-family: var(--font-sans-cn);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  html[lang="en"] .telemetry-desc {
+    font-family: var(--font-sans-en);
+  }
+
+  /* Main Asymmetric Editorial Layout */
+  .editorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.8rem 1.5rem 4rem;
+  }
+
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 720px) minmax(280px, 380px);
+    justify-content: space-between;
+    gap: 3.2rem;
+    align-items: start;
+  }
+
+  .prose-column {
+    min-width: 0;
+  }
+
+  .sidebar-rail {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Prose Typography */
+  .prose-p {
+    font-size: 1.125rem;
+    color: var(--body);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  html[lang="zh-CN"] .prose-p {
+    line-height: 1.92;
+    text-align: justify;
+  }
+
+  html[lang="en"] .prose-p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* Lead Paragraph Treatment (No CSS ::first-letter on Chinese!) */
+  .prose-p.lead-p {
+    font-size: 1.24rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);
+    color: inherit;
+    padding: 0 2px;
+    border-bottom: 1px solid rgba(184, 93, 25, 0.45);
+    font-weight: 600;
+  }
+
+  /* Source Subheadings */
+  h2.source-subhead {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 2.8rem 0 1.25rem;
+    padding-top: 1.6rem;
+    border-top: 2px solid var(--ink);
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+
+  h2.source-subhead::before {
+    content: "SECTION DOSSIER";
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+
+  /* Derived Pull Quote */
+  blockquote.pull-quote {
+    background: var(--paper-card);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 1.4rem 1.35rem;
+    margin: 0;
+    position: relative;
+  }
+
+  blockquote.pull-quote::before {
+    content: "VERIFIED QUOTE";
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .quote-text {
+    font-family: var(--font-serif-cn);
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  html[lang="en"] .quote-text {
+    font-family: var(--font-serif-en);
+    font-style: italic;
+  }
+
+  .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+
+  /* Reporter Context Dossier Card */
+  .dossier-box {
+    background: var(--navy-bg);
+    color: #eae6df;
+    padding: 1.5rem;
+    border-radius: 2px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .dossier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--navy-line);
+    padding-bottom: 0.65rem;
+    margin-bottom: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: #e09f67;
+    text-transform: uppercase;
+  }
+
+  .dossier-body {
+    font-family: var(--font-sans-cn);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #d7d2c8;
+  }
+
+  /* Bespoke SVG Forensic Cards */
+  .forensic-figure {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem;
+    margin: 1.8rem 0;
+  }
+
+  .forensic-figure.full-bleed {
+    margin: 2.6rem 0;
+    padding: 1.75rem;
+    background: var(--paper-card);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .figure-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .figure-title {
+    font-family: var(--font-display);
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .figure-sub {
+    font-family: var(--font-sans-cn);
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-bottom: 1.1rem;
+    line-height: 1.5;
+  }
+
+  html[lang="en"] .figure-sub {
+    font-family: var(--font-sans-en);
+  }
+
+  .figure-caption {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.85rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Theater Intelligence Matrix Table / Grid */
+  .theater-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 2.2rem 0;
+  }
+
+  .theater-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .theater-card.alert-top {
+    border-top-color: var(--alert-red);
+  }
+
+  .theater-card.accent-top {
+    border-top-color: var(--accent);
+  }
+
+  .theater-code {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .theater-name {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .theater-detail {
+    font-family: var(--font-sans-cn);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  html[lang="en"] .theater-detail {
+    font-family: var(--font-sans-en);
+  }
+
+  .theater-stat {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--line-strong);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Intercepted Videoconference Callout Box */
+  .intercept-log {
+    background: #17191c;
+    color: #e5e2dc;
+    border-left: 4px solid var(--alert-red);
+    padding: 1.35rem 1.5rem;
+    margin: 1.6rem 0 2rem;
+    font-family: var(--font-mono);
+  }
+
+  .intercept-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    color: #f07167;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #2e3238;
+  }
+
+  /* Climactic Verdict Block */
+  .verdict-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--ink);
+    padding: 1.6rem 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .verdict-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .verdict-panel .prose-p {
+    margin-bottom: 0;
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Footer */
+  .ed-footer {
+    border-top: 2px solid var(--ink);
+    background: var(--paper-card);
+    padding: 2.5rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .ed-footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 960px) {
+    .asymmetric-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .telemetry-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .telemetry-cell:nth-child(2) {
+      border-right: none;
+    }
+    .telemetry-cell:nth-child(1),
+    .telemetry-cell:nth-child(2) {
+      border-bottom: 1px solid var(--line);
+    }
+    .theater-matrix {
+      grid-template-columns: 1fr;
+    }
+    .chapter-jumps {
+      display: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .masthead {
+      padding: 0.55rem 1rem;
+    }
+    .hero {
+      padding: 2rem 1rem 1.75rem;
+    }
+    .editorial-container {
+      padding: 1.8rem 1rem 3rem;
+    }
+    .telemetry-strip {
+      grid-template-columns: 1fr;
+    }
+    .telemetry-cell {
+      border-right: none !important;
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem 1rem;
+    }
+    .prose-p {
+      font-size: 1.05rem;
+    }
+    .prose-p.lead-p {
+      font-size: 1.12rem;
+    }
+    .forensic-figure,
+    .forensic-figure.full-bleed {
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-group">
+      <a href="#top" class="wsj-monogram">WSJ 深读</a>
+      <span class="section-badge">
+        <span class="live-dot"></span>
+        <span class="lang-cn">国家安全与网络战调查 · A1版</span>
+        <span class="lang-en">NATIONAL SECURITY &amp; CYBERWARFARE · PAGE A1</span>
+      </span>
+    </div>
+    <div class="nav-controls">
+      <nav class="chapter-jumps">
+        <a href="#sec-intro"><span class="lang-cn">边境鸡舍</span><span class="lang-en">The Coop</span></a>
+        <a href="#sec-gems"><span class="lang-cn">隐藏的宝藏</span><span class="lang-en">Hidden Gems</span></a>
+        <a href="#sec-condo"><span class="lang-cn">公寓摄像头</span><span class="lang-en">Condo Feeds</span></a>
+        <a href="#sec-iran"><span class="lang-cn">伊朗暗战</span><span class="lang-en">Iran War</span></a>
+        <a href="#sec-iot"><span class="lang-cn">物联网软肋</span><span class="lang-en">IoT Surface</span></a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO HEADER -->
+  <section class="hero">
+    <div class="hero-kicker">
+      <span>E2-002</span>
+      <span class="sep">/</span>
+      <span class="lang-cn">深度调查 · 数字间谍与现代战争</span>
+      <span class="lang-en">INVESTIGATIVE REPORT · DIGITAL ESPIONAGE IN MODERN WARFARE</span>
+    </div>
+    <h1 class="hero-title" data-ref="title"><span class="lang-cn">战争中，监控摄像头遭到黑客入侵</span><span class="lang-en">Video Cameras Are Hacked for War</span></h1>
+    <p class="hero-dek" data-ref="dek"><span class="lang-cn">交战方劫持易受攻击的设备，追踪、监视并攻击敌人</span><span class="lang-en">Combatants hijack vulnerable devices to track, surveil and attack the enemy</span></p>
+    <div class="byline-bar">
+      <div class="byline-authors">
+        <span class="lang-cn">作者：<strong>Daniel Michaels</strong> / <strong>Anat Peled</strong> / <strong>Milàn Czerny</strong></span>
+        <span class="lang-en">By <strong>Daniel Michaels</strong>, <strong>Anat Peled</strong> and <strong>Milàn Czerny</strong></span>
+      </div>
+      <div class="byline-meta">
+        <span class="lang-cn">发布日期：2026年10月12日 · 华尔街日报</span>
+        <span class="lang-en">PUBLISHED OCT. 12, 2026 · THE WALL STREET JOURNAL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUANTITATIVE TELEMETRY STRIP -->
+  <section class="telemetry-strip" aria-label="Key Surveillance Metrics">
+    <div class="telemetry-cell">
+      <div class="telemetry-tag"><span class="lang-cn">全球暴露基数 / S-RM估算</span><span class="lang-en">GLOBAL EXPOSURE / S-RM EST.</span></div>
+      <div class="telemetry-num accent"><span class="lang-cn">12 亿</span><span class="lang-en">1.2 Billion</span></div>
+      <div class="telemetry-desc"><span class="lang-cn">全球连接到互联网的摄像头总数，构成无处不在的“数字软肋”</span><span class="lang-en">Internet-connected cameras worldwide forming a global “soft underbelly”</span></div>
+    </div>
+    <div class="telemetry-cell">
+      <div class="telemetry-tag"><span class="lang-cn">乌克兰防线 / SBU统计</span><span class="lang-en">UKRAINE DEFENSE / SBU DATA</span></div>
+      <div class="telemetry-num"><span class="lang-cn">~40,000 台</span><span class="lang-en">~40,000</span></div>
+      <div class="telemetry-desc"><span class="lang-cn">自2022年俄乌战争爆发以来，乌安全局加固、重新定向或屏蔽的风险摄像头</span><span class="lang-en">Risky cameras secured, reoriented or blocked by Ukraine's SBU since 2022</span></div>
+    </div>
+    <div class="telemetry-cell">
+      <div class="telemetry-tag"><span class="lang-cn">以色列高危入侵 / 国家网络局</span><span class="lang-en">ISRAEL HIGH-RISK BREACHES</span></div>
+      <div class="telemetry-num red">250+</div>
+      <div class="telemetry-desc"><span class="lang-cn">今年伊朗关联组织入侵并直接威胁以色列国家安全的敏感摄像头数量</span><span class="lang-en">Sensitive Israeli cameras hacked this year by Iran-linked groups posing immediate danger</span></div>
+    </div>
+    <div class="telemetry-cell">
+      <div class="telemetry-tag"><span class="lang-cn">本报核查取证 / WSJ调查</span><span class="lang-en">WSJ FORENSIC VERIFICATION</span></div>
+      <div class="telemetry-num"><span class="lang-cn">数十小时</span><span class="lang-en">Dozens of Hrs</span></div>
+      <div class="telemetry-desc"><span class="lang-cn">审查数十小时录像与数百张黑客公开图像，并通过地理定位独立验证真伪</span><span class="lang-en">Footage &amp; hundreds of hacked images geolocated and verified by the Journal</span></div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 1: OPENING SCENE & GLOBAL SOFT UNDERBELLY -->
+  <div class="editorial-container" id="sec-intro">
+    <div class="asymmetric-grid">
+      <div class="prose-column">
+        <p class="prose-p lead-p" data-ref="p1" data-hl="阿拉伯语 | Arabic"><span class="lang-cn">今年年初，美国和以色列军队轰炸伊朗时，以色列北部的一位养鸡户决定去查看他的鸡。当他在手机上打开摄像头应用程序，查看鸡舍外面的摄像头时，他惊恐地发现摄像头的语言已切换为<mark class="ed-hl">阿拉伯语</mark>。</span><span class="lang-en">As U.S. and Israeli forces bombed Iran early this year, a poultry farmer in northern Israel decided to check on his chickens. When he launched the app on his phone for the webcam outside his coop, he was alarmed to see that its language had been switched to <mark class="ed-hl">Arabic</mark>.</span></p>
+        <p class="prose-p" data-ref="p2"><span class="lang-cn">他联系了以色列国家网络局，该局发现黑客已经控制了这款中国制造的摄像头。</span><span class="lang-en">He contacted Israel's National Cyber Directorate, which found that hackers had taken control of the Chinese-made camera.</span></p>
+        <p class="prose-p" data-ref="p3" data-hl="靠近黎巴嫩边境的活动 | movements of Israeli security forces along the nearby border with Lebanon"><span class="lang-cn">黑客对鸡并不感兴趣。摄像头的位置使其能够观察到以色列安全部队在<mark class="ed-hl">靠近黎巴嫩边境的活动</mark>。</span><span class="lang-en">They weren't interested in chickens. The camera's orientation on the coop offered it a line of sight to the <mark class="ed-hl">movements of Israeli security forces along the nearby border with Lebanon</mark>.</span></p>
+        <p class="prose-p" data-ref="p4"><span class="lang-cn">网络局表示，他们帮助这位养鸡户加强了摄像头的安全性，并调整了其拍摄角度，以防止其继续拍摄军事行动。</span><span class="lang-en">The cyber directorate said it helped the farmer harden the camera's security and adjust its viewing angle to stop capturing military operations.</span></p>
+        <p class="prose-p" data-ref="p5" data-hl="12亿个 | 1.2 billion"><span class="lang-cn">根据网络安全咨询公司S-RM的说法，这位养鸡户的摄像头是全球约<mark class="ed-hl">12亿个</mark>连接到互联网的摄像头之一。</span><span class="lang-en">The farmer's webcam was one of an estimated <mark class="ed-hl">1.2 billion</mark> internet-connected cameras worldwide, according to cybersecurity consultants S-RM.</span></p>
+        <p class="prose-p" data-ref="p6"><span class="lang-cn">这些设备已成为日常生活中常见的设备，形式包括安全系统、门铃、交通控制系统，甚至婴儿监视器——网络安全专家和黑客表示，它们中的任何一个都可能存在被窥探的风险。</span><span class="lang-en">The devices have become a background fixture of daily life in the form of security systems, doorbells, traffic controls and even baby monitors—and potentially any of them are vulnerable to snooping, say cybersecurity experts and hackers.</span></p>
+        <p class="prose-p" data-ref="p7" data-hl="民用监控正在转化为战时情报收集 | conversion of civilian surveillance into wartime intelligence collection"><span class="lang-cn">威胁情报咨询公司Recorded Future的国家安全专家亚历山大·莱斯利表示：“我们现在看到，<mark class="ed-hl">民用监控正在转化为战时情报收集</mark>。”他认为，无处不在的数字摄像头构成了全球性的“软肋”。</span><span class="lang-en">“We are now seeing the <mark class="ed-hl">conversion of civilian surveillance into wartime intelligence collection</mark>,” said Alexander Leslie, a national-security expert at threat-intelligence consultants Recorded Future, who sees a global “soft underbelly” in omnipresent digital eyeballs.</span></p>
+        <p class="prose-p" data-ref="p8"><span class="lang-cn">《华尔街日报》采访了情报机构、网络安全专家、军事官员和黑客，以了解这种侵入式监控的范围和影响。该报还审查了数十小时的录像和数百张图片，其中大部分由黑客公开发布，并独立验证了其真实性，方法是确定其地理位置，并检查是否存在任何数字篡改的迹象。</span><span class="lang-en">The Wall Street Journal spoke with intelligence agencies, cybersecurity experts, military officials and hackers to scope out the extent and impact of the invasive surveillance. The Journal also reviewed dozens of hours of footage and hundreds of images, much of it made public by hackers, and independently verified their authenticity, by geolocating their locations and checking for any signs of digital manipulations.</span></p>
+      </div>
+
+      <!-- SIDEBAR RAIL: CONTEXT DOSSIER + COOP DIAGRAM + Q1 -->
+      <aside class="sidebar-rail">
+        <div class="dossier-box">
+          <div class="dossier-header">
+            <span><span class="lang-cn">调查背景档案</span><span class="lang-en">EXECUTIVE DOSSIER</span></span>
+            <span>WSJ INTEL</span>
+          </div>
+          <p class="dossier-body" data-ref="ctx1"><span class="lang-cn">据网络安全咨询公司 S-RM 估算，全球约有 12 亿个联网摄像头。俄乌双方互相入侵对方摄像头以寻找目标、评估毁伤；以色列曾入侵伊朗交通摄像头协助收集暗杀哈梅内伊的情报，伊朗及其代理人则反击入侵了数百个以色列摄像头。AI 使大规模入侵与影像分析变得更容易；乌克兰安全局称自 2022 年以来已加固、改向或屏蔽约 4 万个存在安全风险的摄像头。</span><span class="lang-en">据网络安全咨询公司 S-RM 估算，全球约有 12 亿个联网摄像头。俄乌双方互相入侵对方摄像头以寻找目标、评估毁伤；以色列曾入侵伊朗交通摄像头协助收集暗杀哈梅内伊的情报，伊朗及其代理人则反击入侵了数百个以色列摄像头。AI 使大规模入侵与影像分析变得更容易；乌克兰安全局称自 2022 年以来已加固、改向或屏蔽约 4 万个存在安全风险的摄像头。</span></p>
+        </div>
+
+        <!-- SVG 1: Line-of-Sight Reconstruction of the Northern Israel Coop Camera -->
+        <div class="forensic-figure" style="margin:0;">
+          <div class="figure-kicker"><span class="lang-cn">现场取证重构 · FIG 01</span><span class="lang-en">FORENSIC RECONSTRUCTION · FIG 01</span></div>
+          <div class="figure-title"><span class="lang-cn">从养鸡场到边境观察哨</span><span class="lang-en">From Poultry Coop to Border Lookout</span></div>
+          <div class="figure-sub"><span class="lang-cn">以色列国家网络局如何通过调整拍摄倾角切断黑客对黎巴嫩边境部队的视线</span><span class="lang-en">How reorienting the camera's viewing cone cut off hackers' line of sight to troops near Lebanon</span></div>
+          <svg viewBox="0 0 360 230" width="100%" role="img" aria-label="Line of sight diagram from chicken coop to Lebanon border">
+            <rect x="0" y="0" width="360" height="230" fill="#faf8f4" stroke="#e4dfd3" stroke-width="1"/>
+            <!-- Ground terrain line -->
+            <path d="M 20 185 L 150 185 L 220 175 L 340 165" stroke="#646059" stroke-width="2" fill="none"/>
+            <!-- Coop structure -->
+            <rect x="35" y="135" width="60" height="50" fill="#ebe5d8" stroke="#141413" stroke-width="1.5"/>
+            <polygon points="30,135 65,112 100,135" fill="#d8cfc0" stroke="#141413" stroke-width="1.5"/>
+            <text x="65" y="164" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#141413">COOP / 鸡舍</text>
+            <!-- Camera node -->
+            <circle cx="95" cy="132" r="5" fill="#9e2a2b"/>
+            <!-- Hacked wide cone (Red) -->
+            <polygon points="95,132 330,65 330,162" fill="rgba(158, 42, 43, 0.14)" stroke="#9e2a2b" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <!-- Reoriented safe cone (Green/Teal) -->
+            <polygon points="95,132 145,185 190,185" fill="rgba(43, 122, 75, 0.18)" stroke="#2b7a4b" stroke-width="1.5"/>
+            <!-- Border patrol target -->
+            <rect x="265" y="142" width="52" height="22" fill="#141413" rx="2"/>
+            <circle cx="277" cy="166" r="5" fill="#141413"/>
+            <circle cx="305" cy="166" r="5" fill="#141413"/>
+            <text x="291" y="156" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#faf8f4">IDF PATROL</text>
+            <!-- Labels -->
+            <text x="225" y="60" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" fill="#9e2a2b">1. HACKED LINE OF SIGHT (ARABIC UI)</text>
+            <text x="225" y="73" font-family="Noto Sans SC, sans-serif" font-size="9" fill="#9e2a2b">被劫持视角：直视黎巴嫩边境以军动向</text>
+            <text x="115" y="208" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" fill="#2b7a4b">2. REORIENTED ANGLE / 加固并下调角度</text>
+          </svg>
+        </div>
+
+        <blockquote class="pull-quote" data-derive="q1">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“我们现在看到，民用监控正在转化为战时情报收集。”</span><span class="lang-en">“We are now seeing the conversion of civilian surveillance into wartime intelligence collection,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 7 段直接引述</span><span class="lang-en">— Direct Quote (p7)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 2: HIDDEN GEMS & AI KILL-CHAIN -->
+    <div class="asymmetric-grid" id="sec-gems">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p9"><span class="lang-cn">隐藏的宝藏</span><span class="lang-en">Hidden gems</span></h2>
+        <p class="prose-p" data-ref="p10" data-hl="测试数百万个密码 | testing millions of passwords | 人工智能 | AI"><span class="lang-cn">情报机构在互联网上搜索易受攻击的摄像头，并通过<mark class="ed-hl">测试数百万个密码</mark>来自动入侵这些摄像头。现在，<mark class="ed-hl">人工智能</mark>使入侵这些摄像头并大规模分析其数据变得更加容易，从而将原本旨在提高安全性的摄像头转变为供作战人员用于追踪、监视和攻击敌人的工具——通常，这些工具的能力甚至超过了人类情报分析师。</span><span class="lang-en">Intelligence agencies scour the internet for vulnerable cameras and robotically tap in to them by <mark class="ed-hl">testing millions of passwords</mark>. Now, <mark class="ed-hl">AI</mark> has made it even easier to hack into them and analyze their data at scale, transforming cameras that were designed to boost safety into tools for combatants to track, surveil and attack the enemy—often surpassing the abilities of human intelligence analysts.</span></p>
+        <p class="prose-p" data-ref="p11"><span class="lang-cn">算法会处理海量的视频资料，以寻找隐藏的宝藏和模式，供情报人员进行监控。</span><span class="lang-en">Algorithms digest endless reams of footage to find hidden gems and patterns for agents to monitor.</span></p>
+        <p class="prose-p" data-ref="p12" data-hl="人工智能改变了一切 | AI changed everything"><span class="lang-cn">“<mark class="ed-hl">人工智能改变了一切</mark>，”OneFist团队的负责人克里斯托弗·科特赖特说道，OneFist团队是一个国际黑客组织，为乌克兰在与俄罗斯的战争中提供支持。</span><span class="lang-en">“<mark class="ed-hl">AI changed everything</mark>,” said Kristopher Kortright, leader of Team OneFist, an international hacker group supporting Ukraine in its war with Russia.</span></p>
+        <p class="prose-p" data-ref="p13" data-hl="阿里·哈梅内伊 | Ali Khamenei"><span class="lang-cn">俄罗斯和乌克兰都在战争中加大了对摄像头的入侵力度，旨在互相监视、寻找新的目标并评估其攻击造成的损害。以色列长期以来都是数字间谍技术的行家，它入侵了伊朗的交通摄像头，以帮助其军队收集情报，这些情报被用于今年早些时候对伊朗最高领袖<mark class="ed-hl">阿里·哈梅内伊</mark>的暗杀行动。伊朗及其代理人也进行了反击，入侵了数百个以色列网络摄像头和安全摄像头，这些摄像头被以色列官员认为对国家安全至关重要，例如安装在鸡舍上的摄像头。</span><span class="lang-en">Russia and Ukraine have ramped up camera-hacking in their war, aiming to spy on each other, find new targets and assess damage from their attacks. Israel, long a master of digital spycraft, hacked into Iranian traffic cameras to help forces collect intelligence used in the assassination of Iranian Supreme Leader <mark class="ed-hl">Ali Khamenei</mark> earlier this year. Iran and its proxies have struck back by breaking into hundreds of Israeli webcams and security cameras that Israeli officials consider sensitive to national security, like the one on the chicken coop.</span></p>
+      </div>
+
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <div class="forensic-figure" style="margin:0;">
+          <div class="figure-kicker"><span class="lang-cn">技术演变对比 · AI赋能</span><span class="lang-en">CAPABILITY SHIFT · AI SCALE</span></div>
+          <div class="figure-title"><span class="lang-cn">从人工盯屏到算法猎杀</span><span class="lang-en">From Human Analysts to Algorithmic Ingestion</span></div>
+          <div class="figure-sub"><span class="lang-cn">情报机构如何自动化完成从全网扫描到战术打击的闭环</span><span class="lang-en">How automated password spraying and computer vision surpass human intelligence analysts</span></div>
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; display: flex; flex-direction: column; gap: 0.65rem;">
+            <div style="padding: 0.65rem; background: var(--paper); border-left: 3px solid var(--ink);">
+              <strong>STAGE 01 · SCAN &amp; BRUTE-FORCE</strong><br>
+              <span class="lang-cn">全网搜索暴露端口，机器人自动测试数百万默认或弱密码</span>
+              <span class="lang-en">Robotic internet scouring &amp; testing millions of passwords</span>
+            </div>
+            <div style="padding: 0.65rem; background: var(--paper); border-left: 3px solid var(--accent);">
+              <strong>STAGE 02 · AI PATTERN DIGESTION</strong><br>
+              <span class="lang-cn">人工智能大规模吞吐海量视频流，识别部队调动与防空规律</span>
+              <span class="lang-en">AI algorithms digest endless footage for hidden gems &amp; patterns</span>
+            </div>
+            <div style="padding: 0.65rem; background: var(--paper); border-left: 3px solid var(--alert-red);">
+              <strong>STAGE 03 · KINETIC STRIKE &amp; BDA</strong><br>
+              <span class="lang-cn">锁定高价值目标、实时校准导弹落点并评估战损</span>
+              <span class="lang-en">Target acquisition, missile aim refinement &amp; damage assessment</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 3: CONDO ASSOCIATION & EUROPEAN LOGISTICS -->
+    <div class="asymmetric-grid" id="sec-condo">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p14"><span class="lang-cn">公寓管理协会</span><span class="lang-en">Condo association</span></h2>
+        <p class="prose-p" data-ref="p15" data-hl="变成观察哨 | turn them into lookout points"><span class="lang-cn">“他们无法通过双筒望远镜从伊朗看到以色列，”以色列国家网络局的一位网络安全专家埃利亚夫·努里说道。“因此，他们利用暴露在互联网上的摄像头，并将它们<mark class="ed-hl">变成观察哨</mark>。”</span><span class="lang-en">“They can't look through binoculars” to see Israel from Iran, said Eliav Noori, a cybersecurity expert at Israel's cyber directorate. “So they take advantage of cameras that are exposed to the internet and <mark class="ed-hl">turn them into lookout points</mark>.”</span></p>
+        <p class="prose-p" data-ref="p16"><span class="lang-cn">2024年，俄罗斯黑客控制了基辅的住宅网络摄像头，其中包括一个由公寓管理协会安装的摄像头，用于监控社区。</span><span class="lang-en">In 2024, Russian hackers commandeered residential webcams in Kyiv, including one installed by a condominium association to monitor the neighborhood.</span></p>
+        <p class="prose-p" data-ref="p17" data-hl="调整对乌克兰的导弹袭击 | to adjust missile attacks on Ukraine | 4万个 | 40,000"><span class="lang-cn">乌克兰安全局（SBU）表示，俄罗斯打算利用被入侵的视频流来寻找目标，并“<mark class="ed-hl">调整对乌克兰的导弹袭击</mark>”，从而改进其后续打击的瞄准精度。SBU表示，自俄罗斯于2022年入侵以来，它已经识别并加固、重新定向或阻止了大约<mark class="ed-hl">4万个</mark>可能构成安全风险的视频摄像头。</span><span class="lang-en">Ukraine's security service, the SBU, said that Russia intended to use the hacked video feeds to find targets and “<mark class="ed-hl">to adjust missile attacks on Ukraine</mark>,” refining their aim for subsequent strikes. The SBU said it has identified and secured, reoriented or blocked roughly <mark class="ed-hl">40,000</mark> video cameras that posed potential security risks since Russia's 2022 invasion.</span></p>
+        <p class="prose-p" data-ref="p18" data-hl="欧洲各地的摄像头 | cameras across Europe"><span class="lang-cn">俄罗斯的行动范围超出了战争区域。荷兰情报机构在7月份警告说，“俄罗斯国家行为者正在系统地进行数字间谍行动”，通过入侵<mark class="ed-hl">欧洲各地的摄像头</mark>来实现这一目标。这些行动旨在收集有关军事运输路线、向乌克兰运送武器以及乌克兰军事人员下落的数据，情报机构表示。</span><span class="lang-en">Russia's efforts extend beyond the war zone. Dutch intelligence agencies warned in July that “Russian state actors are systematically conducting digital espionage operations” by hacking into <mark class="ed-hl">cameras across Europe</mark>. The operations aim to collect data on military transport routes, arms deliveries to Ukraine and the whereabouts of Ukrainian military personnel, the agencies said.</span></p>
+        <p class="prose-p" data-ref="p19" data-hl="北约盟友罗马尼亚 | NATO ally Romania"><span class="lang-cn">网络安全咨询公司 CloudSEK 最近发现了一台暴露的服务器，他们怀疑该服务器属于一个讲俄语的黑客，服务器中包含数百张乌克兰国防、政府、能源和通信设施的网络摄像头图像，以及各种日常生活的场景。CloudSEK 表示，其中许多图像来自乌克兰与<mark class="ed-hl">北约盟友罗马尼亚</mark>接壤的地区。</span><span class="lang-en">Cybersecurity consultants CloudSEK recently discovered an exposed server they suspect belongs to a Russian-speaking hacker that contained hundreds of webcam images of Ukrainian facilities involved in defense, government, energy and communications, plus assorted views of daily life. CloudSEK said many of the images came from locations near Ukraine's borders with <mark class="ed-hl">NATO ally Romania</mark>.</span></p>
+      </div>
+
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <blockquote class="pull-quote" data-derive="q2">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“因此，他们利用暴露在互联网上的摄像头，并将它们变成观察哨。”</span><span class="lang-en">“So they take advantage of cameras that are exposed to the internet and turn them into lookout points.”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 15 段直接引述</span><span class="lang-en">— Direct Quote (p15)</span></footer>
+        </blockquote>
+
+        <blockquote class="pull-quote" data-derive="q3">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“俄罗斯国家行为者正在系统地进行数字间谍行动”</span><span class="lang-en">“Russian state actors are systematically conducting digital espionage operations”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 18 段直接引述</span><span class="lang-en">— Direct Quote (p18)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 4: WAR WITH IRAN -->
+    <div class="asymmetric-grid" id="sec-iran">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p20"><span class="lang-cn">与伊朗的战争</span><span class="lang-en">War with Iran</span></h2>
+        <p class="prose-p" data-ref="p21" data-hl="摩西职员 | Moses Staff"><span class="lang-cn">网络摄像头在与伊朗的战争中也发挥着越来越重要的作用。以色列国家网络局表示，一个与伊朗有关的名为“<mark class="ed-hl">摩西职员</mark>”的组织入侵了耶路撒冷的一个安全摄像头，以监控一名巴勒斯坦武装分子于 2022 年实施的巴士站爆炸事件，该事件造成两人死亡，另有 20 多人受伤。</span><span class="lang-en">Webcams are also playing an increasingly important role in the war with Iran. An Iran-linked group called <mark class="ed-hl">Moses Staff</mark> hacked into a Jerusalem security camera to monitor the 2022 bus stop bombings by a Palestinian militant that killed two people and injured more than 20 others, Israel's cyber directorate said.</span></p>
+        <p class="prose-p" data-ref="p22" data-hl="250 多台 | more than 250 | 车牌识别器 | license-plate readers"><span class="lang-cn">今年，与伊朗有关的组织入侵了 <mark class="ed-hl">250 多台</mark>敏感的以色列安全摄像头，这些事件对国家安全构成了直接威胁，数量超过了往年。被入侵的摄像头包括<mark class="ed-hl">车牌识别器</mark>和位于战略地点以及士兵聚集地（包括靠近黎巴嫩边境的军事哨所）的安全摄像头。</span><span class="lang-en">This year, Iranian-linked groups have hacked into <mark class="ed-hl">more than 250</mark> sensitive Israeli security cameras in incidents that pose immediate danger to national security, according to Israel's cyber directorate, more than in previous years. Compromised cameras include <mark class="ed-hl">license-plate readers</mark> and security cameras near strategic sites and places where soldiers gather, including military outposts near the border with Lebanon.</span></p>
+        <p class="prose-p" data-ref="p23" data-hl="默认密码 | default passwords"><span class="lang-cn">以色列国家网络局表示，自伊朗战争开始以来，以色列境内被入侵的摄像头总数要高得多，并且在数十万连接到互联网的摄像头中，有数万个存在漏洞，伊朗黑客可以利用这些漏洞，例如使用<mark class="ed-hl">默认密码</mark>。</span><span class="lang-en">The total number of cameras breached in Israel since the start of the Iran war is far higher, the cyber directorate said, adding that out of hundreds of thousands of cameras connected to the internet there, tens of thousands have vulnerabilities that Iranian hackers could take advantage of like <mark class="ed-hl">default passwords</mark>.</span></p>
+        <p class="prose-p" data-ref="p24"><span class="lang-cn">被入侵的摄像头正在取代之前由空中侦察或实地间谍提供的情报，从而在目标定位、损失评估和其他作战情报收集方面发挥作用。入侵一个位置良好的摄像头可以让分析人员更接近目标，并且比渗透最狡猾的特工的风险更小。</span><span class="lang-en">Hacked cameras are taking over roles in targeting, damage assessments and other combat intelligence-gathering that were previously supplied by aerial reconnaissance or on-the-ground spies. Penetrating a well-placed camera can get analysts closer to targets and carries less risk than infiltrating the canniest secret agent.</span></p>
+      </div>
+
+      <!-- MULTI-THEATER INTELLIGENCE DOSSIER IN RAIL -->
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <div class="forensic-figure" style="margin:0;">
+          <div class="figure-kicker"><span class="lang-cn">多战区交锋态势 · DOSSIER</span><span class="lang-en">THEATER MATRIX · DOSSIER</span></div>
+          <div class="figure-title"><span class="lang-cn">三大战线的镜头争夺战</span><span class="lang-en">Three Fronts of Camera Spycraft</span></div>
+          <div class="theater-matrix" style="grid-template-columns: 1fr; margin: 0.8rem 0 0; gap: 0.9rem;">
+            <div class="theater-card alert-top">
+              <div class="theater-code">THEATER 01 · ISRAEL — IRAN</div>
+              <div class="theater-name"><span class="lang-cn">德黑兰交通网与以北哨所</span><span class="lang-en">Tehran Traffic &amp; Israeli Outposts</span></div>
+              <p class="theater-detail"><span class="lang-cn">以色列曾入侵伊朗交通摄像头收集暗杀哈梅内伊情报；伊朗关联组织（“摩西职员”、“汉达拉”）反击入侵逾250台以方敏感摄像头与车牌识别器。</span><span class="lang-en">Israel hacked Iranian traffic cameras to aid the Khamenei assassination; Iran-linked groups (Moses Staff, Handala) breached 250+ sensitive Israeli cameras and license-plate readers.</span></p>
+            </div>
+            <div class="theater-card accent-top">
+              <div class="theater-code">THEATER 02 · RUSSIA — UKRAINE</div>
+              <div class="theater-name"><span class="lang-cn">基辅公寓与刻赤海峡大桥</span><span class="lang-en">Kyiv Condos &amp; Kerch Strait Bridge</span></div>
+              <p class="theater-detail"><span class="lang-cn">俄黑客劫持基辅社区摄像头校准导弹袭击；支持乌克兰的OneFist监看克里米亚大桥摄像头，发现桥下防蛙人运动探测器。</span><span class="lang-en">Russia hijacked Kyiv condo webcams to refine missile strikes; pro-Ukraine Team OneFist watched Kerch Bridge feeds, spotting motion detectors underneath.</span></p>
+            </div>
+            <div class="theater-card">
+              <div class="theater-code">THEATER 03 · NATO &amp; EUROPE</div>
+              <div class="theater-name"><span class="lang-cn">罗马尼亚边境与欧洲运输线</span><span class="lang-en">Romania Border &amp; EU Transit</span></div>
+              <p class="theater-detail"><span class="lang-cn">荷兰情报机构警告俄方系统性入侵欧洲摄像头追踪援乌武器路线；CloudSEK发现暴露服务器存有乌罗边境大量设施图像。</span><span class="lang-en">Dutch intelligence warned of Russian espionage across European cameras tracking arms deliveries; CloudSEK found hundreds of images near NATO ally Romania.</span></p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 5: RESTRICTED AREAS & FACILITY BLIND SPOTS -->
+    <div class="asymmetric-grid" id="sec-restricted">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p25"><span class="lang-cn">限制区域</span><span class="lang-en">Restricted areas</span></h2>
+        <p class="prose-p" data-ref="p26"><span class="lang-cn">视频摄像头通常在限制区域内静默运行。乌克兰从无法到达的位置入侵俄罗斯的摄像头信号，帮助基辅打击了莫斯科的军队和基础设施。</span><span class="lang-en">Video cameras operate silently, often in restricted areas. Ukraine's penetration of Russian camera feeds from unreachable locations have helped Kyiv strike Moscow's troops and infrastructure.</span></p>
+        <p class="prose-p" data-ref="p27" data-hl="刻赤海峡大桥 | Kerch Strait Bridge | 运动探测器 | motion detectors"><span class="lang-cn">在乌克兰战争初期，OneFist 团队监视了俄罗斯<mark class="ed-hl">刻赤海峡大桥</mark>（通往克里米亚）上的摄像头信号，提供了有助于完善攻击计划的图像——包括俄罗斯在大桥下方安装了<mark class="ed-hl">运动探测器</mark>，以阻止水上攻击。</span><span class="lang-en">Early in the Ukraine war, Team OneFist watched feeds from cameras on Russia's <mark class="ed-hl">Kerch Strait Bridge</mark> to Crimea, providing images that helped refine attack plans—including the fact that Russia had installed <mark class="ed-hl">motion detectors</mark> underneath the bridge to thwart waterborne attacks.</span></p>
+        <p class="prose-p" data-ref="p28" data-hl="缩短决策周期 | shorten decision cycles"><span class="lang-cn">Recorded Future 的亚历山大·莱斯利表示，来自被入侵摄像头的“信息可以<mark class="ed-hl">缩短决策周期</mark>，这正是现代军队所关心的”。</span><span class="lang-en">Information from hacked cameras “can <mark class="ed-hl">shorten decision cycles</mark> in exactly the way modern militaries care about,” said Recorded Future's Leslie.</span></p>
+        <p class="prose-p" data-ref="p29"><span class="lang-cn">派拓网络公司云安全服务高级副总裁邹旭表示，虽然个人和企业网络管理员越来越重视网络安全，但像摄像头这样的联网设备可能内置的保护措施较少，并且不会得到持续的监控、修复或更新。</span><span class="lang-en">While private individuals and enterprise-network managers are increasingly attuned to cybersecurity, web-connected devices like cameras may have fewer built-in protections and not be consistently monitored, patched or updated, said Xu Zou, senior vice president for cloud security services at cybersecurity company Palo Alto Networks.</span></p>
+        <p class="prose-p" data-ref="p30" data-hl="安装摄像头、打开电源，然后离开 | mount that camera, power it on, and walk away"><span class="lang-cn">他指出，公司和政府内部的信息安全专家通常并不知道这些联网摄像头，而这些摄像头通常由设施管理人员或其他非信息技术团队安装和操作。“这些团队对网络安全意识和知识非常有限。他们的工作就是<mark class="ed-hl">安装摄像头、打开电源，然后离开</mark>。”</span><span class="lang-en">Information-security specialists inside companies and governments often aren't aware of connected cameras, which are frequently installed and operated by facilities managers or other non-IT teams. “Those teams have very little cybersecurity awareness and knowledge. Their job is to <mark class="ed-hl">mount that camera, power it on, and walk away</mark>,” said Zou.</span></p>
+      </div>
+
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <blockquote class="pull-quote" data-derive="q4">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“信息可以缩短决策周期，这正是现代军队所关心的”</span><span class="lang-en">“can shorten decision cycles in exactly the way modern militaries care about,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 28 段直接引述</span><span class="lang-en">— Direct Quote (p28)</span></footer>
+        </blockquote>
+
+        <blockquote class="pull-quote" data-derive="q5">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“这些团队对网络安全意识和知识非常有限。他们的工作就是安装摄像头、打开电源，然后离开。”</span><span class="lang-en">“Those teams have very little cybersecurity awareness and knowledge. Their job is to mount that camera, power it on, and walk away,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 30 段直接引述</span><span class="lang-en">— Direct Quote (p30)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 6: INFORMATION WARFARE & VIDEOCONFERENCE INTRUSION -->
+    <div class="asymmetric-grid" id="sec-infowar">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p31"><span class="lang-cn">信息战</span><span class="lang-en">Information warfare</span></h2>
+        <p class="prose-p" data-ref="p32" data-hl="视频流和视频会议设备 | video-streaming and video-conferencing equipment"><span class="lang-cn">派拓网络公司去年发现，绝大多数安全性较低的联网设备是网络摄像头和数字录像机。该公司还发现，<mark class="ed-hl">视频流和视频会议设备</mark>——在全球各地的办公楼中普遍存在——尤其容易受到攻击。这使得它们在信息战中变得有用，而不仅仅是在军事行动中，保卫民主基金会网络与技术创新中心的研究员阿里·本·阿姆表示。</span><span class="lang-en">Palo Alto found last year that the vast majority of weakly secured internet-connected devices are webcams and digital video recorders. The company also found that <mark class="ed-hl">video-streaming and video-conferencing equipment</mark>—ubiquitous in office buildings around the globe—are particularly vulnerable. That has made them useful for information warfare, not just military operations, said Ari Ben Am, an adjunct fellow at the Center on Cyber and Technology Innovation at the Foundation for Defense of Democracies, a Washington think tank.</span></p>
+        <p class="prose-p" data-ref="p33" data-hl="展示他们的情报优势 | playing up their intelligence superiority"><span class="lang-cn">他指出，反以色列组织使用被入侵的摄像头拍摄的图像，制作宣传视频和内容。“对他们来说，这关乎于<mark class="ed-hl">展示他们的情报优势</mark>。”</span><span class="lang-en">Anti-Israeli groups, he said, use imagery from hacked cameras in propaganda videos and content. “For them it is about <mark class="ed-hl">playing up their intelligence superiority</mark>,” he said.</span></p>
+        <p class="prose-p" data-ref="p34" data-hl="汉达拉 | Handala"><span class="lang-cn">与伊朗有关联的组织<mark class="ed-hl">汉达拉</mark>通过炫耀自己能够看到和听到以色列人在家附近的情况，来嘲讽以色列人。“有什么想说吗？找到最近的交通摄像头，然后说出来，”汉达拉去年在其网站上写道，该网站后来已被关闭。</span><span class="lang-en">Iranian-linked group <mark class="ed-hl">Handala</mark> taunts Israelis by boasting that it can see and hear them close to home. “Have a message? Find the nearest traffic camera and talk,” Handala wrote last year on one of its websites, which has since been taken down.</span></p>
+
+        <!-- Embedded Incident Frame for Paragraph 35 -->
+        <div class="intercept-log">
+          <div class="intercept-header">
+            <span><span class="lang-cn">会议劫持记录 · 俄罗斯工业和贸易部</span><span class="lang-en">INTRUSION LOG · RUSSIAN MINISTRY OF INDUSTRY &amp; TRADE</span></span>
+            <span> AUDIO / VIDEO BREACH</span>
+          </div>
+          <p class="prose-p" style="color: #eae6df; margin-bottom: 0; font-family: var(--font-serif-cn);" data-ref="p35" data-hl="各位同事，你们能听到我吗？ | Colleagues, can you hear me? | 关掉它 | Turn it off"><span class="lang-cn">在俄罗斯，工业和贸易部官员在今年早些时候的一次视频会议中抱怨他们过度依赖中国无人机组件，这时一个意想不到的声音加入了会议。“<mark class="ed-hl">各位同事，你们能听到我吗？</mark>”这个声音问道。会议负责人回答说：“能听到。”然后，这个入侵者提出一个看似技术性的问题，但很快就变得粗俗。“<mark class="ed-hl">关掉它</mark>，”会议负责人对他的同事说，这段视频后来被乌克兰黑客发布到网上。</span><span class="lang-en">In Russia, officials from the Ministry of Industry and Trade were grousing on a videoconference call earlier this year about their reliance on Chinese drone components when an unexpected voice joined in. “<mark class="ed-hl">Colleagues, can you hear me?</mark>” the voice asked. Yes, replied the meeting leader. The intruder then asked a seemingly technical question that quickly turned obscene. “<mark class="ed-hl">Turn it off</mark>,” the meeting leader told his colleagues, in a video later posted online by Ukrainian hackers.</span></p>
+        </div>
+      </div>
+
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <div class="forensic-figure" style="margin:0;">
+          <div class="figure-kicker"><span class="lang-cn">心理战与宣传战 · PSYOPS</span><span class="lang-en">PSYCHOLOGICAL WARFARE · PSYOPS</span></div>
+          <div class="figure-title"><span class="lang-cn">当监控镜头成为扩音器</span><span class="lang-en">When Cameras Become Megaphones</span></div>
+          <div class="figure-sub"><span class="lang-cn">除了传统军事侦察，黑客组织如何利用办公视频会议设备与街角交通探头发动认知战</span><span class="lang-en">Beyond kinetic targeting, groups exploit traffic cameras and office conferencing gear to project omni-visibility</span></div>
+          <div style="border-top: 1px solid var(--line-strong); padding-top: 0.75rem; font-size: 0.84rem; color: var(--body);">
+            <div style="margin-bottom: 0.65rem;">
+              <strong style="color: var(--alert-red); font-family: var(--font-mono);">HANDALA (IRAN-LINKED):</strong><br>
+              <span class="lang-cn">公开叫嚣能在家门口“看到和听到”以色列平民，制造无所不在的被窥视焦虑。</span>
+              <span class="lang-en">Taunts civilians to “find the nearest traffic camera and talk,” manufacturing domestic vulnerability.</span>
+            </div>
+            <div>
+              <strong style="color: var(--accent); font-family: var(--font-mono);">UKRAINIAN HACKERS:</strong><br>
+              <span class="lang-cn">潜入俄工贸部讨论中国无人机组件依赖问题的内部视频会，公开羞辱并瓦解保密信心。</span>
+              <span class="lang-en">Infiltrated Russian ministry videoconference on Chinese drone components and leaked the footage online.</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- CHAPTER 7: INTERNET OF THINGS & LATERAL NETWORK BREACH DIAGRAM -->
+    <div class="asymmetric-grid" id="sec-iot">
+      <div class="prose-column">
+        <h2 class="source-subhead" data-ref="p36"><span class="lang-cn">“物联网”</span><span class="lang-en">‘Internet of things’</span></h2>
+        <p class="prose-p" data-ref="p37" data-hl="攻击范围 | attack surface | Akira"><span class="lang-cn">连接到网络的易受攻击的配件是黑客的主要目标之一，这扩大了技术人员所说的<mark class="ed-hl">攻击范围</mark>。通常，摄像头本身并不是目标，而是作为更大规模的黑客攻击中的薄弱环节。S-RM去年报道称，勒索软件组织<mark class="ed-hl">Akira</mark>利用一个未受保护的网络摄像头，绕过了某个组织的网络安全系统，并对其进行勒索。一旦黑客进入本地网络，他们通常可以探测存储的文件、电子邮件帐户和其他设备，包括摄像头。</span><span class="lang-en">Vulnerable accessories linked into a network are among hackers' prime targets, expanding what technicians call the <mark class="ed-hl">attack surface</mark>. Often, cameras aren't the target, but serve as the weak link in a larger hacking attempt. Ransomware group <mark class="ed-hl">Akira</mark> tapped an unprotected webcam to get around one organization's network-security systems and extort it, S-RM reported last year. Once hackers are inside a local network, they can usually probe stored files, email accounts and other devices, including cameras.</span></p>
+
+        <!-- Full-Width Bespoke SVG Diagram: IoT Attack Surface & Lateral Movement -->
+        <figure class="forensic-figure full-bleed">
+          <div class="figure-kicker"><span class="lang-cn">网络渗透拓扑图 · FIG 02</span><span class="lang-en">NETWORK PENETRATION TOPOLOGY · FIG 02</span></div>
+          <div class="figure-title"><span class="lang-cn">“木马镜头”：黑客如何借道未加固摄像头横向攻陷内网</span><span class="lang-en">The Trojan Lens: How Unprotected Webcams Bypass Enterprise Firewalls</span></div>
+          <div class="figure-sub"><span class="lang-cn">基于 S-RM 披露的 Akira 勒索软件攻击路径与派拓网络（Palo Alto Networks）安全盲区分析</span><span class="lang-en">Based on S-RM's report on the Akira ransomware breach and Palo Alto Networks' facilities blind-spot analysis</span></div>
+
+          <svg viewBox="0 0 680 240" width="100%" role="img" aria-label="IoT Attack Surface Lateral Movement Diagram">
+            <rect x="0" y="0" width="680" height="240" fill="#faf8f4" stroke="#e4dfd3" stroke-width="1"/>
+
+            <!-- Zone 1: External Threat Actor -->
+            <rect x="24" y="45" width="145" height="150" fill="#f3efe6" stroke="#141413" stroke-width="1.5"/>
+            <text x="96" y="70" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#9e2a2b">EXTERNAL ACTOR</text>
+            <text x="96" y="88" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="10" font-weight="700" fill="#141413">国家黑客 / Akira组织</text>
+            <text x="96" y="115" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#646059">Automated Scanners</text>
+            <text x="96" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#646059">Default Passwords</text>
+            <text x="96" y="145" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#646059">Unpatched Firmware</text>
+
+            <!-- Zone 2: Corporate Firewall vs IoT Blind Spot -->
+            <line x1="215" y1="25" x2="215" y2="215" stroke="#141413" stroke-width="2" stroke-dasharray="6 4"/>
+            <text x="215" y="18" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600" fill="#141413">PERIMETER SECURITY / 边界防火墙</text>
+
+            <!-- Blocked Top Path (IT Managed) -->
+            <rect x="245" y="42" width="175" height="58" fill="#ebe5d8" stroke="#646059" stroke-width="1"/>
+            <text x="332" y="65" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600" fill="#141413">IT-MANAGED SERVERS</text>
+            <text x="332" y="83" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="9.5" fill="#646059">常规安全系统（受严密监控）</text>
+            <path d="M 169 72 L 235 72" stroke="#646059" stroke-width="1.5"/>
+            <circle cx="215" cy="72" r="7" fill="#141413"/>
+            <text x="215" y="75" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#faf8f4">✕</text>
+
+            <!-- Breached Bottom Path (Unmonitored Webcam) -->
+            <rect x="245" y="125" width="175" height="72" fill="rgba(184, 93, 25, 0.14)" stroke="#b85d19" stroke-width="2"/>
+            <text x="332" y="148" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#b85d19">WEAK LINK: IOT WEBCAM</text>
+            <text x="332" y="166" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="9.5" font-weight="700" fill="#141413">设施团队安装的未保护摄像头</text>
+            <text x="332" y="183" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#646059">“Mount, power on, walk away”</text>
+            <path d="M 169 160 L 243 160" stroke="#9e2a2b" stroke-width="2.5"/>
+
+            <!-- Zone 3: Internal Local Network Lateral Probe -->
+            <rect x="468" y="42" width="188" height="155" fill="#0f1d2b" stroke="#141413" stroke-width="1.5"/>
+            <text x="562" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700" fill="#e09f67">INTERNAL NETWORK</text>
+            <text x="562" y="86" text-anchor="middle" font-family="Noto Sans SC, sans-serif" font-size="10" font-weight="700" fill="#faf8f4">内网横向探测与勒索</text>
+            <text x="562" y="114" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#d7d2c8">• Stored Files / 存储文件</text>
+            <text x="562" y="134" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#d7d2c8">• Email Accounts / 邮件账户</text>
+            <text x="562" y="154" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#d7d2c8">• DVRs &amp; Cameras / 其他设备</text>
+            <text x="562" y="176" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#f07167">• Ransomware Extortion</text>
+
+            <!-- Arrow from Webcam to Internal Network -->
+            <path d="M 420 160 L 466 135" stroke="#9e2a2b" stroke-width="2.5"/>
+          </svg>
+          <figcaption class="figure-caption">
+            <span class="lang-cn">资料来源：《华尔街日报》根据 S-RM 及派拓网络（Palo Alto Networks）访谈资料整理绘制。</span>
+            <span class="lang-en">Source: Wall Street Journal reconstruction based on S-RM and Palo Alto Networks interviews.</span>
+          </figcaption>
+        </figure>
+
+        <!-- CLIMACTIC VERDICT PANEL (p38) -->
+        <div class="verdict-panel">
+          <div class="verdict-label"><span class="lang-cn">终局警示 · THE VERDICT</span><span class="lang-en">FINAL ASSESSMENT · THE VERDICT</span></div>
+          <p class="prose-p" data-ref="p38" data-hl="一切都是你攻击范围的延伸 | everything—whether you realize it or not—is an extension of your attack surface"><span class="lang-cn">S-RM美洲地区网络安全负责人保罗·卡伦表示：“物联网是一个非常广阔的领域，因此无论你是否意识到，<mark class="ed-hl">一切都是你攻击范围的延伸</mark>。”</span><span class="lang-en">“The Internet of Things is such a wild area that <mark class="ed-hl">everything—whether you realize it or not—is an extension of your attack surface</mark>,” said Paul Caron, S-RM head of cyber for the Americas.</span></p>
+        </div>
+      </div>
+
+      <aside class="sidebar-rail" style="padding-top: 3.5rem;">
+        <div class="dossier-box">
+          <div class="dossier-header">
+            <span><span class="lang-cn">安全审计清单</span><span class="lang-en">VULNERABILITY AUDIT</span></span>
+            <span>IOT / DVR</span>
+          </div>
+          <div class="dossier-body">
+            <p style="margin-bottom: 0.75rem;">
+              <strong style="color: #fff;"><span class="lang-cn">1. 影子设备盲区：</span><span class="lang-en">1. Shadow IoT Blind Spot:</span></strong><br>
+              <span class="lang-cn">设施管理团队在IT安全部门不知情的情况下安装联网摄像头，“通电即走”。</span>
+              <span class="lang-en">Facilities teams mount and power on cameras without IT security oversight.</span>
+            </p>
+            <p style="margin-bottom: 0.75rem;">
+              <strong style="color: #fff;"><span class="lang-cn">2. 默认凭证暴露：</span><span class="lang-en">2. Default Credentials:</span></strong><br>
+              <span class="lang-cn">数以万计暴露在公网上的摄像头未修改出厂默认密码，极易被自动化脚本撞库劫持。</span>
+              <span class="lang-en">Tens of thousands of web-connected cameras retain factory default passwords.</span>
+            </p>
+            <p>
+              <strong style="color: #fff;"><span class="lang-cn">3. 内网跳板风险：</span><span class="lang-en">3. Lateral Pivot Point:</span></strong><br>
+              <span class="lang-cn">如 Akira 案例所示，单个未设防摄像头即可让攻击者绕过企业主防火墙，染指核心邮件与存储文件。</span>
+              <span class="lang-en">As seen in the Akira attack, one unprotected webcam lets intruders bypass perimeter security to probe emails and files.</span>
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="ed-footer">
+  <div class="ed-footer-inner">
+    <div>
+      <strong>THE WALL STREET JOURNAL · WSJ 深读</strong><br>
+      <span class="lang-cn">原文标题：战争中，监控摄像头遭到黑客入侵 (Video Cameras Are Hacked for War)</span>
+      <span class="lang-en">Original Title: Video Cameras Are Hacked for War (Page A1 · Oct. 12, 2026)</span>
+    </div>
+    <div>
+      <span class="lang-cn">作者：Daniel Michaels, Anat Peled, Milàn Czerny · 双语交互数字版</span>
+      <span class="lang-en">By Daniel Michaels, Anat Peled and Milàn Czerny · Bilingual Interactive Edition</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+    var bar = document.getElementById('progress-bar');
+    if (bar) {
+      bar.style.width = scrolled + '%';
+    }
+  });
+</script>
+</body>
+</html>

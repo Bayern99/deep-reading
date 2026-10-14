@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美国司法部调查电视台停播是否违反反垄断法 | DOJ Probes Networks on Halting Coverage — WSJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ece6d9;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c8c0af;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.14);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --crimson: #8f2424;
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-body-en: 'Lora', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--body);
+    font-family: var(--font-body-en), var(--font-serif-cn);
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* Language Switching Protocol */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  html[lang="zh-CN"] body {
+    font-family: var(--font-serif-cn);
+    line-height: 1.88;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-body-en);
+    line-height: 1.72;
+  }
+
+  /* Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(120deg, rgba(184, 93, 25, 0.18) 0%, rgba(184, 93, 25, 0.26) 100%);
+    color: var(--ink);
+    padding: 0.08em 0.28em;
+    border-bottom: 1.5px solid var(--accent);
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  /* Top Masthead */
+  .wsj-masthead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink);
+    box-shadow: 0 1px 0 var(--line);
+  }
+
+  .masthead-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.65rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-cluster {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .wsj-wordmark {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .section-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--ink);
+    background: var(--paper-card);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .lang-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.18s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Main Container */
+  .page-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 5rem;
+  }
+
+  /* Hero Header */
+  .article-hero {
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .kicker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .kicker-tag {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .kicker-tag::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+  }
+
+  .folio-meta {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-weight: 800;
+    font-size: clamp(2.1rem, 4.3vw, 3.45rem);
+    line-height: 1.16;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+    max-width: 960px;
+  }
+
+  html[lang="zh-CN"] .hero-title {
+    font-family: var(--font-serif-cn);
+    line-height: 1.26;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-summary-strip {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: end;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .byline-block {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .byline-authors {
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-right: 0.75rem;
+  }
+
+  .byline-date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  .statute-badge {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    background: var(--navy-bg);
+    color: #f3efe6;
+    padding: 0.45rem 0.85rem;
+    border-left: 3px solid var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  /* Editorial Grid Architecture */
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(280px, 4.5fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .narrative-col {
+    min-width: 0;
+  }
+
+  .dossier-rail {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  /* Prose Styling */
+  .prose-p {
+    font-size: 1.125rem;
+    color: var(--body);
+    margin-bottom: 1.45rem;
+  }
+
+  .prose-lead {
+    font-size: 1.26rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.65rem;
+    line-height: 1.68;
+  }
+
+  html[lang="zh-CN"] .prose-lead {
+    line-height: 1.82;
+  }
+
+  /* Section Dividers inside Narrative */
+  .section-marker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 2.2rem 0 1.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .section-marker-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 0.15rem 0.45rem;
+    letter-spacing: 0.06em;
+  }
+
+  .section-marker-title {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .section-marker-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-strong);
+  }
+
+  /* Forensic Statement Callout for p5 & p6 & p7 */
+  .legal-dossier-box {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 1.5rem 1.6rem;
+    margin: 1.85rem 0;
+  }
+
+  .dossier-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 0.65rem;
+    margin-bottom: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .dossier-charge-quote {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.28rem;
+    font-weight: 700;
+    color: var(--crimson);
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px dashed var(--line-strong);
+  }
+
+  .no-comment-pill {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: var(--muted);
+    background: var(--paper);
+    border-left: 3px solid var(--muted);
+    padding: 0.55rem 0.9rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  /* Press Freedom Verdict Block for p10 */
+  .constitutional-warning {
+    background: var(--navy-bg);
+    color: #f7f4ed;
+    padding: 1.75rem 1.85rem;
+    margin: 2rem 0 1.6rem;
+    border-left: 4px solid var(--accent);
+    position: relative;
+  }
+
+  .warning-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #e69d63;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .constitutional-warning .prose-p {
+    color: #f7f4ed;
+    font-size: 1.14rem;
+    margin-bottom: 0;
+    line-height: 1.75;
+  }
+
+  .constitutional-warning mark.ed-hl {
+    background: rgba(230, 157, 99, 0.25);
+    color: #fff;
+    border-bottom-color: #e69d63;
+  }
+
+  /* Corporate Disclosure Footer Note (p11) */
+  .disclosure-footnote {
+    margin-top: 2.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line-strong);
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* Right Rail Cards */
+  .rail-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem;
+  }
+
+  .rail-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 0.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .rail-card-title {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+  }
+
+  .rail-card-code {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .rail-svg-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 0.5rem;
+  }
+
+  .rail-caption {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* Derived Pull Quote in Rail */
+  .pull-quote {
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--ink);
+    padding: 1.25rem 1.35rem;
+  }
+
+  .pull-quote .quote-text {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+    line-height: 1.55;
+  }
+
+  .pull-quote .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Escalation Matrix Bottom Section */
+  .escalation-ledger {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--ink);
+  }
+
+  .ledger-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ledger-title {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .ledger-sub {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .ledger-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ledger-step {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ledger-step.active-probe {
+    border-top-color: var(--accent);
+    background: #f6efe4;
+  }
+
+  .step-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.45rem;
+  }
+
+  .step-head {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.84rem;
+    color: var(--body);
+    line-height: 1.55;
+    margin-bottom: 0.85rem;
+  }
+
+  .step-target {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 0.45rem;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 960px) {
+    .editorial-grid {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+    .dossier-rail {
+      position: static;
+    }
+    .ledger-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-summary-strip {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .page-shell {
+      padding: 1.5rem 1rem 3.5rem;
+    }
+    .masthead-inner {
+      padding: 0.55rem 1rem;
+    }
+    .ledger-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-title {
+      font-size: 1.85rem;
+    }
+    .prose-lead {
+      font-size: 1.12rem;
+    }
+    .prose-p {
+      font-size: 1.04rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Sticky Top Masthead -->
+  <header class="wsj-masthead">
+    <div class="masthead-inner">
+      <div class="brand-cluster">
+        <span class="wsj-wordmark">The Wall Street Journal</span>
+        <span class="section-pill">
+          <span class="lang-cn">美国新闻 · 反垄断与新闻自由</span>
+          <span class="lang-en">U.S. News · Page A3</span>
+        </span>
+      </div>
+      <div class="lang-switch" role="group" aria-label="Language Toggle">
+        <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- Hero Header -->
+    <header class="article-hero">
+      <div class="kicker-row">
+        <span class="kicker-tag">
+          <span class="lang-cn">华盛顿法制与传媒调查</span>
+          <span class="lang-en">Justice Department &amp; The Fourth Estate</span>
+        </span>
+        <span class="folio-meta">E1-023 · SHERMAN ACT INQUIRY</span>
+      </div>
+
+      <h1 class="hero-title" data-ref="title"><span class="lang-cn">美国司法部调查电视台停播是否违反反垄断法</span><span class="lang-en">DOJ Probes Networks on Halting Coverage</span></h1>
+
+      <div class="hero-summary-strip">
+        <div class="byline-block">
+          <span class="byline-authors">BY JOE FLINT AND DAVE MICHAELS</span>
+          <span class="byline-date">
+            <span class="lang-cn">2026年10月12日</span>
+            <span class="lang-en">October 12, 2026</span>
+          </span>
+        </div>
+        <div class="statute-badge">
+          <span class="lang-cn">法律焦点：《谢尔曼反托拉斯法》商业集体抵制条款</span>
+          <span class="lang-en">STATUTORY FOCUS: SHERMAN ANTITRUST ACT · GROUP BOYCOTT</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Asymmetric Editorial Grid -->
+    <div class="editorial-grid">
+
+      <!-- Left Column: Sequential Verbatim Narrative (p1 .. p11) -->
+      <article class="narrative-col">
+
+        <!-- Section I: The Probe & The Pool Mechanism -->
+        <p class="prose-p prose-lead" data-ref="p1" data-hl="联邦反托拉斯法 | CNN | federal antitrust laws"><span class="lang-cn">美国司法部正在调查，主要电视台是否违反了<mark class="ed-hl">联邦反托拉斯法</mark>，此前，在<mark class="ed-hl">CNN</mark>被取消参与报道白宫事务的计划后，这些电视台曾短暂暂停了轮流派遣记者报道白宫事务。</span><span class="lang-en">The Justice Department is investigating whether major TV networks violated <mark class="ed-hl">federal antitrust laws</mark> when they briefly suspended a rotation of broadcast journalists covering the White House last month following <mark class="ed-hl">CNN</mark>'s removal from a planned assignment.</span></p>
+
+        <p class="prose-p" data-ref="p2" data-hl="周五 | 沟通记录 | Friday | records of communication"><span class="lang-cn">据知情人士透露，这些电视台于<mark class="ed-hl">周五</mark>得知了此次调查，司法部官员正在寻求这些电视台之间关于新闻报道轮换机制的<mark class="ed-hl">沟通记录</mark>。</span><span class="lang-en">Networks learned of the probe <mark class="ed-hl">Friday</mark>, with Justice Department officials seeking <mark class="ed-hl">records of communication</mark> among them regarding the pool, people familiar with the matter said.</span></p>
+
+        <div class="section-marker">
+          <span class="section-marker-num">01</span>
+          <span class="section-marker-title">
+            <span class="lang-cn">白宫五台联合采访团与联大停播风波</span>
+            <span class="lang-en">The Five-Network Pool &amp; The U.N. Trip Suspension</span>
+          </span>
+          <span class="section-marker-line"></span>
+        </div>
+
+        <p class="prose-p" data-ref="p3" data-hl="福克斯新闻、美国广播公司新闻、哥伦比亚广播公司新闻、CNN和美国全国广播公司新闻 | Fox News, ABC News, CBS News, CNN and NBC News"><span class="lang-cn"><mark class="ed-hl">福克斯新闻、美国广播公司新闻、哥伦比亚广播公司新闻、CNN和美国全国广播公司新闻</mark>都属于一个记者、摄像师、摄影师和技术人员组成的团队，他们负责报道特朗普总统的行程，或者报道在空间有限的情况下无法容纳所有媒体记者参加的活动。</span><span class="lang-en"><mark class="ed-hl">Fox News, ABC News, CBS News, CNN and NBC News</mark> are part of a group of reporters, videographers, photographers and technicians who cover President Trump when he travels or when events take place in spaces that are too small for the entire press corps.</span></p>
+
+        <p class="prose-p" data-ref="p4" data-hl="联合国大会 | CNN、MS NOW和《政治报》 | United Nations General Assembly | CNN, MS NOW and Politico"><span class="lang-cn">9月份，在特朗普总统前往纽约参加<mark class="ed-hl">联合国大会</mark>期间，CNN被取消了参与报道的资格——此前，特朗普已经禁止<mark class="ed-hl">CNN、MS NOW和《政治报》</mark>进入白宫——电视台们短暂暂停了对总统的部分报道。</span><span class="lang-en">When CNN was taken out of the rotation for Trump's trip to New York for the <mark class="ed-hl">United Nations General Assembly</mark> in September—days after Trump banned the network, MS NOW and Politico from the White House—the TV pool briefly halted some coverage of the president.</span></p>
+
+        <!-- Section II: The Statutory Theory (p5, p6, p7) -->
+        <div class="legal-dossier-box">
+          <div class="dossier-box-header">
+            <span>
+              <span class="lang-cn">美国司法部反托拉斯局 · 官方立场</span>
+              <span class="lang-en">DOJ Antitrust Division · Official Position</span>
+            </span>
+            <span>15 U.S.C. § 1</span>
+          </div>
+
+          <p class="prose-p dossier-charge-quote" data-ref="p5"><span class="lang-cn">“电视台新闻报道团队的成员抵制报道白宫活动。”</span><span class="lang-en">"Members of the television press pool have boycotted covering White House events."</span></p>
+
+          <p class="prose-p" data-ref="p6" data-hl="《谢尔曼反托拉斯法》 | 艾米莉·卡温顿 | Sherman Act | Emily Covington"><span class="lang-cn">司法部发言人<mark class="ed-hl">艾米莉·卡温顿</mark>表示：“商业竞争对手之间的集体抵制可能违反<mark class="ed-hl">《谢尔曼反托拉斯法》</mark>。反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。”</span><span class="lang-en">"Group boycotts among commercial competitors can violate the <mark class="ed-hl">Sherman Act</mark>," Justice Department spokeswoman <mark class="ed-hl">Emily Covington</mark> said. "The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws."</span></p>
+
+          <p class="prose-p no-comment-pill" data-ref="p7"><span class="lang-cn">白宫未对此事发表评论。</span><span class="lang-en">The White House didn't respond to a request for comment.</span></p>
+        </div>
+
+        <!-- Section III: Escalating Administration-Press Conflict (p8, p9, p10, p11) -->
+        <div class="section-marker">
+          <span class="section-marker-num">02</span>
+          <span class="section-marker-title">
+            <span class="lang-cn">全面升级的政府与媒体对峙</span>
+            <span class="lang-en">Escalating Administration-Media Confrontation</span>
+          </span>
+          <span class="section-marker-line"></span>
+        </div>
+
+        <p class="prose-p" data-ref="p8" data-hl="吊销广播许可 | 美国广播公司和美国全国广播公司 | lose their broadcast licenses | ABC and NBC"><span class="lang-cn">司法部的调查进一步加剧了特朗普政府与媒体之间的紧张关系。特朗普在7月表示，<mark class="ed-hl">美国广播公司和美国全国广播公司</mark>应该因为在其频道中没有播出他关于所谓选举舞弊的讲话而被<mark class="ed-hl">吊销广播许可</mark>。</span><span class="lang-en">The Justice Department's investigation further escalates tensions between the Trump administration and the media. Trump said in July that <mark class="ed-hl">ABC and NBC</mark> should <mark class="ed-hl">lose their broadcast licenses</mark> for not carrying his speech on alleged election fraud on their networks.</span></p>
+
+        <p class="prose-p" data-ref="p9" data-hl="叛国行为 | 发出传票 | treasonous | subpoenaed journalists"><span class="lang-cn">他还称不利的报道为<mark class="ed-hl">叛国行为</mark>，他的政府还向记者<mark class="ed-hl">发出传票</mark>，并限制了记者进入政府场所。</span><span class="lang-en">He has also called unfavorable coverage <mark class="ed-hl">treasonous</mark>, and his administration has <mark class="ed-hl">subpoenaed journalists</mark> and limited access to government spaces.</span></p>
+
+        <div class="constitutional-warning">
+          <span class="warning-tag">
+            <span class="lang-cn">新闻自由辩护方回应 · 新闻自由记者委员会</span>
+            <span class="lang-en">First Amendment Response · Reporters Committee for Freedom of the Press</span>
+          </span>
+          <p class="prose-p" data-ref="p10" data-hl="布鲁斯·布朗 | 企图恐吓记者 | Bruce Brown | attempt to try to intimidate journalists"><span class="lang-cn">新闻自由记者委员会主席<mark class="ed-hl">布鲁斯·布朗</mark>表示：“在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的<mark class="ed-hl">企图恐吓记者</mark>的行为。”</span><span class="lang-en">"Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen <mark class="ed-hl">attempt to try to intimidate journalists</mark>," said <mark class="ed-hl">Bruce Brown</mark>, president of the Reporters Committee for Freedom of the Press.</span></p>
+        </div>
+
+        <p class="prose-p disclosure-footnote" data-ref="p11"><span class="lang-cn">福克斯新闻的母公司福克斯公司和《华尔街日报》的母公司新闻集团拥有共同的控股方。</span><span class="lang-en">Fox News parent Fox Corp. and Wall Street Journal parent News Corp share common ownership.</span></p>
+
+      </article>
+
+      <!-- Right Column: Forensic Visual Dossier Rail -->
+      <aside class="dossier-rail" aria-label="Visual Evidence Dossier">
+
+        <!-- Card 1: SVG Architecture of the 5-Network Pool & DOJ Subpoena Vector -->
+        <div class="rail-card">
+          <div class="rail-card-header">
+            <span class="rail-card-title">
+              <span class="lang-cn">白宫电视联播网轮换机制与调查指向</span>
+              <span class="lang-en">TV Pool Rotation &amp; Probe Vector</span>
+            </span>
+            <span class="rail-card-code">EXHIBIT A</span>
+          </div>
+
+          <div class="rail-svg-wrap">
+            <!-- Chinese SVG Diagram -->
+            <svg class="lang-cn" viewBox="0 0 420 350" width="100%" role="img" aria-label="白宫电视报道团五家电视台与司法部调查示意图">
+              <rect x="0" y="0" width="420" height="350" fill="#faf8f4" />
+              <!-- Top Trigger Box -->
+              <rect x="35" y="18" width="350" height="52" fill="#0f1d2b" rx="2" />
+              <text x="210" y="39" text-anchor="middle" fill="#e69d63" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">2026年9月 · 纽约联合国大会行程</text>
+              <text x="210" y="57" text-anchor="middle" fill="#faf8f4" font-family="Noto Sans SC, sans-serif" font-size="12" font-weight="700">白宫禁止 CNN、MS NOW、《政治报》并取消 CNN 轮值</text>
+
+              <!-- Arrow Down -->
+              <line x1="210" y1="70" x2="210" y2="96" stroke="#b85d19" stroke-width="2" />
+              <polygon points="205,94 215,94 210,102" fill="#b85d19" />
+
+              <!-- Pool Ring Container -->
+              <rect x="35" y="104" width="350" height="122" fill="#f3efe6" stroke="#141413" stroke-width="1.5" rx="2" />
+              <text x="210" y="124" text-anchor="middle" fill="#141413" font-family="Noto Sans SC, sans-serif" font-size="11" font-weight="700">五大电视网联合报道团 (TV Press Pool)</text>
+
+              <!-- 5 Network Nodes -->
+              <g transform="translate(47, 136)">
+                <rect x="0" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="29" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">FOX</text>
+
+                <rect x="67" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="96" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">ABC</text>
+
+                <rect x="134" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="163" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">CBS</text>
+
+                <!-- CNN Barred Node -->
+                <rect x="201" y="0" width="58" height="36" fill="#8f2424" stroke="#8f2424" stroke-width="1.5" />
+                <text x="230" y="18" text-anchor="middle" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">CNN</text>
+                <text x="230" y="31" text-anchor="middle" fill="#ffd6d6" font-family="Noto Sans SC, sans-serif" font-size="8">被移除轮换</text>
+
+                <rect x="268" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="297" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">NBC</text>
+              </g>
+
+              <!-- Pool Action Banner -->
+              <rect x="55" y="184" width="310" height="28" fill="#ece6d9" stroke="#b85d19" stroke-dasharray="3,3" />
+              <text x="210" y="202" text-anchor="middle" fill="#8f2424" font-family="Noto Sans SC, sans-serif" font-size="11" font-weight="700">联合反应：短暂暂停轮流派遣记者报道部分活动</text>
+
+              <!-- Arrow Down to DOJ -->
+              <line x1="210" y1="226" x2="210" y2="254" stroke="#141413" stroke-width="2" />
+              <polygon points="205,252 215,252 210,260" fill="#141413" />
+
+              <!-- DOJ Probe Box -->
+              <rect x="35" y="262" width="350" height="68" fill="#faf8f4" stroke="#b85d19" stroke-width="2" rx="2" />
+              <text x="210" y="283" text-anchor="middle" fill="#b85d19" font-family="Noto Sans SC, sans-serif" font-size="12" font-weight="700">美国司法部反托拉斯局介入（周五通知）</text>
+              <text x="210" y="302" text-anchor="middle" fill="#242220" font-family="Noto Sans SC, sans-serif" font-size="11">调取各电视台之间关于轮换机制的内部沟通记录</text>
+              <text x="210" y="319" text-anchor="middle" fill="#646059" font-family="JetBrains Mono, monospace" font-size="9.5">定性争议：商业竞争对手集体抵制 vs. 反抗政府报复</text>
+            </svg>
+
+            <!-- English SVG Diagram -->
+            <svg class="lang-en" viewBox="0 0 420 350" width="100%" role="img" aria-label="White House TV Press Pool and DOJ Antitrust Probe Diagram">
+              <rect x="0" y="0" width="420" height="350" fill="#faf8f4" />
+              <!-- Top Trigger Box -->
+              <rect x="35" y="18" width="350" height="52" fill="#0f1d2b" rx="2" />
+              <text x="210" y="39" text-anchor="middle" fill="#e69d63" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">SEPT. 2026 · U.N. GENERAL ASSEMBLY TRIP</text>
+              <text x="210" y="57" text-anchor="middle" fill="#faf8f4" font-family="Inter, sans-serif" font-size="11.5" font-weight="700">CNN Removed From Pool After White House Ban</text>
+
+              <!-- Arrow Down -->
+              <line x1="210" y1="70" x2="210" y2="96" stroke="#b85d19" stroke-width="2" />
+              <polygon points="205,94 215,94 210,102" fill="#b85d19" />
+
+              <!-- Pool Ring Container -->
+              <rect x="35" y="104" width="350" height="122" fill="#f3efe6" stroke="#141413" stroke-width="1.5" rx="2" />
+              <text x="210" y="124" text-anchor="middle" fill="#141413" font-family="Inter, sans-serif" font-size="11" font-weight="700">WHITE HOUSE 5-NETWORK BROADCAST POOL</text>
+
+              <!-- 5 Network Nodes -->
+              <g transform="translate(47, 136)">
+                <rect x="0" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="29" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">FOX</text>
+
+                <rect x="67" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="96" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">ABC</text>
+
+                <rect x="134" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="163" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">CBS</text>
+
+                <!-- CNN Barred Node -->
+                <rect x="201" y="0" width="58" height="36" fill="#8f2424" stroke="#8f2424" stroke-width="1.5" />
+                <text x="230" y="17" text-anchor="middle" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">CNN</text>
+                <text x="230" y="30" text-anchor="middle" fill="#ffd6d6" font-family="JetBrains Mono, monospace" font-size="8">PULLED</text>
+
+                <rect x="268" y="0" width="58" height="36" fill="#faf8f4" stroke="#141413" stroke-width="1.2" />
+                <text x="297" y="22" text-anchor="middle" fill="#141413" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">NBC</text>
+              </g>
+
+              <!-- Pool Action Banner -->
+              <rect x="55" y="184" width="310" height="28" fill="#ece6d9" stroke="#b85d19" stroke-dasharray="3,3" />
+              <text x="210" y="202" text-anchor="middle" fill="#8f2424" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">Pool Action: Brief Suspension of Rotation Coverage</text>
+
+              <!-- Arrow Down to DOJ -->
+              <line x1="210" y1="226" x2="210" y2="254" stroke="#141413" stroke-width="2" />
+              <polygon points="205,252 215,252 210,260" fill="#141413" />
+
+              <!-- DOJ Probe Box -->
+              <rect x="35" y="262" width="350" height="68" fill="#faf8f4" stroke="#b85d19" stroke-width="2" rx="2" />
+              <text x="210" y="283" text-anchor="middle" fill="#b85d19" font-family="Inter, sans-serif" font-size="11.5" font-weight="700">DOJ ANTITRUST DIVISION PROBE (LEARNED FRIDAY)</text>
+              <text x="210" y="302" text-anchor="middle" fill="#242220" font-family="Inter, sans-serif" font-size="10.5">Seeking inter-network communications regarding pool</text>
+              <text x="210" y="319" text-anchor="middle" fill="#646059" font-family="JetBrains Mono, monospace" font-size="9">THEORY: SHERMAN ACT "GROUP BOYCOTT" BY COMPETITORS</text>
+            </svg>
+          </div>
+
+          <p class="rail-caption">
+            <span class="lang-cn">白宫联合采访团由五家主要广播及有线电视新闻网组成，负责在空间受限或总统外访时共享音视频信号。</span>
+            <span class="lang-en">The broadcast pool shares camera and reporting duties when space is too small for the full press corps or during presidential travel.</span>
+          </p>
+        </div>
+
+        <!-- Card 2: Verified Quote Callout (q2) -->
+        <blockquote class="pull-quote" data-derive="q2">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“商业竞争对手之间的集体抵制可能违反《谢尔曼反托拉斯法》。反托拉斯部门只是在调查，以确定这些新闻机构是否违反了反托拉斯法。”</span><span class="lang-en">“The Antitrust Division is simply investigating to determine whether these news organizations have violated the antitrust laws.”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 6 段直接引述</span><span class="lang-en">— Direct Quote (p6)</span></footer>
+        </blockquote>
+
+        <!-- Card 3: Verified Quote Callout (q3) -->
+        <blockquote class="pull-quote" data-derive="q3">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“在白宫已经采取的报复性措施的基础上，再次援引反托拉斯法，这是又一次，而且更加公然的企图恐吓记者的行为。”</span><span class="lang-en">“Summoning antitrust authority, on top of the retaliatory actions the White House has already taken to bar certain outlets, is another and even more brazen attempt to try to intimidate journalists,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 10 段直接引述</span><span class="lang-en">— Direct Quote (p10)</span></footer>
+        </blockquote>
+
+      </aside>
+
+    </div>
+
+    <!-- Bottom Forensic Ledger: Chronology of Escalating Measures Cited in Article -->
+    <section class="escalation-ledger" aria-label="Chronology of Press Measures">
+      <div class="ledger-header">
+        <h2 class="ledger-title">
+          <span class="lang-cn">新闻自由与行政权力交锋记录</span>
+          <span class="lang-en">Chronology of Press-Administration Friction Cited in Report</span>
+        </h2>
+        <span class="ledger-sub">
+          <span class="lang-cn">依据报道事实梳理的四阶段升级脉络</span>
+          <span class="lang-en">FOUR ESCALATION VECTORS DOCUMENTED IN TEXT</span>
+        </span>
+      </div>
+
+      <div class="ledger-grid">
+        <!-- Step 1 -->
+        <div class="ledger-step">
+          <div>
+            <div class="step-date">
+              <span class="lang-cn">2026年7月 · 广播牌照威胁</span>
+              <span class="lang-en">JULY 2026 · LICENSE THREAT</span>
+            </div>
+            <h3 class="step-head">
+              <span class="lang-cn">要求吊销 ABC 与 NBC 广播许可</span>
+              <span class="lang-en">Call to Revoke Broadcast Licenses</span>
+            </h3>
+            <p class="step-desc">
+              <span class="lang-cn">因未在频道中播出特朗普关于所谓选举舞弊的讲话，特朗普表示这两家电视网应失去广播牌照。</span>
+              <span class="lang-en">Trump stated ABC and NBC should lose their broadcast licenses for not carrying his speech on alleged election fraud.</span>
+            </p>
+          </div>
+          <div class="step-target">
+            <span class="lang-cn">对象：ABC News / NBC News</span>
+            <span class="lang-en">TARGET: ABC NEWS / NBC NEWS</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="ledger-step">
+          <div>
+            <div class="step-date">
+              <span class="lang-cn">持续措施 · 司法传票与定性</span>
+              <span class="lang-en">ONGOING · SUBPOENAS &amp; RHETORIC</span>
+            </div>
+            <h3 class="step-head">
+              <span class="lang-cn">指控不利报道“叛国”并传唤记者</span>
+              <span class="lang-en">"Treasonous" Label &amp; Subpoenas</span>
+            </h3>
+            <p class="step-desc">
+              <span class="lang-cn">将不利报道称为叛国行为，向记者发出传票，并限制记者进入政府场所。</span>
+              <span class="lang-en">Called unfavorable coverage treasonous, subpoenaed journalists, and restricted access to government spaces.</span>
+            </p>
+          </div>
+          <div class="step-target">
+            <span class="lang-cn">对象：白宫及联邦机构驻点记者</span>
+            <span class="lang-en">TARGET: ACCREDITED JOURNALISTS</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="ledger-step">
+          <div>
+            <div class="step-date">
+              <span class="lang-cn">2026年9月 · 白宫禁令与联大风波</span>
+              <span class="lang-en">SEPT. 2026 · ACCESS BANS &amp; U.N. TRIP</span>
+            </div>
+            <h3 class="step-head">
+              <span class="lang-cn">封禁三家媒体并移出轮值名单</span>
+              <span class="lang-en">Outlets Barred &amp; CNN Pulled From Pool</span>
+            </h3>
+            <p class="step-desc">
+              <span class="lang-cn">禁止 CNN、MS NOW 和《政治报》进入白宫；数日后取消 CNN 报道纽约联大行程资格，引发电视网短暂暂停部分轮值报道。</span>
+              <span class="lang-en">Banned CNN, MS NOW and Politico from the White House, then removed CNN from the U.N. trip rotation, prompting a brief pool pause.</span>
+            </p>
+          </div>
+          <div class="step-target">
+            <span class="lang-cn">对象：CNN / MS NOW / Politico / 五台报道团</span>
+            <span class="lang-en">TARGET: CNN / MS NOW / POLITICO / TV POOL</span>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="ledger-step active-probe">
+          <div>
+            <div class="step-date">
+              <span class="lang-cn">2026年10月 · 反垄断执法介入</span>
+              <span class="lang-en">OCT. 2026 · ANTITRUST ENFORCEMENT</span>
+            </div>
+            <h3 class="step-head">
+              <span class="lang-cn">援引《谢尔曼法》调查集体抵制</span>
+              <span class="lang-en">Sherman Act Group-Boycott Probe</span>
+            </h3>
+            <p class="step-desc">
+              <span class="lang-cn">司法部反托拉斯局要求各大电视网提交关于新闻报道轮换机制的沟通记录，调查暂停报道是否构成违法商业抵制。</span>
+              <span class="lang-en">DOJ Antitrust Division seeks inter-network communications regarding the pool to investigate potential Sherman Act violations.</span>
+            </p>
+          </div>
+          <div class="step-target">
+            <span class="lang-cn">对象：FOX / ABC / CBS / CNN / NBC</span>
+            <span class="lang-en">TARGET: FOX / ABC / CBS / CNN / NBC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      var btnZh = document.getElementById('btn-zh');
+      var btnEn = document.getElementById('btn-en');
+      if (btnZh && btnEn) {
+        btnZh.classList.toggle('active', lang === 'zh-CN');
+        btnEn.classList.toggle('active', lang === 'en');
+      }
+    }
+  </script>
+</body>
+</html>

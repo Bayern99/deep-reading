@@ -1,0 +1,254 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-022",
+  "final_id": "022",
+  "issue_date": "2026-10-12",
+  "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A3",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A3 版",
+    "kicker_en": "WSJ · U.S. NEWS · A3",
+    "title_cn": "由纳税人资助的、支持特朗普的广告被勒令停止播出",
+    "title_en": "Pro-Trump Ads Funded by Taxpayers Ordered Off the Air",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY BRENT KENDALL",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一位联邦法官下令，特朗普政府必须停止播放任何进一步的、由纳税人资助的、宣传总统的电视广告，理由是这些广告很可能违反法律。",
+      "text_en": "A federal judge ordered the Trump administration to halt any further airing of taxpayer-funded television ads touting the president, ruling they are likely illegal.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "一位联邦法官下令，特朗普政府必须停止播放任何进一步的、由纳税人资助的、宣传总统的电视广告，理由是这些广告很可能违反法律。",
+          "text_en": "A federal judge ordered the Trump administration to halt any further airing of taxpayer-funded television ads touting the president, ruling they are likely illegal."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "纽约美国地区法院法官珍妮弗·罗尚于周日晚间发布了一份四页长的命令，禁止该政府使用政府资金来投放这些广告。",
+      "text_en": "U.S. District Judge Jennifer Rochon in New York issued a four-page order late Sunday that barred the administration from using government funds to distribute the ads.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "纽约美国地区法院法官珍妮弗·罗尚于周日晚间发布了一份四页长的命令，禁止该政府使用政府资金来投放这些广告。",
+          "text_en": "U.S. District Judge Jennifer Rochon in New York issued a four-page order late Sunday that barred the administration from using government funds to distribute the ads."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这位法官是拜登政府任命的，她在命令中表示，必须取消“任何已安排、预订或计划用于播放或传播这些争议广告的时间段、位置或安排”。",
+      "text_en": "The judge, a Biden appointee, said it must cancel \"any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.\"",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "这位法官是拜登政府任命的，她在命令中表示，必须取消“任何已安排、预订或计划用于播放或传播这些争议广告的时间段、位置或安排”。",
+          "text_en": "The judge, a Biden appointee, said it must cancel \"any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.\""
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该命令立即适用于周日晚些时候计划播放的任何广告，但目前尚不清楚该裁决是否阻止了其他广告的播放。",
+      "text_en": "The order applied immediately to any ads scheduled to run later on Sunday night, but it wasn't immediately clear whether the ruling kept any additional ads off the air.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "该命令立即适用于周日晚些时候计划播放的任何广告，但目前尚不清楚该裁决是否阻止了其他广告的播放。",
+          "text_en": "The order applied immediately to any ads scheduled to run later on Sunday night, but it wasn't immediately clear whether the ruling kept any additional ads off the air."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "白宫未对相关评论请求做出回应。",
+      "text_en": "The White House didn't respond to a request for comment.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "白宫未对相关评论请求做出回应。",
+          "text_en": "The White House didn't respond to a request for comment."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "美国司法部在一份周末提交的文件中表示，这些广告的投放计划原定于周日结束。",
+      "text_en": "The Justice Department in a weekend filing said the ad buy was slated to end on Sunday.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "美国司法部在一份周末提交的文件中表示，这些广告的投放计划原定于周日结束。",
+          "text_en": "The Justice Department in a weekend filing said the ad buy was slated to end on Sunday."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这些广告主要宣传总统及其政府的政策，并于九月份开始在全国电视台播放。这些广告的费用由国土安全部的联邦资金支付。",
+      "text_en": "The ads, which predominantly feature the president and promote the administration's policies, started airing on national television in September. They were paid for by federal funds from the Department of Homeland Security.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "这些广告主要宣传总统及其政府的政策，并于九月份开始在全国电视台播放。",
+          "text_en": "The ads, which predominantly feature the president and promote the administration's policies, started airing on national television in September."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "这些广告的费用由国土安全部的联邦资金支付。",
+          "text_en": "They were paid for by federal funds from the Department of Homeland Security."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "《华尔街日报》报道称，特朗普总统亲自推动了这些广告的制作，并参与了广告的创作。",
+      "text_en": "President Trump personally pushed for the ads and was involved in their creation, The Wall Street Journal has reported.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "《华尔街日报》报道称，特朗普总统亲自推动了这些广告的制作，并参与了广告的创作。",
+          "text_en": "President Trump personally pushed for the ads and was involved in their creation, The Wall Street Journal has reported."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该法官的裁决是对原告提起的诉讼的回应，原告包括倡导组织Common Cause（倡导组织）以及一位在阿拉巴马州竞选公职的民主党候选人。",
+      "text_en": "The judge's ruling came in response to a lawsuit filed by plaintiffs including the advocacy group Common Cause and a Democratic candidate running for office in Alabama.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "该法官的裁决是对原告提起的诉讼的回应，原告包括倡导组织Common Cause（倡导组织）以及一位在阿拉巴马州竞选公职的民主党候选人。",
+          "text_en": "The judge's ruling came in response to a lawsuit filed by plaintiffs including the advocacy group Common Cause and a Democratic candidate running for office in Alabama."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他们认为，这些支出被用于未经国会授权的目的，并违反了关于使用公共资金进行政治宣传的限制。原告在回应裁决时表示：“总统利用政府的运作机制以及国会为其他用途拨出的资金来影响选举结果，以推进其个人议程，这在法律上没有任何依据，也没有任何先例。”",
+      "text_en": "They argued the expenditures were used for purposes not authorized by Congress and violated restrictions on using public funds for political propaganda. \"There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda,\" the plaintiffs said in response to the ruling.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "他们认为，这些支出被用于未经国会授权的目的，并违反了关于使用公共资金进行政治宣传的限制。",
+          "text_en": "They argued the expenditures were used for purposes not authorized by Congress and violated restrictions on using public funds for political propaganda."
+        },
+        {
+          "id": "p10.s2",
+          "text_cn": "原告在回应裁决时表示：“总统利用政府的运作机制以及国会为其他用途拨出的资金来影响选举结果，以推进其个人议程，这在法律上没有任何依据，也没有任何先例。”",
+          "text_en": "\"There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda,\" the plaintiffs said in response to the ruling."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "上周，总统表示，他计划使用其超级政治行动委员会 MAGA Inc. 的资金来支付这些备受争议的广告费用，而不是使用联邦政府的资金。",
+      "text_en": "The president said last week that he plans to pay for the controversial ads using funds from his MAGA Inc. super PAC rather than the federal government.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "上周，总统表示，他计划使用其超级政治行动委员会 MAGA Inc. 的资金来支付这些备受争议的广告费用，而不是使用联邦政府的资金。",
+          "text_en": "The president said last week that he plans to pay for the controversial ads using funds from his MAGA Inc. super PAC rather than the federal government."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p3",
+      "quote_cn": "“任何已安排、预订或计划用于播放或传播这些争议广告的时间段、位置或安排”",
+      "quote_en": "“any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.”",
+      "speaker_cn": "原文第 3 段直接引述",
+      "role_cn": "Source Block p3",
+      "speaker_en": "Direct Quote (p3)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p10",
+      "quote_cn": "“总统利用政府的运作机制以及国会为其他用途拨出的资金来影响选举结果，以推进其个人议程，这在法律上没有任何依据，也没有任何先例。”",
+      "quote_en": "“There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda,”",
+      "speaker_cn": "原文第 10 段直接引述",
+      "role_cn": "Source Block p10",
+      "speaker_en": "Direct Quote (p10)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Brent Kendall",
+      "zh_suggested": "布伦特·肯德尔",
+      "note": "待查"
+    },
+    {
+      "en": "Jennifer Rochon",
+      "zh_suggested": "珍妮弗·罗尚",
+      "note": "纽约联邦地区法官，待查"
+    },
+    {
+      "en": "Common Cause",
+      "zh_suggested": "Common Cause（倡导组织）",
+      "note": "待查"
+    },
+    {
+      "en": "MAGA Inc.",
+      "zh_suggested": "MAGA Inc.（超级政治行动委员会）"
+    },
+    {
+      "en": "Department of Homeland Security",
+      "zh_suggested": "国土安全部"
+    }
+  ]
+}

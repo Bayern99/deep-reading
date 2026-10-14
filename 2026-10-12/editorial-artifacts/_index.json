@@ -1,7 +1,7 @@
 {
   "schema_version": "editorial-artifact-index-v1",
   "issue_date": "2026-10-12",
-  "updated_at": "2026-10-14T07:07:17Z",
+  "updated_at": "2026-10-14T14:16:16Z",
   "articles": {
     "E2-001": {
       "article_id": "E2-001",
@@ -238,6 +238,499 @@
       "failed_attempts": [],
       "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
       "updated_at": "2026-10-14T07:07:17Z"
+    },
+    "E3-005": {
+      "article_id": "E3-005",
+      "title_cn": "利洁时（英国消费品巨头）在中国社交媒体平台上蓬勃发展",
+      "title_en": "Reckitt Thrives on China Social Media",
+      "section": "Business & Finance",
+      "page": "B1",
+      "active_version": "v3",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:46:20Z",
+          "status": "verified",
+          "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "22/22",
+          "exact_match_en": "22/22",
+          "compiled_html": "E3-005/v1/compiled.html",
+          "notes": "Queue task task-bd766e53 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T13:47:57Z",
+          "status": "verified",
+          "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "22/22",
+          "exact_match_en": "22/22",
+          "compiled_html": "E3-005/v2/compiled.html",
+          "notes": "Queue task task-9ae143a1 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v3",
+          "created_at": "2026-10-14T13:48:08Z",
+          "status": "verified",
+          "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "22/22",
+          "exact_match_en": "22/22",
+          "compiled_html": "E3-005/v3/compiled.html",
+          "notes": "Queue task task-9ae143a1 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+      "updated_at": "2026-10-14T13:48:08Z"
+    },
+    "E1-005": {
+      "article_id": "E1-005",
+      "title_cn": "胡塞武装发动袭击，沙特王储重担加重",
+      "title_en": "Saudi Crown Prince's Burden Grows Heavier as Houthis Strike",
+      "section": "News",
+      "page": "A1",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:49:52Z",
+          "status": "verified",
+          "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "24/24",
+          "exact_match_en": "24/24",
+          "compiled_html": "E1-005/v1/compiled.html",
+          "notes": "Queue task task-8ab28f87 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T13:50:36Z",
+          "status": "verified",
+          "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "24/24",
+          "exact_match_en": "24/24",
+          "compiled_html": "E1-005/v2/compiled.html",
+          "notes": "Queue task task-8ab28f87 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+      "updated_at": "2026-10-14T13:50:36Z"
+    },
+    "E2-002": {
+      "article_id": "E2-002",
+      "title_cn": "战争中，监控摄像头遭到黑客入侵",
+      "title_en": "Video Cameras Are Hacked for War",
+      "section": "News",
+      "page": "A1",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:52:35Z",
+          "status": "verified",
+          "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "38/38",
+          "exact_match_en": "38/38",
+          "compiled_html": "E2-002/v1/compiled.html",
+          "notes": "Queue task task-f9a8a933 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T13:53:27Z",
+          "status": "verified",
+          "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "38/38",
+          "exact_match_en": "38/38",
+          "compiled_html": "E2-002/v2/compiled.html",
+          "notes": "Queue task task-f9a8a933 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+      "updated_at": "2026-10-14T13:53:27Z"
+    },
+    "E1-011": {
+      "article_id": "E1-011",
+      "title_cn": "美联储的哈马克认为，通货膨胀的根源在于工厂生产环节",
+      "title_en": "Fed’s Hammack Sees Engine of Inflation on Factory Floor",
+      "section": "U.S. News",
+      "page": "A2",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:55:03Z",
+          "status": "verified",
+          "content_digest": "0fa75dcc3979e9d2aebaba3eb5f183e953efaa4ac4fa75271f1336ef774a383a",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "19/19",
+          "exact_match_en": "19/19",
+          "compiled_html": "E1-011/v1/compiled.html",
+          "notes": "Queue task task-8e7125a2 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T13:55:51Z",
+          "status": "verified",
+          "content_digest": "0fa75dcc3979e9d2aebaba3eb5f183e953efaa4ac4fa75271f1336ef774a383a",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "19/19",
+          "exact_match_en": "19/19",
+          "compiled_html": "E1-011/v2/compiled.html",
+          "notes": "Queue task task-8e7125a2 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "0fa75dcc3979e9d2aebaba3eb5f183e953efaa4ac4fa75271f1336ef774a383a",
+      "updated_at": "2026-10-14T13:55:51Z"
+    },
+    "E1-020": {
+      "article_id": "E1-020",
+      "title_cn": "地方政治阻碍硅谷对峙",
+      "title_en": "Local Politics Stymie Silicon Valley Standoff",
+      "section": "U.S. News",
+      "page": "A3",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:57:02Z",
+          "status": "verified",
+          "content_digest": "8b845cee661b15110eeeca63b88f5b77da69e1824d732a291ada02a964e85b48",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "23/23",
+          "exact_match_en": "23/23",
+          "compiled_html": "E1-020/v1/compiled.html",
+          "notes": "Queue task task-09eb129a (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T13:58:34Z",
+          "status": "verified",
+          "content_digest": "8b845cee661b15110eeeca63b88f5b77da69e1824d732a291ada02a964e85b48",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "23/23",
+          "exact_match_en": "23/23",
+          "compiled_html": "E1-020/v2/compiled.html",
+          "notes": "Queue task task-09eb129a (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "8b845cee661b15110eeeca63b88f5b77da69e1824d732a291ada02a964e85b48",
+      "updated_at": "2026-10-14T13:58:34Z"
+    },
+    "E1-022": {
+      "article_id": "E1-022",
+      "title_cn": "由纳税人资助的、支持特朗普的广告被勒令停止播出",
+      "title_en": "Pro-Trump Ads Funded by Taxpayers Ordered Off the Air",
+      "section": "U.S. News",
+      "page": "A3",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T13:59:11Z",
+          "status": "verified",
+          "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-022/v1/compiled.html",
+          "notes": "Queue task task-a6d23d74 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:00:29Z",
+          "status": "verified",
+          "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-022/v2/compiled.html",
+          "notes": "Queue task task-a6d23d74 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+      "updated_at": "2026-10-14T14:00:29Z"
+    },
+    "E1-023": {
+      "article_id": "E1-023",
+      "title_cn": "美国司法部调查电视台停播是否违反反垄断法",
+      "title_en": "DOJ Probes Networks on Halting Coverage",
+      "section": "U.S. News",
+      "page": "A3",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:00:59Z",
+          "status": "verified",
+          "content_digest": "5622250ecf3b012f93c0dd564e07c0290f4d73ec415e2c29297321af1d51f6b2",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-023/v1/compiled.html",
+          "notes": "Queue task task-21965a86 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:02:16Z",
+          "status": "verified",
+          "content_digest": "5622250ecf3b012f93c0dd564e07c0290f4d73ec415e2c29297321af1d51f6b2",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-023/v2/compiled.html",
+          "notes": "Queue task task-21965a86 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "5622250ecf3b012f93c0dd564e07c0290f4d73ec415e2c29297321af1d51f6b2",
+      "updated_at": "2026-10-14T14:02:16Z"
+    },
+    "E1-025": {
+      "article_id": "E1-025",
+      "title_cn": "在达沃斯，吉尔福伊尔炫耀所享特权",
+      "title_en": "At Davos, Guilfoyle Boasted About Perks",
+      "section": "U.S. News",
+      "page": "A4",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:03:30Z",
+          "status": "verified",
+          "content_digest": "4525a92d88fdd637b20b8e2683d11ff4b8eb3065bd7fdeeae9b3a928ffee6567",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "24/24",
+          "exact_match_en": "24/24",
+          "compiled_html": "E1-025/v1/compiled.html",
+          "notes": "Queue task task-3b625195 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:04:18Z",
+          "status": "verified",
+          "content_digest": "4525a92d88fdd637b20b8e2683d11ff4b8eb3065bd7fdeeae9b3a928ffee6567",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "24/24",
+          "exact_match_en": "24/24",
+          "compiled_html": "E1-025/v2/compiled.html",
+          "notes": "Queue task task-3b625195 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "4525a92d88fdd637b20b8e2683d11ff4b8eb3065bd7fdeeae9b3a928ffee6567",
+      "updated_at": "2026-10-14T14:04:18Z"
+    },
+    "E1-027": {
+      "article_id": "E1-027",
+      "title_cn": "卡玛拉·哈里斯的丈夫对她可能参加总统竞选一事持保留态度",
+      "title_en": "Harris’s Husband Has Reservations On Her Potential Presidential Run",
+      "section": "U.S. News",
+      "page": "A4",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:05:54Z",
+          "status": "verified",
+          "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "12/12",
+          "exact_match_en": "12/12",
+          "compiled_html": "E1-027/v1/compiled.html",
+          "notes": "Queue task task-ef521893 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:06:09Z",
+          "status": "verified",
+          "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "12/12",
+          "exact_match_en": "12/12",
+          "compiled_html": "E1-027/v2/compiled.html",
+          "notes": "Queue task task-ef521893 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "d1158cf9867a83124b7261df7d9f9ee9acf77889fe4163f106a7c182be3d3ffb",
+      "updated_at": "2026-10-14T14:06:09Z"
+    },
+    "E1-029": {
+      "article_id": "E1-029",
+      "title_cn": "赫格塞斯因直播行刑队而被批评",
+      "title_en": "Hegseth Gets Heat Over Livestream Firing Squad",
+      "section": "U.S. News",
+      "page": "A5",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:07:49Z",
+          "status": "verified",
+          "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "15/15",
+          "exact_match_en": "15/15",
+          "compiled_html": "E1-029/v1/compiled.html",
+          "notes": "Queue task task-cd8222cc (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:08:22Z",
+          "status": "verified",
+          "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "15/15",
+          "exact_match_en": "15/15",
+          "compiled_html": "E1-029/v2/compiled.html",
+          "notes": "Queue task task-cd8222cc (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "8c382087d5ce88bd785e47692b5d221d2831c6c2aece2905110c1869b2a4d7b7",
+      "updated_at": "2026-10-14T14:08:22Z"
+    },
+    "E1-031": {
+      "article_id": "E1-031",
+      "title_cn": "针对特朗普的政治对手的调查进展受阻。",
+      "title_en": "Probe of Trump Foes Falters",
+      "section": "U.S. News",
+      "page": "A6",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:09:51Z",
+          "status": "verified",
+          "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "19/19",
+          "exact_match_en": "19/19",
+          "compiled_html": "E1-031/v1/compiled.html",
+          "notes": "Queue task task-37e0747a (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:10:58Z",
+          "status": "verified",
+          "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "19/19",
+          "exact_match_en": "19/19",
+          "compiled_html": "E1-031/v2/compiled.html",
+          "notes": "Queue task task-37e0747a (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "1dd5695b943b7a77f89f006246ee5042d977b37166e4bd2e64a60a06b9447481",
+      "updated_at": "2026-10-14T14:10:58Z"
+    },
+    "E1-034": {
+      "article_id": "E1-034",
+      "title_cn": "航空旅行被推向战争前线。",
+      "title_en": "Air Travel Thrust Into Front Lines of War",
+      "section": "World News",
+      "page": "A7",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:12:28Z",
+          "status": "verified",
+          "content_digest": "fdde46e360b06f098167b8e9901408370907b55bb2d7b21f4b5ea786d3258d35",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-034/v1/compiled.html",
+          "notes": "Queue task task-68dcbdc0 (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:13:57Z",
+          "status": "verified",
+          "content_digest": "fdde46e360b06f098167b8e9901408370907b55bb2d7b21f4b5ea786d3258d35",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-034/v2/compiled.html",
+          "notes": "Queue task task-68dcbdc0 (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "fdde46e360b06f098167b8e9901408370907b55bb2d7b21f4b5ea786d3258d35",
+      "updated_at": "2026-10-14T14:13:57Z"
+    },
+    "E1-041": {
+      "article_id": "E1-041",
+      "title_cn": "新德里因选民抗议活动不断升级而实施封锁。",
+      "title_en": "New Delhi Locks Down As Voter Protests Grow",
+      "section": "World News",
+      "page": "A9",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T14:15:27Z",
+          "status": "verified",
+          "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "13/13",
+          "exact_match_en": "13/13",
+          "compiled_html": "E1-041/v1/compiled.html",
+          "notes": "Queue task task-97519a0b (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T14:16:15Z",
+          "status": "verified",
+          "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "13/13",
+          "exact_match_en": "13/13",
+          "compiled_html": "E1-041/v2/compiled.html",
+          "notes": "Queue task task-97519a0b (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+      "updated_at": "2026-10-14T14:16:15Z"
     }
   }
 }

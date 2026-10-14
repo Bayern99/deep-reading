@@ -1,0 +1,313 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-034",
+  "final_id": "034",
+  "issue_date": "2026-10-12",
+  "content_digest": "fdde46e360b06f098167b8e9901408370907b55bb2d7b21f4b5ea786d3258d35",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A7",
+    "section": "World News",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "World News · A7 版",
+    "kicker_en": "WSJ · WORLD NEWS · A7",
+    "title_cn": "航空旅行被推向战争前线。",
+    "title_en": "Air Travel Thrust Into Front Lines of War",
+    "dek_cn": "胡塞武装袭击沙特机场后，各国政府提醒谨慎飞往沙特阿拉伯。",
+    "dek_en": "Governments caution on flying to Saudi Arabia after Houthi airport strike",
+    "byline": "BY BENJAMIN KATZ",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "全球范围内的冲突不断升级，商业航空旅行也因此被卷入冲突的最前线，机场、飞机和空域都成为了导弹和无人机袭击的明确目标，袭击规模前所未有。",
+      "text_en": "Commercial air travel has been dragged into the front lines of escalating conflicts across the globe, with airports, planes and airspace becoming the deliberate target of missile and drone attacks on a scale not seen before.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "全球范围内的冲突不断升级，商业航空旅行也因此被卷入冲突的最前线，机场、飞机和空域都成为了导弹和无人机袭击的明确目标，袭击规模前所未有。",
+          "text_en": "Commercial air travel has been dragged into the front lines of escalating conflicts across the globe, with airports, planes and airspace becoming the deliberate target of missile and drone attacks on a scale not seen before."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "自美国和以色列于二月份开始对伊朗发动战争以来，中东地区的各大机场多次遭到袭击。停放在机场的飞机遭到导弹袭击或拦截系统碎片坠落，导致机组人员和乘客伤亡。",
+      "text_en": "Since the U.S. and Israel started the Iran war in February, major airports across the Middle East have been repeatedly targeted. Parked aircraft have been hit by missiles or falling debris from interceptor systems, killing crew members and passengers.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "自美国和以色列于二月份开始对伊朗发动战争以来，中东地区的各大机场多次遭到袭击。",
+          "text_en": "Since the U.S. and Israel started the Iran war in February, major airports across the Middle East have been repeatedly targeted."
+        },
+        {
+          "id": "p2.s2",
+          "text_cn": "停放在机场的飞机遭到导弹袭击或拦截系统碎片坠落，导致机组人员和乘客伤亡。",
+          "text_en": "Parked aircraft have been hit by missiles or falling debris from interceptor systems, killing crew members and passengers."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "威胁在周六达到了顶峰，也门胡塞武装对利雅得国王哈立德国际机场发动了导弹袭击，造成至少12人死亡，300多人受伤。此次袭击是十多年来对沙特阿拉伯造成的伤亡最惨重的袭击，导致航空公司紧急将数十架飞机改降他处，另取消了1000多个航班。当局报告称，周日，关闭的机场再次遭到袭击，一枚抛射物在4号航站楼引发火灾，造成人员受伤。",
+      "text_en": "The threat culminated Saturday in a Houthi missile strike at Riyadh's King Khalid International Airport that killed at least 12 people and injured more than 300 others. The strike, the deadliest attack on Saudi Arabia in more than a decade, left airlines scrambling to divert scores of aircraft and cancel more than 1,000 other flights. Authorities reported new attacks on the closed airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "威胁在周六达到了顶峰，也门胡塞武装对利雅得国王哈立德国际机场发动了导弹袭击，造成至少12人死亡，300多人受伤。",
+          "text_en": "The threat culminated Saturday in a Houthi missile strike at Riyadh's King Khalid International Airport that killed at least 12 people and injured more than 300 others."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "此次袭击是十多年来对沙特阿拉伯造成的伤亡最惨重的袭击，导致航空公司紧急将数十架飞机改降他处，另取消了1000多个航班。",
+          "text_en": "The strike, the deadliest attack on Saudi Arabia in more than a decade, left airlines scrambling to divert scores of aircraft and cancel more than 1,000 other flights."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "当局报告称，周日，关闭的机场再次遭到袭击，一枚抛射物在4号航站楼引发火灾，造成人员受伤。",
+          "text_en": "Authorities reported new attacks on the closed airport Sunday, saying a projectile caused a fire in Terminal 4 and led to injuries."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "包括美国、英国和澳大利亚在内的各国政府都建议公民避免前往利雅得机场。法国、加拿大和德国警告航空公司，飞越沙特阿拉伯全境或大部分区域已不再安全。",
+      "text_en": "Governments including the U.S., U.K. and Australia are telling citizens to avoid the Riyadh airport following the attack. France, Canada and Germany are warning airlines that flying over all or large parts of Saudi Arabia is no longer safe.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "包括美国、英国和澳大利亚在内的各国政府都建议公民避免前往利雅得机场。",
+          "text_en": "Governments including the U.S., U.K. and Australia are telling citizens to avoid the Riyadh airport following the attack."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "法国、加拿大和德国警告航空公司，飞越沙特阿拉伯全境或大部分区域已不再安全。",
+          "text_en": "France, Canada and Germany are warning airlines that flying over all or large parts of Saudi Arabia is no longer safe."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "专家和安全倡导者表示，旅客不应将航空公司决定继续飞行视为航线安全的保证。“这一切取决于各国如何管理本国空域，也取决于航空公司自己的风险评估，”航空安全公司 Osprey Flight Solutions（航空安全机构）首席情报官马特·博里说。“航空公司指望各国采取正确的措施来保障空域安全。”",
+      "text_en": "Experts and safety advocates say travelers shouldn't take an airline's decision to fly as a guarantee of a route's safety. \"All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment,\" said Matt Borie, chief intelligence officer at aviation security specialist Osprey Flight Solutions. \"They're counting on the country to have done the right things to keep the airspace safe,\" he said.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "专家和安全倡导者表示，旅客不应将航空公司决定继续飞行视为航线安全的保证。",
+          "text_en": "Experts and safety advocates say travelers shouldn't take an airline's decision to fly as a guarantee of a route's safety."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "“这一切取决于各国如何管理本国空域，也取决于航空公司自己的风险评估，”航空安全公司 Osprey Flight Solutions（航空安全机构）首席情报官马特·博里说。",
+          "text_en": "\"All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment,\" said Matt Borie, chief intelligence officer at aviation security specialist Osprey Flight Solutions."
+        },
+        {
+          "id": "p5.s3",
+          "text_cn": "“航空公司指望各国采取正确的措施来保障空域安全。”",
+          "text_en": "\"They're counting on the country to have done the right things to keep the airspace safe,\" he said."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "自二月底以来，伊朗炸毁了迪拜、卡塔尔、巴林、科威特等地主要机场的燃料储罐，并损坏了停放在机场的飞机、跑道和空中交通管制基础设施。",
+      "text_en": "Since late February, Iran has blown up fuel tanks and damaged parked aircraft, runways and air-traffic control infrastructure across major airports in Dubai, Qatar, Bahrain, Kuwait and elsewhere.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "自二月底以来，伊朗炸毁了迪拜、卡塔尔、巴林、科威特等地主要机场的燃料储罐，并损坏了停放在机场的飞机、跑道和空中交通管制基础设施。",
+          "text_en": "Since late February, Iran has blown up fuel tanks and damaged parked aircraft, runways and air-traffic control infrastructure across major airports in Dubai, Qatar, Bahrain, Kuwait and elsewhere."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "与此同时，以色列的打击命中了贝鲁特机场的目标，而沙特阿拉伯于7月轰炸了也门萨那机场，以阻止一架载有胡塞武装代表团的飞机降落。",
+      "text_en": "Israeli strikes have meanwhile hit targets at Beirut Airport, while Saudi Arabia bombed Yemen's San'a Airport in July to prevent a plane carrying a Houthi delegation from landing.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "与此同时，以色列的打击命中了贝鲁特机场的目标，而沙特阿拉伯于7月轰炸了也门萨那机场，以阻止一架载有胡塞武装代表团的飞机降落。",
+          "text_en": "Israeli strikes have meanwhile hit targets at Beirut Airport, while Saudi Arabia bombed Yemen's San'a Airport in July to prevent a plane carrying a Houthi delegation from landing."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "对民用飞机的威胁日益增加，促使国际民用航空组织罕见地发出了谴责，该组织是联合国下属机构，负责管理全球航空旅行，并于上月重申呼吁成员国采取措施，防止航空业被卷入持续的敌对行动。",
+      "text_en": "The increasing threat to civilian aircraft has prompted rare rebukes from the International Civil Aviation Organization, the United Nations body that governs global air travel, which last month reiterated a call for member states to prevent aviation from being dragged into ongoing hostilities.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "对民用飞机的威胁日益增加，促使国际民用航空组织罕见地发出了谴责，该组织是联合国下属机构，负责管理全球航空旅行，并于上月重申呼吁成员国采取措施，防止航空业被卷入持续的敌对行动。",
+          "text_en": "The increasing threat to civilian aircraft has prompted rare rebukes from the International Civil Aviation Organization, the United Nations body that governs global air travel, which last month reiterated a call for member states to prevent aviation from being dragged into ongoing hostilities."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "沙特空域曾被视为穿越中东的少数安全通道之一，如今的警告正迫使航空公司削减经由该区域的飞行——该区域曾是连接欧亚的仅有的两条主要空中走廊之一。航空公司不得不反复调整飞行路线，以应对全球冲突，而空域的迅速缩小，在喷气燃料价格约为去年同期价格的两倍的时期，给航空公司带来了巨大的压力。",
+      "text_en": "The warnings over Saudi Arabian skies, which had been regarded as one of the few safe passages through the Middle East, are pushing airlines to scale back flying in what had become one of only two primary corridors linking Europe and Asia. Airlines have repeatedly had to alter flight paths to account for global conflicts, with the rapidly shrinking airspace proving painful at a time when jet fuel is trading at about twice the price it was this time last year.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "沙特空域曾被视为穿越中东的少数安全通道之一，如今的警告正迫使航空公司削减经由该区域的飞行——该区域曾是连接欧亚的仅有的两条主要空中走廊之一。",
+          "text_en": "The warnings over Saudi Arabian skies, which had been regarded as one of the few safe passages through the Middle East, are pushing airlines to scale back flying in what had become one of only two primary corridors linking Europe and Asia."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "航空公司不得不反复调整飞行路线，以应对全球冲突，而空域的迅速缩小，在喷气燃料价格约为去年同期价格的两倍的时期，给航空公司带来了巨大的压力。",
+          "text_en": "Airlines have repeatedly had to alter flight paths to account for global conflicts, with the rapidly shrinking airspace proving painful at a time when jet fuel is trading at about twice the price it was this time last year."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这种变化始于2022年初乌克兰上空空域的关闭，以及莫斯科随后禁止欧洲、美国和其他航空公司使用其上空空域。今年伊朗战争开始时，伊拉克上空的关键航线关闭，这促使更多的航空公司选择飞越沙特阿拉伯上空。越来越多的航空公司开始依赖一条经过格鲁吉亚、阿塞拜疆和土库曼斯坦上空的狭窄空域，以连接欧洲和亚洲。例如，维珍航空自9月底以来，一直通过中亚地区运营其每天两次的从孟买飞往伦敦的航线。此前，该航空公司经常选择通过埃及和沙特阿拉伯飞往目的地。",
+      "text_en": "The shifts began in earnest with the closure of Ukrainian skies in early 2022 and Moscow's subsequent ban on European, U.S. and other carriers using its skies. The closure of a critical corridor over Iraq at the start of the Iran war this year pushed more airlines to fly through Saudi airspace. Increasingly, airlines have been relying on a sliver of airspace passing over Georgia, Azerbaijan and Turkmenistan to travel between Europe and Asia. Virgin Atlantic, for example, has been flying its twice-daily route from Mumbai to London via central Asia since late September. The airline previously routed it frequently through Egypt and Saudi Arabia.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "这种变化始于2022年初乌克兰上空空域的关闭，以及莫斯科随后禁止欧洲、美国和其他航空公司使用其上空空域。",
+          "text_en": "The shifts began in earnest with the closure of Ukrainian skies in early 2022 and Moscow's subsequent ban on European, U.S. and other carriers using its skies."
+        },
+        {
+          "id": "p10.s2",
+          "text_cn": "今年伊朗战争开始时，伊拉克上空的关键航线关闭，这促使更多的航空公司选择飞越沙特阿拉伯上空。",
+          "text_en": "The closure of a critical corridor over Iraq at the start of the Iran war this year pushed more airlines to fly through Saudi airspace."
+        },
+        {
+          "id": "p10.s3",
+          "text_cn": "越来越多的航空公司开始依赖一条经过格鲁吉亚、阿塞拜疆和土库曼斯坦上空的狭窄空域，以连接欧洲和亚洲。",
+          "text_en": "Increasingly, airlines have been relying on a sliver of airspace passing over Georgia, Azerbaijan and Turkmenistan to travel between Europe and Asia."
+        },
+        {
+          "id": "p10.s4",
+          "text_cn": "例如，维珍航空自9月底以来，一直通过中亚地区运营其每天两次的从孟买飞往伦敦的航线。",
+          "text_en": "Virgin Atlantic, for example, has been flying its twice-daily route from Mumbai to London via central Asia since late September."
+        },
+        {
+          "id": "p10.s5",
+          "text_cn": "此前，该航空公司经常选择通过埃及和沙特阿拉伯飞往目的地。",
+          "text_en": "The airline previously routed it frequently through Egypt and Saudi Arabia."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "航空公司通常面临着没有好选择的困境。印度航空和土耳其航空已调整部分航线，使其飞机沿沙特-伊拉克边境飞行，从而远离胡塞武装袭击的威胁。但这些航线通常会经过叙利亚首都大马士革附近，而大马士革仍然被视为一个高风险区域。",
+      "text_en": "Carriers often are left with no good options. Air India and Turkish Airlines have shifted some routes so that their aircraft fly along the Saudi-Iraq border further away from threats of Houthi attacks. But those flight paths typically pass near Syria's capital, Damascus, which is still regarded as a risky zone.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "航空公司通常面临着没有好选择的困境。",
+          "text_en": "Carriers often are left with no good options."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "印度航空和土耳其航空已调整部分航线，使其飞机沿沙特-伊拉克边境飞行，从而远离胡塞武装袭击的威胁。",
+          "text_en": "Air India and Turkish Airlines have shifted some routes so that their aircraft fly along the Saudi-Iraq border further away from threats of Houthi attacks."
+        },
+        {
+          "id": "p11.s3",
+          "text_cn": "但这些航线通常会经过叙利亚首都大马士革附近，而大马士革仍然被视为一个高风险区域。",
+          "text_en": "But those flight paths typically pass near Syria's capital, Damascus, which is still regarded as a risky zone."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p5",
+      "quote_cn": "“航空公司指望各国采取正确的措施来保障空域安全。”",
+      "quote_en": "“They're counting on the country to have done the right things to keep the airspace safe,”",
+      "speaker_cn": "原文第 5 段直接引述",
+      "role_cn": "Source Block p5",
+      "speaker_en": "Direct Quote (p5)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "背景：2026年2月美国与以色列对伊朗开战后，中东多国机场接连成为导弹和无人机袭击的目标，民用航空被卷入冲突前线。沙特空域曾是欧亚之间仅有的两条主要空中走廊之一、少数被视为安全的通道，如今各国相继发布警告，航空公司被迫改道经格鲁吉亚—阿塞拜疆—土库曼斯坦的狭窄空域。联合国下属的国际民用航空组织（ICAO）上月罕见发声，呼吁成员国避免将民航拖入敌对行动。",
+    "text_en": "背景：2026年2月美国与以色列对伊朗开战后，中东多国机场接连成为导弹和无人机袭击的目标，民用航空被卷入冲突前线。沙特空域曾是欧亚之间仅有的两条主要空中走廊之一、少数被视为安全的通道，如今各国相继发布警告，航空公司被迫改道经格鲁吉亚—阿塞拜疆—土库曼斯坦的狭窄空域。联合国下属的国际民用航空组织（ICAO）上月罕见发声，呼吁成员国避免将民航拖入敌对行动。"
+  },
+  "media": [],
+  "terms": [
+    {
+      "en": "Benjamin Katz",
+      "zh_suggested": "本杰明·卡茨",
+      "note": "待查"
+    },
+    {
+      "en": "Matt Borie",
+      "zh_suggested": "马特·博里",
+      "note": "待查"
+    },
+    {
+      "en": "Osprey Flight Solutions",
+      "zh_suggested": "Osprey Flight Solutions（航空安全机构）",
+      "note": "待查"
+    },
+    {
+      "en": "International Civil Aviation Organization",
+      "zh_suggested": "国际民用航空组织",
+      "note": "缩写ICAO，联合国机构"
+    },
+    {
+      "en": "Virgin Atlantic",
+      "zh_suggested": "维珍航空"
+    },
+    {
+      "en": "Air India",
+      "zh_suggested": "印度航空"
+    },
+    {
+      "en": "Turkish Airlines",
+      "zh_suggested": "土耳其航空"
+    }
+  ]
+}

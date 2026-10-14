@@ -1,0 +1,399 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-005",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T13:49:52Z",
+  "status": "verified",
+  "notes": "Queue task task-8ab28f87 (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+    "paragraph_count": 24,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 24146,
+    "completion_chars": 35556,
+    "input_tokens": 7958,
+    "output_tokens": 13387,
+    "total_tokens": 21345,
+    "latency_seconds": 103.9
+  },
+  "files": {
+    "raw_html": "E1-005/v1/raw.html",
+    "compiled_html": "E1-005/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-dark: #c9c2b2;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.14);\n    --crimson: #8f2424;\n    --crimson-soft: rgba(143, 36, 36, 0.1);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --gold: #c99a49;\n    --font-serif-cn: 'Noto Serif SC', serif;\n    --font-sans-cn: 'Noto Sans SC', sans-serif;\n    --font-serif-en: 'Lora', Georgia, serif;\n    --font-display: 'Playfair Display', 'Noto Serif SC', serif;\n    --font-mono: 'JetBrains Mono', monospace;\n    --font-ui: 'Inter', 'Noto Sans SC', sans-serif;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    font-family: var(--font-serif-cn);\n    overflow-x: hidden;\n    line-height: 1.8;\n  }\n\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: var(--font-serif-en);\n    line-height: 1.72;\n  }\n\n  /* Reading Progress Bar */\n  .progress-rail {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 3px;\n    background: rgba(20, 20, 19, 0.06);\n    z-index: 1001;\n  }\n  .progress-bar {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s ease-out;\n  }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line);\n    padding: 0.7rem 1.5rem;\n  }\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n  .wsj-brand {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n  }\n  .wsj-logo {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n  .wsj-divider {\n    width: 1px;\n    height: 16px;\n    background: var(--line-dark);\n  }\n  .wsj-section-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.12em;\n    text-transform: uppercase;\n    color: var(--accent);\n    font-weight: 600;\n  }\n  .lang-switch {\n    display: inline-flex;\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-radius: 999px;\n    padding: 2px;\n  }\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-ui);\n    font-size: 0.76rem;\n    font-weight: 600;\n    padding: 0.3rem 0.75rem;\n    border-radius: 999px;\n    color: var(--muted);\n    cursor: pointer;\n    transition: all 0.2s ease;\n  }\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Hero Header */\n  .hero {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 1px solid var(--line);\n  }\n  .hero-kicker {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n    letter-spacing: 0.14em;\n    text-transform: uppercase;\n    color: var(--crimson);\n    font-weight: 700;\n  }\n  .kicker-dot {\n    width: 8px;\n    height: 8px;\n    border-radius: 50%;\n    background: var(--crimson);\n    display: inline-block;\n  }\n  .hero-title {\n    font-family: var(--font-display);\n    font-size: clamp(2.1rem, 4.4vw, 3.6rem);\n    font-weight: 800;\n    line-height: 1.18;\n    color: var(--ink);\n    max-width: 960px;\n    margin-bottom: 1.25rem;\n    letter-spacing: -0.015em;\n  }\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.26;\n    letter-spacing: 0.01em;\n  }\n  .hero-dek {\n    font-size: clamp(1.12rem, 1.8vw, 1.38rem);\n    line-height: 1.6;\n    color: var(--muted);\n    max-width: 820px;\n    margin-bottom: 2rem;\n    font-weight: 400;\n  }\n  .hero-meta-bar {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n    padding-top: 1.25rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-ui);\n    font-size: 0.82rem;\n    color: var(--muted);\n  }\n  .byline-name {\n    font-weight: 700;\n    color: var(--ink);\n    letter-spacing: 0.04em;\n    text-transform: uppercase;\n  }\n  .dateline-tag {\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n    color: var(--muted);\n  }\n\n  /* Strategic Dossier Strip (Context + Opening Overview) */\n  .dossier-strip {\n    max-width: 1180px;\n    margin: 2rem auto 0;\n    padding: 0 1.5rem;\n  }\n  .dossier-box {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-left: 4px solid var(--accent);\n    padding: 1.35rem 1.6rem;\n    display: grid;\n    grid-template-columns: 200px 1fr;\n    gap: 1.5rem;\n    align-items: start;\n  }\n  .dossier-label {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n    font-weight: 700;\n    line-height: 1.5;\n  }\n  .dossier-label span {\n    display: block;\n    color: var(--muted);\n    font-weight: 400;\n    margin-top: 0.25rem;\n    font-size: 0.7rem;\n  }\n  .dossier-text {\n    font-family: var(--font-sans-cn);\n    font-size: 0.94rem;\n    line-height: 1.7;\n    color: var(--body);\n  }\n\n  /* Main Editorial Grid */\n  .editorial-container {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2.5rem 1.5rem 4rem;\n  }\n\n  .chapter-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 680px) minmax(260px, 360px);\n    justify-content: space-between;\n    gap: 3rem;\n    align-items: start;\n  }\n\n  .narrative-col {\n    min-width: 0;\n  }\n\n  .sidebar-col {\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 1.75rem;\n  }\n\n  /* Prose Typography */\n  .prose-p {\n    font-size: 1.125rem;\n    line-height: 1.88;\n    color: var(--body);\n    margin-bottom: 1.5rem;\n  }\n  :host([lang=\"en\"]) .prose-p {\n    font-size: 1.1rem;\n    line-height: 1.78;\n  }\n\n  .lead-p {\n    font-size: 1.24rem;\n    line-height: 1.82;\n    color: var(--ink);\n    font-weight: 600;\n    padding-left: 1.15rem;\n    border-left: 3px solid var(--accent);\n    margin-bottom: 1.75rem;\n  }\n  :host([lang=\"en\"]) .lead-p {\n    font-size: 1.2rem;\n    font-weight: 400;\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);\n    color: inherit;\n    padding: 0 2px;\n    font-weight: 600;\n  }\n\n  /* Chapter Headers */\n  .chapter-divider {\n    margin: 3.25rem 0 2rem;\n    padding-top: 2rem;\n    border-top: 2px solid var(--ink);\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n  .chapter-num {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    font-weight: 700;\n    letter-spacing: 0.15em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n  .chapter-title {\n    font-family: var(--font-display);\n    font-size: 1.55rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.3;\n  }\n\n  /* Incident Forensic Card (p3-p5) */\n  .forensic-incident-box {\n    background: #f6f1e9;\n    border: 1px solid var(--line-dark);\n    border-top: 3px solid var(--crimson);\n    padding: 1.6rem 1.75rem;\n    margin: 2rem 0;\n  }\n  .forensic-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: 1px solid var(--line-dark);\n    padding-bottom: 0.75rem;\n    margin-bottom: 1.25rem;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--crimson);\n    font-weight: 700;\n  }\n  .forensic-incident-box .prose-p:last-child {\n    margin-bottom: 0;\n  }\n\n  /* Side Rail Cards */\n  .rail-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    padding: 1.4rem;\n  }\n  .rail-card-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    letter-spacing: 0.12em;\n    text-transform: uppercase;\n    color: var(--accent);\n    font-weight: 700;\n    margin-bottom: 0.65rem;\n    display: block;\n  }\n  .rail-card-title {\n    font-family: var(--font-display);\n    font-size: 1.08rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.85rem;\n    line-height: 1.35;\n  }\n\n  /* Derived Metric Cards */\n  .metric-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-top: 3px solid var(--ink);\n    padding: 1.4rem;\n  }\n  .metric-val {\n    font-family: var(--font-display);\n    font-size: 2.3rem;\n    font-weight: 800;\n    color: var(--accent);\n    line-height: 1.1;\n    margin-bottom: 0.45rem;\n  }\n  .metric-lbl {\n    font-family: var(--font-ui);\n    font-size: 0.82rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    margin-bottom: 0.5rem;\n  }\n  .metric-note {\n    font-family: var(--font-sans-cn);\n    font-size: 0.82rem;\n    line-height: 1.55;\n    color: var(--muted);\n  }\n\n  /* Pull Quote */\n  .pull-quote {\n    background: var(--navy-bg);\n    color: var(--paper);\n    padding: 1.75rem 1.6rem;\n    border-left: 4px solid var(--gold);\n    margin: 0;\n  }\n  .pull-quote .quote-text {\n    font-family: var(--font-display);\n    font-size: 1.18rem;\n    line-height: 1.55;\n    color: #ffffff;\n    margin-bottom: 0.9rem;\n  }\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--gold);\n    letter-spacing: 0.06em;\n    text-transform: uppercase;\n  }\n\n  /* Full-Bleed Strategic Map & Choke Point Diagram */\n  .graphic-breakout {\n    margin: 3rem 0;\n    background: var(--navy-bg);\n    color: var(--paper);\n    border: 1px solid #25384d;\n    padding: 2rem;\n  }\n  .graphic-header {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1rem;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.14);\n    padding-bottom: 1.1rem;\n    margin-bottom: 1.5rem;\n  }\n  .graphic-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.14em;\n    text-transform: uppercase;\n    color: var(--gold);\n    margin-bottom: 0.35rem;\n  }\n  .graphic-title {\n    font-family: var(--font-display);\n    font-size: 1.45rem;\n    font-weight: 700;\n    color: #fff;\n  }\n  .graphic-sub {\n    font-family: var(--font-ui);\n    font-size: 0.86rem;\n    color: #b0becf;\n    max-width: 640px;\n  }\n  .graphic-caption {\n    margin-top: 1.1rem;\n    padding-top: 0.85rem;\n    border-top: 1px solid rgba(255, 255, 255, 0.12);\n    font-family: var(--font-mono);\n    font-size: 0.73rem;\n    color: #8fa2b8;\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n  }\n\n  /* Vision 2030 Fiscal Crunch Visual */\n  .fiscal-viz-panel {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    padding: 1.75rem;\n    margin: 2.25rem 0;\n  }\n  .fiscal-panel-head {\n    border-bottom: 1px solid var(--line-dark);\n    padding-bottom: 0.9rem;\n    margin-bottom: 1.25rem;\n  }\n  .fiscal-panel-title {\n    font-family: var(--font-display);\n    font-size: 1.28rem;\n    color: var(--ink);\n    margin-top: 0.25rem;\n  }\n\n  /* Timeline / Escalation Matrix */\n  .timeline-list {\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 0.95rem;\n  }\n  .timeline-item {\n    position: relative;\n    padding-left: 1rem;\n    border-left: 2px solid var(--line-dark);\n  }\n  .timeline-item.alert {\n    border-left-color: var(--crimson);\n  }\n  .tl-date {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    color: var(--accent);\n    display: block;\n    margin-bottom: 0.15rem;\n  }\n  .timeline-item.alert .tl-date {\n    color: var(--crimson);\n  }\n  .tl-desc {\n    font-family: var(--font-sans-cn);\n    font-size: 0.84rem;\n    line-height: 1.5;\n    color: var(--body);\n  }\n\n  /* Footer */\n  .ed-footer {\n    border-top: 1px solid var(--line-dark);\n    background: var(--paper-card);\n    padding: 2.5rem 1.5rem;\n    margin-top: 3rem;\n  }\n  .ed-footer-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1rem;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow */\n  @media (max-width: 920px) {\n    .chapter-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n    .dossier-box {\n      grid-template-columns: 1fr;\n      gap: 0.65rem;\n    }\n  }\n\n  @media (max-width: 540px) {\n    .masthead {\n      padding: 0.6rem 1rem;\n    }\n    .hero {\n      padding: 2.2rem 1rem 1.75rem;\n    }\n    .dossier-strip {\n      padding: 0 1rem;\n    }\n    .editorial-container {\n      padding: 1.75rem 1rem 3rem;\n    }\n    .graphic-breakout {\n      padding: 1.25rem 1rem;\n      margin: 2rem 0;\n    }\n    .forensic-incident-box {\n      padding: 1.25rem 1.15rem;\n    }\n    .chapter-divider {\n      flex-direction: column;\n      gap: 0.35rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div class=\"progress-rail\"><div class=\"progress-bar\" id=\"progressBar\"></div></div>\n\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"wsj-brand\">\n      <span class=\"wsj-logo\">The Wall Street Journal</span>\n      <span class=\"wsj-divider\"></span>\n      <span class=\"wsj-section-tag\">\n        <span class=\"lang-cn\">中东战略深读 · Page A1</span>\n        <span class=\"lang-en\">Middle East Dispatch · Page A1</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<section class=\"hero\">\n  <div class=\"hero-kicker\">\n    <span class=\"kicker-dot\"></span>\n    <span class=\"lang-cn\">地缘安全与经济转型危机</span>\n    <span class=\"lang-en\">Geopolitics &amp; Economic Transformation</span>\n  </div>\n  <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">胡塞武装发动袭击，沙特王储重担加重</span><span class=\"lang-en\">Saudi Crown Prince's Burden Grows Heavier as Houthis Strike</span></h1>\n  <p class=\"hero-dek\" data-ref=\"dek\"><span class=\"lang-cn\">沙特王国正面临着诸多困境，伊朗支持的反叛武装正在加剧对该国安全的袭击。</span><span class=\"lang-en\">Kingdom is facing myriad dilemmas as Iran-backed rebels intensify attacks on the kingdom's security and</span></p>\n  <div class=\"hero-meta-bar\">\n    <div>\n      <span class=\"byline-name\">By Summer Said and Georgi Kantchev</span>\n    </div>\n    <div class=\"dateline-tag\">\n      <span class=\"lang-cn\">2026年10月12日 · 迪拜电</span>\n      <span class=\"lang-en\">October 12, 2026 · DUBAI</span>\n    </div>\n  </div>\n</section>\n\n\n<section class=\"dossier-strip\" aria-label=\"Reporter Background Context\">\n  <div class=\"dossier-box\">\n    <div class=\"dossier-label\">\n      <span class=\"lang-cn\">核心背景档案</span>\n      <span class=\"lang-en\">Intelligence Dossier</span>\n      <span>WSJ BRIEFING · E1-005</span>\n    </div>\n    <div class=\"dossier-text\" data-ref=\"ctx1\"><span class=\"lang-cn\">王储 2015 年主导沙特介入也门内战，支持获国际承认的政府打击胡塞武装，双方 2022 年停火。本轮冲突中，胡塞 7 月宣布对沙特实施海上封锁，9 月袭击了沙特绕行霍尔木兹海峡的东西输油管道，周六的导弹袭击造成利雅得国际机场至少 12 人死亡。王储过去十年投入数万亿美元建设 Neom 等未来项目，而政府年度预算仅约 3500 亿美元；沙特财政部预计 2026 年 GDP 将收缩 3.6%。</span><span class=\"lang-en\">王储 2015 年主导沙特介入也门内战，支持获国际承认的政府打击胡塞武装，双方 2022 年停火。本轮冲突中，胡塞 7 月宣布对沙特实施海上封锁，9 月袭击了沙特绕行霍尔木兹海峡的东西输油管道，周六的导弹袭击造成利雅得国际机场至少 12 人死亡。王储过去十年投入数万亿美元建设 Neom 等未来项目，而政府年度预算仅约 3500 亿美元；沙特财政部预计 2026 年 GDP 将收缩 3.6%。</span></div>\n  </div>\n</section>\n\n\n<main class=\"editorial-container\">\n\n  <!-- ACT I: THE AIRPORT STRIKE & ESCALATING THREAT (p1 - p11) -->\n  <div class=\"chapter-grid\">\n    <div class=\"narrative-col\">\n      <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"霍尔木兹海峡 | Strait of Hormuz\"><span class=\"lang-cn\">迪拜——沙特王储穆罕默德·本·萨勒曼以积极的姿态开始了新的一年。他刚刚访问了白宫，并受到了特朗普总统的热情欢迎。即使在与伊朗的战争爆发后，沙特阿拉伯的处境也相对较好：它可以通过一条绕过受阻的<mark class=\"ed-hl\">霍尔木兹海峡</mark>的管道出口石油。</span><span class=\"lang-en\">DUBAI—Saudi Crown Prince Mohammed bin Salman started the year on a high note. He'd just visited the White House where he was embraced by President Trump. Even after the war with Iran kicked off, Saudi Arabia looked relatively well positioned: It could export oil through a pipeline that bypassed the blocked <mark class=\"ed-hl\">Strait of Hormuz</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\"><span class=\"lang-cn\">但沙特与伊朗支持的也门胡塞武装分子在邻国也门日益激烈的冲突，现在给该国的安全以及王储雄心勃勃但已面临困境的改造该国依赖石油的经济的计划带来了新的挑战。</span><span class=\"lang-en\">But the Saudis' escalating fight with Iran-backed Houthi militants in neighboring Yemen now piles new challenges on the kingdom's security and the crown prince's ambitious but already struggling plans to transform the country's oil-dependent economy.</span></p>\n\n      <div class=\"forensic-incident-box\">\n        <div class=\"forensic-header\">\n          <span>\n            <span class=\"lang-cn\">利雅得国际机场遇袭纪实</span>\n            <span class=\"lang-en\">Riyadh International Airport Strike</span>\n          </span>\n          <span>4 TERMINALS · CASUALTY REPORT</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"至少 12 人死亡 | killing at least 12 people | 单次伤亡最严重的袭击 | single deadliest attack\"><span class=\"lang-cn\">周六，一枚胡塞导弹击中了沙特首都的国际机场，造成<mark class=\"ed-hl\">至少 12 人死亡</mark>，数百人受伤，其中许多人伤势严重。这是伊朗战争相关冲突中，针对美国或其海湾盟友造成的<mark class=\"ed-hl\">单次伤亡最严重的袭击</mark>。</span><span class=\"lang-en\">On Saturday, a Houthi missile slammed into the Saudi capital's international airport, <mark class=\"ed-hl\">killing at least 12 people</mark> and injuring hundreds more, many seriously. It was the <mark class=\"ed-hl\">single deadliest attack</mark> on the U.S. or its Gulf allies in the conflicts related to the Iran war.</span></p>\n        <p class=\"prose-p\" data-ref=\"p4\"><span class=\"lang-cn\">据知情官员透露，一名 28 岁的埃及空姐在手臂被炸断后失血过多而死亡，她是袭击事件中失去肢体的一些受害者之一。</span><span class=\"lang-en\">A 28-year-old Egyptian flight attendant bled to death after her arm was blown off, one of several victims to lose limbs, officials briefed on the attack said.</span></p>\n        <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"两座航站楼遭到袭击 | Two terminals were struck | 4 号航站楼 | Terminal 4\"><span class=\"lang-cn\">据熟悉情况的人士称，<mark class=\"ed-hl\">两座航站楼遭到袭击</mark>，屋顶部分坍塌。Storyful（一家视频验证机构）验证的视频显示，乘客在机场疏散时，拖着行李箱，从地面上一道血迹旁经过。Storyful 与《华尔街日报》一样，都由道琼斯公司所有。当局报告称，周日，关闭的机场再次遭到袭击，称一枚弹药在 <mark class=\"ed-hl\">4 号航站楼</mark>引发火灾，并造成人员受伤。</span><span class=\"lang-en\"><mark class=\"ed-hl\">Two terminals were struck</mark> and their roofs partially collapsed, people familiar with the damage said. Video verified by Storyful, which like The Wall Street Journal is owned by Dow Jones, showed passengers rolling suitcases past a trail of blood on the floor as the airport was evacuated. Authorities reported new attacks on the shuttered airport Sunday, saying a projectile caused a fire in <mark class=\"ed-hl\">Terminal 4</mark> and led to injuries.</span></p>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"主要东西部管道和炼油厂 | main east-west pipeline and refineries\"><span class=\"lang-cn\">就在今年夏天，沙特官员曾向记者表示，胡塞武装的情况已经得到控制。但武装分子日益激烈的袭击，他们声称这是对沙特采取的行动的回应，袭击了机场和能源设施——包括该国的<mark class=\"ed-hl\">主要东西部管道和炼油厂</mark>——表明南部边境的威胁正在增加。</span><span class=\"lang-en\">As recently as this summer, Saudi officials briefed journalists that the Houthi situation was under control. But the militants' escalating attacks, which they say are retaliation for Saudi actions against them, have hit airports and energy facilities—including the kingdom's <mark class=\"ed-hl\">main east-west pipeline and refineries</mark>—showing the growing threat along the southern border.</span></p>\n      <p class=\"prose-p\" data-ref=\"p7\"><span class=\"lang-cn\">这场冲突正在危及沙特将旅游业发展成为经济支柱的努力，包括一项计划于本月底举行的备受瞩目的国际投资会议，而该会议能否如期举行如今越来越成疑。</span><span class=\"lang-en\">The conflict is jeopardizing Saudi efforts to build travel and tourism into a pillar of the economy, including with a marquee international investment conference scheduled for the end of the month that looks increasingly in doubt.</span></p>\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"扩大了预算赤字 | widened the budget deficit\"><span class=\"lang-cn\">战争的成本已经<mark class=\"ed-hl\">扩大了预算赤字</mark>，并有可能导致经济萎缩。</span><span class=\"lang-en\">The costs of the war have already <mark class=\"ed-hl\">widened the budget deficit</mark> and threaten to push the economy into contraction.</span></p>\n      <p class=\"prose-p\" data-ref=\"p9\"><span class=\"lang-cn\">王储如何应对这次考验，将对沙特王国以外的地区产生影响。沙特是全球科技产业和人工智能项目的重要资金来源，同时，它还为美国军队提供基地和空域通行权。</span><span class=\"lang-en\">How the crown prince handles this test will have consequences beyond the kingdom. Saudi Arabia is a major source of funding for the global tech industry and artificial-intelligence projects. It also provides basing and overflight rights to the U.S. military.</span></p>\n      <p class=\"prose-p\" data-ref=\"p10\"><span class=\"lang-cn\">特朗普在周末告诉记者，美国正在与胡塞武装进行沟通，但可能会加入沙特对该武装组织的打击。</span><span class=\"lang-en\">Trump told reporters over the weekend that the U.S. was in communication with the Houthis but might join Saudi strikes on the militant group.</span></p>\n      <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"拦截导弹库存告急 | running low on interceptors\"><span class=\"lang-cn\">周日，一名胡塞武装的军事发言人重申，沙特机场是该组织的袭击目标。沙特官员表示，他们的<mark class=\"ed-hl\">拦截导弹库存告急</mark>，难以防御进一步袭击。</span><span class=\"lang-en\">On Sunday, a Houthi military spokesman reiterated the group's warning that Saudi airports are targets. Saudi officials said they are <mark class=\"ed-hl\">running low on interceptors</mark> needed to fend off further strikes.</span></p>\n    </div>\n\n    <aside class=\"sidebar-col\">\n      <div class=\"rail-card\">\n        <span class=\"rail-card-kicker\">\n          <span class=\"lang-cn\">冲突升级时间轴</span>\n          <span class=\"lang-en\">Escalation Timeline</span>\n        </span>\n        <h3 class=\"rail-card-title\">\n          <span class=\"lang-cn\">从停火僵局到首都防线告急</span>\n          <span class=\"lang-en\">From Ceasefire Stalemate to Capital Under Fire</span>\n        </h3>\n        <ul class=\"timeline-list\">\n          <li class=\"timeline-item\">\n            <span class=\"tl-date\">2015 – 2022</span>\n            <p class=\"tl-desc\">\n              <span class=\"lang-cn\">王储主导沙特介入也门内战，空袭招致胡塞报复沙特石油设施及利雅得，2022年双方达成停火。</span>\n              <span class=\"lang-en\">Saudi intervention in Yemen civil war leads to mutual strikes before a 2022 ceasefire stalemate.</span>\n            </p>\n          </li>\n          <li class=\"timeline-item\">\n            <span class=\"tl-date\">2026 · JULY</span>\n            <p class=\"tl-desc\">\n              <span class=\"lang-cn\">胡塞武装宣布对沙特阿拉伯实施海上封锁，红海航运面临直接威胁。</span>\n              <span class=\"lang-en\">Houthis announce a maritime blockade of Saudi Arabia, putting Red Sea shipping at risk.</span>\n            </p>\n          </li>\n          <li class=\"timeline-item\">\n            <span class=\"tl-date\">2026 · SEPTEMBER</span>\n            <p class=\"tl-desc\">\n              <span class=\"lang-cn\">胡塞袭击沙特东西部输油管道，直接打击沙特绕过霍尔木兹海峡的主要能源通道。</span>\n              <span class=\"lang-en\">Attack hits the East-West pipeline, striking the kingdom's main escape route from Hormuz.</span>\n            </p>\n          </li>\n          <li class=\"timeline-item alert\">\n            <span class=\"tl-date\">2026 · OCTOBER (SATURDAY–SUNDAY)</span>\n            <p class=\"tl-desc\">\n              <span class=\"lang-cn\">导弹击中利雅得国际机场致至少12死数百伤；周日关闭的机场4号航站楼再遭袭击起火。</span>\n              <span class=\"lang-en\">Missile slams into Riyadh airport killing at least 12; Sunday projectile sparks fire in Terminal 4.</span>\n            </p>\n          </li>\n        </ul>\n      </div>\n\n      <div class=\"rail-card\">\n        <span class=\"rail-card-kicker\">\n          <span class=\"lang-cn\">外溢效应评估</span>\n          <span class=\"lang-en\">Global Spillover</span>\n        </span>\n        <h3 class=\"rail-card-title\">\n          <span class=\"lang-cn\">超越王国的战略赌注</span>\n          <span class=\"lang-en\">Stakes Beyond the Kingdom</span>\n        </h3>\n        <p class=\"tl-desc\" style=\"margin-bottom:0.75rem;\">\n          <span class=\"lang-cn\">• <strong>全球科技与AI资本源头：</strong>沙特是全球科技产业与人工智能项目的重要资金来源，数据中心正逐渐成为袭击目标。</span>\n          <span class=\"lang-en\">• <strong>Global Tech &amp; AI Capital:</strong> Major funding source for global tech and AI projects; local data centers are emerging as targets.</span>\n        </p>\n        <p class=\"tl-desc\">\n          <span class=\"lang-cn\">• <strong>美军战略支点：</strong>为美军提供基地与空域通行权；白宫称正与胡塞沟通，但可能加入沙特的军事打击。</span>\n          <span class=\"lang-en\">• <strong>U.S. Military Posture:</strong> Provides basing and overflight rights to U.S. forces; Washington weighs joining Saudi strikes.</span>\n        </p>\n      </div>\n    </aside>\n  </div>\n\n  <!-- BESPOKE SVG GEOGRAPHIC & STRATEGIC CHOKEPOINT DIAGRAM -->\n  <div class=\"graphic-breakout\" role=\"region\" aria-label=\"Strategic Chokepoints and Missile Vector Map\">\n    <div class=\"graphic-header\">\n      <div>\n        <div class=\"graphic-kicker\">WSJ STRATEGIC CARTOGRAPHY · 500-MILE REACH</div>\n        <h2 class=\"graphic-title\">\n          <span class=\"lang-cn\">双海峡困局与500英里导弹走廊：沙特能源与首都防线承压</span>\n          <span class=\"lang-en\">Two Chokepoints and a 500-Mile Missile Corridor: Saudi Arabia's Strategic Bind</span>\n        </h2>\n      </div>\n      <p class=\"graphic-sub\">\n        <span class=\"lang-cn\">当霍尔木兹海峡受阻，沙特依靠横跨沙漠的东西管道向红海输油；但胡塞7月宣布红海封锁、9月袭击东西管道，并将弹道导弹射向约500英里外的利雅得。</span>\n        <span class=\"lang-en\">Bypassing the blocked Strait of Hormuz via the East-West pipeline left Saudi Arabia exposed when Houthi militants announced a Red Sea blockade in July, struck the pipeline in September, and targeted Riyadh 500 miles away.</span>\n      </p>\n    </div>\n\n    <svg viewbox=\"0 0 920 420\" width=\"100%\" style=\"display:block; height:auto; background:#0b1622; border:1px solid #1f3349;\">\n      <defs>\n        <marker id=\"arrow-red\" viewbox=\"0 0 10 10\" refx=\"7\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n          <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#e05252\"></path>\n        </marker>\n        <marker id=\"arrow-gold\" viewbox=\"0 0 10 10\" refx=\"7\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n          <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#c99a49\"></path>\n        </marker>\n        <pattern id=\"grid-pattern\" width=\"40\" height=\"40\" patternunits=\"userSpaceOnUse\">\n          <path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"rgba(255,255,255,0.04)\" stroke-width=\"1\"></path>\n        </pattern>\n      </defs>\n\n      <rect width=\"920\" height=\"420\" fill=\"url(#grid-pattern)\"></rect>\n\n      <!-- Water Bodies Labels -->\n      <text x=\"115\" y=\"275\" fill=\"#4f759b\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" letter-spacing=\"2\">\n        <tspan class=\"lang-cn\">红海 (7月海上封锁)</tspan>\n        <tspan class=\"lang-en\">RED SEA (JULY BLOCKADE)</tspan>\n      </text>\n      <text x=\"650\" y=\"95\" fill=\"#4f759b\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" letter-spacing=\"2\">\n        <tspan class=\"lang-cn\">波斯湾 / 霍尔木兹海峡</tspan>\n        <tspan class=\"lang-en\">PERSIAN GULF / HORMUZ</tspan>\n      </text>\n\n      <!-- Stylized Peninsula Landmass -->\n      <path d=\"M 180 70 L 560 70 L 660 155 L 720 220 L 620 355 L 330 375 L 260 315 Z\" fill=\"#16283a\" stroke=\"#2d4966\" stroke-width=\"2\"></path>\n\n      <!-- Houthi Territory Zone in Yemen (South-West) -->\n      <path d=\"M 260 315 L 365 305 L 395 368 L 310 385 Z\" fill=\"rgba(224, 82, 82, 0.22)\" stroke=\"#e05252\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\"></path>\n      <text x=\"315\" y=\"348\" fill=\"#ff8a8a\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n        <tspan class=\"lang-cn\">也门胡塞控制区</tspan>\n        <tspan class=\"lang-en\">Houthi Territory (Yemen)</tspan>\n      </text>\n\n      <!-- Strait of Hormuz Chokepoint (East) -->\n      <circle cx=\"675\" cy=\"145\" r=\"24\" fill=\"rgba(224, 82, 82, 0.18)\" stroke=\"#e05252\" stroke-width=\"1.5\"></circle>\n      <text x=\"710\" y=\"142\" fill=\"#ff9e9e\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n        <tspan class=\"lang-cn\">1. 霍尔木兹海峡受阻</tspan>\n        <tspan class=\"lang-en\">1. Blocked Strait of Hormuz</tspan>\n      </text>\n      <text x=\"710\" y=\"160\" fill=\"#8fa2b8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n        <tspan class=\"lang-cn\">伊朗扼守海湾出口</tspan>\n        <tspan class=\"lang-en\">Iran chokehold on Gulf export</tspan>\n      </text>\n\n      <!-- East-West Oil Pipeline -->\n      <path d=\"M 605 170 Q 410 190 225 215\" fill=\"none\" stroke=\"#c99a49\" stroke-width=\"4\" marker-end=\"url(#arrow-gold)\"></path>\n      <text x=\"385\" y=\"172\" fill=\"#e6be74\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">\n        <tspan class=\"lang-cn\">沙特东西部输油管道 (9月遇袭)</tspan>\n        <tspan class=\"lang-en\">East-West Oil Pipeline (Struck in Sept.)</tspan>\n      </text>\n\n      <!-- Red Sea Blockade Zone (West Coast) -->\n      <circle cx=\"215\" cy=\"215\" r=\"18\" fill=\"rgba(201, 154, 73, 0.22)\" stroke=\"#c99a49\" stroke-width=\"1.5\"></circle>\n      <text x=\"50\" y=\"210\" fill=\"#e6be74\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n        <tspan class=\"lang-cn\">2. 红海终端与航运风险</tspan>\n        <tspan class=\"lang-en\">2. Red Sea Terminal Risk</tspan>\n      </text>\n      <text x=\"50\" y=\"228\" fill=\"#8fa2b8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n        <tspan class=\"lang-cn\">胡塞7月宣布海上封锁</tspan>\n        <tspan class=\"lang-en\">Houthi July maritime blockade</tspan>\n      </text>\n\n      <!-- Riyadh Capital Target -->\n      <circle cx=\"485\" cy=\"195\" r=\"8\" fill=\"#e05252\"></circle>\n      <circle cx=\"485\" cy=\"195\" r=\"18\" fill=\"none\" stroke=\"#e05252\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"></circle>\n      <text x=\"512\" y=\"195\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n        <tspan class=\"lang-cn\">利雅得 (首都 / 国际机场)</tspan>\n        <tspan class=\"lang-en\">Riyadh (Capital &amp; Airport)</tspan>\n      </text>\n      <text x=\"512\" y=\"213\" fill=\"#ff9e9e\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\">\n        <tspan class=\"lang-cn\">机场至少12死 · 导弹碎片击中幼儿园与诊所</tspan>\n        <tspan class=\"lang-en\">12+ killed at airport · Debris hits clinic &amp; kindergarten</tspan>\n      </text>\n\n      <!-- 500-Mile Missile Vector from Yemen to Riyadh -->\n      <path d=\"M 335 320 Q 430 280 478 205\" fill=\"none\" stroke=\"#e05252\" stroke-width=\"2.5\" stroke-dasharray=\"6 4\" marker-end=\"url(#arrow-red)\"></path>\n      <rect x=\"425\" y=\"255\" width=\"195\" height=\"36\" rx=\"4\" fill=\"#1d1419\" stroke=\"#e05252\" stroke-width=\"1\"></rect>\n      <text x=\"522\" y=\"271\" fill=\"#ff9e9e\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">\n        <tspan class=\"lang-cn\">~500 英里弹道导弹射程</tspan>\n        <tspan class=\"lang-en\">~500 MILES MISSILE VECTOR</tspan>\n      </text>\n      <text x=\"522\" y=\"285\" fill=\"#d1b8b8\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10\" text-anchor=\"middle\">\n        <tspan class=\"lang-cn\">防空部队被迫在宫殿与能源设施间调动</tspan>\n        <tspan class=\"lang-en\">Air defenses shifted between palaces &amp; energy</tspan>\n      </text>\n    </svg>\n\n    <div class=\"graphic-caption\">\n      <span>\n        <span class=\"lang-cn\">资料来源：本报报道（正文第1、6、12、21、23段）</span>\n        <span class=\"lang-en\">Source: WSJ reporting (Paragraphs 1, 6, 12, 21, 23)</span>\n      </span>\n      <span>WSJ GRAPHIC · EDITORIAL RENAISSANCE</span>\n    </div>\n  </div>\n\n  <!-- ACT II: RIYADH UNDER SIEGE & THE BUNKER PRINCE (p12 - p15) -->\n  <div class=\"chapter-divider\">\n    <span class=\"chapter-num\">CHAPTER II · RIYADH UNDER FIRE</span>\n    <h2 class=\"chapter-title\">\n      <span class=\"lang-cn\">首都化为战场与防空洞中的王储</span>\n      <span class=\"lang-en\">A Capital Transformed Into a Battle Zone</span>\n    </h2>\n  </div>\n\n  <div class=\"chapter-grid\">\n    <div class=\"narrative-col\">\n      <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"约 500 英里 | about 500 miles | 幼儿园和一座医疗诊所综合楼 | kindergarten and a medical clinic complex\"><span class=\"lang-cn\">对利雅得的袭击——该市距离也门胡塞武装控制区<mark class=\"ed-hl\">约 500 英里</mark>——已将沙特首都的部分地区变成了战场，居民们在爆炸声中四处躲避。周四，一枚被拦截的弹道导弹的碎片击中了一所<mark class=\"ed-hl\">幼儿园和一座医疗诊所综合楼</mark>。该市金融区的工人、一些国际学校的学生和外交官被要求撤离或寻找避难所。</span><span class=\"lang-en\">Attacks on Riyadh—<mark class=\"ed-hl\">about 500 miles</mark> from Houthi territory in Yemen—have transformed parts of the Saudi capital into a battle zone, with residents taking cover as explosions ring out across the city. Debris from an intercepted ballistic missile hit a <mark class=\"ed-hl\">kindergarten and a medical clinic complex</mark> Thursday. Workers in the city's financial district, students at some international schools and diplomats were ordered to evacuate or take shelter.</span></p>\n      <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"配备有防空洞的宫殿 | palaces equipped with bunkers\"><span class=\"lang-cn\">据熟悉王储动向的官员透露，这位 41 岁的王储正在穿梭于<mark class=\"ed-hl\">配备有防空洞的宫殿</mark>之间，并由一支精选的安保团队保护。他最后一次公开露面是在周二。</span><span class=\"lang-en\">The 41-year-old crown prince is shuttling between <mark class=\"ed-hl\">palaces equipped with bunkers</mark> and is guarded by a handpicked security team, officials familiar with his movements said. His last public appearance was Tuesday.</span></p>\n      <p class=\"prose-p\" data-ref=\"p14\"><span class=\"lang-cn\">克里斯蒂安·库茨·乌尔里克森表示，这位王储几乎没有好的选项；他是波斯湾问题专家，同时也是莱斯大学贝克研究所的研究员。“任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。”</span><span class=\"lang-en\">He has few good options, said Kristian Coates Ulrichsen, a Persian Gulf expert and fellow with Rice University's Baker Institute. \"Any military response risks getting drawn in deeper to an asymmetric conflict.\"</span></p>\n      <p class=\"prose-p\" data-ref=\"p15\"><span class=\"lang-cn\">沙特新闻官员没有回应置评请求。</span><span class=\"lang-en\">Saudi press officials didn't respond to a request for comment.</span></p>\n    </div>\n\n    <aside class=\"sidebar-col\">\n      <blockquote class=\"pull-quote\" data-derive=\"q1\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“任何军事行动都有可能使沙特更深入地卷入一场不对称的冲突。”</span><span class=\"lang-en\">“Any military response risks getting drawn in deeper to an asymmetric conflict.”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 14 段直接引述 · Source Block p14</span><span class=\"lang-en\">— Direct Quote (p14), Reported in article text</span></footer>\n      </blockquote>\n    </aside>\n  </div>\n\n  <!-- ACT III: TRILLION-DOLLAR MIRAGE & ECONOMIC CONTRACTION (p16 - p20) -->\n  <div class=\"chapter-divider\">\n    <span class=\"chapter-num\">CHAPTER III · THE FISCAL RECKONING</span>\n    <h2 class=\"chapter-title\">\n      <span class=\"lang-cn\">数万亿美元未来蓝图撞上战争账单</span>\n      <span class=\"lang-en\">Trillion-Dollar Ambitions Meet War-Time Contraction</span>\n    </h2>\n  </div>\n\n  <div class=\"chapter-grid\">\n    <div class=\"narrative-col\">\n      <p class=\"prose-p\" data-ref=\"p16\" data-hl=\"Neom | 数万亿美元 | trillions of dollars | 3500 亿美元 | $350 billion\"><span class=\"lang-cn\">在过去十年中，这位王储投入了大量资金，用于一系列具有未来感的项目，这些项目具有极其复杂的工程要求，旨在展示沙特王国的现代化进程，并吸引投资和旅游。这些项目包括未来之城 <mark class=\"ed-hl\">Neom</mark>、位于利雅得的一座巨大的立方体建筑以及一座沙漠滑雪胜地。总成本高达<mark class=\"ed-hl\">数万亿美元</mark>——对年度预算仅约 <mark class=\"ed-hl\">3500 亿美元</mark>的政府而言可谓野心勃勃。</span><span class=\"lang-en\">The crown prince has plowed funds over the past decade into a slate of futuristic projects with extraordinarily complex engineering requirements aimed at signaling the kingdom's modernization and drawing investment and tourism. They include the futuristic city of <mark class=\"ed-hl\">Neom</mark>, an enormous cube-shaped building in Riyadh and a desert ski resort. The total cost ran to the <mark class=\"ed-hl\">trillions of dollars</mark>—aggressive for a government with an annual budget of around <mark class=\"ed-hl\">$350 billion</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p17\"><span class=\"lang-cn\">与伊朗的战争所带来的成本和经济损失，使得原本就不太可能实现的目标更加难以实现。</span><span class=\"lang-en\">The costs and economic damage of war with Iran are making that already unlikely math impossible to balance.</span></p>\n      <p class=\"prose-p\" data-ref=\"p18\" data-hl=\"2030 年目标 | 2030 target | 数据中心正逐渐成为袭击目标 | data centers emerging as targets\"><span class=\"lang-cn\">今年前两个季度，外国投资有所下降，并且远低于王储设定的 <mark class=\"ed-hl\">2030 年目标</mark>。不断上升的国防和基础设施成本可能会挤占用于推动经济多元化的资金。即使是沙特王国努力成为人工智能中心，现在也面临新的风险，<mark class=\"ed-hl\">数据中心正逐渐成为袭击目标</mark>。</span><span class=\"lang-en\">Foreign investment fell in the first two quarters of the year and is running well behind the crown prince's <mark class=\"ed-hl\">2030 target</mark>. Rising defense and infrastructure costs threaten to siphon away money needed for the economic diversification push. Even the kingdom's push to become an AI hub now carries new risks, with <mark class=\"ed-hl\">data centers emerging as targets</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p19\"><span class=\"lang-cn\">许多由王储推动的项目都已停滞或正在接受审查。</span><span class=\"lang-en\">Many of the projects pushed by the crown prince are stalled or under review.</span></p>\n      <p class=\"prose-p\" data-ref=\"p20\" data-hl=\"下降3.6% | shrink by 3.6%\"><span class=\"lang-cn\">根据凯投宏观的分析，该国经济中非石油领域的规模在第二季度低于第一季度。沙特财政部现在预计，2026年国内生产总值将<mark class=\"ed-hl\">下降3.6%</mark>。</span><span class=\"lang-en\">The non-oil side of the country's economy was smaller in the second quarter than in the first, according to Capital Economics. The Saudi Finance Ministry now expects GDP to <mark class=\"ed-hl\">shrink by 3.6%</mark> in 2026.</span></p>\n\n      <!-- Bespoke Fiscal Scale Comparison SVG -->\n      <div class=\"fiscal-viz-panel\">\n        <div class=\"fiscal-panel-head\">\n          <span class=\"rail-card-kicker\">\n            <span class=\"lang-cn\">财政天平失衡 · 正文第16–20段数据透视</span>\n            <span class=\"lang-en\">The Impossible Math · Data from Paragraphs 16–20</span>\n          </span>\n          <h3 class=\"fiscal-panel-title\">\n            <span class=\"lang-cn\">年度政府预算 vs. 未来项目总成本与经济萎缩</span>\n            <span class=\"lang-en\">Annual Government Budget vs. Multi-Trillion Megaprojects</span>\n          </h3>\n        </div>\n\n        <svg viewbox=\"0 0 620 225\" width=\"100%\" style=\"display:block; height:auto;\" viewBox=\"0 0 708 225\" data-repaired-viewbox=\"0 0 620 225\">\n          <!-- Bar 1: Annual Budget -->\n          <text x=\"30\" y=\"42\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n            <tspan class=\"lang-cn\">沙特政府年度预算规模</tspan>\n            <tspan class=\"lang-en\">Saudi Annual Government Budget</tspan>\n          </text>\n          <rect x=\"30\" y=\"52\" width=\"140\" height=\"28\" fill=\"#16283a\"></rect>\n          <text x=\"180\" y=\"71\" fill=\"#16283a\" font-family=\"JetBrains Mono, monospace\" font-size=\"14\" font-weight=\"700\">\n            <tspan class=\"lang-cn\">~3,500 亿美元 (~$350B)</tspan>\n            <tspan class=\"lang-en\">~$350 Billion</tspan>\n          </text>\n\n          <!-- Bar 2: Megaprojects Total Cost -->\n          <text x=\"30\" y=\"112\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\">\n            <tspan class=\"lang-cn\">Neom、利雅得立方体建筑及沙漠滑雪场等总成本</tspan>\n            <tspan class=\"lang-en\">Total Cost of Neom, Riyadh Cube &amp; Desert Ski Resort Slate</tspan>\n          </text>\n          <rect x=\"30\" y=\"122\" width=\"420\" height=\"28\" fill=\"#b85d19\"></rect>\n          <rect x=\"450\" y=\"122\" width=\"90\" height=\"28\" fill=\"rgba(184, 93, 25, 0.35)\" stroke=\"#b85d19\" stroke-dasharray=\"4 3\"></rect>\n          <text x=\"42\" y=\"141\" fill=\"#ffffff\" font-family=\"JetBrains Mono, monospace\" font-size=\"13\" font-weight=\"700\">\n            <tspan class=\"lang-cn\">高达数万亿美元 (Trillions of Dollars · 多数停滞或受审)</tspan>\n            <tspan class=\"lang-en\">Trillions of Dollars (Many stalled or under review)</tspan>\n          </text>\n\n          <!-- Bottom Macro Indicators Strip -->\n          <line x1=\"30\" y1=\"172\" x2=\"590\" y2=\"172\" stroke=\"#c9c2b2\" stroke-width=\"1\"></line>\n          <text x=\"30\" y=\"198\" fill=\"#8f2424\" font-family=\"JetBrains Mono, monospace\" font-size=\"13\" font-weight=\"700\">\n            <tspan class=\"lang-cn\">2026 GDP 预测：-3.6%（沙特财政部）</tspan>\n            <tspan class=\"lang-en\">2026 GDP Forecast: -3.6% (Finance Ministry)</tspan>\n          </text>\n          <text x=\"330\" y=\"198\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\">\n            <tspan class=\"lang-cn\">非石油经济 Q2 规模小于 Q1（凯投宏观）</tspan>\n            <tspan class=\"lang-en\">Non-oil economy smaller in Q2 vs. Q1 (Capital Economics)</tspan>\n          </text>\n        </svg>\n      </div>\n    </div>\n\n    <aside class=\"sidebar-col\">\n      <div class=\"metric-card\" data-derive=\"m1\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">3500 亿美元</span><span class=\"lang-en\">$350 billion</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">在过去十年中，这位王储投入了大量资金，用于一系列具有未来感的项目，这些项…</span><span class=\"lang-en\">The crown prince has plowed funds over the past decade into …</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p16]</span><span class=\"lang-en\">From paragraph [p16]</span></div>\n      </div>\n\n      <div class=\"metric-card\" data-derive=\"m2\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">3.6%</span><span class=\"lang-en\">3.6%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">根据凯投宏观的分析，该国经济中非石油领域的规模在第二季度低于第一季度。沙…</span><span class=\"lang-en\">The non-oil side of the country's economy was smaller in the…</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p20]</span><span class=\"lang-en\">From paragraph [p20]</span></div>\n      </div>\n    </aside>\n  </div>\n\n  <!-- ACT IV: CHOKEPOINTS, AIR DEFENSE SCRAMBLE & DIPLOMATIC WALKING WIRE (p21 - p24) -->\n  <div class=\"chapter-divider\">\n    <span class=\"chapter-num\">CHAPTER IV · STRATEGIC CONTAINMENT</span>\n    <h2 class=\"chapter-title\">\n      <span class=\"lang-cn\">红海封锁、防空捉襟见肘与全球求援</span>\n      <span class=\"lang-en\">Blocked Escape Routes and a Global Scramble for Air Defense</span>\n    </h2>\n  </div>\n\n  <div class=\"chapter-grid\">\n    <div class=\"narrative-col\">\n      <p class=\"prose-p\" data-ref=\"p21\" data-hl=\"海上封锁 | maritime blockade | 东西管道 | East-West pipeline\"><span class=\"lang-cn\">今年年初，该国设法将石油通过管道输送到红海，以摆脱伊朗对霍尔木兹海峡的控制。但在7月，胡塞武装宣布对沙特阿拉伯实施<mark class=\"ed-hl\">海上封锁</mark>，使红海航运面临风险。9月，对<mark class=\"ed-hl\">东西管道</mark>的袭击直接威胁到该国从霍尔木兹海峡逃离的主要通道。</span><span class=\"lang-en\">The kingdom was able earlier in the year to pump oil across the desert to the Red Sea to escape Iran's chokehold on the Strait of Hormuz. But in July, the Houthis announced a <mark class=\"ed-hl\">maritime blockade</mark> of Saudi Arabia, putting Red Sea shipping at risk. In September, an attack on the <mark class=\"ed-hl\">East-West pipeline</mark> struck at the kingdom's main escape route from Hormuz.</span></p>\n      <p class=\"prose-p\" data-ref=\"p22\" data-hl=\"2015年 | 2015 | 2022年达成了停火协议 | ceasefire in 2022\"><span class=\"lang-cn\"><mark class=\"ed-hl\"><mark class=\"ed-hl\">2015</mark>年</mark>，王储使沙特阿拉伯卷入了也门内战，支持该国得到国际承认的政府，与胡塞武装作战。沙特阿拉伯发动了空袭，加剧了冲突，但也招致了胡塞武装对其石油设施和包括利雅得在内的城市发动的袭击。双方陷入僵局，并在<mark class=\"ed-hl\">2022年达成了停火协议</mark>。</span><span class=\"lang-en\">The crown prince got Saudi Arabia involved in Yemen's civil war in <mark class=\"ed-hl\">2015</mark>, backing the country's internationally recognized government in a fight against the Houthis. It carried out airstrikes and inflamed the conflict, but also invited Houthi attacks on its oil facilities and cities including Riyadh. The sides fought to a stalemate and a <mark class=\"ed-hl\">ceasefire in 2022</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p23\" data-hl=\"调动防空部队 | shifting batteries around | 保持外交沟通渠道畅通 | keep the diplomatic channel open\"><span class=\"lang-cn\">新一轮冲突爆发之际，王储正努力控制与伊朗的对抗。战争初期，德黑兰发动的袭击表明，海湾地区的能源设施和机场等经济资产面临风险。据了解沙特阿拉伯内部情况的人士称，沙特阿拉伯也在努力在广阔的国土上部署防空系统，并正在<mark class=\"ed-hl\">调动防空部队</mark>，以保护宫殿和重要的能源基础设施。这些人士表示，虽然王储支持继续对伊朗施加经济压力，但他也在指示他的顾问，要与伊朗<mark class=\"ed-hl\">保持外交沟通渠道畅通</mark>，并明确表示该国的意图并非对抗。</span><span class=\"lang-en\">The new outbreak came as the crown prince was working to contain the confrontation with Iran. Attacks by Tehran early in the war demonstrated the risk to energy facilities and economic assets like airports across the Gulf. Saudi Arabia was also struggling to cover the vast country with air defense and was <mark class=\"ed-hl\">shifting batteries around</mark> to try to protect palaces and key energy infrastructure, people familiar with the kingdom's deliberations said. While supportive of continued economic pressure on Iran, the crown prince was telling his advisers to <mark class=\"ed-hl\">keep the diplomatic channel open</mark> with Iran and make clear the kingdom's intentions weren't confrontational, the people said.</span></p>\n      <p class=\"prose-p\" data-ref=\"p24\" data-hl=\"巴基斯坦 | Pakistan | 招募外国战士 | recruit foreign fighters\"><span class=\"lang-cn\">这些人士称，该国已向其军事盟友<mark class=\"ed-hl\">巴基斯坦</mark>寻求援助，并正在全球范围内寻找防空系统。他们还表示，该国也在寻求<mark class=\"ed-hl\">招募外国战士</mark>，以帮助其在也门的盟友。</span><span class=\"lang-en\">The kingdom has called for help from its military ally <mark class=\"ed-hl\">Pakistan</mark> and is scouring the globe for air defenses, the people said. It is also looking to <mark class=\"ed-hl\">recruit foreign fighters</mark> to help its Yemeni allies, they said.</span></p>\n    </div>\n\n    <aside class=\"sidebar-col\">\n      <div class=\"rail-card\">\n        <span class=\"rail-card-kicker\">\n          <span class=\"lang-cn\">防御与外交双线应对</span>\n          <span class=\"lang-en\">Defense &amp; Diplomacy Matrix</span>\n        </span>\n        <h3 class=\"rail-card-title\">\n          <span class=\"lang-cn\">利雅得的紧急求生举措</span>\n          <span class=\"lang-en\">Riyadh's Emergency Playbook</span>\n        </h3>\n        <p class=\"tl-desc\" style=\"margin-bottom:0.75rem;\">\n          <span class=\"lang-cn\">• <strong>防空轮调：</strong>国土广袤难以全面覆盖，被迫调动防空部队重点保卫宫殿与关键能源设施。</span>\n          <span class=\"lang-en\">• <strong>Shifting Batteries:</strong> Struggling to cover vast territory, moving air defenses to shield palaces and key energy sites.</span>\n        </p>\n        <p class=\"tl-desc\" style=\"margin-bottom:0.75rem;\">\n          <span class=\"lang-cn\">• <strong>对伊双轨姿态：</strong>支持继续对伊朗施加经济压力，同时指示顾问保持对伊外交渠道畅通、表明非对抗意图。</span>\n          <span class=\"lang-en\">• <strong>Iran Backchannel:</strong> Backing economic pressure while instructing advisers to keep diplomatic channels open with Tehran.</span>\n        </p>\n        <p class=\"tl-desc\">\n          <span class=\"lang-cn\">• <strong>外部求援：</strong>向军事盟友巴基斯坦寻求援助、在全球搜寻防空系统，并寻求招募外国战士协助也门盟友。</span>\n          <span class=\"lang-en\">• <strong>Foreign Reinforcements:</strong> Calling on ally Pakistan, scouring the globe for air defenses, and recruiting foreign fighters.</span>\n        </p>\n      </div>\n    </aside>\n  </div>\n\n</main>\n\n\n<footer class=\"ed-footer\">\n  <div class=\"ed-footer-inner\">\n    <div>THE WALL STREET JOURNAL · WSJ 深读 · BILINGUAL EDITION (E1-005)</div>\n    <div>\n      <span class=\"lang-cn\">全文共计 24 个权威正文段落 · 双语原文精准对照</span>\n      <span class=\"lang-en\">All 24 Canonical Blocks Verified · Bilingual Editorial Architecture</span>\n    </div>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-005",
+        "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+        "exact_match_cn": "24/24",
+        "exact_match_en": "24/24",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 24,
+        "observed_narrative_elements": 27,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 3,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p14"
+          },
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p16"
+          },
+          {
+            "id": "m2",
+            "kind": "metric",
+            "source_block": "p20"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "霍尔木兹海峡"
+            ],
+            "applied_en": [
+              "Strait of Hormuz"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "单次伤亡最严重的袭击",
+              "至少 12 人死亡"
+            ],
+            "applied_en": [
+              "killing at least 12 people",
+              "single deadliest attack"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "两座航站楼遭到袭击",
+              "4 号航站楼"
+            ],
+            "applied_en": [
+              "Two terminals were struck",
+              "Terminal 4"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "主要东西部管道和炼油厂"
+            ],
+            "applied_en": [
+              "main east-west pipeline and refineries"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "扩大了预算赤字"
+            ],
+            "applied_en": [
+              "widened the budget deficit"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "拦截导弹库存告急"
+            ],
+            "applied_en": [
+              "running low on interceptors"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "幼儿园和一座医疗诊所综合楼",
+              "约 500 英里"
+            ],
+            "applied_en": [
+              "kindergarten and a medical clinic complex",
+              "about 500 miles"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "配备有防空洞的宫殿"
+            ],
+            "applied_en": [
+              "palaces equipped with bunkers"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p16",
+            "applied_cn": [
+              "3500 亿美元",
+              "数万亿美元",
+              "Neom"
+            ],
+            "applied_en": [
+              "trillions of dollars",
+              "$350 billion",
+              "Neom"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p18",
+            "applied_cn": [
+              "数据中心正逐渐成为袭击目标",
+              "2030 年目标"
+            ],
+            "applied_en": [
+              "data centers emerging as targets",
+              "2030 target"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p20",
+            "applied_cn": [
+              "下降3.6%"
+            ],
+            "applied_en": [
+              "shrink by 3.6%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p21",
+            "applied_cn": [
+              "海上封锁",
+              "东西管道"
+            ],
+            "applied_en": [
+              "East-West pipeline",
+              "maritime blockade"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p22",
+            "applied_cn": [
+              "2022年达成了停火协议",
+              "2015年",
+              "2015"
+            ],
+            "applied_en": [
+              "ceasefire in 2022",
+              "2015"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p23",
+            "applied_cn": [
+              "保持外交沟通渠道畅通",
+              "调动防空部队"
+            ],
+            "applied_en": [
+              "keep the diplomatic channel open",
+              "shifting batteries around"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p24",
+            "applied_cn": [
+              "招募外国战士",
+              "巴基斯坦"
+            ],
+            "applied_en": [
+              "recruit foreign fighters",
+              "Pakistan"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 10,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "红海 (7月海上封锁)",
+              "RED SEA (JULY BLOCKADE)",
+              "波斯湾 / 霍尔木兹海峡",
+              "PERSIAN GULF / HORMUZ",
+              "也门胡塞控制区",
+              "Houthi Territory (Yemen)",
+              "1. 霍尔木兹海峡受阻",
+              "1. Blocked Strait of Hormuz",
+              "伊朗扼守海湾出口",
+              "Iran chokehold on Gulf export",
+              "沙特东西部输油管道 (9月遇袭)",
+              "East-West Oil Pipeline (Struck in Sept.)",
+              "2. 红海终端与航运风险",
+              "2. Red Sea Terminal Risk",
+              "胡塞7月宣布海上封锁",
+              "Houthi July maritime blockade",
+              "利雅得 (首都 / 国际机场)",
+              "Riyadh (Capital & Airport)",
+              "机场至少12死 · 导弹碎片击中幼儿园与诊所",
+              "12+ killed at airport · Debris hits clinic & kindergarten",
+              "~500 英里弹道导弹射程",
+              "~500 MILES MISSILE VECTOR",
+              "防空部队被迫在宫殿与能源设施间调动",
+              "Air defenses shifted between palaces & energy"
+            ],
+            "numbers_found": [
+              "7",
+              "1",
+              "1",
+              "9",
+              "2",
+              "2",
+              "7",
+              "12",
+              "12",
+              "500",
+              "500"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "0 0 708 225",
+            "text_labels": [
+              "沙特政府年度预算规模",
+              "Saudi Annual Government Budget",
+              "~3,500 亿美元 (~$350B)",
+              "~$350 Billion",
+              "Neom、利雅得立方体建筑及沙漠滑雪场等总成本",
+              "Total Cost of Neom, Riyadh Cube & Desert Ski Resort Slate",
+              "高达数万亿美元 (Trillions of Dollars · 多数停滞或受审)",
+              "Trillions of Dollars (Many stalled or under review)",
+              "2026 GDP 预测：-3.6%（沙特财政部）",
+              "2026 GDP Forecast: -3.6% (Finance Ministry)",
+              "非石油经济 Q2 规模小于 Q1（凯投宏观）",
+              "Non-oil economy smaller in Q2 vs. Q1 (Capital Economics)"
+            ],
+            "numbers_found": [
+              "3,500",
+              "$350",
+              "$350",
+              "2026",
+              "3.6%",
+              "2026",
+              "3.6%",
+              "2",
+              "1",
+              "2",
+              "1"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "从停火僵局到首都防线告急",
+            "en": "From Ceasefire Stalemate to Capital Under Fire",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "超越王国的战略赌注",
+            "en": "Stakes Beyond the Kingdom",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "双海峡困局与500英里导弹走廊：沙特能源与首都防线承压",
+            "en": "Two Chokepoints and a 500-Mile Missile Corridor: Saudi Arabia's Strategic Bind",
+            "numbers_found": [
+              "500",
+              "500"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "首都化为战场与防空洞中的王储",
+            "en": "A Capital Transformed Into a Battle Zone",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "数万亿美元未来蓝图撞上战争账单",
+            "en": "Trillion-Dollar Ambitions Meet War-Time Contraction",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "年度政府预算 vs. 未来项目总成本与经济萎缩",
+            "en": "Annual Government Budget vs. Multi-Trillion Megaprojects",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "红海封锁、防空捉襟见肘与全球求援",
+            "en": "Blocked Escape Routes and a Global Scramble for Air Defense",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "利雅得的紧急求生举措",
+            "en": "Riyadh's Emergency Playbook",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 2,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 620 225",
+          "repaired_viewBox": "0 0 708 225",
+          "repaired": true,
+          "offending_nodes": [
+            "text('非石油经济 Q2 规模小于 Q' right=700>620)"
+          ]
+        }
+      ],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在达沃斯，吉尔福伊尔炫耀所享特权 | At Davos, Guilfoyle Boasted About Perks — WSJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ece6d9;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c1b0;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.12);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #294057;
+    --crimson: #8f241e;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Strict Bilingual Visibility Rules */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    background-color: var(--paper);
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Reading Progress Bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Top Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 0.7rem 1.5rem;
+  }
+
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-cluster {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .wsj-monogram {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .masthead-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--line-strong);
+  }
+
+  .section-tag {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .masthead-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .edition-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 0.3rem 0.65rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 3px double var(--line-strong);
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--crimson);
+  }
+
+  .kicker-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--crimson);
+    display: inline-block;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-weight: 800;
+    font-size: clamp(2.15rem, 4.4vw, 3.6rem);
+    line-height: 1.16;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+    max-width: 960px;
+  }
+
+  html[lang="zh-CN"] .hero-title {
+    line-height: 1.26;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-dek {
+    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+    font-size: clamp(1.12rem, 1.8vw, 1.38rem);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .hero-byline-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .byline-authors strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .byline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  /* Reporter's Context Dossier Banner */
+  .dossier-strip {
+    max-width: 1120px;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+  }
+
+  .dossier-box {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--accent);
+    padding: 1.35rem 1.6rem;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .dossier-label {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+
+  .dossier-label span.sub {
+    display: block;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    font-size: 0.68rem;
+  }
+
+  .dossier-content {
+    font-family: 'Noto Sans SC', 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.72;
+    color: var(--body);
+  }
+
+  /* Main Editorial Container & Asymmetric Rails */
+  .editorial-shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .chapter-block {
+    margin-bottom: 3.5rem;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 0.2rem 0.55rem;
+    letter-spacing: 0.06em;
+  }
+
+  .chapter-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .rail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(260px, 340px);
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .prose-col {
+    min-width: 0;
+  }
+
+  .side-rail {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  /* Typography & Prose */
+  .prose-p {
+    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.09rem;
+    line-height: 1.88;
+    color: var(--body);
+    margin-bottom: 1.45rem;
+  }
+
+  html[lang="zh-CN"] .prose-p {
+    font-size: 1.08rem;
+    line-height: 1.94;
+    text-align: justify;
+  }
+
+  /* Lead Paragraph Treatment (No CSS ::first-letter on Chinese) */
+  .lead-p {
+    font-size: 1.22rem !important;
+    line-height: 1.78 !important;
+    color: var(--ink);
+    font-weight: 600;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);
+    color: inherit;
+    padding: 0 0.12em;
+    font-weight: 600;
+  }
+
+  /* Audio Recording Transcript Callout (Primary Flow Split) */
+  .audio-evidence-box {
+    background: var(--navy-bg);
+    color: #f4f1ea;
+    padding: 1.65rem 1.85rem;
+    margin: 1.75rem 0;
+    border-left: 4px solid var(--accent);
+    position: relative;
+  }
+
+  .audio-evidence-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--navy-line);
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #e09f67;
+  }
+
+  .waveform-bars {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .waveform-bars span {
+    display: inline-block;
+    width: 2px;
+    background: #e09f67;
+  }
+
+  .audio-quote-text {
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.24rem;
+    line-height: 1.58;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .audio-quote-sub {
+    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: #d5cfc2;
+  }
+
+  /* Side Rail Derived Callouts */
+  .pull-quote {
+    background: var(--paper-card);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 1.35rem 1.25rem;
+  }
+
+  .pull-quote .quote-text {
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.08rem;
+    line-height: 1.58;
+    color: var(--ink);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .pull-quote .quote-attrib {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Forensic Dossier Note in Sidebar */
+  .forensic-card {
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    padding: 1.25rem;
+  }
+
+  .forensic-card-title {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .forensic-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .forensic-list li {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--body);
+  }
+
+  .forensic-list strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+  }
+
+  /* Bespoke SVG Diagram Exhibit */
+  .exhibit-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 2rem 1.75rem;
+    margin: 2.75rem 0;
+  }
+
+  .exhibit-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .exhibit-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .exhibit-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.32rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 0.25rem;
+  }
+
+  .exhibit-sub {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  .svg-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 0.5rem;
+  }
+
+  .exhibit-caption {
+    margin-top: 0.85rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Official Response Dossier Box (p11-p14 in order) */
+  .response-dossier {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 1.75rem;
+    margin: 2rem 0;
+  }
+
+  .response-dossier-header {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .response-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .response-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 1.15rem 1.25rem;
+  }
+
+  .response-entity {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .response-item .prose-p {
+    font-size: 0.96rem;
+    line-height: 1.72;
+    margin-bottom: 0.65rem;
+  }
+
+  .response-item .prose-p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Metric Card (Derived m1) */
+  .metric-card {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.5rem 1.35rem;
+    border-top: 3px solid var(--accent);
+  }
+
+  .metric-card .metric-val {
+    font-family: 'JetBrains Mono', 'Noto Serif SC', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e09f67;
+    line-height: 1.15;
+    margin-bottom: 0.4rem;
+  }
+
+  .metric-card .metric-lbl {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    margin-bottom: 0.65rem;
+  }
+
+  .metric-card .metric-note {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: #c6bfb3;
+  }
+
+  /* Political Fallout Quote Box (p23 split) */
+  .verdict-quote {
+    background: var(--paper-card);
+    border-left: 4px solid var(--crimson);
+    padding: 1.4rem 1.65rem;
+    margin: 1.5rem 0;
+    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    font-size: 1.14rem;
+    line-height: 1.68;
+    color: var(--ink);
+  }
+
+  /* Footer */
+  .ed-footer {
+    border-top: 2px solid var(--ink);
+    background: var(--paper-card);
+    padding: 2.5rem 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .ed-footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow (<= 860px & 390px) */
+  @media (max-width: 860px) {
+    .rail-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .side-rail {
+      position: static;
+    }
+    .dossier-box {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .response-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masthead {
+      padding: 0.6rem 1rem;
+    }
+    .edition-badge {
+      display: none;
+    }
+    .hero {
+      padding: 2.25rem 1rem 1.75rem;
+    }
+    .dossier-strip {
+      padding: 0 1rem;
+    }
+    .editorial-shell {
+      padding: 1.75rem 1rem 3rem;
+    }
+    .exhibit-panel {
+      padding: 1.25rem 1rem;
+    }
+    .audio-evidence-box {
+      padding: 1.25rem 1.15rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Sticky Top Masthead -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-cluster">
+      <a href="#top" class="wsj-monogram">THE WALL STREET JOURNAL</a>
+      <span class="masthead-divider"></span>
+      <span class="section-tag">
+        <span class="lang-cn">美国新闻 · 深度调查</span>
+        <span class="lang-en">U.S. News · Investigation</span>
+      </span>
+    </div>
+    <div class="masthead-meta">
+      <span class="edition-badge">E1-025 · PAGE A4</span>
+      <div class="lang-switch" role="group" aria-label="Language Toggle">
+        <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Editorial Hero Header -->
+<section class="hero" id="top">
+  <div class="hero-kicker">
+    <span class="kicker-dot"></span>
+    <span class="lang-cn">独家录音与财务追查 · 驻外使节道德风暴</span>
+    <span class="lang-en">EXCLUSIVE AUDIO &amp; FINANCIAL PROBE · DIPLOMATIC ETHICS</span>
+  </div>
+  <h1 class="hero-title" data-ref="title">
+    <span class="lang-cn">在达沃斯，吉尔福伊尔炫耀所享特权</span>
+    <span class="lang-en">At Davos, Guilfoyle Boasted About Perks</span>
+  </h1>
+  <p class="hero-dek" data-ref="dek">
+    <span class="lang-cn">在一份录音中，这位大使表示，一些商人为她的奢华旅行支付了费用。</span>
+    <span class="lang-en">On a recording, ambassador said businessmen paid for her luxury travel</span>
+  </p>
+  <div class="hero-byline-bar">
+    <div class="byline-authors">
+      <span class="lang-cn">撰文：<strong>Rebecca Ballhaus</strong>、<strong>Joe Parkinson</strong>、<strong>Drew Hinshaw</strong> 及 <strong>Dana Mattioli</strong></span>
+      <span class="lang-en">By <strong>Rebecca Ballhaus</strong>, <strong>Joe Parkinson</strong>, <strong>Drew Hinshaw</strong> and <strong>Dana Mattioli</strong></span>
+    </div>
+    <div class="byline-date">
+      <span class="lang-cn">2026年10月12日 · 华盛顿 / 雅典 / 达沃斯</span>
+      <span class="lang-en">October 12, 2026 · Washington / Athens / Davos</span>
+    </div>
+  </div>
+</section>
+
+<!-- Reporter's Background Context Dossier -->
+<aside class="dossier-strip" aria-label="Executive Dossier">
+  <div class="dossier-box">
+    <div class="dossier-label">
+      <span class="lang-cn">核心调查卷宗</span>
+      <span class="lang-en">INVESTIGATIVE DOSSIER</span>
+      <span class="sub">
+        <span class="lang-cn">背景提要 · WSJ 深读</span>
+        <span class="lang-en">Reporter's Context</span>
+      </span>
+    </div>
+    <div class="dossier-content" data-ref="ctx1">
+      <span class="lang-cn">吉尔福伊尔 2026 年 1 月乘 Aktor 集团 CEO 的私人飞机前往达沃斯，并在录音中承认两位希腊富商资助其奢华旅行。《华尔街日报》此前还披露她曾要求特朗普捐助者向其美国运通账户汇款 10 万美元。特朗普政府高层正在商讨是否将其撤职，预计特朗普很快做决定；国务院监察长正在调查她是否收受私人商人的礼品或好处。</span>
+      <span class="lang-en">吉尔福伊尔 2026 年 1 月乘 Aktor 集团 CEO 的私人飞机前往达沃斯，并在录音中承认两位希腊富商资助其奢华旅行。《华尔街日报》此前还披露她曾要求特朗普捐助者向其美国运通账户汇款 10 万美元。特朗普政府高层正在商讨是否将其撤职，预计特朗普很快做决定；国务院监察长正在调查她是否收受私人商人的礼品或好处。</span>
+    </div>
+  </div>
+</aside>
+
+<!-- Main Narrative Container -->
+<main class="editorial-shell">
+
+  <!-- ACT I: THE DAVOS RECORDING & DINNER CRISIS (p1 - p5) -->
+  <section class="chapter-block" id="act-1">
+    <div class="chapter-header">
+      <span class="chapter-num">ACT I</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">达沃斯晚宴门外：被录下的交易许诺与怒火</span>
+        <span class="lang-en">Locked Out at Davos: Recorded Promises and Diplomatic Fury</span>
+      </h2>
+    </div>
+
+    <div class="rail-grid">
+      <div class="prose-col">
+        <p class="prose-p lead-p" data-ref="p1" data-hl="两位希腊富豪 | two Greek tycoons"><span class="lang-cn">金伯莉·吉尔福伊尔作为美国新任驻希腊大使，在达沃斯论坛上炫耀自己与<mark class="ed-hl">两位希腊富豪</mark>的关系，并表示他们为她资助了她环游世界的奢华旅行。</span><span class="lang-en">Kimberly Guilfoyle, as America's newly minted ambassador to Greece, boasted at Davos about her ties to <mark class="ed-hl">two Greek tycoons</mark> and said they were bankrolling her high-rolling trips around the world.</span></p>
+
+        <p class="prose-p" data-ref="p2" data-hl="埃里克·特朗普 | Eric Trump"><span class="lang-cn">据参与对话的人士和《华尔街日报》审查的一段录音显示，吉尔福伊尔在今年一月，在提出紧急请求时，炫耀自己与富有的希腊商人的关系。她被阻止参加为<mark class="ed-hl">埃里克·特朗普</mark>举办的即将到来的晚宴，她希望请一位在邀请名单上的美国商人帮忙，让她能够参加。</span><span class="lang-en">According to people who heard the conversation and an audio recording reviewed by The Wall Street Journal, Guilfoyle was flexing her connections to wealthy Greek businessmen in January as she made an urgent request. She was being blocked from attending an upcoming dinner being held for <mark class="ed-hl">Eric Trump</mark>, and she wanted to enlist an American businessman who was on the guest list to help get her in the door.</span></p>
+
+        <!-- Split p3 into forensic audio transcript callout -->
+        <div class="audio-evidence-box">
+          <div class="audio-evidence-header">
+            <span>
+              <span class="lang-cn">《华尔街日报》审查录音片段 · 2026年1月达沃斯</span>
+              <span class="lang-en">WSJ REVIEWED AUDIO RECORDING · JAN 2026 DAVOS</span>
+            </span>
+            <span class="waveform-bars" aria-hidden="true">
+              <span style="height:8px"></span>
+              <span style="height:14px"></span>
+              <span style="height:10px"></span>
+              <span style="height:16px"></span>
+              <span style="height:7px"></span>
+              <span style="height:12px"></span>
+            </span>
+          </div>
+          <p class="audio-quote-text" data-ref="p3.s1"><span class="lang-cn">根据录音，她说：“你知道，我可以为你提供一切。</span><span class="lang-en">"You know, I can deliver the world to you.</span></p>
+          <p class="audio-quote-sub" data-ref="p3.s2"><span class="lang-cn">你值得拥有。”</span><span class="lang-en">Which you deserve," she said, according to the recording.</span></p>
+          <p class="audio-quote-sub" style="margin-top:0.65rem;" data-ref="p3.s3" data-hl="我将为你赚很多钱 | make you a lot of f—ing money"><span class="lang-cn">她在与这位商人的交流中，还在另一个时刻说：“<mark class="ed-hl">我将为你赚很多钱</mark>。”</span><span class="lang-en">"I'm going to <mark class="ed-hl">make you a lot of f—ing money</mark>," she said at another point in the exchange with the businessman.</span></p>
+        </div>
+
+        <p class="prose-p" data-ref="p4" data-hl="达沃斯希腊之家 | Greek House Davos"><span class="lang-cn">她对未能被列入晚宴邀请名单表示愤怒，这场晚宴由<mark class="ed-hl">达沃斯希腊之家</mark>组织。“你们不能不邀请美国驻希腊大使，你知道吗？她应该来亲我的屁股，”吉尔福伊尔对该活动的组织者说。</span><span class="lang-en">She expressed fury at not being on the list for the dinner, which was being organized by <mark class="ed-hl">Greek House Davos</mark>. "You don't have the f—ing U.S., you know, ambassador to Greece not come. She should be kissing my f—ing ass," Guilfoyle said of the event's organizer.</span></p>
+
+        <p class="prose-p" data-ref="p5" data-hl="小危机 | small crisis"><span class="lang-cn">最终，吉尔福伊尔成功获得了最后一刻的席位。达沃斯希腊之家的主席艾琳·万塔拉基表示，她的团队“不得不应对一场<mark class="ed-hl">小危机</mark>，这场危机影响到了一些知名人士”，并且“有些人感到失望”。她说，吉尔福伊尔“表现得很有礼貌，也很谨慎”，并且提前离开了晚宴。</span><span class="lang-en">In the end, Guilfoyle was able to score a last-minute seat. The chairwoman of Greek House Davos, Irene Vantaraki, said that her team "had to manage a <mark class="ed-hl">small crisis</mark> [that] affected a number of high-profile guests" and that "some were disappointed." Guilfoyle was "gracious and discreet" and left the dinner early, she said.</span></p>
+      </div>
+
+      <aside class="side-rail">
+        <blockquote class="pull-quote" data-derive="q2">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“你们不能不邀请美国驻希腊大使，你知道吗？她应该来亲我的屁股，”</span><span class="lang-en">“You don't have the f—ing U.S., you know, ambassador to Greece not come. She should be kissing my f—ing ass,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 4 段直接引述</span><span class="lang-en">— Direct Quote (p4)</span></footer>
+        </blockquote>
+
+        <blockquote class="pull-quote" data-derive="q3">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“表现得很有礼貌，也很谨慎”</span><span class="lang-en">“gracious and discreet”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 5 段直接引述</span><span class="lang-en">— Direct Quote (p5)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACT II: TYCOONS, PRIVATE JETS & THE GEORGE V BILL (p6 - p14) -->
+  <section class="chapter-block" id="act-2">
+    <div class="chapter-header">
+      <span class="chapter-num">ACT II</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">私人飞机、格施塔德与巴黎四季酒店账单</span>
+        <span class="lang-en">Private Jets, Gstaad Holidays and the George V Hotel Bill</span>
+      </h2>
+    </div>
+
+    <div class="rail-grid">
+      <div class="prose-col">
+        <p class="prose-p" data-ref="p6" data-hl="私人飞机 | private jet | Aktor集团 | Aktor Group"><span class="lang-cn">吉尔福伊尔承认，她乘坐<mark class="ed-hl">私人飞机</mark>与希腊建筑公司<mark class="ed-hl">Aktor集团</mark>的首席执行官亚历山德罗斯·埃克萨尔霍乌一起，飞往2026年1月的达沃斯世界经济论坛。</span><span class="lang-en">Guilfoyle had flown to the January 2026 World Economic Forum on a <mark class="ed-hl">private jet</mark> with Alexandros Exarchou, chief executive of the Greek construction company <mark class="ed-hl">Aktor Group</mark>, she acknowledged on the recording.</span></p>
+
+        <p class="prose-p" data-ref="p7" data-hl="数十亿美元的美国天然气 | billions of dollars of American natural gas | 我的人 | my people"><span class="lang-cn">《华尔街日报》报道称，吉尔福伊尔鼓励保加利亚和阿尔巴尼亚等国的政府与埃克萨尔霍乌开展业务，并从他的公司购买<mark class="ed-hl">数十亿美元的美国天然气</mark>。她在录音中说，这位希腊商人是“<mark class="ed-hl">我的人</mark>”。</span><span class="lang-en">Governments from Bulgaria to Albania were encouraged by Guilfoyle to do business with Exarchou and buy <mark class="ed-hl">billions of dollars of American natural gas</mark> from his company, the Journal has reported. The Greek businessman was, she said in the recording, "<mark class="ed-hl">my people</mark>."</span></p>
+
+        <p class="prose-p" data-ref="p8" data-hl="尼古拉斯·察科斯 | Nikolas Tsakos | 格施塔德 | Gstaad"><span class="lang-cn">他并不是唯一帮助吉尔福伊尔安排旅行的商人。她在录音中还说，她计划在本月晚些时候乘坐一架飞机，与希腊航运巨头<mark class="ed-hl">尼古拉斯·察科斯</mark>一起飞往巴黎，并参加他妻子的时装秀。他们一起在瑞士奢华度假胜地<mark class="ed-hl">格施塔德</mark>度过了一部分假期。“我每天都见到他，”她说。“我将和他一起飞往巴黎。我这周和他在一起……他和他一起度过了圣诞节。好吗？<mark class="ed-hl">格施塔德</mark>。几乎无处不在。”</span><span class="lang-en">He wasn't the only businessman facilitating Guilfoyle's travels. She was also planning to fly later that month to and out of Paris, on a jet with a Greek shipping tycoon, <mark class="ed-hl">Nikolas Tsakos</mark>, to attend his wife's fashion show, she said in the recording. They had spent part of the holiday season together in the exclusive ultraluxury Swiss resort of <mark class="ed-hl">Gstaad</mark>. "I see him every f—ing day," she said. "I'm flying with him to Paris. I'm with him this week.… He spent Christmas with him. OK? <mark class="ed-hl">Gstaad</mark>. Like, everywhere."</span></p>
+
+        <p class="prose-p" data-ref="p9" data-hl="巴黎四季酒店乔治五世酒店 | Four Seasons Hotel George V | 账单 | the bill"><span class="lang-cn">据知情人士透露，当这位大使入住<mark class="ed-hl">巴黎四季酒店乔治五世酒店</mark>——这是好莱坞明星和非洲及中东领导人最喜欢的酒店时，<mark class="ed-hl">账单</mark>由Tsakos Energy Navigation（船运公司）首席执行官尼古拉斯·察科斯支付。</span><span class="lang-en">When the ambassador checked in to Paris's <mark class="ed-hl">Four Seasons Hotel George V</mark>—a favorite hotel of Hollywood A-listers and African and Middle Eastern leaders—<mark class="ed-hl">the bill</mark> fell to Nikos Tsakos, CEO of Tsakos Energy Navigation, according to people familiar with the matter.</span></p>
+
+        <p class="prose-p" data-ref="p10" data-hl="200万Instagram粉丝 | 2 million Instagram followers"><span class="lang-cn">吉尔福伊尔身穿几件设计师礼服，在社交媒体上发布了她的照片，其中包括两张与察科斯的合影，分享给她的<mark class="ed-hl">200万Instagram粉丝</mark>。</span><span class="lang-en">Guilfoyle, dressed in several designer gowns, would post photos of herself—including two with Tsakos—at the event to her <mark class="ed-hl">2 million Instagram followers</mark>.</span></p>
+      </div>
+
+      <aside class="side-rail">
+        <blockquote class="pull-quote" data-derive="q4">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“我将和他一起飞往巴黎。我这周和他在一起……他和他一起度过了圣诞节。好吗？格施塔德。几乎无处不在。”</span><span class="lang-en">“I'm flying with him to Paris. I'm with him this week.… He spent Christmas with him. OK? Gstaad. Like, everywhere.”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 8 段直接引述</span><span class="lang-en">— Direct Quote (p8)</span></footer>
+        </blockquote>
+
+        <div class="forensic-card">
+          <div class="forensic-card-title">
+            <span class="lang-cn">调查发现：两大希腊富豪往来</span>
+            <span class="lang-en">KEY TIES: TWO GREEK TYCOONS</span>
+          </div>
+          <ul class="forensic-list">
+            <li>
+              <strong>
+                <span class="lang-cn">亚历山德罗斯·埃克萨尔霍乌 (Aktor集团 CEO)</span>
+                <span class="lang-en">Alexandros Exarchou (CEO, Aktor Group)</span>
+              </strong>
+              <span class="lang-cn">共乘私人飞机前往2026年1月达沃斯论坛；吉尔福伊尔鼓励保加利亚和阿尔巴尼亚等国向其公司购买数十亿美元美国天然气。</span>
+              <span class="lang-en">Shared private jet to Jan 2026 Davos WEF; Guilfoyle encouraged governments from Bulgaria to Albania to buy billions in U.S. natural gas from his firm.</span>
+            </li>
+            <li>
+              <strong>
+                <span class="lang-cn">尼古拉斯·察科斯 (Tsakos Energy Navigation CEO)</span>
+                <span class="lang-en">Nikolas Tsakos (CEO, Tsakos Energy Navigation)</span>
+              </strong>
+              <span class="lang-cn">共度瑞士格施塔德假期、计划同乘飞机赴巴黎看时装秀，并由其支付巴黎四季酒店乔治五世酒店账单。</span>
+              <span class="lang-en">Shared Gstaad holiday, planned jet travel to Paris fashion show, and paid the ambassador's bill at Four Seasons Hotel George V.</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bespoke SVG Investigative Diagram -->
+    <figure class="exhibit-panel" aria-label="Forensic Network Map">
+      <div class="exhibit-head">
+        <div>
+          <div class="exhibit-kicker">
+            <span class="lang-cn">调查图解 · EXHIBIT A</span>
+            <span class="lang-en">FORENSIC DIAGRAM · EXHIBIT A</span>
+          </div>
+          <h3 class="exhibit-title">
+            <span class="lang-cn">录音、短信与特权网络：驻希大使受到审视的三条线索</span>
+            <span class="lang-en">Audio, Texts &amp; Perks: The Three Strands of Scrutiny Around the Ambassador</span>
+          </h3>
+        </div>
+        <div class="exhibit-sub">
+          <span class="lang-cn">基于《华尔街日报》审查的录音、短信记录及知情人士披露</span>
+          <span class="lang-en">Based on WSJ-reviewed audio, text messages and people familiar with the matter</span>
+        </div>
+      </div>
+
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 920 430" width="100%" height="auto" role="img" aria-label="Network diagram of Kimberly Guilfoyle's ties to Greek tycoons and a Trump donor">
+          <defs>
+            <marker id="arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="#b85d19"/>
+            </marker>
+            <marker id="arrow-ink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9 z" fill="#141413"/>
+            </marker>
+          </defs>
+
+          <!-- Subtle Grid Background -->
+          <rect x="20" y="20" width="880" height="390" fill="#faf8f4" stroke="#e4dfd3" stroke-width="1"/>
+          <line x1="20" y1="90" x2="900" y2="90" stroke="#ece6d9" stroke-dasharray="3 3"/>
+          <line x1="20" y1="340" x2="900" y2="340" stroke="#ece6d9" stroke-dasharray="3 3"/>
+
+          <!-- Top Banner Label inside SVG -->
+          <text x="45" y="55" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#646059" letter-spacing="1">
+            <tspan class="lang-cn">私人资助与汇款诉求 (PRIVATE PERKS &amp; SOLICITATION)</tspan>
+            <tspan class="lang-en">PRIVATE TRAVEL PERKS &amp; CREDIT-CARD SOLICITATION</tspan>
+          </text>
+          <text x="580" y="55" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#b85d19" letter-spacing="1">
+            <tspan class="lang-cn">外交影响力与承诺 (DIPLOMATIC LEVERAGE &amp; PROMISES)</tspan>
+            <tspan class="lang-en">DIPLOMATIC LEVERAGE &amp; PROMISES</tspan>
+          </text>
+
+          <!-- Left Column Nodes: Private Actors -->
+          <!-- Node 1: Exarchou -->
+          <rect x="45" y="105" width="235" height="72" rx="3" fill="#f3efe6" stroke="#c9c1b0" stroke-width="1.5"/>
+          <text x="60" y="128" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">亚历山德罗斯·埃克萨尔霍乌</tspan>
+            <tspan class="lang-en">Alexandros Exarchou</tspan>
+          </text>
+          <text x="60" y="147" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">希腊建筑公司 Aktor 集团 CEO</tspan>
+            <tspan class="lang-en">CEO, Greek builder Aktor Group</tspan>
+          </text>
+          <text x="60" y="165" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#b85d19">
+            <tspan class="lang-cn">提供飞往2026年1月达沃斯私人飞机</tspan>
+            <tspan class="lang-en">Private jet to Jan 2026 Davos WEF</tspan>
+          </text>
+
+          <!-- Node 2: Tsakos -->
+          <rect x="45" y="198" width="235" height="72" rx="3" fill="#f3efe6" stroke="#c9c1b0" stroke-width="1.5"/>
+          <text x="60" y="221" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">尼古拉斯·察科斯</tspan>
+            <tspan class="lang-en">Nikolas Tsakos</tspan>
+          </text>
+          <text x="60" y="240" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">航运公司 Tsakos Energy CEO</tspan>
+            <tspan class="lang-en">CEO, Tsakos Energy Navigation</tspan>
+          </text>
+          <text x="60" y="258" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#b85d19">
+            <tspan class="lang-cn">格施塔德度假、巴黎专机与四季酒店账单</tspan>
+            <tspan class="lang-en">Gstaad trip, Paris jet &amp; George V bill</tspan>
+          </text>
+
+          <!-- Node 3: Trump Donor -->
+          <rect x="45" y="291" width="235" height="72" rx="3" fill="#f3efe6" stroke="#c9c1b0" stroke-width="1.5"/>
+          <text x="60" y="314" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">特朗普捐助者 (短信记录)</tspan>
+            <tspan class="lang-en">Trump Donor (Text Messages)</tspan>
+          </text>
+          <text x="60" y="333" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">《华尔街日报》周三首次公布短信</tspan>
+            <tspan class="lang-en">WSJ published text messages Wednesday</tspan>
+          </text>
+          <text x="60" y="351" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#8f241e">
+            <tspan class="lang-cn">被要求向美运账户汇款 10万美元</tspan>
+            <tspan class="lang-en">Asked to send $100,000 to AmEx account</tspan>
+          </text>
+
+          <!-- Center Hub: Kimberly Guilfoyle -->
+          <rect x="355" y="155" width="205" height="150" rx="4" fill="#0f1d2b" stroke="#b85d19" stroke-width="2"/>
+          <text x="457" y="192" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#e09f67" letter-spacing="1.2">
+            <tspan class="lang-cn">美国驻希腊大使</tspan>
+            <tspan class="lang-en">U.S. AMBASSADOR TO GREECE</tspan>
+          </text>
+          <text x="457" y="218" text-anchor="middle" font-family="Playfair Display, Noto Serif SC, serif" font-size="16" font-weight="700" fill="#ffffff">
+            <tspan class="lang-cn">金伯莉·吉尔福伊尔</tspan>
+            <tspan class="lang-en">Kimberly Guilfoyle</tspan>
+          </text>
+          <line x1="380" y1="234" x2="535" y2="234" stroke="#294057" stroke-width="1"/>
+          <text x="457" y="256" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#d5cfc2">
+            <tspan class="lang-cn">国务院监察长正在调查</tspan>
+            <tspan class="lang-en">State Dept. IG Investigating</tspan>
+          </text>
+          <text x="457" y="276" text-anchor="middle" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#e09f67">
+            <tspan class="lang-cn">白宫高层正在讨论是否撤换</tspan>
+            <tspan class="lang-en">White House Deliberating Removal</tspan>
+          </text>
+
+          <!-- Right Column Nodes: Actions / Promises -->
+          <!-- Right 1: Gas promotion -->
+          <rect x="635" y="105" width="240" height="72" rx="3" fill="#faf8f4" stroke="#141413" stroke-width="1.2"/>
+          <text x="650" y="128" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">推动巴尔干国家采购天然气</tspan>
+            <tspan class="lang-en">Balkan Natural Gas Promotion</tspan>
+          </text>
+          <text x="650" y="147" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">鼓励保加利亚、阿尔巴尼亚等国</tspan>
+            <tspan class="lang-en">Encouraged Bulgaria &amp; Albania</tspan>
+          </text>
+          <text x="650" y="165" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#141413">
+            <tspan class="lang-cn">向 Aktor 购买数十亿美元美国天然气</tspan>
+            <tspan class="lang-en">Buy billions in U.S. gas from Aktor</tspan>
+          </text>
+
+          <!-- Right 2: Davos Dinner & Instagram -->
+          <rect x="635" y="198" width="240" height="72" rx="3" fill="#faf8f4" stroke="#141413" stroke-width="1.2"/>
+          <text x="650" y="221" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">达沃斯承诺与社交展示</tspan>
+            <tspan class="lang-en">Davos Boasts &amp; Social Showcase</tspan>
+          </text>
+          <text x="650" y="240" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">对美商承诺“为你赚很多钱”换取席位</tspan>
+            <tspan class="lang-en">Promised U.S. businessman big money</tspan>
+          </text>
+          <text x="650" y="258" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#141413">
+            <tspan class="lang-cn">向 200万粉丝发布与察科斯合影</tspan>
+            <tspan class="lang-en">Posted Tsakos photos to 2M followers</tspan>
+          </text>
+
+          <!-- Right 3: Tax & Legal Help Offer -->
+          <rect x="635" y="291" width="240" height="72" rx="3" fill="#faf8f4" stroke="#141413" stroke-width="1.2"/>
+          <text x="650" y="314" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700" fill="#141413">
+            <tspan class="lang-cn">承诺推动政府介入个人事务</tspan>
+            <tspan class="lang-en">Offered Administration Intervention</tspan>
+          </text>
+          <text x="650" y="333" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" fill="#646059">
+            <tspan class="lang-cn">作为 10万美元汇款请求的回报</tspan>
+            <tspan class="lang-en">In return for $100K AmEx transfer</tspan>
+          </text>
+          <text x="650" y="351" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" fill="#8f241e">
+            <tspan class="lang-cn">促使政府调查捐助者税务和法律问题</tspan>
+            <tspan class="lang-en">Help with donor's tax &amp; legal issues</tspan>
+          </text>
+
+          <!-- Connector Lines Left -> Center -->
+          <path d="M 280 141 L 320 141 L 320 195 L 350 195" fill="none" stroke="#b85d19" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+          <path d="M 280 234 L 350 234" fill="none" stroke="#b85d19" stroke-width="1.8" marker-end="url(#arrow-accent)"/>
+          <path d="M 280 327 L 320 327 L 320 270 L 350 270" fill="none" stroke="#b85d19" stroke-width="1.8" stroke-dasharray="4 3" marker-end="url(#arrow-accent)"/>
+
+          <!-- Connector Lines Center -> Right -->
+          <path d="M 560 195 L 595 195 L 595 141 L 630 141" fill="none" stroke="#141413" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+          <path d="M 560 234 L 630 234" fill="none" stroke="#141413" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+          <path d="M 560 270 L 595 270 L 595 327 L 630 327" fill="none" stroke="#141413" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#arrow-ink)"/>
+        </svg>
+      </div>
+
+      <figcaption class="exhibit-caption">
+        <span>
+          <span class="lang-cn">注：吉尔福伊尔的律师对短信真实性提出质疑；Aktor 律师称其未不正当推广商业利益；美国驻雅典大使馆称她忠实遵守道德与礼品申报指南。</span>
+          <span class="lang-en">Note: Guilfoyle's lawyer disputed the authenticity of the texts; Aktor lawyers said she didn't improperly promote its interests; U.S. Embassy Athens said she followed ethics guidelines.</span>
+        </span>
+        <span>THE WALL STREET JOURNAL</span>
+      </figcaption>
+    </figure>
+
+    <!-- Official Responses & Denials Dossier (p11 - p14 in exact sequence) -->
+    <div class="rail-grid">
+      <div class="prose-col">
+        <div class="response-dossier">
+          <div class="response-dossier-header">
+            <span class="lang-cn">各方回应与官方声明记录 (OFFICIAL RESPONSES &amp; DENIALS)</span>
+            <span class="lang-en">OFFICIAL RESPONSES &amp; RECORD OF DENIALS</span>
+          </div>
+          <div class="response-grid">
+            <div class="response-item">
+              <div class="response-entity">
+                <span class="lang-cn">尼古拉斯·察科斯方面</span>
+                <span class="lang-en">Nikolas Tsakos &amp; Family</span>
+              </div>
+              <p class="prose-p" data-ref="p11"><span class="lang-cn">此前未曾报道过察科斯为她的旅行提供资金的事实。察科斯和他的妻子未对置评请求做出回应。</span><span class="lang-en">Tsakos's financing of her travel hasn't been previously reported. Tsakos and his wife didn't respond to requests for comment.</span></p>
+            </div>
+
+            <div class="response-item">
+              <div class="response-entity">
+                <span class="lang-cn">Aktor 集团代表律师</span>
+                <span class="lang-en">Counsel for Aktor Group</span>
+              </div>
+              <p class="prose-p" data-ref="p12"><span class="lang-cn">Aktor集团（希腊建筑公司）通过律师表示不予置评。Aktor的律师表示，吉尔福伊尔并未不正当地推广Aktor的商业利益。</span><span class="lang-en">Aktor Group, through lawyers, declined to comment. The lawyers for Aktor have said Guilfoyle wasn't improperly promoting Aktor's commercial interests.</span></p>
+            </div>
+
+            <div class="response-item" style="grid-column: 1 / -1;">
+              <div class="response-entity">
+                <span class="lang-cn">美国驻雅典大使馆发言人</span>
+                <span class="lang-en">Spokesman for the U.S. Embassy in Athens</span>
+              </div>
+              <p class="prose-p" data-ref="p13" data-hl="道德规范和礼品申报指南 | ethics and gift reporting guidelines"><span class="lang-cn">美国驻雅典大使馆的一位发言人表示，大使的“公共服务生涯以深厚的价值观为指导”，并且她“忠实地遵守了国务院的<mark class="ed-hl">道德规范和礼品申报指南</mark>”。</span><span class="lang-en">A spokesman for the U.S. Embassy in Athens said the ambassador's "career in public service is guided by deep and abiding values" and that she had "faithfully followed State Department <mark class="ed-hl">ethics and gift reporting guidelines</mark>."</span></p>
+              <p class="prose-p" data-ref="p14"><span class="lang-cn">这位发言人表示：“这些未经证实的说法仅仅是为了转移人们对她在希腊和更广泛的东地中海地区所做出的出色工作的注意力。”</span><span class="lang-en">"The unsubstantiated claims are simply a distraction from the great work she is doing in Greece and the broader Eastern Mediterranean," the spokesman said.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-rail">
+        <blockquote class="pull-quote" data-derive="q5">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“忠实地遵守了国务院的道德规范和礼品申报指南”</span><span class="lang-en">“faithfully followed State Department ethics and gift reporting guidelines.”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 13 段直接引述</span><span class="lang-en">— Direct Quote (p13)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACT III: $100K AMEX TEXTS, IG PROBE & ATHENS TARMAC (p15 - p24) -->
+  <section class="chapter-block" id="act-3">
+    <div class="chapter-header">
+      <span class="chapter-num">ACT III</span>
+      <h2 class="chapter-title">
+        <span class="lang-cn">10万美元美运账单、雅典停机坪与政治震荡</span>
+        <span class="lang-en">The $100,000 AmEx Texts, the Athens Tarmac and Political Fallout</span>
+      </h2>
+    </div>
+
+    <div class="rail-grid">
+      <div class="prose-col">
+        <p class="prose-p" data-ref="p15" data-hl="2026年中期选举 | 2026 midterms | 撤换她 | should be removed"><span class="lang-cn">这些新消息的曝光正值特朗普政府的高层官员正在商讨如何处理这位曾计划嫁入特朗普家族，但现在却可能成为<mark class="ed-hl">2026年中期选举</mark>前的一项政治负担的大使。政府官员正在讨论是否应该<mark class="ed-hl">撤换她</mark>，助手表示，预计特朗普总统很快就会做出决定。</span><span class="lang-en">The new revelations come as top Trump administration officials are deliberating what to do about an ambassador who was once set to marry into the first family, yet is now evolving into a political liability ahead of the <mark class="ed-hl">2026 midterms</mark>. Administration officials are discussing whether she <mark class="ed-hl">should be removed</mark>, and a decision is expected by President Trump soon, aides said.</span></p>
+
+        <p class="prose-p" data-ref="p16" data-hl="国务院的监察长 | State Department's inspector general"><span class="lang-cn">一位知情人士表示，<mark class="ed-hl">国务院的监察长</mark>正在调查吉尔福伊尔是否收到了私人商人的礼品或好处。</span><span class="lang-en">The <mark class="ed-hl">State Department's inspector general</mark> is investigating whether Guilfoyle received gifts or favors from private businessmen, a person familiar with the matter said.</span></p>
+
+        <p class="prose-p" data-ref="p17" data-hl="10万美元 | $100,000 | 个人税务和法律问题 | personal tax and legal issues"><span class="lang-cn">周三，《华尔街日报》首次发表了短信记录，显示吉尔福伊尔曾要求一位特朗普的捐助者向她的美国运通账户汇款<mark class="ed-hl">10万美元</mark>，作为回报，她承诺帮助这位捐助者，促使特朗普政府调查该捐助者的<mark class="ed-hl">个人税务和法律问题</mark>。吉尔福伊尔的律师对短信的真实性提出了质疑，但拒绝提供具体细节。</span><span class="lang-en">On Wednesday, the Journal first published text messages showing Guilfoyle asked a Trump donor to send <mark class="ed-hl">$100,000</mark> to her American Express account, and in return offered help in getting the Trump administration to look into the donor's <mark class="ed-hl">personal tax and legal issues</mark>. A lawyer for Guilfoyle disputed the authenticity of the messages but declined to provide specifics.</span></p>
+
+        <p class="prose-p" data-ref="p18"><span class="lang-cn">特朗普在周五离开白宫时对记者说：“我刚听说这件事，这真是太糟糕了。我的意思是，我知道。她是一位大使。她一直都非常友善。”</span><span class="lang-en">"I just heard about it. It's too bad," Trump told reporters of the reporting on Guilfoyle as he left the White House on Friday. "I mean, I know. She's an ambassador. She was always very nice."</span></p>
+
+        <p class="prose-p" data-ref="p19"><span class="lang-cn">上周，吉尔福伊尔受到了参议院和众议院外交事务委员会的民主党人的批评，他们敦促国务院审查她的行为，此前《华尔街日报》的调查显示，这位大使曾试图推广Aktor，这家希腊公司的首席执行官曾乘坐飞机将她送往达沃斯。</span><span class="lang-en">Last week, Guilfoyle came under fire from Democrats on Senate and House foreign affairs committees, who urged the State Department to review her conduct after the Journal investigation revealed the ambassador's efforts to promote Aktor, the Greek firm whose CEO had flown her to Davos.</span></p>
+
+        <p class="prose-p" data-ref="p20"><span class="lang-cn">这些消息的曝光对白宫和国务院造成了干扰。吉尔福伊尔花费了几天时间联系白宫内部和周边的人，否认她曾发送过短信，要求提供信用卡方面的帮助，并寻求他们的支持。</span><span class="lang-en">The revelations have been a disruption for the White House and State Department. Guilfoyle spent several days reaching out to people in and around the administration, denying that she had sent the texts soliciting credit-card relief, and seeking their support.</span></p>
+
+        <p class="prose-p" data-ref="p21" data-hl="马尔科·鲁比奥 | Marco Rubio | 雅典卫城 | Acropolis"><span class="lang-cn">国务卿<mark class="ed-hl">马尔科·鲁比奥</mark>在乘坐飞机前往雅典的途中，得知《华尔街日报》就此事要求发表评论。他在雅典将发表一篇演讲，演讲地点设在<mark class="ed-hl">雅典卫城</mark>前，主题是“西方是否仍能保持其在世界中的领导地位”。据知情人士透露，助手们对此感到沮丧，并担心这些消息会掩盖鲁比奥的重要演讲。在鲁比奥访问期间，金伯莉·吉尔福伊尔参加了他组织的几次活动。然而，在鲁比奥周四离开雅典时，他拒绝就《华尔街日报》报道的短信内容发表评论。“我们不会在外国机场举行新闻发布会来讨论此事，因为你们写了一篇报道，”他对记者说。金伯莉·吉尔福伊尔在机场为他送行。</span><span class="lang-en">Secretary of State <mark class="ed-hl">Marco Rubio</mark> learned about her text messages from the Journal's request for comment as he was on a plane to Athens, where he would deliver a speech standing before the <mark class="ed-hl">Acropolis</mark>, "on whether the West maintains its place at the head of the world." Aides were frustrated and feared the revelations would overshadow Rubio's marquee address, according to people familiar with the discussions. Guilfoyle joined Rubio for multiple events during his visit. Yet as Rubio departed Athens on Thursday, he declined to discuss the text messages reported by the Journal. "We don't conduct these things in a press conference on a tarmac in a foreign country because you wrote a story," he told reporters. Guilfoyle was on the tarmac to see him off.</span></p>
+
+        <p class="prose-p" data-ref="p22" data-hl="J·D·万斯 | JD Vance"><span class="lang-cn">副总统<mark class="ed-hl">J·D·万斯</mark>在周五被问及《华尔街日报》的报道时，拒绝表明立场。“这些都是指控，”他说。“让我们看看真相是什么。而且，如果发生了不好的事情，那么相关人员必须承担后果。”</span><span class="lang-en">Vice President <mark class="ed-hl">JD Vance</mark>, asked about the Journal's reporting on Friday, declined to take a stance. "These are accusations," he said. "Let's see what the truth is. And obviously, if there was something bad that happened, then people have to suffer consequences."</span></p>
+
+        <!-- Split p23 to spotlight the political calculus quote -->
+        <p class="prose-p" data-ref="p23.s1"><span class="lang-cn">一些前特朗普政府官员表示，他们对金伯莉·吉尔福伊尔是否会受到惩罚表示怀疑。</span><span class="lang-en">Some former Trump officials expressed skepticism that Guilfoyle would face consequences.</span></p>
+
+        <blockquote class="verdict-quote">
+          <p data-ref="p23.s2"><span class="lang-cn">斯蒂芬妮·格里沙姆，前第一夫人梅拉尼娅·特朗普的发言人，在X平台（原推特）上写道：“她对特朗普家族/核心圈子了解得太多了，我想他们希望她尽可能远离。</span><span class="lang-en">Stephanie Grisham, first lady Melania Trump's former spokeswoman, wrote in a post on X: "She knows far too much about the Trump family/inner circle &amp; I imagine they like her as far away as possible.</span></p>
+          <p style="margin-top:0.5rem;" data-ref="p23.s3"><span class="lang-cn">一个愤怒的金伯莉·吉尔福伊尔在美国国内可能会对特朗普阵营造成不利影响。”</span><span class="lang-en">An angry KG stateside would not be a good thing for Trumpworld."</span></p>
+        </blockquote>
+
+        <p class="prose-p" data-ref="p24" data-hl="格雷戈里·米克斯 | Gregory Meeks | 罗伯特·加西亚 | Robert Garcia | 联邦反贿赂和公共腐败法 | federal bribery and public corruption laws"><span class="lang-cn">近几天，国会民主党人加大了呼吁对金伯莉·吉尔福伊尔进行调查或将其从现任职位上解职的力度——或者两者兼而有之。在周五写给金伯莉·吉尔福伊尔的信中，众议院外交事务委员会的首席民主党人、纽约州众议员<mark class="ed-hl">格雷戈里·米克斯</mark>呼吁对大使是否违反了<mark class="ed-hl">联邦反贿赂和公共腐败法</mark>进行“立即调查”。米克斯还要求国务院监察长调查金伯莉·吉尔福伊尔是否违反了联邦法律、部门规章或道德要求。加利福尼亚州众议员<mark class="ed-hl">罗伯特·加西亚</mark>，众议院监督委员会的首席民主党人，在周四写给金伯莉·吉尔福伊尔的信中表示，报道中的行为“引发了对严重公共腐败和国家安全的担忧”，并要求她提供财务记录以及与某些政府官员的通讯副本。</span><span class="lang-en">In recent days, congressional Democrats have intensified their calls for Guilfoyle to face an investigation or be ousted from her role—or both. In a letter to Guilfoyle on Friday, Rep. <mark class="ed-hl">Gregory Meeks</mark> (D., N.Y.), the top Democrat on the House Foreign Affairs Committee, called for an "immediate investigation" into whether the ambassador had violated <mark class="ed-hl">federal bribery and public corruption laws</mark>. Meeks also requested the State Department inspector general investigate whether Guilfoyle had violated federal law, department regulations or ethics requirements. California Rep. <mark class="ed-hl">Robert Garcia</mark>, the top Democrat on the House oversight committee, in a letter to Guilfoyle on Thursday said the reported conduct "raises serious public corruption and national security concerns" and requested she provide financial records and copies of her communications with certain government officials.</span></p>
+      </div>
+
+      <aside class="side-rail">
+        <div class="metric-card" data-derive="m1">
+          <div class="metric-val" data-field="value"><span class="lang-cn">10万美元</span><span class="lang-en">$100</span></div>
+          <div class="metric-lbl" data-field="label"><span class="lang-cn">周三，《华尔街日报》首次发表了短信记录，显示吉尔福伊尔曾要求一位特朗普的…</span><span class="lang-en">On Wednesday, the Journal first published text messages show…</span></div>
+          <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p17]</span><span class="lang-en">Source [p17]</span></div>
+        </div>
+
+        <blockquote class="pull-quote" data-derive="q1">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“你知道，我可以为你提供一切。你值得拥有。”</span><span class="lang-en">“I'm going to make you a lot of f—ing money,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 3 段直接引述</span><span class="lang-en">— Direct Quote (p3)</span></footer>
+        </blockquote>
+
+        <div class="forensic-card">
+          <div class="forensic-card-title">
+            <span class="lang-cn">华盛顿问责与调查动向</span>
+            <span class="lang-en">WASHINGTON ACCOUNTABILITY TRACKER</span>
+          </div>
+          <ul class="forensic-list">
+            <li>
+              <strong>
+                <span class="lang-cn">国务院监察长 (State Dept. IG)</span>
+                <span class="lang-en">State Dept. Inspector General</span>
+              </strong>
+              <span class="lang-cn">正调查吉尔福伊尔是否收受私人商人的礼品或好处。</span>
+              <span class="lang-en">Investigating whether Guilfoyle received gifts or favors from private businessmen.</span>
+            </li>
+            <li>
+              <strong>
+                <span class="lang-cn">格雷戈里·米克斯 (众议院外委会首席民主党人)</span>
+                <span class="lang-en">Rep. Gregory Meeks (House Foreign Affairs)</span>
+              </strong>
+              <span class="lang-cn">周五致信呼吁立即调查是否违反联邦反贿赂和公共腐败法。</span>
+              <span class="lang-en">Called Friday for an immediate investigation into potential federal bribery and public corruption violations.</span>
+            </li>
+            <li>
+              <strong>
+                <span class="lang-cn">罗伯特·加西亚 (众议院监督委员会首席民主党人)</span>
+                <span class="lang-en">Rep. Robert Garcia (House Oversight)</span>
+              </strong>
+              <span class="lang-cn">周四致信要求提供财务记录及与政府官员的通讯副本。</span>
+              <span class="lang-en">Requested financial records and copies of communications with government officials.</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ed-footer">
+  <div class="ed-footer-inner">
+    <div>
+      <strong>THE WALL STREET JOURNAL</strong> ·
+      <span class="lang-cn">深读数字版 (WSJ Editorial Renaissance) · E1-025 · Page A4</span>
+      <span class="lang-en">Digital Long-Form Edition · E1-025 · Page A4</span>
+    </div>
+    <div>
+      <span class="lang-cn">版权所有 © 2026 道琼斯公司。保留所有权利。</span>
+      <span class="lang-en">Copyright © 2026 Dow Jones &amp; Company, Inc. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = doc.scrollHeight - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    var bar = document.getElementById('progressBar');
+    if (bar) {
+      bar.style.width = pct + '%';
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>

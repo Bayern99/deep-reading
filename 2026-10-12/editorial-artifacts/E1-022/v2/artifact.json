@@ -1,0 +1,273 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-022",
+  "artifact_version": "v2",
+  "created_at": "2026-10-14T14:00:29Z",
+  "status": "verified",
+  "notes": "Queue task task-a6d23d74 (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+    "paragraph_count": 11,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 10179,
+    "completion_chars": 37857,
+    "input_tokens": 3065,
+    "output_tokens": 13481,
+    "total_tokens": 16546,
+    "latency_seconds": 107.159
+  },
+  "files": {
+    "raw_html": "E1-022/v2/raw.html",
+    "compiled_html": "E1-022/v2/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-dark: #c8c0af;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.14);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --crimson: #8f241e;\n    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    --font-serif: 'Lora', 'Noto Serif SC', Georgia, serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-family: var(--font-serif);\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    scroll-behavior: smooth;\n  }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    overflow-x: hidden;\n    position: relative;\n  }\n\n  /* Language Switching Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  /* Top Reading Progress Bar */\n  #progress-bar {\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 3px;\n    width: 0%;\n    background: var(--accent);\n    z-index: 1000;\n    transition: width 0.1s ease-out;\n  }\n\n  /* Sticky Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 900;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(8px);\n    border-bottom: 1px solid var(--line-dark);\n    padding: 0.75rem 1.5rem;\n  }\n\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-cluster {\n    display: flex;\n    align-items: baseline;\n    gap: 0.85rem;\n    flex-wrap: wrap;\n  }\n\n  .wsj-logo {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .section-badge {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    padding: 0.18rem 0.5rem;\n    border-radius: 2px;\n    font-weight: 600;\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    border: 1px solid var(--ink);\n    border-radius: 3px;\n    overflow: hidden;\n    background: var(--paper-card);\n    flex-shrink: 0;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-sans);\n    font-size: 0.76rem;\n    font-weight: 600;\n    padding: 0.35rem 0.75rem;\n    cursor: pointer;\n    color: var(--muted);\n    transition: all 0.2s ease;\n    letter-spacing: 0.04em;\n  }\n\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Main Container */\n  .page-shell {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2.5rem 1.5rem 5rem;\n  }\n\n  /* Hero Header */\n  .article-hero {\n    border-bottom: 3px double var(--ink);\n    padding-bottom: 2.25rem;\n    margin-bottom: 2.75rem;\n  }\n\n  .hero-kicker {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    margin-bottom: 1rem;\n  }\n\n  .hero-kicker::before {\n    content: \"\";\n    display: inline-block;\n    width: 24px;\n    height: 2px;\n    background: var(--accent);\n  }\n\n  .hero-title {\n    font-family: var(--font-display);\n    font-weight: 800;\n    color: var(--ink);\n    font-size: clamp(2rem, 4.2vw, 3.35rem);\n    line-height: 1.2;\n    letter-spacing: -0.015em;\n    margin-bottom: 1.5rem;\n    max-width: 960px;\n  }\n\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.32;\n    letter-spacing: 0;\n  }\n\n  .hero-meta-grid {\n    display: grid;\n    grid-template-columns: 1fr auto;\n    align-items: end;\n    gap: 1.5rem;\n    padding-top: 1.25rem;\n    border-top: 1px solid var(--line);\n  }\n\n  .byline-block {\n    font-family: var(--font-sans);\n    font-size: 0.88rem;\n    color: var(--muted);\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 0.6rem 1.25rem;\n  }\n\n  .byline-author {\n    font-weight: 700;\n    color: var(--ink);\n    letter-spacing: 0.03em;\n    text-transform: uppercase;\n  }\n\n  .byline-date {\n    font-family: var(--font-mono);\n    font-size: 0.8rem;\n  }\n\n  .docket-stamp {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--ink);\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-left: 3px solid var(--crimson);\n    padding: 0.45rem 0.85rem;\n    letter-spacing: 0.04em;\n  }\n\n  /* Two-Column Editorial Architecture */\n  .editorial-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 1fr) 360px;\n    gap: 3.25rem;\n    align-items: start;\n  }\n\n  .narrative-col {\n    min-width: 0;\n  }\n\n  .forensic-rail {\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 2rem;\n    position: sticky;\n    top: 4.5rem;\n  }\n\n  /* Section Dividers within Narrative */\n  .act-header {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    margin: 2.5rem 0 1.25rem;\n    padding-bottom: 0.5rem;\n    border-bottom: 1px solid var(--line-dark);\n  }\n\n  .act-header:first-child {\n    margin-top: 0;\n  }\n\n  .act-num {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    color: var(--paper);\n    background: var(--ink);\n    padding: 0.15rem 0.45rem;\n    letter-spacing: 0.06em;\n  }\n\n  .act-title {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n  }\n\n  /* Prose Typography */\n  .prose-p {\n    font-family: var(--font-serif);\n    font-size: 1.125rem;\n    line-height: 1.88;\n    color: var(--body);\n    margin-bottom: 1.45rem;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    line-height: 1.78;\n  }\n\n  /* Lead Paragraph Styling (No ::first-letter on Chinese) */\n  .prose-lead {\n    font-size: 1.26rem;\n    line-height: 1.82;\n    font-weight: 600;\n    color: var(--ink);\n    padding-left: 1.15rem;\n    border-left: 4px solid var(--accent);\n    margin-bottom: 1.75rem;\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);\n    color: inherit;\n    padding: 0 0.15em;\n    border-bottom: 1px solid rgba(184, 93, 25, 0.45);\n    font-weight: 600;\n  }\n\n  /* Judicial Order Callout Box (in-stream) */\n  .court-mandate-box {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-left: 4px solid var(--ink);\n    padding: 1.35rem 1.5rem;\n    margin: 1.65rem 0;\n    position: relative;\n  }\n\n  .court-mandate-label {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.09em;\n    color: var(--crimson);\n    font-weight: 700;\n    margin-bottom: 0.55rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n  }\n\n  .court-mandate-box .prose-p {\n    margin-bottom: 0;\n    font-size: 1.06rem;\n  }\n\n  /* Official Response Mini-Strip */\n  .response-strip {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 1rem;\n    margin: 1.65rem 0;\n    padding: 1.15rem;\n    background: var(--paper-deep);\n    border-top: 2px solid var(--ink);\n    border-bottom: 1px solid var(--line-dark);\n  }\n\n  .response-cell {\n    padding: 0.25rem 0.5rem;\n  }\n\n  .response-cell + .response-cell {\n    border-left: 1px solid var(--line-dark);\n    padding-left: 1.15rem;\n  }\n\n  .response-agency {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--muted);\n    margin-bottom: 0.4rem;\n  }\n\n  .response-cell .prose-p {\n    font-size: 0.98rem;\n    line-height: 1.68;\n    margin-bottom: 0;\n  }\n\n  /* Split Sentence Verdict Quote (p10.s2) */\n  .verdict-quote {\n    margin: 2rem 0;\n    padding: 1.75rem 1.85rem;\n    background: var(--navy-bg);\n    color: var(--paper);\n    border-left: 5px solid var(--accent);\n    font-family: var(--font-display);\n    font-size: 1.18rem;\n    line-height: 1.72;\n    position: relative;\n  }\n\n  .verdict-quote::before {\n    content: \"PLAINTIFFS' CONSTITUTIONAL ARGUMENT · 原告核心法理指控\";\n    display: block;\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    letter-spacing: 0.1em;\n    color: #e2965c;\n    margin-bottom: 0.85rem;\n    font-weight: 600;\n  }\n\n  /* Sidebar Dossier Cards */\n  .dossier-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-dark);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem;\n  }\n\n  .dossier-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    border-bottom: 1px solid var(--line-dark);\n    padding-bottom: 0.65rem;\n    margin-bottom: 1rem;\n  }\n\n  .dossier-title {\n    font-family: var(--font-sans);\n    font-size: 0.8rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n  }\n\n  .dossier-tag {\n    font-family: var(--font-mono);\n    font-size: 0.68rem;\n    color: var(--accent);\n    font-weight: 600;\n  }\n\n  /* Derived Pull Quote Card in Sidebar (q1) */\n  .pull-quote {\n    background: var(--paper);\n    border: 1px solid var(--line-dark);\n    padding: 1.15rem;\n    margin-top: 0.5rem;\n  }\n\n  .pull-quote .quote-text {\n    font-family: var(--font-display);\n    font-size: 1.02rem;\n    line-height: 1.65;\n    color: var(--ink);\n    margin-bottom: 0.65rem;\n  }\n\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n  }\n\n  /* SVG Diagram Containers */\n  .svg-wrapper {\n    width: 100%;\n    overflow: hidden;\n    background: var(--paper);\n    border: 1px solid var(--line);\n    padding: 0.5rem;\n  }\n\n  .svg-caption {\n    font-family: var(--font-sans);\n    font-size: 0.76rem;\n    color: var(--muted);\n    line-height: 1.5;\n    margin-top: 0.75rem;\n  }\n\n  /* Full-width Timeline Section below main grid */\n  .chronology-banner {\n    margin-top: 3.5rem;\n    padding-top: 2.25rem;\n    border-top: 2px solid var(--ink);\n  }\n\n  .chronology-head {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    flex-wrap: wrap;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n  }\n\n  .chronology-title {\n    font-family: var(--font-display);\n    font-size: 1.35rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  .chronology-sub {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n  }\n\n  /* Editorial Footer */\n  .article-footer {\n    margin-top: 3.5rem;\n    padding-top: 1.5rem;\n    border-top: 1px solid var(--line-dark);\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 1rem;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow */\n  @media (max-width: 920px) {\n    .editorial-grid {\n      grid-template-columns: 1fr;\n      gap: 2.25rem;\n    }\n\n    .forensic-rail {\n      position: static;\n    }\n\n    .hero-meta-grid {\n      grid-template-columns: 1fr;\n      gap: 1rem;\n    }\n  }\n\n  @media (max-width: 600px) {\n    .masthead {\n      padding: 0.65rem 1rem;\n    }\n\n    .page-shell {\n      padding: 1.5rem 1rem 3.5rem;\n    }\n\n    .response-strip {\n      grid-template-columns: 1fr;\n    }\n\n    .response-cell + .response-cell {\n      border-left: none;\n      border-top: 1px solid var(--line-dark);\n      padding-left: 0.5rem;\n      padding-top: 0.85rem;\n    }\n\n    .verdict-quote {\n      padding: 1.25rem;\n      font-size: 1.05rem;\n    }\n\n    .prose-lead {\n      font-size: 1.12rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div id=\"progress-bar\" aria-hidden=\"true\"></div>\n\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <span class=\"wsj-logo\">The Wall Street Journal</span>\n      <span class=\"section-badge\">\n        <span class=\"lang-cn\">美国新闻 · 法治与行政权</span>\n        <span class=\"lang-en\">U.S. News ·Page A3</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<main class=\"page-shell\">\n  <!-- Article Hero -->\n  <header class=\"article-hero\">\n    <div class=\"hero-kicker\">\n      <span class=\"lang-cn\">司法禁令与公共资金边界 · 联邦法院裁决</span>\n      <span class=\"lang-en\">Judicial Injunction &amp; Public Funds · Federal Ruling</span>\n    </div>\n\n    <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">由纳税人资助的、支持特朗普的广告被勒令停止播出</span><span class=\"lang-en\">Pro-Trump Ads Funded by Taxpayers Ordered Off the Air</span></h1>\n\n    <div class=\"hero-meta-grid\">\n      <div class=\"byline-block\">\n        <span class=\"byline-author\">BY BRENT KENDALL</span>\n        <span>|</span>\n        <time class=\"byline-date\" datetime=\"2026-10-12\">\n          <span class=\"lang-cn\">2026年10月12日</span>\n          <span class=\"lang-en\">October 12, 2026</span>\n        </time>\n      </div>\n      <div class=\"docket-stamp\">\n        <span class=\"lang-cn\">纽约南区联邦地区法院 · 紧急禁令 (4页裁决书)</span>\n        <span class=\"lang-en\">U.S. District Court (S.D.N.Y.) · 4-Page Order</span>\n      </div>\n    </div>\n  </header>\n\n  <!-- Asymmetric Forensic Layout -->\n  <div class=\"editorial-grid\">\n    <!-- Left Column: Primary Canonical Narrative (p1 .. p11 in exact order) -->\n    <article class=\"narrative-col\">\n\n      <!-- ACT I: The Judicial Injunction -->\n      <div class=\"act-header\">\n        <span class=\"act-num\">01</span>\n        <span class=\"act-title\">\n          <span class=\"lang-cn\">周日晚间的联邦禁令</span>\n          <span class=\"lang-en\">The Sunday Night Injunction</span>\n        </span>\n      </div>\n\n      <p class=\"prose-p prose-lead\" data-ref=\"p1\" data-hl=\"由纳税人资助的 | taxpayer-funded | 很可能违反法律 | likely illegal\"><span class=\"lang-cn\">一位联邦法官下令，特朗普政府必须停止播放任何进一步的、<mark class=\"ed-hl\">由纳税人资助的</mark>、宣传总统的电视广告，理由是这些广告<mark class=\"ed-hl\">很可能违反法律</mark>。</span><span class=\"lang-en\">A federal judge ordered the Trump administration to halt any further airing of <mark class=\"ed-hl\">taxpayer-funded</mark> television ads touting the president, ruling they are <mark class=\"ed-hl\">likely illegal</mark>.</span></p>\n\n      <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"珍妮弗·罗尚 | Jennifer Rochon | 四页长的命令 | four-page order\"><span class=\"lang-cn\">纽约美国地区法院法官<mark class=\"ed-hl\">珍妮弗·罗尚</mark>于周日晚间发布了一份<mark class=\"ed-hl\">四页长的命令</mark>，禁止该政府使用政府资金来投放这些广告。</span><span class=\"lang-en\">U.S. District Judge <mark class=\"ed-hl\">Jennifer Rochon</mark> in New York issued a <mark class=\"ed-hl\">four-page order</mark> late Sunday that barred the administration from using government funds to distribute the ads.</span></p>\n\n      <div class=\"court-mandate-box\">\n        <div class=\"court-mandate-label\">\n          <span>\n            <span class=\"lang-cn\">法庭指令条文范围</span>\n            <span class=\"lang-en\">Scope of Judicial Mandate</span>\n          </span>\n          <span>U.S.D.C. · NY</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"拜登政府任命 | Biden appointee\"><span class=\"lang-cn\">这位法官是<mark class=\"ed-hl\">拜登政府任命</mark>的，她在命令中表示，必须取消“任何已安排、预订或计划用于播放或传播这些争议广告的时间段、位置或安排”。</span><span class=\"lang-en\">The judge, a <mark class=\"ed-hl\">Biden appointee</mark>, said it must cancel \"any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.\"</span></p>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p4\"><span class=\"lang-cn\">该命令立即适用于周日晚些时候计划播放的任何广告，但目前尚不清楚该裁决是否阻止了其他广告的播放。</span><span class=\"lang-en\">The order applied immediately to any ads scheduled to run later on Sunday night, but it wasn't immediately clear whether the ruling kept any additional ads off the air.</span></p>\n\n      <!-- Official Responses Strip (p5 & p6) -->\n      <div class=\"response-strip\">\n        <div class=\"response-cell\">\n          <div class=\"response-agency\">\n            <span class=\"lang-cn\">白宫回应 · The White House</span>\n            <span class=\"lang-en\">The White House</span>\n          </div>\n          <p class=\"prose-p\" data-ref=\"p5\"><span class=\"lang-cn\">白宫未对相关评论请求做出回应。</span><span class=\"lang-en\">The White House didn't respond to a request for comment.</span></p>\n        </div>\n        <div class=\"response-cell\">\n          <div class=\"response-agency\">\n            <span class=\"lang-cn\">美国司法部文件 · Dept. of Justice</span>\n            <span class=\"lang-en\">Department of Justice</span>\n          </div>\n          <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"原定于周日结束 | slated to end on Sunday\"><span class=\"lang-cn\">美国司法部在一份周末提交的文件中表示，这些广告的投放计划<mark class=\"ed-hl\">原定于周日结束</mark>。</span><span class=\"lang-en\">The Justice Department in a weekend filing said the ad buy was <mark class=\"ed-hl\">slated to end on Sunday</mark>.</span></p>\n        </div>\n      </div>\n\n      <!-- ACT II: Origins & Funding Trail -->\n      <div class=\"act-header\">\n        <span class=\"act-num\">02</span>\n        <span class=\"act-title\">\n          <span class=\"lang-cn\">联邦资金来源与白宫干预</span>\n          <span class=\"lang-en\">Federal Funding &amp; Presidential Involvement</span>\n        </span>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"九月份 | September | 国土安全部的联邦资金 | federal funds from the Department of Homeland Security\"><span class=\"lang-cn\">这些广告主要宣传总统及其政府的政策，并于<mark class=\"ed-hl\">九月份</mark>开始在全国电视台播放。这些广告的费用由<mark class=\"ed-hl\">国土安全部的联邦资金</mark>支付。</span><span class=\"lang-en\">The ads, which predominantly feature the president and promote the administration's policies, started airing on national television in <mark class=\"ed-hl\">September</mark>. They were paid for by <mark class=\"ed-hl\">federal funds from the Department of Homeland Security</mark>.</span></p>\n\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"亲自推动了这些广告的制作 | personally pushed for the ads\"><span class=\"lang-cn\">《华尔街日报》报道称，特朗普总统<mark class=\"ed-hl\">亲自推动了这些广告的制作</mark>，并参与了广告的创作。</span><span class=\"lang-en\">President Trump <mark class=\"ed-hl\">personally pushed for the ads</mark> and was involved in their creation, The Wall Street Journal has reported.</span></p>\n\n      <!-- ACT III: Legal Challenge & Funding Pivot -->\n      <div class=\"act-header\">\n        <span class=\"act-num\">03</span>\n        <span class=\"act-title\">\n          <span class=\"lang-cn\">违宪拨款指控与资金转向</span>\n          <span class=\"lang-en\">Appropriations Challenge &amp; The Super PAC Pivot</span>\n        </span>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"Common Cause | 阿拉巴马州 | Alabama\"><span class=\"lang-cn\">该法官的裁决是对原告提起的诉讼的回应，原告包括倡导组织<mark class=\"ed-hl\">Common Cause</mark>（倡导组织）以及一位在<mark class=\"ed-hl\">阿拉巴马州</mark>竞选公职的民主党候选人。</span><span class=\"lang-en\">The judge's ruling came in response to a lawsuit filed by plaintiffs including the advocacy group <mark class=\"ed-hl\">Common Cause</mark> and a Democratic candidate running for office in <mark class=\"ed-hl\">Alabama</mark>.</span></p>\n\n      <p class=\"prose-p\" data-ref=\"p10.s1\" data-hl=\"未经国会授权的目的 | purposes not authorized by Congress | 政治宣传 | political propaganda\"><span class=\"lang-cn\">他们认为，这些支出被用于<mark class=\"ed-hl\">未经国会授权的目的</mark>，并违反了关于使用公共资金进行<mark class=\"ed-hl\">政治宣传</mark>的限制。</span><span class=\"lang-en\">They argued the expenditures were used for <mark class=\"ed-hl\">purposes not authorized by Congress</mark> and violated restrictions on using public funds for <mark class=\"ed-hl\">political propaganda</mark>.</span></p>\n\n      <blockquote class=\"verdict-quote\" data-ref=\"p10.s2\"><span class=\"lang-cn\">原告在回应裁决时表示：“总统利用政府的运作机制以及国会为其他用途拨出的资金来影响选举结果，以推进其个人议程，这在法律上没有任何依据，也没有任何先例。”</span><span class=\"lang-en\">\"There is no legal justification—and no precedent—for the president to use the machinery of the government and funds set aside by Congress for other uses to influence electoral outcomes that further his own agenda,\" the plaintiffs said in response to the ruling.</span></blockquote>\n\n      <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"MAGA Inc.\"><span class=\"lang-cn\">上周，总统表示，他计划使用其超级政治行动委员会 <mark class=\"ed-hl\">MAGA Inc.</mark> 的资金来支付这些备受争议的广告费用，而不是使用联邦政府的资金。</span><span class=\"lang-en\">The president said last week that he plans to pay for the controversial ads using funds from his <mark class=\"ed-hl\">MAGA Inc.</mark> super PAC rather than the federal government.</span></p>\n\n    </article>\n\n    <!-- Right Column: Forensic Legal & Capital-Flow Rail -->\n    <aside class=\"forensic-rail\">\n\n      <!-- Dossier 1: Bespoke Capital & Broadcast Flow Diagram -->\n      <div class=\"dossier-card\">\n        <div class=\"dossier-header\">\n          <span class=\"dossier-title\">\n            <span class=\"lang-cn\">广告资金流向与司法阻断图谱</span>\n            <span class=\"lang-en\">Funding Flow &amp; Judicial Blockade</span>\n          </span>\n          <span class=\"dossier-tag\">EXHIBIT A</span>\n        </div>\n\n        <div class=\"svg-wrapper\">\n          <svg viewbox=\"0 0 340 430\" width=\"100%\" role=\"img\" aria-label=\"Diagram comparing barred DHS public funding track and announced MAGA Inc. super PAC track\">\n            <defs>\n              <marker id=\"arrow-crimson\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n                <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#8f241e\"></path>\n              </marker>\n              <marker id=\"arrow-navy\" viewbox=\"0 0 10 10\" refx=\"8\" refy=\"5\" markerwidth=\"6\" markerheight=\"6\" orient=\"auto-start-reverse\">\n                <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"#0f1d2b\"></path>\n              </marker>\n            </defs>\n\n            <!-- Track Headers -->\n            <rect x=\"30\" y=\"22\" width=\"132\" height=\"24\" rx=\"2\" fill=\"#8f241e\"></rect>\n            <text x=\"96\" y=\"38\" text-anchor=\"middle\" fill=\"#faf8f4\" font-family=\"JetBrains Mono, monospace\" font-size=\"9\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">被禁路径：联邦公共资金</tspan>\n              <tspan class=\"lang-en\">BARRED: PUBLIC FUNDS</tspan>\n            </text>\n\n            <rect x=\"178\" y=\"22\" width=\"132\" height=\"24\" rx=\"2\" fill=\"#0f1d2b\"></rect>\n            <text x=\"244\" y=\"38\" text-anchor=\"middle\" fill=\"#faf8f4\" font-family=\"JetBrains Mono, monospace\" font-size=\"9\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">替代路径：政治委员会</tspan>\n              <tspan class=\"lang-en\">PIVOT: SUPER PAC</tspan>\n            </text>\n\n            <!-- Left Node 1: DHS Federal Funds -->\n            <rect x=\"30\" y=\"66\" width=\"132\" height=\"62\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#8f241e\" stroke-width=\"1.5\"></rect>\n            <text x=\"96\" y=\"88\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">国土安全部 (DHS)</tspan>\n              <tspan class=\"lang-en\">Dept. of Homeland</tspan>\n            </text>\n            <text x=\"96\" y=\"104\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"9.5\">\n              <tspan class=\"lang-cn\">纳税人联邦拨款资金</tspan>\n              <tspan class=\"lang-en\">Security Federal Funds</tspan>\n            </text>\n            <text x=\"96\" y=\"119\" text-anchor=\"middle\" fill=\"#8f241e\" font-family=\"JetBrains Mono, monospace\" font-size=\"8.5\">\n              <tspan class=\"lang-cn\">[9月起全国电视投放]</tspan>\n              <tspan class=\"lang-en\">[Aired Since Sept.]</tspan>\n            </text>\n\n            <!-- Right Node 1: MAGA Inc. Super PAC -->\n            <rect x=\"178\" y=\"66\" width=\"132\" height=\"62\" rx=\"3\" fill=\"#f3efe6\" stroke=\"#0f1d2b\" stroke-width=\"1.5\"></rect>\n            <text x=\"244\" y=\"88\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">MAGA Inc.</tspan>\n              <tspan class=\"lang-en\">MAGA Inc.</tspan>\n            </text>\n            <text x=\"244\" y=\"104\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"9.5\">\n              <tspan class=\"lang-cn\">超级政治行动委员会</tspan>\n              <tspan class=\"lang-en\">Presidential Super PAC</tspan>\n            </text>\n            <text x=\"244\" y=\"119\" text-anchor=\"middle\" fill=\"#b85d19\" font-family=\"JetBrains Mono, monospace\" font-size=\"8.5\">\n              <tspan class=\"lang-cn\">[总统上周表态接手]</tspan>\n              <tspan class=\"lang-en\">[Announced Last Week]</tspan>\n            </text>\n\n            <!-- Connectors Down to Content Node -->\n            <line x1=\"96\" y1=\"128\" x2=\"96\" y2=\"168\" stroke=\"#8f241e\" stroke-width=\"1.5\" marker-end=\"url(#arrow-crimson)\"></line>\n            <line x1=\"244\" y1=\"128\" x2=\"244\" y2=\"168\" stroke=\"#0f1d2b\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" marker-end=\"url(#arrow-navy)\"></line>\n\n            <!-- Shared Middle Box: Ad Creation & Content -->\n            <rect x=\"30\" y=\"174\" width=\"280\" height=\"66\" rx=\"3\" fill=\"#faf8f4\" stroke=\"#141413\" stroke-width=\"1.5\"></rect>\n            <text x=\"170\" y=\"196\" text-anchor=\"middle\" fill=\"#b85d19\" font-family=\"JetBrains Mono, monospace\" font-size=\"8.5\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">《华尔街日报》披露 · WSJ REPORTING</tspan>\n              <tspan class=\"lang-en\">WSJ INVESTIGATION · AD CREATION</tspan>\n            </text>\n            <text x=\"170\" y=\"214\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">特朗普总统亲自推动并参与创作</tspan>\n              <tspan class=\"lang-en\">Trump Personally Pushed &amp; Helped Create</tspan>\n            </text>\n            <text x=\"170\" y=\"230\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"9\">\n              <tspan class=\"lang-cn\">主要突出总统本人并宣传本届政府政策</tspan>\n              <tspan class=\"lang-en\">Predominantly features president &amp; administration policies</tspan>\n            </text>\n\n            <!-- Left Branch Down to Judicial Blockade -->\n            <line x1=\"96\" y1=\"240\" x2=\"96\" y2=\"280\" stroke=\"#8f241e\" stroke-width=\"2\" marker-end=\"url(#arrow-crimson)\"></line>\n            <!-- Right Branch Down to Planned Alternative -->\n            <line x1=\"244\" y1=\"240\" x2=\"244\" y2=\"338\" stroke=\"#0f1d2b\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" marker-end=\"url(#arrow-navy)\"></line>\n\n            <!-- Judicial Blockade Badge on Left -->\n            <rect x=\"30\" y=\"286\" width=\"132\" height=\"108\" rx=\"3\" fill=\"#8f241e\"></rect>\n            <text x=\"96\" y=\"308\" text-anchor=\"middle\" fill=\"#faf8f4\" font-family=\"JetBrains Mono, monospace\" font-size=\"9\" font-weight=\"700\">\n              <tspan class=\"lang-cn\">联邦法官罗尚禁令</tspan>\n              <tspan class=\"lang-en\">JUDGE ROCHON ORDER</tspan>\n            </text>\n            <line x1=\"46\" y1=\"316\" x2=\"146\" y2=\"316\" stroke=\"rgba(250,248,244,0.35)\" stroke-width=\"1\"></line>\n            <text x=\"96\" y=\"335\" text-anchor=\"middle\" fill=\"#faf8f4\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"9.5\" font-weight=\"600\">\n              <tspan class=\"lang-cn\">“很可能违反法律”</tspan>\n              <tspan class=\"lang-en\">\"Likely Illegal\"</tspan>\n            </text>\n            <text x=\"96\" y=\"353\" text-anchor=\"middle\" fill=\"#f3efe6\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"8.5\">\n              <tspan class=\"lang-cn\">立即取消任何政府出资</tspan>\n              <tspan class=\"lang-en\">Cancel all taxpayer-funded</tspan>\n            </text>\n            <text x=\"96\" y=\"368\" text-anchor=\"middle\" fill=\"#f3efe6\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"8.5\">\n              <tspan class=\"lang-cn\">播放时段、预订或安排</tspan>\n              <tspan class=\"lang-en\">slots, placements &amp; buys</tspan>\n            </text>\n\n            <!-- Right Bottom Box: Non-Federal Funding -->\n            <rect x=\"178\" y=\"344\" width=\"132\" height=\"50\" rx=\"3\" fill=\"#0f1d2b\"></rect>\n            <text x=\"244\" y=\"366\" text-anchor=\"middle\" fill=\"#faf8f4\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"9.5\" font-weight=\"600\">\n              <tspan class=\"lang-cn\">脱离联邦财政拨款</tspan>\n              <tspan class=\"lang-en\">Non-Federal Campaign</tspan>\n            </text>\n            <text x=\"244\" y=\"382\" text-anchor=\"middle\" fill=\"#e2965c\" font-family=\"JetBrains Mono, monospace\" font-size=\"8.5\">\n              <tspan class=\"lang-cn\">改由竞选资金承担</tspan>\n              <tspan class=\"lang-en\">Super PAC Financing</tspan>\n            </text>\n          </svg>\n        </div>\n        <p class=\"svg-caption\">\n          <span class=\"lang-cn\">注：原告（Common Cause 及阿拉巴马州民主党候选人）指控国土安全部资金被用于未经国会授权的政治宣传。</span>\n          <span class=\"lang-en\">Note: Plaintiffs (Common Cause and an Alabama Democratic candidate) argued DHS funds were used for unauthorized political propaganda.</span>\n        </p>\n      </div>\n\n      <!-- Dossier 2: Verified Judicial Quote Callout (q1) -->\n      <div class=\"dossier-card\">\n        <div class=\"dossier-header\">\n          <span class=\"dossier-title\">\n            <span class=\"lang-cn\">四页裁决书核心禁令</span>\n            <span class=\"lang-en\">Key Injunction Text</span>\n          </span>\n          <span class=\"dossier-tag\">DIRECT QUOTE</span>\n        </div>\n        <blockquote class=\"pull-quote\" data-derive=\"q1\">\n          <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“任何已安排、预订或计划用于播放或传播这些争议广告的时间段、位置或安排”</span><span class=\"lang-en\">“any slot, placement, reservation, or arrangement for the airing or dissemination of the challenged advertisements.”</span></p>\n          <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 3 段直接引述 · Source Block p3</span><span class=\"lang-en\">— Direct Quote (p3), Reported in article text</span></footer>\n        </blockquote>\n      </div>\n\n    </aside>\n  </div>\n\n  <!-- Full-Width Chronology SVG Section -->\n  <section class=\"chronology-banner\">\n    <div class=\"chronology-head\">\n      <h2 class=\"chronology-title\">\n        <span class=\"lang-cn\">事件脉络：从全国电视投放到周日深夜禁令</span>\n        <span class=\"lang-en\">Case Chronology: From National Broadcast to Sunday Night Injunction</span>\n      </h2>\n      <span class=\"chronology-sub\">\n        <span class=\"lang-cn\">时间线与各方立场还原</span>\n        <span class=\"lang-en\">Timeline &amp; Institutional Positions</span>\n      </span>\n    </div>\n\n    <div class=\"svg-wrapper\">\n      <svg viewbox=\"0 0 960 220\" width=\"100%\" role=\"img\" aria-label=\"Timeline of the DHS-funded pro-Trump television advertisements and subsequent federal court injunction\">\n        <!-- Horizontal Spine -->\n        <line x1=\"70\" y1=\"88\" x2=\"890\" y2=\"88\" stroke=\"#141413\" stroke-width=\"2\"></line>\n\n        <!-- Milestone 1: September -->\n        <circle cx=\"130\" cy=\"88\" r=\"8\" fill=\"#b85d19\" stroke=\"#faf8f4\" stroke-width=\"2\"></circle>\n        <text x=\"130\" y=\"54\" text-anchor=\"middle\" fill=\"#b85d19\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">2026年9月</tspan>\n          <tspan class=\"lang-en\">SEPTEMBER</tspan>\n        </text>\n        <text x=\"130\" y=\"122\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">全国电视广告开播</tspan>\n          <tspan class=\"lang-en\">National TV Ads Air</tspan>\n        </text>\n        <text x=\"130\" y=\"144\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">由国土安全部联邦资金支付</tspan>\n          <tspan class=\"lang-en\">Paid by DHS federal funds;</tspan>\n        </text>\n        <text x=\"130\" y=\"162\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">特朗普亲自推动并参与制作</tspan>\n          <tspan class=\"lang-en\">pushed personally by Trump</tspan>\n        </text>\n\n        <!-- Milestone 2: Lawsuit & Super PAC Shift -->\n        <circle cx=\"385\" cy=\"88\" r=\"8\" fill=\"#0f1d2b\" stroke=\"#faf8f4\" stroke-width=\"2\"></circle>\n        <text x=\"385\" y=\"54\" text-anchor=\"middle\" fill=\"#0f1d2b\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">上周 · 诉讼与转向</tspan>\n          <tspan class=\"lang-en\">LAST WEEK</tspan>\n        </text>\n        <text x=\"385\" y=\"122\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">原告起诉与资金改道表态</tspan>\n          <tspan class=\"lang-en\">Lawsuit &amp; Super PAC Shift</tspan>\n        </text>\n        <text x=\"385\" y=\"144\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">Common Cause 等提起诉讼；</tspan>\n          <tspan class=\"lang-en\">Common Cause sues; Trump plans</tspan>\n        </text>\n        <text x=\"385\" y=\"162\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">总统称计划改用 MAGA Inc. 资金</tspan>\n          <tspan class=\"lang-en\">to use MAGA Inc. super PAC funds</tspan>\n        </text>\n\n        <!-- Milestone 3: Weekend DOJ Filing -->\n        <circle cx=\"625\" cy=\"88\" r=\"8\" fill=\"#646059\" stroke=\"#faf8f4\" stroke-width=\"2\"></circle>\n        <text x=\"625\" y=\"54\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">周末法庭文件</tspan>\n          <tspan class=\"lang-en\">WEEKEND FILING</tspan>\n        </text>\n        <text x=\"625\" y=\"122\" text-anchor=\"middle\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">司法部称投放原定周日结束</tspan>\n          <tspan class=\"lang-en\">DOJ Cites Sunday End</tspan>\n        </text>\n        <text x=\"625\" y=\"144\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">司法部文件指广告计划周日收尾；</tspan>\n          <tspan class=\"lang-en\">DOJ states ad buy was slated</tspan>\n        </text>\n        <text x=\"625\" y=\"162\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">白宫未回应置评请求</tspan>\n          <tspan class=\"lang-en\">to end Sunday; WH silent</tspan>\n        </text>\n\n        <!-- Milestone 4: Late Sunday Order -->\n        <circle cx=\"840\" cy=\"88\" r=\"10\" fill=\"#8f241e\" stroke=\"#faf8f4\" stroke-width=\"2.5\"></circle>\n        <text x=\"840\" y=\"54\" text-anchor=\"middle\" fill=\"#8f241e\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">周日晚间裁决</tspan>\n          <tspan class=\"lang-en\">LATE SUNDAY</tspan>\n        </text>\n        <text x=\"840\" y=\"122\" text-anchor=\"middle\" fill=\"#8f241e\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\">\n          <tspan class=\"lang-cn\">罗尚法官下达四页禁令</tspan>\n          <tspan class=\"lang-en\">Judge Rochon Halts Ads</tspan>\n        </text>\n        <text x=\"840\" y=\"144\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">立即适用于周日晚间待播广告；</tspan>\n          <tspan class=\"lang-en\">Applies immediately Sunday night;</tspan>\n        </text>\n        <text x=\"840\" y=\"162\" text-anchor=\"middle\" fill=\"#646059\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10.5\">\n          <tspan class=\"lang-cn\">勒令取消所有预定播放时段</tspan>\n          <tspan class=\"lang-en\">orders all slots canceled</tspan>\n        </text>\n      </svg>\n    </div>\n  </section>\n\n  <footer class=\"article-footer\">\n    <div>\n      <span class=\"lang-cn\">《华尔街日报》深读版 · 档案编号 E1-022 · 版面 A3</span>\n      <span class=\"lang-en\">The Wall Street Journal · Archive Ref E1-022 · Page A3</span>\n    </div>\n    <div>\n      <span class=\"lang-cn\">双语权威精校 · 点击右上角切换语言</span>\n      <span class=\"lang-en\">Bilingual Edition · Use Top Toggle to Switch Language</span>\n    </div>\n  </footer>\n</main>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-022",
+        "content_digest": "194f5f671e829e4bcd9bd0a076bafca322e641b778e8ab7a1ec4fb3aa5e80d76",
+        "exact_match_cn": "11/11",
+        "exact_match_en": "11/11",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 11,
+        "observed_narrative_elements": 13,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 1,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p3"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "由纳税人资助的",
+              "很可能违反法律"
+            ],
+            "applied_en": [
+              "taxpayer-funded",
+              "likely illegal"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "珍妮弗·罗尚",
+              "四页长的命令"
+            ],
+            "applied_en": [
+              "Jennifer Rochon",
+              "four-page order"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "拜登政府任命"
+            ],
+            "applied_en": [
+              "Biden appointee"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "原定于周日结束"
+            ],
+            "applied_en": [
+              "slated to end on Sunday"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "国土安全部的联邦资金",
+              "九月份"
+            ],
+            "applied_en": [
+              "federal funds from the Department of Homeland Security",
+              "September"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "亲自推动了这些广告的制作"
+            ],
+            "applied_en": [
+              "personally pushed for the ads"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "Common Cause",
+              "阿拉巴马州"
+            ],
+            "applied_en": [
+              "Common Cause",
+              "Alabama"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10.s1",
+            "applied_cn": [
+              "未经国会授权的目的",
+              "政治宣传"
+            ],
+            "applied_en": [
+              "purposes not authorized by Congress",
+              "political propaganda"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "MAGA Inc."
+            ],
+            "applied_en": [
+              "MAGA Inc."
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 3,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "被禁路径：联邦公共资金",
+              "BARRED: PUBLIC FUNDS",
+              "替代路径：政治委员会",
+              "PIVOT: SUPER PAC",
+              "国土安全部 (DHS)",
+              "Dept. of Homeland",
+              "纳税人联邦拨款资金",
+              "Security Federal Funds",
+              "[9月起全国电视投放]",
+              "[Aired Since Sept.]",
+              "MAGA Inc.",
+              "MAGA Inc.",
+              "超级政治行动委员会",
+              "Presidential Super PAC",
+              "[总统上周表态接手]",
+              "[Announced Last Week]",
+              "《华尔街日报》披露 · WSJ REPORTING",
+              "WSJ INVESTIGATION · AD CREATION",
+              "特朗普总统亲自推动并参与创作",
+              "Trump Personally Pushed & Helped Create",
+              "主要突出总统本人并宣传本届政府政策",
+              "Predominantly features president & administration policies",
+              "联邦法官罗尚禁令",
+              "JUDGE ROCHON ORDER",
+              "“很可能违反法律”",
+              "\"Likely Illegal\"",
+              "立即取消任何政府出资",
+              "Cancel all taxpayer-funded",
+              "播放时段、预订或安排",
+              "slots, placements & buys",
+              "脱离联邦财政拨款",
+              "Non-Federal Campaign",
+              "改由竞选资金承担",
+              "Super PAC Financing"
+            ],
+            "numbers_found": [
+              "9"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "",
+            "text_labels": [
+              "2026年9月",
+              "SEPTEMBER",
+              "全国电视广告开播",
+              "National TV Ads Air",
+              "由国土安全部联邦资金支付",
+              "Paid by DHS federal funds;",
+              "特朗普亲自推动并参与制作",
+              "pushed personally by Trump",
+              "上周 · 诉讼与转向",
+              "LAST WEEK",
+              "原告起诉与资金改道表态",
+              "Lawsuit & Super PAC Shift",
+              "Common Cause 等提起诉讼；",
+              "Common Cause sues; Trump plans",
+              "总统称计划改用 MAGA Inc. 资金",
+              "to use MAGA Inc. super PAC funds",
+              "周末法庭文件",
+              "WEEKEND FILING",
+              "司法部称投放原定周日结束",
+              "DOJ Cites Sunday End",
+              "司法部文件指广告计划周日收尾；",
+              "DOJ states ad buy was slated",
+              "白宫未回应置评请求",
+              "to end Sunday; WH silent",
+              "周日晚间裁决",
+              "LATE SUNDAY",
+              "罗尚法官下达四页禁令",
+              "Judge Rochon Halts Ads",
+              "立即适用于周日晚间待播广告；",
+              "Applies immediately Sunday night;",
+              "勒令取消所有预定播放时段",
+              "orders all slots canceled"
+            ],
+            "numbers_found": [
+              "2026",
+              "9"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "事件脉络：从全国电视投放到周日深夜禁令",
+            "en": "Case Chronology: From National Broadcast to Sunday Night Injunction",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

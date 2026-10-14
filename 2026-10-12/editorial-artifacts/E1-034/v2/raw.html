@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>航空旅行被推向战争前线 · Air Travel Thrust Into Front Lines of War — WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #eae3d5;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c1b0;
+    --accent: #b85d19;
+    --crimson: #9e2a2b;
+    --amber: #b45309;
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #294159;
+    --teal-corridor: #1e6b65;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-family: 'Noto Serif SC', 'Lora', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(20, 20, 19, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* Reading Progress Bar */
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--crimson), var(--accent));
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 1.5rem;
+  }
+
+  .masthead-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .wsj-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .masthead-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--crimson);
+    background: rgba(158, 42, 43, 0.09);
+    border: 1px solid rgba(158, 42, 43, 0.25);
+    padding: 0.18rem 0.5rem;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper-card);
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 0.32rem 0.75rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Section */
+  .hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .hero-kicker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .kicker-label {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .kicker-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--crimson);
+    box-shadow: 0 0 0 4px rgba(158, 42, 43, 0.18);
+  }
+
+  .dispatch-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-weight: 800;
+    font-size: clamp(2.15rem, 4.4vw, 3.65rem);
+    line-height: 1.16;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.15rem;
+    max-width: 960px;
+  }
+
+  html[lang="zh-CN"] .hero-title {
+    line-height: 1.24;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-dek {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(1.12rem, 2vw, 1.42rem);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 1.75rem;
+    font-weight: 400;
+  }
+
+  .byline-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .byline-author strong {
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  /* Telemetry Strip */
+  .telemetry-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+    margin-top: 2rem;
+  }
+
+  .telemetry-cell {
+    background: var(--paper-card);
+    padding: 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .telemetry-tag {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .telemetry-num {
+    font-family: 'Playfair Display', 'JetBrains Mono', serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .telemetry-num.crimson { color: var(--crimson); }
+  .telemetry-num.amber { color: var(--amber); }
+
+  .telemetry-desc {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--body);
+  }
+
+  /* Context Dossier Banner */
+  .dossier-wrap {
+    max-width: 1180px;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+  }
+
+  .context-dossier {
+    background: var(--paper-card);
+    border-left: 4px solid var(--navy-bg);
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .dossier-badge {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--navy-bg);
+    padding-top: 0.15rem;
+  }
+
+  .dossier-badge span {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 0.25rem;
+  }
+
+  .dossier-text {
+    font-family: 'Noto Sans SC', 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.72;
+    color: var(--body);
+  }
+
+  /* Main Editorial Grid */
+  .editorial-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 4rem;
+  }
+
+  .act-section {
+    margin-bottom: 3.75rem;
+  }
+
+  .act-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .act-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--crimson);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .act-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .asymmetric-rail {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(260px, 380px);
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Prose Styling */
+  .prose-col {
+    max-width: 680px;
+  }
+
+  .prose-p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--body);
+    margin-bottom: 1.55rem;
+  }
+
+  html[lang="en"] .prose-p {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.12rem;
+    line-height: 1.82;
+  }
+
+  /* Lead paragraph treatment without ::first-letter on Chinese */
+  .prose-p.lead-para {
+    font-size: 1.24rem;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 600;
+    padding-left: 1.15rem;
+    border-left: 3px solid var(--crimson);
+    margin-bottom: 1.85rem;
+  }
+
+  /* Inline Highlight */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);
+    color: inherit;
+    padding: 0 0.12em;
+    font-weight: 600;
+  }
+
+  /* Sidebar Dossier & Callouts */
+  .rail-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  .forensic-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--crimson);
+    padding: 1.35rem;
+  }
+
+  .forensic-card.amber-top {
+    border-top-color: var(--amber);
+  }
+
+  .forensic-header {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .forensic-card.amber-top .forensic-header {
+    color: var(--amber);
+  }
+
+  .forensic-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .incident-log {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.83rem;
+    line-height: 1.5;
+  }
+
+  .incident-log li {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--line-strong);
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 0.65rem;
+  }
+
+  .incident-log li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .log-key {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .log-val {
+    color: var(--ink);
+  }
+
+  /* Sovereign Advisory Matrix */
+  .advisory-tier {
+    margin-top: 0.65rem;
+    padding: 0.75rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+
+  .tier-badge {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: inline-block;
+    padding: 0.12rem 0.45rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .tier-badge.avoid {
+    background: rgba(180, 83, 9, 0.14);
+    color: var(--amber);
+  }
+
+  .tier-badge.overflight {
+    background: rgba(158, 42, 43, 0.14);
+    color: var(--crimson);
+  }
+
+  .tier-countries {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .tier-desc {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Derived Pull Quote */
+  .pull-quote {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.5rem 1.4rem;
+    border-left: 4px solid var(--accent);
+    position: relative;
+  }
+
+  .pull-quote::before {
+    content: "“";
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1;
+    color: rgba(250, 248, 244, 0.16);
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+
+  .quote-text {
+    font-family: 'Noto Serif SC', 'Playfair Display', serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+    color: #fff;
+  }
+
+  .quote-attrib {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.74rem;
+    color: #b7c6d6;
+    letter-spacing: 0.04em;
+  }
+
+  /* Theater Ledger Matrix (Act II) */
+  .theater-ledger {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .ledger-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ledger-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .ledger-sub {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .ledger-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .ledger-col {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .ledger-date {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.71rem;
+    font-weight: 700;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .ledger-hub {
+    font-family: 'Noto Serif SC', 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .ledger-detail {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--body);
+  }
+
+  /* Full-Bleed Strategic SVG Map Container */
+  .map-showcase {
+    background: var(--navy-bg);
+    color: var(--paper);
+    border: 1px solid var(--navy-line);
+    padding: 2rem 1.75rem;
+    margin: 2.5rem 0;
+    box-shadow: 0 14px 34px rgba(15, 29, 43, 0.14);
+  }
+
+  .map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.35rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--navy-line);
+  }
+
+  .map-kicker {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f59e0b;
+    margin-bottom: 0.35rem;
+  }
+
+  .map-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.35rem;
+  }
+
+  .map-subtitle {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.86rem;
+    color: #b4c4d4;
+    max-width: 680px;
+    line-height: 1.5;
+  }
+
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.76rem;
+    color: #cbd5e1;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .legend-swatch {
+    width: 18px;
+    height: 3px;
+    display: inline-block;
+  }
+
+  .svg-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: #0b1622;
+    border: 1px solid var(--navy-line);
+    border-radius: 2px;
+  }
+
+  .svg-wrapper svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .map-footnotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.35rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid var(--navy-line);
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+  }
+
+  .map-fn-item strong {
+    display: block;
+    color: #fff;
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.74rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+  }
+
+  /* Carrier Routing Comparison Cards (Act III) */
+  .carrier-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .carrier-box {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.25rem;
+  }
+
+  .carrier-name {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .carrier-route {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+  }
+
+  .carrier-shift {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.83rem;
+    line-height: 1.55;
+    color: var(--body);
+  }
+
+  /* Footer */
+  .ed-footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 920px) {
+    .asymmetric-rail {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .rail-aside {
+      position: static;
+    }
+    .telemetry-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ledger-grid,
+    .map-footnotes,
+    .carrier-cards {
+      grid-template-columns: 1fr;
+    }
+    .context-dossier {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .masthead {
+      padding: 0.6rem 1rem;
+    }
+    .hero {
+      padding: 2.25rem 1rem 1.75rem;
+    }
+    .dossier-wrap,
+    .editorial-container,
+    .ed-footer {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .telemetry-strip {
+      grid-template-columns: 1fr;
+    }
+    .map-showcase {
+      padding: 1.25rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-group">
+      <span class="wsj-logo">The Wall Street Journal</span>
+      <span class="masthead-tag">
+        <span class="lang-cn">世界新闻 · 航空地缘档案 A7</span>
+        <span class="lang-en">WORLD NEWS · AVIATION BRIEFING A7</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Switcher">
+      <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-kicker-row">
+    <div class="kicker-label">
+      <span class="kicker-dot"></span>
+      <span class="lang-cn">全球空域安全危机 · 深度调查</span>
+      <span class="lang-en">GLOBAL AIRSPACE CRISIS · SPECIAL DISPATCH</span>
+    </div>
+    <div class="dispatch-code">E1-034 · WORLD NEWS · PAGE A7</div>
+  </div>
+
+  <h1 class="hero-title" data-ref="title"><span class="lang-cn">航空旅行被推向战争前线。</span><span class="lang-en">Air Travel Thrust Into Front Lines of War</span></h1>
+  <p class="hero-dek" data-ref="dek"><span class="lang-cn">胡塞武装袭击沙特机场后，各国政府提醒谨慎飞往沙特阿拉伯。</span><span class="lang-en">Governments caution on flying to Saudi Arabia after Houthi airport strike</span></p>
+
+  <div class="byline-bar">
+    <div class="byline-author">
+      <span class="lang-cn">作者：<strong>BENJAMIN KATZ</strong> · 华尔街日报全球航空报道</span>
+      <span class="lang-en">BY <strong>BENJAMIN KATZ</strong> · WSJ GLOBAL AVIATION DISPATCH</span>
+    </div>
+    <div class="byline-date">
+      <span class="lang-cn">2026年10月12日</span>
+      <span class="lang-en">October 12, 2026</span>
+    </div>
+  </div>
+
+  <!-- Key Crisis Telemetry Strip -->
+  <div class="telemetry-strip">
+    <div class="telemetry-cell">
+      <span class="telemetry-tag">
+        <span class="lang-cn">利雅得机场袭击伤亡</span>
+        <span class="lang-en">RIYADH AIRPORT CASUALTIES</span>
+      </span>
+      <div class="telemetry-num crimson">12+ / 300+</div>
+      <div class="telemetry-desc">
+        <span class="lang-cn">至少12人死亡、300多人受伤，十多年来对沙特伤亡最惨重袭击</span>
+        <span class="lang-en">At least 12 killed and 300+ injured in deadliest strike on Saudi Arabia in over a decade</span>
+      </div>
+    </div>
+    <div class="telemetry-cell">
+      <span class="telemetry-tag">
+        <span class="lang-cn">即时航班中断规模</span>
+        <span class="lang-en">IMMEDIATE FLIGHT DISRUPTION</span>
+      </span>
+      <div class="telemetry-num amber">1,000+</div>
+      <div class="telemetry-desc">
+        <span class="lang-cn">数十架客机紧急备降他处，逾1,000个商业航班被迫取消</span>
+        <span class="lang-en">Scores of aircraft diverted midair and more than 1,000 flights canceled</span>
+      </div>
+    </div>
+    <div class="telemetry-cell">
+      <span class="telemetry-tag">
+        <span class="lang-cn">主权国家空域警告</span>
+        <span class="lang-en">SOVEREIGN AIRSPACE WARNINGS</span>
+      </span>
+      <div class="telemetry-num">6 <span style="font-size:1.1rem;font-weight:600;"><span class="lang-cn">国</span><span class="lang-en">Nations</span></span></div>
+      <div class="telemetry-desc">
+        <span class="lang-cn">美英澳建议避开利雅得机场；法加德警告飞越沙特已不再安全</span>
+        <span class="lang-en">U.S., U.K., Australia warn on Riyadh airport; France, Canada, Germany warn on Saudi overflights</span>
+      </div>
+    </div>
+    <div class="telemetry-cell">
+      <span class="telemetry-tag">
+        <span class="lang-cn">航油成本飙升压力</span>
+        <span class="lang-en">JET FUEL COST SURGE</span>
+      </span>
+      <div class="telemetry-num amber">~2×</div>
+      <div class="telemetry-desc">
+        <span class="lang-cn">喷气燃料价格约为去年同期的两倍，绕飞令航司承受重压</span>
+        <span class="lang-en">Jet fuel trades at roughly twice last year's price as detours lengthen flight paths</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reporter's Context Dossier -->
+<div class="dossier-wrap">
+  <aside class="context-dossier" aria-label="Background Context">
+    <div class="dossier-badge">
+      <span class="lang-cn">记者背景简报</span>
+      <span class="lang-en">REPORTER'S DOSSIER</span>
+      <span>CONTEXT · 2026</span>
+    </div>
+    <div class="dossier-text" data-ref="ctx1"><span class="lang-cn">背景：2026年2月美国与以色列对伊朗开战后，中东多国机场接连成为导弹和无人机袭击的目标，民用航空被卷入冲突前线。沙特空域曾是欧亚之间仅有的两条主要空中走廊之一、少数被视为安全的通道，如今各国相继发布警告，航空公司被迫改道经格鲁吉亚—阿塞拜疆—土库曼斯坦的狭窄空域。联合国下属的国际民用航空组织（ICAO）上月罕见发声，呼吁成员国避免将民航拖入敌对行动。</span><span class="lang-en">背景：2026年2月美国与以色列对伊朗开战后，中东多国机场接连成为导弹和无人机袭击的目标，民用航空被卷入冲突前线。沙特空域曾是欧亚之间仅有的两条主要空中走廊之一、少数被视为安全的通道，如今各国相继发布警告，航空公司被迫改道经格鲁吉亚—阿塞拜疆—土库曼斯坦的狭窄空域。联合国下属的国际民用航空组织（ICAO）上月罕见发声，呼吁成员国避免将民航拖入敌对行动。</span></div>
+  </aside>
+</div>
+
+<main class="editorial-container">
+
+  <!-- ACT I: RIYADH STRIKE & SOVEREIGN WARNINGS (p1 .. p5) -->
+  <section class="act-section" id="act-1">
+    <div class="act-header">
+      <span class="act-index">ACT I · 01—05</span>
+      <h2 class="act-title">
+        <span class="lang-cn">利雅得惊魂周末：民航枢纽沦为打击前线</span>
+        <span class="lang-en">Flashpoint Riyadh: Civilian Hubs on the Firing Line</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-rail">
+      <div class="prose-col">
+        <p class="prose-p lead-para" data-ref="p1" data-hl="导弹和无人机袭击的明确目标 | deliberate target of missile and drone attacks"><span class="lang-cn">全球范围内的冲突不断升级，商业航空旅行也因此被卷入冲突的最前线，机场、飞机和空域都成为了<mark class="ed-hl">导弹和无人机袭击的明确目标</mark>，袭击规模前所未有。</span><span class="lang-en">Commercial air travel has been dragged into the front lines of escalating conflicts across the globe, with airports, planes and airspace becoming the <mark class="ed-hl">deliberate target of missile and drone attacks</mark> on a scale not seen before.</span></p>
+        <p class="prose-p" data-ref="p2" data-hl="二月份 | February | 拦截系统碎片坠落 | falling debris from interceptor systems"><span class="lang-cn">自美国和以色列于<mark class="ed-hl">二月份</mark>开始对伊朗发动战争以来，中东地区的各大机场多次遭到袭击。停放在机场的飞机遭到导弹袭击或<mark class="ed-hl">拦截系统碎片坠落</mark>，导致机组人员和乘客伤亡。</span><span class="lang-en">Since the U.S. and Israel started the Iran war in <mark class="ed-hl">February</mark>, major airports across the Middle East have been repeatedly targeted. Parked aircraft have been hit by missiles or <mark class="ed-hl">falling debris from interceptor systems</mark>, killing crew members and passengers.</span></p>
+        <p class="prose-p" data-ref="p3" data-hl="至少12人死亡，300多人受伤 | killed at least 12 people and injured more than 300 others | 取消了1000多个航班 | cancel more than 1,000 other flights | 4号航站楼 | Terminal 4"><span class="lang-cn">威胁在周六达到了顶峰，也门胡塞武装对利雅得国王哈立德国际机场发动了导弹袭击，造成<mark class="ed-hl">至少12人死亡，300多人受伤</mark>。此次袭击是十多年来对沙特阿拉伯造成的伤亡最惨重的袭击，导致航空公司紧急将数十架飞机改降他处，另<mark class="ed-hl">取消了1000多个航班</mark>。当局报告称，周日，关闭的机场再次遭到袭击，一枚抛射物在<mark class="ed-hl">4号航站楼</mark>引发火灾，造成人员受伤。</span><span class="lang-en">The threat culminated Saturday in a Houthi missile strike at Riyadh's King Khalid International Airport that <mark class="ed-hl">killed at least 12 people and injured more than 300 others</mark>. The strike, the deadliest attack on Saudi Arabia in more than a decade, left airlines scrambling to divert scores of aircraft and <mark class="ed-hl">cancel more than 1,000 other flights</mark>. Authorities reported new attacks on the closed airport Sunday, saying a projectile caused a fire in <mark class="ed-hl">Terminal 4</mark> and led to injuries.</span></p>
+        <p class="prose-p" data-ref="p4" data-hl="美国、英国和澳大利亚 | U.S., U.K. and Australia | 法国、加拿大和德国 | France, Canada and Germany"><span class="lang-cn">包括<mark class="ed-hl">美国、英国和澳大利亚</mark>在内的各国政府都建议公民避免前往利雅得机场。<mark class="ed-hl">法国、加拿大和德国</mark>警告航空公司，飞越沙特阿拉伯全境或大部分区域已不再安全。</span><span class="lang-en">Governments including the <mark class="ed-hl">U.S., U.K. and Australia</mark> are telling citizens to avoid the Riyadh airport following the attack. <mark class="ed-hl">France, Canada and Germany</mark> are warning airlines that flying over all or large parts of Saudi Arabia is no longer safe.</span></p>
+        <p class="prose-p" data-ref="p5" data-hl="Osprey Flight Solutions | 马特·博里 | Matt Borie"><span class="lang-cn">专家和安全倡导者表示，旅客不应将航空公司决定继续飞行视为航线安全的保证。“这一切取决于各国如何管理本国空域，也取决于航空公司自己的风险评估，”航空安全公司 <mark class="ed-hl">Osprey Flight Solutions</mark>（航空安全机构）首席情报官<mark class="ed-hl">马特·博里</mark>说。“航空公司指望各国采取正确的措施来保障空域安全。”</span><span class="lang-en">Experts and safety advocates say travelers shouldn't take an airline's decision to fly as a guarantee of a route's safety. "All of this is up to the individual country managing its airspace, and the airline to conduct its own risk assessment," said <mark class="ed-hl">Matt Borie</mark>, chief intelligence officer at aviation security specialist <mark class="ed-hl">Osprey Flight Solutions</mark>. "They're counting on the country to have done the right things to keep the airspace safe," he said.</span></p>
+      </div>
+
+      <aside class="rail-aside">
+        <!-- Incident Dossier Card -->
+        <div class="forensic-card">
+          <div class="forensic-header">
+            <span>INCIDENT DOSSIER · RUH</span>
+            <span>OCT 2026</span>
+          </div>
+          <h3 class="forensic-title">
+            <span class="lang-cn">利雅得国王哈立德国际机场连续遇袭实录</span>
+            <span class="lang-en">King Khalid International Airport Strike Sequence</span>
+          </h3>
+          <ul class="incident-log">
+            <li>
+              <span class="log-key"><span class="lang-cn">周六袭击</span><span class="lang-en">SATURDAY</span></span>
+              <span class="log-val">
+                <span class="lang-cn">也门胡塞武装发射导弹击中利雅得机场，至少12死、逾300伤。</span>
+                <span class="lang-en">Houthi missile hits Riyadh airport; at least 12 killed, 300+ injured.</span>
+              </span>
+            </li>
+            <li>
+              <span class="log-key"><span class="lang-cn">航班瘫痪</span><span class="lang-en">IMPACT</span></span>
+              <span class="log-val">
+                <span class="lang-cn">数十架客机紧急改降他处，超过1,000架次商业航班被取消。</span>
+                <span class="lang-en">Scores of aircraft diverted; more than 1,000 commercial flights canceled.</span>
+              </span>
+            </li>
+            <li>
+              <span class="log-key"><span class="lang-cn">周日续袭</span><span class="lang-en">SUNDAY</span></span>
+              <span class="log-val">
+                <span class="lang-cn">已关闭的机场再遭袭击，抛射物在4号航站楼引发火灾并造成人员受伤。</span>
+                <span class="lang-en">Closed airport hit again; projectile sparks Terminal 4 fire and causes injuries.</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sovereign Advisories Breakdown -->
+        <div class="forensic-card amber-top">
+          <div class="forensic-header">
+            <span>SOVEREIGN ADVISORIES</span>
+            <span>TIERED ALERT</span>
+          </div>
+          <h3 class="forensic-title">
+            <span class="lang-cn">西方六国分歧与升级的航空安全指令</span>
+            <span class="lang-en">Divergent Government Aviation Warnings</span>
+          </h3>
+          <div class="advisory-tier">
+            <span class="tier-badge avoid">
+              <span class="lang-cn">公民出行警告 · 避开机场</span>
+              <span class="lang-en">CITIZEN ADVISORY · AVOID AIRPORT</span>
+            </span>
+            <div class="tier-countries">
+              <span class="lang-cn">美国 · 英国 · 澳大利亚</span>
+              <span class="lang-en">United States · United Kingdom · Australia</span>
+            </div>
+            <div class="tier-desc">
+              <span class="lang-cn">建议本国公民在袭击发生后避免前往利雅得机场。</span>
+              <span class="lang-en">Advising citizens to avoid Riyadh's airport following the weekend strike.</span>
+            </div>
+          </div>
+          <div class="advisory-tier">
+            <span class="tier-badge overflight">
+              <span class="lang-cn">航司飞越警告 · 空域不安全</span>
+              <span class="lang-en">CARRIER WARNING · OVERFLIGHT RISK</span>
+            </span>
+            <div class="tier-countries">
+              <span class="lang-cn">法国 · 加拿大 · 德国</span>
+              <span class="lang-en">France · Canada · Germany</span>
+            </div>
+            <div class="tier-desc">
+              <span class="lang-cn">警告航空公司飞越沙特阿拉伯全境或大部分区域已不再安全。</span>
+              <span class="lang-en">Warning airlines that flying over all or large parts of Saudi Arabia is no longer safe.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Pull Quote q1 -->
+        <blockquote class="pull-quote" data-derive="q1">
+          <p class="quote-text" data-field="quote"><span class="lang-cn">“航空公司指望各国采取正确的措施来保障空域安全。”</span><span class="lang-en">“They're counting on the country to have done the right things to keep the airspace safe,”</span></p>
+          <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 5 段直接引述</span><span class="lang-en">— Direct Quote (p5)</span></footer>
+        </blockquote>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACT II: REGIONAL AIRPORT TARGETING & ICAO REBUKE (p6 .. p8) -->
+  <section class="act-section" id="act-2">
+    <div class="act-header">
+      <span class="act-index">ACT II · 06—08</span>
+      <h2 class="act-title">
+        <span class="lang-cn">从波斯湾到黎凡特：中东机场基础设施全面受创</span>
+        <span class="lang-en">From the Gulf to the Levant: Aviation Infrastructure Under Fire</span>
+      </h2>
+    </div>
+
+    <div class="prose-col">
+      <p class="prose-p" data-ref="p6" data-hl="迪拜、卡塔尔、巴林、科威特 | Dubai, Qatar, Bahrain, Kuwait | 燃料储罐 | fuel tanks"><span class="lang-cn">自二月底以来，伊朗炸毁了<mark class="ed-hl">迪拜、卡塔尔、巴林、科威特</mark>等地主要机场的<mark class="ed-hl">燃料储罐</mark>，并损坏了停放在机场的飞机、跑道和空中交通管制基础设施。</span><span class="lang-en">Since late February, Iran has blown up <mark class="ed-hl">fuel tanks</mark> and damaged parked aircraft, runways and air-traffic control infrastructure across major airports in <mark class="ed-hl">Dubai, Qatar, Bahrain, Kuwait</mark> and elsewhere.</span></p>
+      <p class="prose-p" data-ref="p7" data-hl="贝鲁特机场 | Beirut Airport | 也门萨那机场 | Yemen's San'a Airport"><span class="lang-cn">与此同时，以色列的打击命中了<mark class="ed-hl">贝鲁特机场</mark>的目标，而沙特阿拉伯于7月轰炸了<mark class="ed-hl">也门萨那机场</mark>，以阻止一架载有胡塞武装代表团的飞机降落。</span><span class="lang-en">Israeli strikes have meanwhile hit targets at <mark class="ed-hl">Beirut Airport</mark>, while Saudi Arabia bombed <mark class="ed-hl">Yemen's San'a Airport</mark> in July to prevent a plane carrying a Houthi delegation from landing.</span></p>
+      <p class="prose-p" data-ref="p8" data-hl="国际民用航空组织 | International Civil Aviation Organization"><span class="lang-cn">对民用飞机的威胁日益增加，促使<mark class="ed-hl">国际民用航空组织</mark>罕见地发出了谴责，该组织是联合国下属机构，负责管理全球航空旅行，并于上月重申呼吁成员国采取措施，防止航空业被卷入持续的敌对行动。</span><span class="lang-en">The increasing threat to civilian aircraft has prompted rare rebukes from the <mark class="ed-hl">International Civil Aviation Organization</mark>, the United Nations body that governs global air travel, which last month reiterated a call for member states to prevent aviation from being dragged into ongoing hostilities.</span></p>
+    </div>
+
+    <!-- Multi-Theater Strike Ledger -->
+    <div class="theater-ledger">
+      <div class="ledger-head">
+        <div class="ledger-title">
+          <span class="lang-cn">2026年2月以来中东民航基础设施受袭档案</span>
+          <span class="lang-en">Documented Strikes on Middle East Civil Aviation Infrastructure Since Feb 2026</span>
+        </div>
+        <div class="ledger-sub">SOURCE: WSJ REPORTING · ICAO BRIEFINGS</div>
+      </div>
+      <div class="ledger-grid">
+        <div class="ledger-col">
+          <span class="ledger-date"><span class="lang-cn">2026年2月底以来 · 伊朗打击</span><span class="lang-en">SINCE LATE FEB · IRANIAN STRIKES</span></span>
+          <div class="ledger-hub">
+            <span class="lang-cn">迪拜 · 卡塔尔 · 巴林 · 科威特</span>
+            <span class="lang-en">Dubai · Qatar · Bahrain · Kuwait</span>
+          </div>
+          <p class="ledger-detail">
+            <span class="lang-cn">炸毁主要机场的燃料储罐，并损坏停放飞机、跑道及空中交通管制基础设施。</span>
+            <span class="lang-en">Fuel tanks blown up; parked aircraft, runways and air-traffic control infrastructure damaged across major Gulf hubs.</span>
+          </p>
+        </div>
+        <div class="ledger-col">
+          <span class="ledger-date"><span class="lang-cn">2026年7月及近期 · 以色列与沙特行动</span><span class="lang-en">JULY &amp; ONGOING · ISRAEL &amp; SAUDI ACTIONS</span></span>
+          <div class="ledger-hub">
+            <span class="lang-cn">黎巴嫩贝鲁特机场 · 也门萨那机场</span>
+            <span class="lang-en">Beirut Airport · San'a Airport (Yemen)</span>
+          </div>
+          <p class="ledger-detail">
+            <span class="lang-cn">以色列打击命中贝鲁特机场目标；沙特7月轰炸萨那机场以阻止胡塞武装代表团专机降落。</span>
+            <span class="lang-en">Israeli strikes hit targets at Beirut Airport; Saudi Arabia bombed San'a Airport in July to block a Houthi delegation plane from landing.</span>
+          </p>
+        </div>
+        <div class="ledger-col">
+          <span class="ledger-date"><span class="lang-cn">2026年9月—10月 · 联合国罕见谴责与利雅得袭击</span><span class="lang-en">SEPT–OCT · ICAO REBUKE &amp; RIYADH STRIKE</span></span>
+          <div class="ledger-hub">
+            <span class="lang-cn">国际民航组织（ICAO） · 利雅得机场</span>
+            <span class="lang-en">ICAO (UN) · Riyadh King Khalid Airport</span>
+          </div>
+          <p class="ledger-detail">
+            <span class="lang-cn">ICAO上月重申呼吁防止民航卷入敌对行动；周六至周日胡塞武装接连袭击利雅得机场。</span>
+            <span class="lang-en">ICAO issued rare rebukes last month urging states to protect civil aviation; Houthi strikes hit Riyadh on Saturday and Sunday.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT III: EURASIA CORRIDOR COMPRESSION (p9 .. p11) -->
+  <section class="act-section" id="act-3">
+    <div class="act-header">
+      <span class="act-index">ACT III · 09—11</span>
+      <h2 class="act-title">
+        <span class="lang-cn">欧亚空中走廊的窒息：从乌克兰关闭到里海“一线天”</span>
+        <span class="lang-en">The Strangled Eurasian Sky: From Ukraine to the Central Asian Bottleneck</span>
+      </h2>
+    </div>
+
+    <!-- Bespoke SVG Strategic Airspace Corridor Diagram -->
+    <div class="map-showcase">
+      <div class="map-header">
+        <div>
+          <div class="map-kicker">STRATEGIC FLIGHT CORRIDOR ANALYSIS · 2022–2026</div>
+          <h3 class="map-title">
+            <span class="lang-cn">连接欧洲与亚洲的商业航线如何被战争挤压至狭窄通道</span>
+            <span class="lang-en">How Expanding Wars Squeezed Europe–Asia Commercial Flight Paths</span>
+          </h3>
+          <p class="map-subtitle">
+            <span class="lang-cn">随着俄罗斯、乌克兰、伊拉克空域相继关闭及沙特空域遭遇导弹威胁，航空公司被迫挤入经由格鲁吉亚、阿塞拜疆与土库曼斯坦的狭窄中亚走廊，或冒险贴近叙利亚大马士革边缘飞行。</span>
+            <span class="lang-en">With Russian, Ukrainian and Iraqi skies closed and Saudi airspace under missile threat, carriers are funneling through a narrow Georgia–Azerbaijan–Turkmenistan corridor or skirting near Damascus.</span>
+          </p>
+        </div>
+        <div class="map-legend">
+          <span class="legend-item">
+            <span class="legend-swatch" style="background:#ef4444;"></span>
+            <span class="lang-cn">禁飞/战争关闭区</span><span class="lang-en">Closed / War Zone</span>
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch" style="background:#2dd4bf;"></span>
+            <span class="lang-cn">中亚狭窄走廊（维珍航空新航线）</span><span class="lang-en">Central Asia Sliver (Virgin Atlantic)</span>
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch" style="background:#f59e0b;"></span>
+            <span class="lang-cn">沙特-伊拉克边境调整线（印航/土航）</span><span class="lang-en">Saudi–Iraq Border Shift (Air India / Turkish)</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="svg-wrapper">
+        <svg viewBox="0 0 920 470" width="100%" role="img" aria-label="Eurasia Airspace Corridor Compression Map">
+          <defs>
+            <pattern id="hazardHatch" width="12" height="12" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="12" stroke="#ef4444" stroke-width="2" stroke-opacity="0.24" />
+            </pattern>
+            <pattern id="amberHatch" width="10" height="10" patternTransform="rotate(-45 0 0)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="10" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.22" />
+            </pattern>
+          </defs>
+
+          <!-- Background Coordinate Grid -->
+          <g stroke="#1d3247" stroke-width="1">
+            <line x1="40" y1="80" x2="880" y2="80" />
+            <line x1="40" y1="170" x2="880" y2="170" />
+            <line x1="40" y1="260" x2="880" y2="260" />
+            <line x1="40" y1="350" x2="880" y2="350" />
+            <line x1="180" y1="40" x2="180" y2="430" />
+            <line x1="360" y1="40" x2="360" y2="430" />
+            <line x1="540" y1="40" x2="540" y2="430" />
+            <line x1="720" y1="40" x2="720" y2="430" />
+          </g>
+
+          <!-- Zone 1: Ukraine & Russia Closed Airspace (Early 2022) -->
+          <polygon points="240,42 770,42 750,152 460,152 330,138 240,115" fill="url(#hazardHatch)" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,4" />
+          <text x="505" y="84" fill="#fca5a5" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="12" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">乌克兰与俄罗斯空域关闭（2022年初起）</tspan>
+            <tspan class="lang-en">UKRAINE &amp; RUSSIA SKIES CLOSED (SINCE EARLY 2022)</tspan>
+          </text>
+          <text x="505" y="104" fill="#94a3b8" font-family="Inter, Noto Sans SC, sans-serif" font-size="11" text-anchor="middle">
+            <tspan class="lang-cn">莫斯科禁止欧美等航空公司使用其空域</tspan>
+            <tspan class="lang-en">Moscow bans European, U.S. and other carriers</tspan>
+          </text>
+
+          <!-- Zone 2: Iraq & Iran War Closure (Feb 2026) -->
+          <polygon points="415,215 645,198 675,305 455,295" fill="url(#hazardHatch)" stroke="#ef4444" stroke-width="1.5" />
+          <text x="548" y="246" fill="#fca5a5" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="11.5" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">伊拉克走廊关闭 · 伊朗战争（2026年2月起）</tspan>
+            <tspan class="lang-en">IRAQ CORRIDOR CLOSED · IRAN WAR (FEB 2026)</tspan>
+          </text>
+          <text x="548" y="265" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" text-anchor="middle">
+            <tspan class="lang-cn">迪拜/卡塔尔/巴林/科威特机场设施受损</tspan>
+            <tspan class="lang-en">Gulf hubs in Dubai, Qatar, Bahrain, Kuwait hit</tspan>
+          </text>
+
+          <!-- Zone 3: Saudi Airspace Warning Zone (Oct 2026) -->
+          <polygon points="340,295 575,305 595,418 355,418" fill="url(#amberHatch)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" />
+          <text x="468" y="378" fill="#fcd34d" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="11.5" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">沙特阿拉伯空域：法/加/德发布飞越安全警告</tspan>
+            <tspan class="lang-en">SAUDI ARABIA SKIES: FRANCE / CANADA / GERMANY WARNING</tspan>
+          </text>
+          <text x="468" y="396" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" text-anchor="middle">
+            <tspan class="lang-cn">曾为欧亚仅存两条主通道之一，现被迫削减航班</tspan>
+            <tspan class="lang-en">Previously one of two primary Europe–Asia corridors</tspan>
+          </text>
+
+          <!-- Narrow Central Asian Corridor Highlight Band -->
+          <path d="M 350,168 Q 505,164 670,185" fill="none" stroke="#2dd4bf" stroke-width="18" stroke-opacity="0.16" stroke-linecap="round" />
+
+          <!-- Route A: Virgin Atlantic Current Route (Mumbai -> London via Central Asia) -->
+          <path d="M 88,96 C 210,125 320,168 475,168 C 625,168 715,245 812,355" fill="none" stroke="#2dd4bf" stroke-width="3" />
+          <text x="490" y="159" fill="#5eead4" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="11" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">狭窄走廊：格鲁吉亚 → 阿塞拜疆 → 土库曼斯坦（维珍航空9月底起改道）</tspan>
+            <tspan class="lang-en">NARROW SLIVER: GEORGIA → AZERBAIJAN → TURKMENISTAN (VIRGIN ATLANTIC)</tspan>
+          </text>
+
+          <!-- Route B: Virgin Atlantic Previous Route (via Egypt & Saudi Arabia, now scaled back) -->
+          <path d="M 88,96 C 175,230 270,335 430,355 C 585,370 705,365 812,355" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,5" />
+          <text x="255" y="346" fill="#94a3b8" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5" text-anchor="middle">
+            <tspan class="lang-cn">原经常航线：经由埃及与沙特</tspan>
+            <tspan class="lang-en">Prior route via Egypt &amp; Saudi Arabia</tspan>
+          </text>
+
+          <!-- Route C: Air India & Turkish Airlines Shift (Saudi-Iraq Border near Damascus) -->
+          <path d="M 275,185 C 335,215 375,242 425,282 C 495,310 660,335 812,355" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+          <text x="435" y="274" fill="#fbbf24" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" font-weight="700">
+            <tspan class="lang-cn">印航/土航：沿沙特-伊拉克边境飞行</tspan>
+            <tspan class="lang-en">Air India / Turkish: Saudi–Iraq border path</tspan>
+          </text>
+
+          <!-- Key Waypoint Nodes -->
+          <!-- London -->
+          <circle cx="88" cy="96" r="6" fill="#ffffff" stroke="#2dd4bf" stroke-width="2.5" />
+          <text x="88" y="78" fill="#ffffff" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="12" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">伦敦 LONDON</tspan>
+            <tspan class="lang-en">LONDON</tspan>
+          </text>
+
+          <!-- Damascus High-Risk Node -->
+          <circle cx="358" cy="232" r="5.5" fill="#ef4444" stroke="#ffffff" stroke-width="1.5" />
+          <text x="346" y="223" fill="#fca5a5" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="10.5" font-weight="700" text-anchor="end">
+            <tspan class="lang-cn">大马士革（高风险区）</tspan>
+            <tspan class="lang-en">DAMASCUS (RISKY ZONE)</tspan>
+          </text>
+
+          <!-- Riyadh Strike Node -->
+          <circle cx="485" cy="342" r="7" fill="#ef4444" stroke="#fde047" stroke-width="2" />
+          <circle cx="485" cy="342" r="13" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-opacity="0.7" />
+          <text x="504" y="346" fill="#ffffff" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="11.5" font-weight="700">
+            <tspan class="lang-cn">利雅得机场（胡塞导弹袭击）</tspan>
+            <tspan class="lang-en">RIYADH AIRPORT (HOUTHI STRIKE)</tspan>
+          </text>
+
+          <!-- Mumbai -->
+          <circle cx="812" cy="355" r="6" fill="#ffffff" stroke="#2dd4bf" stroke-width="2.5" />
+          <text x="812" y="380" fill="#ffffff" font-family="JetBrains Mono, Noto Sans SC, monospace" font-size="12" font-weight="700" text-anchor="middle">
+            <tspan class="lang-cn">孟买 MUMBAI</tspan>
+            <tspan class="lang-en">MUMBAI</tspan>
+          </text>
+        </svg>
+      </div>
+
+      <div class="map-footnotes">
+        <div class="map-fn-item">
+          <strong>01 · <span class="lang-cn">第一轮空域封锁（2022）</span><span class="lang-en">PHASE 1 CLOSURE (2022)</span></strong>
+          <span class="lang-cn">2022年初乌克兰空域关闭，莫斯科随后禁止欧美等航司飞越俄罗斯，切断北方捷径。</span>
+          <span class="lang-en">Ukrainian skies closed in early 2022, followed by Moscow banning European and U.S. carriers.</span>
+        </div>
+        <div class="map-fn-item">
+          <strong>02 · <span class="lang-cn">中亚狭窄走廊（2026年9月起）</span><span class="lang-en">CENTRAL ASIAN SLIVER (SEPT 2026)</span></strong>
+          <span class="lang-cn">伊拉克走廊关闭且沙特风险上升后，航司涌入格鲁吉亚—阿塞拜疆—土库曼斯坦通道。</span>
+          <span class="lang-en">With Iraq closed and Saudi skies warned, carriers crowd into Georgia, Azerbaijan and Turkmenistan.</span>
+        </div>
+        <div class="map-fn-item">
+          <strong>03 · <span class="lang-cn">两难的次优路线</span><span class="lang-en">NO GOOD OPTIONS</span></strong>
+          <span class="lang-cn">沿沙特-伊拉克边境避开胡塞武装威胁的航线，往往需经过高风险的叙利亚首都大马士革附近。</span>
+          <span class="lang-en">Shifting along the Saudi–Iraq border away from Houthi threats brings planes near Syria's capital, Damascus.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Narrative Blocks p9 .. p11 -->
+    <div class="asymmetric-rail">
+      <div class="prose-col">
+        <p class="prose-p" data-ref="p9" data-hl="仅有的两条主要空中走廊之一 | one of only two primary corridors | 约为去年同期价格的两倍 | about twice the price it was this time last year"><span class="lang-cn">沙特空域曾被视为穿越中东的少数安全通道之一，如今的警告正迫使航空公司削减经由该区域的飞行——该区域曾是连接欧亚的<mark class="ed-hl">仅有的两条主要空中走廊之一</mark>。航空公司不得不反复调整飞行路线，以应对全球冲突，而空域的迅速缩小，在喷气燃料价格<mark class="ed-hl">约为去年同期价格的两倍</mark>的时期，给航空公司带来了巨大的压力。</span><span class="lang-en">The warnings over Saudi Arabian skies, which had been regarded as one of the few safe passages through the Middle East, are pushing airlines to scale back flying in what had become <mark class="ed-hl">one of only two primary corridors</mark> linking Europe and Asia. Airlines have repeatedly had to alter flight paths to account for global conflicts, with the rapidly shrinking airspace proving painful at a time when jet fuel is trading at <mark class="ed-hl">about twice the price it was this time last year</mark>.</span></p>
+        <p class="prose-p" data-ref="p10" data-hl="格鲁吉亚、阿塞拜疆和土库曼斯坦 | Georgia, Azerbaijan and Turkmenistan | 维珍航空 | Virgin Atlantic"><span class="lang-cn">这种变化始于2022年初乌克兰上空空域的关闭，以及莫斯科随后禁止欧洲、美国和其他航空公司使用其上空空域。今年伊朗战争开始时，伊拉克上空的关键航线关闭，这促使更多的航空公司选择飞越沙特阿拉伯上空。越来越多的航空公司开始依赖一条经过<mark class="ed-hl">格鲁吉亚、阿塞拜疆和土库曼斯坦</mark>上空的狭窄空域，以连接欧洲和亚洲。例如，<mark class="ed-hl">维珍航空</mark>自9月底以来，一直通过中亚地区运营其每天两次的从孟买飞往伦敦的航线。此前，该航空公司经常选择通过埃及和沙特阿拉伯飞往目的地。</span><span class="lang-en">The shifts began in earnest with the closure of Ukrainian skies in early 2022 and Moscow's subsequent ban on European, U.S. and other carriers using its skies. The closure of a critical corridor over Iraq at the start of the Iran war this year pushed more airlines to fly through Saudi airspace. Increasingly, airlines have been relying on a sliver of airspace passing over <mark class="ed-hl">Georgia, Azerbaijan and Turkmenistan</mark> to travel between Europe and Asia. <mark class="ed-hl">Virgin Atlantic</mark>, for example, has been flying its twice-daily route from Mumbai to London via central Asia since late September. The airline previously routed it frequently through Egypt and Saudi Arabia.</span></p>
+        <p class="prose-p" data-ref="p11" data-hl="印度航空和土耳其航空 | Air India and Turkish Airlines | 大马士革 | Damascus"><span class="lang-cn">航空公司通常面临着没有好选择的困境。<mark class="ed-hl">印度航空和土耳其航空</mark>已调整部分航线，使其飞机沿沙特-伊拉克边境飞行，从而远离胡塞武装袭击的威胁。但这些航线通常会经过叙利亚首都<mark class="ed-hl">大马士革</mark>附近，而<mark class="ed-hl">大马士革</mark>仍然被视为一个高风险区域。</span><span class="lang-en">Carriers often are left with no good options. <mark class="ed-hl">Air India and Turkish Airlines</mark> have shifted some routes so that their aircraft fly along the Saudi-Iraq border further away from threats of Houthi attacks. But those flight paths typically pass near Syria's capital, <mark class="ed-hl">Damascus</mark>, which is still regarded as a risky zone.</span></p>
+
+        <!-- Carrier Adaptation Comparison Cards -->
+        <div class="carrier-cards">
+          <div class="carrier-box">
+            <div class="carrier-name">VIRGIN ATLANTIC · <span class="lang-cn">维珍航空</span></div>
+            <div class="carrier-route">
+              <span class="lang-cn">孟买 ⇄ 伦敦（每日两班）</span>
+              <span class="lang-en">Mumbai ⇄ London (Twice-Daily)</span>
+            </div>
+            <p class="carrier-shift">
+              <span class="lang-cn"><strong>航线重构：</strong>告别此前经常途经埃及和沙特阿拉伯的路线，自9月底起改由中亚（格鲁吉亚—阿塞拜疆—土库曼斯坦走廊）绕行。</span>
+              <span class="lang-en"><strong>Route Shift:</strong> Moved away from frequent routing via Egypt and Saudi Arabia; flying via Central Asia since late September.</span>
+            </p>
+          </div>
+          <div class="carrier-box">
+            <div class="carrier-name">AIR INDIA &amp; TURKISH AIRLINES · <span class="lang-cn">印航与土航</span></div>
+            <div class="carrier-route">
+              <span class="lang-cn">中东过境航线边界平移</span>
+              <span class="lang-en">Middle East Transit Realignment</span>
+            </div>
+            <p class="carrier-shift">
+              <span class="lang-cn"><strong>风险权衡：</strong>将部分航线推向沙特-伊拉克边境以远离胡塞武装袭击威胁，但代价是航迹需经过高风险的叙利亚首都大马士革附近。</span>
+              <span class="lang-en"><strong>Risk Trade-Off:</strong> Shifted routes along the Saudi–Iraq border away from Houthi threats, but paths pass near high-risk Damascus.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rail-aside">
+        <div class="forensic-card">
+          <div class="forensic-header">
+            <span>CORRIDOR CHRONOLOGY</span>
+            <span>2022–2026</span>
+          </div>
+          <h3 class="forensic-title">
+            <span class="lang-cn">欧亚空域逐步收紧的四个阶段</span>
+            <span class="lang-en">Four Stages of Airspace Compression</span>
+          </h3>
+          <ul class="incident-log">
+            <li>
+              <span class="log-key">2022.02</span>
+              <span class="log-val">
+                <span class="lang-cn">乌克兰空域关闭，俄罗斯对欧美航司禁飞，北方航路中断。</span>
+                <span class="lang-en">Ukrainian skies close; Moscow bans Western carriers from Russian airspace.</span>
+              </span>
+            </li>
+            <li>
+              <span class="log-key">2026.02</span>
+              <span class="log-val">
+                <span class="lang-cn">美以对伊朗开战，伊拉克关键空中走廊关闭，航班涌向沙特上空。</span>
+                <span class="lang-en">Iran war begins; critical Iraq corridor closes, pushing traffic into Saudi skies.</span>
+              </span>
+            </li>
+            <li>
+              <span class="log-key">2026.09</span>
+              <span class="log-val">
+                <span class="lang-cn">ICAO发出罕见谴责；维珍航空等将孟买—伦敦航线改道中亚。</span>
+                <span class="lang-en">ICAO issues rare rebuke; Virgin Atlantic reroutes Mumbai–London via Central Asia.</span>
+              </span>
+            </li>
+            <li>
+              <span class="log-key">2026.10</span>
+              <span class="log-val">
+                <span class="lang-cn">利雅得机场遭导弹重创，多国警告沙特空域不再安全，航油价格同比翻倍。</span>
+                <span class="lang-en">Riyadh airport struck; nations warn against Saudi skies as jet fuel prices double year-on-year.</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ed-footer">
+  <div>
+    <span class="lang-cn">华尔街日报深读 · 航空与地缘冲突专题 (E1-034 · Page A7)</span>
+    <span class="lang-en">WSJ Editorial Renaissance · World News Aviation Dispatch (E1-034 · Page A7)</span>
+  </div>
+  <div>BY BENJAMIN KATZ · OCTOBER 12, 2026</div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = doc.scrollHeight - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    var bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = pct + '%';
+  }, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E3-005",
+  "final_id": "084",
+  "issue_date": "2026-10-12",
+  "content_digest": "0189c687d19dfb9ff6727f71bdfd7af8fa135fba22dbe273cf833e81e52817ab",
+  "integrity_gate": {
+    "passed": true,
+    "status": "warn",
+    "issues": [
+      {
+        "level": "warn",
+        "code": "turn_to_unconfirmed",
+        "detail": "turn_to=B4 但无 continuation_merged 标记；正文结尾正常，需人工确认是否已完整"
+      }
+    ]
+  },
+  "metadata": {
+    "page": "B1",
+    "section": "Business & Finance",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "Business & Finance · B1 版",
+    "kicker_en": "WSJ · BUSINESS & FINANCE · B1",
+    "title_cn": "利洁时（英国消费品巨头）在中国社交媒体平台上蓬勃发展",
+    "title_en": "Reckitt Thrives on China Social Media",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "By Natasha Khan",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "几年前，总部位于中国的利洁时（英国消费品巨头）高管们向他们的老板坦诚地表达了自己的看法。这些高管表示，越来越多的消费者不再去超市购物，而是在浏览手机时购买日常家居用品。",
+      "text_en": "Several years ago, China-based executives of Lysol maker Reckitt leveled with their boss. More consumers were skipping supermarket runs and buying household staples while they scrolled on phones, the executives said.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "几年前，总部位于中国的利洁时（英国消费品巨头）高管们向他们的老板坦诚地表达了自己的看法。",
+          "text_en": "Several years ago, China-based executives of Lysol maker Reckitt leveled with their boss."
+        },
+        {
+          "id": "p1.s2",
+          "text_cn": "这些高管表示，越来越多的消费者不再去超市购物，而是在浏览手机时购买日常家居用品。",
+          "text_en": "More consumers were skipping supermarket runs and buying household staples while they scrolled on phones, the executives said."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他们能否获得一些资金，以便抢先抓住这一趋势？",
+      "text_en": "Could they have some funds to get ahead of the trend?",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "他们能否获得一些资金，以便抢先抓住这一趋势？",
+          "text_en": "Could they have some funds to get ahead of the trend?"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "首席执行官傅乐宏认为，他们所说的可能是中国版的亚马逊和沃尔玛会员计划。但傅乐宏回忆说：“后来我被告知，电子商务已经是一种过时的技术。”",
+      "text_en": "Chief Executive Kris Licht figured they were talking about China's equivalents of Amazon.com and Walmart+. \"But no,\" Licht recalled, \"I was told that e-commerce was a yesterday technology.\"",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "首席执行官傅乐宏认为，他们所说的可能是中国版的亚马逊和沃尔玛会员计划。",
+          "text_en": "Chief Executive Kris Licht figured they were talking about China's equivalents of Amazon.com and Walmart+."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "但傅乐宏回忆说：“后来我被告知，电子商务已经是一种过时的技术。”",
+          "text_en": "\"But no,\" Licht recalled, \"I was told that e-commerce was a yesterday technology.\""
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "结果是，利洁时调整了其在中国市场的销售策略，从而实现了连续12个季度两位数的销售增长，并帮助这家英国公司应对了成熟市场销售额的放缓。",
+      "text_en": "The result: a pivot in Reckitt's China sales tactics, one that propelled 12 consecutive quarters of double-digit sales growth in the country and helped the British firm weather a sales slowdown in established markets.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "结果是，利洁时调整了其在中国市场的销售策略，从而实现了连续12个季度两位数的销售增长，并帮助这家英国公司应对了成熟市场销售额的放缓。",
+          "text_en": "The result: a pivot in Reckitt's China sales tactics, one that propelled 12 consecutive quarters of double-digit sales growth in the country and helped the British firm weather a sales slowdown in established markets."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "首席执行官的同事们认为，利洁时需要抓住的是中国市场购物方式的快速转变。在所谓的社交电商模式中，人们在浏览社交媒体应用程序时，看到广告后会顺便购买商品。",
+      "text_en": "What the CEO's colleagues said Reckitt needed to jump on was the rapid rise of a different venue for shopping in China. In what's known as social commerce, people scrolling through social-media apps for entertainment end up buying after seeing an ad.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "首席执行官的同事们认为，利洁时需要抓住的是中国市场购物方式的快速转变。",
+          "text_en": "What the CEO's colleagues said Reckitt needed to jump on was the rapid rise of a different venue for shopping in China."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "在所谓的社交电商模式中，人们在浏览社交媒体应用程序时，看到广告后会顺便购买商品。",
+          "text_en": "In what's known as social commerce, people scrolling through social-media apps for entertainment end up buying after seeing an ad."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "利洁时成功地利用了中国消费者购物习惯的转变，这表明，曾经依赖中国市场实现增长的西方公司，即使面临本土竞争对手的挑战，仍然可以在中国市场取得成功。这同时也是社交媒体和购物融合的一个例子。",
+      "text_en": "Reckitt's success capitalizing on Chinese consumers' shift points to how Western firms that once counted on China for growth can thrive there though local competitors have made it a tougher place to do business. It's also an example of how social media and shopping are converging.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "利洁时成功地利用了中国消费者购物习惯的转变，这表明，曾经依赖中国市场实现增长的西方公司，即使面临本土竞争对手的挑战，仍然可以在中国市场取得成功。",
+          "text_en": "Reckitt's success capitalizing on Chinese consumers' shift points to how Western firms that once counted on China for growth can thrive there though local competitors have made it a tougher place to do business."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "这同时也是社交媒体和购物融合的一个例子。",
+          "text_en": "It's also an example of how social media and shopping are converging."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在利洁时中国团队与傅乐宏进行了一次深入交流后，利洁时全力以赴，进驻了许多中国消费者经常使用的社交媒体应用程序。",
+      "text_en": "After its China team's tête-à-tête with Licht, Reckitt pulled out the stops to go to the social-media apps where many Chinese shop.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "在利洁时中国团队与傅乐宏进行了一次深入交流后，利洁时全力以赴，进驻了许多中国消费者经常使用的社交媒体应用程序。",
+          "text_en": "After its China team's tête-à-tête with Licht, Reckitt pulled out the stops to go to the social-media apps where many Chinese shop."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该公司在上海郊区的一栋建筑内建立了18个工作室。通过从这些工作室直播的视频，员工在中国流行的社交媒体平台上销售薇婷（脱毛膏品牌）、滴露（Lysol的国际版）以及其他利洁时产品。",
+      "text_en": "The company built 18 studios inside a building on the outskirts of Shanghai. On videos broadcast from there, employees sell Veet hair-removal cream, Lysol's international equivalent Dettol and other Reckitt goods on China's popular social-media platforms.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "该公司在上海郊区的一栋建筑内建立了18个工作室。",
+          "text_en": "The company built 18 studios inside a building on the outskirts of Shanghai."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "通过从这些工作室直播的视频，员工在中国流行的社交媒体平台上销售薇婷（脱毛膏品牌）、滴露（Lysol的国际版）以及其他利洁时产品。",
+          "text_en": "On videos broadcast from there, employees sell Veet hair-removal cream, Lysol's international equivalent Dettol and other Reckitt goods on China's popular social-media platforms."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在一些工作室中，公司的员工会与客座演员和网红一起，制作关于家庭生活的短喜剧和迷你剧，其中会融入利洁时的品牌。",
+      "text_en": "In some of the studios, company staffers join guest actors and influencers making quick comedies and mini-dramas about domestic life featuring a Reckitt brand.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "在一些工作室中，公司的员工会与客座演员和网红一起，制作关于家庭生活的短喜剧和迷你剧，其中会融入利洁时的品牌。",
+          "text_en": "In some of the studios, company staffers join guest actors and influencers making quick comedies and mini-dramas about domestic life featuring a Reckitt brand."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "傅乐宏（利洁时CEO）表示：“这是未来的发展方向，如果不能抓住这一趋势，就会被远远甩在后面。”",
+      "text_en": "\"This is the way forward,\" Licht said. \"Those that don't figure this out will be left behind.\"",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "傅乐宏（利洁时CEO）表示：“这是未来的发展方向，如果不能抓住这一趋势，就会被远远甩在后面。”",
+          "text_en": "\"This is the way forward,\" Licht said. \"Those that don't figure this out will be left behind.\""
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "中国有14亿人口，其中约有8亿人每天使用抖音等社交媒体平台，抖音是中国版的TikTok，还有快手等应用。利洁时估计，用户平均每天花费约90分钟浏览短视频。这对消费品公司来说至关重要：其中一半的用户已经在这些平台上购买了商品。",
+      "text_en": "Some 800 million of China's 1.4 billion people now each day use social media like Douyin, the Chinese version of TikTok, and apps like Kuaishou. The users spend an average of about 90 minutes a day scrolling through short videos, Reckitt estimated. Key for consumer-good companies: Half of them have bought items on the platforms.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "中国有14亿人口，其中约有8亿人每天使用抖音等社交媒体平台，抖音是中国版的TikTok，还有快手等应用。",
+          "text_en": "Some 800 million of China's 1.4 billion people now each day use social media like Douyin, the Chinese version of TikTok, and apps like Kuaishou."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "利洁时估计，用户平均每天花费约90分钟浏览短视频。",
+          "text_en": "The users spend an average of about 90 minutes a day scrolling through short videos, Reckitt estimated."
+        },
+        {
+          "id": "p11.s3",
+          "text_cn": "这对消费品公司来说至关重要：其中一半的用户已经在这些平台上购买了商品。",
+          "text_en": "Key for consumer-good companies: Half of them have bought items on the platforms."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "社交电商在美国开始流行，购物者现在可以通过点击TikTok和Instagram视频中的链接来购买产品，并通过Whatnot等应用观看直播购物。",
+      "text_en": "Social commerce is starting to catch on in the U.S., where shoppers are now buying products by clicking links in TikTok and Instagram videos, and watching live-shopping streams on apps like Whatnot.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "社交电商在美国开始流行，购物者现在可以通过点击TikTok和Instagram视频中的链接来购买产品，并通过Whatnot等应用观看直播购物。",
+          "text_en": "Social commerce is starting to catch on in the U.S., where shoppers are now buying products by clicking links in TikTok and Instagram videos, and watching live-shopping streams on apps like Whatnot."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "利洁时中国市场营销总监黄薇薇表示：“我们都有这样的经历，一天工作结束后，放松地坐在沙发上，观看视频，然后毫不犹豫地点击‘购买’。”",
+      "text_en": "\"We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,\" said Vivien Huang, Reckitt's director of marketing in China.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "利洁时中国市场营销总监黄薇薇表示：“我们都有这样的经历，一天工作结束后，放松地坐在沙发上，观看视频，然后毫不犹豫地点击‘购买’。”",
+          "text_en": "\"We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,\" said Vivien Huang, Reckitt's director of marketing in China."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "大约在2022年，利洁时中国团队向傅乐宏寻求支持，希望利洁时能够投资社交电商。",
+      "text_en": "It was around 2022 that Reckitt's team in China sought Licht's support getting Reckitt to invest in social commerce.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "大约在2022年，利洁时中国团队向傅乐宏寻求支持，希望利洁时能够投资社交电商。",
+          "text_en": "It was around 2022 that Reckitt's team in China sought Licht's support getting Reckitt to invest in social commerce."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "最初，团队在招聘具有相关经验的网红或代理机构方面遇到困难，因此员工们决定自己动手。他们将一个会议室改造成一个临时工作室，客户服务人员在视频中回答有关消毒剂化学成分的问题。",
+      "text_en": "The team initially struggled to hire influencers or agencies with the right experience, so staff did it themselves. Out of a conference room converted into a makeshift studio, customer-service staff answered questions on video about the chemical composition of disinfectants.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "最初，团队在招聘具有相关经验的网红或代理机构方面遇到困难，因此员工们决定自己动手。",
+          "text_en": "The team initially struggled to hire influencers or agencies with the right experience, so staff did it themselves."
+        },
+        {
+          "id": "p15.s2",
+          "text_cn": "他们将一个会议室改造成一个临时工作室，客户服务人员在视频中回答有关消毒剂化学成分的问题。",
+          "text_en": "Out of a conference room converted into a makeshift studio, customer-service staff answered questions on video about the chemical composition of disinfectants."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "销售额大幅增长，这在一定程度上弥补了公司在美国和其他发达市场面临的销售停滞问题。今年上半年，利洁时在新兴市场的销售额增长了8.5%，达到22.3亿英镑。",
+      "text_en": "Sales shot up, boosting the company while it grappled with stagnating sales in the U.S. and other developed markets. Reckitt's emerging-market sales grew 8.5% to 2.23 billion pounds in the first half of this year.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "销售额大幅增长，这在一定程度上弥补了公司在美国和其他发达市场面临的销售停滞问题。",
+          "text_en": "Sales shot up, boosting the company while it grappled with stagnating sales in the U.S. and other developed markets."
+        },
+        {
+          "id": "p16.s2",
+          "text_cn": "今年上半年，利洁时在新兴市场的销售额增长了8.5%，达到22.3亿英镑。",
+          "text_en": "Reckitt's emerging-market sales grew 8.5% to 2.23 billion pounds in the first half of this year."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "从该公司位于上海的工作室，团队每天在应用程序上进行12小时的直播，同时，购物者通过聊天功能向他们发送大量评论和问题，聊天内容占据了屏幕的一部分。",
+      "text_en": "From the company's Shanghai studios, crews broadcast live on the apps for 12 hours a day, while shoppers bombard them with comments and questions in a chat that dominates part of the screen.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "从该公司位于上海的工作室，团队每天在应用程序上进行12小时的直播，同时，购物者通过聊天功能向他们发送大量评论和问题，聊天内容占据了屏幕的一部分。",
+          "text_en": "From the company's Shanghai studios, crews broadcast live on the apps for 12 hours a day, while shoppers bombard them with comments and questions in a chat that dominates part of the screen."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "利洁时的主持人会迅速做出回应，这就像一种互动式的产品推销。一个团队负责监控直播，为主持人提供指导，并实时调整他们所介绍的产品。",
+      "text_en": "The Reckitt hosts respond rapidly, a sort of interactive infomercial. A team monitoring the livestreams guides the hosts and adjusts the featured products they talk about in real-time.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "利洁时的主持人会迅速做出回应，这就像一种互动式的产品推销。",
+          "text_en": "The Reckitt hosts respond rapidly, a sort of interactive infomercial."
+        },
+        {
+          "id": "p18.s2",
+          "text_cn": "一个团队负责监控直播，为主持人提供指导，并实时调整他们所介绍的产品。",
+          "text_en": "A team monitoring the livestreams guides the hosts and adjusts the featured products they talk about in real-time."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在其他工作室，他们会拍摄短剧和短片。这些视频通常时长不到一分钟，可能会描绘客厅中的场景，或者突出家庭纠纷。其中一个视频中，一位家长与自己的青少年孩子就鞋子的异味问题争论，这时滴露（Dettol）就派上用场了。",
+      "text_en": "In other studios, short dramas and skits are filmed. The videos, which are often under a minute, might depict a scene from a living room or highlight a domestic dispute. In one, a parent argues with their teenager about smelly shoes—and Dettol comes to the rescue.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "在其他工作室，他们会拍摄短剧和短片。",
+          "text_en": "In other studios, short dramas and skits are filmed."
+        },
+        {
+          "id": "p19.s2",
+          "text_cn": "这些视频通常时长不到一分钟，可能会描绘客厅中的场景，或者突出家庭纠纷。",
+          "text_en": "The videos, which are often under a minute, might depict a scene from a living room or highlight a domestic dispute."
+        },
+        {
+          "id": "p19.s3",
+          "text_cn": "其中一个视频中，一位家长与自己的青少年孩子就鞋子的异味问题争论，这时滴露（Dettol）就派上用场了。",
+          "text_en": "In one, a parent argues with their teenager about smelly shoes—and Dettol comes to the rescue."
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "index": 20,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "去年，该公司的短视频团队为利洁时吸引了4000万新客户，这些客户被他们制作的视频所吸引，该公司表示这些视频的观看次数达到了150亿次。",
+      "text_en": "The short-form video team drove 40 million new customers to Reckitt last year, drawn by videos they produced that the company said were viewed 15 billion times.",
+      "sentences": [
+        {
+          "id": "p20.s1",
+          "text_cn": "去年，该公司的短视频团队为利洁时吸引了4000万新客户，这些客户被他们制作的视频所吸引，该公司表示这些视频的观看次数达到了150亿次。",
+          "text_en": "The short-form video team drove 40 million new customers to Reckitt last year, drawn by videos they produced that the company said were viewed 15 billion times."
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "index": 21,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "利洁时预测，社交电商将在其销售产品的100多个国家中以某种形式流行起来，并已开始在包括巴西、墨西哥和马来西亚在内的市场复制其在中国市场的成功模式。",
+      "text_en": "Reckitt predicts social commerce will catch on in some form in the more than 100 other countries where it sells its products, and has begun replicating its China playbook in markets including Brazil, Mexico and Malaysia.",
+      "sentences": [
+        {
+          "id": "p21.s1",
+          "text_cn": "利洁时预测，社交电商将在其销售产品的100多个国家中以某种形式流行起来，并已开始在包括巴西、墨西哥和马来西亚在内的市场复制其在中国市场的成功模式。",
+          "text_en": "Reckitt predicts social commerce will catch on in some form in the more than 100 other countries where it sells its products, and has begun replicating its China playbook in markets including Brazil, Mexico and Malaysia."
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "index": 22,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "[图片说明：从该公司位于上海的工作室，团队每天在应用程序上进行12小时的直播。]",
+      "text_en": "[Photo caption: From the company's Shanghai studios, crews broadcast live on apps for 12 hours a day.]",
+      "sentences": [
+        {
+          "id": "p22.s1",
+          "text_cn": "[图片说明：从该公司位于上海的工作室，团队每天在应用程序上进行12小时的直播。]",
+          "text_en": "[Photo caption: From the company's Shanghai studios, crews broadcast live on apps for 12 hours a day.]"
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p3",
+      "quote_cn": "“后来我被告知，电子商务已经是一种过时的技术。”",
+      "quote_en": "“I was told that e-commerce was a yesterday technology.”",
+      "speaker_cn": "原文第 3 段直接引述",
+      "role_cn": "Source Block p3",
+      "speaker_en": "Direct Quote (p3)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p10",
+      "quote_cn": "“这是未来的发展方向，如果不能抓住这一趋势，就会被远远甩在后面。”",
+      "quote_en": "“Those that don't figure this out will be left behind.”",
+      "speaker_cn": "原文第 10 段直接引述",
+      "role_cn": "Source Block p10",
+      "speaker_en": "Direct Quote (p10)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p13",
+      "quote_cn": "“我们都有这样的经历，一天工作结束后，放松地坐在沙发上，观看视频，然后毫不犹豫地点击‘购买’。”",
+      "quote_en": "“We all have the experience of finishing the day, relaxing on the sofa, watching videos and clicking 'buy' without thinking too much about it,”",
+      "speaker_cn": "原文第 13 段直接引述",
+      "role_cn": "Source Block p13",
+      "speaker_en": "Direct Quote (p13)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p16",
+      "value": "8.5%",
+      "value_cn": "8.5%",
+      "label_cn": "销售额大幅增长，这在一定程度上弥补了公司在美国和其他发达市场面临的销售停…",
+      "label_en": "Sales shot up, boosting the company while it grappled with s…",
+      "note_cn": "源自正文 [p16]",
+      "note_en": "From paragraph [p16]"
+    }
+  ],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Reckitt",
+      "zh_suggested": "利洁时（英国消费品巨头）",
+      "note": "旗下有滴露、薇婷；中国社交电商连续12季度两位数增长"
+    },
+    {
+      "en": "Kris Licht",
+      "zh_suggested": "傅乐宏（利洁时CEO）",
+      "note": null
+    },
+    {
+      "en": "Dettol",
+      "zh_suggested": "滴露",
+      "note": "Lysol的国际版"
+    },
+    {
+      "en": "Veet",
+      "zh_suggested": "薇婷（脱毛膏品牌）",
+      "note": null
+    },
+    {
+      "en": "Douyin",
+      "zh_suggested": "抖音",
+      "note": null
+    },
+    {
+      "en": "Kuaishou",
+      "zh_suggested": "快手",
+      "note": null
+    },
+    {
+      "en": "Whatnot",
+      "zh_suggested": "Whatnot（美国直播购物应用）",
+      "note": null
+    },
+    {
+      "en": "social commerce",
+      "zh_suggested": "社交电商",
+      "note": null
+    }
+  ]
+}

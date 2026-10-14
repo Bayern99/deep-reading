@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在达沃斯，吉尔福伊尔炫耀所享特权 | At Davos, Guilfoyle Boasted About Perks — WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-dark: #ebe5d8;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c2b2;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.12);
+    --crimson: #8f2424;
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283b;
+    --navy-line: #283e56;
+    --gold: #d49b4b;
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-body-en: 'Lora', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--paper);
+    font-family: var(--font-body-en), var(--font-serif-cn);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* Language Switching Rules */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  html[lang="zh-CN"] body {
+    font-family: var(--font-serif-cn);
+    line-height: 1.9;
+  }
+  html[lang="en"] body {
+    font-family: var(--font-body-en);
+    line-height: 1.78;
+  }
+
+  /* Reading Progress Bar */
+  .progress-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(20, 20, 19, 0.06);
+    z-index: 1000;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.1s ease-out;
+  }
+
+  /* Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 1.5rem;
+  }
+  .masthead-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .wsj-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+  }
+  .wsj-logo {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .wsj-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--line-strong);
+  }
+  .wsj-section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Language Toggle */
+  .lang-switch {
+    display: inline-flex;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 2px;
+  }
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero-header {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .hero-kicker-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+  }
+  .kicker-pill {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.22rem 0.65rem;
+    font-weight: 700;
+  }
+  .kicker-meta {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .hero-title {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: clamp(2.1rem, 4.3vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.16;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 1.2rem;
+    max-width: 960px;
+  }
+  html[lang="zh-CN"] .hero-title {
+    font-family: var(--font-serif-cn);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .hero-dek {
+    font-size: clamp(1.12rem, 1.8vw, 1.38rem);
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 820px;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  /* Byline & Dossier Bar */
+  .byline-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+    align-items: center;
+  }
+  .byline-authors strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .byline-date {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Executive Context Dossier Box */
+  .dossier-brief {
+    max-width: 1180px;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--accent);
+    padding: 1.35rem 1.6rem;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .dossier-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    line-height: 1.4;
+  }
+  .dossier-label span.sub {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
+  }
+  .dossier-text {
+    font-family: var(--font-sans);
+    font-size: 0.93rem;
+    line-height: 1.68;
+    color: var(--body);
+  }
+
+  /* Main Editorial Grid System */
+  .editorial-stage {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .act-section {
+    margin-bottom: 4rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .act-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+  }
+
+  .act-header {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 0.65rem;
+  }
+  .act-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+  .act-title {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* Two-Column Asymmetric Forensic Rail */
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(260px, 380px);
+    gap: 3.5rem;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .narrative-col {
+    min-width: 0;
+  }
+
+  .forensic-rail {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  /* Prose Styling */
+  .prose-p {
+    font-size: 1.1rem;
+    color: var(--body);
+    margin-bottom: 1.45rem;
+    word-break: break-word;
+  }
+  html[lang="zh-CN"] .prose-p {
+    font-size: 1.08rem;
+    line-height: 1.92;
+    text-align: left;
+  }
+  html[lang="en"] .prose-p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* Lead Paragraph Styling (No CSS ::first-letter on Chinese) */
+  .prose-lead {
+    font-size: 1.24rem !important;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.72 !important;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(120deg, rgba(184, 93, 25, 0.16) 0%, rgba(184, 93, 25, 0.24) 100%);
+    color: var(--ink);
+    padding: 0.06em 0.28em;
+    border-bottom: 1.5px solid var(--accent);
+    font-weight: 600;
+  }
+
+  /* Forensic Audio Tape Box (Split Sentence Display) */
+  .tape-exhibit {
+    background: var(--navy-bg);
+    color: #f4f1ea;
+    padding: 1.5rem 1.75rem;
+    margin: 1.8rem 0;
+    border-left: 4px solid var(--gold);
+    position: relative;
+  }
+  .tape-exhibit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--navy-line);
+  }
+  .tape-wave {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .tape-wave i {
+    display: inline-block;
+    width: 2px;
+    background: var(--gold);
+  }
+  .tape-exhibit blockquote {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  /* Sidebar Callout Cards */
+  .rail-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem 1.4rem;
+  }
+  .rail-card-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Derived Pull Quote */
+  .pull-quote {
+    background: var(--paper-card);
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 1.4rem 1.35rem;
+  }
+  .pull-quote .quote-text {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .pull-quote .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Derived Metric Card */
+  .metric-card {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.5rem;
+    border-top: 4px solid var(--accent);
+  }
+  .metric-card .metric-val {
+    font-family: var(--font-mono);
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.1;
+    margin-bottom: 0.45rem;
+  }
+  .metric-card .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  .metric-card .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+  }
+
+  /* Bespoke SVG Container */
+  .diagram-panel {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.6rem;
+    margin: 2.25rem 0;
+  }
+  .diagram-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .diagram-title {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .diagram-sub {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .diagram-caption {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.85rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Official Response Dossier Grid (p11-p14) */
+  .response-dossier-wrap {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.65rem;
+    margin: 2rem 0;
+  }
+  .response-dossier-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .response-item {
+    padding: 0.85rem 0;
+    border-bottom: 1px dashed var(--line-strong);
+  }
+  .response-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .response-party-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+  .response-item .prose-p {
+    margin-bottom: 0.4rem;
+    font-size: 0.98rem;
+  }
+
+  /* Political Fallout Quote Box */
+  .verdict-box {
+    background: var(--paper-dark);
+    border-left: 4px solid var(--crimson);
+    padding: 1.35rem 1.6rem;
+    margin: 1.5rem 0;
+  }
+  .verdict-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--crimson);
+    margin-bottom: 0.45rem;
+  }
+  .verdict-quote {
+    font-family: var(--font-serif-en), var(--font-serif-cn);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* Key Cast Mini-Cards inside Rail */
+  .cast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .cast-row {
+    border-top: 1px solid var(--line-strong);
+    padding-top: 0.7rem;
+  }
+  .cast-name {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .cast-role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+  .cast-desc {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Footer */
+  .wsj-footer {
+    border-top: 2px solid var(--ink);
+    background: var(--paper-card);
+    padding: 2.5rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .wsj-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  /* Responsive Mobile Reflow (390px target) */
+  @media (max-width: 920px) {
+    .asymmetric-grid {
+      grid-template-columns: 1fr;
+      gap: 2.25rem;
+    }
+    .forensic-rail {
+      position: static;
+    }
+    .dossier-card {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    .byline-bar {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masthead {
+      padding: 0.6rem 1rem;
+    }
+    .hero-header {
+      padding: 2.2rem 1rem 1.8rem;
+    }
+    .dossier-brief {
+      padding: 0 1rem;
+    }
+    .editorial-stage {
+      padding: 2rem 1rem 3.5rem;
+    }
+    .diagram-panel, .response-dossier-wrap, .tape-exhibit {
+      padding: 1.15rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-track"><div class="progress-bar" id="readProgress"></div></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="wsj-brand">
+      <span class="wsj-logo">The Wall Street Journal</span>
+      <span class="wsj-divider"></span>
+      <span class="wsj-section-tag">
+        <span class="lang-cn">美国新闻 · 深度调查 (A4版)</span>
+        <span class="lang-en">U.S. News · Forensic Dossier (Page A4)</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Toggle">
+      <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-header">
+  <div class="hero-kicker-row">
+    <span class="kicker-pill">
+      <span class="lang-cn">独家录音调查</span>
+      <span class="lang-en">EXCLUSIVE AUDIO INVESTIGATION</span>
+    </span>
+    <span class="kicker-meta">
+      <span class="lang-cn">达沃斯 · 雅典 · 华盛顿</span>
+      <span class="lang-en">DAVOS · ATHENS · WASHINGTON</span>
+    </span>
+  </div>
+
+  <h1 class="hero-title" data-ref="title"></h1>
+  <p class="hero-dek" data-ref="dek"></p>
+
+  <div class="byline-bar">
+    <div class="byline-authors">
+      <span class="lang-cn">撰文：<strong>Rebecca Ballhaus, Joe Parkinson, Drew Hinshaw, Dana Mattioli</strong></span>
+      <span class="lang-en">By <strong>Rebecca Ballhaus, Joe Parkinson, Drew Hinshaw and Dana Mattioli</strong></span>
+    </div>
+    <div class="byline-date">
+      <span class="lang-cn">2026年10月12日 · 档案编号 E1-025</span>
+      <span class="lang-en">OCTOBER 12, 2026 · DOSSIER E1-025</span>
+    </div>
+  </div>
+</section>
+
+<aside class="dossier-brief" aria-label="Reporter's Dossier Context">
+  <div class="dossier-card">
+    <div class="dossier-label">
+      <span class="lang-cn">调查背景提要</span>
+      <span class="lang-en">FORENSIC BRIEFING</span>
+      <span class="sub">
+        <span class="lang-cn">核心证据与华盛顿余波</span>
+        <span class="lang-en">Core Evidence &amp; Fallout</span>
+      </span>
+    </div>
+    <p class="dossier-text" data-ref="ctx1"></p>
+  </div>
+</aside>
+
+<main class="editorial-stage">
+
+  <!-- ACT I: THE DAVOS AUDIO TAPE & DINNER FURY (p1 .. p5) -->
+  <section class="act-section" id="act-1">
+    <div class="act-header">
+      <span class="act-num">ACT I · 01</span>
+      <h2 class="act-title">
+        <span class="lang-cn">达沃斯录音与晚宴门外的愤怒</span>
+        <span class="lang-en">The Davos Recording &amp; The Greek House Dinner Crisis</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="narrative-col">
+        <p class="prose-p prose-lead" data-ref="p1" data-hl="两位希腊富豪 | two Greek tycoons | 奢华旅行 | high-rolling trips"></p>
+        <p class="prose-p" data-ref="p2" data-hl="埃里克·特朗普 | Eric Trump | 一段录音 | an audio recording"></p>
+        <p class="prose-p" data-ref="p3" data-hl="我将为你赚很多钱 | I'm going to make you a lot of f—ing money"></p>
+
+        <!-- Split p4 into narrative setup (p4.s1) and forensic audio quote exhibit (p4.s2 + p4.s3) -->
+        <p class="prose-p" data-ref="p4.s1"></p>
+        <div class="tape-exhibit">
+          <div class="tape-exhibit-header">
+            <span>
+              <span class="lang-cn">物证录音摘录 · 达沃斯希腊之家晚宴争议</span>
+              <span class="lang-en">AUDIO EXHIBIT · GREEK HOUSE DAVOS DISPUTE</span>
+            </span>
+            <span class="tape-wave" aria-hidden="true">
+              <i style="height:8px"></i><i style="height:14px"></i><i style="height:6px"></i><i style="height:16px"></i><i style="height:10px"></i>
+            </span>
+          </div>
+          <blockquote>
+            <span data-ref="p4.s2"></span>
+            <span data-ref="p4.s3"></span>
+          </blockquote>
+        </div>
+
+        <p class="prose-p" data-ref="p5" data-hl="最后一刻的席位 | a last-minute seat | 表现得很有礼貌，也很谨慎 | gracious and discreet"></p>
+      </div>
+
+      <aside class="forensic-rail">
+        <blockquote class="pull-quote" data-derive="q1">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <div class="rail-card">
+          <div class="rail-card-kicker">
+            <span>
+              <span class="lang-cn">组织方证词对比</span>
+              <span class="lang-en">ORGANIZER ACCOUNT</span>
+            </span>
+            <span>DAVOS 2026</span>
+          </div>
+          <blockquote class="pull-quote" data-derive="q3" style="border:none; padding:0; background:transparent;">
+            <p class="quote-text" data-field="quote" style="font-size:1.05rem;"></p>
+            <footer class="quote-attrib" data-field="attribution"></footer>
+          </blockquote>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACT II: TWO GREEK TYCOONS & LUXURY ITINERARIES (p6 .. p14) -->
+  <section class="act-section" id="act-2">
+    <div class="act-header">
+      <span class="act-num">ACT II · 02</span>
+      <h2 class="act-title">
+        <span class="lang-cn">私人飞机、巴黎四季酒店与两位希腊大亨</span>
+        <span class="lang-en">Private Jets, Hotel George V &amp; The Two Tycoons</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="narrative-col">
+        <p class="prose-p" data-ref="p6" data-hl="私人飞机 | private jet | Aktor集团 | Aktor Group"></p>
+        <p class="prose-p" data-ref="p7" data-hl="数十亿美元的美国天然气 | billions of dollars of American natural gas | 我的人 | my people"></p>
+        <p class="prose-p" data-ref="p8" data-hl="尼古拉斯·察科斯 | Nikolas Tsakos | 格施塔德 | Gstaad"></p>
+        <p class="prose-p" data-ref="p9" data-hl="巴黎四季酒店乔治五世酒店 | Four Seasons Hotel George V | 账单由Tsakos Energy Navigation（船运公司）首席执行官尼古拉斯·察科斯支付 | the bill fell to Nikos Tsakos"></p>
+        <p class="prose-p" data-ref="p10" data-hl="200万Instagram粉丝 | 2 million Instagram followers"></p>
+
+        <!-- Bespoke SVG Forensic Map: Tycoon Perks & Diplomatic Nexus -->
+        <div class="diagram-panel">
+          <div class="diagram-header">
+            <div class="diagram-title">
+              <span class="lang-cn">利益交汇图谱：奢华礼遇与外交商业纽带</span>
+              <span class="lang-en">FORENSIC NEXUS: LUXURY TRAVEL PERKS &amp; COMMERCIAL TIES</span>
+            </div>
+            <div class="diagram-sub">WSJ INVESTIGATION · 2026</div>
+          </div>
+
+          <svg viewBox="0 0 760 350" width="100%" role="img" aria-label="Diagram showing connections between Ambassador Kimberly Guilfoyle, Alexandros Exarchou of Aktor Group, and Nikolas Tsakos of Tsakos Energy Navigation">
+            <defs>
+              <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#b85d19"/>
+              </marker>
+              <marker id="arrowNavy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#16283b"/>
+              </marker>
+            </defs>
+
+            <!-- Background Grid Lines -->
+            <line x1="40" y1="60" x2="720" y2="60" stroke="#e4dfd3" stroke-dasharray="3 3"/>
+            <line x1="40" y1="175" x2="720" y2="175" stroke="#e4dfd3" stroke-dasharray="3 3"/>
+            <line x1="40" y1="290" x2="720" y2="290" stroke="#e4dfd3" stroke-dasharray="3 3"/>
+
+            <!-- Left Node: Exarchou / Aktor Group -->
+            <rect x="35" y="38" width="220" height="115" rx="4" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+            <rect x="35" y="38" width="220" height="24" fill="#16283b"/>
+            <text x="47" y="54" fill="#d49b4b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">TYCOON 01 · AKTOR GROUP</text>
+            <text x="47" y="80" fill="#141413" font-family="Noto Sans SC, Inter, sans-serif" font-size="12.5" font-weight="700">
+              <tspan class="lang-cn">亚历山德罗斯·埃克萨尔霍乌</tspan>
+              <tspan class="lang-en">Alexandros Exarchou</tspan>
+            </text>
+            <text x="47" y="100" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5">
+              <tspan class="lang-cn">• 同乘私人飞机赴2026年1月达沃斯</tspan>
+              <tspan class="lang-en">• Private jet to Jan 2026 Davos WEF</tspan>
+            </text>
+            <text x="47" y="120" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5">
+              <tspan class="lang-cn">• 录音中被称为“我的人”</tspan>
+              <tspan class="lang-en">• Described on tape as "my people"</tspan>
+            </text>
+            <text x="47" y="140" fill="#b85d19" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" font-weight="600">
+              <tspan class="lang-cn">• 获推介数十亿美元美国天然气业务</tspan>
+              <tspan class="lang-en">• Promoted for billions in U.S. gas deals</tspan>
+            </text>
+
+            <!-- Left Bottom Node: Tsakos -->
+            <rect x="35" y="192" width="220" height="125" rx="4" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+            <rect x="35" y="192" width="220" height="24" fill="#16283b"/>
+            <text x="47" y="208" fill="#d49b4b" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">TYCOON 02 · SHIPPING CEO</text>
+            <text x="47" y="234" fill="#141413" font-family="Noto Sans SC, Inter, sans-serif" font-size="12.5" font-weight="700">
+              <tspan class="lang-cn">尼古拉斯·察科斯 (Tsakos)</tspan>
+              <tspan class="lang-en">Nikolas Tsakos (TEN CEO)</tspan>
+            </text>
+            <text x="47" y="254" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5">
+              <tspan class="lang-cn">• 格施塔德共度圣诞假期</tspan>
+              <tspan class="lang-en">• Gstaad holiday season together</tspan>
+            </text>
+            <text x="47" y="274" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5">
+              <tspan class="lang-cn">• 私人飞机往返巴黎参加时装秀</tspan>
+              <tspan class="lang-en">• Jet to/from Paris for fashion show</tspan>
+            </text>
+            <text x="47" y="294" fill="#b85d19" font-family="Noto Sans SC, Inter, sans-serif" font-size="10.5" font-weight="600">
+              <tspan class="lang-cn">• 支付巴黎乔治五世四季酒店账单</tspan>
+              <tspan class="lang-en">• Paid Four Seasons George V hotel bill</tspan>
+            </text>
+
+            <!-- Center Hub: Ambassador Guilfoyle -->
+            <rect x="315" y="112" width="175" height="126" rx="6" fill="#0f1d2b" stroke="#b85d19" stroke-width="2"/>
+            <text x="402" y="138" text-anchor="middle" fill="#d49b4b" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">U.S. AMBASSADOR</text>
+            <text x="402" y="162" text-anchor="middle" fill="#ffffff" font-family="Noto Serif SC, Playfair Display, serif" font-size="14" font-weight="700">
+              <tspan class="lang-cn">金伯莉·吉尔福伊尔</tspan>
+              <tspan class="lang-en">Kimberly Guilfoyle</tspan>
+            </text>
+            <text x="402" y="185" text-anchor="middle" fill="#cbd5e1" font-family="Noto Sans SC, Inter, sans-serif" font-size="10">
+              <tspan class="lang-cn">驻希腊大使 · 达沃斯录音主角</tspan>
+              <tspan class="lang-en">Ambassador to Greece</tspan>
+            </text>
+            <line x1="335" y1="198" x2="470" y2="198" stroke="#283e56"/>
+            <text x="402" y="218" text-anchor="middle" fill="#f8fafc" font-family="JetBrains Mono, monospace" font-size="10">
+              <tspan class="lang-cn">200万 IG 粉丝晒照</tspan>
+              <tspan class="lang-en">2M IG Followers</tspan>
+            </text>
+
+            <!-- Right Node: Washington Scrutiny & Amex Text -->
+            <rect x="545" y="75" width="180" height="200" rx="4" fill="#f3efe6" stroke="#8f2424" stroke-width="1.5"/>
+            <rect x="545" y="75" width="180" height="24" fill="#8f2424"/>
+            <text x="557" y="91" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="700">SCRUTINY &amp; PROBES</text>
+            <text x="557" y="118" fill="#141413" font-family="Noto Sans SC, Inter, sans-serif" font-size="11.5" font-weight="700">
+              <tspan class="lang-cn">1. 国务院监察长调查</tspan>
+              <tspan class="lang-en">1. State Dept IG Probe</tspan>
+            </text>
+            <text x="557" y="136" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10">
+              <tspan class="lang-cn">调查是否收受私人商人礼品/好处</tspan>
+              <tspan class="lang-en">Investigating gifts &amp; favors</tspan>
+            </text>
+            <text x="557" y="164" fill="#141413" font-family="Noto Sans SC, Inter, sans-serif" font-size="11.5" font-weight="700">
+              <tspan class="lang-cn">2. 10万美元运通卡短信</tspan>
+              <tspan class="lang-en">2. $100K Amex Text</tspan>
+            </text>
+            <text x="557" y="182" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10">
+              <tspan class="lang-cn">向捐助者索款并承诺协助税务/法律问题</tspan>
+              <tspan class="lang-en">Donor solicitation vs. tax help</tspan>
+            </text>
+            <text x="557" y="210" fill="#141413" font-family="Noto Sans SC, Inter, sans-serif" font-size="11.5" font-weight="700">
+              <tspan class="lang-cn">3. 白宫去留审议</tspan>
+              <tspan class="lang-en">3. Removal Deliberation</tspan>
+            </text>
+            <text x="557" y="228" fill="#646059" font-family="Noto Sans SC, Inter, sans-serif" font-size="10">
+              <tspan class="lang-cn">2026中期选举前的政治负担</tspan>
+              <tspan class="lang-en">2026 midterms political liability</tspan>
+            </text>
+
+            <!-- Connecting Arrows -->
+            <path d="M 255 95 L 312 145" stroke="#b85d19" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+            <path d="M 255 250 L 312 200" stroke="#b85d19" stroke-width="2" fill="none" marker-end="url(#arrowGold)"/>
+            <path d="M 490 175 L 542 175" stroke="#16283b" stroke-width="2" stroke-dasharray="4 3" fill="none" marker-end="url(#arrowNavy)"/>
+          </svg>
+
+          <div class="diagram-caption">
+            <span class="lang-cn">资料来源：《华尔街日报》审查的录音、短信记录及知情人士访谈。</span>
+            <span class="lang-en">Source: WSJ review of audio recording, text messages and people familiar with the matter.</span>
+          </div>
+        </div>
+
+        <!-- Official Responses Dossier (p11 .. p14) -->
+        <div class="response-dossier-wrap">
+          <div class="response-dossier-title">
+            <span class="lang-cn">各方回应档案 · 置评与辩护记录</span>
+            <span class="lang-en">OFFICIAL RESPONSES DOSSIER · ON THE RECORD</span>
+          </div>
+
+          <div class="response-item">
+            <span class="response-party-tag">NIKOLAS TSAKOS</span>
+            <p class="prose-p" data-ref="p11"></p>
+          </div>
+
+          <div class="response-item">
+            <span class="response-party-tag">AKTOR GROUP COUNSEL</span>
+            <p class="prose-p" data-ref="p12"></p>
+          </div>
+
+          <div class="response-item">
+            <span class="response-party-tag">U.S. EMBASSY IN ATHENS</span>
+            <p class="prose-p" data-ref="p13" data-hl="忠实地遵守了国务院的道德规范和礼品申报指南 | faithfully followed State Department ethics and gift reporting guidelines"></p>
+            <p class="prose-p" data-ref="p14"></p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="forensic-rail">
+        <blockquote class="pull-quote" data-derive="q4">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <blockquote class="pull-quote" data-derive="q5">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <div class="rail-card">
+          <div class="rail-card-kicker">
+            <span>
+              <span class="lang-cn">关键人物志</span>
+              <span class="lang-en">KEY FIGURES IN THE TAPE</span>
+            </span>
+          </div>
+          <div class="cast-list">
+            <div class="cast-row">
+              <div class="cast-role">AKTOR GROUP CEO</div>
+              <div class="cast-name">
+                <span class="lang-cn">亚历山德罗斯·埃克萨尔霍乌</span>
+                <span class="lang-en">Alexandros Exarchou</span>
+              </div>
+              <div class="cast-desc">
+                <span class="lang-cn">希腊建筑公司首席执行官，与吉尔福伊尔同乘私人飞机前往2026年1月达沃斯论坛。</span>
+                <span class="lang-en">Greek construction chief who flew with Guilfoyle on a private jet to the Jan. 2026 WEF.</span>
+              </div>
+            </div>
+            <div class="cast-row">
+              <div class="cast-role">TSAKOS ENERGY NAVIGATION CEO</div>
+              <div class="cast-name">
+                <span class="lang-cn">尼古拉斯·察科斯</span>
+                <span class="lang-en">Nikolas Tsakos</span>
+              </div>
+              <div class="cast-desc">
+                <span class="lang-cn">希腊航运巨头，知情人士称其支付了吉尔福伊尔入住巴黎乔治五世四季酒店的账单。</span>
+                <span class="lang-en">Greek shipping tycoon who covered the ambassador's Four Seasons Hotel George V bill in Paris.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ACT III: INSPECTOR GENERAL PROBE, $100K AMEX TEXTS & CAPITOL FALLOUT (p15 .. p24) -->
+  <section class="act-section" id="act-3">
+    <div class="act-header">
+      <span class="act-num">ACT III · 03</span>
+      <h2 class="act-title">
+        <span class="lang-cn">10万美元运通卡账单、监察长调查与白宫决断</span>
+        <span class="lang-en">The $100,000 Amex Texts, Inspector General Probe &amp; White House Fallout</span>
+      </h2>
+    </div>
+
+    <div class="asymmetric-grid">
+      <div class="narrative-col">
+        <p class="prose-p" data-ref="p15" data-hl="2026年中期选举前的一项政治负担 | a political liability ahead of the 2026 midterms | 是否应该撤换她 | whether she should be removed"></p>
+        <p class="prose-p" data-ref="p16" data-hl="国务院的监察长正在调查 | The State Department's inspector general is investigating"></p>
+        <p class="prose-p" data-ref="p17" data-hl="10万美元 | $100,000 | 美国运通账户 | American Express account"></p>
+        <p class="prose-p" data-ref="p18" data-hl="她一直都非常友善 | She was always very nice"></p>
+        <p class="prose-p" data-ref="p19"></p>
+        <p class="prose-p" data-ref="p20"></p>
+        <p class="prose-p" data-ref="p21" data-hl="马尔科·鲁比奥 | Marco Rubio | 雅典卫城 | Acropolis"></p>
+        <p class="prose-p" data-ref="p22" data-hl="如果发生了不好的事情，那么相关人员必须承担后果 | if there was something bad that happened, then people have to suffer consequences"></p>
+
+        <!-- Split p23 to highlight Stephanie Grisham's warning in a Verdict Box -->
+        <p class="prose-p" data-ref="p23.s1"></p>
+        <div class="verdict-box">
+          <div class="verdict-tag">
+            <span class="lang-cn">前白宫幕僚警示 · 内部圈层政治风险</span>
+            <span class="lang-en">INSIDER ASSESSMENT · TRUMPWORLD CALCULUS</span>
+          </div>
+          <blockquote class="verdict-quote">
+            <span data-ref="p23.s2"></span>
+            <span data-ref="p23.s3"></span>
+          </blockquote>
+        </div>
+
+        <p class="prose-p" data-ref="p24" data-hl="格雷戈里·米克斯 | Gregory Meeks | 罗伯特·加西亚 | Robert Garcia | 严重公共腐败和国家安全的担忧 | serious public corruption and national security concerns"></p>
+      </div>
+
+      <aside class="forensic-rail">
+        <div class="metric-card" data-derive="m1">
+          <div class="metric-val" data-field="value"></div>
+          <div class="metric-lbl" data-field="label"></div>
+          <div class="metric-note" data-field="note"></div>
+        </div>
+
+        <blockquote class="pull-quote" data-derive="q2">
+          <p class="quote-text" data-field="quote"></p>
+          <footer class="quote-attrib" data-field="attribution"></footer>
+        </blockquote>
+
+        <div class="rail-card">
+          <div class="rail-card-kicker">
+            <span>
+              <span class="lang-cn">多重调查与问责时间线</span>
+              <span class="lang-en">ESCALATING ACCOUNTABILITY</span>
+            </span>
+          </div>
+          <div class="cast-list">
+            <div class="cast-row">
+              <div class="cast-role">STATE DEPT INSPECTOR GENERAL</div>
+              <div class="cast-desc">
+                <span class="lang-cn">调查吉尔福伊尔是否收受私人商人的礼品或好处。</span>
+                <span class="lang-en">Investigating whether Guilfoyle received gifts or favors from private businessmen.</span>
+              </div>
+            </div>
+            <div class="cast-row">
+              <div class="cast-role">HOUSE FOREIGN AFFAIRS · REP. MEEKS</div>
+              <div class="cast-desc">
+                <span class="lang-cn">呼吁立即调查其是否违反联邦反贿赂和公共腐败法。</span>
+                <span class="lang-en">Called for an immediate investigation into potential federal bribery and public corruption violations.</span>
+              </div>
+            </div>
+            <div class="cast-row">
+              <div class="cast-role">HOUSE OVERSIGHT · REP. GARCIA</div>
+              <div class="cast-desc">
+                <span class="lang-cn">指出严重公共腐败与国家安全担忧，要求提交财务记录与通讯副本。</span>
+                <span class="lang-en">Cited serious public corruption and national security concerns; requested financial records and communications.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wsj-footer">
+  <div class="wsj-footer-inner">
+    <div>
+      <strong>THE WALL STREET JOURNAL</strong> ·
+      <span class="lang-cn">WSJ 深读双语数字特辑 · 原载于 2026年10月12日 A4版</span>
+      <span class="lang-en">WSJ Bilingual Editorial Edition · Originally published Oct. 12, 2026 · Page A4</span>
+    </div>
+    <div>
+      <span class="lang-cn">版权所有 © 2026 Dow Jones &amp; Company, Inc.</span>
+      <span class="lang-en">Copyright © 2026 Dow Jones &amp; Company, Inc. All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var btnZh = document.getElementById('btn-zh');
+    var btnEn = document.getElementById('btn-en');
+    if (btnZh && btnEn) {
+      btnZh.classList.toggle('active', lang === 'zh-CN');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100)) : 0;
+    var bar = document.getElementById('readProgress');
+    if (bar) bar.style.width = pct + '%';
+  }, { passive: true });
+</script>
+</body>
+</html>

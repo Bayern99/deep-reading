@@ -1,0 +1,330 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-041",
+  "final_id": "041",
+  "issue_date": "2026-10-12",
+  "content_digest": "afbb55f556becb3384075b1e4108d48f00bc0bcacbf7811ce3ff42532ed9e7f5",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A9",
+    "section": "World News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "World News · A9 版",
+    "kicker_en": "WSJ · WORLD NEWS · A9",
+    "title_cn": "新德里因选民抗议活动不断升级而实施封锁。",
+    "title_en": "New Delhi Locks Down As Voter Protests Grow",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY TRIPTI LAHIRI AND KRISHNA POKHAREL",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "新德里——印度总理纳伦德拉·莫迪政府调动数千名安全部队，封锁了印度首都，以阻止一场大规模抗议活动，这场抗议活动源于政府试图清理选民名单，而批评人士认为，此举剥夺了数百万印度人的投票权。",
+      "text_en": "NEW DELHI—The government of Indian Prime Minister Narendra Modi locked down India's capital with thousands of security forces in a bid to thwart a mass protest over an effort to clean up voter lists that critics say is stripping millions of Indians of the right to vote.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "新德里——印度总理纳伦德拉·莫迪政府调动数千名安全部队，封锁了印度首都，以阻止一场大规模抗议活动，这场抗议活动源于政府试图清理选民名单，而批评人士认为，此举剥夺了数百万印度人的投票权。",
+          "text_en": "NEW DELHI—The government of Indian Prime Minister Narendra Modi locked down India's capital with thousands of security forces in a bid to thwart a mass protest over an effort to clean up voter lists that critics say is stripping millions of Indians of the right to vote."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "去年，印度的选举委员会开始清理选民名单，据活动人士称，此举导致约1.3亿人从初步或最终的选民名单中被删除。",
+      "text_en": "Last year, India's election commission began a cleanup of voter lists that, according to activists, have resulted in some 130 million people being cut from preliminary or final voter rolls.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "去年，印度的选举委员会开始清理选民名单，据活动人士称，此举导致约1.3亿人从初步或最终的选民名单中被删除。",
+          "text_en": "Last year, India's election commission began a cleanup of voter lists that, according to activists, have resulted in some 130 million people being cut from preliminary or final voter rolls."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "莫迪政府及其执政的印度人民党表示，此次清理——这是二十年来首次——是为了维护名单的完整性，并删除已故、重复或虚假选民，例如他们声称从印度与孟加拉国东部边界进入的非法移民。",
+      "text_en": "Modi's government and his ruling Bharatiya Janata Party have said the cleanup—the first in two decades—was needed to preserve the integrity of the lists and remove deceased, duplicate or fraudulent voters, such as illegal immigrants they say have entered from India's eastern border with Bangladesh.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "莫迪政府及其执政的印度人民党表示，此次清理——这是二十年来首次——是为了维护名单的完整性，并删除已故、重复或虚假选民，例如他们声称从印度与孟加拉国东部边界进入的非法移民。",
+          "text_en": "Modi's government and his ruling Bharatiya Janata Party have said the cleanup—the first in two decades—was needed to preserve the integrity of the lists and remove deceased, duplicate or fraudulent voters, such as illegal immigrants they say have entered from India's eastern border with Bangladesh."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "对选民名单的愤怒与印度年轻人为寻找工作而苦恼的不满情绪相结合，这对莫迪构成了严峻的挑战。",
+      "text_en": "The anger over the voting lists has melded with grievances from young Indians struggling to find work, together presenting a stiff challenge to Modi.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "对选民名单的愤怒与印度年轻人为寻找工作而苦恼的不满情绪相结合，这对莫迪构成了严峻的挑战。",
+          "text_en": "The anger over the voting lists has melded with grievances from young Indians struggling to find work, together presenting a stiff challenge to Modi."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在一次大学入学考试丑闻之后，一个名为“Cockroach Janta Party（青年运动组织）”的青年运动在春季应运而生。该组织公开支持那些抗议选民名单问题的人，并加入了周六在新德里举行的抗议活动。",
+      "text_en": "A youth movement called the Cockroach Janta Party emerged in the spring following a scandal over a university entrance exam. The group has thrown its support behind those protesting the voting issue, joining in Saturday's protests in New Delhi.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "在一次大学入学考试丑闻之后，一个名为“Cockroach Janta Party（青年运动组织）”的青年运动在春季应运而生。",
+          "text_en": "A youth movement called the Cockroach Janta Party emerged in the spring following a scandal over a university entrance exam."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "该组织公开支持那些抗议选民名单问题的人，并加入了周六在新德里举行的抗议活动。",
+          "text_en": "The group has thrown its support behind those protesting the voting issue, joining in Saturday's protests in New Delhi."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在印度首都，警察从黎明前就开始部署，并在黄色金属路障处拦截车辆和行人。数十个地铁站关闭，许多城际列车也被取消。",
+      "text_en": "In the Indian capital, police—who were deployed starting before dawn—stopped vehicles and pedestrians at yellow metal barricades. Dozens of metro stations were closed and many intercity trains were canceled.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "在印度首都，警察从黎明前就开始部署，并在黄色金属路障处拦截车辆和行人。",
+          "text_en": "In the Indian capital, police—who were deployed starting before dawn—stopped vehicles and pedestrians at yellow metal barricades."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "数十个地铁站关闭，许多城际列车也被取消。",
+          "text_en": "Dozens of metro stations were closed and many intercity trains were canceled."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该青年运动的创始人阿布希吉特·迪普克发布了一段视频，视频中他和多位抗议领袖在抵达新德里机场时被带走拘留。迪普克在警察进入飞机时喊道：“这是独裁！”",
+      "text_en": "Abhijeet Dipke, the founder of the Cockroach party, posted a video of himself and fellow protest leaders being taken into custody on their arrival at New Delhi's airport. \"This is dictatorship,\" Dipke shouted as the police officers entered the plane.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "该青年运动的创始人阿布希吉特·迪普克发布了一段视频，视频中他和多位抗议领袖在抵达新德里机场时被带走拘留。",
+          "text_en": "Abhijeet Dipke, the founder of the Cockroach party, posted a video of himself and fellow protest leaders being taken into custody on their arrival at New Delhi's airport."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "迪普克在警察进入飞机时喊道：“这是独裁！”",
+          "text_en": "\"This is dictatorship,\" Dipke shouted as the police officers entered the plane."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "《华尔街日报》的记者看到，在两个小时内，约有100人被拘留。",
+      "text_en": "Wall Street Journal reporters saw about 100 people being detained over the course of two hours.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "《华尔街日报》的记者看到，在两个小时内，约有100人被拘留。",
+          "text_en": "Wall Street Journal reporters saw about 100 people being detained over the course of two hours."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据该青年运动的活动人士和多家当地新闻报道称，当天，数千人在首都被拘留。《华尔街日报》无法独立核实这些数字。德里警察发言人没有回应置评请求。",
+      "text_en": "Over the course of the day, thousands were detained in the capital, according to Cockroach party activists and multiple local news accounts. The Journal couldn't independently verify the numbers. A Delhi police spokesman didn't respond to requests for comment.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "据该青年运动的活动人士和多家当地新闻报道称，当天，数千人在首都被拘留。",
+          "text_en": "Over the course of the day, thousands were detained in the capital, according to Cockroach party activists and multiple local news accounts."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "《华尔街日报》无法独立核实这些数字。",
+          "text_en": "The Journal couldn't independently verify the numbers."
+        },
+        {
+          "id": "p9.s3",
+          "text_cn": "德里警察发言人没有回应置评请求。",
+          "text_en": "A Delhi police spokesman didn't respond to requests for comment."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "迪普克和他的两位同伴在周日出庭后获释。",
+      "text_en": "Dipke and his two fellow activists were released following a court appearance Sunday.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "迪普克和他的两位同伴在周日出庭后获释。",
+          "text_en": "Dipke and his two fellow activists were released following a court appearance Sunday."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "周六，49岁的伊什拉特·安萨里表示，她当天清晨从首都北部家中出发，步行9英里到达抗议地点。",
+      "text_en": "On Saturday, Ishrat Ansari, 49, said she set off at dawn from her home in the north of the capital, walking 9 miles to reach the protest area.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "周六，49岁的伊什拉特·安萨里表示，她当天清晨从首都北部家中出发，步行9英里到达抗议地点。",
+          "text_en": "On Saturday, Ishrat Ansari, 49, said she set off at dawn from her home in the north of the capital, walking 9 miles to reach the protest area."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "她说，她、她的儿子和女儿今年都收到了选举管理部门的通知，称他们的名字因存在差异而被标记。在她看来，这可能是因为她的名字出现在2002年的选民登记册上，并且使用了“卡图恩”这一敬称，而这个敬称通常由穆斯林女性使用，但她的当前身份证件上没有这个敬称。这位主要以名字称呼自己的社会工作者担心，她可能收到了通知，是因为她是一名穆斯林。“是因为我的名字是伊什拉特，所以我的名字被从名单中删除了吗？”",
+      "text_en": "She said she, her son and her daughter received notices this year from election authorities that their names had been flagged for discrepancies. In her case, she thinks it was because her name appeared on 2002 voter rolls with the honorific \"Khatun,\" often used by Muslim women, which doesn't appear on her current identification. The social worker, who mainly goes by her first name, feared that she may have received the notice because she is a Muslim. \"Is it because my name is Ishrat that I was cut?\"",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "她说，她、她的儿子和女儿今年都收到了选举管理部门的通知，称他们的名字因存在差异而被标记。",
+          "text_en": "She said she, her son and her daughter received notices this year from election authorities that their names had been flagged for discrepancies."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "在她看来，这可能是因为她的名字出现在2002年的选民登记册上，并且使用了“卡图恩”这一敬称，而这个敬称通常由穆斯林女性使用，但她的当前身份证件上没有这个敬称。",
+          "text_en": "In her case, she thinks it was because her name appeared on 2002 voter rolls with the honorific \"Khatun,\" often used by Muslim women, which doesn't appear on her current identification."
+        },
+        {
+          "id": "p12.s3",
+          "text_cn": "这位主要以名字称呼自己的社会工作者担心，她可能收到了通知，是因为她是一名穆斯林。",
+          "text_en": "The social worker, who mainly goes by her first name, feared that she may have received the notice because she is a Muslim."
+        },
+        {
+          "id": "p12.s4",
+          "text_cn": "“是因为我的名字是伊什拉特，所以我的名字被从名单中删除了吗？”",
+          "text_en": "\"Is it because my name is Ishrat that I was cut?\""
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "纳伦德拉·莫迪领导的印度人民党一直在推行一种印度教民族主义，他的批评者认为这种民族主义歧视了印度穆斯林少数群体。政府对此予以否认，并表示其政策的重点是所有印度人的共同发展。",
+      "text_en": "Modi's BJP has promoted a form of Hindu nationalism that his critics say discriminates against India's Muslim minority. The government denies that, and says its policies are focused on the progress of all Indians.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "纳伦德拉·莫迪领导的印度人民党一直在推行一种印度教民族主义，他的批评者认为这种民族主义歧视了印度穆斯林少数群体。",
+          "text_en": "Modi's BJP has promoted a form of Hindu nationalism that his critics say discriminates against India's Muslim minority."
+        },
+        {
+          "id": "p13.s2",
+          "text_cn": "政府对此予以否认，并表示其政策的重点是所有印度人的共同发展。",
+          "text_en": "The government denies that, and says its policies are focused on the progress of all Indians."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p12",
+      "quote_cn": "“是因为我的名字是伊什拉特，所以我的名字被从名单中删除了吗？”",
+      "quote_en": "“ often used by Muslim women, which doesn't appear on her current identification. The social worker, who mainly goes by her first name, feared that she may have received the notice because she is a Muslim. ”",
+      "speaker_cn": "原文第 12 段直接引述",
+      "role_cn": "Source Block p12",
+      "speaker_en": "Direct Quote (p12)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [
+    {
+      "id": "img2",
+      "asset_id": "IMG-E1-041-A9-2528",
+      "file": "assets/A9-p9-x2528.png",
+      "caption_cn": "",
+      "caption_en": "",
+      "credit": ""
+    }
+  ],
+  "terms": [
+    {
+      "en": "Tripti Lahiri",
+      "zh_suggested": "特里普蒂·拉希里",
+      "note": "待查"
+    },
+    {
+      "en": "Krishna Pokharel",
+      "zh_suggested": "克里希纳·波卡雷尔",
+      "note": "待查"
+    },
+    {
+      "en": "Narendra Modi",
+      "zh_suggested": "纳伦德拉·莫迪",
+      "note": "印度总理"
+    },
+    {
+      "en": "Bharatiya Janata Party",
+      "zh_suggested": "印度人民党",
+      "note": "缩写BJP"
+    },
+    {
+      "en": "Abhijeet Dipke",
+      "zh_suggested": "阿布希吉特·迪普克",
+      "note": "待查"
+    },
+    {
+      "en": "Cockroach Janta Party",
+      "zh_suggested": "Cockroach Janta Party（青年运动组织）",
+      "note": "待查"
+    },
+    {
+      "en": "Ishrat Ansari",
+      "zh_suggested": "伊什拉特·安萨里",
+      "note": "待查"
+    }
+  ]
+}
