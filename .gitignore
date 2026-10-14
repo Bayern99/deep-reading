@@ -20,6 +20,7 @@ htmlcov/
 
 # New build snapshots are reproducible; already tracked deliveries stay tracked
 /????-??-??/dist/
+/dist/
 
 # Interrupted atomic queue writes, not durable queue/artifact records
 /????-??-??/editorial-artifacts/_queue.json.tmp.*

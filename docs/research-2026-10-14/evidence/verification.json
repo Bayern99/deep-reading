@@ -1,0 +1,35 @@
+{
+  "documents": [
+    "REPORT.md",
+    "GOLDEN-BASELINE.md"
+  ],
+  "local_document_links_checked": 40,
+  "broken_local_links": [],
+  "json_records_valid": true,
+  "protected_final_source_unchanged": true,
+  "protected_selected_artifact_files_hash_matched": 27,
+  "smoke": "Both actual builds and isolated Studio/Reader HTTP passed; 117 source items, 92 whole-issue items, 21 stored articles; no model calls.",
+  "fresh_compilation": {
+    "selected_versions": 9,
+    "passed": 9,
+    "same_narrative_source_digest": 9
+  },
+  "browser": {
+    "engine": "Chromium",
+    "viewports": [
+      1440,
+      390
+    ],
+    "standalone_observations": 36,
+    "failed_standalone_en_switches": 4,
+    "reader_observations": 32,
+    "reader_locale_matches": 32,
+    "newspaper_observations": 4
+  },
+  "limitations": [
+    "No fresh PDF/OCR/translation run",
+    "No multi-issue benchmark or independent human study",
+    "No live model generation/cost measurement",
+    "No Safari/Firefox/physical phone tests"
+  ]
+}

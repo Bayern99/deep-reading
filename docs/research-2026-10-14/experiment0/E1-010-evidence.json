@@ -1,0 +1,156 @@
+[
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/aside[1]",
+    "kind": "calculation",
+    "source_digest": "eb8ec645ad4cd0d5f8c80e4c1fa2055057d333c4f71da181cba05f3394c87097",
+    "claim_digest": "64d501889c091dd43e5e70569a2a6914785a7c730a119719069cf8386333fa4d",
+    "spans": [
+      {
+        "block": "p4",
+        "locale": "en",
+        "text": "5.1%"
+      },
+      {
+        "block": "p4",
+        "locale": "en",
+        "text": "4.4%"
+      },
+      {
+        "block": "p4",
+        "locale": "en",
+        "text": "The 71 analysts who submitted projections in the survey from Oct. 2-7 now expect the benchmark 10-year yield to end 2026 at 5.1%, up from 4.4% the last time we asked, in July. Not all respondents answered every question."
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p4/p5 explicitly pair these July/October survey forecasts with these horizons; difference in percentage points multiplied by 100. Forecasts, not guaranteed yields."
+    },
+    "calculation": {
+      "operation": "basis_points_change",
+      "operands": [
+        {
+          "span": 0,
+          "token": 0
+        },
+        {
+          "span": 1,
+          "token": 0
+        }
+      ],
+      "result": "70",
+      "unit": "bps",
+      "decimal_places": 0
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/aside[2]",
+    "kind": "calculation",
+    "source_digest": "eb8ec645ad4cd0d5f8c80e4c1fa2055057d333c4f71da181cba05f3394c87097",
+    "claim_digest": "ffb37a5330994e01cc16979a4e9276b0c945ec1f6f7d415c79c6e8ad7a45efa4",
+    "spans": [
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "4.96%"
+      },
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "4.3%"
+      },
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "Higher yields are expected to persist. Forecasters see a 10-year yield of 4.96% halfway through 2027 and 4.78% at the end of 2027, up from 4.3% and 4.26% in July projections."
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p4/p5 explicitly pair these July/October survey forecasts with these horizons; difference in percentage points multiplied by 100. Forecasts, not guaranteed yields."
+    },
+    "calculation": {
+      "operation": "basis_points_change",
+      "operands": [
+        {
+          "span": 0,
+          "token": 0
+        },
+        {
+          "span": 1,
+          "token": 0
+        }
+      ],
+      "result": "66",
+      "unit": "bps",
+      "decimal_places": 0
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/aside[3]",
+    "kind": "calculation",
+    "source_digest": "eb8ec645ad4cd0d5f8c80e4c1fa2055057d333c4f71da181cba05f3394c87097",
+    "claim_digest": "62367f8bbafa2e147e1c44911730d0edb3927a14b117034f15b34e626c15bff0",
+    "spans": [
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "4.78%"
+      },
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "4.26%"
+      },
+      {
+        "block": "p5",
+        "locale": "en",
+        "text": "Higher yields are expected to persist. Forecasters see a 10-year yield of 4.96% halfway through 2027 and 4.78% at the end of 2027, up from 4.3% and 4.26% in July projections."
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p4/p5 explicitly pair these July/October survey forecasts with these horizons; difference in percentage points multiplied by 100. Forecasts, not guaranteed yields."
+    },
+    "calculation": {
+      "operation": "basis_points_change",
+      "operands": [
+        {
+          "span": 0,
+          "token": 0
+        },
+        {
+          "span": 1,
+          "token": 0
+        }
+      ],
+      "result": "52",
+      "unit": "bps",
+      "decimal_places": 0
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/svg",
+    "kind": "chart",
+    "source_digest": "eb8ec645ad4cd0d5f8c80e4c1fa2055057d333c4f71da181cba05f3394c87097",
+    "claim_digest": "6ecd5e0a46d766e5a005562931cb8bc85afd2c4006f7c42798b0664f648c51e1",
+    "spans": [
+      {
+        "block": "p4",
+        "locale": "en",
+        "text": "The 71 analysts who submitted projections in the survey from Oct. 2-7 now expect the benchmark 10-year yield to end 2026 at 5.1%, up from 4.4% the last time we asked, in July. Not all respondents answered every question."
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "End-2026 survey forecast bars start at zero. Widths 440 and 510 use the same 100 pixels per percentage point; July 4.4%, October 5.1%. No causal arrow or guaranteed outcome."
+    }
+  }
+]

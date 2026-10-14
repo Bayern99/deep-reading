@@ -9,7 +9,7 @@ WSJ 深读 is a daily newspaper with a local editorial Studio. Preserve the vali
 - For content, artifacts, backups or Git cleanup, read `docs/data-policy.md`.
 - For publishing, queue startup or recovery, read `render/BUILD.md`.
 - For domain terms, read `GLOSSARY.md`; translation terminology remains in each issue's separate glossary. Domain-doc convention: `docs/agents/domain.md`.
-- For earlier design/audit claims, use `docs/history/README.md`. Historical drivers under `render/` and issue folders are not production entry points.
+- For earlier design/audit claims, use `docs/history/README.md`. Historical drivers under `archive/render-experiments/` and issue folders are not production entry points.
 
 ## Work and verify
 

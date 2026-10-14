@@ -1,0 +1,172 @@
+[
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/blockquote[1]/text()",
+    "kind": "quote",
+    "source_digest": "fee74afb0f65401c6a4c39832f63a2078c1d72a2cad93a39a8455365bb7c5c0a",
+    "claim_digest": "9d2be29c7d2fa57a463c5abd31b7e0c2645b8662e96a4c84c2f7c0dd418b219f",
+    "spans": [
+      {
+        "block": "p1",
+        "locale": "en",
+        "text": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times."
+      },
+      {
+        "block": "p1",
+        "locale": "cn",
+        "text": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。"
+      },
+      {
+        "block": "p2",
+        "locale": "en",
+        "text": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+      },
+      {
+        "block": "p2",
+        "locale": "cn",
+        "text": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”"
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p1 identifies Joseph Hutchinson; p2 reports his warning. These exact quoted fragments occur in the respective locales. The interpretation distinguishes the pastor's statement from authorial fact; the conceptual diagram depicts attribution, without quantitative or causal claims."
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/blockquote[2]/text()",
+    "kind": "quote",
+    "source_digest": "fee74afb0f65401c6a4c39832f63a2078c1d72a2cad93a39a8455365bb7c5c0a",
+    "claim_digest": "70d9b6bdef89c9e205f12499f8904d77fff0f843ee7809eddb5ee47ac0418935",
+    "spans": [
+      {
+        "block": "p1",
+        "locale": "en",
+        "text": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times."
+      },
+      {
+        "block": "p1",
+        "locale": "cn",
+        "text": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。"
+      },
+      {
+        "block": "p2",
+        "locale": "en",
+        "text": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+      },
+      {
+        "block": "p2",
+        "locale": "cn",
+        "text": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”"
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p1 identifies Joseph Hutchinson; p2 reports his warning. These exact quoted fragments occur in the respective locales. The interpretation distinguishes the pastor's statement from authorial fact; the conceptual diagram depicts attribution, without quantitative or causal claims."
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/aside[1]",
+    "kind": "fact",
+    "source_digest": "fee74afb0f65401c6a4c39832f63a2078c1d72a2cad93a39a8455365bb7c5c0a",
+    "claim_digest": "b4e5321a896799a1a53efa5ad45fc462433c0764921743e4a32b60f8f6bc6771",
+    "spans": [
+      {
+        "block": "p1",
+        "locale": "en",
+        "text": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times."
+      },
+      {
+        "block": "p1",
+        "locale": "cn",
+        "text": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。"
+      },
+      {
+        "block": "p2",
+        "locale": "en",
+        "text": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+      },
+      {
+        "block": "p2",
+        "locale": "cn",
+        "text": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”"
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p1 identifies Joseph Hutchinson; p2 reports his warning. These exact quoted fragments occur in the respective locales. The interpretation distinguishes the pastor's statement from authorial fact; the conceptual diagram depicts attribution, without quantitative or causal claims."
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/aside[2]",
+    "kind": "interpretation",
+    "source_digest": "fee74afb0f65401c6a4c39832f63a2078c1d72a2cad93a39a8455365bb7c5c0a",
+    "claim_digest": "c6ba6236baa9b65eb483a6b0adcb7ba4500df78fa9c28e9ac44919440dfde888",
+    "spans": [
+      {
+        "block": "p1",
+        "locale": "en",
+        "text": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times."
+      },
+      {
+        "block": "p1",
+        "locale": "cn",
+        "text": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。"
+      },
+      {
+        "block": "p2",
+        "locale": "en",
+        "text": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+      },
+      {
+        "block": "p2",
+        "locale": "cn",
+        "text": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”"
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p1 identifies Joseph Hutchinson; p2 reports his warning. These exact quoted fragments occur in the respective locales. The interpretation distinguishes the pastor's statement from authorial fact; the conceptual diagram depicts attribution, without quantitative or causal claims."
+    }
+  },
+  {
+    "schema_version": "claim-evidence-v1",
+    "target": "html:/html/body/main/svg",
+    "kind": "chart",
+    "source_digest": "fee74afb0f65401c6a4c39832f63a2078c1d72a2cad93a39a8455365bb7c5c0a",
+    "claim_digest": "0bbc5ec1e9a2a93e7162fad2a4bb62d73a803276e5ddbb8d01f1c3905cd168c5",
+    "spans": [
+      {
+        "block": "p1",
+        "locale": "en",
+        "text": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times."
+      },
+      {
+        "block": "p1",
+        "locale": "cn",
+        "text": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。"
+      },
+      {
+        "block": "p2",
+        "locale": "en",
+        "text": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+      },
+      {
+        "block": "p2",
+        "locale": "cn",
+        "text": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”"
+      }
+    ],
+    "review": {
+      "decision": "supported",
+      "reviewer": "experiment0-source-review",
+      "reason": "p1 identifies Joseph Hutchinson; p2 reports his warning. These exact quoted fragments occur in the respective locales. The interpretation distinguishes the pastor's statement from authorial fact; the conceptual diagram depicts attribution, without quantitative or causal claims."
+    }
+  }
+]

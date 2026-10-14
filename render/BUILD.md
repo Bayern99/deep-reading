@@ -60,7 +60,15 @@ The existing CLI can generate synchronously:
 
 This command makes real provider calls, processes the queue and currently implies WARN confirmation. It is suitable only after editorial review. Cancellation does not abort an already running network request. Failed-task retry keeps prior versions; forcing a new submission may duplicate model work.
 
-Compiler success is copy/structure evidence. Inspect generated editorial additions for factual support and inspect Chinese/English at desktop and 390px before regarding a version as visually accepted. Browser verification is recorded separately in artifact metadata.
+New strict compilation checks copy/structure and [Claim Provenance](../docs/claim-provenance.md). Authored interventions (a `figure`, `aside`, `section`, `table`, `blockquote`, `svg` or `data-claim` block, with its heading, copy, labels and drawing) are reviewed as one unit; loose typography with no number and no quotation is inventoried without gating. Gated targets without host evidence stay `needs_review` and cannot become a new verified version. Diagnostic compilation (`strict=False`) retains the proposed content and findings for review. Host agents supply `evidence_records` to `compile_editorial_artifact` and `import_raw_generation`; HTML cannot approve itself. Missing semantic review is not sent back to the generating model for automatic approval. Historical versions remain readable under their original audits. Inspect Chinese/English at desktop and 390px separately before visual acceptance.
+
+Run the offline seven-story experiment with a **new** evidence directory:
+
+```bash
+.venv/bin/python scripts/experiment0.py --output /tmp/wsj-experiment0-evidence
+```
+
+It checks nine pinned historical generations in memory, proves supported quotes/calculations/interpretation/SVGs through isolated compilation/import/HTTP delivery, and hashes the protected live issue before/after. It never starts the live queue. Existing Studio/queue generation has no host-evidence submission interface in this experiment; finish semantic review through the Python import seam. See [Experiment 0 results](../docs/research-2026-10-14/EXPERIMENT-0.md).
 
 ## Recovery
 

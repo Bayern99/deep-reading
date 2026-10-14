@@ -1,0 +1,22 @@
+{
+  "tests": "make test: 26 unittest cases and legacy gate assertions passed",
+  "runtime": "make smoke: both builds and isolated Studio/Reader HTTP passed; final Experiment 0: supported raw import/store/reopen/HTTP and saved false-SVG challenge passed",
+  "new_provenance_regressions": 9,
+  "historical_panel": {
+    "stories": 7,
+    "versions": 9,
+    "all_bilingual_narratives_exact": true
+  },
+  "protected_snapshot_files": 201,
+  "protected_snapshot_hashes_match": true,
+  "implementation_hashes_match_final_replay": true,
+  "compiled_outputs_match_delivery_hashes": true,
+  "document_links_checked": 38,
+  "broken_document_links": [],
+  "limits": [
+    "Host review is a trusted-caller attestation, not independent human approval",
+    "No new model-generated design comparison or visual quality claim",
+    "Existing Studio/queue has no review-sidecar submission UI"
+  ],
+  "queue_incident": "Earlier live-fixture queue access changed timestamp fields; restored recorded snapshot exactly, then isolated those fixture reads. Successful final checks preserve the snapshot."
+}

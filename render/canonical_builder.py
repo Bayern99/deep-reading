@@ -26,10 +26,11 @@ from typing import Any
 
 from integrity_gate import check_article
 from source_model import content_digest, source_from_final
+from claim_provenance import validate_claim_provenance
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-# Curated high-precision quotes & metrics for flagship stories (augments automatic extraction)
+# Curated editorial candidates; factual support is checked by Claim Provenance Gate.
 CURATED_DERIVATIONS: dict[str, dict[str, Any]] = {
     "E2-001": {
         "kicker_cn": "头版深度调查 · 华尔街与退休金",
@@ -462,7 +463,7 @@ def build_canonical_source(
     else:
         date_cn = date_en = issue_date
 
-    return {
+    canonical = {
         "schema_version": "canonical-source-v1",
         "article_id": aid,
         "final_id": entry.get("final_id"),
@@ -495,6 +496,8 @@ def build_canonical_source(
         "media": media,
         "terms": entry.get("terms") or [],
     }
+    canonical['claim_provenance'] = validate_claim_provenance(canonical)
+    return canonical
 
 
 def load_canonical_for_issue(issue_dir: str, article_id: str | None = None) -> dict[str, Any] | list[dict[str, Any]]:

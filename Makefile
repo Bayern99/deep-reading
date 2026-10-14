@@ -8,8 +8,8 @@ help:
 	@echo "Bootstrap: python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt"
 
 test:
-	$(PYTHON) -m unittest discover -s render -p 'test_*.py' -v
-	$(PYTHON) render/test_p1.py
+	PYTHONPATH=$(CURDIR)/render $(PYTHON) -m unittest discover -s tests -p 'test_*.py' -v
+	PYTHONPATH=$(CURDIR)/render $(PYTHON) tests/test_p1.py
 
 smoke:
 	$(PYTHON) scripts/smoke.py --issue $(ISSUE)

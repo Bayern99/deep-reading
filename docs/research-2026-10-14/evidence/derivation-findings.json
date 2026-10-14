@@ -1,0 +1,41 @@
+[
+  {
+    "article_id": "E1-010",
+    "quote_id": "q1",
+    "claimed_source_block": "p9",
+    "quote_en": "“The bond market is adjusting to a world of higher neutral rates, where fiscal deficits and firmer productivity growth keep long-term borrowing costs elevated.”",
+    "source_block_text_en": "Sinai forecasts the 10-year yield could rise to nearly 6% next year and remain above 5% through the 2020s. Yields on Treasury securities are heavily influenced by investors' expectations for how the Fed will set interest rates in coming years.",
+    "verbatim_in_claimed_block": false,
+    "verbatim_anywhere_in_article": false
+  },
+  {
+    "article_id": "E1-010",
+    "metric_id": "m1",
+    "claimed_source_block": "p4",
+    "canonical_value": "4.12% vs 3.94%",
+    "source_block_text_en": "The 71 analysts who submitted projections in the survey from Oct. 2-7 now expect the benchmark 10-year yield to end 2026 at 5.1%, up from 4.4% the last time we asked, in July. Not all respondents answered every question."
+  },
+  {
+    "article_id": "E1-010",
+    "metric_id": "m2",
+    "claimed_source_block": "p5",
+    "canonical_value": "4.09% vs 3.87%",
+    "source_block_text_en": "Higher yields are expected to persist. Forecasters see a 10-year yield of 4.96% halfway through 2027 and 4.78% at the end of 2027, up from 4.3% and 4.26% in July projections."
+  },
+  {
+    "article_id": "E1-010",
+    "metric_id": "m3",
+    "claimed_source_block": "p5",
+    "canonical_value": "4.16% vs 3.92%",
+    "source_block_text_en": "Higher yields are expected to persist. Forecasters see a 10-year yield of 4.96% halfway through 2027 and 4.78% at the end of 2027, up from 4.3% and 4.26% in July projections."
+  },
+  {
+    "article_id": "E3-004",
+    "quote_id": "q1",
+    "claimed_source_block": "p12",
+    "quote_en": "“In every major technological shift in history, humanity faces the same temptation: mistaking the tools of our own making for God.”",
+    "source_block_text_en": "The theme of a higher power creating AI in its own image only for it to rebel against its creator is a familiar one to those who study the Bible. The idea that people in AI labs think they have a power akin to God to create a new kind of consciousness is unsettling, if not blasphemous, to some. And, for others, there is a certain hubris seen in tech leaders chasing a technology that on one hand promises to make them incredibly wealthy while suggesting it is only safe within their control.",
+    "verbatim_in_claimed_block": false,
+    "verbatim_anywhere_in_article": false
+  }
+]
