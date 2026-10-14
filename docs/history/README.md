@@ -7,6 +7,7 @@ Everything dated lives here, so `docs/` above this directory holds only current 
 | Bundle | Use when |
 |---|---|
 | [Governance record](governance-2026-10-14.md), [browser evidence](browser-evidence-2026-10-14/) | Seeing what the Phase 5–7 governance pass changed, and its desktop/mobile captures |
+| [Pipeline continuity probe](pipeline-probe-2026-10-15.md) | Deciding the next wiring work: which hops of the PDF→Reader chain are proven, which are partial, blocked or untested |
 | [Reconstruction brief](PROJECT_RECONSTRUCTION_BRIEF.md) | Understanding the original reboot diagnosis |
 | [Recovery audit](RECOVERY_AUDIT.md) | Investigating early extraction and visual recovery gaps |
 | [Code audit](audit-code.md), [data audit](audit-data.md), [documentation audit](audit-docs.md) | Tracing pre-compiler capability claims |
