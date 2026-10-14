@@ -31,11 +31,11 @@ The isolated environment avoids dependencies and configuration installed by a pa
 ## Verify before changing anything
 
 ```bash
-make test
-make smoke
+make hooks     # once per checkout: install the tracked guardrails
+make check     # make test + make smoke
 ```
 
-`make test` runs the `tests/` unittest suites and the separate legacy content-gate assertions. `make smoke` copies production inputs into a temporary workspace, executes both real build commands and the local Studio HTTP routes, verifies existing artifacts, and removes the copy. It never resumes the production queue or calls a model. Current acceptance data is the preserved `2026-10-12` issue.
+`make test` runs the `tests/` unittest suites and the separate legacy content-gate assertions. `make check` adds `make smoke`, which copies production inputs into a temporary workspace, executes both real build commands and the local Studio HTTP routes, verifies existing artifacts, and removes the copy. It never resumes the production queue or calls a model. `make hooks` installs the tracked hooks: a commit that stages live queue/artifact state needs the `[data]` marker, and a push runs `make check`. See [data policy](docs/data-policy.md). Current acceptance data is the preserved `2026-10-12` issue.
 
 ## Open the product
 

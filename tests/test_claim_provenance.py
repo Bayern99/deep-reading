@@ -2,11 +2,13 @@
 import unittest
 import copy
 import json
+import re
 import tempfile
+from collections import Counter
 
 from artifact_store import ArtifactStore
 from canonical_builder import build_canonical_source
-from claim_provenance import make_evidence_record
+from claim_provenance import make_evidence_record, numeric_tokens
 from editorial_publisher import import_raw_generation
 
 from canonical_builder import load_canonical_for_issue
@@ -303,3 +305,46 @@ class ClaimProvenanceTests(unittest.TestCase):
                     'reason': 'Quotation marks mark terminology here, not a quotation from the source.'})
         self.assertTrue(compile_editorial_artifact(raw, canonical,
                                                    evidence_records=[record])['audit_report']['passed'])
+
+    # The nine pinned generations of 2026-10-12 that scripts/experiment0.py replays.
+    PANEL = (('E2-001', 'v1'), ('E2-001', 'v2'), ('E2-001', 'v3'), ('E2-002', 'v2'), ('E1-010', 'v1'),
+             ('E3-004', 'v1'), ('E2-010', 'v1'), ('E1-024', 'v1'), ('E3-001', 'v2'))
+
+    # Ratchet, not a contract: units allowed to report an unsourced quotation. E3-004/v1
+    # predates the rule that labels belong outside a quotation element, so one section there
+    # is verified as a quotation. Anything else must report zero; extending this needs a reason.
+    QUOTATION_EXCEPTIONS = {'E3-004/v1': 1}
+
+    def test_pinned_panel_keeps_every_number_and_quotation_inside_review(self):
+        """The two invariants that merge-based review must never lose.
+
+        Numbers never fall outside a gated target, and the gate never reports a
+        quotation it cannot source once every block is offered as evidence. The
+        second one caught a fix that had become too strict for real artifacts.
+        """
+        quoted = Counter()
+        for aid, version in self.PANEL:
+            canonical = load_canonical_for_issue(ISSUE, aid)
+            raw = (Path(ISSUE) / 'editorial-artifacts' / aid / version / 'raw.html').read_text()
+            inventory = compile_editorial_artifact(raw, canonical,
+                                                   strict=False)['audit_report']['claim_provenance']
+            active = [c for c in inventory['claims'] if c['active']]
+            for claim in active:
+                if claim['host_review']:
+                    continue
+                text = claim.get('text') or ''
+                self.assertEqual(numeric_tokens(text), [], claim['target'])
+                self.assertIsNone(re.search(r'[“”「」"]', text), claim['target'])
+            spans = [{'block': b['id'], 'locale': locale, 'text': b['text_' + locale]}
+                     for b in canonical['blocks'] for locale in ('en', 'cn')]
+            records = [make_evidence_record(canonical, claim, kind='fact', spans=spans,
+                                            review={'decision': 'supported', 'reviewer': 'panel-invariant',
+                                                    'reason': 'Every block offered as evidence: this case only asks '
+                                                              'whether the gate can still claim an unsourced quotation.'})
+                       for claim in active if claim['host_review']]
+            errors = compile_editorial_artifact(raw, canonical, strict=False,
+                                                evidence_records=records)['audit_report']['errors']
+            found = sum('Quotation absent from evidence' in error for error in errors)
+            if found:
+                quoted[f'{aid}/{version}'] = found
+        self.assertEqual(dict(sorted(quoted.items())), dict(sorted(self.QUOTATION_EXCEPTIONS.items())))

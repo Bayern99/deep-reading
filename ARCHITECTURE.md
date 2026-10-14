@@ -35,7 +35,7 @@ Dashed edges require tools/services outside this repository. There is no single 
 
 ## Production modules
 
-All names in this table are under `render/`. Modules remain colocated to preserve script imports and verified behavior; a package migration is not required for current usage.
+Entry points: `render/build.py` (whole issue), `render/editorial_studio.py` (Studio, Reader, queue), `render/integrity_gate.py` (`make gate`) and `scripts/smoke.py` (isolated acceptance). Every other module is reached from those, and nothing else is an entry point. All names in the table below are under `render/`; the suites live in `tests/`. Modules remain colocated to preserve script imports and verified behavior; a package migration is not required for current usage.
 
 | Module | Actual responsibility and inputs |
 |---|---|

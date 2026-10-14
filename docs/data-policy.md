@@ -16,6 +16,8 @@ The newspaper data and model outputs are not disposable development fixtures. Re
 
 ## Safe local Git work
 
+`make hooks` installs the tracked hooks: `commit-msg` refuses to commit queue state, the artifact index or a `dist/` snapshot unless the commit message carries the `[data]` marker (or `WSJ_ALLOW_DATA_COMMIT=1` is set), which keeps a live-data checkpoint a deliberate act; `pre-push` runs `make check`. Hooks live in `.git/hooks` and are per-checkout, so run `make hooks` after cloning.
+
 Inspect `git status` before editing. Existing staged/unstaged/untracked changes belong to the user; preserve them. Review explicit paths before staging. Avoid blanket `git add .`, `git clean`, reset/restore of the entire tree, or removing ignored directories as cleanup.
 
 The local governance checkpoint includes the initially uncommitted Phase 5–7 implementation, its required fixtures and preserved evidence. It is a local review point, not a release or deployment. Governance did not untrack saved deliveries, add LFS, compact/garbage-collect objects, rewrite history, merge or push. Review checkpoint content before any release or remote publication.

@@ -13,13 +13,13 @@ WSJ 深读 is a daily newspaper with a local editorial Studio. Preserve the vali
 
 ## Work and verify
 
-Run from the root: bootstrap `.venv` with `requirements.txt`; `make test` runs both test styles, `make smoke` exercises both production paths in an isolated copy without model calls. `make studio ISSUE=YYYY-MM-DD` launches local Reader/Studio; `make build` and `make reader` export different output families.
+Run from the root: bootstrap `.venv` with `requirements.txt`; `make test` runs both test styles, `make smoke` exercises both production paths in an isolated copy without model calls. `make check` runs both; `make hooks` installs the tracked hooks that keep live data out of commits and run `make check` before a push. `make studio ISSUE=YYYY-MM-DD` launches local Reader/Studio; `make build` and `make reader` export different output families.
 
 Inspect current Git changes before editing; preserve the user's work. Keep final source, translation provenance, verified assets, plans and artifact versions. Treat accepted source as read-only during formatting; exact alignment repairs are auditable projections. Story IDs are scoped to an issue; known legacy global records need an explicit migration before second-date publication.
 
 Studio startup can resume the persistent queue. Use one writer per issue/checkout; stop it before backup. Use isolated inputs for smoke runs. Confirm model generation intentionally; reopening saved content does not require generation.
 
-Finish a change with the affected checks and actual runtime path; UI changes require desktop/mobile bilingual inspection. Update the authoritative document for changed behavior. Avoid incidental package migrations or redesigns. Major refactors, important data deletion, history rewriting, merges, deployment and remote pushes require Jerry's approval.
+Finish a change with the affected checks and actual runtime path; UI changes require desktop/mobile bilingual inspection. Update the authoritative document for changed behavior. Avoid incidental package migrations or redesigns. Major refactors, important data deletion, history rewriting, merges, deployment and remote pushes require Jerry's approval. Reply to Jerry in Chinese; keep commits, code comments and documents in English.
 
 ## Tracker
 

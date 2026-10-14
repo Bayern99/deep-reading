@@ -1,0 +1,30 @@
+#!/bin/sh
+# Keep live data out of commits by accident.
+#
+# Queue state, the artifact index and build snapshots are deliberate checkpoints, not
+# incidental edits. Name them in the commit message with the [data] marker (or set
+# WSJ_ALLOW_DATA_COMMIT=1) when the checkpoint is the point of the commit.
+#
+# This runs as commit-msg, not pre-commit: git only writes the new message into the file
+# passed here after the message is resolved, and pre-commit still sees the previous one.
+# See docs/data-policy.md.
+set -eu
+
+message_file=${1:-}
+data=$(git diff --cached --name-only --diff-filter=ACMR \
+    | grep -E '(^|/)(_queue|_index)\.json$|(^|/)dist/' || true)
+[ -n "$data" ] || exit 0
+
+message=''
+[ -n "$message_file" ] && [ -f "$message_file" ] && message=$(cat "$message_file")
+
+case "$message" in
+    *"[data]"*) exit 0 ;;
+esac
+[ "${WSJ_ALLOW_DATA_COMMIT:-}" = "1" ] && exit 0
+
+printf 'commit-msg: refusing to commit live data without an explicit marker:\n' >&2
+printf '%s\n' "$data" | sed 's/^/  /' >&2
+printf '  -> put [data] in the commit message for a deliberate checkpoint,\n' >&2
+printf '     or set WSJ_ALLOW_DATA_COMMIT=1. See docs/data-policy.md.\n' >&2
+exit 1
