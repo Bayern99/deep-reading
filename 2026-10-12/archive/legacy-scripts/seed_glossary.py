@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json, os
-WORK = os.path.dirname(os.path.abspath(__file__))
+# Archived into 2026-10-12/archive/legacy-scripts/; WORK stays the issue directory.
+WORK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 g = json.load(open(f"{WORK}/glossary.json", encoding="utf-8"))
 lines = []
 lines.append("# Living Glossary（跨期术语库）\n")

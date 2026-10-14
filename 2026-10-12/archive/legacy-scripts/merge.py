@@ -3,7 +3,8 @@
 continuations (E1<->E2), assign final sequential IDs, normalize sections."""
 import json, os, difflib
 
-WORK = os.path.dirname(os.path.abspath(__file__))
+# Archived into 2026-10-12/archive/legacy-scripts/; WORK stays the issue directory.
+WORK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 def load_entries(path):
     raw = json.load(open(path, encoding="utf-8"))

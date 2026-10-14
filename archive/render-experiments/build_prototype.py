@@ -23,9 +23,9 @@ from components import esc, article_header
 from plan_render import _render_component
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-GEN = os.path.join(os.path.dirname(BASE), '2026-10-12', 'gen-test', 'E1-025')
-OUT = os.path.join(os.path.dirname(BASE), '2026-10-12', 'gen-test', 'E1-025', 'prototype')
-ASSET_DIR = os.path.join(os.path.dirname(BASE), '2026-10-12', 'gen-test', 'E1-025', 'assets')
+GEN = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025')
+OUT = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025', 'prototype')
+ASSET_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025', 'assets')
 
 
 def load_assets():
@@ -156,7 +156,7 @@ def main():
             action=td['action'], params=td['params'],
             editorial_added=td['editorial_added'], reason=td['reason']))
 
-    final = json.load(open(os.path.join(os.path.dirname(BASE), '2026-10-12',
+    final = json.load(open(os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12',
                                         'final.json'), encoding='utf-8'))
     e = next(x for x in final if x['id'] == 'E1-025')
     assets = load_assets()

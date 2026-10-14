@@ -91,16 +91,17 @@ The queue lock is process-local. Artifact JSON/index/pointers still use direct w
 
 ## Experiments and legacy code
 
-These stay intact because they are primary evidence and some assets are still consumed by production:
+Archived material stays intact because it is primary evidence. None of it is a production entry point:
 
 - `experiments/phase5-exp01/`: original free-HTML versus source-anchor experiment, independent compiler/schema, golden baseline, three runs and screenshots. No production import depends on its compiler.
-- `render/autonomous_planner.py`, `plan_adapter.py`, `plan_validate.py`, `plan_render.py`, `orchestrate.py`, `run_auto_test.py`, `run_blind5.py`, `build_prototype.py`, `build_layout_test.py`, `build_layout_configs.py`, `build_test_pages.py`: historical planner/layout drivers and contract experiments; not the Phase 7 publishing path.
-- `render/pipeline.py`: actually runs the integrity stage and prints other stage names. It has an incomplete cache/input hash and should not be used as a resumable daily orchestrator.
-- `render/build_reboot_four.py`: proof-strip utility, not another publishing engine.
-- Issue-local `build_html.py`, `build_v2.py` through `build_v6.py`, `cases/build_*`, `gen-test/`, `blind5/`, `auto-test/`, `layout-test/`, `test-pages/`: historical implementations/evidence, some with old absolute paths. Production still references verified images in `cases/assets/`; preserve that directory.
-- Issue-local `merge.py`, `assemble.py`, `trans-T*.py`, `seed_glossary.py`: source provenance and earlier input adapters. Rerunning assembly overwrites the current final source and must be treated as a content migration.
+- `archive/render-experiments/`: historical planner, plan-contract and layout drivers (`autonomous_planner.py`, `plan_adapter.py`, `plan_validate.py`, `plan_render.py`, `orchestrate.py`, `run_auto_test.py`, `run_blind5.py`, `pipeline.py`, `build_prototype.py`, `build_layout_test.py`, `build_layout_configs.py`, `build_test_pages.py`, `build_reboot_four.py`, `turn_page.py`). `pipeline.py` runs the integrity stage and prints the rest; `build_reboot_four.py` cuts a proof strip. None is a resumable daily orchestrator. See [archive/README.md](archive/README.md).
+- `2026-10-12/archive/legacy-scripts/`: earlier issue builders (`build_html.py`, `build_v2.py`–`build_v6.py`), source assembly (`merge.py`, `assemble.py`, `trans-T*.py`, `seed_glossary.py`) and the case builders. Rerunning assembly overwrites the current final source; that is a content migration, not a routine step.
+- `2026-10-12/archive/experiments/`: `gen-test/`, `cases/`, `ovis-test/` — extraction and layout experiments, each pairing its own builders with results, some with old absolute paths. `cases/assets/` and `ovis-test/visual-assets/` are now historical: the referenced images live in the issue `assets/`.
+- `2026-10-12/archive/historical-outputs/`: generated pages, screenshots, stage artifacts and deliveries — `test-pages/`, `auto-test/`, `layout-test/`, `blind5/`, `reboot-proof/`, `convergence-before/`, `review-evidence/`, `stages/`, the interior prototype archive and the pre-October-13 `final.json` backup.
+- `2026-10-12/archive/pre-reboot-html/`: the pre-reboot hand-built newspaper versions.
+- The issue root keeps only what production consumes: approved source and translation provenance, `assets/`, `editorial-plans/`, `editorial-artifacts/`, and `editorial-explorations/` (the labelled reading-rhythm plans used as the `build.py --plans-dir` example), plus `dist/`.
 
-Historical reports are indexed in [docs/history](docs/history/README.md). Existing dated evidence remains at its original path so relative links survive.
+Dated reports and their evidence live under [docs/history](docs/history/README.md), which also records where each bundle moved from. Links were repaired when the bundles moved.
 
 ## Remaining risks before broader usage
 

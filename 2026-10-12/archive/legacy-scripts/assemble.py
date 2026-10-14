@@ -4,7 +4,8 @@ The CN strings are copied verbatim — no editing here. QA fixes go into the
 trans files or a patches file, never into this script's logic."""
 import json, os
 
-WORK = os.path.dirname(os.path.abspath(__file__))
+# Archived into 2026-10-12/archive/legacy-scripts/; WORK stays the issue directory.
+WORK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 merged = json.load(open(f"{WORK}/merged.json", encoding="utf-8"))
 
 trans = {}

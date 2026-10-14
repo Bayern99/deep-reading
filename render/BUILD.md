@@ -68,7 +68,7 @@ Run the offline seven-story experiment with a **new** evidence directory:
 .venv/bin/python scripts/experiment0.py --output /tmp/wsj-experiment0-evidence
 ```
 
-It checks nine pinned historical generations in memory, proves supported quotes/calculations/interpretation/SVGs through isolated compilation/import/HTTP delivery, and hashes the protected live issue before/after. It never starts the live queue. Existing Studio/queue generation has no host-evidence submission interface in this experiment; finish semantic review through the Python import seam. See [Experiment 0 results](../docs/research-2026-10-14/EXPERIMENT-0.md).
+It checks nine pinned historical generations in memory, proves supported quotes/calculations/interpretation/SVGs through isolated compilation/import/HTTP delivery, and hashes the protected live issue before/after. It never starts the live queue. Existing Studio/queue generation has no host-evidence submission interface in this experiment; finish semantic review through the Python import seam. See [Experiment 0 results](../docs/history/research-2026-10-14/EXPERIMENT-0.md).
 
 ## Recovery
 

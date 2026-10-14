@@ -8,7 +8,7 @@ import os
 import re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-DIST = os.path.join(os.path.dirname(BASE), '2026-10-12', 'dist')
+DIST = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12', 'dist')
 ORDER = ['E2-002', 'E1-010', 'E3-004', 'E1-014']
 
 

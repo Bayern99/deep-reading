@@ -21,7 +21,7 @@ Input is issue `final.json`, `front.json`, optional `enhanced-v1` plans, and ver
 
 ## Integrity and acceptance
 
-Paragraph text and order are checked for both languages before successful page writes. Confirmed alignment repair records are shared by ordinary, enhanced and baseline paths; baseline assets match the compared output. Image paths must resolve to preserved verified media, including the historical `cases/assets/` dependency where registered.
+Paragraph text and order are checked for both languages before successful page writes. Confirmed alignment repair records are shared by ordinary, enhanced and baseline paths; baseline assets match the compared output. Image paths must resolve to preserved verified media in the issue `assets/` directory, including figures recovered from the print edition.
 
 The front pack is driven by `front.json`, never hardcoded article IDs. Per-story headline phrase protection is optional and exact-match only. Continuous Chinese prose uses natural line breaking, no `text-wrap: pretty`; new editorial additions must have source support and add reading value. The removed duel component stays removed.
 

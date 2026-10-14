@@ -116,7 +116,7 @@ Other observed evidence rails/SVG labels clip internally while `scrollWidth` is 
 
 ### 4.4 Historical “golden” is evidence, not authority
 
-[Phase 5 experiment summary](../../experiments/phase5-exp01/artifacts/experiment-summary.json) records the Phase 4 golden at 18/20 verbatim matches in both languages, while three source-referenced runs reached 20/20. Source-referenced runs also had inventoried unverified editorial numbers. The historical baseline teaches both aesthetic possibility and why compilation improved integrity. Its name does not waive today's acceptance rules.
+[Phase 5 experiment summary](../../../experiments/phase5-exp01/artifacts/experiment-summary.json) records the Phase 4 golden at 18/20 verbatim matches in both languages, while three source-referenced runs reached 20/20. Source-referenced runs also had inventoried unverified editorial numbers. The historical baseline teaches both aesthetic possibility and why compilation improved integrity. Its name does not waive today's acceptance rules.
 
 ## 5. Golden acceptance card for future comparisons
 

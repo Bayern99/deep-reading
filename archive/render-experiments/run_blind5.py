@@ -25,11 +25,11 @@ from components import esc, article_header
 from plan_render import _render_component
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(BASE)
-BLIND5 = os.path.join(ROOT, '2026-10-12', 'blind5')
+ROOT = os.path.dirname(os.path.dirname(BASE))
+BLIND5 = os.path.join(ROOT, '2026-10-12', 'archive', 'historical-outputs', 'blind5')
 FINAL = json.load(open(os.path.join(ROOT, '2026-10-12', 'final.json'), encoding='utf-8'))
 BYID = {e['id']: e for e in FINAL}
-SHELL_SRC = os.path.join(ROOT, '2026-10-12', 'gen-test', 'E1-025', 'article.html')
+SHELL_SRC = os.path.join(ROOT, '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025', 'article.html')
 
 OMLX = 'http://127.0.0.1:18800/v1/chat/completions'
 PLANNER_MODEL = 'Qwen3.8-27B-oQ4e-mtp'

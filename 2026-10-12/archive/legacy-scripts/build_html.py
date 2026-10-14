@@ -7,9 +7,10 @@ Chinese text. Any fix goes into final.json, never into this builder.
 """
 import json, html, re, sys, os
 
-WORK = os.path.dirname(os.path.abspath(__file__))
+# Archived into 2026-10-12/archive/legacy-scripts/; WORK stays the issue directory.
+WORK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FINAL = os.path.join(WORK, "final.json")
-OUT = os.path.join(WORK, "wsj-2026-10-12-deepread.html")
+OUT = os.path.join(WORK, "archive", "pre-reboot-html", "wsj-2026-10-12-deepread.html")
 
 SECTION_CN = {
     "News": "新闻", "World News": "国际新闻", "U.S. News": "美国新闻",

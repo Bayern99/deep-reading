@@ -20,8 +20,8 @@ import os
 import sys
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-ISSUE_DIR = os.path.join(os.path.dirname(BASE), '2026-10-12')
-STAGES_DIR = os.path.join(ISSUE_DIR, 'stages')
+ISSUE_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12')
+STAGES_DIR = os.path.join(ISSUE_DIR, 'archive', 'historical-outputs', 'stages')
 
 STAGES = [
     'extraction',      # PDF → final.json（已完成，产物即 final.json）

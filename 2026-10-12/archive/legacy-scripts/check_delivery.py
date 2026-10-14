@@ -2,9 +2,10 @@
 """Pre-delivery checks from build-checklist.md. Reports alarms, exits 1 if any FAIL."""
 import json, re, sys, os, html as ihtml
 
-WORK = os.path.dirname(os.path.abspath(__file__))
+# Archived into 2026-10-12/archive/legacy-scripts/; WORK stays the issue directory.
+WORK = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FINAL = os.path.join(WORK, "final.json")
-HTML = os.path.join(WORK, "wsj-2026-10-12-deepread.html")
+HTML = os.path.join(WORK, "archive", "pre-reboot-html", "wsj-2026-10-12-deepread.html")
 
 fails, warns = [], []
 
