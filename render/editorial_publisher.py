@@ -85,7 +85,9 @@ Unreviewed additions are retained for review and cannot be promoted as verified.
 Compose each intervention as ONE self-contained block (`<figure>`, `<aside>`,
 `<section>`, `<table>`): its heading, copy, data labels and drawing are reviewed
 together as a single unit, so keep one visual idea per block and do not scatter
-bare numbers or quotations into loose wrappers outside it.
+bare numbers or quotations into loose wrappers outside it. Put kickers, labels and
+attributions OUTSIDE a `<blockquote>`: everything inside it is verified against the
+source as a quotation.
 
 Return ONLY the complete `<!DOCTYPE html>` document with no markdown fences.
 """

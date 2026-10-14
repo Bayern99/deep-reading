@@ -290,3 +290,16 @@ class ClaimProvenanceTests(unittest.TestCase):
                                     review=record['review'])
         self.assertTrue(compile_editorial_artifact(verbatim, canonical,
                                                    evidence_records=[good])['audit_report']['passed'])
+
+    def test_typographic_emphasis_marks_are_not_treated_as_quotations(self):
+        canonical = build_canonical_source({'id': 'EXP-MARKS', 'body_en': 'Reported a long-term plan.',
+                                            'body_cn': '报道了一项长期计划。'})
+        raw = narrative(canonical, '<aside data-claim="term">“长期愿景”是一项计划。</aside>')
+        claim = next(c for c in compile_editorial_artifact(raw, canonical, strict=False)['audit_report']['claim_provenance']['claims']
+                     if c['target'].startswith('html:'))
+        record = make_evidence_record(canonical, claim, kind='fact',
+            spans=[{'block': 'p1', 'locale': 'cn', 'text': canonical['blocks'][0]['text_cn']}],
+            review={'decision': 'supported', 'reviewer': 'fixture-editor',
+                    'reason': 'Quotation marks mark terminology here, not a quotation from the source.'})
+        self.assertTrue(compile_editorial_artifact(raw, canonical,
+                                                   evidence_records=[record])['audit_report']['passed'])

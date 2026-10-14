@@ -79,7 +79,6 @@ def canonical_claims(canonical: dict[str, Any]) -> list[dict[str, Any]]:
 
 INTERVENTION_TAGS = ('figure', 'aside', 'table', 'blockquote', 'section', 'svg')
 QUOTE_MARKS = re.compile(r'[“”「」"]')
-QUOTED = re.compile(r'[“"「][^”"」]{1,400}[”"」]')
 
 
 def _injected(el) -> bool:
@@ -131,21 +130,36 @@ def _authored_text(el, controls) -> str:
 
 
 def _quoted_fragments(claim) -> list[str]:
-    """Quoted strings a reader sees as direct quotation, whatever the claim kind.
+    """Quotations a reader sees as direct quotation: `<blockquote>`/`<q>` inside the unit.
 
-    A quotation inside a merged intervention must stay verifiable; relabelling the
-    unit as fact/interpretation/chart must not drop the literal check.
+    Compiler-injected quotation and attribution fields are excluded: the narrative and
+    candidate checks already cover them, and a host cannot be asked to source text the
+    compiler itself composed. Typographic emphasis marks are not treated as quotations,
+    because in this corpus they mark terminology as often as speech.
     """
-    fragments = [m.group(0)[1:-1] for m in QUOTED.finditer(claim.get('text') or '')]
     payload = claim.get('payload')
-    if claim.get('intervention') and isinstance(payload, str):
-        try:
-            root = lxml.html.fromstring(payload)
-        except (ValueError, lxml.etree.ParserError):
-            return fragments
-        for el in root.xpath('.//blockquote | .//q'):
-            fragments.extend(t.strip() for t in el.xpath('.//text()') if t.strip())
-    return [f for f in fragments if f.strip()]
+    if not claim.get('intervention') or not isinstance(payload, str):
+        return []
+    try:
+        root = lxml.html.fromstring(payload)
+    except (ValueError, lxml.etree.ParserError):
+        return []
+    roots = [root] if isinstance(root.tag, str) and root.tag.lower() in ('blockquote', 'q') \
+        else root.xpath('.//blockquote | .//q')
+    fragments = []
+    for el in roots:
+        for node in el.xpath('.//text()'):
+            if node.getparent().xpath('ancestor-or-self::*[@data-field or @data-derive]'):
+                continue
+            text = str(node).strip()
+            if text:
+                fragments.append(text)
+    return fragments
+
+
+def _fragment_core(text: str) -> str:
+    """Compare quotations on their words: ignore whitespace and edge punctuation."""
+    return re.sub(r'\s+', '', _quote_text(text)).strip('，,。.、；;：:！!？?·')
 
 
 def host_review_required(claim: dict[str, Any]) -> bool:
@@ -339,7 +353,8 @@ def _check_claim(claim, canonical, record):
         if span_errors:
             return errors, pending
         for fragment in _quoted_fragments(claim):
-            if not any(_quote_text(fragment) in _quote_text(text) for text in texts):
+            core = _fragment_core(fragment)
+            if core and not any(core in _fragment_core(text) for text in texts):
                 errors.append(f'Quotation absent from evidence: {_quote_text(fragment)[:60]}')
         kind = record.get('kind')
         if kind not in ('quote', 'number', 'calculation', 'fact', 'interpretation', 'chart', 'nonfactual'):
