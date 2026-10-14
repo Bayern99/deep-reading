@@ -4,7 +4,7 @@
 
 Preserve the validated Phase 1–7 implementation, make the real runtime navigable, establish a portable local development entry point, and record risks before actual usage testing. No visual redesign, upstream engine replacement, package migration or transactional-store rewrite was undertaken.
 
-The local checkpoint on `governance/phase7-foundation` includes both the pre-existing uncommitted implementation/evidence and the governance changes. It is a review point; no merge, deployment or remote push is part of this task.
+Checkpoint `f8ff92b` includes both the pre-existing uncommitted implementation/evidence and the governance changes. It was created on `governance/phase7-foundation`; at Jerry's request, that branch was renamed to `main`, the sole local branch for ongoing work. The older local `master` and `reboot/reconstruction-brief` names were removed after confirming their commits were ancestors of the checkpoint. All history is retained. No merge, deployment or remote push occurred.
 
 ## Main findings
 
