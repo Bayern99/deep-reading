@@ -175,7 +175,7 @@ class RenderingConvergence(unittest.TestCase):
             renderer = root / 'render'
             renderer.mkdir()
             for source in (ROOT / 'render').iterdir():
-                if source.suffix in ('.py', '.css', '.json') and not source.name.startswith('test_'):
+                if source.suffix in ('.py', '.css', '.json'):
                     shutil.copy2(source, renderer / source.name)
             issue = root / '2026-10-12'
             issue.mkdir()

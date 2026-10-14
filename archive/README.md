@@ -26,5 +26,8 @@ PYTHONPATH=render .venv/bin/python archive/render-experiments/<script>.py
 ```
 
 Issue-local historical drivers (`2026-10-12/gen-test/`, `cases/`, `auto-test/`,
-`layout-test/`, `blind5/`) stay where they are and reference some of these modules
-the same way. Dated reports that describe them are in [docs/history](../docs/history/README.md).
+`layout-test/`, `blind5/`) stay where they are. The `gen-test/` pipelines import
+`plan_render` and `build_test_pages` from this directory, so they need
+`PYTHONPATH=render:archive/render-experiments`, and their hardcoded `/home/hatch/...`
+paths mean they do not run on this machine as they stand. Dated reports that
+describe them are in [docs/history](../docs/history/README.md).

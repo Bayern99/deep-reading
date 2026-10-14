@@ -79,6 +79,7 @@ def canonical_claims(canonical: dict[str, Any]) -> list[dict[str, Any]]:
 
 INTERVENTION_TAGS = ('figure', 'aside', 'table', 'blockquote', 'section', 'svg')
 QUOTE_MARKS = re.compile(r'[“”「」"]')
+QUOTED = re.compile(r'[“"「][^”"」]{1,400}[”"」]')
 
 
 def _injected(el) -> bool:
@@ -127,6 +128,24 @@ def _authored_text(el, controls) -> str:
 
     rec(el)
     return ' '.join(parts)
+
+
+def _quoted_fragments(claim) -> list[str]:
+    """Quoted strings a reader sees as direct quotation, whatever the claim kind.
+
+    A quotation inside a merged intervention must stay verifiable; relabelling the
+    unit as fact/interpretation/chart must not drop the literal check.
+    """
+    fragments = [m.group(0)[1:-1] for m in QUOTED.finditer(claim.get('text') or '')]
+    payload = claim.get('payload')
+    if claim.get('intervention') and isinstance(payload, str):
+        try:
+            root = lxml.html.fromstring(payload)
+        except (ValueError, lxml.etree.ParserError):
+            return fragments
+        for el in root.xpath('.//blockquote | .//q'):
+            fragments.extend(t.strip() for t in el.xpath('.//text()') if t.strip())
+    return [f for f in fragments if f.strip()]
 
 
 def host_review_required(claim: dict[str, Any]) -> bool:
@@ -319,6 +338,9 @@ def _check_claim(claim, canonical, record):
         errors.extend(span_errors)
         if span_errors:
             return errors, pending
+        for fragment in _quoted_fragments(claim):
+            if not any(_quote_text(fragment) in _quote_text(text) for text in texts):
+                errors.append(f'Quotation absent from evidence: {_quote_text(fragment)[:60]}')
         kind = record.get('kind')
         if kind not in ('quote', 'number', 'calculation', 'fact', 'interpretation', 'chart', 'nonfactual'):
             errors.append('Unknown evidence kind')
@@ -431,7 +453,7 @@ def validate_claim_provenance(canonical: dict[str, Any], doc: lxml.html.HtmlElem
             errors.append(f'Duplicate evidence target: {target}')
         records[target] = record
     targets = {c['target'] for c in claims}
-    for target in records.keys() - targets:
+    for target in sorted(records.keys() - targets):
         errors.append(f'Evidence target not present: {target}')
     if len(targets) != len(claims):
         errors.append('Duplicate canonical claim identifiers')

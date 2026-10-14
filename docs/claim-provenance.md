@@ -12,7 +12,7 @@ The compiler inventories canonical candidates and authored content throughout th
 
 `host_review_required` decides deterministically, per target, whether a record is required. It is true for every canonical candidate (`derive:`, `context:`), every chart/SVG, every direct quotation, every presentation-code target, every authored intervention, and every loose text or attribute that carries a number or quotation marks. It is false for loose typography, headings, labels and decorative text with no number and no quotation mark: those stay in the audit as `disposition: inventoried_not_gated` and do not gate publication. The audit's `summary` reports `active_targets`, `host_review_required` and `inventoried_not_gated`.
 
-Merging is not an exemption. A unit's `text` is the authored copy inside it, so every number and every quotation in a merged intervention is still extracted and still compared against the record's spans. A wrong figure inside a reviewed comparison figure fails as `Numbers absent from evidence/calculation`, and any content change invalidates the record through `claim_digest`.
+Merging is not an exemption. A unit's `text` is the authored copy inside it, so every number and every quotation in a merged intervention is still extracted and still compared against the record's spans. A wrong figure inside a reviewed comparison figure fails as `Numbers absent from evidence/calculation`. Quote-marked strings and `<blockquote>`/`<q>` descendants are checked verbatim whatever `kind` the record uses, so relabelling a unit as `fact`, `interpretation` or `chart` cannot drop the literal check. Any content change invalidates the record through `claim_digest`.
 
 A candidate has one of three states:
 
@@ -90,6 +90,8 @@ Publisher generation uses the same gate. Missing semantic review stops the autom
 ## Limits and rollout
 
 This contract checks immutable local issue evidence, not arbitrary URLs or external background claims. Independently approved external source snapshots need a future evidence namespace. Unit extraction does not establish semantic entailment. Chart geometry is hash-bound and reviewed, not numerically reverse-engineered for all possible SVG encodings. Presentation-code review requires the host to inspect dynamic output; this is not a complete executable-content security policy.
+
+A `section` used as a broad layout wrapper becomes one coarse unit: the numbers inside stay individually matched, but a single review reason has to cover the whole block. The publisher prompt therefore asks for one visual idea per intervention block. Author the boundary deliberately; splitting a wrapper into `figure`/`aside` blocks gives finer review without weakening any check.
 
 Next: validate a small batch of real Publisher output with independent editorial review; freeze per-version publication inputs and records; expose factual state separately from historical narrative verification and visual acceptance. Extend the same claim contract to remaining publishing paths only after these reference cases are calibrated.
 

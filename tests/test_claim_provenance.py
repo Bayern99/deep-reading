@@ -264,3 +264,29 @@ class ClaimProvenanceTests(unittest.TestCase):
         record['claim_digest'] = tampered_claim['claim_digest']
         result = compile_editorial_artifact(tampered, canonical, strict=False, evidence_records=[record])
         self.assertIn('4.12 percent', '; '.join(result['audit_report']['errors']))
+
+    def test_quotation_inside_a_merged_unit_still_must_be_verbatim(self):
+        canonical = build_canonical_source({'id': 'EXP-NESTED', 'body_en': 'Lee said rates remain uncertain.',
+                                            'body_cn': '李说利率仍不确定。'})
+        figure = ('<figure><blockquote>“Totally invented quotation.”</blockquote>'
+                  '<figcaption>Reaction</figcaption></figure>')
+        raw = narrative(canonical, figure)
+
+        def unit_claim(html):
+            return next(c for c in compile_editorial_artifact(html, canonical, strict=False)['audit_report']['claim_provenance']['claims']
+                        if c['target'].startswith('html:'))
+
+        claim = unit_claim(raw)
+        self.assertEqual(claim['target'], 'html:/html/body/main/figure')
+        record = make_evidence_record(canonical, claim, kind='fact',
+            spans=[{'block': 'p1', 'locale': 'en', 'text': 'Lee said rates remain uncertain.'}],
+            review={'decision': 'supported', 'reviewer': 'fixture-editor',
+                    'reason': 'Unit relabelled as fact; the quotation must still be literal.'})
+        rejected = compile_editorial_artifact(raw, canonical, strict=False, evidence_records=[record])
+        self.assertIn('Quotation absent from evidence', '; '.join(rejected['audit_report']['errors']))
+
+        verbatim = raw.replace('Totally invented quotation.', 'rates remain uncertain')
+        good = make_evidence_record(canonical, unit_claim(verbatim), kind='fact', spans=record['spans'],
+                                    review=record['review'])
+        self.assertTrue(compile_editorial_artifact(verbatim, canonical,
+                                                   evidence_records=[good])['audit_report']['passed'])
