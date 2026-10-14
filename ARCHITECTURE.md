@@ -41,14 +41,15 @@ All names in this table are under `render/`. Modules remain colocated to preserv
 |---|---|
 | `integrity_gate.py`, `declutter.py` | Detect unconfirmed continuation, truncation markers and extraction defects. Return findings without changing copy. WARN requires editorial disposition; it is not PASS. |
 | `source_model.py` | Shared bilingual paragraph projection; exact English repair records; content digest over article fields and alignment repair. Preserve unmatched tails rather than silently truncate. |
-| `canonical_builder.py` | Build `canonical-source-v1`: metadata, ordered `pN` blocks, lossless sentence anchors, quotes, metrics and media. Date labels follow the selected issue. |
+| `canonical_builder.py` | Build `canonical-source-v1`: metadata, ordered `pN` blocks, lossless sentence anchors, quote/metric candidates and media. Attach candidate provenance diagnostics; date labels follow the selected issue. |
+| `claim_provenance.py` | Source/claim-bound evidence records, literal quotation and numeric checks, Decimal calculations and host semantic dispositions. Inventory authored text/SVG/presentation code; require support before new verified publication. See [Claim Provenance](docs/claim-provenance.md). |
 | `build.py`, `issue.py` | Deterministic whole-issue CLI, front selection, gate filtering, type-aware composition and validation receipts. Does not invoke a model or load ArtifactStore. |
 | `article.py`, `components.py` | Ordinary type rendering, metadata, copy, figures and data appendix. |
 | `enhanced_render.py`, `text_treatment.py`, `layout.py` | Execute `enhanced-v1` plans against source anchors, exact text and digest; reject unsupported/stale operations with receipts. Empty intervention retains ordinary rendering. |
 | `editorial_publisher.py` | Generation prompt, provider call, strict compilation, one targeted repair retry by default, and verified/failed persistence. Also imports already generated raw HTML. |
 | `model_provider.py` | Callable, OpenAI-compatible and Anthropic adapters; model inventory and external credential resolution. Returns output and usage metadata. |
-| `editorial_compiler.py` | Deterministically inject canonical text into `data-ref`, populate `data-derive`, check coverage/order/exact text, sanitize some markup/CSS, adapt styles to Shadow DOM, diagnose SVG bounds. |
-| `artifact_store.py` | Preserve raw HTML, compiled HTML and complete metadata per version; index, active pointer, failed attempts and browser metrics. Reading never calls the model. |
+| `editorial_compiler.py` | Deterministically inject canonical text into `data-ref`, populate `data-derive`, check coverage/order/exact text, enforce Claim Provenance, sanitize some markup/CSS, adapt styles to Shadow DOM, diagnose SVG bounds. |
+| `artifact_store.py` | Preserve raw HTML, compiled HTML and complete metadata per version; require a passing current claim gate and matching compiled/Shadow delivery digests for new versions. Preserve historical reopening, index, active pointer, failed attempts and browser metrics. |
 | `generation_queue.py` | Discover issue directories, calculate curation tiers, enforce admission and WARN confirmation, persist tasks, deduplicate pending/running work, recover and execute serially. |
 | `editorial_studio.py` | Local threaded HTTP host, source library, version selection, canonical inspector, queue controls and static Reader export. Python and the inline client currently share one file. |
 
@@ -61,7 +62,7 @@ All names in this table are under `render/`. Modules remain colocated to preserv
 - Whole-issue publishing excludes curation removals and hides WARN/BLOCK entries behind review anchors. Its source library and its visible newspaper are different sets.
 - Queue admission rejects BLOCK and requires explicit WARN confirmation. Curation recommends long features versus restrained briefs and excludes some non-narrative types. The legacy `/api/generate` route and CLI `--enqueue` currently imply WARN confirmation; use Studio batch confirmation for deliberate review.
 - Publisher itself checks BLOCK. A direct caller of the publishing/import functions must provide the editorial decision about WARN; those functions do not share a persistent review-disposition record.
-- Compiler verification proves referenced narrative copy coverage, order and exactness. It does not prove every model-authored explanatory label, SVG label or editorial addition is factually correct. Browser metrics have a separate `pending_browser_check` state; compiler success alone is not visual approval.
+- Compiler verification proves referenced narrative copy coverage, order and exactness. New strict compilation also requires source-bound evidence and host dispositions for active derived/editorial additions. Literal/numeric/calculation checks cannot certify attribution, semantic entailment or chart encoding; those remain host review responsibilities. Historical compiler PASS records retain their original meaning and are not retrospectively fact-approved. Browser metrics have a separate `pending_browser_check` state; compiler success alone is not visual approval. See [Claim Provenance](docs/claim-provenance.md).
 - The two output families are separate contracts. `index.html` is the whole newspaper. `editorial-reader.html` contains generated article versions. `enhanced-v1` plans are not the generated HTML protocol.
 
 ## Persistence and runtime
@@ -111,7 +112,7 @@ Historical reports are indexed in [docs/history](docs/history/README.md). Existi
 | Recovery/cancellation | Timestamp-only restart matching and post-cancellation publication need explicit task/version association if stronger guarantees are required. |
 | Local API security | HTTP host binds loopback, with no authentication/origin policy, broad issue-directory static serving and mutating endpoints. Do not expose it as a shared/public service. |
 | Generated HTML | Sanitizer permits short scripts, some external references and styles; Shadow DOM isolates styles, not privileges. A complete allowlist/CSP or sandbox policy needs an explicit compatibility review of generated standalone interactions. |
-| Editorial factuality | Exact narrative injection does not verify unrestricted generated explanation/graphics. Review authored additions and 1440/390 bilingual rendering before activation as an accepted design. |
+| Editorial factuality | Experiment 0 adds a source-bound claim gate to new compiler/store publication. Existing historical versions remain unassessed under that contract. Host review must assess semantics/attribution/graphics; existing Studio/queue have no evidence-review interface. Calibrate review before broader rollout. |
 | Reader maintainability | Large embedded client in `editorial_studio.py`; extract only after pinning its actual interactions and static-export contract. Avoid a package/framework migration as incidental cleanup. |
 | Upstream reproducibility | Restore the source PDF and documented extraction/translation tool versions before a fresh issue. Historical reports do not establish current model deployment. |
 

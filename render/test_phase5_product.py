@@ -47,13 +47,26 @@ ISSUE_DIR = os.path.abspath(os.path.join(BASE, "../2026-10-12"))
 
 
 class Phase5ProductTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Payload collection can recover/resume a queue; never use the live issue.
+        cls._fixture = tempfile.TemporaryDirectory(prefix='wsj-phase5-tests-')
+        cls.payload_issue = os.path.join(cls._fixture.name, '2026-10-12')
+        os.makedirs(cls.payload_issue)
+        shutil.copy2(os.path.join(ISSUE_DIR, 'final.json'), cls.payload_issue)
+        shutil.copytree(os.path.join(ISSUE_DIR, 'editorial-artifacts'),
+                        os.path.join(cls.payload_issue, 'editorial-artifacts'),
+                        ignore=shutil.ignore_patterns('_queue.json', '_queue.json.tmp.*'))
+
+    @classmethod
+    def tearDownClass(cls):
+        cls._fixture.cleanup()
+
     def test_01_canonical_builder_inherits_existing_pipeline_and_alignment_repairs(self) -> None:
         # E2-001: 20 paragraphs, curated sentence splits on p4 & p20
         c_e2001 = load_canonical_for_issue(ISSUE_DIR, "E2-001")
         self.assertEqual(c_e2001["article_id"], "E2-001")
         self.assertEqual(len(c_e2001["blocks"]), 20)
-        self.assertEqual(len(c_e2001["derived_quotes"]), 4)
-        self.assertEqual(len(c_e2001["derived_metrics"]), 8)
 
         # E2-002: has EN alignment repair in alignment_overrides.json; verify CN and EN block counts match (38)
         c_e2002 = load_canonical_for_issue(ISSUE_DIR, "E2-002")
@@ -116,7 +129,9 @@ class Phase5ProductTests(unittest.TestCase):
           {p_tags}
         </main></body></html>"""
 
-        bundle = compile_editorial_artifact(unsafe_html, canonical, strict=True, auto_repair_svg=True)
+        # Sanitizer diagnostics remain available; unreviewed authored content cannot publish.
+        bundle = compile_editorial_artifact(unsafe_html, canonical, strict=False, auto_repair_svg=True)
+        self.assertFalse(bundle['audit_report']['claim_provenance']['passed'])
         comp = bundle["compiled_html"]
         self.assertNotIn("<iframe", comp)
         self.assertNotIn("onclick=", comp)
@@ -177,7 +192,7 @@ class Phase5ProductTests(unittest.TestCase):
             self.assertEqual(len(art_summary["failed_attempts"]), 1)
 
     def test_05_persisted_issue_artifacts_and_reader_build(self) -> None:
-        payload = collect_issue_payload(ISSUE_DIR)
+        payload = collect_issue_payload(self.payload_issue)
         self.assertEqual(payload["total_source_items"], 117)
         for aid in ("E2-001", "E1-010", "E3-004"):
             self.assertIn(aid, payload["artifacts"])
@@ -238,7 +253,7 @@ class Phase5ProductTests(unittest.TestCase):
         )
 
         # Verify all 6 generated articles (E2-001, E1-010, E3-004, E1-024, E1-019, E1-014) exist and pass audit
-        payload = collect_issue_payload(ISSUE_DIR)
+        payload = collect_issue_payload(self.payload_issue)
         for aid in ("E2-001", "E1-010", "E3-004", "E1-024", "E1-019", "E1-014"):
             self.assertIn(aid, payload["artifacts"], f"{aid} must be present in persisted artifacts")
             act = payload["artifacts"][aid]["active_version"]

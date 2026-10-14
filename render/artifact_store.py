@@ -22,10 +22,13 @@ Key guarantees:
 from __future__ import annotations
 
 import datetime
+import hashlib
 import json
 import os
 import re
 from typing import Any
+
+from claim_provenance import canonical_claims, evidence_source_digest
 
 
 def _utc_now() -> str:
@@ -86,6 +89,19 @@ class ArtifactStore:
         """Persist a verified Editorial Artifact as a new version and promote it to active."""
         if not audit_report.get("passed"):
             raise ValueError("Cannot save an unverified artifact as active; use save_failed_attempt instead.")
+        gate = audit_report.get('claim_provenance') or {}
+        if not gate.get('passed') or gate.get('source_digest') != evidence_source_digest(canonical):
+            raise ValueError('Cannot activate an artifact without current Claim Provenance evidence.')
+        if gate.get('compiled_digest') != hashlib.sha256(compiled_html.encode()).hexdigest():
+            raise ValueError('Compiled artifact differs from the Claim Provenance review.')
+        shadow_digest = hashlib.sha256(json.dumps(shadow_bundle, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+        if gate.get('shadow_digest') != shadow_digest:
+            raise ValueError('Reader bundle differs from the Claim Provenance review.')
+        candidate_digests = {c['target']: c['claim_digest'] for c in canonical_claims(canonical)}
+        for claim in gate.get('claims', []):
+            if claim.get('active') and not claim['target'].startswith('html:'):
+                if candidate_digests.get(claim['target']) != claim.get('claim_digest'):
+                    raise ValueError('Derived publication input differs from the Claim Provenance review.')
 
         aid = canonical["article_id"]
         self.save_canonical(canonical)

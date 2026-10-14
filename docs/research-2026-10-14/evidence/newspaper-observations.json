@@ -1,0 +1,34 @@
+[
+  {
+    "width": 1440,
+    "locale": "zh-CN",
+    "scrollWidth": 1425,
+    "articles": 92,
+    "images": 18,
+    "loadedImages": 18
+  },
+  {
+    "width": 1440,
+    "locale": "en",
+    "scrollWidth": 1425,
+    "articles": 92,
+    "images": 18,
+    "loadedImages": 18
+  },
+  {
+    "width": 390,
+    "locale": "zh-CN",
+    "scrollWidth": 375,
+    "articles": 92,
+    "images": 18,
+    "loadedImages": 18
+  },
+  {
+    "width": 390,
+    "locale": "en",
+    "scrollWidth": 375,
+    "articles": 92,
+    "images": 18,
+    "loadedImages": 18
+  }
+]

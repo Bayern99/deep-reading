@@ -1,0 +1,433 @@
+{
+  "schema": "research-evidence-manifest-v1",
+  "observed_date": "2026-10-14",
+  "issue_index_updated_at": "2026-10-14T14:16:16Z",
+  "scope": "Read-only isolated smoke snapshot; no live queue and no model calls; not a transactionally locked production backup.",
+  "source_sha256": "00fa35e8f5a9bc164da3dae3af41c6b659c1e2c609d1e535729a6fbb3efd5782",
+  "inventory": {
+    "source_items": 117,
+    "source_types": {
+      "index_digest": 3,
+      "data_table": 25,
+      "photo_caption": 22,
+      "article": 38,
+      "correction": 1,
+      "brief": 11,
+      "opinion": 11,
+      "letter": 6
+    },
+    "stored_articles": 21,
+    "stored_versions": 38
+  },
+  "artifacts": [
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E2-001",
+      "version": "v1",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v1/raw.html",
+          "sha256": "83e37aa213a54b5c0430a8fc662c41a4ed495544f3aa4be918d15e464e03fe8c",
+          "bytes": 43268
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v1/compiled.html",
+          "sha256": "b2d460dd8bf3bb1c9ecdba7077d4d09d98096885c8b923a099b3c20b0ea8e55a",
+          "bytes": 63841
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v1/artifact.json",
+          "sha256": "a984813446e2825f2ffb1f9b6992762e307fedb03c674bf39a9e30a4616e932e",
+          "bytes": 82568
+        }
+      },
+      "recorded_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "current_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E2-001",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E2-001",
+      "version": "v2",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v2/raw.html",
+          "sha256": "928d1b8d03d894509a9e20258f75f98fd0f4a0f2a390139105bbfbc7296b55ee",
+          "bytes": 48466
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v2/compiled.html",
+          "sha256": "1ecd1162804aaa9020bead17cacbdb1af7b44004ef7f897576a251f22c735306",
+          "bytes": 69925
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v2/artifact.json",
+          "sha256": "3ae127e215da728a8a10ec532238feb31e2a88fd64f50272b17472ca93a17385",
+          "bytes": 90084
+        }
+      },
+      "recorded_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "current_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E2-001",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E2-001",
+      "version": "v3",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v3/raw.html",
+          "sha256": "bb8b42489c160972262b3a396e7539774b1afabf83e9af5ffc202376fa4a4fde",
+          "bytes": 50540
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v3/compiled.html",
+          "sha256": "4df3e7410a355ec12d6be20a401a071b69e06d0647a5355b4072b05cd434e74e",
+          "bytes": 70845
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E2-001/v3/artifact.json",
+          "sha256": "359a9cfd64d9435ea06892dfd8cfc84366ce00e758d88568c6fabd065bded7ea",
+          "bytes": 94729
+        }
+      },
+      "recorded_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "current_content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E2-001",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E1-010",
+      "version": "v1",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E1-010/v1/raw.html",
+          "sha256": "e07af93ef28c90c76aa8ab4bf0c54d446d9996b4889fa20d4ea330e46a6ac4c0",
+          "bytes": 74565
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E1-010/v1/compiled.html",
+          "sha256": "3b27270a9486c75cda3bc7c2a5dd618b96f2ad8e35fb7f9ee15d8721f887b22c",
+          "bytes": 62869
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E1-010/v1/artifact.json",
+          "sha256": "0a5eaa52eef8367c17dad087ac23893cdeed3db071943fcae8ae82a7e33eae07",
+          "bytes": 77945
+        }
+      },
+      "recorded_content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+      "current_content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E1-010",
+          "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E3-004",
+      "version": "v1",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E3-004/v1/raw.html",
+          "sha256": "561a4677432ff4a66b129f9f3f1f45aa760479a6eb800845cc39a4a8779544cf",
+          "bytes": 55398
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E3-004/v1/compiled.html",
+          "sha256": "e3e390236f0971755469eea5a8aaf6486fb22a08422b724891caa41e4f599e50",
+          "bytes": 55625
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E3-004/v1/artifact.json",
+          "sha256": "07d95fc76005b640d47e6ad6d58349cb3ca90efbdef4be9ed0771bd9a4c381ed",
+          "bytes": 68420
+        }
+      },
+      "recorded_content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+      "current_content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E3-004",
+          "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+          "exact_match_cn": "22/22",
+          "exact_match_en": "22/22",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E2-010",
+      "version": "v1",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-010/v1/raw.html",
+          "sha256": "7c341568c369f44001e091c7bc90169e31a2f7a9cb24dbe1b0042a79fa8c39f9",
+          "bytes": 37434
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-010/v1/compiled.html",
+          "sha256": "ccbf0717ebe5d340fa33f0ad9da2e141c2423130430284093afdba1dd8dfb743",
+          "bytes": 54368
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E2-010/v1/artifact.json",
+          "sha256": "5dbc55c27a58f1a181637e17f8ad4049514cb57d0cb7cc2fd6341858f7fe0ea8",
+          "bytes": 67654
+        }
+      },
+      "recorded_content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+      "current_content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E2-010",
+          "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+          "exact_match_cn": "14/14",
+          "exact_match_en": "14/14",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E1-024",
+      "version": "v1",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E1-024/v1/raw.html",
+          "sha256": "b1d5c480164a73c131c33f08bab47a5f2333b59502edbb57f5be097f829ff1a0",
+          "bytes": 42625
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E1-024/v1/compiled.html",
+          "sha256": "3dbb26f51b9886e1f2c111a456cc37bade75c4d75dbc0c569cd718b9b9157ebc",
+          "bytes": 42904
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E1-024/v1/artifact.json",
+          "sha256": "49beaa73b2793e5fda8d899b528aa1b2d54f6f8e7b3bfa68a46c9c667a7a9424",
+          "bytes": 52525
+        }
+      },
+      "recorded_content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+      "current_content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E1-024",
+          "content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+          "exact_match_cn": "7/7",
+          "exact_match_en": "7/7",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E2-002",
+      "version": "v2",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-002/v2/raw.html",
+          "sha256": "7df0191445c948f472baed95f7f21d9088403e6657a52bdc0b125254b0a6c5bd",
+          "bytes": 71840
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E2-002/v2/compiled.html",
+          "sha256": "1c5a77dbff3eae74856b5250954b76142c7638c76fc7c0a4ccf9275d61fdd23c",
+          "bytes": 72288
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E2-002/v2/artifact.json",
+          "sha256": "c1cb458d1de6615c720e444c456a627d08f2a74132be868418849d86575f1255",
+          "bytes": 84773
+        }
+      },
+      "recorded_content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+      "current_content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E2-002",
+          "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+          "exact_match_cn": "38/38",
+          "exact_match_en": "38/38",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    },
+    {
+      "issue_date": "2026-10-12",
+      "article_id": "E3-001",
+      "version": "v2",
+      "paths": {
+        "raw.html": {
+          "path": "2026-10-12/editorial-artifacts/E3-001/v2/raw.html",
+          "sha256": "98c9dc8910d6f3cb09ee6086b75902a2456af68749bfb0bae4ab57f1818305a8",
+          "bytes": 42877
+        },
+        "compiled.html": {
+          "path": "2026-10-12/editorial-artifacts/E3-001/v2/compiled.html",
+          "sha256": "80804763c654e786b4fbd3cc12da8125497760aad57b5341989754ffcb1c7b81",
+          "bytes": 43023
+        },
+        "artifact.json": {
+          "path": "2026-10-12/editorial-artifacts/E3-001/v2/artifact.json",
+          "sha256": "50e3ec6357c2c3516bf185586de3992d33a61dbc2c7ede2eccb31e01bedf311c",
+          "bytes": 51454
+        }
+      },
+      "recorded_content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+      "current_content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+      "digest_matches": true,
+      "fresh_in_memory_compile": {
+        "passed": true,
+        "source_integrity": {
+          "article_id": "E3-001",
+          "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+          "exact_match_cn": "7/7",
+          "exact_match_en": "7/7",
+          "verbatim_diffs": []
+        },
+        "errors": [],
+        "warnings": []
+      }
+    }
+  ],
+  "deterministic_outputs": {
+    "index.html": {
+      "path": "2026-10-12/dist/index.html",
+      "sha256": "1162ecd5101f853f76f4193f7b64d1464f1ea6220cb2bec3ddeeb405bfb8034c",
+      "bytes": 5179216
+    },
+    "baseline.html": {
+      "path": "2026-10-12/dist/baseline.html",
+      "sha256": "07c7e7d2bade2b85b77f355e971fb8a4f53c76b2ed21a7f8c49adee69619086f",
+      "bytes": 5167123
+    },
+    "editorial-reader.html": {
+      "path": "2026-10-12/dist/editorial-reader.html",
+      "sha256": "de4fe59c676a3c0c952b011dae92fb4d90b97728e2e36238e12e4f44c0131a6c",
+      "bytes": 3126644
+    },
+    "render-receipts.json": {
+      "path": "2026-10-12/dist/render-receipts.json",
+      "sha256": "dca24d891cf595237036935cbd0631935cfe58354a7e5a32bafe6def33f591fe",
+      "bytes": 23222
+    }
+  },
+  "execution_inputs": {
+    "render/alignment_overrides.json": "c79897c6fe5a0da22371be6318f73c622f73da7251b48cf1747f1a8daf34330f",
+    "render/article.py": "0db327004775cb89275eceade571c95378755bdeabb077e68b7f53ed0c435b9d",
+    "render/artifact_store.py": "a42692fc0ba97b1e0b2cbb5a2f07b681ba61ff81a56cac6e7ca5051f55b8f0a0",
+    "render/asset_coverage.json": "6b69ee162763225dfbdc160849cc9317c1d1df3e00119a52fb902a2288f32e75",
+    "render/asset_registry.json": "05dd4a22f5b61a19d05796f71605e487b47437a6ffb57e6ea4c6083d12dd4a42",
+    "render/autonomous_planner.py": "349313615817b2e55673582f880b80c36af7e83219856ec0e7483e14e476c7d6",
+    "render/build.py": "1c6ada5affa296d9ea889130d98b27d65d59228a958a39e5d796f7faf2fafec1",
+    "render/build_layout_configs.py": "ae682775e08d42e09a52a3d9738b197b63a126b60e7ed06dc3f008ce065eb9e7",
+    "render/build_layout_test.py": "7cea1a7f683564c96b13ddbdf6a2e1eb0334da5420edc4ccd7a315e8e02c7627",
+    "render/build_prototype.py": "791d3ad7be2c8e625a2bee245202bfe735cd404ecff4897d20abccb1c0f3ef74",
+    "render/build_reboot_four.py": "360e6864dd92b6de7c111ab0aba6a670b37dd1d9982b14f6a64231fd240ace69",
+    "render/build_test_pages.py": "cd63245964bd045917f1f4ac0f29f53f4fabac9aaaa0869f4266848684ab6a36",
+    "render/canonical_builder.py": "d55b03e57cf2d7ccac027a7443c0b5b6625583647c2349b888d984cc1c7076dc",
+    "render/components.py": "a0e7078d0508b8246c6c375314ddb8cfa46af44292a4e7fe31a906f2c3da51cb",
+    "render/curation.json": "e84e08cca66210c78fb2b56448c7ff995aa57771b60eb0cc13cd8480c3b36acc",
+    "render/declutter.py": "74437cd1d258069bc36e60908c82aa23b586c0acab30b5f3d5ff5edd76842990",
+    "render/editorial-plan.schema.json": "dc899b970b0480638edcdb377de289256f154d4c5c22b4d11733570fa98027e8",
+    "render/editorial.css": "cc78df0d81194f79042d9c75b499e39f990b6f928cb221d4863c5df72f8ddefa",
+    "render/editorial_compiler.py": "526a8511fac17de18dfbe3e04b30a8de520f4f5ef4784fd0bbe6417636b5b565",
+    "render/editorial_publisher.py": "8f1a057d6e5cf5ae295a5c1a6f5be9a9edd072d620e5731704852158cd56c516",
+    "render/editorial_studio.py": "59b352e5529b6636ad989a9f3e2017d32ac733524df9573277aaec71030b35d4",
+    "render/enhanced_render.py": "f6a8ef7fbe0a7b99057261fafc15a4754dcb235fc92b3d862a786355ca997106",
+    "render/generation_queue.py": "910ba45972f99352cc691b6c45c49683807686184a7de7acea7e4ce06b9258c2",
+    "render/images.json": "3456b1d41c06cf3fcc974fbb65da0b4528f1e08d176bce066ecdf395705ba7df",
+    "render/integrity_gate.py": "930dfeab7519f1ef8f112e1909f6783d66be657f5dc661df9d57ab80e680bdf6",
+    "render/issue.py": "661276cf3762e8f6904970a436f63e9407e3b053651fd491e98fb090f6306a84",
+    "render/layout.py": "debe38fdd8bae1c345574a71449dcb67ace6af0e0705ad78eacce93be2c5420d",
+    "render/model_provider.py": "7d95b73281f89113b65a69bf570c484d3da506af50f18d3836069a347dcbbd80",
+    "render/modules.json": "232d4dc8557a1af47c34748867d2e95a4a1e7299c89a2a9f3e1df3c07c826489",
+    "render/orchestrate.py": "98273c07f1049466d491b9cbe274f708031315bc3a1fdac3ee6eff0f6bbb9dcd",
+    "render/pipeline.py": "a11a6c6f7e9bdc2815c03768d750c7772fea137752f2d7bfcac348812d1e1072",
+    "render/plan_adapter.py": "5699f8d4fe1af4ca750abe9d21856e1c6a06af72a563dd5bde327f0eb382f2c2",
+    "render/plan_render.py": "ef15c8f02a82df315a14c24351f5150b8b985823a82a6053d909ab8502fb9270",
+    "render/plan_validate.py": "0d43b8a1feee2228fcc1e94737b5e25a56171ec6d23341478927b32fbe6ade52",
+    "render/run_auto_test.py": "873454bf08dea3ac748645c37f0b42db1f972f32b8b13620bb932d59fe08d78f",
+    "render/run_blind5.py": "b3435845065ef4b66effe2ecb5b68350e8f5a3d7b1a79658e4fef067dd622b84",
+    "render/source_model.py": "a073f42dc755ddda5de7ef99e5f22f4dc1a2c5d8b2d87302b11b7607cbcbc88d",
+    "render/test_governance.py": "09b4354edbd455adb31e475e547de087ecb6ccd95d8c7ddfec557bf7efa93c19",
+    "render/test_p0_render.py": "71faec7de824e82a86f304799758bd9617ec99f7004605a4100690a8600b62cf",
+    "render/test_p1.py": "ce1049ff80d92366066393f80f3f6960d2b30557131530437e0f9528f5d46cc9",
+    "render/test_phase5_product.py": "eeeec90a12352f0c75d4ee43eaa2685a63ea6ae4fb320468ae5490b7a33a7b1b",
+    "render/text_treatment.py": "4840d619e20b6bdd1cb29f19a3f9ad44281d261c00a64de8fdb885ed452cc774",
+    "render/tokens.css": "8f84ad2c2ccaf451b7258cc7a00185d7b658d045fec4be70c6487f0db8bac78e",
+    "render/turn_page.py": "acb8bc60c7e9f2430d003cc3ff4a909fbe92ebf091a4a6c53b4d2d9561f9fd0d",
+    "2026-10-12/front.json": "9f29fc706cc25d9249be411ac7f190b1d04200903864ae6a73008615f534ab58",
+    "2026-10-12/editorial-plans/E1-005.json": "4f398f58a61b5b49c16911fd7df330e1360683e676d128410594d2e760f72053",
+    "2026-10-12/editorial-plans/E1-010.json": "286cef29add354347b049a2e37092caa63577017d65805998c1e217472e9b777",
+    "2026-10-12/editorial-plans/E1-014.json": "528746648cb9f9a2f68b5a3b4d8a39c6af2894cba2c865860df5b58e3c5a80f7",
+    "2026-10-12/editorial-plans/E1-033.json": "b0b38e28fc6752d1ec6b2e677cdda15f1a1b9ab45d40bc69952fead860c9eb42",
+    "2026-10-12/editorial-plans/E2-002.json": "196874a83ee4a4f097022cb904e51a8e16b9b30d3d1a4c731a3327d83b831c2f",
+    "2026-10-12/editorial-plans/E3-004.json": "7519957cccdfd6ab172e2ab8cea1bc6f4d1d57a3b9c33ac52af1b7a55a1aa066",
+    "2026-10-12/editorial-plans/E3-014.json": "10fbcd15befbe7d2e51e3bf0bb406fcabff0ba1ab484be5dd1b6e8226f68cd0b"
+  }
+}

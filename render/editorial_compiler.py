@@ -25,12 +25,15 @@ Responsibilities:
 from __future__ import annotations
 
 import difflib
+import hashlib
 import html
 import json
 import re
 from typing import Any
 
 import lxml.html
+
+from claim_provenance import validate_claim_provenance
 
 
 class EditorialCompilationError(ValueError):
@@ -346,6 +349,7 @@ def compile_editorial_artifact(
     *,
     strict: bool = True,
     auto_repair_svg: bool = True,
+    evidence_records: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Compile raw Source-referenced HTML into a verified Bilingual Editorial Artifact payload."""
     maps = build_lookup_maps(canonical)
@@ -526,7 +530,12 @@ def compile_editorial_artifact(
         injected_derives=injected_derives,
         svg_diagnostics=svg_diagnostics,
         sanitization_log=dom_sanitized + css_sanitized,
+        evidence_records=evidence_records,
     )
+    shadow_bundle = {"shadow_css": shadow_css, "shadow_html": f'<div class="wsj-shadow-body">{body_children_html}</div>'}
+    audit_report['claim_provenance']['shadow_digest'] = hashlib.sha256(
+        json.dumps(shadow_bundle, sort_keys=True, ensure_ascii=False).encode()
+    ).hexdigest()
 
     if strict and not audit_report["passed"]:
         raise EditorialCompilationError(
@@ -536,10 +545,7 @@ def compile_editorial_artifact(
 
     return {
         "compiled_html": compiled_html,
-        "shadow_bundle": {
-            "shadow_css": shadow_css,
-            "shadow_html": f'<div class="wsj-shadow-body">{body_children_html}</div>',
-        },
+        "shadow_bundle": shadow_bundle,
         "audit_report": audit_report,
     }
 
@@ -554,6 +560,7 @@ def audit_compiled_document(
     injected_derives: list[dict[str, Any]] | None = None,
     svg_diagnostics: list[dict[str, Any]] | None = None,
     sanitization_log: list[str] | None = None,
+    evidence_records: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     maps = build_lookup_maps(canonical)
     errors: list[str] = list(pre_errors or [])
@@ -668,6 +675,9 @@ def audit_compiled_document(
                 "numbers_found": re.findall(r"\$?\d+(?:,\d{3})*(?:\.\d+)?%?", f"{cn_t} {en_t}"),
             })
 
+    claim_gate = validate_claim_provenance(canonical, doc, evidence_records=evidence_records)
+    errors.extend(claim_gate['errors'])
+
     total_blocks = len(canonical["blocks"])
     return {
         "passed": len(errors) == 0,
@@ -693,6 +703,7 @@ def audit_compiled_document(
             "ai_editorial_items": ai_editorial_items,
         },
         "svg_diagnostics": svg_diagnostics or [],
+        "claim_provenance": claim_gate,
         "sanitization_log": sanitization_log or [],
         "errors": errors,
         "warnings": warnings,
