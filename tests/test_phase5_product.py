@@ -43,6 +43,7 @@ from editorial_studio import (
 from generation_queue import PersistentGenerationQueue, discover_issues, evaluate_article_curation
 from model_provider import CallableModelProvider, GenerationConfig, list_configured_models
 BASE = os.path.dirname(os.path.abspath(__file__))
+RENDER = os.path.abspath(os.path.join(BASE, "../render"))
 ISSUE_DIR = os.path.abspath(os.path.join(BASE, "../2026-10-12"))
 
 
@@ -313,7 +314,7 @@ class Phase5ProductTests(unittest.TestCase):
         # 2. Verify Curation & Content Gate enforcement (PASS vs WARN vs Excluded)
         with open(os.path.join(ISSUE_DIR, "final.json"), encoding="utf-8") as f:
             final_full = json.load(f)
-        with open(os.path.join(BASE, "curation.json"), encoding="utf-8") as f:
+        with open(os.path.join(RENDER, "curation.json"), encoding="utf-8") as f:
             curation_cfg = json.load(f)
         with open(os.path.join(ISSUE_DIR, "front.json"), encoding="utf-8") as f:
             front_cfg = json.load(f)

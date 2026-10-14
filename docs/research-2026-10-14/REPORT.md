@@ -147,7 +147,7 @@ A second conversation manager, generic agent memory, model-chat runtime or unive
 
 Non-narrative **generation admission** is also not the same as preservation/reading value. A correction may be important, a table may be essential evidence, and a caption may connect a crucial photograph. They may need ordinary preservation or structured presentation without a generated feature page.
 
-[SELECTION_VALIDATION_REPORT](../../render/SELECTION_VALIDATION_REPORT.md) (lines 13–36) historically describes an 18-item layout exercise with 16 no-intervention outputs and two sidebars, and reports no omissions from an abstracted spot-check. This is encouraging evidence of restraint. It is not independent full-edition selection recall, is not the current source-referenced Publisher path, and does not establish multi-issue editorial judgment.
+[SELECTION_VALIDATION_REPORT](../history/SELECTION_VALIDATION_REPORT.md) (lines 13–36) historically describes an 18-item layout exercise with 16 no-intervention outputs and two sidebars, and reports no omissions from an abstracted spot-check. This is encouraging evidence of restraint. It is not independent full-edition selection recall, is not the current source-referenced Publisher path, and does not establish multi-issue editorial judgment.
 
 ### 2.4 The deeper integrity gap crosses the deterministic/generative seam
 

@@ -1,6 +1,6 @@
 """Behavioral P0 regressions at article rendering and issue assembly seams.
 
-Run from render/: python3 -m unittest test_p0_render.py
+Run from the repository root: PYTHONPATH=render python3 -m unittest tests.test_p0_render
 Fixtures are the unchanged published final.json; no renderer-source assertions.
 """
 import base64

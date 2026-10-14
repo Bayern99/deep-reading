@@ -1,13 +1,13 @@
 """turn_page / declutter / integrity_gate 单元测试。
 
-运行：python3 -m pytest test_p1.py -v  或  python3 test_p1.py
+运行：python3 -m pytest tests/test_p1.py -v  或  python3 tests/test_p1.py
 不依赖 PDF（用合成数据）；PDF 相关测试标记为 slow，需真实文件。
 """
 import re
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'render'))
 
 from declutter import (
     detect_truncated_para, detect_abrupt_lang_switch,

@@ -35,7 +35,7 @@ make test
 make smoke
 ```
 
-`make test` runs the unittest suites and the separate legacy content-gate assertions. `make smoke` copies production inputs into a temporary workspace, executes both real build commands and the local Studio HTTP routes, verifies existing artifacts, and removes the copy. It never resumes the production queue or calls a model. Current acceptance data is the preserved `2026-10-12` issue.
+`make test` runs the `tests/` unittest suites and the separate legacy content-gate assertions. `make smoke` copies production inputs into a temporary workspace, executes both real build commands and the local Studio HTTP routes, verifies existing artifacts, and removes the copy. It never resumes the production queue or calls a model. Current acceptance data is the preserved `2026-10-12` issue.
 
 ## Open the product
 
@@ -57,14 +57,18 @@ The outputs are `2026-10-12/dist/index.html` (whole issue), `baseline.html` (int
 ## Repository map
 
 ```text
-render/                    Production Python modules, styles, acceptance tests;
-                           also labeled historical drivers (see ARCHITECTURE)
+render/                    Production Python modules, styles and configuration
+tests/                     Unittest suites plus the legacy content-gate runner
+scripts/                   Runtime entry points: smoke.py, experiment0.py
+archive/render-experiments/ Historical drivers; not entry points, and some
+                           need PYTHONPATH=render and old external paths
 YYYY-MM-DD/                Issue source, translation provenance, assets, plans,
                            versioned artifacts, queue and historical evidence
 docs/                      Current operating policy plus dated evidence
+docs/history/              Dated investigations, including the reports moved
+                           out of render/
 experiments/               Preserved independent experiments; not production
 reference/hybrid-v3/       Accepted visual starting point
-scripts/smoke.py            Isolated runtime acceptance command
 ```
 
 Start code changes at the responsible module, not a historical issue builder:
