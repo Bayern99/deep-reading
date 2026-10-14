@@ -82,6 +82,10 @@ Label interpretations visibly as "Editorial analysis" / "编辑解读". SVG seri
 labels, horizons and geometry require host semantic review. The host supplies a
 source/claim-bound evidence sidecar to the compiler; HTML cannot approve itself.
 Unreviewed additions are retained for review and cannot be promoted as verified.
+Compose each intervention as ONE self-contained block (`<figure>`, `<aside>`,
+`<section>`, `<table>`): its heading, copy, data labels and drawing are reviewed
+together as a single unit, so keep one visual idea per block and do not scatter
+bare numbers or quotations into loose wrappers outside it.
 
 Return ONLY the complete `<!DOCTYPE html>` document with no markdown fences.
 """

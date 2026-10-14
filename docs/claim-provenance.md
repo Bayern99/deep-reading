@@ -6,7 +6,13 @@ Implemented by [`render/claim_provenance.py`](../render/claim_provenance.py). Ex
 
 Canonical narrative is the lossless bilingual projection of approved source. `derived_quotes`, `derived_metrics` and background context are **candidates**, not evidence of their own truth. A `source_block` identifies a place to check; it does not prove entailment. Automatic extraction can select different quotations or numbers in the two locales; it never supplies semantic approval.
 
-The compiler inventories canonical candidates and authored text throughout the document, including text tails, accessibility labels, SVGs and text remaining around partially injected `data-field` containers. SVG payload hashes cover the complete markup, including coordinates, paths, labels and attributes. Retained scripts and styles containing CSS `content` need host review as presentation code. `data-claim` optionally groups an intervention for one review; it confers no trust. Fixed language-control labels and fully injected narrative/excerpts are exempt. `ctx1` remains injectable but its context candidate requires evidence when used.
+The compiler inventories canonical candidates and authored content throughout the document. An authored **intervention** — `figure`, `aside`, `table`, `blockquote`, `section`, `svg`, or any `data-claim` element — is one **review unit**: its heading, copy, data labels, accessibility attributes and drawing share a single evidence record, addressed as one `html:<XPath>`. Only the outermost such element is a unit, so a comparison figure is one target rather than one per text node. Loose authored text, tails and accessibility attributes outside any intervention stay individually inventoried. SVG payload hashes cover the complete markup, including coordinates, paths, labels and attributes. Retained scripts and styles containing CSS `content` are inventoried as presentation code. Fixed language-control labels and fully injected narrative/excerpts are exempt. `ctx1` remains injectable but its context candidate requires evidence when used.
+
+## What has to be reviewed
+
+`host_review_required` decides deterministically, per target, whether a record is required. It is true for every canonical candidate (`derive:`, `context:`), every chart/SVG, every direct quotation, every presentation-code target, every authored intervention, and every loose text or attribute that carries a number or quotation marks. It is false for loose typography, headings, labels and decorative text with no number and no quotation mark: those stay in the audit as `disposition: inventoried_not_gated` and do not gate publication. The audit's `summary` reports `active_targets`, `host_review_required` and `inventoried_not_gated`.
+
+Merging is not an exemption. A unit's `text` is the authored copy inside it, so every number and every quotation in a merged intervention is still extracted and still compared against the record's spans. A wrong figure inside a reviewed comparison figure fails as `Numbers absent from evidence/calculation`, and any content change invalidates the record through `claim_digest`.
 
 A candidate has one of three states:
 
@@ -75,7 +81,7 @@ Unused canonical candidates remain visible in the audit but do not block an arti
 
 1. Build canonical source and inspect its candidate audit. Preserve the approved source and all saved versions.
 2. Compose anchored HTML. Run `compile_editorial_artifact(raw_html, canonical, strict=False)` to inspect narrative and claim diagnostics. This result is **not publishable** if its audit fails.
-3. For each active addition, provide exact source spans. Verify calculations. Review quotation attribution, factual interpretation, uncertainty, bilingual agreement, chart scales/series/geometry and accessibility text.
+3. For each target whose `host_review` is true, provide exact source spans. Verify calculations. Review quotation attribution, factual interpretation, uncertainty, bilingual agreement, chart scales/series/geometry and accessibility text. Review the unit as a whole; its internal numbers and quotations are checked deterministically.
 4. Bind records to the diagnostic targets and exact payloads. Recompile with `strict=True, evidence_records=records`.
 5. Import using `import_raw_generation(..., evidence_records=records)`. Inspect visual delivery separately. The compiler does not certify mobile readability or graphic legibility.
 
@@ -85,4 +91,8 @@ Publisher generation uses the same gate. Missing semantic review stops the autom
 
 This contract checks immutable local issue evidence, not arbitrary URLs or external background claims. Independently approved external source snapshots need a future evidence namespace. Unit extraction does not establish semantic entailment. Chart geometry is hash-bound and reviewed, not numerically reverse-engineered for all possible SVG encodings. Presentation-code review requires the host to inspect dynamic output; this is not a complete executable-content security policy.
 
-Next: validate a small batch of real Publisher output with independent editorial review; aggregate review at meaningful intervention boundaries using `data-claim`; freeze per-version publication inputs and records; expose factual state separately from historical narrative verification and visual acceptance. Extend the same claim contract to remaining publishing paths only after these reference cases are calibrated.
+Next: validate a small batch of real Publisher output with independent editorial review; freeze per-version publication inputs and records; expose factual state separately from historical narrative verification and visual acceptance. Extend the same claim contract to remaining publishing paths only after these reference cases are calibrated.
+
+## Calibration on the pinned panel
+
+Nine historical generations of `2026-10-12` carry 888 active targets under per-text-node inventory and 24 per article under intervention units, with no numeric token outside gated review. `scripts/experiment0.py` records the current counts under `claim_provenance.summary`.

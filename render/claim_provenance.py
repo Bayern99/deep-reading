@@ -77,16 +77,86 @@ def canonical_claims(canonical: dict[str, Any]) -> list[dict[str, Any]]:
     return claims
 
 
-def editorial_claims(doc: lxml.html.HtmlElement) -> list[dict[str, Any]]:
-    """Inventory all authored body text and SVG geometry, including tails and attributes.
+INTERVENTION_TAGS = ('figure', 'aside', 'table', 'blockquote', 'section', 'svg')
+QUOTE_MARKS = re.compile(r'[“”「」"]')
 
-    Only compiler-injected refs/derives and fixed language controls are exempt.
-    Optional data-claim groups a complete intervention, not a trustedness flag.
+
+def _injected(el) -> bool:
+    """Compiler-injected narrative, derives and controls are verified elsewhere."""
+    if el.get('data-ref'):
+        return True
+    if el.get('data-field') and el.xpath('ancestor::*[@data-derive]'):
+        return True
+    return bool(el.get('data-derive')) and not el.xpath('.//*[@data-field]')
+
+
+def _intervention(el):
+    """Outermost authored intervention containing `el`; one review unit, not many targets."""
+    root = None
+    for node in [el, *el.iterancestors()]:
+        if isinstance(node.tag, str) and (node.get('data-claim') or node.tag.lower() in INTERVENTION_TAGS):
+            root = node
+    return root
+
+
+def _intervention_kind(el) -> str:
+    if el.tag.lower() == 'svg' or el.xpath('.//svg'):
+        return 'chart'
+    return 'direct_quote' if el.tag.lower() in ('blockquote', 'q') else 'editorial'
+
+
+def _authored_text(el, controls) -> str:
+    """Authored copy inside an intervention, excluding injected refs/derives and controls."""
+    parts = []
+
+    def rec(node):
+        if not isinstance(node.tag, str) or _injected(node):
+            return
+        if node.text and node.text.strip():
+            text = node.text.strip()
+            if not (node.tag.lower() == 'button' and text in controls):
+                parts.append(text)
+        for attr in ('title', 'alt', 'aria-label'):
+            value = node.get(attr)
+            if value and value.strip() and not (node.tag.lower() == 'button' and value in controls):
+                parts.append(value.strip())
+        for child in node:
+            rec(child)
+            if child.tail and child.tail.strip():
+                parts.append(child.tail.strip())
+
+    rec(el)
+    return ' '.join(parts)
+
+
+def host_review_required(claim: dict[str, Any]) -> bool:
+    """Does this target need a host evidence record?
+
+    A composed authored intervention is always reviewed as one unit, and numbers and
+    quotations are always checked, so merging targets never exempts the numbers and
+    quotations inside it. Loose typography, headings, labels and decorative text stay
+    inventoried without gating publication.
     """
-    claims = []
+    if claim['kind'] in ('quote', 'metric', 'context', 'chart', 'direct_quote', 'presentation_code'):
+        return True
+    if claim.get('intervention'):
+        return True
+    text = claim.get('text') or ''
+    return bool(numeric_tokens(text)) or bool(QUOTE_MARKS.search(text))
+
+
+def editorial_claims(doc: lxml.html.HtmlElement) -> list[dict[str, Any]]:
+    """Inventory authored interventions and loose authored text.
+
+    An intervention (`figure`, `aside`, `table`, `blockquote`, `svg` or any
+    `data-claim` element) is one review unit: its heading, copy, data labels and
+    geometry share a single evidence record. Loose text, tails and accessibility
+    attributes stay individually inventoried.
+    """
     tree = doc.getroottree()
     skipped = {'head'}
     controls = {'中文', 'EN', 'English', '中', '返回顶部', 'Back to top'}
+    entries: list[tuple] = []
 
     def walk(el):
         if not isinstance(el.tag, str):
@@ -94,36 +164,53 @@ def editorial_claims(doc: lxml.html.HtmlElement) -> list[dict[str, Any]]:
         path = tree.getpath(el)
         if el.tag.lower() in ('script', 'style'):
             if el.tag.lower() == 'script' or re.search(r'\bcontent\s*:', el.text_content(), re.I):
-                claims.append(_claim('html:' + path, 'presentation_code',
-                                     lxml.html.tostring(el, encoding='unicode', with_tail=False), text=''))
+                entries.append(('leaf', 'html:' + path, 'presentation_code',
+                                lxml.html.tostring(el, encoding='unicode', with_tail=False), ''))
             return
         if el.tag.lower() in skipped:
             for child in el:
                 walk(child)
             return
-        if el.get('data-ref') or (el.get('data-field') and el.xpath('ancestor::*[@data-derive]')):
+        if _injected(el):
             return
-        if el.get('data-derive') and not el.xpath('.//*[@data-field]'):
-            return
-        if el.tag.lower() == 'svg' or el.get('data-claim'):
-            payload = lxml.html.tostring(el, encoding='unicode', with_tail=False)
-            claims.append(_claim('html:' + path, 'chart' if el.tag.lower() == 'svg' or el.xpath('.//svg') else 'direct_quote' if el.tag.lower() in ('blockquote', 'q') else 'editorial',
-                                 payload, text=el.text_content()))
+        root = _intervention(el)
+        if root is not None:
+            entries.append(('unit', tree.getpath(root), root))
             return
         if el.text and el.text.strip():
             text = el.text.strip()
             if not (el.tag.lower() == 'button' and text in controls):
-                claims.append(_claim('html:' + path + '/text()', 'direct_quote' if el.tag.lower() in ('blockquote', 'q') else 'editorial', text, text=text))
+                entries.append(('leaf', 'html:' + path + '/text()',
+                                'direct_quote' if el.tag.lower() in ('blockquote', 'q') else 'editorial',
+                                text, text))
         for attr in ('title', 'alt', 'aria-label'):
             text = el.get(attr)
             if text and not (el.tag.lower() == 'button' and text in controls):
-                claims.append(_claim('html:' + path + '/@' + attr, 'editorial', text, text=text))
+                entries.append(('leaf', 'html:' + path + '/@' + attr, 'editorial', text, text))
         for child in el:
             walk(child)
             if child.tail and child.tail.strip():
-                claims.append(_claim('html:' + tree.getpath(child) + '/tail()', 'editorial',
-                                     child.tail.strip(), text=child.tail.strip()))
+                entries.append(('leaf', 'html:' + tree.getpath(child) + '/tail()', 'editorial',
+                                child.tail.strip(), child.tail.strip()))
+
     walk(doc)
+    claims = []
+    seen = set()
+    for entry in entries:
+        if entry[0] == 'leaf':
+            _, target, kind, payload, text = entry
+            claims.append(_claim(target, kind, payload, text=text))
+            continue
+        _, path, el = entry
+        if path in seen:
+            continue
+        seen.add(path)
+        text = _authored_text(el, controls)
+        if not text and el.tag.lower() != 'svg' and not el.xpath('.//svg'):
+            continue
+        claims.append(_claim('html:' + path, _intervention_kind(el),
+                             lxml.html.tostring(el, encoding='unicode', with_tail=False),
+                             text=text, intervention=True, explicit=bool(el.get('data-claim'))))
     return claims
 
 
@@ -215,8 +302,10 @@ def _check_claim(claim, canonical, record):
                 if missing:
                     errors.append(f'Unsupported {field}: {", ".join(missing)}')
         if claim['kind'] in ('editorial', 'chart', 'direct_quote'):
-            pending.append('Authored numbers require scoped evidence or a calculation: ' +
-                           ', '.join(str(v) + ' ' + u for v, u in numeric_tokens(claim.get('text', ''))))
+            authored_numbers = numeric_tokens(claim.get('text', ''))
+            if authored_numbers:
+                pending.append('Authored numbers require scoped evidence or a calculation: ' +
+                               ', '.join(str(v) + ' ' + u for v, u in authored_numbers))
         pending.append('Missing host evidence record')
     else:
         if not isinstance(record, dict) or record.get('schema_version') != SCHEMA:
@@ -326,6 +415,8 @@ def validate_claim_provenance(canonical: dict[str, Any], doc: lxml.html.HtmlElem
     active_context = doc is None or any(t.strip() in ('ctx1', 'context') for el in doc.xpath('//*[@data-ref]') for t in el.get('data-ref', '').split(','))
     authored = editorial_claims(doc) if doc is not None else []
     claims = candidates + authored
+    for claim in claims:
+        claim['host_review'] = host_review_required(claim)
     records = {}
     errors = []
     if evidence_records is not None and not isinstance(evidence_records, list):
@@ -346,15 +437,25 @@ def validate_claim_provenance(canonical: dict[str, Any], doc: lxml.html.HtmlElem
         errors.append('Duplicate canonical claim identifiers')
     results = []
     for claim in claims:
-        failures, pending = _check_claim(claim, canonical, records.get(claim['target']))
         active = active_context if claim['target'] == 'context:ctx1' else active_derives is None or claim['target'].startswith('html:') or claim['target'].removeprefix('derive:') in active_derives
+        record = records.get(claim['target'])
+        if not claim['host_review'] and record is None:
+            # Deterministic pre-classification: typed as typography, a heading, a label
+            # or decorative text. Inventoried for the host, but not a publication gate.
+            results.append({**claim, 'active': active, 'status': 'supported', 'errors': [],
+                            'review_needed': [], 'disposition': 'inventoried_not_gated'})
+            continue
+        failures, pending = _check_claim(claim, canonical, record)
         results.append({**claim, 'active': active,
                         'status': 'rejected' if failures else 'needs_review' if pending else 'supported',
-                        'errors': failures, 'review_needed': pending})
+                        'errors': failures, 'review_needed': pending, 'disposition': 'host_review'})
     active_results = [r for r in results if r['active']]
     for r in active_results:
         if r['status'] != 'supported':
             errors.append(f'{r["target"]}: {r["status"]}: ' + '; '.join(r['errors'] + r['review_needed']))
+    gated = [r for r in active_results if r['host_review']]
     return {'schema_version': SCHEMA, 'passed': not errors, 'source_digest': evidence_source_digest(canonical),
             'compiled_digest': hashlib.sha256(lxml.html.tostring(doc, encoding='unicode', doctype='<!DOCTYPE html>').encode()).hexdigest() if doc is not None else None,
+            'summary': {'active_targets': len(active_results), 'host_review_required': len(gated),
+                        'inventoried_not_gated': len(active_results) - len(gated)},
             'claims': results, 'evidence_records': evidence_records or [], 'errors': errors}

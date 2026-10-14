@@ -214,3 +214,53 @@ class ClaimProvenanceTests(unittest.TestCase):
         record['claim_digest'] = changed_claim['claim_digest']
         result = compile_editorial_artifact(changed, canonical, strict=False, evidence_records=[record])
         self.assertIn('4.12 percent', '; '.join(result['audit_report']['errors']))
+
+    def test_intervention_is_one_review_unit_and_loose_typography_does_not_gate(self):
+        canonical = build_canonical_source({'id': 'EXP-UNIT', 'body_en': 'Reported 5.1% versus 4.4%.',
+                                            'body_cn': '报道5.1%，此前4.4%。'})
+        figure = ('<figure data-claim="yield-compare"><figcaption>10-year Treasury</figcaption>'
+                  '<p>October 5.1% versus July 4.4%.</p>'
+                  '<svg viewBox="0 0 100 20"><text x="0" y="10">5.1%</text></svg></figure>')
+        raw = narrative(canonical, figure + '<h2>Outlook</h2><span aria-label="Loose note">Typography</span>')
+        gate = compile_editorial_artifact(raw, canonical, strict=False)['audit_report']['claim_provenance']
+        authored = [c for c in gate['claims'] if c['target'].startswith('html:')]
+        self.assertEqual(['html:/html/body/main/figure', 'html:/html/body/main/h2/text()',
+                          'html:/html/body/main/span/text()', 'html:/html/body/main/span/@aria-label'],
+                         [c['target'] for c in authored])
+        self.assertEqual([c['host_review'] for c in authored], [True, False, False, False])
+        self.assertEqual(gate['summary'], {'active_targets': 4, 'host_review_required': 1,
+                                           'inventoried_not_gated': 3})
+
+    def test_typography_is_inventoried_but_a_number_still_gates(self):
+        canonical = build_canonical_source({'id': 'EXP-LOOSE', 'body_en': 'Reported 5.1% versus 4.4%.',
+                                            'body_cn': '报道5.1%，此前4.4%。'})
+        plain = compile_editorial_artifact(narrative(canonical, '<h2>Outlook</h2>'), canonical,
+                                           strict=False)['audit_report']['claim_provenance']
+        self.assertTrue(plain['passed'])
+        self.assertEqual(plain['summary']['host_review_required'], 0)
+        numeric = compile_editorial_artifact(narrative(canonical, '<h2>Outlook 4.12%</h2>'), canonical,
+                                             strict=False)['audit_report']['claim_provenance']
+        self.assertEqual(numeric['summary']['host_review_required'], 1)
+        self.assertFalse(numeric['passed'])
+        self.assertIn('4.12 percent', '; '.join(numeric['errors']))
+
+    def test_merged_unit_cannot_hide_a_wrong_number_inside_it(self):
+        canonical = build_canonical_source({'id': 'EXP-MERGE', 'body_en': 'Reported 5.1% versus 4.4%.',
+                                            'body_cn': '报道5.1%，此前4.4%。'})
+        figure = ('<figure><figcaption>Yield</figcaption><p>5.1% versus 4.4%</p>'
+                  '<svg viewBox="0 0 100 20" aria-label="5.1% chart"><text x="0" y="10">5.1%</text></svg></figure>')
+        raw = narrative(canonical, figure)
+        claim = next(c for c in compile_editorial_artifact(raw, canonical, strict=False)['audit_report']['claim_provenance']['claims']
+                     if c['target'].startswith('html:'))
+        self.assertEqual(claim['target'], 'html:/html/body/main/figure')
+        record = make_evidence_record(canonical, claim, kind='chart',
+            spans=[{'block': 'p1', 'locale': 'en', 'text': 'Reported 5.1% versus 4.4%.'}],
+            review={'decision': 'supported', 'reviewer': 'fixture-editor',
+                    'reason': 'One comparison figure reviewed as a unit; caption, copy and drawing agree with the source.'})
+        self.assertTrue(compile_editorial_artifact(raw, canonical, evidence_records=[record])['audit_report']['passed'])
+        tampered = raw.replace('4.4%', '4.12%')
+        tampered_claim = next(c for c in compile_editorial_artifact(tampered, canonical, strict=False)['audit_report']['claim_provenance']['claims']
+                              if c['target'].startswith('html:'))
+        record['claim_digest'] = tampered_claim['claim_digest']
+        result = compile_editorial_artifact(tampered, canonical, strict=False, evidence_records=[record])
+        self.assertIn('4.12 percent', '; '.join(result['audit_report']['errors']))
