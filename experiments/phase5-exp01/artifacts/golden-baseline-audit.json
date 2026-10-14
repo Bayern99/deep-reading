@@ -1,0 +1,108 @@
+{
+  "mode": "audit-only",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 20,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "18/20",
+  "exact_match_en": "18/20",
+  "verbatim_diffs": [
+    {
+      "paragraph_id": "p4",
+      "cn_exact": false,
+      "en_exact": false,
+      "cn_similarity": 0.56,
+      "en_similarity": 0.3644,
+      "expected_cn": "“这是指数型年金的一个缺点，”埃利奥特的女婿、位于佛罗里达州奥兰多市的理财顾问小卡洛斯·迪亚斯说道，“保险公司可以每年或每两年更改从特定指数中获得的收益金额。”",
+      "actual_cn": "“这是指数型年金的一个缺点。保险公司可以每年或每两年更改从特定指数中获得的收益金额。”— 小卡洛斯·迪亚斯 · 佛罗里达州理财顾问 / 埃利奥特的女婿",
+      "expected_en": "\"That's one of the downfalls of the indexed annuities,\" said Carlos Dias Jr., Elliott's son-in-law and a financial adviser outside Orlando, Fla. \"Insurance companies can change the amount that's received from the particular index every year, every two years.\"",
+      "actual_en": "“That's one of the downfalls of the indexed annuities. Insurance companies can change the amount that's received from the particular index every year, every two years.”— Carlos Dias Jr., Financial Adviser & Sabrina Elliott's Son-in-law"
+    },
+    {
+      "paragraph_id": "p20",
+      "cn_exact": false,
+      "en_exact": false,
+      "cn_similarity": 0.3363,
+      "en_similarity": 0.4053,
+      "expected_cn": "Valmark金融集团首席执行官拉里·里布卡表示，该公司销售人寿保险、年金和投资产品。他说，如果投资表现不佳，保险公司可以通过降低保单持有者收益上限来减少损失；如果投资表现良好，它们也可以通过同样的方式增加利润。“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”",
+      "actual_cn": "调查终局裁决 · 行业洞察“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”拉里·里布卡 (Larry Rybka) · Valmark金融集团首席执行官",
+      "expected_en": "If their investments do poorly, the insurer can cushion against loss by lowering the caps on policyholder gains, and if their investments do well they can fatten their profits the same way, said Larry Rybka, chief executive of Valmark Financial Group, which sells life insurance, annuities and investment products. “That's why private equity likes this, because they can change the deal on the consumer,” Rybka said.",
+      "actual_en": "Investigative Conclusion · Industry Insight“That's why private equity likes this, because they can change the deal on the consumer.”Larry Rybka · Chief Executive, Valmark Financial Group"
+    }
+  ],
+  "content_breakdown": {
+    "canonical_ref_count": 20,
+    "source_derived_count": 0,
+    "highlights_applied": [],
+    "ai_editorial_items_count": 9,
+    "ai_editorial_items": [
+      {
+        "category": "editorial_h4",
+        "cn": "埃利奥特的 12 年年金账目",
+        "en": "Sabrina Elliott's 12-Year Policy",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "华尔街的保费吸管与影子信贷",
+        "en": "The Wall Street Siphon & Private Debt",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h4",
+        "cn": "华尔街影子借贷资金池",
+        "en": "Shadow Credit Pipeline",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "失衡的算式与5%的销售推力",
+        "en": "The Skewed Arithmetic & Commission Push",
+        "numbers_found": [
+          "5%"
+        ]
+      },
+      {
+        "category": "editorial_h4",
+        "cn": "牛市中的收益断层 (同期年化)",
+        "en": "Annualized Return Asymmetry",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h4",
+        "cn": "销售代理佣金悬殊",
+        "en": "Agent Commission Spread",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "单向修改的契约与终局裁判",
+        "en": "The Unilateral Contract & Final Verdict",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h4",
+        "cn": "私募巨头通过年金获得长达 10 年的资金锁定，并在投资不佳时单方面下调保户收益上限，将市场风险转嫁给普通家庭。",
+        "en": "PE giants secure 10-year lockups on retail float, unilaterally lowering payout caps during downturns and shifting risks onto ordinary savers.",
+        "numbers_found": [
+          "10",
+          "10"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "记者调查手记与背景档案",
+        "en": "Reporter's Background & Forensic Context",
+        "numbers_found": []
+      }
+    ],
+    "unverified_editorial_numbers": []
+  },
+  "errors": [],
+  "warnings": []
+}

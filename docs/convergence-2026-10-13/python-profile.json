@@ -1,0 +1,200 @@
+{
+  "instrumented_wall_seconds": 2.1026676250621676,
+  "scope": "Current core issue build, both exploration and baseline; cProfile overhead included; no model call.",
+  "measured_functions": [
+    {
+      "file": "integrity_gate.py",
+      "line": 44,
+      "function": "check_article",
+      "calls": 117,
+      "self_seconds": 0.000537097,
+      "cumulative_seconds": 1.8983388310000002
+    },
+    {
+      "file": "build.py",
+      "line": 359,
+      "function": "check_body_copy",
+      "calls": 2,
+      "self_seconds": 0.0006272560000000001,
+      "cumulative_seconds": 0.163236251
+    },
+    {
+      "file": "issue.py",
+      "line": 187,
+      "function": "render_issue",
+      "calls": 2,
+      "self_seconds": 0.00044479400000000004,
+      "cumulative_seconds": 0.022056334
+    },
+    {
+      "file": "source_model.py",
+      "line": 60,
+      "function": "source_from_final",
+      "calls": 347,
+      "self_seconds": 0.002632658,
+      "cumulative_seconds": 0.007607138
+    },
+    {
+      "file": "base64.py",
+      "line": 48,
+      "function": "b64encode",
+      "calls": 19,
+      "self_seconds": 9.745e-06,
+      "cumulative_seconds": 0.003944417
+    },
+    {
+      "file": "build.py",
+      "line": 312,
+      "function": "load_json",
+      "calls": 4,
+      "self_seconds": 6.040000000000001e-06,
+      "cumulative_seconds": 0.002342748
+    }
+  ],
+  "top_cumulative": [
+    {
+      "file": "build.py",
+      "line": 450,
+      "function": "build_issue",
+      "calls": 1,
+      "self_seconds": 0.000397778,
+      "cumulative_seconds": 2.10242025
+    },
+    {
+      "file": "integrity_gate.py",
+      "line": 44,
+      "function": "check_article",
+      "calls": 117,
+      "self_seconds": 0.000537097,
+      "cumulative_seconds": 1.8983388310000002
+    },
+    {
+      "file": "declutter.py",
+      "line": 165,
+      "function": "scan_article",
+      "calls": 117,
+      "self_seconds": 0.0022490690000000002,
+      "cumulative_seconds": 1.8930379210000001
+    },
+    {
+      "file": "declutter.py",
+      "line": 145,
+      "function": "detect_repeated_fragment",
+      "calls": 1784,
+      "self_seconds": 0.000594833,
+      "cumulative_seconds": 1.832163192
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'search' of 're.Pattern' objects>",
+      "calls": 2546,
+      "self_seconds": 1.8266107580000002,
+      "cumulative_seconds": 1.8266107580000002
+    },
+    {
+      "file": "__init__.py",
+      "line": 174,
+      "function": "search",
+      "calls": 1830,
+      "self_seconds": 0.000438302,
+      "cumulative_seconds": 1.824395173
+    },
+    {
+      "file": "build.py",
+      "line": 359,
+      "function": "check_body_copy",
+      "calls": 2,
+      "self_seconds": 0.0006272560000000001,
+      "cumulative_seconds": 0.163236251
+    },
+    {
+      "file": "parser.py",
+      "line": 165,
+      "function": "feed",
+      "calls": 2,
+      "self_seconds": 1.0792000000000001e-05,
+      "cumulative_seconds": 0.158834666
+    },
+    {
+      "file": "parser.py",
+      "line": 242,
+      "function": "goahead",
+      "calls": 2,
+      "self_seconds": 0.022956127,
+      "cumulative_seconds": 0.15882337500000002
+    },
+    {
+      "file": "parser.py",
+      "line": 456,
+      "function": "parse_starttag",
+      "calls": 12486,
+      "self_seconds": 0.029341919,
+      "cumulative_seconds": 0.083968942
+    },
+    {
+      "file": "declutter.py",
+      "line": 78,
+      "function": "detect_abrupt_lang_switch",
+      "calls": 1784,
+      "self_seconds": 0.025793517000000002,
+      "cumulative_seconds": 0.039260002
+    },
+    {
+      "file": "parser.py",
+      "line": 516,
+      "function": "parse_endtag",
+      "calls": 12440,
+      "self_seconds": 0.013487545,
+      "cumulative_seconds": 0.028771367000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "calls": 116433,
+      "self_seconds": 0.028117696,
+      "cumulative_seconds": 0.028117696
+    },
+    {
+      "file": "build.py",
+      "line": 427,
+      "function": "_render_body",
+      "calls": 2,
+      "self_seconds": 3.7125e-05,
+      "cumulative_seconds": 0.022093459000000003
+    },
+    {
+      "file": "issue.py",
+      "line": 187,
+      "function": "render_issue",
+      "calls": 2,
+      "self_seconds": 0.00044479400000000004,
+      "cumulative_seconds": 0.022056334
+    },
+    {
+      "file": "declutter.py",
+      "line": 116,
+      "function": "detect_dual_column_interleave",
+      "calls": 1784,
+      "self_seconds": 0.004112564,
+      "cumulative_seconds": 0.017318771
+    },
+    {
+      "file": "article.py",
+      "line": 214,
+      "function": "render_article",
+      "calls": 178,
+      "self_seconds": 0.000172303,
+      "cumulative_seconds": 0.015931948
+    },
+    {
+      "file": "article.py",
+      "line": 139,
+      "function": "_render_article",
+      "calls": 178,
+      "self_seconds": 0.000908509,
+      "cumulative_seconds": 0.015748551
+    }
+  ]
+}

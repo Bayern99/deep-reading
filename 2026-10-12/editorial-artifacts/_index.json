@@ -1,0 +1,243 @@
+{
+  "schema_version": "editorial-artifact-index-v1",
+  "issue_date": "2026-10-12",
+  "updated_at": "2026-10-14T07:07:17Z",
+  "articles": {
+    "E2-001": {
+      "article_id": "E2-001",
+      "title_cn": "美国人的储蓄助燃私人信贷",
+      "title_en": "Americans' Savings Help Fuel Private Credit",
+      "section": "News",
+      "page": "A1",
+      "active_version": "v3",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T05:22:43Z",
+          "status": "verified",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "provider": "google-vertex",
+          "model_id": "gemini-4-argon",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "compiled_html": "E2-001/v1/compiled.html",
+          "notes": "Phase 5 Group C verified generation (Run 1)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T05:22:43Z",
+          "status": "verified",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "provider": "google-vertex",
+          "model_id": "gemini-4-argon",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "compiled_html": "E2-001/v2/compiled.html",
+          "notes": "Phase 5 Group C verified generation (Run 2)"
+        },
+        {
+          "version": "v3",
+          "created_at": "2026-10-14T05:22:43Z",
+          "status": "verified",
+          "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+          "provider": "google-vertex",
+          "model_id": "gemini-4-argon",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "compiled_html": "E2-001/v3/compiled.html",
+          "notes": "Phase 5 Group C verified generation (Run 3)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "updated_at": "2026-10-14T05:22:43Z"
+    },
+    "E1-010": {
+      "article_id": "E1-010",
+      "title_cn": "为什么高债券收益率不会消退",
+      "title_en": "Why Higher Bond Yields Aren’t Going Away",
+      "section": "U.S. News",
+      "page": "A2",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T05:22:43Z",
+          "status": "verified",
+          "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+          "provider": "google-vertex",
+          "model_id": "gemini-4-argon",
+          "exact_match_cn": "20/20",
+          "exact_match_en": "20/20",
+          "compiled_html": "E1-010/v1/compiled.html",
+          "notes": "Analytical macroeconomic layout (Bond Yields)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+      "updated_at": "2026-10-14T05:22:43Z"
+    },
+    "E3-004": {
+      "article_id": "E3-004",
+      "title_cn": "人工智能有个上帝问题",
+      "title_en": "Artificial Intelligence Has a God Problem",
+      "section": "Technology",
+      "page": "B1",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T05:22:43Z",
+          "status": "verified",
+          "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+          "provider": "google-vertex",
+          "model_id": "gemini-4-argon",
+          "exact_match_cn": "22/22",
+          "exact_match_en": "22/22",
+          "compiled_html": "E3-004/v1/compiled.html",
+          "notes": "Literary & philosophical essay layout (AI God Problem)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+      "updated_at": "2026-10-14T05:22:43Z"
+    },
+    "E1-024": {
+      "article_id": "E1-024",
+      "title_cn": "失控的 Anthropic 模型提交虚假谋杀线索",
+      "title_en": "Rogue Anthropic Model Shared Fake Murder Tip",
+      "section": "U.S. News",
+      "page": "A3",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T06:30:04Z",
+          "status": "verified",
+          "content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "7/7",
+          "exact_match_en": "7/7",
+          "compiled_html": "E1-024/v1/compiled.html",
+          "notes": "Generated via Studio UI (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+      "updated_at": "2026-10-14T06:30:04Z"
+    },
+    "E1-019": {
+      "article_id": "E1-019",
+      "title_cn": "纽森支持一项旨在对抗富豪税收计划的举措",
+      "title_en": "Newsom Backs Bid To Counter Billionaire Tax Effort",
+      "section": "U.S. News",
+      "page": "A3",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T06:33:17Z",
+          "status": "verified",
+          "content_digest": "2e72306acc54d6ba38349cafa5a1664a42419ea47f3fbdcf2bbb6aa26277b3c1",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "11/11",
+          "exact_match_en": "11/11",
+          "compiled_html": "E1-019/v1/compiled.html",
+          "notes": "Generated via Studio UI (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "2e72306acc54d6ba38349cafa5a1664a42419ea47f3fbdcf2bbb6aa26277b3c1",
+      "updated_at": "2026-10-14T06:33:17Z"
+    },
+    "E1-014": {
+      "article_id": "E1-014",
+      "title_cn": "委内瑞拉涉嫌行贿者被捕",
+      "title_en": "Venezuelan Bribe Suspect Arrested",
+      "section": "U.S. News",
+      "page": "A2",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T06:35:14Z",
+          "status": "verified",
+          "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "2/2",
+          "exact_match_en": "2/2",
+          "compiled_html": "E1-014/v1/compiled.html",
+          "notes": "Generated via Studio UI (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+      "updated_at": "2026-10-14T06:35:14Z"
+    },
+    "E2-010": {
+      "article_id": "E2-010",
+      "title_cn": "“周日恐慌”真实存在——而且愈演愈烈",
+      "title_en": "The Sunday Scaries Are Real—And They're Getting Worse",
+      "section": "Personal Journal",
+      "page": "A1",
+      "active_version": "v1",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T07:04:39Z",
+          "status": "verified",
+          "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "14/14",
+          "exact_match_en": "14/14",
+          "compiled_html": "E2-010/v1/compiled.html",
+          "notes": "Queue task task-920123cf (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+      "updated_at": "2026-10-14T07:04:39Z"
+    },
+    "E3-001": {
+      "article_id": "E3-001",
+      "title_cn": "亚马逊正在洽谈收购一家人工智能初创公司",
+      "title_en": "Amazon in Talks To Buy AI Startup",
+      "section": "Business & Finance",
+      "page": "B1",
+      "active_version": "v2",
+      "versions": [
+        {
+          "version": "v1",
+          "created_at": "2026-10-14T07:06:54Z",
+          "status": "verified",
+          "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "7/7",
+          "exact_match_en": "7/7",
+          "compiled_html": "E3-001/v1/compiled.html",
+          "notes": "Queue task task-00abe5fc (google-vertex/gemini-4-argon)"
+        },
+        {
+          "version": "v2",
+          "created_at": "2026-10-14T07:07:17Z",
+          "status": "verified",
+          "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+          "provider": "magpie",
+          "model_id": "google-vertex/gemini-4-argon",
+          "exact_match_cn": "7/7",
+          "exact_match_en": "7/7",
+          "compiled_html": "E3-001/v2/compiled.html",
+          "notes": "Queue task task-00abe5fc (google-vertex/gemini-4-argon)"
+        }
+      ],
+      "failed_attempts": [],
+      "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+      "updated_at": "2026-10-14T07:07:17Z"
+    }
+  }
+}

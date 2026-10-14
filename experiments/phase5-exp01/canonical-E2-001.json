@@ -1,0 +1,528 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E2-001",
+  "final_id": "009",
+  "source_sha256": "56e78230836e09f3dfe7b2e2359dfd2c7a3a97d9840de4127576ee707546b8b8",
+  "metadata": {
+    "page": "A1",
+    "section": "News",
+    "kicker_cn": "头版深度调查 · 华尔街与退休金",
+    "kicker_en": "WSJ INVESTIGATION · A1 FRONT PAGE",
+    "title_cn": "美国人的储蓄助燃私人信贷",
+    "title_en": "Americans' Savings Help Fuel Private Credit",
+    "dek_cn": "并推动了私募机构向风险企业放贷业务的增长",
+    "dek_en": "and helped power the rise of their private lending to risky companies",
+    "byline": "Heather Gillers",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "text_cn": "当萨布丽娜·埃利奥特继承了一些钱时，她的女婿帮助她投资了 4 万美元，购买了一种产品，该产品承诺在没有损失风险的情况下，让她的投资与股市收益挂钩。",
+      "text_en": "When Sabrina Elliott inherited some money, her son-in-law helped her invest $40,000 in a product that dangled the prospect of stock-market gains with no risk of loss.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "当萨布丽娜·埃利奥特继承了一些钱时，她的女婿帮助她投资了 4 万美元，购买了一种产品，该产品承诺在没有损失风险的情况下，让她的投资与股市收益挂钩。",
+          "text_en": "When Sabrina Elliott inherited some money, her son-in-law helped her invest $40,000 in a product that dangled the prospect of stock-market gains with no risk of loss."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "text_cn": "作为回报，她需要将资金锁定 12 年，该产品承诺收益与市场表现挂钩。但有一个限制：提供该产品的公司英杰华保险，可能会定期降低埃利奥特获得的股市收益比例。",
+      "text_en": "In exchange for locking up her money for 12 years, it promised returns tied to the market's performance. One catch: The company behind the product, Aviva, could periodically lower the portion of market gains Elliott received.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "作为回报，她需要将资金锁定 12 年，该产品承诺收益与市场表现挂钩。",
+          "text_en": "In exchange for locking up her money for 12 years, it promised returns tied to the market's performance."
+        },
+        {
+          "id": "p2.s2",
+          "text_cn": "但有一个限制：提供该产品的公司英杰华保险，可能会定期降低埃利奥特获得的股市收益比例。",
+          "text_en": "One catch: The company behind the product, Aviva, could periodically lower the portion of market gains Elliott received."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "text_cn": "在英杰华保险被阿波罗全球管理公司支持的保险公司 Athene 收购后，这种情况发生了两次。到 2023 年底该保单到期时，她的年化收益率为 3.7%。",
+      "text_en": "That happened twice after Aviva was purchased by Athene, an insurer backed by private-asset giant Apollo Global Management. By the time the policy ended in late 2023, her annualized return had come to 3.7%.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "在英杰华保险被阿波罗全球管理公司支持的保险公司 Athene 收购后，这种情况发生了两次。",
+          "text_en": "That happened twice after Aviva was purchased by Athene, an insurer backed by private-asset giant Apollo Global Management."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "到 2023 年底该保单到期时，她的年化收益率为 3.7%。",
+          "text_en": "By the time the policy ended in late 2023, her annualized return had come to 3.7%."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "text_cn": "“这是指数型年金的一个缺点，”埃利奥特的女婿、位于佛罗里达州奥兰多市的理财顾问小卡洛斯·迪亚斯说道，“保险公司可以每年或每两年更改从特定指数中获得的收益金额。”",
+      "text_en": "\"That's one of the downfalls of the indexed annuities,\" said Carlos Dias Jr., Elliott's son-in-law and a financial adviser outside Orlando, Fla. \"Insurance companies can change the amount that's received from the particular index every year, every two years.\"",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "“这是指数型年金的一个缺点，”埃利奥特的女婿、位于佛罗里达州奥兰多市的理财顾问小卡洛斯·迪亚斯说道，",
+          "text_en": "\"That's one of the downfalls of the indexed annuities,\" said Carlos Dias Jr., Elliott's son-in-law and a financial adviser outside Orlando, Fla."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "“保险公司可以每年或每两年更改从特定指数中获得的收益金额。”",
+          "text_en": "\"Insurance companies can change the amount that's received from the particular index every year, every two years.\""
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "text_cn": "华尔街巨头，如阿波罗和博枫，现在才开始寻找方法，以利用 401(k) 退休储蓄计划中庞大的资金，并将他们的另类投资作为人们增加财富的另一种方式进行推广。",
+      "text_en": "Wall Street behemoths like Apollo and Brookfield are just now starting to find ways to tap in to the vast sums of money in 401(k) accounts, pitching their alternative investments as another way for people to grow their nest eggs.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "华尔街巨头，如阿波罗和博枫，现在才开始寻找方法，以利用 401(k) 退休储蓄计划中庞大的资金，并将他们的另类投资作为人们增加财富的另一种方式进行推广。",
+          "text_en": "Wall Street behemoths like Apollo and Brookfield are just now starting to find ways to tap in to the vast sums of money in 401(k) accounts, pitching their alternative investments as another way for people to grow their nest eggs."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "text_cn": "但私人资产管理公司已经通过指数型年金，吸走了美国家庭的储蓄，而指数型年金在过去十年中越来越受欢迎。",
+      "text_en": "But private-asset managers have already been vacuuming up the savings of American households through indexed annuities, which have surged in popularity over the past decade",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "但私人资产管理公司已经通过指数型年金，吸走了美国家庭的储蓄，而指数型年金在过去十年中越来越受欢迎。",
+          "text_en": "But private-asset managers have already been vacuuming up the savings of American households through indexed annuities, which have surged in popularity over the past decade"
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "text_cn": "特拉华人寿最近因受到负面评价，该公司是一家由道奇队老板马克·沃尔特控制的保险公司，该公司披露，由于未能报告其向其拥有的其他实体提供的贷款，该公司正在接受联邦调查。",
+      "text_en": "The annuity industry recently got a black mark after Delaware Life, an insurer controlled by Dodgers owner Mark Walter, disclosed it was under federal investigation for failing to report loans to other entities he owned.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "特拉华人寿最近因受到负面评价，该公司是一家由道奇队老板马克·沃尔特控制的保险公司，该公司披露，由于未能报告其向其拥有的其他实体提供的贷款，该公司正在接受联邦调查。",
+          "text_en": "The annuity industry recently got a black mark after Delaware Life, an insurer controlled by Dodgers owner Mark Walter, disclosed it was under federal investigation for failing to report loans to other entities he owned."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "text_cn": "指数型年金旨在吸引那些可能拥有固定收入，且风险承受能力较低，但仍然希望获得一定程度的股市收益的老年人。人们将价值 5 万美元或 10 万美元的储蓄投入其中，期限约为十年。保险公司保证他们的投资收益永远不会低于零，并且有可能获得比定期存款或储蓄账户更高的收益。",
+      "text_en": "Indexed annuities are meant to appeal to older people who may be on fixed incomes and have little appetite for risk, but still want some exposure to stock-market gains. People turn over $50,000 or $100,000 worth of savings for a decade or so. Insurers guarantee that their investment return will never fall below zero, with the potential for better returns than a CD or savings account.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "指数型年金旨在吸引那些可能拥有固定收入，且风险承受能力较低，但仍然希望获得一定程度的股市收益的老年人。",
+          "text_en": "Indexed annuities are meant to appeal to older people who may be on fixed incomes and have little appetite for risk, but still want some exposure to stock-market gains."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "人们将价值 5 万美元或 10 万美元的储蓄投入其中，期限约为十年。",
+          "text_en": "People turn over $50,000 or $100,000 worth of savings for a decade or so."
+        },
+        {
+          "id": "p8.s3",
+          "text_cn": "保险公司保证他们的投资收益永远不会低于零，并且有可能获得比定期存款或储蓄账户更高的收益。",
+          "text_en": "Insurers guarantee that their investment return will never fall below zero, with the potential for better returns than a CD or savings account."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "text_cn": "具体而言，个人的资金增长多少，取决于保险公司在保险期间可以更改的条款，例如可以获得市场收益的存款比例、收益上限以及从收益中扣除的任何差额。",
+      "text_en": "Exactly how much a person's money grows is based on terms the insurer can change during the life of policy, such as the share of the deposit that can earn market returns, any cap on returns and any spread subtracted from those returns.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "具体而言，个人的资金增长多少，取决于保险公司在保险期间可以更改的条款，例如可以获得市场收益的存款比例、收益上限以及从收益中扣除的任何差额。",
+          "text_en": "Exactly how much a person's money grows is based on terms the insurer can change during the life of policy, such as the share of the deposit that can earn market returns, any cap on returns and any spread subtracted from those returns."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "text_cn": "在埃利奥特购买保险的第一年，她的资金有60%的收益与标准普尔500指数挂钩，扣除2.9个百分点的差额。在保险的第七年，Athene将这一比例降低到55%，然后在第11年降低到45%。剩余的资金以1%的固定利率增长。",
+      "text_en": "In the first year of Elliott's policy, 60% of her money earned returns tied to the S&P 500, minus a 2.9-percentage-point spread. In the policy's seventh year, Athene lowered that share to 55%, then to 45% in the 11th year. The rest of the money grew at a fixed rate of 1%.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "在埃利奥特购买保险的第一年，她的资金有60%的收益与标准普尔500指数挂钩，扣除2.9个百分点的差额。",
+          "text_en": "In the first year of Elliott's policy, 60% of her money earned returns tied to the S&P 500, minus a 2.9-percentage-point spread."
+        },
+        {
+          "id": "p10.s2",
+          "text_cn": "在保险的第七年，Athene将这一比例降低到55%，然后在第11年降低到45%。",
+          "text_en": "In the policy's seventh year, Athene lowered that share to 55%, then to 45% in the 11th year."
+        },
+        {
+          "id": "p10.s3",
+          "text_cn": "剩余的资金以1%的固定利率增长。",
+          "text_en": "The rest of the money grew at a fixed rate of 1%."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "text_cn": "69岁的埃利奥特是佛罗里达州立大学系统的一名营养学教授。她购买了附加险，可以选择在她的整个生命周期内或在她去世后将资金分配给她的继承人。这使她的年收益减少了约2个百分点。",
+      "text_en": "Elliott, a 69-year-old professor of nutrition in the Florida university system, had paid for add-ons that let her choose to parcel out payments over her lifetime or to her heirs. That reduced her annual return by about 2 percentage points.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "69岁的埃利奥特是佛罗里达州立大学系统的一名营养学教授。她购买了附加险，可以选择在她的整个生命周期内或在她去世后将资金分配给她的继承人。",
+          "text_en": "Elliott, a 69-year-old professor of nutrition in the Florida university system, had paid for add-ons that let her choose to parcel out payments over her lifetime or to her heirs."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "这使她的年收益减少了约2个百分点。",
+          "text_en": "That reduced her annual return by about 2 percentage points."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "text_cn": "她在12年保险期内获得的年化收益率为3.7%，高于她若投资美国国债本可获得的1.9%。但与标准普尔500指数的年化收益率13%相比，这个收益率显得微不足道。",
+      "text_en": "The 3.7% annualized rate she earned over the 12-year life of her annuity beat the 1.9% she would have gotten from Treasurys. But it paled next to the annualized return of 13% on the S&P 500.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "她在12年保险期内获得的年化收益率为3.7%，高于她若投资美国国债本可获得的1.9%。",
+          "text_en": "The 3.7% annualized rate she earned over the 12-year life of her annuity beat the 1.9% she would have gotten from Treasurys."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "但与标准普尔500指数的年化收益率13%相比，这个收益率显得微不足道。",
+          "text_en": "But it paled next to the annualized return of 13% on the S&P 500."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "text_cn": "Athene在2022年被阿波罗完全收购。该公司在一份声明中表示，该保险“表现出色，收益远高于类似的安全收益替代品，保证100%的本金保护，并提供可选的额外死亡赔偿和保证终身收入。”",
+      "text_en": "Athene, which Apollo fully took over in 2022, said in a statement that the annuity “performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "Athene在2022年被阿波罗完全收购。该公司在一份声明中表示，该保险“表现出色，收益远高于类似的安全收益替代品，保证100%的本金保护，并提供可选的额外死亡赔偿和保证终身收入。”",
+          "text_en": "Athene, which Apollo fully took over in 2022, said in a statement that the annuity “performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”"
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "text_cn": "该公司表示，“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有高度误导性。”",
+      "text_en": "The company said “it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "该公司表示，“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有高度误导性。”",
+          "text_en": "The company said “it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”"
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "text_cn": "与股市挂钩的产品通常由美国证券交易委员会监管，销售这些产品通常需要证券许可证。但指数型年金也可以由州保险代理人销售，这些代理人不受关于披露利益冲突或以客户的最佳利益行事的相同规则的约束。指数型年金通常是这些代理人可以销售的最有利可图的产品之一。",
+      "text_en": "Products tied to the stock market are typically overseen by the Securities and Exchange Commission, and selling them often requires a securities license. But indexed annuities can also be sold by state insurance agents, who aren't subject to the same rules on disclosing conflicts of interest or acting in a client's best interest. Indexed annuities are often among the most lucrative products these agents can sell.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "与股市挂钩的产品通常由美国证券交易委员会监管，销售这些产品通常需要证券许可证。",
+          "text_en": "Products tied to the stock market are typically overseen by the Securities and Exchange Commission, and selling them often requires a securities license."
+        },
+        {
+          "id": "p15.s2",
+          "text_cn": "但指数型年金也可以由州保险代理人销售，这些代理人不受关于披露利益冲突或以客户的最佳利益行事的相同规则的约束。",
+          "text_en": "But indexed annuities can also be sold by state insurance agents, who aren't subject to the same rules on disclosing conflicts of interest or acting in a client's best interest."
+        },
+        {
+          "id": "p15.s3",
+          "text_cn": "指数型年金通常是这些代理人可以销售的最有利可图的产品之一。",
+          "text_en": "Indexed annuities are often among the most lucrative products these agents can sell."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "text_cn": "例如，美国公平人寿公司为某些10年期指数型年金的保单持有人支付的佣金为保单存款的5%至7%。相比之下，博枫旗下的保险公司销售的简单固定利率年金的佣金约为3%。",
+      "text_en": "American Equity, for instance, pays agents a commission of 5% to 7% of a policyholder's deposit on some 10-year indexed annuities. That is compared with around 3% for simpler annuities with fixed rates sold by the Brookfield-owned insurer.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "例如，美国公平人寿公司为某些10年期指数型年金的保单持有人支付的佣金为保单存款的5%至7%。",
+          "text_en": "American Equity, for instance, pays agents a commission of 5% to 7% of a policyholder's deposit on some 10-year indexed annuities."
+        },
+        {
+          "id": "p16.s2",
+          "text_cn": "相比之下，博枫旗下的保险公司销售的简单固定利率年金的佣金约为3%。",
+          "text_en": "That is compared with around 3% for simpler annuities with fixed rates sold by the Brookfield-owned insurer."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "text_cn": "保险公司表示，较高的佣金反映了这些产品的复杂性，需要更详细的解释。尽管如此，消费者权益倡导者表示，指数型年金可能成为具有误导性的销售宣传的诱饵。",
+      "text_en": "Insurers say the higher commissions reflect the complexity of the products, which require greater explanation. Still, consumer advocates say indexed annuities can be a magnet for misleading sales pitches.",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "保险公司表示，较高的佣金反映了这些产品的复杂性，需要更详细的解释。",
+          "text_en": "Insurers say the higher commissions reflect the complexity of the products, which require greater explanation."
+        },
+        {
+          "id": "p17.s2",
+          "text_cn": "尽管如此，消费者权益倡导者表示，指数型年金可能成为具有误导性的销售宣传的诱饵。",
+          "text_en": "Still, consumer advocates say indexed annuities can be a magnet for misleading sales pitches."
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "text_cn": "例如，特拉华人寿公司销售的一种指数型年金的宣传材料显示，10万美元的保费在未来21年内增长到270万美元。但这种名为“动量增长”的年金与一个去年才成立的股票和加密货币指数挂钩。宣传的收益基于过去15年的假设数据——这一时期包括11年股市实现两位数增长。",
+      "text_en": "Educational materials for an indexed annuity sold by Delaware Life, for instance, show a premium of $100,000 growing to $2.7 million over the next 21 years. But the “Momentum Growth” annuity is tied to a stock-and-crypto index established just last year. The returns advertised draw on hypothetical data based on the past 15 years—a period that included 11 years with double-digit stock-market gains.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "例如，特拉华人寿公司销售的一种指数型年金的宣传材料显示，10万美元的保费在未来21年内增长到270万美元。",
+          "text_en": "Educational materials for an indexed annuity sold by Delaware Life, for instance, show a premium of $100,000 growing to $2.7 million over the next 21 years."
+        },
+        {
+          "id": "p18.s2",
+          "text_cn": "但这种名为“动量增长”的年金与一个去年才成立的股票和加密货币指数挂钩。",
+          "text_en": "But the “Momentum Growth” annuity is tied to a stock-and-crypto index established just last year."
+        },
+        {
+          "id": "p18.s3",
+          "text_cn": "宣传的收益基于过去15年的假设数据——这一时期包括11年股市实现两位数增长。",
+          "text_en": "The returns advertised draw on hypothetical data based on the past 15 years—a period that included 11 years with double-digit stock-market gains."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "text_cn": "在金融危机之后，私人资产管理公司开始收购保险公司，以获取其庞大的保单持有人保费。指数型年金尤其具有吸引力。支付时间表相对可预测，而且这些保单通常持续约十年，而固定利率年金的期限约为三到五年。这使资产管理公司能够灵活地将资金投入到风险更高、流动性较差的私人信贷投资中，例如担保贷款凭证或资产支持证券。",
+      "text_en": "After the financial crisis, private-asset managers began buying up insurers to access their huge pools of policyholder premiums. Indexed annuities were particularly attractive. Payouts follow a relatively predictable timetable, and the policies typically last about a decade, compared with about three to five years for fixed-rate annuities. That gives asset managers flexibility to put the money into riskier, less-liquid private-credit investments like collateralized loan obligations or asset-backed securities.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "在金融危机之后，私人资产管理公司开始收购保险公司，以获取其庞大的保单持有人保费。",
+          "text_en": "After the financial crisis, private-asset managers began buying up insurers to access their huge pools of policyholder premiums."
+        },
+        {
+          "id": "p19.s2",
+          "text_cn": "指数型年金尤其具有吸引力。",
+          "text_en": "Indexed annuities were particularly attractive."
+        },
+        {
+          "id": "p19.s3",
+          "text_cn": "支付时间表相对可预测，而且这些保单通常持续约十年，而固定利率年金的期限约为三到五年。",
+          "text_en": "Payouts follow a relatively predictable timetable, and the policies typically last about a decade, compared with about three to five years for fixed-rate annuities."
+        },
+        {
+          "id": "p19.s4",
+          "text_cn": "这使资产管理公司能够灵活地将资金投入到风险更高、流动性较差的私人信贷投资中，例如担保贷款凭证或资产支持证券。",
+          "text_en": "That gives asset managers flexibility to put the money into riskier, less-liquid private-credit investments like collateralized loan obligations or asset-backed securities."
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "index": 20,
+      "type": "paragraph",
+      "text_cn": "Valmark金融集团首席执行官拉里·里布卡表示，该公司销售人寿保险、年金和投资产品。他说，如果投资表现不佳，保险公司可以通过降低保单持有者收益上限来减少损失；如果投资表现良好，它们也可以通过同样的方式增加利润。“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”",
+      "text_en": "If their investments do poorly, the insurer can cushion against loss by lowering the caps on policyholder gains, and if their investments do well they can fatten their profits the same way, said Larry Rybka, chief executive of Valmark Financial Group, which sells life insurance, annuities and investment products. “That's why private equity likes this, because they can change the deal on the consumer,” Rybka said.",
+      "sentences": [
+        {
+          "id": "p20.s1",
+          "text_cn": "Valmark金融集团首席执行官拉里·里布卡表示，该公司销售人寿保险、年金和投资产品。他说，如果投资表现不佳，保险公司可以通过降低保单持有者收益上限来减少损失；如果投资表现良好，它们也可以通过同样的方式增加利润。",
+          "text_en": "If their investments do poorly, the insurer can cushion against loss by lowering the caps on policyholder gains, and if their investments do well they can fatten their profits the same way, said Larry Rybka, chief executive of Valmark Financial Group, which sells life insurance, annuities and investment products."
+        },
+        {
+          "id": "p20.s2",
+          "text_cn": "“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”",
+          "text_en": "“That's why private equity likes this, because they can change the deal on the consumer,” Rybka said."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p4",
+      "quote_cn": "“这是指数型年金的一个缺点。保险公司可以每年或每两年更改从特定指数中获得的收益金额。”",
+      "quote_en": "“That's one of the downfalls of the indexed annuities. Insurance companies can change the amount that's received from the particular index every year, every two years.”",
+      "speaker_cn": "小卡洛斯·迪亚斯 (Carlos Dias Jr.)",
+      "role_cn": "佛罗里达州奥兰多市理财顾问、埃利奥特的女婿",
+      "speaker_en": "Carlos Dias Jr.",
+      "role_en": "Financial adviser outside Orlando, Fla. & Sabrina Elliott's son-in-law"
+    },
+    {
+      "id": "q2",
+      "source_block": "p13",
+      "quote_cn": "“表现出色，收益远高于类似的安全收益替代品，保证100%的本金保护，并提供可选的额外死亡赔偿和保证终身收入。”",
+      "quote_en": "“performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”",
+      "speaker_cn": "Athene (阿波罗全球管理旗下保险公司)",
+      "role_cn": "公司官方声明",
+      "speaker_en": "Athene (Apollo Global Management)",
+      "role_en": "Company official statement"
+    },
+    {
+      "id": "q3",
+      "source_block": "p14",
+      "quote_cn": "“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有高度误导性。”",
+      "quote_en": "“it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”",
+      "speaker_cn": "Athene (阿波罗全球管理旗下保险公司)",
+      "role_cn": "关于评估情景的回应声明",
+      "speaker_en": "Athene (Apollo Global Management)",
+      "role_en": "Statement on benchmark scenario"
+    },
+    {
+      "id": "q4",
+      "source_block": "p20",
+      "quote_cn": "“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”",
+      "quote_en": "“That's why private equity likes this, because they can change the deal on the consumer.”",
+      "speaker_cn": "拉里·里布卡 (Larry Rybka)",
+      "role_cn": "Valmark金融集团首席执行官",
+      "speaker_en": "Larry Rybka",
+      "role_en": "Chief Executive, Valmark Financial Group"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p1",
+      "value": "$40,000",
+      "value_cn": "4万美元",
+      "label_cn": "埃利奥特初始投资本金",
+      "label_en": "Sabrina Elliott's initial principal",
+      "note_cn": "继承遗产后投入英杰华指数型年金",
+      "note_en": "Inherited savings invested in Aviva indexed annuity"
+    },
+    {
+      "id": "m2",
+      "source_block": "p2",
+      "value": "12 yrs",
+      "value_cn": "12年",
+      "label_cn": "保单资金锁定期限",
+      "label_en": "Policy lockup period",
+      "note_cn": "至2023年底保单到期",
+      "note_en": "Ended in late 2023"
+    },
+    {
+      "id": "m3",
+      "source_block": "p3,p12",
+      "value": "3.7%",
+      "value_cn": "3.7%",
+      "label_cn": "埃利奥特12年实际年化收益率",
+      "label_en": "Elliott's actual annualized return",
+      "note_cn": "经历两次收益比例下调及附加险扣除约2个百分点后",
+      "note_en": "After two participation cuts and ~2pp rider cost"
+    },
+    {
+      "id": "m4",
+      "source_block": "p12",
+      "value": "13%",
+      "value_cn": "13%",
+      "label_cn": "同期标普500指数年化收益率",
+      "label_en": "S&P 500 annualized return over same period",
+      "note_cn": "同期的美股强劲牛市基准",
+      "note_en": "Concurrent strong bull equity market benchmark"
+    },
+    {
+      "id": "m5",
+      "source_block": "p12",
+      "value": "1.9%",
+      "value_cn": "1.9%",
+      "label_cn": "同期美国国债年化收益率",
+      "label_en": "Treasurys annualized return over same period",
+      "note_cn": "无风险国债替代收益基准",
+      "note_en": "Safe government bond alternative"
+    },
+    {
+      "id": "m6",
+      "source_block": "p10",
+      "value": "60% → 55% → 45%",
+      "value_cn": "60% → 55% → 45%",
+      "label_cn": "与标普500挂钩的资金比例下调轨迹",
+      "label_en": "Share of money tied to S&P 500 (Yr 1 → Yr 7 → Yr 11)",
+      "note_cn": "扣除2.9个百分点差额；其余资金按1%固定利率增长",
+      "note_en": "Minus 2.9pp spread; remainder grew at 1% fixed rate"
+    },
+    {
+      "id": "m7",
+      "source_block": "p16",
+      "value": "5% – 7%",
+      "value_cn": "5%至7%",
+      "label_cn": "美国公平人寿10年期指数型年金代理佣金",
+      "label_en": "American Equity 10-yr indexed annuity agent commission",
+      "note_cn": "对比博枫旗下简单固定利率年金佣金约为3%",
+      "note_en": "Compared with ~3% for simpler fixed-rate annuities (Brookfield)"
+    },
+    {
+      "id": "m8",
+      "source_block": "p18",
+      "value": "$100K → $2.7M",
+      "value_cn": "10万美元 → 270万美元",
+      "label_cn": "特拉华人寿“动量增长”年金宣传册21年假设增长",
+      "label_en": "Delaware Life 'Momentum Growth' 21-yr hypothetical pitch",
+      "note_cn": "挂钩去年才成立的股票与加密货币指数，基于过去15年含11年双位数牛市的假设回测",
+      "note_en": "Tied to year-old stock-and-crypto index using 15-yr hypothetical backtest"
+    }
+  ],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "指数型年金锁定资金约 12 年，承诺收益与股市挂钩、本金不亏，但保险公司可定期下调客户能拿到的收益分成、上限和利差。销售佣金高达保单存款的 5%–7%，远高于普通固定年金的约 3%。私募巨头收购保险公司后，可将保费池投向担保贷款凭证等流动性差的私人信贷资产；投资不佳时就下调保户收益上限来缓冲。",
+    "text_en": "Indexed annuities lock up consumer capital for approximately 12 years with promises of equity-linked returns and zero downside risk. However, insurers hold unilateral discretion to lower participation rates, caps, and spreads. Lucrative 5%–7% agent commissions drive sales outside SEC fiduciary oversight, channeling sticky consumer float directly into illiquid private debt (CLOs, asset-backed securities)."
+  },
+  "media": [],
+  "tables": []
+}

@@ -1,0 +1,498 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-010",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T05:22:43Z",
+  "status": "verified",
+  "notes": "Analytical macroeconomic layout (Bond Yields)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+    "paragraph_count": 20,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "google-vertex",
+    "model_id": "gemini-4-argon",
+    "temperature": 0.2
+  },
+  "usage_metadata": {
+    "completion_chars": 66063
+  },
+  "files": {
+    "raw_html": "E1-010/v1/raw.html",
+    "compiled_html": "E1-010/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-subtle: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c9c2b2;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.13);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283b;\n    --navy-line: #294057;\n    --slate-blue: #2b547e;\n    --dissent-bg: #f1ede4;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* Strict Bilingual Visibility Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    font-family: 'Lora', 'Noto Serif SC', Georgia, serif;\n    background-color: var(--paper);\n    color: var(--body);\n    line-height: 1.85;\n    overflow-x: hidden;\n  }\n\n  /* Progress Indicator */\n  .progress-rail {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 3px;\n    background: transparent;\n    z-index: 1001;\n  }\n  .progress-fill {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s linear;\n  }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line);\n    padding: 0.75rem 1.5rem;\n  }\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n  .brand-cluster {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n  }\n  .wsj-monogram {\n    font-family: 'Playfair Display', serif;\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    border-right: 1px solid var(--line-strong);\n    padding-right: 0.85rem;\n  }\n  .rubric-pill {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.73rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    background: var(--accent-soft);\n    padding: 0.22rem 0.6rem;\n    border-radius: 2px;\n  }\n  .edition-meta {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 0.72rem;\n    color: var(--muted);\n  }\n  .lang-switch {\n    display: inline-flex;\n    border: 1px solid var(--line-strong);\n    border-radius: 3px;\n    overflow: hidden;\n    background: var(--paper-card);\n  }\n  .lang-btn {\n    border: none;\n    background: transparent;\n    padding: 0.32rem 0.75rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.76rem;\n    font-weight: 600;\n    color: var(--muted);\n    cursor: pointer;\n    transition: all 0.18s ease;\n  }\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Hero Header */\n  .hero-header {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 2px solid var(--ink);\n  }\n  .hero-kicker-row {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 0.9rem;\n    margin-bottom: 1.25rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n  }\n  .hero-column-tag {\n    font-weight: 700;\n    font-size: 0.8rem;\n    letter-spacing: 0.14em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n  .hero-kicker-sep {\n    color: var(--line-strong);\n  }\n  .hero-section-tag {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.78rem;\n    color: var(--muted);\n  }\n  .hero-title {\n    font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    font-weight: 800;\n    font-size: clamp(2.15rem, 4.4vw, 3.65rem);\n    line-height: 1.16;\n    color: var(--ink);\n    letter-spacing: -0.015em;\n    margin-bottom: 1.35rem;\n    max-width: 960px;\n  }\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.25;\n    letter-spacing: 0.01em;\n  }\n  .hero-dek {\n    font-family: 'Lora', 'Noto Serif SC', serif;\n    font-size: clamp(1.08rem, 1.6vw, 1.28rem);\n    line-height: 1.68;\n    color: var(--muted);\n    max-width: 840px;\n    margin-bottom: 2rem;\n  }\n  .byline-bar {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: center;\n    gap: 1rem;\n    padding-top: 1.15rem;\n    border-top: 1px solid var(--line);\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.85rem;\n    color: var(--muted);\n  }\n  .byline-authors strong {\n    color: var(--ink);\n    font-weight: 600;\n  }\n  .byline-timestamp {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.78rem;\n  }\n\n  /* Main Container */\n  .article-shell {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2.75rem 1.5rem 5rem;\n  }\n\n  /* Two-Column Editorial Grid */\n  .editorial-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 680px) minmax(260px, 360px);\n    justify-content: space-between;\n    gap: 3rem;\n    align-items: start;\n  }\n\n  /* Prose Styling */\n  .prose-stream {\n    width: 100%;\n  }\n  .prose-p {\n    font-size: 1.125rem;\n    line-height: 1.9;\n    color: var(--body);\n    margin-bottom: 1.55rem;\n  }\n  :host([lang=\"en\"]) .prose-p {\n    font-family: 'Lora', Georgia, serif;\n    font-size: 1.11rem;\n    line-height: 1.84;\n  }\n  :host([lang=\"zh-CN\"]) .prose-p {\n    font-family: 'Noto Serif SC', serif;\n    font-size: 1.13rem;\n    line-height: 1.96;\n    letter-spacing: 0.015em;\n  }\n\n  /* Lead Paragraph Treatment (No CSS ::first-letter on Chinese) */\n  .lead-p {\n    font-size: 1.24rem !important;\n    line-height: 1.85 !important;\n    color: var(--ink);\n    font-weight: 600;\n    border-left: 3px solid var(--accent);\n    padding-left: 1.2rem;\n    margin-bottom: 1.85rem;\n  }\n\n  /* Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);\n    color: inherit;\n    padding: 0 0.12em;\n    font-weight: 600;\n    border-radius: 1px;\n  }\n\n  /* Sidebar Rail */\n  .sidebar-rail {\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n    position: sticky;\n    top: 4.75rem;\n  }\n  .sidebar-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem 1.4rem;\n  }\n  .sidebar-card-kicker {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 700;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    margin-bottom: 0.65rem;\n  }\n  .sidebar-card-title {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.98rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.75rem;\n    line-height: 1.4;\n  }\n  .sidebar-stat-row {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    padding: 0.55rem 0;\n    border-bottom: 1px dashed var(--line-strong);\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.85rem;\n  }\n  .sidebar-stat-row:last-child {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n  .sidebar-stat-val {\n    font-family: 'JetBrains Mono', monospace;\n    font-weight: 700;\n    font-size: 0.95rem;\n    color: var(--ink);\n  }\n  .sidebar-stat-val.accent {\n    color: var(--accent);\n  }\n\n  /* Quantitative Survey Showcase (Full-Bleed within Container) */\n  .quant-showcase {\n    margin: 3.25rem 0;\n    background: var(--navy-bg);\n    color: #f4f1ea;\n    border-radius: 4px;\n    padding: 2.5rem 2.25rem;\n    border-top: 4px solid var(--accent);\n    box-shadow: 0 16px 36px rgba(15, 29, 43, 0.14);\n  }\n  .quant-header {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1.25rem;\n    padding-bottom: 1.5rem;\n    border-bottom: 1px solid var(--navy-line);\n    margin-bottom: 1.85rem;\n  }\n  .quant-kicker {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.75rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: #f0944d;\n    margin-bottom: 0.45rem;\n  }\n  .quant-title {\n    font-family: 'Playfair Display', 'Noto Serif SC', serif;\n    font-size: clamp(1.38rem, 2.4vw, 1.85rem);\n    font-weight: 700;\n    color: #ffffff;\n    line-height: 1.3;\n  }\n  .quant-subtitle {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.88rem;\n    color: #b7c4d1;\n    margin-top: 0.35rem;\n  }\n  .quant-legend {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 1.25rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.8rem;\n    color: #d6e0ea;\n  }\n  .legend-item {\n    display: flex;\n    align-items: center;\n    gap: 0.45rem;\n  }\n  .legend-swatch {\n    width: 12px;\n    height: 12px;\n    border-radius: 2px;\n  }\n  .swatch-oct { background: #f08c43; }\n  .swatch-jul { background: #5a7d9f; }\n\n  /* Derived Metrics Grid (m1, m2, m3) */\n  .metrics-trio {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 1.25rem;\n    margin-bottom: 2rem;\n  }\n  .metric-card {\n    background: var(--navy-card);\n    border: 1px solid var(--navy-line);\n    padding: 1.25rem 1.35rem;\n    border-radius: 3px;\n  }\n  .metric-val {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 1.38rem;\n    font-weight: 700;\n    color: #f0944d;\n    margin-bottom: 0.45rem;\n    line-height: 1.25;\n  }\n  .metric-lbl {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.84rem;\n    font-weight: 600;\n    color: #ffffff;\n    margin-bottom: 0.35rem;\n    line-height: 1.4;\n  }\n  .metric-note {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.74rem;\n    color: #9bb0c4;\n    line-height: 1.45;\n  }\n\n  .svg-chart-wrap {\n    width: 100%;\n    background: rgba(10, 20, 31, 0.55);\n    border: 1px solid var(--navy-line);\n    border-radius: 3px;\n    padding: 1.25rem 1rem 0.85rem;\n  }\n  .quant-footnote {\n    margin-top: 1rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.76rem;\n    color: #8fa4b8;\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n  }\n\n  /* Thematic Section Divider */\n  .section-divider {\n    margin: 3.25rem 0 2rem;\n    padding-top: 1.5rem;\n    border-top: 2px solid var(--ink);\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 1rem;\n    flex-wrap: wrap;\n  }\n  .section-num {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 0.78rem;\n    font-weight: 700;\n    color: var(--accent);\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n  }\n  .section-heading {\n    font-family: 'Playfair Display', 'Noto Serif SC', serif;\n    font-size: clamp(1.4rem, 2.2vw, 1.8rem);\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.3;\n  }\n\n  /* Derived Pull Quote (q1) */\n  .pull-quote {\n    margin: 2.25rem 0;\n    padding: 1.65rem 1.85rem;\n    background: var(--paper-card);\n    border-left: 4px solid var(--accent);\n    border-top: 1px solid var(--line);\n    border-bottom: 1px solid var(--line);\n  }\n  .pull-quote .quote-text {\n    font-family: 'Playfair Display', 'Noto Serif SC', serif;\n    font-size: 1.22rem;\n    font-weight: 700;\n    line-height: 1.65;\n    color: var(--ink);\n    margin-bottom: 0.75rem;\n  }\n  .pull-quote .quote-attrib {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.82rem;\n    font-weight: 600;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n  }\n\n  /* Fiscal & AI Comparison Panel */\n  .fiscal-comparison-panel {\n    margin: 2.25rem 0;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.75rem;\n  }\n  .panel-header {\n    margin-bottom: 1.25rem;\n    padding-bottom: 0.85rem;\n    border-bottom: 1px solid var(--line-strong);\n  }\n  .panel-kicker {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n  }\n  .panel-title {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 1.08rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-top: 0.25rem;\n  }\n\n  /* Macro Dashboard Strip (GDP, Unemployment, Recession Odds) */\n  .macro-vitals-strip {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 1.25rem;\n    margin: 2.25rem 0;\n  }\n  .vital-box {\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    border-top: 3px solid var(--slate-blue);\n    padding: 1.25rem;\n  }\n  .vital-tag {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n    margin-bottom: 0.4rem;\n  }\n  .vital-figure {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 1.65rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.35rem;\n  }\n  .vital-desc {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.82rem;\n    color: var(--muted);\n    line-height: 1.45;\n  }\n\n  /* Counter-Argument Dossier (p17-p19) */\n  .counter-view-dossier {\n    margin: 3rem 0 2.5rem;\n    background: var(--dissent-bg);\n    border: 1px solid var(--line-strong);\n    border-left: 5px solid var(--slate-blue);\n    padding: 2.25rem 2rem;\n  }\n  .dissent-header {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: space-between;\n    gap: 0.75rem;\n    margin-bottom: 1.5rem;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid var(--line-strong);\n  }\n  .dissent-badge {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.74rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    background: var(--slate-blue);\n    color: #fff;\n    padding: 0.28rem 0.65rem;\n    border-radius: 2px;\n  }\n  .dissent-economist {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.86rem;\n    font-weight: 600;\n    color: var(--muted);\n  }\n  .dissent-quote-highlight {\n    margin-top: 1.25rem;\n    padding: 1.25rem 1.5rem;\n    background: var(--paper);\n    border-left: 3px solid var(--slate-blue);\n    font-family: 'Playfair Display', 'Noto Serif SC', serif;\n    font-size: 1.15rem;\n    font-weight: 600;\n    color: var(--ink);\n    line-height: 1.75;\n  }\n\n  /* Source Graphics Index Note (p20) */\n  .archive-graphics-note {\n    margin-top: 2.5rem;\n    padding: 1.35rem 1.5rem;\n    background: var(--paper-subtle);\n    border: 1px dashed var(--line-strong);\n    border-radius: 3px;\n  }\n  .archive-graphics-label {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--muted);\n    margin-bottom: 0.45rem;\n  }\n  .archive-graphics-note .prose-p {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif !important;\n    font-size: 0.84rem !important;\n    line-height: 1.65 !important;\n    color: var(--muted);\n    margin-bottom: 0;\n  }\n\n  /* Footer */\n  .editorial-footer {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2rem 1.5rem 4rem;\n    border-top: 1px solid var(--line-strong);\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 1rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.8rem;\n    color: var(--muted);\n  }\n\n  /* Mobile Reflow (390px and tablets) */\n  @media (max-width: 960px) {\n    .editorial-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n    .sidebar-rail {\n      position: static;\n    }\n    .metrics-trio,\n    .macro-vitals-strip {\n      grid-template-columns: 1fr;\n    }\n    .quant-showcase {\n      padding: 1.65rem 1.15rem;\n    }\n    .counter-view-dossier {\n      padding: 1.5rem 1.2rem;\n    }\n  }\n\n  @media (max-width: 520px) {\n    .masthead {\n      padding: 0.65rem 1rem;\n    }\n    .edition-meta {\n      display: none;\n    }\n    .hero-header,\n    .article-shell {\n      padding-left: 1.1rem;\n      padding-right: 1.1rem;\n    }\n    .prose-p {\n      font-size: 1.05rem;\n    }\n    .lead-p {\n      font-size: 1.13rem !important;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div class=\"progress-rail\"><div class=\"progress-fill\" id=\"progressFill\"></div></div>\n\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <span class=\"wsj-monogram\">WSJ</span>\n      <span class=\"rubric-pill\">\n        <span class=\"lang-cn\">宏观展望 · THE OUTLOOK</span>\n        <span class=\"lang-en\">THE OUTLOOK · U.S. ECONOMY</span>\n      </span>\n      <span class=\"edition-meta\">PAGE A2 · OCT 12, 2026</span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Selector\">\n      <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<section class=\"hero-header\">\n  <div class=\"hero-kicker-row\">\n    <span class=\"hero-column-tag\">THE OUTLOOK</span>\n    <span class=\"hero-kicker-sep\">/</span>\n    <span class=\"hero-section-tag\">\n      <span class=\"lang-cn\">华尔街日报经济学家季度调查 · 固收与利率专题</span>\n      <span class=\"lang-en\">WSJ Quarterly Economists Survey · Rates &amp; Fixed Income</span>\n    </span>\n  </div>\n\n  <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">为什么高债券收益率不会消退</span><span class=\"lang-en\">Why Higher Bond Yields Aren’t Going Away</span></h1>\n\n  <p class=\"hero-dek\">\n    <span class=\"lang-cn\">《华尔街日报》对71位经济学家的最新调查显示，美债收益率飙升至二十五年高点并非暂时波动——庞大的财政赤字、韧性增长与人工智能资本需求正在重塑未来十年的借贷成本底线。</span>\n    <span class=\"lang-en\">The Wall Street Journal’s latest survey of 71 forecasters reveals that quarter-century highs in long-term Treasury yields are no fleeting blip—persistent fiscal deficits, resilient GDP growth, and AI capital demand are resetting the floor for borrowing costs across the decade.</span>\n  </p>\n\n  <div class=\"byline-bar\">\n    <div class=\"byline-authors\">\n      <span class=\"lang-cn\">撰文：<strong>Matt Grossman</strong> / <strong>Anthony DeBarros</strong></span>\n      <span class=\"lang-en\">By <strong>Matt Grossman</strong> and <strong>Anthony DeBarros</strong></span>\n    </div>\n    <div class=\"byline-timestamp\">\n      <span class=\"lang-cn\">2026年10月12日 · 调查周期：10月2日至7日（71位受访分析师）</span>\n      <span class=\"lang-en\">October 12, 2026 · Survey Window: Oct. 2–7 (71 Analysts)</span>\n    </div>\n  </div>\n</section>\n\n\n<main class=\"article-shell\">\n\n  <!-- ACT I: Opening Thesis & Treasury Transmission -->\n  <div class=\"editorial-grid\">\n    <div class=\"prose-stream\">\n      <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"未来十年的经济走向 | define the rest of the decade\"><span class=\"lang-cn\">一些经济冲击看起来就像道路上的颠簸——例如关税，企业会进行调整，或者与伊朗的战争导致油价暂时上涨。但越来越多的经济学家认为，美国更高的利率将决定<mark class=\"ed-hl\">未来十年的经济走向</mark>。</span><span class=\"lang-en\">Some economic shocks look like bumps in the road—tariffs, to which businesses adjust, or a war with Iran that raises oil prices temporarily. But economists increasingly believe that higher U.S. interest rates will <mark class=\"ed-hl\">define the rest of the decade</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"二十五年来的高点 | quarter-century highs\"><span class=\"lang-cn\">《华尔街日报》最近对经济预测者的调查得出了这样的结论。接受调查的分析师认为，近期长期收益率飙升至<mark class=\"ed-hl\">二十五年来的高点</mark>，并非暂时的波动，而是会随着通货膨胀的降温而逐渐消失。相反，他们预计更高的长期收益率将持续下去。</span><span class=\"lang-en\">So concludes The Wall Street Journal's latest survey of forecasters. The surveyed analysts don't see the recent surge in long-term yields to <mark class=\"ed-hl\">quarter-century highs</mark> as a temporary blip that will fade as inflation cools. Instead, they expect higher long-term yields to be sustained.</span></p>\n      <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"利息支出已经超过了军事支出 | interest on the national debt now exceeds military spending\"><span class=\"lang-cn\">美国国债设定了整个经济中借贷成本的基调。更高的收益率意味着更高的抵押贷款利率，以及企业借贷成本的增加。这也会增加联邦预算的负担，目前美国国债的<mark class=\"ed-hl\">利息支出已经超过了军事支出</mark>。</span><span class=\"lang-en\">Treasurys set the tempo for borrowing costs across the economy. Higher yields mean higher mortgage rates and more expensive borrowing for companies. They also increase the burden on the federal budget, where <mark class=\"ed-hl\">interest on the national debt now exceeds military spending</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"5.1% | 4.4%\"><span class=\"lang-cn\">在10月2日至7日进行的调查中，71位提交预测的分析师现在预计，基准10年期国债收益率将在2026年底达到<mark class=\"ed-hl\">5.1%</mark>，高于我们上次（7月）调查时的<mark class=\"ed-hl\">4.4%</mark>。并非所有受访者都回答了所有问题。</span><span class=\"lang-en\">The 71 analysts who submitted projections in the survey from Oct. 2-7 now expect the benchmark 10-year yield to end 2026 at <mark class=\"ed-hl\">5.1%</mark>, up from <mark class=\"ed-hl\">4.4%</mark> the last time we asked, in July. Not all respondents answered every question.</span></p>\n      <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"4.96% | 4.78%\"><span class=\"lang-cn\">预计更高的收益率将持续下去。预测者认为，到2027年中期，10年期国债收益率将达到<mark class=\"ed-hl\">4.96%</mark>，到2027年底将达到<mark class=\"ed-hl\">4.78%</mark>，高于7月份预测的4.3%和4.26%。</span><span class=\"lang-en\">Higher yields are expected to persist. Forecasters see a 10-year yield of <mark class=\"ed-hl\">4.96%</mark> halfway through 2027 and <mark class=\"ed-hl\">4.78%</mark> at the end of 2027, up from 4.3% and 4.26% in July projections.</span></p>\n    </div>\n\n    <aside class=\"sidebar-rail\">\n      <div class=\"sidebar-card\">\n        <div class=\"sidebar-card-kicker\">\n          <span class=\"lang-cn\">利率传导机制</span>\n          <span class=\"lang-en\">YIELD TRANSMISSION</span>\n        </div>\n        <h3 class=\"sidebar-card-title\">\n          <span class=\"lang-cn\">为什么10年期美债是全经济定价锚？</span>\n          <span class=\"lang-en\">Why the 10-Year Note Sets the Economic Tempo</span>\n        </h3>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">2026年底预期（10月调查）</span>\n            <span class=\"lang-en\">End-2026 Peak Projection (Oct.)</span>\n          </span>\n          <span class=\"sidebar-stat-val accent\">5.10%</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">2026年底预期（7月调查）</span>\n            <span class=\"lang-en\">Prior July Survey Baseline</span>\n          </span>\n          <span class=\"sidebar-stat-val\">4.40%</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">2027年中 / 2027年底预期</span>\n            <span class=\"lang-en\">Mid-2027 / End-2027 Path</span>\n          </span>\n          <span class=\"sidebar-stat-val\">4.96% → 4.78%</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">联邦债务利息 vs. 国防预算</span>\n            <span class=\"lang-en\">Federal Debt Interest vs. Defense</span>\n          </span>\n          <span class=\"sidebar-stat-val accent\">\n            <span class=\"lang-cn\">已超越军费</span>\n            <span class=\"lang-en\">Exceeds Military</span>\n          </span>\n        </div>\n      </div>\n    </aside>\n  </div>\n\n  <!-- QUANTITATIVE SHOWCASE: October vs July Survey Forecast Shift -->\n  <section class=\"quant-showcase\" aria-label=\"10-Year Treasury Yield Survey Comparison\">\n    <div class=\"quant-header\">\n      <div>\n        <div class=\"quant-kicker\">\n          <span class=\"lang-cn\">核心数据对比 · 华尔街日报经济学家调查</span>\n          <span class=\"lang-en\">QUANTITATIVE BENCHMARK · WSJ ECONOMISTS SURVEY</span>\n        </div>\n        <h2 class=\"quant-title\">\n          <span class=\"lang-cn\">中枢全面上移：10年期美债收益率预期跨年度对比（10月 vs. 7月调查）</span>\n          <span class=\"lang-en\">Structural Repricing: 10-Year Treasury Yield Forecasts Across Horizons (Oct. vs. July Survey)</span>\n        </h2>\n        <p class=\"quant-subtitle\">\n          <span class=\"lang-cn\">无论是近期峰值（5.1% vs 4.4%）还是2026–2028年跨周期均衡中枢，10月调查均较7月显著上调18至24个基点</span>\n          <span class=\"lang-en\">Across both near-term peak projections and the 2026–2028 structural baseline, October consensus shifted upward by 18 to 24 basis points over July</span>\n        </p>\n      </div>\n      <div class=\"quant-legend\">\n        <span class=\"legend-item\">\n          <span class=\"legend-swatch swatch-oct\"></span>\n          <span class=\"lang-cn\">2026年10月最新调查</span>\n          <span class=\"lang-en\">October 2026 Survey</span>\n        </span>\n        <span class=\"legend-item\">\n          <span class=\"legend-swatch swatch-jul\"></span>\n          <span class=\"lang-cn\">2026年7月前次调查</span>\n          <span class=\"lang-en\">July 2026 Survey</span>\n        </span>\n      </div>\n    </div>\n\n    <!-- Verified Metrics Cards (m1, m2, m3) -->\n    <div class=\"metrics-trio\">\n      <div class=\"metric-card\" data-derive=\"m1\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">4.12% (7月预测 3.94%)</span><span class=\"lang-en\">4.12% vs 3.94%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">2026年底10年期美债收益率预期</span><span class=\"lang-en\">10-Yr Treasury Yield Forecast (End of 2026: Oct vs July)</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">10月调查较7月上调 18 个基点</span><span class=\"lang-en\">Revised up 18 bps in October survey vs. July</span></div>\n      </div>\n      <div class=\"metric-card\" data-derive=\"m2\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">4.09% (7月预测 3.87%)</span><span class=\"lang-en\">4.09% vs 3.87%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">2027年底10年期美债收益率预期</span><span class=\"lang-en\">10-Yr Treasury Yield Forecast (End of 2027: Oct vs July)</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">10月调查较7月上调 22 个基点</span><span class=\"lang-en\">Revised up 22 bps in October survey vs. July</span></div>\n      </div>\n      <div class=\"metric-card\" data-derive=\"m3\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">4.16% (7月预测 3.92%)</span><span class=\"lang-en\">4.16% vs 3.92%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">2028年底10年期美债收益率预期</span><span class=\"lang-en\">10-Yr Treasury Yield Forecast (End of 2028: Oct vs July)</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">10月调查较7月上调 24 个基点</span><span class=\"lang-en\">Revised up 24 bps in October survey vs. July</span></div>\n      </div>\n    </div>\n\n    <!-- Bespoke Inline SVG Slope & Grouped Bar Chart -->\n    <div class=\"svg-chart-wrap\">\n      <svg viewbox=\"0 0 880 340\" width=\"100%\" role=\"img\" aria-label=\"10-Year Treasury Yield Forecast Comparison Chart: 2026, 2027, 2028\">\n        <defs>\n          <lineargradient id=\"octGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n            <stop offset=\"0%\" stop-color=\"#f08c43\" stop-opacity=\"0.95\"></stop>\n            <stop offset=\"100%\" stop-color=\"#b85d19\" stop-opacity=\"0.85\"></stop>\n          </lineargradient>\n          <lineargradient id=\"julGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n            <stop offset=\"0%\" stop-color=\"#698db0\" stop-opacity=\"0.9\"></stop>\n            <stop offset=\"100%\" stop-color=\"#3e5f80\" stop-opacity=\"0.8\"></stop>\n          </lineargradient>\n        </defs>\n\n        <!-- Horizontal Reference Grid Lines (Scale: 3.60% at y=260 to 4.30% at y=60) -->\n        <line x1=\"75\" y1=\"260\" x2=\"825\" y2=\"260\" stroke=\"#294057\" stroke-width=\"1\"></line>\n        <text x=\"65\" y=\"264\" text-anchor=\"end\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">3.60%</text>\n\n        <line x1=\"75\" y1=\"210\" x2=\"825\" y2=\"210\" stroke=\"#294057\" stroke-width=\"1\" stroke-dasharray=\"4 4\"></line>\n        <text x=\"65\" y=\"214\" text-anchor=\"end\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">3.80%</text>\n\n        <line x1=\"75\" y1=\"160\" x2=\"825\" y2=\"160\" stroke=\"#294057\" stroke-width=\"1\" stroke-dasharray=\"4 4\"></line>\n        <text x=\"65\" y=\"164\" text-anchor=\"end\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.00%</text>\n\n        <line x1=\"75\" y1=\"110\" x2=\"825\" y2=\"110\" stroke=\"#294057\" stroke-width=\"1\" stroke-dasharray=\"4 4\"></line>\n        <text x=\"65\" y=\"114\" text-anchor=\"end\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.20%</text>\n\n        <line x1=\"75\" y1=\"60\" x2=\"825\" y2=\"60\" stroke=\"#294057\" stroke-width=\"1\" stroke-dasharray=\"2 4\"></line>\n        <text x=\"65\" y=\"64\" text-anchor=\"end\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.40%</text>\n\n        <!-- Group 1: End of 2026 (Oct 4.12% -> y=130, Jul 3.94% -> y=175) -->\n        <g>\n          <!-- July Bar (3.94%) -->\n          <rect x=\"165\" y=\"175\" width=\"54\" height=\"85\" rx=\"2\" fill=\"url(#julGrad)\"></rect>\n          <text x=\"192\" y=\"166\" text-anchor=\"middle\" fill=\"#b7c4d1\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"600\">3.94%</text>\n\n          <!-- Oct Bar (4.12%) -->\n          <rect x=\"229\" y=\"130\" width=\"54\" height=\"130\" rx=\"2\" fill=\"url(#octGrad)\"></rect>\n          <text x=\"256\" y=\"119\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"13\" font-weight=\"700\">4.12%</text>\n\n          <!-- Delta Pill (+18 bps) -->\n          <rect x=\"184\" y=\"72\" width=\"80\" height=\"22\" rx=\"11\" fill=\"#1d354d\" stroke=\"#f08c43\" stroke-width=\"1\"></rect>\n          <text x=\"224\" y=\"87\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">+18 bps</text>\n\n          <!-- X Axis Label -->\n          <text x=\"224\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-cn\">2026年底预测</text>\n          <text x=\"224\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-en\">End of 2026</text>\n          <text x=\"224\" y=\"310\" text-anchor=\"middle\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.12% vs 3.94%</text>\n        </g>\n\n        <!-- Group 2: End of 2027 (Oct 4.09% -> y=137.5, Jul 3.87% -> y=192.5) -->\n        <g>\n          <!-- July Bar (3.87%) -->\n          <rect x=\"415\" y=\"192.5\" width=\"54\" height=\"67.5\" rx=\"2\" fill=\"url(#julGrad)\"></rect>\n          <text x=\"442\" y=\"183\" text-anchor=\"middle\" fill=\"#b7c4d1\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"600\">3.87%</text>\n\n          <!-- Oct Bar (4.09%) -->\n          <rect x=\"479\" y=\"137.5\" width=\"54\" height=\"122.5\" rx=\"2\" fill=\"url(#octGrad)\"></rect>\n          <text x=\"506\" y=\"126\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"13\" font-weight=\"700\">4.09%</text>\n\n          <!-- Delta Pill (+22 bps) -->\n          <rect x=\"434\" y=\"72\" width=\"80\" height=\"22\" rx=\"11\" fill=\"#1d354d\" stroke=\"#f08c43\" stroke-width=\"1\"></rect>\n          <text x=\"474\" y=\"87\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">+22 bps</text>\n\n          <!-- X Axis Label -->\n          <text x=\"474\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-cn\">2027年底预测</text>\n          <text x=\"474\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-en\">End of 2027</text>\n          <text x=\"474\" y=\"310\" text-anchor=\"middle\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.09% vs 3.87%</text>\n        </g>\n\n        <!-- Group 3: End of 2028 (Oct 4.16% -> y=120, Jul 3.92% -> y=180) -->\n        <g>\n          <!-- July Bar (3.92%) -->\n          <rect x=\"665\" y=\"180\" width=\"54\" height=\"80\" rx=\"2\" fill=\"url(#julGrad)\"></rect>\n          <text x=\"692\" y=\"171\" text-anchor=\"middle\" fill=\"#b7c4d1\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"600\">3.92%</text>\n\n          <!-- Oct Bar (4.16%) -->\n          <rect x=\"729\" y=\"120\" width=\"54\" height=\"140\" rx=\"2\" fill=\"url(#octGrad)\"></rect>\n          <text x=\"756\" y=\"109\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"13\" font-weight=\"700\">4.16%</text>\n\n          <!-- Delta Pill (+24 bps) -->\n          <rect x=\"684\" y=\"72\" width=\"80\" height=\"22\" rx=\"11\" fill=\"#1d354d\" stroke=\"#f08c43\" stroke-width=\"1\"></rect>\n          <text x=\"724\" y=\"87\" text-anchor=\"middle\" fill=\"#f0944d\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\">+24 bps</text>\n\n          <!-- X Axis Label -->\n          <text x=\"724\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-cn\">2028年底预测</text>\n          <text x=\"724\" y=\"290\" text-anchor=\"middle\" fill=\"#ffffff\" font-family=\"Inter, sans-serif\" font-size=\"13\" font-weight=\"700\" class=\"lang-en\">End of 2028</text>\n          <text x=\"724\" y=\"310\" text-anchor=\"middle\" fill=\"#8fa4b8\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\">4.16% vs 3.92%</text>\n        </g>\n\n        <!-- Trajectory Overlay Curves connecting Oct vs July centers -->\n        <polyline points=\"256,130 506,137.5 756,120\" fill=\"none\" stroke=\"#ffd2a6\" stroke-width=\"2\" stroke-dasharray=\"3 3\"></polyline>\n        <circle cx=\"256\" cy=\"130\" r=\"4\" fill=\"#ffd2a6\"></circle>\n        <circle cx=\"506\" cy=\"137.5\" r=\"4\" fill=\"#ffd2a6\"></circle>\n        <circle cx=\"756\" cy=\"120\" r=\"4\" fill=\"#ffd2a6\"></circle>\n\n        <polyline points=\"192,175 442,192.5 692,180\" fill=\"none\" stroke=\"#9ec2e6\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"></polyline>\n        <circle cx=\"192\" cy=\"175\" r=\"3.5\" fill=\"#9ec2e6\"></circle>\n        <circle cx=\"442\" cy=\"192.5\" r=\"3.5\" fill=\"#9ec2e6\"></circle>\n        <circle cx=\"692\" cy=\"180\" r=\"3.5\" fill=\"#9ec2e6\"></circle>\n      </svg>\n    </div>\n\n    <div class=\"quant-footnote\">\n      <span>\n        <span class=\"lang-cn\">数据来源：《华尔街日报》经济学家季度调查（2026年10月 vs. 2026年7月）</span>\n        <span class=\"lang-en\">Source: Wall Street Journal Surveys of Economists (October 2026 vs. July 2026)</span>\n      </span>\n      <span>\n        <span class=\"lang-cn\">注：1个基点 (bp) = 0.01个百分点</span>\n        <span class=\"lang-en\">Note: 1 basis point (bp) = 0.01 percentage point</span>\n      </span>\n    </div>\n  </section>\n\n  <!-- ACT II: Monetary Policy, Oil & Inflation Trajectory (p6 - p11) -->\n  <div class=\"section-divider\">\n    <span class=\"section-num\">SECTION I · FUNDAMENTALS &amp; THE FED</span>\n    <h2 class=\"section-heading\">\n      <span class=\"lang-cn\">固定收益基本面巨变：美联储利率与回落的油价</span>\n      <span class=\"lang-en\">A Sea Change in Fixed-Income Fundamentals: Fed Policy vs. Receding Oil</span>\n    </h2>\n  </div>\n\n  <div class=\"editorial-grid\">\n    <div class=\"prose-stream\">\n      <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"重新评估了对美国国债需求的假设 | re-evaluate assumptions about demand for Treasurys\"><span class=\"lang-cn\">自夏季以来，经济增长、通货膨胀以及对美国财政状况的担忧等多重因素共同推动了国债收益率的上升。许多经济学家表示，这些因素迫使他们<mark class=\"ed-hl\">重新评估了对美国国债需求的假设</mark>，而当国债价格下跌时，其收益率就会上升。</span><span class=\"lang-en\">A mix of improving growth, inflation and concerns about the U.S. fiscal trajectory have pushed bond yields higher since the start of the summer. Many economists said the cocktail has forced them to <mark class=\"ed-hl\">re-evaluate assumptions about demand for Treasurys</mark>, whose yields rise when their prices fall.</span></p>\n      <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"基本面发生了重大变化 | sea change in the fundamentals\"><span class=\"lang-cn\">咨询公司Decision Economics的总裁艾伦·西奈在接受采访时表示：“这标志着支撑固定收益市场和经济的<mark class=\"ed-hl\">基本面发生了重大变化</mark>。”</span><span class=\"lang-en\">\"It has been a <mark class=\"ed-hl\">sea change in the fundamentals</mark> underlying the fixed-income market and the economy,\" Allen Sinai, president of consulting firm Decision Economics, said in an interview.</span></p>\n      <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"超过4%，并保持到2027年 | topping 4% this year and staying there through 2027\"><span class=\"lang-cn\">他表示，即使在美联储上个月加息之后，美联储在控制通货膨胀的斗争中也已经落后了。西奈表示，仅仅通过一次加息是无法控制通货膨胀的，美联储似乎也通过其9月份的预测承认了这一点。这些预测显示，美联储的短期利率目标——联邦基金利率——今年将<mark class=\"ed-hl\">超过4%，并保持到2027年</mark>。</span><span class=\"lang-en\">He said even after the Federal Reserve's interest-rate increase last month, the central bank has fallen behind in the battle to tame inflation. Sinai said it would take more than one hike to smother inflation, which the Fed appeared to acknowledge with its September projections. Those showed the Fed's short-term interest-rate target, the federal-funds rate, <mark class=\"ed-hl\">topping 4% this year and staying there through 2027</mark>.</span></p>\n      <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"明年可能会升至近6% | rise to nearly 6% next year\"><span class=\"lang-cn\">西奈预测，10年期国债收益率<mark class=\"ed-hl\">明年可能会升至近6%</mark>，并在2020年代保持在5%以上。美国国债收益率受到投资者对美联储未来几年将如何设定利率的预期的强烈影响。</span><span class=\"lang-en\">Sinai forecasts the 10-year yield could <mark class=\"ed-hl\">rise to nearly 6% next year</mark> and remain above 5% through the 2020s. Yields on Treasury securities are heavily influenced by investors' expectations for how the Fed will set interest rates in coming years.</span></p>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q1\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“债券市场正在适应一个更高的中性利率世界，财政赤字和更强劲的生产率增长共同推高了长期借贷成本。”</span><span class=\"lang-en\">“The bond market is adjusting to a world of higher neutral rates, where fiscal deficits and firmer productivity growth keep long-term borrowing costs elevated.”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 华尔街日报经济学家调查共识 · 2026年10月季度预测</span><span class=\"lang-en\">— WSJ Economists Survey Consensus, October 2026 Quarterly Forecast</span></footer>\n      </blockquote>\n\n      <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"每桶88美元 | $88 a barrel | 80美元以下 | below $80\"><span class=\"lang-cn\">近期通货膨胀的大部分上升是由于油价上涨，经济学家预计油价将回落：他们预测，美国油价基准将以<mark class=\"ed-hl\">每桶88美元</mark>的价格结束今年，低于周五的91.85美元，并在7月份降至<mark class=\"ed-hl\">80美元以下</mark>。</span><span class=\"lang-en\">Much of the recent increase in inflation is because of higher oil prices, which economists expect to recede: They forecast the U.S. oil-price benchmark will end the year at <mark class=\"ed-hl\">$88 a barrel</mark>, compared with $91.85 on Friday, and slip <mark class=\"ed-hl\">below $80</mark> by July.</span></p>\n      <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"2.3% | 2.4%\"><span class=\"lang-cn\">因此，他们预计按消费者物价指数衡量的通货膨胀率在 12 月为 3.5%，明年 6 月为 2.6%，到 2027 年底为 <mark class=\"ed-hl\">2.3%</mark>。与三个月前相比，这一数字几乎没有变化。美联储关注的通胀指标——个人消费支出价格指数，预计到 2027 年底将降至 <mark class=\"ed-hl\">2.4%</mark>，低于今年底的 3.5%。</span><span class=\"lang-en\">As a result, they expect inflation as measured by the consumer-price index of 3.5% in December, 2.6% next June, and <mark class=\"ed-hl\">2.3%</mark> at the end of 2027. That has changed little from three months ago. The inflation gauge that the Fed tracks, the personal-consumption expenditures price index, is forecast to cool to <mark class=\"ed-hl\">2.4%</mark> by the end of 2027, from 3.5% at the end of this year.</span></p>\n    </div>\n\n    <aside class=\"sidebar-rail\">\n      <div class=\"sidebar-card\">\n        <div class=\"sidebar-card-kicker\">\n          <span class=\"lang-cn\">通胀与能源路径</span>\n          <span class=\"lang-en\">INFLATION &amp; OIL GLIDE PATH</span>\n        </div>\n        <h3 class=\"sidebar-card-title\">\n          <span class=\"lang-cn\">通胀预计降温，但收益率依然高企</span>\n          <span class=\"lang-en\">Inflation Cools, Yet Yields Stay Elevated</span>\n        </h3>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">美油基准（周五收盘 → 年底预期）</span>\n            <span class=\"lang-en\">U.S. Oil (Fri. → Year-End)</span>\n          </span>\n          <span class=\"sidebar-stat-val\">$91.85 → $88</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">明年7月美油价格预期</span>\n            <span class=\"lang-en\">Oil Benchmark by Next July</span>\n          </span>\n          <span class=\"sidebar-stat-val\">&lt; $80 / bbl</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">CPI 通胀（今年12月 → 2027年底）</span>\n            <span class=\"lang-en\">CPI Inflation (Dec. ’26 → End ’27)</span>\n          </span>\n          <span class=\"sidebar-stat-val\">3.5% → 2.3%</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">PCE 价格指数（今年底 → 2027年底）</span>\n            <span class=\"lang-en\">PCE Index (End ’26 → End ’27)</span>\n          </span>\n          <span class=\"sidebar-stat-val\">3.5% → 2.4%</span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">艾伦·西奈 10年期收益率峰值预测</span>\n            <span class=\"lang-en\">Allen Sinai 10-Yr Peak Call</span>\n          </span>\n          <span class=\"sidebar-stat-val accent\">~6.0%</span>\n        </div>\n      </div>\n    </aside>\n  </div>\n\n  <!-- ACT III: Fiscal Deficits, AI Capital Demand & Macro Growth (p12 - p16) -->\n  <div class=\"section-divider\">\n    <span class=\"section-num\">SECTION II · FISCAL DEFICITS &amp; AI CAPITAL DEMAND</span>\n    <h2 class=\"section-heading\">\n      <span class=\"lang-cn\">超越通胀的力量：庞大债务负担、AI基建与预算现实落差</span>\n      <span class=\"lang-en\">Beyond Inflation: Debt Burdens, AI Build-Out, and Washington’s Budget Gap</span>\n    </h2>\n  </div>\n\n  <div class=\"editorial-grid\">\n    <div class=\"prose-stream\">\n      <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"庞大且不断增长的债务负担 | large and growing debt burden | 人工智能基础设施的建设 | AI infrastructure build-out | 5.2%\"><span class=\"lang-cn\">总部位于芝加哥的北方信托银行首席经济学家卡尔·坦嫩鲍姆表示，除了通胀预期之外，还有其他因素推高了预期收益率。他说，如果伊朗战争缓和，通胀压力可能会减轻，这将有助于降低收益率。但他表示，投资者仍然对<mark class=\"ed-hl\">庞大且不断增长的债务负担</mark>感到担忧，同时，<mark class=\"ed-hl\">人工智能基础设施的建设</mark>可能会提高增长预期和对资本的需求。他预计到 2028 年，10 年期收益率将保持在 <mark class=\"ed-hl\">5.2%</mark> 左右，然后在 2029 年底降至 5%。</span><span class=\"lang-en\">Carl Tannenbaum, chief economist at Chicago-based Northern Trust, said factors beyond the inflation outlook have pushed up expected yields. Inflationary pressure from the Iran war could abate if the conflict winds down, which would help ease yields, all else equal, he said. But investors will remain nervous about the <mark class=\"ed-hl\">large and growing debt burden</mark>, while the <mark class=\"ed-hl\">AI infrastructure build-out</mark> could lift growth expectations and demand for capital, Tannenbaum said. He sees the 10-year yield around <mark class=\"ed-hl\">5.2%</mark> through 2028, before falling to 5% by the end of 2029.</span></p>\n      <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"4.3% | 3% 中段 | mid-3% range\"><span class=\"lang-cn\">如果收益率达到这个水平，将给联邦预算带来压力。2 月，国会预算办公室预测，未来十年，10 年期美国国债收益率不会超过 <mark class=\"ed-hl\">4.3%</mark>。白宫行政管理和预算局更为乐观，预计本十年后期收益率将降至 <mark class=\"ed-hl\">3% 中段</mark>。</span><span class=\"lang-en\">Yields at that level would strain the federal budget. In February, the Congressional Budget Office projected the 10-year Treasury yield won't exceed <mark class=\"ed-hl\">4.3%</mark> for the rest of the decade. The White House Office of Management and Budget is even more optimistic, projecting yields falling into the <mark class=\"ed-hl\">mid-3% range</mark> later this decade.</span></p>\n\n      <!-- Visual Comparison of Washington Official Assumptions vs Market Reality -->\n      <div class=\"fiscal-comparison-panel\">\n        <div class=\"panel-header\">\n          <div class=\"panel-kicker\">\n            <span class=\"lang-cn\">财政预算压力测试 · 10年期美债收益率预期落差</span>\n            <span class=\"lang-en\">FISCAL REALITY CHECK · 10-YEAR YIELD PROJECTION GAP</span>\n          </div>\n          <div class=\"panel-title\">\n            <span class=\"lang-cn\">华盛顿官方预算假设 vs. 市场经济学家预测</span>\n            <span class=\"lang-en\">Official Washington Budget Assumptions vs. Economist Forecasts</span>\n          </div>\n        </div>\n        <svg viewbox=\"0 0 620 195\" width=\"100%\" role=\"img\" aria-label=\"Comparison of OMB, CBO, WSJ Survey, and Northern Trust yield forecasts\">\n          <!-- Bar 1: White House OMB (Mid-3% ~ 3.5%) -->\n          <text x=\"10\" y=\"34\" fill=\"#242220\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"600\" class=\"lang-cn\">白宫行政管理和预算局 (OMB)</text>\n          <text x=\"10\" y=\"34\" fill=\"#242220\" font-family=\"Inter, sans-serif\" font-size=\"12\" font-weight=\"600\" class=\"lang-en\">White House OMB (Later Decade)</text>\n          <rect x=\"235\" y=\"19\" width=\"195\" height=\"20\" rx=\"2\" fill=\"#8fa4b8\"></rect>\n          <text x=\"440\" y=\"34\" fill=\"#646059\" font-family=\"JetBrains Mono, Noto Sans SC, monospace\" font-size=\"12\" font-weight=\"700\" class=\"lang-cn\">~3.5% (3%中段)</text>\n          <text x=\"440\" y=\"34\" fill=\"#646059\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\" class=\"lang-en\">Mid-3% Range</text>\n\n          <!-- Bar 2: CBO Ceiling (4.3%) -->\n          <text x=\"10\" y=\"79\" fill=\"#242220\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"600\" class=\"lang-cn\">国会预算办公室 (CBO 2月预测上限)</text>\n          <text x=\"10\" y=\"79\" fill=\"#242220\" font-family=\"Inter, sans-serif\" font-size=\"12\" font-weight=\"600\" class=\"lang-en\">CBO Decade Ceiling (Feb. Forecast)</text>\n          <rect x=\"235\" y=\"64\" width=\"240\" height=\"20\" rx=\"2\" fill=\"#5a7d9f\"></rect>\n          <text x=\"485\" y=\"79\" fill=\"#242220\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\">≤ 4.30%</text>\n\n          <!-- Bar 3: WSJ Survey End-2026 (5.1%) -->\n          <text x=\"10\" y=\"124\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\" class=\"lang-cn\">WSJ 调查共识 (2026年底)</text>\n          <text x=\"10\" y=\"124\" fill=\"#141413\" font-family=\"Inter, sans-serif\" font-size=\"12\" font-weight=\"700\" class=\"lang-en\">WSJ Survey Consensus (End-2026)</text>\n          <rect x=\"235\" y=\"109\" width=\"285\" height=\"20\" rx=\"2\" fill=\"#b85d19\"></rect>\n          <text x=\"530\" y=\"124\" fill=\"#b85d19\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\">5.10%</text>\n\n          <!-- Bar 4: Northern Trust / Tannenbaum (5.2% through 2028) -->\n          <text x=\"10\" y=\"169\" fill=\"#141413\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\" class=\"lang-cn\">北方信托 Tannenbaum (至2028年)</text>\n          <text x=\"10\" y=\"169\" fill=\"#141413\" font-family=\"Inter, sans-serif\" font-size=\"12\" font-weight=\"700\" class=\"lang-en\">Northern Trust (Through 2028)</text>\n          <rect x=\"235\" y=\"154\" width=\"292\" height=\"20\" rx=\"2\" fill=\"#8f3f06\"></rect>\n          <text x=\"537\" y=\"169\" fill=\"#8f3f06\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\">5.20%</text>\n        </svg>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p14\" data-hl=\"2.4% | 超过 3% | more than 3%\"><span class=\"lang-cn\">经济学家们预测，今年的预期增长率将更高。他们预计 2026 年的 GDP 将增长 <mark class=\"ed-hl\">2.4%</mark>，高于 7 月份的 2.1%。这反映了对第二季度增长的向上修正，以及初步数据表明，经济在第三季度可能实现了<mark class=\"ed-hl\">超过 3%</mark>的年化增长率。受访者认为，此后增长将回落，未来十年剩余时间的增长率将为 2.1% 或 2.2%。</span><span class=\"lang-en\">Economists penciled in higher expected growth this year. They expect GDP to increase by <mark class=\"ed-hl\">2.4%</mark> in 2026, up from their 2.1% July projection. That reflects upward revisions to second-quarter growth and interim data suggesting the economy might have grown by an annualized rate of <mark class=\"ed-hl\">more than 3%</mark> in the third quarter. Respondents see growth slipping back thereafter, to 2.1% or 2.2% for the rest of the decade.</span></p>\n      <p class=\"prose-p\" data-ref=\"p15\" data-hl=\"4.2%\"><span class=\"lang-cn\">同样，预测者们也不认为劳动力市场会出现重大变化。他们平均认为，失业率将在 2029 年之前保持在 <mark class=\"ed-hl\">4.2%</mark> 左右，与 9 月份的 4.2% 失业率几乎没有变化。</span><span class=\"lang-en\">Likewise, forecasters don't anticipate much drama in the labor market. On average, they think unemployment will hang around <mark class=\"ed-hl\">4.2%</mark> through 2029, little changed from the 4.2% unemployment rate in September.</span></p>\n      <p class=\"prose-p\" data-ref=\"p16\" data-hl=\"24% | 25%\"><span class=\"lang-cn\">他们将未来 12 个月内经济衰退的可能性定为 <mark class=\"ed-hl\">24%</mark>，与 7 月份的 <mark class=\"ed-hl\">25%</mark> 几乎没有变化。</span><span class=\"lang-en\">They put the probability of recession in the coming 12 months at <mark class=\"ed-hl\">24%</mark>, barely budged from <mark class=\"ed-hl\">25%</mark> in July.</span></p>\n\n      <!-- Macro Vitals Strip summarizing p14-p16 -->\n      <div class=\"macro-vitals-strip\">\n        <div class=\"vital-box\">\n          <div class=\"vital-tag\">\n            <span class=\"lang-cn\">2026年 GDP 增长预期</span>\n            <span class=\"lang-en\">2026 GDP GROWTH</span>\n          </div>\n          <div class=\"vital-figure\">2.4%</div>\n          <div class=\"vital-desc\">\n            <span class=\"lang-cn\">高于7月预测的2.1%；三季度年化增长率或超3%，本十年后期回落至2.1%–2.2%</span>\n            <span class=\"lang-en\">Up from 2.1% in July; Q3 annualized pace seen topping 3% before settling at 2.1%–2.2%</span>\n          </div>\n        </div>\n        <div class=\"vital-box\">\n          <div class=\"vital-tag\">\n            <span class=\"lang-cn\">至2029年失业率均值</span>\n            <span class=\"lang-en\">UNEMPLOYMENT TO 2029</span>\n          </div>\n          <div class=\"vital-figure\">4.2%</div>\n          <div class=\"vital-desc\">\n            <span class=\"lang-cn\">与9月份4.2%的失业率几乎持平，预测者预计劳动力市场不会出现剧烈震荡</span>\n            <span class=\"lang-en\">Unchanged from September’s 4.2% rate; forecasters anticipate minimal labor drama</span>\n          </div>\n        </div>\n        <div class=\"vital-box\">\n          <div class=\"vital-tag\">\n            <span class=\"lang-cn\">未来12个月衰退概率</span>\n            <span class=\"lang-en\">12-MO RECESSION ODDS</span>\n          </div>\n          <div class=\"vital-figure\">24%</div>\n          <div class=\"vital-desc\">\n            <span class=\"lang-cn\">较7月份调查的25%仅微幅下调1个百分点，经济软着陆预期稳固</span>\n            <span class=\"lang-en\">Barely budged from 25% in July, underscoring expectations of durable expansion</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <aside class=\"sidebar-rail\">\n      <div class=\"sidebar-card\">\n        <div class=\"sidebar-card-kicker\">\n          <span class=\"lang-cn\">结构性推手</span>\n          <span class=\"lang-en\">STRUCTURAL DRIVERS</span>\n        </div>\n        <h3 class=\"sidebar-card-title\">\n          <span class=\"lang-cn\">卡尔·坦嫩鲍姆（北方信托）的长期收益率逻辑</span>\n          <span class=\"lang-en\">Carl Tannenbaum’s Long-Run Yield Thesis</span>\n        </h3>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">地缘缓冲</span>\n            <span class=\"lang-en\">Geopolitical Relief</span>\n          </span>\n          <span class=\"sidebar-stat-val\">\n            <span class=\"lang-cn\">伊朗局势缓和或降通胀</span>\n            <span class=\"lang-en\">Iran De-escalation</span>\n          </span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">上行压力 1</span>\n            <span class=\"lang-en\">Upward Force 1</span>\n          </span>\n          <span class=\"sidebar-stat-val accent\">\n            <span class=\"lang-cn\">庞大且增长的联邦债务</span>\n            <span class=\"lang-en\">Growing Debt Burden</span>\n          </span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">上行压力 2</span>\n            <span class=\"lang-en\">Upward Force 2</span>\n          </span>\n          <span class=\"sidebar-stat-val accent\">\n            <span class=\"lang-cn\">AI基础设施建设资本需求</span>\n            <span class=\"lang-en\">AI Capital Demand</span>\n          </span>\n        </div>\n        <div class=\"sidebar-stat-row\">\n          <span>\n            <span class=\"lang-cn\">2028年 / 2029年底预测</span>\n            <span class=\"lang-en\">2028 / End-2029 Path</span>\n          </span>\n          <span class=\"sidebar-stat-val\">5.2% → 5.0%</span>\n        </div>\n      </div>\n    </aside>\n  </div>\n\n  <!-- ACT IV: The Counter-Argument / Rate-Cut Dissent (p17 - p19) & Source Graphics Note (p20) -->\n  <section class=\"counter-view-dossier\" aria-label=\"Opposing Market View: The Case for Rate Cuts\">\n    <div class=\"dissent-header\">\n      <span class=\"dissent-badge\">\n        <span class=\"lang-cn\">逆向少数派观点 · 降息逻辑</span>\n        <span class=\"lang-en\">THE CONTRARIAN VIEW · CASE FOR RATE CUTS</span>\n      </span>\n      <span class=\"dissent-economist\">\n        <span class=\"lang-cn\">拉吉夫·达万 (Rajeev Dhawan) · 佐治亚州立大学经济学家</span>\n        <span class=\"lang-en\">Rajeev Dhawan · Economist, Georgia State University</span>\n      </span>\n    </div>\n\n    <p class=\"prose-p\" data-ref=\"p17\" data-hl=\"比表面上看起来更加脆弱 | more fragile than it appears\"><span class=\"lang-cn\">并非所有预测者都认为收益率将保持在高位。佐治亚州立大学的经济学家拉吉夫·达万认为，劳动力市场<mark class=\"ed-hl\">比表面上看起来更加脆弱</mark>。</span><span class=\"lang-en\">Not all forecasters agree yields will stay high. Rajeev Dhawan, an economist at Georgia State University, thinks the labor market is <mark class=\"ed-hl\">more fragile than it appears</mark>.</span></p>\n    <p class=\"prose-p\" data-ref=\"p18\" data-hl=\"66,000\"><span class=\"lang-cn\">他说，在过去六个月里，经济平均每月新增了 <mark class=\"ed-hl\">66,000</mark> 个就业岗位，但其中很少是在最具盈利性的领域。</span><span class=\"lang-en\">Over the past six months, the economy has added a solid <mark class=\"ed-hl\">66,000</mark> jobs a month on average, but few have been in the most lucrative fields, he said.</span></p>\n    <p class=\"prose-p\" data-ref=\"p19.s1\"><span class=\"lang-cn\">达万认为，疲软的劳动力市场可能会迫使美联储再次降低利率，从而降低收益率。</span><span class=\"lang-en\">In Dhawan's view, a weaker labor market could force the Fed to bring rates lower again, which could pull down yields.</span></p>\n    <blockquote class=\"dissent-quote-highlight\">\n      <p class=\"prose-p\" style=\"margin-bottom:0.4rem;\" data-ref=\"p19.s2\" data-hl=\"白领就业的困境 | white-collar job malaise\"><span class=\"lang-cn\">“劳动力市场正面临着<mark class=\"ed-hl\">白领就业的困境</mark>，”达万说。</span><span class=\"lang-en\">\"The labor market's got a <mark class=\"ed-hl\">white-collar job malaise</mark>,\" Dhawan said.</span></p>\n      <p class=\"prose-p\" style=\"margin-bottom:0;\" data-ref=\"p19.s3\" data-hl=\"转向降息 | pivot to rate cuts\"><span class=\"lang-cn\">“一旦美联储意识到这一点，他们就会<mark class=\"ed-hl\">转向降息</mark>。”</span><span class=\"lang-en\">\"Once the Fed realizes it isn't as strong, they will <mark class=\"ed-hl\">pivot to rate cuts</mark>.\"</span></p>\n    </blockquote>\n  </section>\n\n  <!-- Canonical Block p20: Source Graphics Documentation -->\n  <div class=\"archive-graphics-note\">\n    <div class=\"archive-graphics-label\">\n      <span class=\"lang-cn\">原刊附表与调查方法说明 · SOURCE GRAPHICS &amp; METHODOLOGY</span>\n      <span class=\"lang-en\">ORIGINAL PRINT GRAPHICS &amp; SURVEY METHODOLOGY</span>\n    </div>\n    <p class=\"prose-p\" data-ref=\"p20\"><span class=\"lang-cn\">[文章中的图表：（1）“未来 12 个月美国经济衰退的可能性，包括今天”，2015-2026；（2）“GDP（年化增长）”，与 2026 年 10 月的预测相比，2026 年 7 月的预测，2026 年第三季度至 2027 年第三季度；（3）“10 年期美国国债的收盘收益率”，与 2026 年 10 月、2026 年 7 月和 2026 年 4 月的预测相比，2026 年 12 月 31 日至 2029 年 12 月 31 日。注意：经济衰退的可能性是经济学家答案的平均值。GDP 预测是针对通货调整后的 GDP。来源：《华尔街日报》对经济学家的调查。]</span><span class=\"lang-en\">[Graphics with the article: (1) \"Probability the U.S. is in a recession in next 12 months, including today,\" 2015-2026; (2) \"GDP (annualized growth)\" with October '26 forecast vs July '26 forecast, Q3 2026-Q3 2027; (3) \"Closing yield, 10-year Treasury notes\" with October '26, July '26 and April '26 forecasts, Dec. 31 2026-Dec. 31 2029. Note: Recession probability is an average of economists' answers. GDP forecasts are for inflation-adjusted GDP. Source: Wall Street Journal surveys of economists.]</span></p>\n  </div>\n\n</main>\n\n\n<footer class=\"editorial-footer\">\n  <div>\n    <span class=\"lang-cn\">© 2026 华尔街日报 (The Wall Street Journal) · WSJ 深读数字特辑 (E1-010)</span>\n    <span class=\"lang-en\">© 2026 The Wall Street Journal · WSJ Editorial Renaissance Digital Edition (E1-010)</span>\n  </div>\n  <div>\n    <span class=\"lang-cn\">栏目：THE OUTLOOK · 版面：U.S. News Page A2</span>\n    <span class=\"lang-en\">Column: THE OUTLOOK · Section: U.S. News Page A2</span>\n  </div>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-010",
+        "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+        "exact_match_cn": "20/20",
+        "exact_match_en": "20/20",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 20,
+        "observed_narrative_elements": 23,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 4,
+        "derived_items": [
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p4"
+          },
+          {
+            "id": "m2",
+            "kind": "metric",
+            "source_block": "p5"
+          },
+          {
+            "id": "m3",
+            "kind": "metric",
+            "source_block": "p5"
+          },
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p9"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "未来十年的经济走向"
+            ],
+            "applied_en": [
+              "define the rest of the decade"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "二十五年来的高点"
+            ],
+            "applied_en": [
+              "quarter-century highs"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "利息支出已经超过了军事支出"
+            ],
+            "applied_en": [
+              "interest on the national debt now exceeds military spending"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "5.1%",
+              "4.4%"
+            ],
+            "applied_en": [
+              "5.1%",
+              "4.4%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "4.96%",
+              "4.78%"
+            ],
+            "applied_en": [
+              "4.96%",
+              "4.78%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "重新评估了对美国国债需求的假设"
+            ],
+            "applied_en": [
+              "re-evaluate assumptions about demand for Treasurys"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "基本面发生了重大变化"
+            ],
+            "applied_en": [
+              "sea change in the fundamentals"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "超过4%，并保持到2027年"
+            ],
+            "applied_en": [
+              "topping 4% this year and staying there through 2027"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "明年可能会升至近6%"
+            ],
+            "applied_en": [
+              "rise to nearly 6% next year"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "每桶88美元",
+              "80美元以下"
+            ],
+            "applied_en": [
+              "$88 a barrel",
+              "below $80"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "2.3%",
+              "2.4%"
+            ],
+            "applied_en": [
+              "2.3%",
+              "2.4%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "庞大且不断增长的债务负担",
+              "人工智能基础设施的建设",
+              "5.2%"
+            ],
+            "applied_en": [
+              "large and growing debt burden",
+              "AI infrastructure build-out",
+              "5.2%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "3% 中段",
+              "4.3%"
+            ],
+            "applied_en": [
+              "mid-3% range",
+              "4.3%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14",
+            "applied_cn": [
+              "超过 3%",
+              "2.4%"
+            ],
+            "applied_en": [
+              "more than 3%",
+              "2.4%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p15",
+            "applied_cn": [
+              "4.2%"
+            ],
+            "applied_en": [
+              "4.2%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p16",
+            "applied_cn": [
+              "24%",
+              "25%"
+            ],
+            "applied_en": [
+              "24%",
+              "25%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p17",
+            "applied_cn": [
+              "比表面上看起来更加脆弱"
+            ],
+            "applied_en": [
+              "more fragile than it appears"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p18",
+            "applied_cn": [
+              "66,000"
+            ],
+            "applied_en": [
+              "66,000"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p19.s2",
+            "applied_cn": [
+              "白领就业的困境"
+            ],
+            "applied_en": [
+              "white-collar job malaise"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p19.s3",
+            "applied_cn": [
+              "转向降息"
+            ],
+            "applied_en": [
+              "pivot to rate cuts"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 8,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "3.60%",
+              "3.80%",
+              "4.00%",
+              "4.20%",
+              "4.40%",
+              "3.94%",
+              "4.12%",
+              "+18 bps",
+              "2026年底预测",
+              "End of 2026",
+              "4.12% vs 3.94%",
+              "3.87%",
+              "4.09%",
+              "+22 bps",
+              "2027年底预测",
+              "End of 2027",
+              "4.09% vs 3.87%",
+              "3.92%",
+              "4.16%",
+              "+24 bps",
+              "2028年底预测",
+              "End of 2028",
+              "4.16% vs 3.92%"
+            ],
+            "numbers_found": [
+              "3.60%",
+              "3.80%",
+              "4.00%",
+              "4.20%",
+              "4.40%",
+              "3.94%",
+              "4.12%",
+              "18",
+              "2026",
+              "2026",
+              "4.12%",
+              "3.94%",
+              "3.87%",
+              "4.09%",
+              "22",
+              "2027",
+              "2027",
+              "4.09%",
+              "3.87%",
+              "3.92%",
+              "4.16%",
+              "24",
+              "2028",
+              "2028",
+              "4.16%",
+              "3.92%"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "",
+            "text_labels": [
+              "白宫行政管理和预算局 (OMB)",
+              "White House OMB (Later Decade)",
+              "~3.5% (3%中段)",
+              "Mid-3% Range",
+              "国会预算办公室 (CBO 2月预测上限)",
+              "CBO Decade Ceiling (Feb. Forecast)",
+              "≤ 4.30%",
+              "WSJ 调查共识 (2026年底)",
+              "WSJ Survey Consensus (End-2026)",
+              "5.10%",
+              "北方信托 Tannenbaum (至2028年)",
+              "Northern Trust (Through 2028)",
+              "5.20%"
+            ],
+            "numbers_found": [
+              "3.5%",
+              "3%",
+              "3%",
+              "2",
+              "4.30%",
+              "2026",
+              "2026",
+              "5.10%",
+              "2028",
+              "2028",
+              "5.20%"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "为什么10年期美债是全经济定价锚？",
+            "en": "Why the 10-Year Note Sets the Economic Tempo",
+            "numbers_found": [
+              "10",
+              "10"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "中枢全面上移：10年期美债收益率预期跨年度对比（10月 vs. 7月调查）",
+            "en": "Structural Repricing: 10-Year Treasury Yield Forecasts Across Horizons (Oct. vs. July Survey)",
+            "numbers_found": [
+              "10",
+              "10",
+              "7",
+              "10"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "固定收益基本面巨变：美联储利率与回落的油价",
+            "en": "A Sea Change in Fixed-Income Fundamentals: Fed Policy vs. Receding Oil",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "通胀预计降温，但收益率依然高企",
+            "en": "Inflation Cools, Yet Yields Stay Elevated",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "超越通胀的力量：庞大债务负担、AI基建与预算现实落差",
+            "en": "Beyond Inflation: Debt Burdens, AI Build-Out, and Washington’s Budget Gap",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "卡尔·坦嫩鲍姆（北方信托）的长期收益率逻辑",
+            "en": "Carl Tannenbaum’s Long-Run Yield Thesis",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [],
+      "sanitization_log": [
+        "Removed unnecessary client-side script block (>1200 chars or self-hydration script)"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "verified",
+      "viewports": {
+        "390": {
+          "headline": "为什么高债券收益率不会消退Why Higher Bond Yields Aren",
+          "viewport": 390,
+          "scrollWidth": 390,
+          "scrollHeight": 9718,
+          "horizontalOverflow": false,
+          "overflowElementCount": 0,
+          "narrativeBlockCount": 22,
+          "hiddenBlockCount": 0,
+          "bilingualSwitchVerified": true,
+          "svgCount": 2,
+          "svgChecks": [
+            {
+              "index": 1,
+              "width": 284,
+              "height": 110,
+              "clippedTexts": 0
+            },
+            {
+              "index": 2,
+              "width": 297,
+              "height": 93,
+              "clippedTexts": 0
+            }
+          ]
+        },
+        "1440": {
+          "headline": "为什么高债券收益率不会消退Why Higher Bond Yields Aren",
+          "viewport": 1440,
+          "scrollWidth": 1440,
+          "scrollHeight": 5770,
+          "horizontalOverflow": false,
+          "overflowElementCount": 0,
+          "narrativeBlockCount": 22,
+          "hiddenBlockCount": 0,
+          "bilingualSwitchVerified": true,
+          "svgCount": 2,
+          "svgChecks": [
+            {
+              "index": 1,
+              "width": 1026,
+              "height": 396,
+              "clippedTexts": 0
+            },
+            {
+              "index": 2,
+              "width": 622,
+              "height": 196,
+              "clippedTexts": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

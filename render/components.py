@@ -5,6 +5,7 @@
 """
 import html
 import re
+from source_model import source_from_final
 def esc(s):
     return html.escape(s or '', quote=True).replace('&#x27;', "'")
 
@@ -17,22 +18,20 @@ def set_issue_meta(date_cn, date_en):
     ISSUE_META['date_en'] = date_en or ''
 
 
-def pair(cn, en, tag='p', cls=''):
-    """中英 1:1 段落"""
+def pair(cn, en, tag='p', cls='', block_id=None):
+    """Complete bilingual block; an absent locale remains empty."""
     c = f' class="{cls}"' if cls else ''
-    return (f'<{tag}{c}><span class="k-cn">{esc(cn)}</span>'
+    anchor = f' data-block="{esc(block_id)}"' if block_id is not None else ''
+    return (f'<{tag}{c}{anchor}><span class="k-cn">{esc(cn)}</span>'
             f'<span class="k-en" hidden>{esc(en)}</span></{tag}>')
 
 
 def paras(cn_text, en_text):
     """正文按 \n\n 分段，逐字返回 [(cn, en)]"""
-    cps = (cn_text or '').split('\n\n')
-    eps = (en_text or '').split('\n\n')
-    out = []
-    for i, cp in enumerate(cps):
-        ep = eps[i] if i < len(eps) else ''
-        out.append((cp, ep))
-    return out
+    cps = [p.strip() for p in (cn_text or '').split('\n\n') if p.strip()]
+    eps = [p.strip() for p in (en_text or '').split('\n\n') if p.strip()]
+    return [(cps[i] if i < len(cps) else '', eps[i] if i < len(eps) else '')
+            for i in range(max(len(cps), len(eps)))]
 
 
 SECTION_LABEL = {
@@ -79,12 +78,20 @@ def kicker_text(e):
     return cn
 
 
-def article_header(e):
-    """完整文章头：kicker / h1 / deck / byline / rule"""
+def article_header(e, headline_phrases_cn=()):
+    """完整文章头；仅保护编辑明确选定的标题短语，不改原文或固定换行。"""
     kick_cn, kick_en = kicker_pair(e)
+    title_cn = e.get('title_cn') or ''
+    title_html = esc(title_cn)
+    for phrase in headline_phrases_cn:
+        if not phrase or title_cn.count(phrase) != 1:
+            raise ValueError(f'{e["id"]}: headline phrase must occur once: {phrase!r}')
+        phrase_html = esc(phrase)
+        title_html = title_html.replace(
+            phrase_html, f'<span class="headline-phrase">{phrase_html}</span>', 1)
     h = [f'''<header class="ahead">
     <div class="kicker"><span class="kbar"></span><span class="k-cn">{esc(kick_cn)}</span><span class="k-en" hidden>{esc(kick_en)}</span></div>
-    <h2 class="art-title"><span class="k-cn">{esc(e.get('title_cn'))}</span><span class="k-en" hidden>{esc(e.get('title'))}</span></h2>''']
+    <h2 class="art-title"><span class="k-cn">{title_html}</span><span class="k-en" hidden>{esc(e.get('title'))}</span></h2>''']
     if e.get('dek_cn') or e.get('dek'):
         h.append(f'''<p class="deck"><span class="k-cn">{esc(e.get('dek_cn'))}</span><span class="k-en" hidden>{esc(e.get('dek'))}</span></p>''')
     if e.get('byline'):
@@ -98,7 +105,7 @@ def article_header(e):
 
 
 def body_paras(e):
-    return [pair(cn, en) for cn, en in paras(e.get('body_cn'), e.get('body_en'))]
+    return [pair(b['cn'], b['en'], block_id=b['id']) for b in source_from_final(e).blocks]
 
 
 def _strip_src_ref(s):

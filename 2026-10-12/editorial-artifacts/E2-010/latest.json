@@ -1,0 +1,403 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E2-010",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T07:04:39Z",
+  "status": "verified",
+  "notes": "Queue task task-920123cf (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+    "paragraph_count": 14,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 20093,
+    "completion_chars": 36041,
+    "input_tokens": 6831,
+    "output_tokens": 13611,
+    "total_tokens": 20442,
+    "latency_seconds": 88.29
+  },
+  "files": {
+    "raw_html": "E2-010/v1/raw.html",
+    "compiled_html": "E2-010/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #ebe5d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c9c1b0;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.13);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --navy-line: #283f56;\n    --font-serif-en: 'Playfair Display', Georgia, serif;\n    --font-body-en: 'Lora', Georgia, serif;\n    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    font-family: var(--font-serif-cn);\n    background-color: var(--paper);\n    color: var(--body);\n    line-height: 1.85;\n    overflow-x: hidden;\n  }\n\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: var(--font-body-en);\n    line-height: 1.78;\n  }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line);\n  }\n\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 0.7rem 1.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-group {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n    flex-wrap: wrap;\n  }\n\n  .wsj-mark {\n    font-family: var(--font-serif-en);\n    font-weight: 800;\n    font-size: 0.95rem;\n    letter-spacing: 0.08em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .brand-sep {\n    width: 1px;\n    height: 14px;\n    background: var(--line-strong);\n  }\n\n  .section-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    font-weight: 600;\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    align-items: center;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-radius: 999px;\n    padding: 2px;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 600;\n    padding: 0.3rem 0.75rem;\n    border-radius: 999px;\n    color: var(--muted);\n    cursor: pointer;\n    transition: all 0.2s ease;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-btn[data-lang=\"zh-CN\"],\n  :host([lang=\"en\"]) .lang-btn[data-lang=\"en\"] {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  .reading-progress {\n    height: 2px;\n    background: transparent;\n    width: 100%;\n    overflow: hidden;\n  }\n\n  .reading-progress-bar {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.1s linear;\n  }\n\n  /* Hero Header */\n  .hero {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 2.5rem;\n    border-bottom: 1px solid var(--ink);\n  }\n\n  .hero-kicker {\n    display: flex;\n    align-items: center;\n    gap: 0.75rem;\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n    margin-bottom: 1.25rem;\n  }\n\n  .hero-kicker::before {\n    content: \"\";\n    display: inline-block;\n    width: 28px;\n    height: 1px;\n    background: var(--accent);\n  }\n\n  .hero-grid {\n    display: grid;\n    grid-template-columns: 1.35fr 0.65fr;\n    gap: 3rem;\n    align-items: end;\n  }\n\n  .article-title {\n    font-family: var(--font-serif-cn);\n    font-weight: 700;\n    font-size: clamp(2.15rem, 4.2vw, 3.5rem);\n    line-height: 1.22;\n    color: var(--ink);\n    letter-spacing: -0.01em;\n    margin-bottom: 1.25rem;\n  }\n\n  :host([lang=\"en\"]) .article-title {\n    font-family: var(--font-serif-en);\n    font-weight: 800;\n    line-height: 1.12;\n  }\n\n  .article-dek {\n    font-family: var(--font-sans);\n    font-size: clamp(1.08rem, 1.6vw, 1.3rem);\n    line-height: 1.6;\n    color: var(--muted);\n    font-weight: 400;\n    max-width: 68ch;\n  }\n\n  .hero-meta-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem 1.5rem;\n  }\n\n  .meta-row {\n    display: flex;\n    justify-content: space-between;\n    padding: 0.45rem 0;\n    border-bottom: 1px dashed var(--line-strong);\n    font-family: var(--font-mono);\n    font-size: 0.76rem;\n  }\n\n  .meta-row:last-child {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n\n  .meta-label {\n    color: var(--muted);\n    text-transform: uppercase;\n  }\n\n  .meta-val {\n    color: var(--ink);\n    font-weight: 600;\n    text-align: right;\n  }\n\n  /* Main Container */\n  .page-container {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 0 1.5rem 5rem;\n  }\n\n  /* Editorial Two-Column Asymmetric Layout */\n  .editorial-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 680px) minmax(260px, 380px);\n    justify-content: space-between;\n    gap: 3.25rem;\n    padding-top: 2.75rem;\n  }\n\n  /* Narrative Prose Styles */\n  .prose-p {\n    font-size: 1.125rem;\n    color: var(--body);\n    margin-bottom: 1.55rem;\n    letter-spacing: 0.01em;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    font-size: 1.14rem;\n    letter-spacing: 0;\n  }\n\n  .lead-p {\n    font-size: 1.26rem;\n    line-height: 1.85;\n    color: var(--ink);\n    font-weight: 600;\n    border-left: 3px solid var(--accent);\n    padding-left: 1.2rem;\n    margin-bottom: 1.85rem;\n  }\n\n  :host([lang=\"en\"]) .lead-p {\n    font-weight: 400;\n    font-size: 1.28rem;\n    line-height: 1.72;\n  }\n\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, var(--accent-soft) 58%);\n    color: inherit;\n    padding: 0 0.12em;\n    border-bottom: 1px solid rgba(184, 93, 25, 0.45);\n  }\n\n  /* Dictionary Lexicon Box (around p3) */\n  .lexicon-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.75rem 1.85rem;\n    margin: 2rem 0;\n    position: relative;\n  }\n\n  .lexicon-header {\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n    border-bottom: 1px solid var(--line-strong);\n    padding-bottom: 0.75rem;\n    margin-bottom: 1rem;\n  }\n\n  .lexicon-term {\n    font-family: var(--font-serif-en);\n    font-size: 1.45rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  .lexicon-phonetic {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    color: var(--accent);\n  }\n\n  .lexicon-card .prose-p:last-child {\n    margin-bottom: 0;\n  }\n\n  /* Saturday Creep Banner (p5) */\n  .creep-callout {\n    background: #f5efe3;\n    border-left: 4px solid var(--ink);\n    padding: 1.35rem 1.6rem;\n    margin: 1.8rem 0 2.2rem;\n  }\n\n  .creep-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    margin-bottom: 0.45rem;\n    font-weight: 700;\n  }\n\n  .creep-callout .prose-p {\n    margin-bottom: 0;\n    font-weight: 600;\n    color: var(--ink);\n  }\n\n  /* Right Rail Cards */\n  .side-rail {\n    display: flex;\n    flex-direction: column;\n    gap: 2rem;\n  }\n\n  .rail-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    padding: 1.5rem;\n  }\n\n  .rail-card-title {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--accent);\n    border-bottom: 1px solid var(--line-strong);\n    padding-bottom: 0.6rem;\n    margin-bottom: 1rem;\n    font-weight: 700;\n  }\n\n  /* Pull Quote Styling */\n  .pull-quote {\n    background: var(--paper-card);\n    border-top: 2px solid var(--ink);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 1.5rem 1.4rem;\n    margin: 0;\n  }\n\n  .pull-quote .quote-text {\n    font-family: var(--font-serif-cn);\n    font-size: 1.12rem;\n    font-weight: 600;\n    line-height: 1.65;\n    color: var(--ink);\n    margin-bottom: 0.75rem;\n  }\n\n  :host([lang=\"en\"]) .pull-quote .quote-text {\n    font-family: var(--font-serif-en);\n    font-style: italic;\n    font-weight: 700;\n    font-size: 1.15rem;\n  }\n\n  .pull-quote .quote-attrib {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.06em;\n  }\n\n  /* Section Divider */\n  .chapter-break {\n    margin: 3.5rem 0 2.5rem;\n    border-top: 1px solid var(--ink);\n    padding-top: 1rem;\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 1rem;\n    flex-wrap: wrap;\n  }\n\n  .chapter-num {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n    font-weight: 700;\n  }\n\n  .chapter-heading {\n    font-family: var(--font-serif-cn);\n    font-size: 1.55rem;\n    font-weight: 700;\n    color: var(--ink);\n  }\n\n  :host([lang=\"en\"]) .chapter-heading {\n    font-family: var(--font-serif-en);\n  }\n\n  /* ActivTrak Data Feature Band (Navy Dark Dossier) */\n  .data-feature-band {\n    background: var(--navy-bg);\n    color: #f4f1ea;\n    padding: 2.75rem 2.25rem;\n    margin: 2.5rem 0;\n    border-radius: 2px;\n    border-top: 4px solid var(--accent);\n  }\n\n  .data-feature-grid {\n    display: grid;\n    grid-template-columns: 1.1fr 0.9fr;\n    gap: 2.5rem;\n    align-items: center;\n  }\n\n  .data-feature-band .prose-p {\n    color: #e9e4d8;\n    font-size: 1.15rem;\n    margin-bottom: 1.35rem;\n  }\n\n  .data-feature-band mark.ed-hl {\n    background: rgba(184, 93, 25, 0.35);\n    border-bottom-color: #f09549;\n    color: #fff;\n  }\n\n  .metric-card {\n    background: var(--navy-card);\n    border: 1px solid var(--navy-line);\n    padding: 1.35rem 1.5rem;\n    margin-top: 1rem;\n  }\n\n  .metric-val {\n    font-family: var(--font-mono);\n    font-size: 2.6rem;\n    font-weight: 700;\n    color: #f29a4b;\n    line-height: 1.1;\n    margin-bottom: 0.35rem;\n  }\n\n  .metric-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.9rem;\n    font-weight: 600;\n    color: #ffffff;\n    margin-bottom: 0.3rem;\n  }\n\n  .metric-note {\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    color: #a7b6c5;\n    line-height: 1.45;\n  }\n\n  /* Case Dossier Header Tags for p9, p10, p11 */\n  .persona-block {\n    border-top: 1px solid var(--line-strong);\n    padding-top: 1.5rem;\n    margin-top: 1.75rem;\n  }\n\n  .persona-tag {\n    display: inline-flex;\n    align-items: center;\n    gap: 0.5rem;\n    font-family: var(--font-mono);\n    font-size: 0.73rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 0.25rem 0.65rem;\n    margin-bottom: 0.95rem;\n    font-weight: 600;\n  }\n\n  /* Clinical & Psychological Prescriptions (p12-p14) */\n  .prescription-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.6rem 1.75rem;\n    margin-bottom: 1.5rem;\n  }\n\n  .rx-badge {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--ink);\n    font-weight: 700;\n    margin-bottom: 0.65rem;\n    display: flex;\n    align-items: center;\n    gap: 0.5rem;\n  }\n\n  .rx-badge span.rx-num {\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.1rem 0.45rem;\n    font-size: 0.68rem;\n  }\n\n  .prescription-card .prose-p {\n    margin-bottom: 0;\n  }\n\n  /* Climactic Finale Box (p14) */\n  .rebrand-finale {\n    background: linear-gradient(135deg, #f3efe6 0%, #ebe3d2 100%);\n    border: 1px solid var(--ink);\n    padding: 2.2rem 2.25rem;\n    margin-top: 2rem;\n  }\n\n  .rebrand-comparison {\n    display: flex;\n    align-items: center;\n    gap: 1rem;\n    flex-wrap: wrap;\n    margin-bottom: 1.25rem;\n    padding-bottom: 1rem;\n    border-bottom: 1px dashed var(--line-strong);\n    font-family: var(--font-mono);\n    font-size: 0.82rem;\n  }\n\n  .term-old {\n    text-decoration: line-through;\n    color: var(--muted);\n  }\n\n  .term-arrow {\n    color: var(--accent);\n    font-weight: 700;\n  }\n\n  .term-new {\n    background: var(--ink);\n    color: var(--paper);\n    padding: 0.2rem 0.65rem;\n    font-weight: 700;\n  }\n\n  .verdict-quote {\n    margin-top: 1.25rem;\n    padding-left: 1.15rem;\n    border-left: 3px solid var(--accent);\n    font-family: var(--font-serif-cn);\n    font-size: 1.22rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.65;\n  }\n\n  :host([lang=\"en\"]) .verdict-quote {\n    font-family: var(--font-serif-en);\n    font-style: italic;\n  }\n\n  /* Reporter Context Footer Dossier */\n  .context-dossier {\n    margin-top: 4rem;\n    background: var(--paper-card);\n    border-top: 3px solid var(--ink);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 2rem 2.25rem;\n  }\n\n  .context-label {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--accent);\n    margin-bottom: 0.75rem;\n    font-weight: 700;\n  }\n\n  .context-dossier .prose-p {\n    font-family: var(--font-sans);\n    font-size: 0.96rem;\n    color: var(--muted);\n    margin-bottom: 0;\n    line-height: 1.75;\n  }\n\n  .colophon {\n    margin-top: 3rem;\n    padding-top: 1.5rem;\n    border-top: 1px solid var(--line);\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 1rem;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow */\n  @media (max-width: 920px) {\n    .hero-grid,\n    .editorial-grid,\n    .data-feature-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n\n    .hero {\n      padding: 2.25rem 1.15rem 1.75rem;\n    }\n\n    .page-container {\n      padding: 0 1.15rem 3.5rem;\n    }\n\n    .data-feature-band {\n      padding: 1.85rem 1.25rem;\n    }\n\n    .rebrand-finale,\n    .lexicon-card,\n    .context-dossier {\n      padding: 1.4rem 1.25rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-group\">\n      <span class=\"wsj-mark\">The Wall Street Journal</span>\n      <span class=\"brand-sep\"></span>\n      <span class=\"section-tag\">\n        <span class=\"lang-cn\">个人生活专刊 · 头版深读</span>\n        <span class=\"lang-en\">Personal Journal · Page A1</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"zh-CN\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n  <div class=\"reading-progress\"><div class=\"reading-progress-bar\" id=\"progressBar\"></div></div>\n</header>\n\n\n<section class=\"hero\">\n  <div class=\"hero-kicker\">\n    <span class=\"lang-cn\">职场心理学与周末边界调查</span>\n    <span class=\"lang-en\">Workplace Culture &amp; Weekend Boundaries</span>\n  </div>\n  <div class=\"hero-grid\">\n    <div>\n      <h1 class=\"article-title\" data-ref=\"title\"><span class=\"lang-cn\">“周日恐慌”真实存在——而且愈演愈烈</span><span class=\"lang-en\">The Sunday Scaries Are Real—And They're Getting Worse</span></h1>\n      <p class=\"article-dek\" data-ref=\"dek\"><span class=\"lang-cn\">随着工作量增加、职业保障减弱，人们越来越难遏制周一前的恐惧螺旋</span><span class=\"lang-en\">As workloads mount, people struggle to tame the pre-Monday dread spiral</span></p>\n    </div>\n    <aside class=\"hero-meta-card\" aria-label=\"Article Metadata\">\n      <div class=\"meta-row\">\n        <span class=\"meta-label\"><span class=\"lang-cn\">撰稿记者</span><span class=\"lang-en\">Byline</span></span>\n        <span class=\"meta-val\">Ray A. Smith</span>\n      </div>\n      <div class=\"meta-row\">\n        <span class=\"meta-label\"><span class=\"lang-cn\">发布日期</span><span class=\"lang-en\">Published</span></span>\n        <span class=\"meta-val\"><span class=\"lang-cn\">2026年10月12日</span><span class=\"lang-en\">Oct. 12, 2026</span></span>\n      </div>\n      <div class=\"meta-row\">\n        <span class=\"meta-label\"><span class=\"lang-cn\">核心样本</span><span class=\"lang-en\">Survey Sample</span></span>\n        <span class=\"meta-val\"><span class=\"lang-cn\">FlexJobs 2,100名员工</span><span class=\"lang-en\">2,100 U.S. Workers</span></span>\n      </div>\n      <div class=\"meta-row\">\n        <span class=\"meta-label\"><span class=\"lang-cn\">周日消息占比</span><span class=\"lang-en\">Sunday Chat Share</span></span>\n        <span class=\"meta-val\">6.6% → 12%</span>\n      </div>\n    </aside>\n  </div>\n</section>\n\n\n<main class=\"page-container\">\n\n  <!-- ACT I: THE SUNDAY AFTERNOON SPIRAL (p1 - p6) -->\n  <section class=\"editorial-grid\" aria-label=\"Act I: The Anatomy of Pre-Monday Dread\">\n    <div class=\"narrative-col\">\n      <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"周日下午 | Sunday afternoon | 定时的闹钟 | like clockwork\"><span class=\"lang-cn\">吉尔·戴维斯的工作周正式从周一早上开始。但实际上，从每个<mark class=\"ed-hl\">周日下午</mark>开始，她就会感到焦虑，各种不安的想法开始涌上心头，就像一个<mark class=\"ed-hl\">定时的闹钟</mark>。</span><span class=\"lang-en\">Jill Davis's official work week starts Monday morning. Unofficially, it kicks off every <mark class=\"ed-hl\">Sunday afternoon</mark> when, <mark class=\"ed-hl\">like clockwork</mark>, anxious thoughts begin seeping into her brain.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"保存为草稿 | saving them as drafts\"><span class=\"lang-cn\">“我是否已经做好充分的准备，并且有条不紊？我是否已经为这次会议做好了准备？”戴维斯说道。她是一家非营利组织的首席发展官。为了驱散这种焦虑，她经常开始工作，写邮件并将其<mark class=\"ed-hl\">保存为草稿</mark>，这样就不会打扰她的同事。很可能，她的同事们也已经开始为工作感到焦虑。</span><span class=\"lang-en\">\"Am I organized and ready enough? Am I prepared for this meeting?\" says Davis, the chief development officer at a nonprofit. To bat the angst away, she'll often launch into work, writing emails and <mark class=\"ed-hl\">saving them as drafts</mark> so she doesn't disturb her colleagues. Chances are they're already fretting about work, too.</span></p>\n\n      <div class=\"lexicon-card\">\n        <div class=\"lexicon-header\">\n          <span class=\"lexicon-term\">Sun·day scar·ies</span>\n          <span class=\"lexicon-phonetic\">noun, plural · Merriam-Webster Online</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"《韦氏词典》 | Merriam-Webster | 一种焦虑或悲伤的感觉 | a feeling of anxiety or sadness\"><span class=\"lang-cn\">“周日恐慌”已经成为美国人周末生活中不可或缺的一部分，以至于<mark class=\"ed-hl\">《韦氏词典》</mark>上个月将其添加到在线词典中。它的定义是：<mark class=\"ed-hl\">一种焦虑或悲伤的感觉</mark>，当周末即将结束时，人们可能会感到这种感觉，原因可能是工作/学习周即将开始，或者没有更多的时间进行有趣的或放松的周末活动，或者两者兼而有之。</span><span class=\"lang-en\">\"Sunday scaries\" have become such a fixture of Americans' weekends that <mark class=\"ed-hl\">Merriam-Webster</mark> added the term to its online dictionary last month. Its definition: <mark class=\"ed-hl\">a feeling of anxiety or sadness</mark> one may feel when the weekend is almost over, either because the work/school week is about to begin, there is no more time for fun or relaxing weekend activities, or both.</span></p>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"超过一半的美国工人 | More than half of U.S. workers | 未完成的任务清单 | list of unfinished tasks\"><span class=\"lang-cn\">这种对周一的恐惧并非一种新的现象，但有理由相信，随着工作量的增加和工作保障的减少，这种恐惧正在加剧。根据招聘平台FlexJobs对2100人进行的10月份调查，<mark class=\"ed-hl\">超过一半的美国工人</mark>表示他们会经历“周日恐慌”，而最常见的诱因是<mark class=\"ed-hl\">未完成的任务清单</mark>。</span><span class=\"lang-en\">That pre-Monday dread isn't a new phenomenon, but there's reason to believe it's intensifying as workloads mount and job security ebbs. <mark class=\"ed-hl\">More than half of U.S. workers</mark> say they experience the Sunday scaries, according to an October survey of 2,100 people by job platform FlexJobs. Having a <mark class=\"ed-hl\">list of unfinished tasks</mark> hanging over them was the most commonly cited cause.</span></p>\n\n      <div class=\"creep-callout\">\n        <div class=\"creep-kicker\">\n          <span class=\"lang-cn\">焦虑前置效应 · The Weekend Creep</span>\n          <span class=\"lang-en\">The Weekend Creep · Saturday Spillover</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"蔓延到周六 | ruin Saturday too\"><span class=\"lang-cn\">很快，这种焦虑感就会<mark class=\"ed-hl\">蔓延到周六</mark>，使周六也变成了一个令人感到焦虑的日子，因为人们会开始为周日将要感受到的焦虑而感到不安。</span><span class=\"lang-en\">It's only a matter of time before the scaries <mark class=\"ed-hl\">ruin Saturday too</mark>, turning it into a day to dread the dread we'll feel on Sunday.</span></p>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"30美元的沙漏 | $30 hourglass | 一个小时 | an hour\"><span class=\"lang-cn\">对于戴维斯来说，这种焦虑感已经严重影响了她的周日，以至于她买了一个<mark class=\"ed-hl\">30美元的沙漏</mark>来控制这种情绪。沙子流完需要<mark class=\"ed-hl\">一个小时</mark>——这是她现在允许自己工作或甚至思考工作的时间上限。在一个最近的周日，“当沙子流完时，我站起来，离开了房间，去了另一个房间，”她说。</span><span class=\"lang-en\">For Davis, the jitters so consumed her Sundays that she bought a <mark class=\"ed-hl\">$30 hourglass</mark> to rein them in. It takes <mark class=\"ed-hl\">an hour</mark> for the sand to run through it—the maximum time she now lets herself work, or even think about work. On a recent Sunday, “when it ran out, I got up and I left and went in the other room,” she said.</span></p>\n    </div>\n\n    <aside class=\"side-rail\">\n      <blockquote class=\"pull-quote\" data-derive=\"q1\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“我是否已经做好充分的准备，并且有条不紊？我是否已经为这次会议做好了准备？”</span><span class=\"lang-en\">“Am I organized and ready enough? Am I prepared for this meeting?”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 2 段直接引述 · Source Block p2</span><span class=\"lang-en\">— Direct Quote (p2), Reported in article text</span></footer>\n      </blockquote>\n\n      <!-- Bespoke SVG Diagram: Jill Davis's 60-Minute Hourglass & Weekend Erosion -->\n      <div class=\"rail-card\">\n        <div class=\"rail-card-title\">\n          <span class=\"lang-cn\">视觉解构 · 30美元沙漏的60分钟防线</span>\n          <span class=\"lang-en\">Visual Briefing · The 60-Minute Hourglass Guardrail</span>\n        </div>\n        <svg viewbox=\"0 0 340 310\" width=\"100%\" role=\"img\" aria-label=\"Hourglass boundary diagram showing 1 hour cap on Sunday work\">\n          <rect x=\"10\" y=\"10\" width=\"320\" height=\"290\" fill=\"#faf8f4\" stroke=\"#c9c1b0\" stroke-width=\"1\"></rect>\n          \n          <!-- Top label -->\n          <text x=\"170\" y=\"36\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#646059\" letter-spacing=\"1\">\n            <tspan class=\"lang-cn\">吉尔·戴维斯的周日工作沙漏上限</tspan>\n            <tspan class=\"lang-en\">JILL DAVIS'S $30 SUNDAY HOURGLASS CAP</tspan>\n          </text>\n\n          <!-- Hourglass Frame -->\n          <line x1=\"95\" y1=\"54\" x2=\"245\" y2=\"54\" stroke=\"#141413\" stroke-width=\"3\"></line>\n          <line x1=\"95\" y1=\"236\" x2=\"245\" y2=\"236\" stroke=\"#141413\" stroke-width=\"3\"></line>\n          <line x1=\"105\" y1=\"54\" x2=\"105\" y2=\"236\" stroke=\"#c9c1b0\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"></line>\n          <line x1=\"235\" y1=\"54\" x2=\"235\" y2=\"236\" stroke=\"#c9c1b0\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"></line>\n\n          <!-- Glass Bulbs -->\n          <path d=\"M115,56 C115,105 162,135 166,145 C162,155 115,185 115,234 L225,234 C225,185 178,155 174,145 C178,135 225,105 225,56 Z\" fill=\"none\" stroke=\"#141413\" stroke-width=\"2\"></path>\n\n          <!-- Remaining Sand Top -->\n          <path d=\"M132,96 L208,96 C198,118 176,134 170,142 C164,134 142,118 132,96 Z\" fill=\"#b85d19\" opacity=\"0.28\"></path>\n\n          <!-- Falling Sand Stream -->\n          <line x1=\"170\" y1=\"142\" x2=\"170\" y2=\"198\" stroke=\"#b85d19\" stroke-width=\"2.5\" stroke-dasharray=\"4 2\"></line>\n\n          <!-- Accumulated Sand Bottom -->\n          <path d=\"M120,232 Q170,185 220,232 Z\" fill=\"#b85d19\"></path>\n\n          <!-- Callout Annotations -->\n          <text x=\"170\" y=\"82\" text-anchor=\"middle\" font-family=\"Noto Sans SC, Inter, sans-serif\" font-size=\"10.5\" font-weight=\"600\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">草稿箱邮件与会议准备</tspan>\n            <tspan class=\"lang-en\">Draft Emails &amp; Meeting Prep</tspan>\n          </text>\n\n          <rect x=\"122\" y=\"133\" width=\"96\" height=\"22\" rx=\"11\" fill=\"#141413\"></rect>\n          <text x=\"170\" y=\"148\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" font-weight=\"700\" fill=\"#faf8f4\">\n            MAX = 60 MIN\n          </text>\n\n          <text x=\"170\" y=\"262\" text-anchor=\"middle\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"11\" font-weight=\"700\" fill=\"#b85d19\">\n            <tspan class=\"lang-cn\">沙尽即止：起身离开房间，停止思考工作</tspan>\n            <tspan class=\"lang-en\">Sand Runs Out: Stand Up &amp; Leave the Room</tspan>\n          </text>\n          <text x=\"170\" y=\"282\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" fill=\"#646059\">\n            <tspan class=\"lang-cn\">数据来源：正文第 2、6 段案例记录</tspan>\n            <tspan class=\"lang-en\">Source: Canonical Text [p2, p6]</tspan>\n          </text>\n        </svg>\n      </div>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q2\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“当沙子流完时，我站起来，离开了房间，去了另一个房间，”</span><span class=\"lang-en\">“when it ran out, I got up and I left and went in the other room,”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 6 段直接引述 · Source Block p6</span><span class=\"lang-en\">— Direct Quote (p6), Reported in article text</span></footer>\n      </blockquote>\n    </aside>\n  </section>\n\n  <!-- ACT II: THE QUANTITATIVE SURGE & WORKPLACE TREADMILL (p7 - p11) -->\n  <div class=\"chapter-break\">\n    <span class=\"chapter-num\">CHAPTER 02 · ACTIVTRAK TELEMETRY &amp; EXECUTIVE HABITS</span>\n    <h2 class=\"chapter-heading\">\n      <span class=\"lang-cn\">失衡的缓冲术：周日工作消息时间近乎翻倍</span>\n      <span class=\"lang-en\">The Delicate Balancing Act &amp; The Sunday Messaging Surge</span>\n    </h2>\n  </div>\n\n  <!-- Dark Data Feature Band for p7 & p8 + m1 + ActivTrak SVG -->\n  <section class=\"data-feature-band\" aria-label=\"ActivTrak Sunday Messaging Data\">\n    <div class=\"data-feature-grid\">\n      <div>\n        <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"微妙的平衡艺术 | delicate balancing act | 做得越来越差 | getting worse at that\"><span class=\"lang-cn\">在不产生负面副作用的情况下，有效地缓解“周日恐慌”是一项<mark class=\"ed-hl\">微妙的平衡艺术</mark>。它需要人们保持一定的忙碌程度，以减轻压力，但不能是那种会拖累所有人的忙碌。看来我们在这方面<mark class=\"ed-hl\">做得越来越差</mark>。</span><span class=\"lang-en\">Effectively treating the Sunday scaries without causing negative side effects is a <mark class=\"ed-hl\">delicate balancing act</mark>. It requires being busy enough to ease the stress but not the kind of busy that drags everyone down. It appears we're <mark class=\"ed-hl\">getting worse at that</mark>.</span></p>\n        <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"约12% | about 12% | 6.6%\"><span class=\"lang-cn\">根据劳动力分析公司ActivTrak为《华尔街日报》提供的数据，去年员工用于工作消息和聊天的时间占周日的<mark class=\"ed-hl\">约12%</mark>，而2023年为<mark class=\"ed-hl\">6.6%</mark>。</span><span class=\"lang-en\">The share of Sundays that employees devoted to work messaging and chats was <mark class=\"ed-hl\">about 12%</mark> last year, compared with <mark class=\"ed-hl\">6.6%</mark> in 2023, according to data compiled for The Wall Street Journal by workforce analytics firm ActivTrak.</span></p>\n        <div class=\"metric-card\" data-derive=\"m1\">\n          <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">12%</span><span class=\"lang-en\">12%</span></div>\n          <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">根据劳动力分析公司ActivTrak为《华尔街日报》提供的数据，去年员工…</span><span class=\"lang-en\">The share of Sundays that employees devoted to work messagin…</span></div>\n          <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p8]</span><span class=\"lang-en\">From paragraph [p8]</span></div>\n        </div>\n      </div>\n\n      <div>\n        <svg viewbox=\"0 0 420 290\" width=\"100%\" role=\"img\" aria-label=\"ActivTrak bar chart comparing 2023 6.6% vs last year 12% Sunday work messaging\" viewBox=\"0 0 479 290\" data-repaired-viewbox=\"0 0 420 290\">\n          <rect x=\"10\" y=\"10\" width=\"400\" height=\"270\" fill=\"#16283a\" stroke=\"#283f56\" stroke-width=\"1\"></rect>\n          <text x=\"32\" y=\"42\" font-family=\"JetBrains Mono, monospace\" font-size=\"10.5\" fill=\"#f29a4b\" font-weight=\"700\" letter-spacing=\"1\">\n            <tspan class=\"lang-cn\">ACTIVTRAK 劳动力分析数据 · 周日消息与聊天时间占比</tspan>\n            <tspan class=\"lang-en\">ACTIVTRAK WORKFORCE DATA · SUNDAY MESSAGING SHARE</tspan>\n          </text>\n          <line x1=\"32\" y1=\"54\" x2=\"388\" y2=\"54\" stroke=\"#283f56\" stroke-width=\"1\"></line>\n\n          <!-- Grid lines -->\n          <line x1=\"55\" y1=\"215\" x2=\"375\" y2=\"215\" stroke=\"#3b546e\" stroke-width=\"1.5\"></line>\n          <line x1=\"55\" y1=\"155\" x2=\"375\" y2=\"155\" stroke=\"#283f56\" stroke-width=\"1\" stroke-dasharray=\"3 3\"></line>\n          <line x1=\"55\" y1=\"95\" x2=\"375\" y2=\"95\" stroke=\"#283f56\" stroke-width=\"1\" stroke-dasharray=\"3 3\"></line>\n\n          <!-- Y Axis Labels -->\n          <text x=\"46\" y=\"219\" text-anchor=\"end\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#a7b6c5\">0%</text>\n          <text x=\"46\" y=\"159\" text-anchor=\"end\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#a7b6c5\">6%</text>\n          <text x=\"46\" y=\"99\" text-anchor=\"end\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#a7b6c5\">12%</text>\n\n          <!-- 2023 Bar (6.6% -> height 66px) -->\n          <rect x=\"95\" y=\"149\" width=\"84\" height=\"66\" fill=\"#5c7893\"></rect>\n          <text x=\"137\" y=\"139\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"15\" font-weight=\"700\" fill=\"#e9e4d8\">6.6%</text>\n          <text x=\"137\" y=\"236\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11.5\" font-weight=\"600\" fill=\"#e9e4d8\">2023</text>\n\n          <!-- Last Year Bar (about 12% -> height 120px) -->\n          <rect x=\"240\" y=\"95\" width=\"84\" height=\"120\" fill=\"#f29a4b\"></rect>\n          <text x=\"282\" y=\"84\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"16\" font-weight=\"700\" fill=\"#f29a4b\">~12%</text>\n          <text x=\"282\" y=\"236\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11.5\" font-weight=\"600\" fill=\"#ffffff\">\n            <tspan class=\"lang-cn\">去年 (Last Year)</tspan>\n            <tspan class=\"lang-en\">Last Year</tspan>\n          </text>\n\n          <!-- Connector Arrow -->\n          <path d=\"M179,142 C205,115 215,105 236,99\" fill=\"none\" stroke=\"#f29a4b\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"></path>\n\n          <text x=\"32\" y=\"264\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" fill=\"#a7b6c5\">\n            <tspan class=\"lang-cn\">注：FlexJobs 对 2,100 人的调查同时显示超半数美国工人经历“周日恐慌”</tspan>\n            <tspan class=\"lang-en\">Note: FlexJobs survey (n=2,100) shows &gt;50% of U.S. workers experience Sunday scaries</tspan>\n          </text>\n        </svg>\n      </div>\n    </div>\n  </section>\n\n  <!-- p9 - p11: Three Perspectives on Sunday Work -->\n  <section class=\"editorial-grid\" aria-label=\"Executive Perspectives on Sunday Work\">\n    <div class=\"narrative-col\">\n      <div class=\"persona-block\" style=\"border-top: none; padding-top: 0; margin-top: 0;\">\n        <div class=\"persona-tag\">\n          <span class=\"lang-cn\">高管教练视角 · 安吉·卡伦 (Angie Callen)</span>\n          <span class=\"lang-en\">Executive Coach · Angie Callen</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"确保自己不会被解雇 | make sure they don't get fired | 活在当下 | Be present in your life\"><span class=\"lang-cn\">“人们觉得他们必须更加努力地工作，以<mark class=\"ed-hl\">确保自己不会被解雇</mark>，”《Scary Good：发现摆脱周日恐慌的生活》一书的作者、一位高管教练安吉·卡伦说道。她的建议是什么？诚实地问自己，为什么要在周日处理工作。这样做是否能带来积极的回报？“你不必屈服于周日恐慌，”卡伦说。“我们让星期一毁掉了我们的星期天。停止。与其接受这种默认状态，不如<mark class=\"ed-hl\">活在当下</mark>。”</span><span class=\"lang-en\">“People feel like they have to toil away harder in order to <mark class=\"ed-hl\">make sure they don't get fired</mark>,” said Angie Callen, an executive coach and author of “Scary Good: Discovering Life Beyond the Sunday Scaries.” Her advice? Ask yourself honestly why you are engaging with work on a Sunday. Will you get a positive return on your time? “You don't have to settle for the Sunday scaries,” said Callen. “We let Mondays ruin our Sundays. Stop. <mark class=\"ed-hl\">Be present in your life</mark> instead of accepting that default.”</span></p>\n      </div>\n\n      <div class=\"persona-block\">\n        <div class=\"persona-tag\">\n          <span class=\"lang-cn\">前科技高管案例 · 乔安娜·约翰斯顿 (Joanna Johnston)</span>\n          <span class=\"lang-en\">Retired Tech Executive · Joanna Johnston</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"早上 6 点起床 | early as 6 a.m. | 我想我只是有问题 | I think I just have a problem\"><span class=\"lang-cn\">一位在科技行业工作多年的高管乔安娜·约翰斯顿过去会通过<mark class=\"ed-hl\">早上 6 点起床</mark>，挤出一个小时的时间来为星期一做准备，然后在晚上再投入更多时间，以此来对抗她的周日恐慌。当她发送 Slack 和其他消息时，通常是发给同事或回复经理。但她并不总是遵守与下属进行周末沟通的不成文规定。“我确信，在我变得更加敏感，意识到这种行为会造成干扰之前，我也曾对我的直接下属和更广泛的团队这样做，”约翰斯顿说。她于 6 月从公司职位退休，现在担任高管教练。尽管职业生涯发生了转变，她仍然在周日工作。“<mark class=\"ed-hl\">我想我只是有问题</mark>，”她笑着说。</span><span class=\"lang-en\">Joanna Johnston, a longtime tech executive, used to combat her Sunday scaries by getting up as <mark class=\"ed-hl\">early as 6 a.m.</mark> to squeeze in an hour of Monday prep work, then putting in more time in the evenings. When she sent Slack and other messages, it was usually to a peer or in response to a manager. But she didn't always adhere to the unwritten rules of weekend communication with subordinates. “I'm sure before I became more sensitive to the intrusion this caused, I did it to my direct reports and broader team as well,” said Johnston, who retired from corporate roles in June and now coaches executives. Despite the career shift, she's still working on Sundays. “<mark class=\"ed-hl\">I think I just have a problem</mark>,” she laughed.</span></p>\n      </div>\n\n      <div class=\"persona-block\">\n        <div class=\"persona-tag\">\n          <span class=\"lang-cn\">信用合作社营销主管 · 克里斯·凯勒 (Chris Keller)</span>\n          <span class=\"lang-en\">Credit Union Marketing Chief · Chris Keller</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"周日清晨的两个小时内 | two hours on early Sunday mornings | 转录应用程序 | transcription app\"><span class=\"lang-cn\">几年前，克里斯·凯勒经营自己的营销公司，经常一周工作七天。现在，他担任公司职位，他将自己限制在<mark class=\"ed-hl\">周日清晨的两个小时内</mark>，为新的一周做准备。否则，“我知道情况会迅速失控，”凯勒说，他是信用合作社的营销主管。凯勒说，他通常会利用这段时间，将笔记口述给<mark class=\"ed-hl\">转录应用程序</mark>，为会议做准备。“如果我不把想法和思路表达出来，我就无法享受周末的其他活动，”他说。</span><span class=\"lang-en\">Until a few years ago, Chris Keller ran his own marketing agency and often worked seven days a week. Now in a corporate role, he limits himself to <mark class=\"ed-hl\">two hours on early Sunday mornings</mark> to prepare for the week. Otherwise, “I know it could get away from me really quickly,” said Keller, marketing chief at a credit union. Keller said he will typically use the time to dictate notes to a <mark class=\"ed-hl\">transcription app</mark> to prepare for meetings. “If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,” he said.</span></p>\n      </div>\n    </div>\n\n    <aside class=\"side-rail\">\n      <blockquote class=\"pull-quote\" data-derive=\"q3\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“我们让星期一毁掉了我们的星期天。停止。与其接受这种默认状态，不如活在当下。”</span><span class=\"lang-en\">“We let Mondays ruin our Sundays. Stop. Be present in your life instead of accepting that default.”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 9 段直接引述 · Source Block p9</span><span class=\"lang-en\">— Direct Quote (p9), Reported in article text</span></footer>\n      </blockquote>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q4\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“我确信，在我变得更加敏感，意识到这种行为会造成干扰之前，我也曾对我的直接下属和更广泛的团队这样做，”</span><span class=\"lang-en\">“I think I just have a problem,”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 10 段直接引述 · Source Block p10</span><span class=\"lang-en\">— Direct Quote (p10), Reported in article text</span></footer>\n      </blockquote>\n\n      <blockquote class=\"pull-quote\" data-derive=\"q5\">\n        <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“如果我不把想法和思路表达出来，我就无法享受周末的其他活动，”</span><span class=\"lang-en\">“If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,”</span></p>\n        <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 原文第 11 段直接引述 · Source Block p11</span><span class=\"lang-en\">— Direct Quote (p11), Reported in article text</span></footer>\n      </blockquote>\n    </aside>\n  </section>\n\n  <!-- ACT III: CLINICAL GUARDRAILS & COGNITIVE REBRANDING (p12 - p14) -->\n  <div class=\"chapter-break\">\n    <span class=\"chapter-num\">CHAPTER 03 · CLINICAL GUARDRAILS &amp; THE \"MONDAY MAYBE\" REBRAND</span>\n    <h2 class=\"chapter-heading\">\n      <span class=\"lang-cn\">如何驯服周一前的恐惧螺旋：设限、挪移与重新定义</span>\n      <span class=\"lang-en\">Taming the Spiral: Guardrails, Time-Shifting, and Rebranding Monday</span>\n    </h2>\n  </div>\n\n  <section class=\"editorial-grid\" aria-label=\"Clinical and Psychological Prescriptions\">\n    <div class=\"narrative-col\">\n      <div class=\"prescription-card\">\n        <div class=\"rx-badge\">\n          <span class=\"rx-num\">RX 01</span>\n          <span class=\"lang-cn\">精神科医生的边界法则 · 克利夫兰诊所 基娅-拉伊·普雷维特</span>\n          <span class=\"lang-en\">Psychiatric Guardrail · Cleveland Clinic's Kia-Rai Prewitt</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"设定一些限制 | set guardrails | 我不会回复其他电子邮件 | I'm not going to respond to other emails\"><span class=\"lang-cn\">精神科医生是否认可这种做法？如果周日做一些工作可以减轻你在周一的焦虑或不知所措的感觉，那么这样做是可以的，但要<mark class=\"ed-hl\">设定一些限制</mark>，克利夫兰诊所行为健康部门的精神科医生基娅-拉伊·普雷维特说。“如果我能快速登录并回复这封电子邮件，那就是我所要做的，”她说。“你必须设定界限，并说：‘<mark class=\"ed-hl\">我不会回复其他电子邮件</mark>。’”</span><span class=\"lang-en\">Do psychiatrists approve? If doing some work on Sunday will relieve you of feeling behind or overwhelmed on Monday, it's OK, just <mark class=\"ed-hl\">set guardrails</mark>, said Kia-Rai Prewitt, a psychiatrist with Cleveland Clinic's Behavioral Health. “If I can just log in really quick and respond to this email, that's all I'm going to do,” she said. “You have to set the boundary and say, ‘<mark class=\"ed-hl\">I'm not going to respond to other emails</mark>.’”</span></p>\n      </div>\n\n      <div class=\"prescription-card\">\n        <div class=\"rx-badge\">\n          <span class=\"rx-num\">RX 02</span>\n          <span class=\"lang-cn\">工业组织心理学的时间平移 · 艾米·库珀·哈基姆</span>\n          <span class=\"lang-en\">I-O Psychology Time-Shift · Amy Cooper Hakim</span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"周五多花一些时间 | spending a little more time at work on Friday | 周一早点到公司 | getting to work a little earlier on Monday\"><span class=\"lang-cn\">其他人建议尝试所有方法，以避免完全进行工作。考虑在<mark class=\"ed-hl\">周五多花一些时间</mark>在工作上，“这样你就可以正式完成工作”，或者<mark class=\"ed-hl\">周一早点到公司</mark>，“以免一开局就处于被动”，工业组织心理学家艾米·库珀·哈基姆说。“总有一种方法可以调整这些额外的时间。”</span><span class=\"lang-en\">Others recommend exhausting all options to avoid work altogether. Consider <mark class=\"ed-hl\">spending a little more time at work on Friday</mark> “so you can officially be done” or <mark class=\"ed-hl\">getting to work a little earlier on Monday</mark> “so that you're not going to be behind the eight ball,” said Amy Cooper Hakim, an industrial organizational psychologist. “There's always a way to shift those same extra minutes.”</span></p>\n      </div>\n\n      <!-- Climactic Finale: p14 split into narrative (s1-s3) and verdict quote (s4-s5) -->\n      <div class=\"rebrand-finale\">\n        <div class=\"rebrand-comparison\">\n          <span class=\"term-old\">\n            <span class=\"lang-cn\">“周日恐慌” (Sunday Scaries)</span>\n            <span class=\"lang-en\">\"Sunday Scaries\"</span>\n          </span>\n          <span class=\"term-arrow\">⟶</span>\n          <span class=\"term-new\">\n            <span class=\"lang-cn\">“也许是周一” (Monday Maybe)</span>\n            <span class=\"lang-en\">\"Monday Maybe\"</span>\n          </span>\n        </div>\n        <p class=\"prose-p\" data-ref=\"p14.s1\"><span class=\"lang-cn\">如果所有方法都失败了，可以尝试重新定义。</span><span class=\"lang-en\">If all else fails, try a rebrand.</span></p>\n        <p class=\"prose-p\" data-ref=\"p14.s2\" data-hl=\"也许是周一 | Monday maybe\"><span class=\"lang-cn\">吉尔·戴维斯，这位经常在周日下午感到焦虑的人，与一位高管教练合作，帮助她将“周日恐慌”重新定义为“<mark class=\"ed-hl\">也许是周一</mark>”。</span><span class=\"lang-en\">Davis, the Sunday afternoon worrier, worked with an executive coach who helped her reimagine the “Sunday scaries” as “<mark class=\"ed-hl\">Monday maybe</mark>.”</span></p>\n        <p class=\"prose-p\" data-ref=\"p14.s3\" data-hl=\"好奇的态度 | curiosity\"><span class=\"lang-cn\">这个想法是，要以<mark class=\"ed-hl\">好奇的态度</mark>来迎接周一，而不是认为一切都必须在那时完成并达到完美。</span><span class=\"lang-en\">The idea is to approach Monday with <mark class=\"ed-hl\">curiosity</mark> rather than thinking everything has to be buttoned-up and perfect by then.</span></p>\n        <blockquote class=\"verdict-quote\">\n          <span data-ref=\"p14.s4\"><span class=\"lang-cn\">“我试图减轻那种压力，即一切都必须在周一之前完成，”她说。</span><span class=\"lang-en\">“I'm trying to release the pressure of what's so special about everything getting done before Monday,” she said.</span></span>\n          <span data-ref=\"p14.s5\"><span class=\"lang-cn\">“我周日晚上睡得更好。”</span><span class=\"lang-en\">“I sleep better on Sunday nights.”</span></span>\n        </blockquote>\n      </div>\n    </div>\n\n    <aside class=\"side-rail\">\n      <!-- Bespoke SVG Diagram: Weekend Defense Decision Matrix -->\n      <div class=\"rail-card\">\n        <div class=\"rail-card-title\">\n          <span class=\"lang-cn\">策略矩阵 · 四种应对“周日恐慌”的实验方案</span>\n          <span class=\"lang-en\">Strategy Matrix · 4 Approaches to the Sunday Scaries</span>\n        </div>\n        <svg viewbox=\"0 0 340 370\" width=\"100%\" role=\"img\" aria-label=\"Four coping mechanisms from the article\" viewBox=\"0 0 428 370\" data-repaired-viewbox=\"0 0 340 370\">\n          <rect x=\"10\" y=\"10\" width=\"320\" height=\"350\" fill=\"#faf8f4\" stroke=\"#c9c1b0\" stroke-width=\"1\"></rect>\n          \n          <!-- Item 1 -->\n          <rect x=\"24\" y=\"26\" width=\"292\" height=\"72\" fill=\"#f3efe6\" stroke=\"#e4dfd3\"></rect>\n          <rect x=\"24\" y=\"26\" width=\"5\" height=\"72\" fill=\"#b85d19\"></rect>\n          <text x=\"40\" y=\"46\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" font-weight=\"700\" fill=\"#b85d19\">01 · PHYSICAL TIMER (DAVIS &amp; KELLER)</text>\n          <text x=\"40\" y=\"65\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"11.5\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">物理限时：1小时沙漏或周日早间2小时口述笔记</tspan>\n            <tspan class=\"lang-en\">Hard Time Cap: 1-Hr Hourglass or 2-Hr Morning Dictation</tspan>\n          </text>\n          <text x=\"40\" y=\"84\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10\" fill=\"#646059\">\n            <tspan class=\"lang-cn\">把思绪清空或存为邮件草稿，沙尽立即离场</tspan>\n            <tspan class=\"lang-en\">Save drafts or transcribe notes, then step away</tspan>\n          </text>\n\n          <!-- Item 2 -->\n          <rect x=\"24\" y=\"110\" width=\"292\" height=\"72\" fill=\"#f3efe6\" stroke=\"#e4dfd3\"></rect>\n          <rect x=\"24\" y=\"110\" width=\"5\" height=\"72\" fill=\"#141413\"></rect>\n          <text x=\"40\" y=\"130\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" font-weight=\"700\" fill=\"#141413\">02 · SINGLE-EMAIL BOUNDARY (DR. PREWITT)</text>\n          <text x=\"40\" y=\"149\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"11.5\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">单封邮件护栏：只回这一封，绝不点开下一封</tspan>\n            <tspan class=\"lang-en\">Strict Guardrail: Reply to One Email, Ignore the Rest</tspan>\n          </text>\n          <text x=\"40\" y=\"168\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10\" fill=\"#646059\">\n            <tspan class=\"lang-cn\">克利夫兰诊所精神科建议：缓解落后感但严防蔓延</tspan>\n            <tspan class=\"lang-en\">Relieves overwhelm only if strict boundaries hold</tspan>\n          </text>\n\n          <!-- Item 3 -->\n          <rect x=\"24\" y=\"194\" width=\"292\" height=\"72\" fill=\"#f3efe6\" stroke=\"#e4dfd3\"></rect>\n          <rect x=\"24\" y=\"194\" width=\"5\" height=\"72\" fill=\"#141413\"></rect>\n          <text x=\"40\" y=\"214\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" font-weight=\"700\" fill=\"#141413\">03 · BOOKEND SHIFTING (DR. HAKIM)</text>\n          <text x=\"40\" y=\"233\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"11.5\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">首尾挪移法：周五晚收尾，或周一早到公司</tspan>\n            <tspan class=\"lang-en\">Shift the Extra Minutes to Friday PM or Monday AM</tspan>\n          </text>\n          <text x=\"40\" y=\"252\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10\" fill=\"#646059\">\n            <tspan class=\"lang-cn\">保护完整周末，彻底避免在周日打开工作</tspan>\n            <tspan class=\"lang-en\">Exhaust options to keep Sunday 100% work-free</tspan>\n          </text>\n\n          <!-- Item 4 -->\n          <rect x=\"24\" y=\"278\" width=\"292\" height=\"68\" fill=\"#16283a\"></rect>\n          <rect x=\"24\" y=\"278\" width=\"5\" height=\"68\" fill=\"#f29a4b\"></rect>\n          <text x=\"40\" y=\"298\" font-family=\"JetBrains Mono, monospace\" font-size=\"9.5\" font-weight=\"700\" fill=\"#f29a4b\">04 · COGNITIVE REBRAND (DAVIS)</text>\n          <text x=\"40\" y=\"317\" font-family=\"Noto Serif SC, Lora, serif\" font-size=\"11.5\" font-weight=\"700\" fill=\"#ffffff\">\n            <tspan class=\"lang-cn\">认知重塑：将“周日恐慌”改称为“也许是周一”</tspan>\n            <tspan class=\"lang-en\">Rebrand \"Sunday Scaries\" into \"Monday Maybe\"</tspan>\n          </text>\n          <text x=\"40\" y=\"335\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"10\" fill=\"#a7b6c5\">\n            <tspan class=\"lang-cn\">放下“周一前必须完美”的执念，以好奇心代替焦虑</tspan>\n            <tspan class=\"lang-en\">Approach Monday with curiosity instead of perfection</tspan>\n          </text>\n        </svg>\n      </div>\n    </aside>\n  </section>\n\n  <!-- Reporter's Background Context Dossier (ctx1) -->\n  <aside class=\"context-dossier\" aria-label=\"Reporter's Background Context\">\n    <div class=\"context-label\">\n      <span class=\"lang-cn\">记者背景备忘录 · Reporter's Dossier</span>\n      <span class=\"lang-en\">Reporter's Background Context · Dossier</span>\n    </div>\n    <p class=\"prose-p\" data-ref=\"ctx1\"><span class=\"lang-cn\">招聘平台 FlexJobs 10 月对 2100 人的调查显示，超过半数美国员工会经历“周日恐慌”，最常见的原因是未完成的工作清单。劳动力分析公司 ActivTrak 的数据显示，员工周日用于工作消息和聊天的时间占比从 2023 年的 6.6% 升至去年的约 12%。精神科医生建议设定界限（如只回一封邮件），组织心理学家则建议把额外工作挪到周五或周一清晨。</span><span class=\"lang-en\">招聘平台 FlexJobs 10 月对 2100 人的调查显示，超过半数美国员工会经历“周日恐慌”，最常见的原因是未完成的工作清单。劳动力分析公司 ActivTrak 的数据显示，员工周日用于工作消息和聊天的时间占比从 2023 年的 6.6% 升至去年的约 12%。精神科医生建议设定界限（如只回一封邮件），组织心理学家则建议把额外工作挪到周五或周一清晨。</span></p>\n  </aside>\n\n  <footer class=\"colophon\">\n    <span>WSJ 深读 · Editorial Renaissance Edition</span>\n    <span>E2-010 · Ray A. Smith · Personal Journal</span>\n  </footer>\n\n</main>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E2-010",
+        "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+        "exact_match_cn": "14/14",
+        "exact_match_en": "14/14",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 14,
+        "observed_narrative_elements": 21,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 6,
+        "derived_items": [
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p2"
+          },
+          {
+            "id": "q2",
+            "kind": "quote",
+            "source_block": "p6"
+          },
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p8"
+          },
+          {
+            "id": "q3",
+            "kind": "quote",
+            "source_block": "p9"
+          },
+          {
+            "id": "q4",
+            "kind": "quote",
+            "source_block": "p10"
+          },
+          {
+            "id": "q5",
+            "kind": "quote",
+            "source_block": "p11"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "定时的闹钟",
+              "周日下午"
+            ],
+            "applied_en": [
+              "Sunday afternoon",
+              "like clockwork"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "保存为草稿"
+            ],
+            "applied_en": [
+              "saving them as drafts"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "一种焦虑或悲伤的感觉",
+              "《韦氏词典》"
+            ],
+            "applied_en": [
+              "a feeling of anxiety or sadness",
+              "Merriam-Webster"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "超过一半的美国工人",
+              "未完成的任务清单"
+            ],
+            "applied_en": [
+              "More than half of U.S. workers",
+              "list of unfinished tasks"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "蔓延到周六"
+            ],
+            "applied_en": [
+              "ruin Saturday too"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "30美元的沙漏",
+              "一个小时"
+            ],
+            "applied_en": [
+              "$30 hourglass",
+              "an hour"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "微妙的平衡艺术",
+              "做得越来越差"
+            ],
+            "applied_en": [
+              "delicate balancing act",
+              "getting worse at that"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "约12%",
+              "6.6%"
+            ],
+            "applied_en": [
+              "about 12%",
+              "6.6%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "确保自己不会被解雇",
+              "活在当下"
+            ],
+            "applied_en": [
+              "make sure they don't get fired",
+              "Be present in your life"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "早上 6 点起床",
+              "我想我只是有问题"
+            ],
+            "applied_en": [
+              "I think I just have a problem",
+              "early as 6 a.m."
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "周日清晨的两个小时内",
+              "转录应用程序"
+            ],
+            "applied_en": [
+              "two hours on early Sunday mornings",
+              "transcription app"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "我不会回复其他电子邮件",
+              "设定一些限制"
+            ],
+            "applied_en": [
+              "I'm not going to respond to other emails",
+              "set guardrails"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "周五多花一些时间",
+              "周一早点到公司"
+            ],
+            "applied_en": [
+              "spending a little more time at work on Friday",
+              "getting to work a little earlier on Monday"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14.s2",
+            "applied_cn": [
+              "也许是周一"
+            ],
+            "applied_en": [
+              "Monday maybe"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14.s3",
+            "applied_cn": [
+              "好奇的态度"
+            ],
+            "applied_en": [
+              "curiosity"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 5,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "吉尔·戴维斯的周日工作沙漏上限",
+              "JILL DAVIS'S $30 SUNDAY HOURGLASS CAP",
+              "草稿箱邮件与会议准备",
+              "Draft Emails & Meeting Prep",
+              "MAX = 60 MIN",
+              "沙尽即止：起身离开房间，停止思考工作",
+              "Sand Runs Out: Stand Up & Leave the Room",
+              "数据来源：正文第 2、6 段案例记录",
+              "Source: Canonical Text [p2, p6]"
+            ],
+            "numbers_found": [
+              "$30",
+              "60",
+              "2",
+              "6",
+              "2",
+              "6"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "0 0 479 290",
+            "text_labels": [
+              "ACTIVTRAK 劳动力分析数据 · 周日消息与聊天时间占比",
+              "ACTIVTRAK WORKFORCE DATA · SUNDAY MESSAGING SHARE",
+              "0%",
+              "6%",
+              "12%",
+              "6.6%",
+              "2023",
+              "~12%",
+              "去年 (Last Year)",
+              "Last Year",
+              "注：FlexJobs 对 2,100 人的调查同时显示超半数美国工人经历“周日恐慌”",
+              "Note: FlexJobs survey (n=2,100) shows >50% of U.S. workers experience Sunday scaries"
+            ],
+            "numbers_found": [
+              "0%",
+              "6%",
+              "12%",
+              "6.6%",
+              "2023",
+              "12%",
+              "2,100",
+              "2,100",
+              "50%"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 3,
+            "viewBox": "0 0 428 370",
+            "text_labels": [
+              "01 · PHYSICAL TIMER (DAVIS & KELLER)",
+              "物理限时：1小时沙漏或周日早间2小时口述笔记",
+              "Hard Time Cap: 1-Hr Hourglass or 2-Hr Morning Dictation",
+              "把思绪清空或存为邮件草稿，沙尽立即离场",
+              "Save drafts or transcribe notes, then step away",
+              "02 · SINGLE-EMAIL BOUNDARY (DR. PREWITT)",
+              "单封邮件护栏：只回这一封，绝不点开下一封",
+              "Strict Guardrail: Reply to One Email, Ignore the Rest",
+              "克利夫兰诊所精神科建议：缓解落后感但严防蔓延",
+              "Relieves overwhelm only if strict boundaries hold",
+              "03 · BOOKEND SHIFTING (DR. HAKIM)",
+              "首尾挪移法：周五晚收尾，或周一早到公司",
+              "Shift the Extra Minutes to Friday PM or Monday AM",
+              "保护完整周末，彻底避免在周日打开工作",
+              "Exhaust options to keep Sunday 100% work-free",
+              "04 · COGNITIVE REBRAND (DAVIS)",
+              "认知重塑：将“周日恐慌”改称为“也许是周一”",
+              "Rebrand \"Sunday Scaries\" into \"Monday Maybe\"",
+              "放下“周一前必须完美”的执念，以好奇心代替焦虑",
+              "Approach Monday with curiosity instead of perfection"
+            ],
+            "numbers_found": [
+              "01",
+              "1",
+              "2",
+              "1",
+              "2",
+              "02",
+              "03",
+              "100%",
+              "04"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "失衡的缓冲术：周日工作消息时间近乎翻倍",
+            "en": "The Delicate Balancing Act & The Sunday Messaging Surge",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "如何驯服周一前的恐惧螺旋：设限、挪移与重新定义",
+            "en": "Taming the Spiral: Guardrails, Time-Shifting, and Rebranding Monday",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 2,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 420 290",
+          "repaired_viewBox": "0 0 479 290",
+          "repaired": true,
+          "offending_nodes": [
+            "text('注：FlexJobs 对 2,' right=471>420)"
+          ]
+        },
+        {
+          "svg_index": 3,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 340 370",
+          "repaired_viewBox": "0 0 428 370",
+          "repaired": true,
+          "offending_nodes": [
+            "text('01 · PHYSICAL T' right=382>340)",
+            "text('02 · SINGLE-EMA' right=420>340)"
+          ]
+        }
+      ],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

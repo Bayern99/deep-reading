@@ -1,0 +1,540 @@
+{
+  "mode": "source-referenced",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 25,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 25,
+    "source_derived_count": 12,
+    "highlights_applied": [
+      {
+        "ref": "p1",
+        "applied_cn": [
+          "没有损失风险",
+          "4 万美元"
+        ],
+        "applied_en": [
+          "no risk of loss",
+          "$40,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p2",
+        "applied_cn": [
+          "锁定 12 年",
+          "定期降低"
+        ],
+        "applied_en": [
+          "locking up her money for 12 years",
+          "periodically lower"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p3",
+        "applied_cn": [
+          "Athene",
+          "3.7%",
+          "两次"
+        ],
+        "applied_en": [
+          "Athene",
+          "twice",
+          "3.7%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p4.s2",
+        "applied_cn": [
+          "每年或每两年更改"
+        ],
+        "applied_en": [
+          "change the amount"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p5",
+        "applied_cn": [
+          "阿波罗和博枫",
+          "401(k)"
+        ],
+        "applied_en": [
+          "Apollo and Brookfield",
+          "401(k)"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p6",
+        "applied_cn": [
+          "吸走了美国家庭的储蓄",
+          "指数型年金"
+        ],
+        "applied_en": [
+          "vacuuming up the savings",
+          "indexed annuities"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p7",
+        "applied_cn": [
+          "特拉华人寿",
+          "联邦调查"
+        ],
+        "applied_en": [
+          "federal investigation",
+          "Delaware Life"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p8",
+        "applied_cn": [
+          "5 万美元或 10 万美元",
+          "永远不会低于零"
+        ],
+        "applied_en": [
+          "never fall below zero",
+          "$50,000 or $100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p9",
+        "applied_cn": [
+          "保险公司在保险期间可以更改的条款"
+        ],
+        "applied_en": [
+          "terms the insurer can change"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p10",
+        "applied_cn": [
+          "2.9个百分点",
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "applied_en": [
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p11",
+        "applied_cn": [
+          "约2个百分点",
+          "营养学教授",
+          "69岁"
+        ],
+        "applied_en": [
+          "2 percentage points"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p12",
+        "applied_cn": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "applied_en": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p13",
+        "applied_cn": [
+          "100%的本金保护",
+          "2022年",
+          "表现出色"
+        ],
+        "applied_en": [
+          "performed exceptionally well",
+          "100% principal protection"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p14",
+        "applied_cn": [
+          "高度误导性"
+        ],
+        "applied_en": [
+          "highly misleading"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p15",
+        "applied_cn": [
+          "美国证券交易委员会",
+          "最有利可图的产品",
+          "州保险代理人"
+        ],
+        "applied_en": [
+          "Securities and Exchange Commission",
+          "most lucrative products",
+          "state insurance agents"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p16",
+        "applied_cn": [
+          "5%至7%",
+          "3%"
+        ],
+        "applied_en": [
+          "5% to 7%",
+          "3%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p17",
+        "applied_cn": [
+          "误导性的销售宣传",
+          "复杂性"
+        ],
+        "applied_en": [
+          "misleading sales pitches",
+          "complexity"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p18",
+        "applied_cn": [
+          "股票和加密货币指数",
+          "270万美元",
+          "10万美元",
+          "动量增长"
+        ],
+        "applied_en": [
+          "Momentum Growth",
+          "$2.7 million",
+          "$100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p19",
+        "applied_cn": [
+          "担保贷款凭证",
+          "资产支持证券",
+          "三到五年",
+          "约十年"
+        ],
+        "applied_en": [
+          "collateralized loan obligations",
+          "asset-backed securities",
+          "three to five years",
+          "about a decade"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p20.s1",
+        "applied_cn": [
+          "降低保单持有者收益上限",
+          "增加利润"
+        ],
+        "applied_en": [
+          "fatten their profits",
+          "lowering the caps"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p20.s2",
+        "applied_cn": [
+          "改变与消费者的协议"
+        ],
+        "applied_en": [
+          "change the deal on the consumer"
+        ],
+        "ignored_unmatched": []
+      }
+    ],
+    "ai_editorial_items_count": 10,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Participation Share Ratchet Chart",
+        "viewBox": "",
+        "text_labels": [
+          "100%",
+          "50%",
+          "0%",
+          "40% @ 1% Fixed",
+          "60%",
+          "S&P 500 (-2.9pp)",
+          "第 1 年",
+          "Year 1",
+          "初始合同比例",
+          "Initial Policy Share",
+          "45% @ 1% Fixed",
+          "55%",
+          "S&P 500 (-2.9pp)",
+          "第 7 年",
+          "Year 7",
+          "第一次下调 (-5pp)",
+          "First Cut (-5pp)",
+          "55% @ 1% Fixed",
+          "45%",
+          "S&P 500 (-2.9pp)",
+          "第 11 年",
+          "Year 11",
+          "第二次下调 (-10pp)",
+          "Second Cut (-10pp)"
+        ],
+        "numbers_found": [
+          "100%",
+          "50%",
+          "0%",
+          "40%",
+          "1%",
+          "60%",
+          "500",
+          "2.9",
+          "1",
+          "1",
+          "45%",
+          "1%",
+          "55%",
+          "500",
+          "2.9",
+          "7",
+          "7",
+          "5",
+          "5",
+          "55%",
+          "1%",
+          "45%",
+          "500",
+          "2.9",
+          "11",
+          "11",
+          "10",
+          "10"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "12-Year Return Comparison Chart",
+        "viewBox": "",
+        "text_labels": [
+          "标准普尔 500 指数",
+          "S&P 500 Index",
+          "13.0%",
+          "埃利奥特指数型年金",
+          "Elliott's Indexed Annuity",
+          "3.7%",
+          "（含附加险扣除约 2 个百分点）",
+          "(After ~2pp rider deduction)",
+          "同期美国国债",
+          "U.S. Treasurys",
+          "1.9%"
+        ],
+        "numbers_found": [
+          "500",
+          "500",
+          "13.0%",
+          "3.7%",
+          "2",
+          "2",
+          "1.9%"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 3,
+        "aria_label": "Private Credit Capital Flow Diagram",
+        "viewBox": "",
+        "text_labels": [
+          "01 · HOUSEHOLD SAVERS",
+          "美国老年储户 ($50K–$100K)",
+          "Older Savers ($50K–$100K)",
+          "州保险代理人销售（非SEC监管）",
+          "Sold via State Agents (Non-SEC)",
+          "5% – 7% Commission",
+          "普通固定年金仅约 3%",
+          "vs. ~3% on fixed annuities",
+          "02 · ACQUIRED INSURERS",
+          "私募旗下保险公司 (Athene等)",
+          "PE-Owned Insurers (Athene)",
+          "锁定期约 10–12 年（固定仅3–5年）",
+          "~10-12 Yr Lockup (vs. 3-5 Yr Fixed)",
+          "可单方面调整收益上限与比例",
+          "Unilateral Cap & Spread Control",
+          "缓冲亏损或增厚私募利润",
+          "Cushions loss or fattens profit",
+          "03 · PRIVATE CREDIT",
+          "高风险、低流动性私人信贷",
+          "Illiquid Private Credit",
+          "向风险企业放贷",
+          "Lending to Risky Companies",
+          "CLOs & ABS",
+          "担保贷款凭证 / 资产支持证券",
+          "Collateralized Loan Obligations"
+        ],
+        "numbers_found": [
+          "01",
+          "$50",
+          "$100",
+          "$50",
+          "$100",
+          "5%",
+          "7%",
+          "3%",
+          "3%",
+          "02",
+          "10",
+          "12",
+          "3",
+          "5",
+          "10",
+          "12",
+          "3",
+          "5",
+          "03"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "十二年锁定期与“零亏损”承诺",
+        "en": "The 12-Year Lockup and the “No-Loss” Pitch",
+        "numbers_found": [
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "被下调的算术：从 13% 牛市到 3.7% 到手收益",
+        "en": "The Ratchet Arithmetic: How a 13% Bull Market Yielded 3.7%",
+        "numbers_found": [
+          "13%",
+          "3.7%",
+          "13%",
+          "3.7%"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "埃利奥特保单中与标普500挂钩的资金比例遭两次下调",
+        "en": "How Athene Twice Lowered Elliott's S&P 500 Participation Share",
+        "numbers_found": [
+          "500",
+          "500"
+        ]
+      },
+      {
+        "category": "editorial_figcaption",
+        "cn": "数据来源：报道披露的萨布丽娜·埃利奥特 12 年期指数型年金保单记录（Athene 收购英杰华保险后执行）。",
+        "en": "Source: Reported policy records of Sabrina Elliott's 12-year indexed annuity under Aviva / Athene.",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "跑赢了美国国债，却在 13% 美股大牛市中踏空",
+        "en": "Beating Treasurys, Paling Beside the S&P 500 Bull Market",
+        "numbers_found": [
+          "13%",
+          "500"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "高佣金诱因、回测幻象与私人信贷资金池",
+        "en": "Commission Incentives, Hypothetical Pitches, and the Private-Credit Engine",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "私募巨头如何将美国家庭 10 年期年金保费转化为高风险私人信贷",
+        "en": "How Private-Asset Managers Channel 10-Year Annuity Float into Illiquid Debt",
+        "numbers_found": [
+          "10",
+          "10"
+        ]
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "50%",
+        "context": "100% 50% 0% 40% @ 1% Fixed 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "0%",
+        "context": "100% 50% 0% 40% @ 1% Fixed 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "40%",
+        "context": "100% 50% 0% 40% @ 1% Fixed 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "13.0%",
+        "context": "标准普尔 500 指数 S&P 500 Index 13.0% 埃利奥特指数型年金 Elliott's Indexed Annuity"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "01",
+        "context": "01 · HOUSEHOLD SAVERS 美国老年储户 ($50K–$100K) Older Savers ($50K–$100K) 州保险代理人销售（非SEC监管） Sold via State Agents (Non-SEC)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "01 · HOUSEHOLD SAVERS 美国老年储户 ($50K–$100K) Older Savers ($50K–$100K) 州保险代理人销售（非SEC监管） Sold via State Agents (Non-SEC)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "01 · HOUSEHOLD SAVERS 美国老年储户 ($50K–$100K) Older Savers ($50K–$100K) 州保险代理人销售（非SEC监管） Sold via State Agents (Non-SEC)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "02",
+        "context": "01 · HOUSEHOLD SAVERS 美国老年储户 ($50K–$100K) Older Savers ($50K–$100K) 州保险代理人销售（非SEC监管） Sold via State Agents (Non-SEC)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "03",
+        "context": "01 · HOUSEHOLD SAVERS 美国老年储户 ($50K–$100K) Older Savers ($50K–$100K) 州保险代理人销售（非SEC监管） Sold via State Agents (Non-SEC)"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 9 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

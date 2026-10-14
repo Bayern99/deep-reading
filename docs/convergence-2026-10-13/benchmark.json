@@ -1,0 +1,163 @@
+{
+  "issue": "2026-10-12",
+  "input_sha256": "00fa35e8f5a9bc164da3dae3af41c6b659c1e2c609d1e535729a6fbb3efd5782",
+  "comparison": {
+    "baseline": "2026-10-12/dist/baseline.html",
+    "current": "2026-10-12/dist/index.html",
+    "exploration": "2026-10-12/dist/exploration.html"
+  },
+  "evaluation_scope": "Personal design review; review focuses recorded before exploration renders. All articles passed through historical generation, so new design samples are not unseen blind tests. No aggregate aesthetic pass rate.",
+  "publication_note": "reader page = present in dist/index.html; E3-002 is held in the integrity review queue; E2-012 is excluded by curation. Boundary cases are judged on data behaviour, not page comparison.",
+  "articles": [
+    {
+      "id": "E1-005",
+      "type": "article",
+      "title": "胡塞武装发动袭击，沙特王储重担加重",
+      "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
+      "design_history": "Repeatedly designed regression",
+      "publication": "reader page",
+      "review_focus": "Keep the airport-attack scene continuous before consequences and any figure panel; distinguish casualty/source scopes.",
+      "source_limit": null
+    },
+    {
+      "id": "E1-010",
+      "type": "article",
+      "title": "为什么高债券收益率不会消退",
+      "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+      "design_history": "Repeatedly designed regression; evidence exploration",
+      "publication": "reader page",
+      "review_focus": "Compare all three October/July forecasts at the same tenor; retain fiscal qualifiers and the opposing labor-market view.",
+      "source_limit": null
+    },
+    {
+      "id": "E2-002",
+      "type": "article",
+      "title": "战争中，监控摄像头遭到黑客入侵",
+      "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
+      "design_history": "Repeatedly designed regression",
+      "publication": "reader page",
+      "review_focus": "Keep six source headings, the farmer scene and all EN prose; no duplicated pull quote.",
+      "source_limit": null
+    },
+    {
+      "id": "E3-004",
+      "type": "article",
+      "title": "人工智能有个上帝问题",
+      "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+      "design_history": "Repeatedly designed regression",
+      "publication": "reader page",
+      "review_focus": "Read the opening church scene continuously before institutional actions; quotations keep attribution.",
+      "source_limit": null
+    },
+    {
+      "id": "E2-010",
+      "type": "article",
+      "title": "“周日恐慌”真实存在——而且愈演愈烈",
+      "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+      "design_history": "Primary new design sample; narrative exploration",
+      "publication": "reader page",
+      "review_focus": "Follow Davis to the hourglass, weekend messaging costs, conditional advice and final reframing; both original EN tails remain.",
+      "source_limit": null
+    },
+    {
+      "id": "E1-019",
+      "type": "article",
+      "title": "纽森支持一项旨在对抗富豪税收计划的举措",
+      "content_digest": "2e72306acc54d6ba38349cafa5a1664a42419ea47f3fbdcf2bbb6aa26277b3c1",
+      "design_history": "Primary new design sample; analysis exploration",
+      "publication": "reader page",
+      "review_focus": "Distinguish two proposals, 5% rate, $1bn threshold, real-estate exception and uncertain simultaneous passage.",
+      "source_limit": null
+    },
+    {
+      "id": "E2-001",
+      "type": "article",
+      "title": "美国人的储蓄助燃私人信贷",
+      "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+      "design_history": "New design comparison; preserve",
+      "publication": "reader page",
+      "review_focus": "Keep capital protection separate from equity participation and liquidity restrictions; read the insurer response before judging the returns.",
+      "source_limit": null
+    },
+    {
+      "id": "E1-023",
+      "type": "article",
+      "title": "美国司法部调查电视台停播是否违反反垄断法",
+      "content_digest": "5622250ecf3b012f93c0dd564e07c0290f4d73ec415e2c29297321af1d51f6b2",
+      "design_history": "New design comparison; preserve",
+      "publication": "reader page",
+      "review_focus": "An investigation is not a legal finding; keep official allegation and press-freedom response attributed.",
+      "source_limit": null
+    },
+    {
+      "id": "E2-017",
+      "type": "opinion",
+      "title": "人工智能热潮将如何终结？",
+      "content_digest": "041f58b29b4aa92f988f2064f359310ed7e5dc5836189d993b511b370e9e974f",
+      "design_history": "New design comparison; preserve",
+      "publication": "reader page",
+      "review_focus": "Keep the opinion voice distinct from verified news and preserve the timing uncertainty and demand/price caveat.",
+      "source_limit": "Input contains an email placeholder; this is not an external fact-check of the opinion."
+    },
+    {
+      "id": "E1-014",
+      "type": "brief",
+      "title": "委内瑞拉涉嫌行贿者被捕",
+      "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+      "design_history": "Preserve regression",
+      "publication": "reader page",
+      "review_focus": "Two-paragraph brief retains compact title, dek and byline; preserve equals ordinary output.",
+      "source_limit": null
+    },
+    {
+      "id": "E1-012",
+      "type": "photo_caption",
+      "title": "哈马克参观 Jergens 工厂",
+      "content_digest": "d1c1ecb9799c7f8233883df9fd3ec265f67be7a5f61edbe6ce4b7eafb78ccd45",
+      "design_history": "New type comparison; preserve",
+      "publication": "reader page",
+      "review_focus": "Caption remains a caption, including people/location and any available image/credit; never becomes a long-article hero.",
+      "source_limit": null
+    },
+    {
+      "id": "E2-024",
+      "type": "letter",
+      "title": "马萨诸塞州的政策导致电费上涨",
+      "content_digest": "27afdf07c217f629c5d35c45353fbeddbad4c64bf2196fb24e2b961c5a406f70",
+      "design_history": "New type comparison; preserve",
+      "publication": "reader page",
+      "review_focus": "Letter retains its author identity and opinion framing; do not turn a partisan assertion into a neutral data card.",
+      "source_limit": "Input contains extraction artifacts; no upstream text repair is inferred."
+    },
+    {
+      "id": "E1-013",
+      "type": "correction",
+      "title": "更正与补充说明",
+      "content_digest": "68366a68524b16951c3ec3c2b0f1aa217edac4c20451a700c93366d2c9e2dc24",
+      "design_history": "New type boundary; preserve",
+      "publication": "reader page",
+      "review_focus": "Correction retains complete contact text; preserve exposes input placeholders rather than inventing an address.",
+      "source_limit": "Input contains an email placeholder."
+    },
+    {
+      "id": "E3-002",
+      "type": "article",
+      "title": "电动汽车销量下滑带来的积极影响：充电基础设施正在不断完善",
+      "content_digest": "ae8d24121a348d2a6d06f3bc15feae098c5c28b2973e050b9ae7579981d5f516",
+      "design_history": "New source boundary",
+      "publication": "review queue",
+      "review_focus": "Unconfirmed continuation after page break: the gate holds it out of the reader page; the engine must not invent missing text or fake a chart.",
+      "source_limit": "Input contains explicit missing-text markers and an unrecovered chart; copy fidelity cannot certify source completeness."
+    },
+    {
+      "id": "E2-012",
+      "type": "data_table",
+      "title": "每周日用于……的时间占比（图表）",
+      "content_digest": "5a7a002cfc6a0cf94fdb70526c3247785dfe9a8ba28bb73b7f094a1b45accc0d",
+      "design_history": "New type boundary",
+      "publication": "excluded (curation.json: 图未恢复)",
+      "review_focus": "Chart unrecovered: excluded from the reader page instead of rendering a description-only fake figure.",
+      "source_limit": "Only the caption survives; no data table or image in final.json."
+    }
+  ]
+}

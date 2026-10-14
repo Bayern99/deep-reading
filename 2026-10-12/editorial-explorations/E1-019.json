@@ -1,0 +1,97 @@
+{
+  "schema_version": "enhanced-v1",
+  "article_id": "E1-019",
+  "content_digest": "2e72306acc54d6ba38349cafa5a1664a42419ea47f3fbdcf2bbb6aa26277b3c1",
+  "created": "2026-10-14",
+  "analysis": {
+    "reader_need": "Distinguish the wealth tax from Proposition 42, then understand the exemption and uncertainty if both pass."
+  },
+  "reading_treatment": {
+    "profile": "analysis",
+    "reason": "An explicit opening proposition, quieter argument phases and sparse emphasis on scope; no partisan pull quote.",
+    "evidence": [
+      {
+        "block_ids": [
+          "p1",
+          "p3",
+          "p4"
+        ],
+        "observation": "Two opposing measures; the wealth tax has a defined threshold and one-time rate."
+      },
+      {
+        "block_ids": [
+          "p7",
+          "p10",
+          "p11"
+        ],
+        "observation": "The constitutional mechanism excludes real estate; simultaneous passage leads to a likely legal battle, followed by attributed union criticism."
+      }
+    ],
+    "roles": {
+      "cn": {
+        "lead": [
+          "p1"
+        ],
+        "break": [
+          "p4",
+          "p7"
+        ]
+      },
+      "en": {
+        "lead": [
+          "p1"
+        ],
+        "break": [
+          "p4",
+          "p7"
+        ]
+      }
+    }
+  },
+  "text_treatments": [
+    {
+      "pattern_id": "T01",
+      "block_id": "p4",
+      "locale": "cn",
+      "text_exact": "净资产为 10 亿美元或以上",
+      "action": "wrap",
+      "reason": "Keep the tax scope or exception visible in its original sentence."
+    },
+    {
+      "pattern_id": "T01",
+      "block_id": "p4",
+      "locale": "en",
+      "text_exact": "$1 billion or more",
+      "action": "wrap",
+      "reason": "Keep the tax scope or exception visible in its original sentence."
+    },
+    {
+      "pattern_id": "T01",
+      "block_id": "p7",
+      "locale": "cn",
+      "text_exact": "房地产除外",
+      "action": "wrap",
+      "reason": "Keep the tax scope or exception visible in its original sentence."
+    },
+    {
+      "pattern_id": "T01",
+      "block_id": "p7",
+      "locale": "en",
+      "text_exact": "other than real estate",
+      "action": "wrap",
+      "reason": "Keep the tax scope or exception visible in its original sentence."
+    }
+  ],
+  "layout_decisions": [],
+  "component_plan": [],
+  "rejected_opportunities": [
+    {
+      "opportunity": "Tax/no-tax comparison card",
+      "reason": "The legal outcome is conditional, so a simple binary card would overstate certainty."
+    },
+    {
+      "opportunity": "Partisan pull quote",
+      "reason": "Promoting either spokesperson would disturb the balance of attribution."
+    }
+  ]
+}

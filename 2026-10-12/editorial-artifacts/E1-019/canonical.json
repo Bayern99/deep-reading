@@ -1,0 +1,297 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-019",
+  "final_id": "019",
+  "issue_date": "2026-10-12",
+  "content_digest": "2e72306acc54d6ba38349cafa5a1664a42419ea47f3fbdcf2bbb6aa26277b3c1",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A3",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A3 版",
+    "kicker_en": "WSJ · U.S. NEWS · A3",
+    "title_cn": "纽森支持一项旨在对抗富豪税收计划的举措",
+    "title_en": "Newsom Backs Bid To Counter Billionaire Tax Effort",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY PAUL KIERNAN",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "加利福尼亚州州长加文·纽森反对一项备受关注的提案，该提案旨在对亿万富翁的财富征税。现在，他支持另一项提案，旨在禁止征收财富税。",
+      "text_en": "California Gov. Gavin Newsom has opposed a high-profile ballot measure that would tax billionaires' wealth. Now he is endorsing a different measure aimed at prohibiting wealth taxes.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "加利福尼亚州州长加文·纽森反对一项备受关注的提案，该提案旨在对亿万富翁的财富征税。现在，他支持另一项提案，旨在禁止征收财富税。",
+          "text_en": "California Gov. Gavin Newsom has opposed a high-profile ballot measure that would tax billionaires' wealth. Now he is endorsing a different measure aimed at prohibiting wealth taxes."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "纽森周五通过支持反对征税提案的竞选团队宣布了他的支持，该提案被称为“42号提案”。纽森表示：“加利福尼亚人有权保护他们的退休金和生活储蓄，使其免受新的州税影响。”",
+      "text_en": "Newsom announced his endorsement Friday via the campaign backing the antitax measure, known as Proposition 42. \"Californians deserve to have their retirement and life savings protected from new state taxes,\" Newsom said.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "纽森周五通过支持反对征税提案的竞选团队宣布了他的支持，该提案被称为“42号提案”。",
+          "text_en": "Newsom announced his endorsement Friday via the campaign backing the antitax measure, known as Proposition 42."
+        },
+        {
+          "id": "p2.s2",
+          "text_cn": "纽森表示：“加利福尼亚人有权保护他们的退休金和生活储蓄，使其免受新的州税影响。”",
+          "text_en": "\"Californians deserve to have their retirement and life savings protected from new state taxes,\" Newsom said."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“42号提案”已筹集了数千万美元，资金来自一个政治委员会，该委员会的部分资金来自亿万富翁，包括谷歌联合创始人谢尔盖·布林。在一家医护工作者工会提议对亿万富翁的财富一次性征收 5% 的税后，这项活动获得了推动。选民将于 11 月 3 日就这两项提案进行表决。",
+      "text_en": "Prop. 42 has raised tens of millions of dollars from a political committee funded in part by billionaires, including Google co-founder Sergey Brin. This effort took off after a healthcare-workers' union proposed a one-time 5% tax on billionaires' wealth. Voters are set to decide on both ballot measures on Nov. 3.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "“42号提案”已筹集了数千万美元，资金来自一个政治委员会，该委员会的部分资金来自亿万富翁，包括谷歌联合创始人谢尔盖·布林。",
+          "text_en": "Prop. 42 has raised tens of millions of dollars from a political committee funded in part by billionaires, including Google co-founder Sergey Brin."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "在一家医护工作者工会提议对亿万富翁的财富一次性征收 5% 的税后，这项活动获得了推动。",
+          "text_en": "This effort took off after a healthcare-workers' union proposed a one-time 5% tax on billionaires' wealth."
+        },
+        {
+          "id": "p3.s3",
+          "text_cn": "选民将于 11 月 3 日就这两项提案进行表决。",
+          "text_en": "Voters are set to decide on both ballot measures on Nov. 3."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "拟议的亿万富翁税旨在抵消特朗普总统去年签署生效的对医疗补助资金的大幅削减，在美国是前所未有的。与大多数美国人缴纳的所得税不同，它将适用于净资产为 10 亿美元或以上的加利福尼亚居民的净资产。",
+      "text_en": "The proposed billionaire tax, aimed at offsetting steep cuts to Medicaid funding signed into law last year by President Trump, is novel in the U.S. Unlike the income taxes that most Americans pay, it would apply to the net worth of California residents with net assets of $1 billion or more.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "拟议的亿万富翁税旨在抵消特朗普总统去年签署生效的对医疗补助资金的大幅削减，在美国是前所未有的。",
+          "text_en": "The proposed billionaire tax, aimed at offsetting steep cuts to Medicaid funding signed into law last year by President Trump, is novel in the U.S."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "与大多数美国人缴纳的所得税不同，它将适用于净资产为 10 亿美元或以上的加利福尼亚居民的净资产。",
+          "text_en": "Unlike the income taxes that most Americans pay, it would apply to the net worth of California residents with net assets of $1 billion or more."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这项财富税暴露了民主党和加利福尼亚州劳工运动内部的严重分歧。",
+      "text_en": "The wealth tax has exposed bitter divisions in the Democratic Party and in California's labor movement.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "这项财富税暴露了民主党和加利福尼亚州劳工运动内部的严重分歧。",
+          "text_en": "The wealth tax has exposed bitter divisions in the Democratic Party and in California's labor movement."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "纽森去年反对这项税收，时间是在一家医护工作者工会提出该提案的几周后，他认为这项税收可能会导致该州最大的纳税人逃离。与此同时，该州民主党于 8 月投票支持该提案。",
+      "text_en": "Newsom came out against the tax last year, weeks after it was proposed by a healthcare-workers union, and has argued the levy could push the state's largest taxpayers to flee. The state Democratic Party, meanwhile, voted in August to endorse the measure.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "纽森去年反对这项税收，时间是在一家医护工作者工会提出该提案的几周后，他认为这项税收可能会导致该州最大的纳税人逃离。",
+          "text_en": "Newsom came out against the tax last year, weeks after it was proposed by a healthcare-workers union, and has argued the levy could push the state's largest taxpayers to flee."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "与此同时，该州民主党于 8 月投票支持该提案。",
+          "text_en": "The state Democratic Party, meanwhile, voted in August to endorse the measure."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“42号提案”可以通过修改加利福尼亚州的宪法，禁止对金融资产或个人财产（房地产除外）征收新的税收，从而使亿万富翁税失效。",
+      "text_en": "Prop. 42 could invalidate a billionaire tax by changing California's constitution to prohibit new taxes on financial assets or personal property, other than real estate.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "“42号提案”可以通过修改加利福尼亚州的宪法，禁止对金融资产或个人财产（房地产除外）征收新的税收，从而使亿万富翁税失效。",
+          "text_en": "Prop. 42 could invalidate a billionaire tax by changing California's constitution to prohibit new taxes on financial assets or personal property, other than real estate."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "加利福尼亚州民主党和几个大型工会反对该提案。",
+      "text_en": "The California Democratic Party and several large unions oppose it.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "加利福尼亚州民主党和几个大型工会反对该提案。",
+          "text_en": "The California Democratic Party and several large unions oppose it."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "加利福尼亚州的亿万富翁向竞选活动投入了大量资金，声称这项税收可能会削弱该州的财政基础，或者由立法机构扩大适用范围，覆盖更广泛的居民。",
+      "text_en": "California billionaires have poured money into campaigns claiming the tax could weaken the state's fiscal base or be expanded by the legislature to apply to a broader swath of residents.",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "加利福尼亚州的亿万富翁向竞选活动投入了大量资金，声称这项税收可能会削弱该州的财政基础，或者由立法机构扩大适用范围，覆盖更广泛的居民。",
+          "text_en": "California billionaires have poured money into campaigns claiming the tax could weaken the state's fiscal base or be expanded by the legislature to apply to a broader swath of residents."
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "如果选民同时批准这项提案和财富税，一场法律战很可能随之而来。",
+      "text_en": "A likely legal battle looms if voters approve this measure and the wealth tax.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "如果选民同时批准这项提案和财富税，一场法律战很可能随之而来。",
+          "text_en": "A likely legal battle looms if voters approve this measure and the wealth tax."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "支持这项针对富豪征税计划的工会——服务业雇员国际工会-联合医护工作者西部——表示，纽森州长站在加州最富有的居民一边，而不是优先考虑儿童和家庭的医疗保健需求。“纽森州长与支持他的富豪们步调一致，”该工会的副主席德布鲁·卡森说道。",
+      "text_en": "The union backing the billionaire tax effort—the Service Employees International Union-United Healthcare Workers West—said Newsom was siding with California's wealthiest residents over healthcare for children and families. \"Governor Newsom is in lock step with his billionaire-backers,\" Debru Carthan, the union's vice president, said.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "支持这项针对富豪征税计划的工会——服务业雇员国际工会-联合医护工作者西部——表示，纽森州长站在加州最富有的居民一边，而不是优先考虑儿童和家庭的医疗保健需求。",
+          "text_en": "The union backing the billionaire tax effort—the Service Employees International Union-United Healthcare Workers West—said Newsom was siding with California's wealthiest residents over healthcare for children and families."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "“纽森州长与支持他的富豪们步调一致，”该工会的副主席德布鲁·卡森说道。",
+          "text_en": "\"Governor Newsom is in lock step with his billionaire-backers,\" Debru Carthan, the union's vice president, said."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p2",
+      "quote_cn": "“加利福尼亚人有权保护他们的退休金和生活储蓄，使其免受新的州税影响。”",
+      "quote_en": "“Californians deserve to have their retirement and life savings protected from new state taxes,”",
+      "speaker_cn": "原文第 2 段直接引述",
+      "role_cn": "Source Block p2",
+      "speaker_en": "Direct Quote (p2)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p11",
+      "quote_cn": "“纽森州长与支持他的富豪们步调一致，”",
+      "quote_en": "“Governor Newsom is in lock step with his billionaire-backers,”",
+      "speaker_cn": "原文第 11 段直接引述",
+      "role_cn": "Source Block p11",
+      "speaker_en": "Direct Quote (p11)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p3",
+      "value": "5%",
+      "value_cn": "5%",
+      "label_cn": "“42号提案”已筹集了数千万美元，资金来自一个政治委员会，该委员会的部分…",
+      "label_en": "Prop. 42 has raised tens of millions of dollars from a polit…",
+      "note_cn": "源自正文 [p3]",
+      "note_en": "From paragraph [p3]"
+    },
+    {
+      "id": "m2",
+      "source_block": "p4",
+      "value": "$1 billion",
+      "value_cn": "10 亿美元",
+      "label_cn": "拟议的亿万富翁税旨在抵消特朗普总统去年签署生效的对医疗补助资金的大幅削减…",
+      "label_en": "The proposed billionaire tax, aimed at offsetting steep cuts…",
+      "note_cn": "源自正文 [p4]",
+      "note_en": "From paragraph [p4]"
+    }
+  ],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Paul Kiernan",
+      "zh_suggested": "保罗·基尔南",
+      "note": "待查"
+    },
+    {
+      "en": "Proposition 42",
+      "zh_suggested": "42号提案",
+      "note": "加州反财富税修宪提案"
+    },
+    {
+      "en": "Sergey Brin",
+      "zh_suggested": "谢尔盖·布林",
+      "note": "谷歌联合创始人"
+    },
+    {
+      "en": "Service Employees International Union-United Healthcare Workers West",
+      "zh_suggested": "服务业雇员国际工会-联合医护工作者西部",
+      "note": "待查"
+    },
+    {
+      "en": "Debru Carthan",
+      "zh_suggested": "德布鲁·卡森",
+      "note": "待查"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "mode": "audit-only",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 20,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 20,
+    "source_derived_count": 0,
+    "highlights_applied": [],
+    "ai_editorial_items_count": 9,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Elliott Policy Participation Ratchet and Benchmark Return Comparison",
+        "viewBox": "",
+        "text_labels": [
+          "A. 挂钩标普500资金比例 vs 1%固定利率部分",
+          "A. SHARE TIED TO S&P 500 VS. 1% FIXED SLEEVE",
+          "40% @1%",
+          "60%",
+          "第 1 年",
+          "Year 1",
+          "45% @1%",
+          "55%",
+          "第 7 年",
+          "Year 7",
+          "55% @1%",
+          "45%",
+          "第 11 年",
+          "Year 11",
+          "* 挂钩部分需扣除 2.9 个百分点差额；终身/继承附加险再减约 2 个百分点年收益",
+          "* Minus 2.9pp spread on equity share; lifetime/heir add-on reduced return by ~2pp/yr",
+          "B. 12年期年化收益率对比 (至2023年底)",
+          "B. 12-YEAR ANNUALIZED RETURN COMPARISON",
+          "标普 500 指数 (S&P 500)",
+          "S&P 500 Benchmark",
+          "13%",
+          "埃利奥特指数型年金实际年化收益",
+          "Elliott's Indexed Annuity Actual Return",
+          "3.7%",
+          "同期美国国债收益率 (Treasurys)",
+          "Concurrent U.S. Treasurys Return",
+          "1.9%"
+        ],
+        "numbers_found": [
+          "500",
+          "1%",
+          "500",
+          "1%",
+          "40%",
+          "1%",
+          "60%",
+          "1",
+          "1",
+          "45%",
+          "1%",
+          "55%",
+          "7",
+          "7",
+          "55%",
+          "1%",
+          "45%",
+          "11",
+          "11",
+          "2.9",
+          "2",
+          "2.9",
+          "2",
+          "12",
+          "2023",
+          "12",
+          "500",
+          "500",
+          "500",
+          "13%",
+          "3.7%",
+          "1.9%"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "Private Credit Capital Flow Diagram",
+        "viewBox": "",
+        "text_labels": [
+          "STAGE 01 · HOUSEHOLDS",
+          "美国家庭与老年储户",
+          "Older Savers & Retirees",
+          "• 投入 $40K / $50K / $100K",
+          "• Turn over $40K / $50K / $100K",
+          "• 锁定约10–12年 (对比固定3–5年)",
+          "• Locked ~10–12 yrs (vs. 3–5 yrs)",
+          "STAGE 02 · INSURERS",
+          "私募控股保险公司",
+          "PE-Owned Insurers",
+          "• 阿波罗/Athene、博枫等",
+          "• Apollo/Athene, Brookfield, etc.",
+          "• 支付代理人 5%–7% 销售佣金",
+          "• Pay 5%–7% agent commissions",
+          "STAGE 03 · DEPLOYMENT",
+          "高风险私人信贷资产",
+          "Riskier Private Credit",
+          "• 担保贷款凭证 (CLOs)",
+          "• CLOs (Collateralized Loans)",
+          "• 资产支持证券 (ABS)",
+          "• Asset-Backed Securities (ABS)",
+          "单向阀机制：无论投资好坏均可改写协议 (RYBKA MECHANISM · P20)",
+          "THE ONE-WAY VALVE: CHANGING THE DEAL IN BOTH SCENARIOS (P20)",
+          "• 若私募投资表现不佳 → 下调保单持有人收益上限以缓冲损失 (Cushion against loss by lowering caps)",
+          "• If investments do poorly → Insurer cushions against loss by lowering caps on policyholder gains",
+          "• 若私募投资表现良好 → 同样通过下调上限来增厚自身利润 (Fatten their profits the same way)",
+          "• If investments do well → Insurer can fatten its own profits the exact same way"
+        ],
+        "numbers_found": [
+          "01",
+          "$40",
+          "$50",
+          "$100",
+          "$40",
+          "$50",
+          "$100",
+          "10",
+          "12",
+          "3",
+          "5",
+          "10",
+          "12",
+          "3",
+          "5",
+          "02",
+          "5%",
+          "7%",
+          "5%",
+          "7%",
+          "03",
+          "20",
+          "20"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "被改写的12年承诺",
+        "en": "A 12-Year Lockup and Moving Goalposts",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "萨布丽娜·埃利奥特 (Sabrina Elliott)",
+        "en": "Sabrina Elliott, 69",
+        "numbers_found": [
+          "69"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "收益棘轮：条款如何一步步蚕食牛市红利",
+        "en": "The Participation Ratchet: How Fine Print Clips Bull-Market Gains",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "两次下调挂钩比例与三重收益折损（12年保单期）",
+        "en": "Two Participation Cuts and Triple Return Compression Over 12 Years",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "监管盲区、5%–7%高佣金与“270万美元”幻象",
+        "en": "Regulatory Gaps, 5%–7% Commissions, and the $2.7 Million Pitch",
+        "numbers_found": [
+          "5%",
+          "7%",
+          "270",
+          "5%",
+          "7%",
+          "$2.7"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "终局真相：美国家庭储蓄如何化作华尔街私人信贷燃料",
+        "en": "The Endgame: How Household Savings Fuel Illiquid Private Credit",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "从退休储蓄池到高风险私人信贷的双向缓冲机制",
+        "en": "From Sticky Policyholder Float to Illiquid Private Credit & Asymmetric Cap Control",
+        "numbers_found": []
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "40%",
+        "context": "A. 挂钩标普500资金比例 vs 1%固定利率部分 A. SHARE TIED TO S&P 500 VS. 1% FIXED SLEEVE 40% @1% 60% 第 1 年"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "01",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "02",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "03",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "20",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "20",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭与老年储户 Older Savers & Retirees • 投入 $40K / $50K / $100K • Turn over $40K / $50K / $100K"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 10 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

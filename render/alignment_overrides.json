@@ -1,6 +1,17 @@
 {
+  "E2-010": {
+    "note": "Confirmed extraction furniture: EN p4 ends 'workers say they experience', p5 is the A12 continuation marker, and p6 continues that same sentence. Remove the exact marker and join the fragments in the read-only projection for ordinary, enhanced and baseline; retain raw final.json and both EN tail paragraphs.",
+    "drop_en": ["[Continued on page A12.]"],
+    "join_en": [
+      {
+        "first_prefix": "That pre-Monday dread",
+        "second_prefix": "the Sunday scaries, according",
+        "joiner": " "
+      }
+    ]
+  },
   "E2-002": {
-    "note": "EN extraction contains a turn-page marker and a column-break fragment (pdftotext column break split one sentence; CN translation merged it). Repair pairs CN<->EN paragraphs; body text itself stays verbatim. Baseline (plain path) intentionally keeps the raw extraction artifact.",
+    "note": "EN extraction contains a turn-page marker and a column-break fragment (pdftotext column break split one sentence; CN translation merged it). Repair pairs CN<->EN paragraphs in all rendering paths; body text itself stays verbatim.",
     "drop_en": ["[Continued on page A10.]"],
     "join_en": [
       {

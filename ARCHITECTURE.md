@@ -1,0 +1,118 @@
+# WSJ 深读 · Architecture
+
+Current implementation reviewed on 2026-10-14. This describes the preserved Phase 1–7 implementation and the local governance checkpoint. Product invariants live in [FOUNDATION](FOUNDATION.md); execution commands live in [BUILD](render/BUILD.md).
+
+## Actual data flow
+
+```mermaid
+flowchart TD
+    PDF[External WSJ PDF] -. external extraction tools .-> OCR[raw text / OCR and page crops]
+    OCR --> Extract[extract-E*.json]
+    Extract --> Merge[Historical merge.py / merged.json]
+    Merge -. external translation engine and QA .-> Trans[trans-T*.json and translation glossary]
+    Trans --> Assemble[Historical assemble.py]
+    Assemble --> Final[Issue final.json]
+    Final --> Gate[Integrity Gate: PASS / WARN / BLOCK]
+    Final --> Source[SourceModel + exact alignment overrides + digest]
+    Source --> Issue[build.py / issue.py / ordinary and enhanced rendering]
+    Plans[front.json / enhanced-v1 plans / verified assets] --> Issue
+    Gate --> Issue
+    Issue --> Newspaper[dist/index.html + baseline + execution receipts]
+    Source --> Canonical[canonical-source-v1]
+    Gate --> Canonical
+    Canonical --> Publisher[editorial_publisher.py]
+    Provider[model_provider.py] --> Publisher
+    Publisher --> Compiler[editorial_compiler.py: injection and audit]
+    Compiler --> Store[ArtifactStore: versioned files and active pointer]
+    Store --> Reader[Studio / Reader + Shadow DOM + static snapshot]
+    Final --> Studio[Source library and curation]
+    Studio --> Queue[PersistentGenerationQueue]
+    Queue --> Publisher
+    Queue --> State[_queue.json]
+```
+
+Dashed edges require tools/services outside this repository. There is no single working PDF-to-Reader command. The source PDF is absent. The issue-local translation adapters refer to external `translate-gemma.py` and old machine paths. Current tests begin from preserved `final.json`; they do not certify OCR or translation accuracy.
+
+## Production modules
+
+All names in this table are under `render/`. Modules remain colocated to preserve script imports and verified behavior; a package migration is not required for current usage.
+
+| Module | Actual responsibility and inputs |
+|---|---|
+| `integrity_gate.py`, `declutter.py` | Detect unconfirmed continuation, truncation markers and extraction defects. Return findings without changing copy. WARN requires editorial disposition; it is not PASS. |
+| `source_model.py` | Shared bilingual paragraph projection; exact English repair records; content digest over article fields and alignment repair. Preserve unmatched tails rather than silently truncate. |
+| `canonical_builder.py` | Build `canonical-source-v1`: metadata, ordered `pN` blocks, lossless sentence anchors, quotes, metrics and media. Date labels follow the selected issue. |
+| `build.py`, `issue.py` | Deterministic whole-issue CLI, front selection, gate filtering, type-aware composition and validation receipts. Does not invoke a model or load ArtifactStore. |
+| `article.py`, `components.py` | Ordinary type rendering, metadata, copy, figures and data appendix. |
+| `enhanced_render.py`, `text_treatment.py`, `layout.py` | Execute `enhanced-v1` plans against source anchors, exact text and digest; reject unsupported/stale operations with receipts. Empty intervention retains ordinary rendering. |
+| `editorial_publisher.py` | Generation prompt, provider call, strict compilation, one targeted repair retry by default, and verified/failed persistence. Also imports already generated raw HTML. |
+| `model_provider.py` | Callable, OpenAI-compatible and Anthropic adapters; model inventory and external credential resolution. Returns output and usage metadata. |
+| `editorial_compiler.py` | Deterministically inject canonical text into `data-ref`, populate `data-derive`, check coverage/order/exact text, sanitize some markup/CSS, adapt styles to Shadow DOM, diagnose SVG bounds. |
+| `artifact_store.py` | Preserve raw HTML, compiled HTML and complete metadata per version; index, active pointer, failed attempts and browser metrics. Reading never calls the model. |
+| `generation_queue.py` | Discover issue directories, calculate curation tiers, enforce admission and WARN confirmation, persist tasks, deduplicate pending/running work, recover and execute serially. |
+| `editorial_studio.py` | Local threaded HTTP host, source library, version selection, canonical inspector, queue controls and static Reader export. Python and the inline client currently share one file. |
+
+`tokens.css` and `editorial.css` serve the static renderer. Generated article styling comes from the publishing prompt and saved artifacts. `DESIGN.md` records the accepted static baseline and historical experiments; the publishing prompt currently has a different palette/font prescription. Unifying those design contracts is a product/design decision, not an automatic governance restyle.
+
+## Source and publishing contracts
+
+- `final.json` is the QA-approved bilingual source. OCR, drafts and article bodies remain immutable during formatting. Repair overrides create an auditable projection; they do not rewrite the source file.
+- `pN` means paragraph position in a particular source projection, not a globally stable paragraph identity. A changed source/repair digest invalidates an anchored static plan. Sentence subdivision is used only when joining preserves both original locales.
+- Whole-issue publishing excludes curation removals and hides WARN/BLOCK entries behind review anchors. Its source library and its visible newspaper are different sets.
+- Queue admission rejects BLOCK and requires explicit WARN confirmation. Curation recommends long features versus restrained briefs and excludes some non-narrative types. The legacy `/api/generate` route and CLI `--enqueue` currently imply WARN confirmation; use Studio batch confirmation for deliberate review.
+- Publisher itself checks BLOCK. A direct caller of the publishing/import functions must provide the editorial decision about WARN; those functions do not share a persistent review-disposition record.
+- Compiler verification proves referenced narrative copy coverage, order and exactness. It does not prove every model-authored explanatory label, SVG label or editorial addition is factually correct. Browser metrics have a separate `pending_browser_check` state; compiler success alone is not visual approval.
+- The two output families are separate contracts. `index.html` is the whole newspaper. `editorial-reader.html` contains generated article versions. `enhanced-v1` plans are not the generated HTML protocol.
+
+## Persistence and runtime
+
+```text
+<issue>/editorial-artifacts/
+  _index.json                 Article/version registry and active version
+  _queue.json                 Durable task records and restart state
+  <article-id>/
+    canonical.json            Most recently saved canonical snapshot
+    latest.json               Active verified artifact record
+    vN/
+      artifact.json           Model/usage/digest/audit + Shadow DOM bundle
+      raw.html                Original model output
+      compiled.html           Deterministically injected standalone output
+    failed-N/                 Failed output and failure report
+```
+
+Verified versions coexist. A new failed generation leaves the previous active artifact readable. `canonical.json` is overwritten by subsequent attempts; it is not a per-version frozen source archive. Each version retains its source digest and injected compiled text.
+
+Queue states are `pending → running → completed/failed`, with cancellation and retry. Deduplication is currently `(article_id, model_id, content_digest)` across pending/running tasks. Provider and custom instructions are not part of that key. Queue JSON is written by temporary-file replacement; invalid JSON or a non-list task collection now fails explicitly and remains untouched.
+
+On startup, tasks left running are matched to a recently saved active artifact by timestamp, otherwise returned to pending. Studio automatically resumes pending work. Recovery is a useful heuristic, not an exact transaction/task identity guarantee. Cancellation marks a task; it does not interrupt an in-flight provider request, and the generated artifact can still be persisted.
+
+The queue lock is process-local. Artifact JSON/index/pointers still use direct writes; version allocation and promotion are not a multi-file transaction. Run one Studio writer per checkout/issue. Concurrent processes or interruption during store writes can leave inconsistent metadata. Stop writers before backup; preserve the entire artifact tree and queue together. Follow [data policy](docs/data-policy.md) before recovery.
+
+## Experiments and legacy code
+
+These stay intact because they are primary evidence and some assets are still consumed by production:
+
+- `experiments/phase5-exp01/`: original free-HTML versus source-anchor experiment, independent compiler/schema, golden baseline, three runs and screenshots. No production import depends on its compiler.
+- `render/autonomous_planner.py`, `plan_adapter.py`, `plan_validate.py`, `plan_render.py`, `orchestrate.py`, `run_auto_test.py`, `run_blind5.py`, `build_prototype.py`, `build_layout_test.py`, `build_layout_configs.py`, `build_test_pages.py`: historical planner/layout drivers and contract experiments; not the Phase 7 publishing path.
+- `render/pipeline.py`: actually runs the integrity stage and prints other stage names. It has an incomplete cache/input hash and should not be used as a resumable daily orchestrator.
+- `render/build_reboot_four.py`: proof-strip utility, not another publishing engine.
+- Issue-local `build_html.py`, `build_v2.py` through `build_v6.py`, `cases/build_*`, `gen-test/`, `blind5/`, `auto-test/`, `layout-test/`, `test-pages/`: historical implementations/evidence, some with old absolute paths. Production still references verified images in `cases/assets/`; preserve that directory.
+- Issue-local `merge.py`, `assemble.py`, `trans-T*.py`, `seed_glossary.py`: source provenance and earlier input adapters. Rerunning assembly overwrites the current final source and must be treated as a content migration.
+
+Historical reports are indexed in [docs/history](docs/history/README.md). Existing dated evidence remains at its original path so relative links survive.
+
+## Remaining risks before broader usage
+
+| Concern | Evidence / next bounded decision |
+|---|---|
+| Second real issue | Discovery and date metadata support multiple dates, but `build.py` CLI still asserts 117 inputs and global `curation.json`, `images.json`, `alignment_overrides.json`, asset registry and `CURATED_DERIVATIONS` reuse issue-local IDs. Scope those records by issue before calling the system daily-ready. |
+| Artifact/source staleness | Studio treats stored versions as generated without comparing their digest to the current source. Keep old versions readable, but show source drift before silently treating them as current. |
+| Store crash/concurrency | Direct JSON writes, promotion order and `len(versions)+1` allocation need a bounded transactional persistence design before multiple writers. |
+| Recovery/cancellation | Timestamp-only restart matching and post-cancellation publication need explicit task/version association if stronger guarantees are required. |
+| Local API security | HTTP host binds loopback, with no authentication/origin policy, broad issue-directory static serving and mutating endpoints. Do not expose it as a shared/public service. |
+| Generated HTML | Sanitizer permits short scripts, some external references and styles; Shadow DOM isolates styles, not privileges. A complete allowlist/CSP or sandbox policy needs an explicit compatibility review of generated standalone interactions. |
+| Editorial factuality | Exact narrative injection does not verify unrestricted generated explanation/graphics. Review authored additions and 1440/390 bilingual rendering before activation as an accepted design. |
+| Reader maintainability | Large embedded client in `editorial_studio.py`; extract only after pinning its actual interactions and static-export contract. Avoid a package/framework migration as incidental cleanup. |
+| Upstream reproducibility | Restore the source PDF and documented extraction/translation tool versions before a fresh issue. Historical reports do not establish current model deployment. |
+
+The current scope is local usage of preserved, tested Phase 1–7 behavior. No storage transaction, package migration, upstream engine replacement or visual redesign was performed during governance.

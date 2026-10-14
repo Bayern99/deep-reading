@@ -1,0 +1,97 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E1-014",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T06:35:14Z",
+  "status": "verified",
+  "notes": "Generated via Studio UI (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+    "paragraph_count": 2,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 6376,
+    "completion_chars": 13334,
+    "input_tokens": 1918,
+    "output_tokens": 4934,
+    "total_tokens": 6852,
+    "latency_seconds": 35.256
+  },
+  "files": {
+    "raw_html": "E1-014/v1/raw.html",
+    "compiled_html": "E1-014/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --accent: #b85d19;\n    --navy-bg: #0f1d2b;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    font-family: 'Noto Serif SC', 'Lora', Georgia, serif;\n    background-color: var(--paper);\n  }\n\n  :host([lang=\"en\"]) .wsj-shadow-body {\n    font-family: 'Lora', Georgia, serif;\n  }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 100;\n    background-color: rgba(250, 248, 244, 0.96);\n    backdrop-filter: blur(8px);\n    border-bottom: 1px solid var(--ink);\n    box-shadow: 0 1px 0 var(--line);\n  }\n\n  .masthead-inner {\n    max-width: 960px;\n    margin: 0 auto;\n    padding: 0.75rem 1.5rem;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n\n  .brand-cluster {\n    display: flex;\n    align-items: baseline;\n    gap: 0.75rem;\n    flex-wrap: wrap;\n  }\n\n  .wsj-logo {\n    font-family: 'Playfair Display', Georgia, serif;\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .section-badge {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    font-weight: 600;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    border-left: 1px solid var(--line);\n    padding-left: 0.75rem;\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    align-items: center;\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    border-radius: 3px;\n    padding: 2px;\n  }\n\n  .lang-btn {\n    appearance: none;\n    border: none;\n    background: transparent;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.75rem;\n    font-weight: 600;\n    padding: 0.3rem 0.65rem;\n    color: var(--muted);\n    cursor: pointer;\n    border-radius: 2px;\n    transition: all 0.15s ease;\n  }\n\n  :host([lang=\"zh-CN\"]) .lang-btn[data-lang=\"zh-CN\"],\n  :host([lang=\"en\"]) .lang-btn[data-lang=\"en\"] {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Main Editorial Container */\n  .dispatch-wrapper {\n    flex: 1;\n    width: 100%;\n    max-width: 780px;\n    margin: 0 auto;\n    padding: 3.5rem 1.5rem 4.5rem;\n  }\n\n  /* Print-inspired Newspaper Brief Frame */\n  .brief-card {\n    background: var(--paper);\n    border-top: 3px double var(--ink);\n    border-bottom: 1px solid var(--ink);\n    padding: 2.25rem 0 2.5rem;\n  }\n\n  /* Meta Dateline Bar */\n  .meta-bar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.5rem;\n    margin-bottom: 1.25rem;\n    padding-bottom: 0.75rem;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .dateline-loc {\n    display: inline-flex;\n    align-items: center;\n    gap: 0.5rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.78rem;\n    font-weight: 700;\n    letter-spacing: 0.12em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n\n  .dateline-loc::before {\n    content: \"\";\n    display: inline-block;\n    width: 7px;\n    height: 7px;\n    background-color: var(--accent);\n    border-radius: 50%;\n  }\n\n  .edition-code {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 0.72rem;\n    color: var(--muted);\n    letter-spacing: 0.04em;\n  }\n\n  /* Headline */\n  .headline {\n    font-family: 'Noto Serif SC', 'Playfair Display', Georgia, serif;\n    font-weight: 700;\n    font-size: clamp(1.85rem, 4vw, 2.55rem);\n    line-height: 1.25;\n    color: var(--ink);\n    margin-bottom: 1rem;\n    letter-spacing: -0.01em;\n  }\n\n  :host([lang=\"en\"]) .headline {\n    font-family: 'Playfair Display', Georgia, serif;\n    font-weight: 800;\n    line-height: 1.15;\n  }\n\n  /* Byline & Timestamp */\n  .byline-row {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 0.75rem;\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.82rem;\n    color: var(--muted);\n    margin-bottom: 2rem;\n    padding-bottom: 1.25rem;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .byline-source {\n    font-weight: 600;\n    color: var(--ink);\n  }\n\n  .byline-date {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.76rem;\n    color: var(--muted);\n  }\n\n  /* Two-Column Asymmetric Dispatch Grid */\n  .dispatch-grid {\n    display: grid;\n    grid-template-columns: 1fr 220px;\n    gap: 2.5rem;\n    align-items: start;\n  }\n\n  .prose-column {\n    min-width: 0;\n  }\n\n  .prose-p {\n    font-size: 1.125rem;\n    line-height: 1.9;\n    color: var(--body);\n    margin-bottom: 1.5rem;\n    text-align: left;\n  }\n\n  .prose-p:last-child {\n    margin-bottom: 0;\n  }\n\n  /* Lead paragraph treatment (no ::first-letter on Chinese text) */\n  .prose-p.lead-p {\n    font-size: 1.2rem;\n    font-weight: 600;\n    color: var(--ink);\n    border-left: 3px solid var(--accent);\n    padding-left: 1.1rem;\n    margin-bottom: 1.65rem;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    font-size: 1.12rem;\n    line-height: 1.8;\n  }\n\n  :host([lang=\"en\"]) .prose-p.lead-p {\n    font-size: 1.22rem;\n    font-weight: 400;\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 62%, rgba(184, 93, 25, 0.18) 62%);\n    color: inherit;\n    padding: 0 2px;\n    font-weight: 600;\n  }\n\n  /* Compact Dossier Rail */\n  .dossier-rail {\n    background: var(--paper-card);\n    border: 1px solid var(--line);\n    border-top: 2px solid var(--ink);\n    padding: 1.15rem 1.1rem;\n  }\n\n  .dossier-title {\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.7rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--muted);\n    padding-bottom: 0.6rem;\n    margin-bottom: 0.85rem;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .dossier-list {\n    list-style: none;\n    display: flex;\n    flex-direction: column;\n    gap: 0.85rem;\n  }\n\n  .dossier-item {\n    display: flex;\n    flex-direction: column;\n    gap: 0.18rem;\n  }\n\n  .dossier-key {\n    font-family: 'Inter', 'Noto Sans SC', sans-serif;\n    font-size: 0.7rem;\n    font-weight: 600;\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    color: var(--muted);\n  }\n\n  .dossier-val {\n    font-family: 'Noto Serif SC', 'Lora', serif;\n    font-size: 0.88rem;\n    font-weight: 600;\n    color: var(--ink);\n    line-height: 1.4;\n  }\n\n  .dossier-val.mono {\n    font-family: 'JetBrains Mono', monospace;\n    font-size: 0.82rem;\n    color: var(--accent);\n  }\n\n  /* Footer Colophon */\n  .colophon {\n    max-width: 780px;\n    width: 100%;\n    margin: 0 auto;\n    padding: 0 1.5rem 3rem;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n    gap: 0.75rem;\n    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;\n    font-size: 0.72rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow */\n  @media (max-width: 680px) {\n    .dispatch-wrapper {\n      padding: 2rem 1.15rem 3rem;\n    }\n\n    .dispatch-grid {\n      grid-template-columns: 1fr;\n      gap: 1.75rem;\n    }\n\n    .masthead-inner {\n      padding: 0.65rem 1.15rem;\n    }\n\n    .section-badge {\n      display: none;\n    }\n\n    .prose-p.lead-p {\n      font-size: 1.12rem;\n      padding-left: 0.85rem;\n    }\n\n    .prose-p {\n      font-size: 1.05rem;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <div class=\"brand-cluster\">\n      <span class=\"wsj-logo\">The Wall Street Journal</span>\n      <span class=\"section-badge\">\n        <span class=\"lang-cn\">美国新闻 · 简讯</span>\n        <span class=\"lang-en\">U.S. News · Dispatch</span>\n      </span>\n    </div>\n    <div class=\"lang-switch\" role=\"group\" aria-label=\"Language switcher\">\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"zh-CN\" onclick=\"setLang('zh-CN')\">中文</button>\n      <button type=\"button\" class=\"lang-btn\" data-lang=\"en\" onclick=\"setLang('en')\">EN</button>\n    </div>\n  </div>\n</header>\n\n\n<main class=\"dispatch-wrapper\">\n  <article class=\"brief-card\">\n    <div class=\"meta-bar\">\n      <div class=\"dateline-loc\" data-ref=\"dek\"><span class=\"lang-cn\">佛罗里达州</span><span class=\"lang-en\">FLORIDA</span></div>\n      <div class=\"edition-code\">E1-014 · PAGE A2</div>\n    </div>\n\n    <h1 class=\"headline\" data-ref=\"title\"><span class=\"lang-cn\">委内瑞拉涉嫌行贿者被捕</span><span class=\"lang-en\">Venezuelan Bribe Suspect Arrested</span></h1>\n\n    <div class=\"byline-row\">\n      <span class=\"byline-source\">—Associated Press</span>\n      <time class=\"byline-date\" datetime=\"2026-10-12\">\n        <span class=\"lang-cn\">2026年10月12日</span>\n        <span class=\"lang-en\">October 12, 2026</span>\n      </time>\n    </div>\n\n    <div class=\"dispatch-grid\">\n      <div class=\"prose-column\">\n        <p class=\"prose-p lead-p\" data-ref=\"p1\" data-hl=\"已被拘留 | taken into custody\"><span class=\"lang-cn\">一名在美国被通缉的商人，他被指控向委内瑞拉高级官员行贿，以换取在委内瑞拉获得有利可图的政府合同，<mark class=\"ed-hl\">已被拘留</mark>。</span><span class=\"lang-en\">A businessman wanted in the U.S. for allegedly paying bribes to top Venezuelan officials in exchange for lucrative state contracts in Venezuela has been <mark class=\"ed-hl\">taken into custody</mark>.</span></p>\n        <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"阿尔瓦罗·普利多 | Alvaro Pulido | 2019年和2021年 | 2019 and again in 2021 | 阿莱克斯·萨博 | Alex Saab\"><span class=\"lang-cn\"><mark class=\"ed-hl\">阿尔瓦罗·普利多</mark>于<mark class=\"ed-hl\">2019年和2021年</mark>在迈阿密联邦法院被起诉，这是对他的长期商业伙伴<mark class=\"ed-hl\">阿莱克斯·萨博</mark>的调查的一部分。阿莱克斯·萨博曾是现已被罢免的总统尼古拉斯·马杜罗的盟友。</span><span class=\"lang-en\"><mark class=\"ed-hl\">Alvaro Pulido</mark> was indicted in Miami federal court in <mark class=\"ed-hl\">2019 and again in 2021</mark> as part of an investigation into his longtime business partner, <mark class=\"ed-hl\">Alex Saab</mark>, a onetime ally of ousted President Nicolás Maduro.</span></p>\n      </div>\n\n      <aside class=\"dossier-rail\" aria-label=\"Case Dossier\">\n        <div class=\"dossier-title\">\n          <span class=\"lang-cn\">案件档案 · 速览</span>\n          <span class=\"lang-en\">Case Dossier · At a Glance</span>\n        </div>\n        <ul class=\"dossier-list\">\n          <li class=\"dossier-item\">\n            <span class=\"dossier-key\">\n              <span class=\"lang-cn\">涉案当事人</span>\n              <span class=\"lang-en\">Defendant</span>\n            </span>\n            <span class=\"dossier-val\">\n              <span class=\"lang-cn\">阿尔瓦罗·普利多</span>\n              <span class=\"lang-en\">Alvaro Pulido</span>\n            </span>\n          </li>\n          <li class=\"dossier-item\">\n            <span class=\"dossier-key\">\n              <span class=\"lang-cn\">管辖法院</span>\n              <span class=\"lang-en\">Jurisdiction</span>\n            </span>\n            <span class=\"dossier-val\">\n              <span class=\"lang-cn\">迈阿密联邦法院</span>\n              <span class=\"lang-en\">Miami Federal Court</span>\n            </span>\n          </li>\n          <li class=\"dossier-item\">\n            <span class=\"dossier-key\">\n              <span class=\"lang-cn\">起诉年份</span>\n              <span class=\"lang-en\">Indictments</span>\n            </span>\n            <span class=\"dossier-val mono\">2019 · 2021</span>\n          </li>\n          <li class=\"dossier-item\">\n            <span class=\"dossier-key\">\n              <span class=\"lang-cn\">关联调查对象</span>\n              <span class=\"lang-en\">Linked Probe</span>\n            </span>\n            <span class=\"dossier-val\">\n              <span class=\"lang-cn\">阿莱克斯·萨博（马杜罗前盟友）</span>\n              <span class=\"lang-en\">Alex Saab (Onetime Maduro Ally)</span>\n            </span>\n          </li>\n        </ul>\n      </aside>\n    </div>\n  </article>\n</main>\n\n\n<footer class=\"colophon\">\n  <span>WSJ 深读 · EDITORIAL RENAISSANCE</span>\n  <span>\n    <span class=\"lang-cn\">新闻简报 · 原文双语对照</span>\n    <span class=\"lang-en\">U.S. News Brief · Bilingual Verbatim Edition</span>\n  </span>\n</footer>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E1-014",
+        "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+        "exact_match_cn": "2/2",
+        "exact_match_en": "2/2",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 2,
+        "observed_narrative_elements": 4,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 0,
+        "derived_items": [],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "已被拘留"
+            ],
+            "applied_en": [
+              "taken into custody"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "2019年和2021年",
+              "阿尔瓦罗·普利多",
+              "阿莱克斯·萨博"
+            ],
+            "applied_en": [
+              "2019 and again in 2021",
+              "Alvaro Pulido",
+              "Alex Saab"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 0,
+        "ai_editorial_items": []
+      },
+      "svg_diagnostics": [],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

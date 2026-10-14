@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美国人的储蓄助燃私人信贷 · Direction B (Literary Long-form)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fbf9f5;
+      --ink: #111111;
+      --body: #222220;
+      --muted: #66635d;
+      --faint: #a29e95;
+      --line: #e7e3d8;
+      --accent: #8b3a1a;
+      --font-display: "Playfair Display", "Noto Serif SC", serif;
+      --font-body-cn: "Noto Serif SC", "Songti SC", serif;
+      --font-body-en: "Lora", Georgia, serif;
+      --font-sans: "Inter", "Noto Sans SC", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--body);
+      font-family: var(--font-body-cn);
+      line-height: 1.95;
+      -webkit-font-smoothing: antialiased;
+    }
+    .reading-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 140px 24px;
+    }
+    .header-block {
+      text-align: center;
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .headline {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.5vw, 48px);
+      font-weight: 800;
+      line-height: 1.22;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+    .dek {
+      font-family: var(--font-body-cn);
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 28px;
+      text-wrap: balance;
+    }
+    .byline {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--faint);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+    .byline strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .prose {
+      font-size: 19px;
+      line-height: 1.95;
+      color: var(--body);
+      margin-bottom: 1.5em;
+      text-align: justify;
+      text-justify: inter-ideograph;
+    }
+    .lead-drop {
+      font-size: 22.5px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin-bottom: 1.8em;
+    }
+    .chapter-break {
+      text-align: center;
+      margin: 56px 0 44px 0;
+      position: relative;
+    }
+    .chapter-break::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--line);
+      z-index: 1;
+    }
+    .chapter-mark {
+      display: inline-block;
+      background: var(--paper);
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .literary-quote {
+      margin: 44px 0;
+      padding: 0 32px;
+      border-left: 2px solid var(--accent);
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .literary-quote-attrib {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: 0.05em;
+    }
+    .flow-compare {
+      margin: 40px 0;
+      background: #f4f0e6;
+      padding: 24px 28px;
+      border-radius: 2px;
+    }
+    .flow-title {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+    .flow-card {
+      background: #fff;
+      padding: 14px 10px;
+      border: 1px solid var(--line);
+    }
+    .flow-metric {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .flow-metric.highlight { color: var(--accent); }
+    .flow-label {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .conclusion-ornament {
+      text-align: center;
+      margin: 64px 0 20px 0;
+      color: var(--faint);
+      font-size: 18px;
+      letter-spacing: 0.3em;
+    }
+    .top-controls {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 32px;
+    }
+    .lang-pill {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .lang-pill button {
+      border: none;
+      background: none;
+      padding: 4px 14px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .lang-pill button.active {
+      background: var(--ink);
+      color: #fff;
+    }
+    html[lang="zh-CN"] .lang-en { display: none !important; }
+    html[lang="en"] .lang-cn { display: none !important; }
+    html[lang="en"] body { font-family: var(--font-body-en); }
+    html[lang="en"] .dek { font-family: var(--font-body-en); }
+  </style>
+</head>
+<body>
+  <div class="reading-wrap">
+    <div class="top-controls">
+      <div class="lang-pill">
+        <button id="btn-cn" class="active" onclick="setLang('zh-CN')">中文</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <header class="header-block">
+      <div class="eyebrow">
+        <span class="lang-cn">华尔街日报 · 深度调查特写</span>
+        <span class="lang-en">The Wall Street Journal · Deep Read Feature</span>
+      </div>
+      <h1 class="headline">
+        <span class="lang-cn">美国人的储蓄助燃私人信贷</span>
+        <span class="lang-en">Americans&#x27; Savings Help Fuel Private Credit</span>
+      </h1>
+      <p class="dek">
+        <span class="lang-cn">并推动了私募机构向风险企业放贷业务的增长</span>
+        <span class="lang-en">and helped power the rise of their private lending to risky companies</span>
+      </p>
+      <div class="byline">
+        <span>By <strong>Heather Gillers</strong></span>
+        <span>·</span>
+        <span>October 12, 2026</span>
+      </div>
+    </header>
+    <main>
+      <p class="prose lead-drop">
+        <span class="lang-cn">当萨布丽娜·埃利奥特继承了一些钱时，她的女婿帮助她投资了 4 万美元，购买了一种产品，该产品承诺在没有损失风险的情况下，让她的投资与股市收益挂钩。</span>
+        <span class="lang-en">When Sabrina Elliott inherited some money, her son-in-law helped her invest $40,000 in a product that dangled the prospect of stock-market gains with no risk of loss.</span>
+      </p>
+      <p class="prose"><span class="lang-cn">作为回报，她需要将资金锁定 12 年，该产品承诺收益与市场表现挂钩。但有一个限制：提供该产品的公司英杰华保险，可能会定期降低埃利奥特获得的股市收益比例。</span><span class="lang-en">In exchange for locking up her money for 12 years, it promised returns tied to the market&#x27;s performance. One catch: The company behind the product, Aviva, could periodically lower the portion of market gains Elliott received.</span></p>
+      <p class="prose"><span class="lang-cn">在英杰华保险被阿波罗全球管理公司支持的保险公司 Athene 收购后，这种情况发生了两次。到 2023 年底该保单到期时，她的年化收益率为 3.7%。</span><span class="lang-en">That happened twice after Aviva was purchased by Athene, an insurer backed by private-asset giant Apollo Global Management. By the time the policy ended in late 2023, her annualized return had come to 3.7%.</span></p>
+      <div class="literary-quote">
+        <span class="lang-cn">“这是指数型年金的一个缺点。保险公司可以每年或每两年更改从特定指数中获得的收益金额。”</span>
+        <span class="lang-en">“That's one of the downfalls of the indexed annuities. Insurance companies can change the amount that's received from the particular index every year, every two years.”</span>
+        <div class="literary-quote-attrib">
+          <span class="lang-cn">— 小卡洛斯·迪亚斯 · 佛罗里达州奥兰多市理财顾问</span>
+          <span class="lang-en">— Carlos Dias Jr., Financial Adviser, Orlando, Fla.</span>
+        </div>
+      </div>
+      <div class="chapter-break"><span class="chapter-mark">§ II</span></div>
+      <p class="prose"><span class="lang-cn">华尔街巨头，如阿波罗和博枫，现在才开始寻找方法，以利用 401(k) 退休储蓄计划中庞大的资金，并将他们的另类投资作为人们增加财富的另一种方式进行推广。</span><span class="lang-en">Wall Street behemoths like Apollo and Brookfield are just now starting to find ways to tap in to the vast sums of money in 401(k) accounts, pitching their alternative investments as another way for people to grow their nest eggs.</span></p>
+      <p class="prose"><span class="lang-cn">但私人资产管理公司已经通过指数型年金，吸走了美国家庭的储蓄，而指数型年金在过去十年中越来越受欢迎。</span><span class="lang-en">But private-asset managers have already been vacuuming up the savings of American households through indexed annuities, which have surged in popularity over the past decade</span></p>
+      <p class="prose"><span class="lang-cn">特拉华人寿最近因受到负面评价，该公司是一家由道奇队老板马克·沃尔特控制的保险公司，该公司披露，由于未能报告其向其拥有的其他实体提供的贷款，该公司正在接受联邦调查。</span><span class="lang-en">The annuity industry recently got a black mark after Delaware Life, an insurer controlled by Dodgers owner Mark Walter, disclosed it was under federal investigation for failing to report loans to other entities he owned.</span></p>
+      <p class="prose"><span class="lang-cn">指数型年金旨在吸引那些可能拥有固定收入，且风险承受能力较低，但仍然希望获得一定程度的股市收益的老年人。人们将价值 5 万美元或 10 万美元的储蓄投入其中，期限约为十年。保险公司保证他们的投资收益永远不会低于零，并且有可能获得比定期存款或储蓄账户更高的收益。</span><span class="lang-en">Indexed annuities are meant to appeal to older people who may be on fixed incomes and have little appetite for risk, but still want some exposure to stock-market gains. People turn over $50,000 or $100,000 worth of savings for a decade or so. Insurers guarantee that their investment return will never fall below zero, with the potential for better returns than a CD or savings account.</span></p>
+      <p class="prose"><span class="lang-cn">具体而言，个人的资金增长多少，取决于保险公司在保险期间可以更改的条款，例如可以获得市场收益的存款比例、收益上限以及从收益中扣除的任何差额。</span><span class="lang-en">Exactly how much a person&#x27;s money grows is based on terms the insurer can change during the life of policy, such as the share of the deposit that can earn market returns, any cap on returns and any spread subtracted from those returns.</span></p>
+      <div class="chapter-break"><span class="chapter-mark">§ III</span></div>
+      <p class="prose"><span class="lang-cn">在埃利奥特购买保险的第一年，她的资金有60%的收益与标准普尔500指数挂钩，扣除2.9个百分点的差额。在保险的第七年，Athene将这一比例降低到55%，然后在第11年降低到45%。剩余的资金以1%的固定利率增长。</span><span class="lang-en">In the first year of Elliott&#x27;s policy, 60% of her money earned returns tied to the S&amp;P 500, minus a 2.9-percentage-point spread. In the policy&#x27;s seventh year, Athene lowered that share to 55%, then to 45% in the 11th year. The rest of the money grew at a fixed rate of 1%.</span></p>
+      <p class="prose"><span class="lang-cn">69岁的埃利奥特是佛罗里达州立大学系统的一名营养学教授。她购买了附加险，可以选择在她的整个生命周期内或在她去世后将资金分配给她的继承人。这使她的年收益减少了约2个百分点。</span><span class="lang-en">Elliott, a 69-year-old professor of nutrition in the Florida university system, had paid for add-ons that let her choose to parcel out payments over her lifetime or to her heirs. That reduced her annual return by about 2 percentage points.</span></p>
+      <p class="prose"><span class="lang-cn">她在12年保险期内获得的年化收益率为3.7%，高于她若投资美国国债本可获得的1.9%。但与标准普尔500指数的年化收益率13%相比，这个收益率显得微不足道。</span><span class="lang-en">The 3.7% annualized rate she earned over the 12-year life of her annuity beat the 1.9% she would have gotten from Treasurys. But it paled next to the annualized return of 13% on the S&amp;P 500.</span></p>
+      <div class="flow-compare">
+        <div class="flow-title">
+          <span class="lang-cn">十二年同期投资回报悬殊</span>
+          <span class="lang-en">12-Year Performance Asymmetry</span>
+        </div>
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="flow-metric">13.0%</div>
+            <div class="flow-label">
+              <span class="lang-cn">标普 500 指数</span>
+              <span class="lang-en">S&P 500 Index</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-metric highlight">3.7%</div>
+            <div class="flow-label">
+              <span class="lang-cn">埃利奥特实际年化</span>
+              <span class="lang-en">Elliott's Actual</span>
+            </div>
+          </div>
+          <div class="flow-card">
+            <div class="flow-metric">1.9%</div>
+            <div class="flow-label">
+              <span class="lang-cn">同期美国国债</span>
+              <span class="lang-en">US Treasurys</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="prose"><span class="lang-cn">Athene在2022年被阿波罗完全收购。该公司在一份声明中表示，该保险“表现出色，收益远高于类似的安全收益替代品，保证100%的本金保护，并提供可选的额外死亡赔偿和保证终身收入。”</span><span class="lang-en">Athene, which Apollo fully took over in 2022, said in a statement that the annuity “performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”</span></p>
+      <p class="prose"><span class="lang-cn">该公司表示，“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有高度误导性。”</span><span class="lang-en">The company said “it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”</span></p>
+      <p class="prose"><span class="lang-cn">与股市挂钩的产品通常由美国证券交易委员会监管，销售这些产品通常需要证券许可证。但指数型年金也可以由州保险代理人销售，这些代理人不受关于披露利益冲突或以客户的最佳利益行事的相同规则的约束。指数型年金通常是这些代理人可以销售的最有利可图的产品之一。</span><span class="lang-en">Products tied to the stock market are typically overseen by the Securities and Exchange Commission, and selling them often requires a securities license. But indexed annuities can also be sold by state insurance agents, who aren&#x27;t subject to the same rules on disclosing conflicts of interest or acting in a client&#x27;s best interest. Indexed annuities are often among the most lucrative products these agents can sell.</span></p>
+      <p class="prose"><span class="lang-cn">例如，美国公平人寿公司为某些10年期指数型年金的保单持有人支付的佣金为保单存款的5%至7%。相比之下，博枫旗下的保险公司销售的简单固定利率年金的佣金约为3%。</span><span class="lang-en">American Equity, for instance, pays agents a commission of 5% to 7% of a policyholder&#x27;s deposit on some 10-year indexed annuities. That is compared with around 3% for simpler annuities with fixed rates sold by the Brookfield-owned insurer.</span></p>
+      <div class="chapter-break"><span class="chapter-mark">§ IV</span></div>
+      <p class="prose"><span class="lang-cn">保险公司表示，较高的佣金反映了这些产品的复杂性，需要更详细的解释。尽管如此，消费者权益倡导者表示，指数型年金可能成为具有误导性的销售宣传的诱饵。</span><span class="lang-en">Insurers say the higher commissions reflect the complexity of the products, which require greater explanation. Still, consumer advocates say indexed annuities can be a magnet for misleading sales pitches.</span></p>
+      <p class="prose"><span class="lang-cn">例如，特拉华人寿公司销售的一种指数型年金的宣传材料显示，10万美元的保费在未来21年内增长到270万美元。但这种名为“动量增长”的年金与一个去年才成立的股票和加密货币指数挂钩。宣传的收益基于过去15年的假设数据——这一时期包括11年股市实现两位数增长。</span><span class="lang-en">Educational materials for an indexed annuity sold by Delaware Life, for instance, show a premium of $100,000 growing to $2.7 million over the next 21 years. But the “Momentum Growth” annuity is tied to a stock-and-crypto index established just last year. The returns advertised draw on hypothetical data based on the past 15 years—a period that included 11 years with double-digit stock-market gains.</span></p>
+      <p class="prose"><span class="lang-cn">在金融危机之后，私人资产管理公司开始收购保险公司，以获取其庞大的保单持有人保费。指数型年金尤其具有吸引力。支付时间表相对可预测，而且这些保单通常持续约十年，而固定利率年金的期限约为三到五年。这使资产管理公司能够灵活地将资金投入到风险更高、流动性较差的私人信贷投资中，例如担保贷款凭证或资产支持证券。</span><span class="lang-en">After the financial crisis, private-asset managers began buying up insurers to access their huge pools of policyholder premiums. Indexed annuities were particularly attractive. Payouts follow a relatively predictable timetable, and the policies typically last about a decade, compared with about three to five years for fixed-rate annuities. That gives asset managers flexibility to put the money into riskier, less-liquid private-credit investments like collateralized loan obligations or asset-backed securities.</span></p>
+      <div class="literary-quote" style="border-left-color: var(--ink);">
+        <span class="lang-cn">“这就是私募股权公司喜欢这种方式的原因，因为它们可以改变与消费者的协议。”</span>
+        <span class="lang-en">“That's why private equity likes this, because they can change the deal on the consumer.”</span>
+        <div class="literary-quote-attrib">
+          <span class="lang-cn">— 拉里·里布卡 · Valmark金融集团首席执行官</span>
+          <span class="lang-en">— Larry Rybka, Chief Executive, Valmark Financial Group</span>
+        </div>
+      </div>
+      <div class="conclusion-ornament">♦ ♦ ♦</div>
+    </main>
+  </div>
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.getElementById('btn-cn').classList.toggle('active', lang === 'zh-CN');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+</body>
+</html>

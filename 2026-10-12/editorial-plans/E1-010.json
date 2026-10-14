@@ -1,5 +1,6 @@
 {
   "article_id": "E1-010",
+  "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
   "version": "reboot-1",
   "created": "2026-10-13",
   "created_by": "Principal Engineer reboot — independent editorial judgment",
@@ -104,6 +105,11 @@
           "2027 年中 10 年期收益率",
           "2027 年底 10 年期收益率"
         ],
+        "dim_labels_en": [
+          "10-year yield, end of 2026",
+          "10-year yield, mid-2027",
+          "10-year yield, end of 2027"
+        ],
         "pairs": [
           [
             {"cn": "10 月调查：5.1%", "en": "October survey: 5.1%"},
@@ -132,22 +138,13 @@
       "reason": "财政段突然抛出机构缩写；边注解释身份，不复述收益率数字。"
     }
   ],
-  "component_plan": [
-    {
-      "component": "quote",
-      "slot": {"at": "after_para", "para": 7},
-      "reason": "基本面‘重大变化’是成因段的判断句；只拔直接引语，避免与 L03 数字重复。",
-      "data": {
-        "quote": {
-          "text_cn": "这标志着支撑固定收益市场和经济的基本面发生了重大变化。",
-          "text_en": "It has been a sea change in the fundamentals underlying the fixed-income market and the economy.",
-          "attr_cn": "艾伦·西奈 · Decision Economics 总裁",
-          "attr_en": "Allen Sinai, Decision Economics"
-        }
-      }
-    }
-  ],
+  "component_plan": [],
   "rejected_opportunities": [
+    {
+      "pattern_id": "quote",
+      "action": "decline",
+      "reason_against": "p7 已是一段完整、简短的专家直接引语；紧接着再摘录同一句不增加解释。收益率对照承担本篇的主要视觉关系，随后应连续进入成因。"
+    },
     {
       "pattern_id": "key_figures",
       "action": "decline",

@@ -1,0 +1,499 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E2-010",
+  "final_id": "008",
+  "issue_date": "2026-10-12",
+  "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A1",
+    "section": "Personal Journal",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "Personal Journal · A1 版",
+    "kicker_en": "WSJ · PERSONAL JOURNAL · A1",
+    "title_cn": "“周日恐慌”真实存在——而且愈演愈烈",
+    "title_en": "The Sunday Scaries Are Real—And They're Getting Worse",
+    "dek_cn": "随着工作量增加、职业保障减弱，人们越来越难遏制周一前的恐惧螺旋",
+    "dek_en": "As workloads mount, people struggle to tame the pre-Monday dread spiral",
+    "byline": "Ray A. Smith",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "吉尔·戴维斯的工作周正式从周一早上开始。但实际上，从每个周日下午开始，她就会感到焦虑，各种不安的想法开始涌上心头，就像一个定时的闹钟。",
+      "text_en": "Jill Davis's official work week starts Monday morning. Unofficially, it kicks off every Sunday afternoon when, like clockwork, anxious thoughts begin seeping into her brain.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "吉尔·戴维斯的工作周正式从周一早上开始。",
+          "text_en": "Jill Davis's official work week starts Monday morning."
+        },
+        {
+          "id": "p1.s2",
+          "text_cn": "但实际上，从每个周日下午开始，她就会感到焦虑，各种不安的想法开始涌上心头，就像一个定时的闹钟。",
+          "text_en": "Unofficially, it kicks off every Sunday afternoon when, like clockwork, anxious thoughts begin seeping into her brain."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“我是否已经做好充分的准备，并且有条不紊？我是否已经为这次会议做好了准备？”戴维斯说道。她是一家非营利组织的首席发展官。为了驱散这种焦虑，她经常开始工作，写邮件并将其保存为草稿，这样就不会打扰她的同事。很可能，她的同事们也已经开始为工作感到焦虑。",
+      "text_en": "\"Am I organized and ready enough? Am I prepared for this meeting?\" says Davis, the chief development officer at a nonprofit. To bat the angst away, she'll often launch into work, writing emails and saving them as drafts so she doesn't disturb her colleagues. Chances are they're already fretting about work, too.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "“我是否已经做好充分的准备，并且有条不紊？我是否已经为这次会议做好了准备？”戴维斯说道。她是一家非营利组织的首席发展官。为了驱散这种焦虑，她经常开始工作，写邮件并将其保存为草稿，这样就不会打扰她的同事。很可能，她的同事们也已经开始为工作感到焦虑。",
+          "text_en": "\"Am I organized and ready enough? Am I prepared for this meeting?\" says Davis, the chief development officer at a nonprofit. To bat the angst away, she'll often launch into work, writing emails and saving them as drafts so she doesn't disturb her colleagues. Chances are they're already fretting about work, too."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“周日恐慌”已经成为美国人周末生活中不可或缺的一部分，以至于《韦氏词典》上个月将其添加到在线词典中。它的定义是：一种焦虑或悲伤的感觉，当周末即将结束时，人们可能会感到这种感觉，原因可能是工作/学习周即将开始，或者没有更多的时间进行有趣的或放松的周末活动，或者两者兼而有之。",
+      "text_en": "\"Sunday scaries\" have become such a fixture of Americans' weekends that Merriam-Webster added the term to its online dictionary last month. Its definition: a feeling of anxiety or sadness one may feel when the weekend is almost over, either because the work/school week is about to begin, there is no more time for fun or relaxing weekend activities, or both.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "“周日恐慌”已经成为美国人周末生活中不可或缺的一部分，以至于《韦氏词典》上个月将其添加到在线词典中。",
+          "text_en": "\"Sunday scaries\" have become such a fixture of Americans' weekends that Merriam-Webster added the term to its online dictionary last month."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "它的定义是：一种焦虑或悲伤的感觉，当周末即将结束时，人们可能会感到这种感觉，原因可能是工作/学习周即将开始，或者没有更多的时间进行有趣的或放松的周末活动，或者两者兼而有之。",
+          "text_en": "Its definition: a feeling of anxiety or sadness one may feel when the weekend is almost over, either because the work/school week is about to begin, there is no more time for fun or relaxing weekend activities, or both."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这种对周一的恐惧并非一种新的现象，但有理由相信，随着工作量的增加和工作保障的减少，这种恐惧正在加剧。根据招聘平台FlexJobs对2100人进行的10月份调查，超过一半的美国工人表示他们会经历“周日恐慌”，而最常见的诱因是未完成的任务清单。",
+      "text_en": "That pre-Monday dread isn't a new phenomenon, but there's reason to believe it's intensifying as workloads mount and job security ebbs. More than half of U.S. workers say they experience the Sunday scaries, according to an October survey of 2,100 people by job platform FlexJobs. Having a list of unfinished tasks hanging over them was the most commonly cited cause.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "这种对周一的恐惧并非一种新的现象，但有理由相信，随着工作量的增加和工作保障的减少，这种恐惧正在加剧。根据招聘平台FlexJobs对2100人进行的10月份调查，超过一半的美国工人表示他们会经历“周日恐慌”，而最常见的诱因是未完成的任务清单。",
+          "text_en": "That pre-Monday dread isn't a new phenomenon, but there's reason to believe it's intensifying as workloads mount and job security ebbs. More than half of U.S. workers say they experience the Sunday scaries, according to an October survey of 2,100 people by job platform FlexJobs. Having a list of unfinished tasks hanging over them was the most commonly cited cause."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "很快，这种焦虑感就会蔓延到周六，使周六也变成了一个令人感到焦虑的日子，因为人们会开始为周日将要感受到的焦虑而感到不安。",
+      "text_en": "It's only a matter of time before the scaries ruin Saturday too, turning it into a day to dread the dread we'll feel on Sunday.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "很快，这种焦虑感就会蔓延到周六，使周六也变成了一个令人感到焦虑的日子，因为人们会开始为周日将要感受到的焦虑而感到不安。",
+          "text_en": "It's only a matter of time before the scaries ruin Saturday too, turning it into a day to dread the dread we'll feel on Sunday."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "对于戴维斯来说，这种焦虑感已经严重影响了她的周日，以至于她买了一个30美元的沙漏来控制这种情绪。沙子流完需要一个小时——这是她现在允许自己工作或甚至思考工作的时间上限。在一个最近的周日，“当沙子流完时，我站起来，离开了房间，去了另一个房间，”她说。",
+      "text_en": "For Davis, the jitters so consumed her Sundays that she bought a $30 hourglass to rein them in. It takes an hour for the sand to run through it—the maximum time she now lets herself work, or even think about work. On a recent Sunday, “when it ran out, I got up and I left and went in the other room,” she said.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "对于戴维斯来说，这种焦虑感已经严重影响了她的周日，以至于她买了一个30美元的沙漏来控制这种情绪。",
+          "text_en": "For Davis, the jitters so consumed her Sundays that she bought a $30 hourglass to rein them in."
+        },
+        {
+          "id": "p6.s2",
+          "text_cn": "沙子流完需要一个小时——这是她现在允许自己工作或甚至思考工作的时间上限。",
+          "text_en": "It takes an hour for the sand to run through it—the maximum time she now lets herself work, or even think about work."
+        },
+        {
+          "id": "p6.s3",
+          "text_cn": "在一个最近的周日，“当沙子流完时，我站起来，离开了房间，去了另一个房间，”她说。",
+          "text_en": "On a recent Sunday, “when it ran out, I got up and I left and went in the other room,” she said."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在不产生负面副作用的情况下，有效地缓解“周日恐慌”是一项微妙的平衡艺术。它需要人们保持一定的忙碌程度，以减轻压力，但不能是那种会拖累所有人的忙碌。看来我们在这方面做得越来越差。",
+      "text_en": "Effectively treating the Sunday scaries without causing negative side effects is a delicate balancing act. It requires being busy enough to ease the stress but not the kind of busy that drags everyone down. It appears we're getting worse at that.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "在不产生负面副作用的情况下，有效地缓解“周日恐慌”是一项微妙的平衡艺术。",
+          "text_en": "Effectively treating the Sunday scaries without causing negative side effects is a delicate balancing act."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "它需要人们保持一定的忙碌程度，以减轻压力，但不能是那种会拖累所有人的忙碌。",
+          "text_en": "It requires being busy enough to ease the stress but not the kind of busy that drags everyone down."
+        },
+        {
+          "id": "p7.s3",
+          "text_cn": "看来我们在这方面做得越来越差。",
+          "text_en": "It appears we're getting worse at that."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "根据劳动力分析公司ActivTrak为《华尔街日报》提供的数据，去年员工用于工作消息和聊天的时间占周日的约12%，而2023年为6.6%。",
+      "text_en": "The share of Sundays that employees devoted to work messaging and chats was about 12% last year, compared with 6.6% in 2023, according to data compiled for The Wall Street Journal by workforce analytics firm ActivTrak.",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "根据劳动力分析公司ActivTrak为《华尔街日报》提供的数据，去年员工用于工作消息和聊天的时间占周日的约12%，而2023年为6.6%。",
+          "text_en": "The share of Sundays that employees devoted to work messaging and chats was about 12% last year, compared with 6.6% in 2023, according to data compiled for The Wall Street Journal by workforce analytics firm ActivTrak."
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "“人们觉得他们必须更加努力地工作，以确保自己不会被解雇，”《Scary Good：发现摆脱周日恐慌的生活》一书的作者、一位高管教练安吉·卡伦说道。她的建议是什么？诚实地问自己，为什么要在周日处理工作。这样做是否能带来积极的回报？“你不必屈服于周日恐慌，”卡伦说。“我们让星期一毁掉了我们的星期天。停止。与其接受这种默认状态，不如活在当下。”",
+      "text_en": "“People feel like they have to toil away harder in order to make sure they don't get fired,” said Angie Callen, an executive coach and author of “Scary Good: Discovering Life Beyond the Sunday Scaries.” Her advice? Ask yourself honestly why you are engaging with work on a Sunday. Will you get a positive return on your time? “You don't have to settle for the Sunday scaries,” said Callen. “We let Mondays ruin our Sundays. Stop. Be present in your life instead of accepting that default.”",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "“人们觉得他们必须更加努力地工作，以确保自己不会被解雇，”《Scary Good：发现摆脱周日恐慌的生活》一书的作者、一位高管教练安吉·卡伦说道。",
+          "text_en": "“People feel like they have to toil away harder in order to make sure they don't get fired,” said Angie Callen, an executive coach and author of “Scary Good: Discovering Life Beyond the Sunday Scaries.”"
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "她的建议是什么？",
+          "text_en": "Her advice?"
+        },
+        {
+          "id": "p9.s3",
+          "text_cn": "诚实地问自己，为什么要在周日处理工作。",
+          "text_en": "Ask yourself honestly why you are engaging with work on a Sunday."
+        },
+        {
+          "id": "p9.s4",
+          "text_cn": "这样做是否能带来积极的回报？",
+          "text_en": "Will you get a positive return on your time?"
+        },
+        {
+          "id": "p9.s5",
+          "text_cn": "“你不必屈服于周日恐慌，”卡伦说。",
+          "text_en": "“You don't have to settle for the Sunday scaries,” said Callen."
+        },
+        {
+          "id": "p9.s6",
+          "text_cn": "“我们让星期一毁掉了我们的星期天。",
+          "text_en": "“We let Mondays ruin our Sundays."
+        },
+        {
+          "id": "p9.s7",
+          "text_cn": "停止。",
+          "text_en": "Stop."
+        },
+        {
+          "id": "p9.s8",
+          "text_cn": "与其接受这种默认状态，不如活在当下。”",
+          "text_en": "Be present in your life instead of accepting that default.”"
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一位在科技行业工作多年的高管乔安娜·约翰斯顿过去会通过早上 6 点起床，挤出一个小时的时间来为星期一做准备，然后在晚上再投入更多时间，以此来对抗她的周日恐慌。当她发送 Slack 和其他消息时，通常是发给同事或回复经理。但她并不总是遵守与下属进行周末沟通的不成文规定。“我确信，在我变得更加敏感，意识到这种行为会造成干扰之前，我也曾对我的直接下属和更广泛的团队这样做，”约翰斯顿说。她于 6 月从公司职位退休，现在担任高管教练。尽管职业生涯发生了转变，她仍然在周日工作。“我想我只是有问题，”她笑着说。",
+      "text_en": "Joanna Johnston, a longtime tech executive, used to combat her Sunday scaries by getting up as early as 6 a.m. to squeeze in an hour of Monday prep work, then putting in more time in the evenings. When she sent Slack and other messages, it was usually to a peer or in response to a manager. But she didn't always adhere to the unwritten rules of weekend communication with subordinates. “I'm sure before I became more sensitive to the intrusion this caused, I did it to my direct reports and broader team as well,” said Johnston, who retired from corporate roles in June and now coaches executives. Despite the career shift, she's still working on Sundays. “I think I just have a problem,” she laughed.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "一位在科技行业工作多年的高管乔安娜·约翰斯顿过去会通过早上 6 点起床，挤出一个小时的时间来为星期一做准备，然后在晚上再投入更多时间，以此来对抗她的周日恐慌。当她发送 Slack 和其他消息时，通常是发给同事或回复经理。但她并不总是遵守与下属进行周末沟通的不成文规定。“我确信，在我变得更加敏感，意识到这种行为会造成干扰之前，我也曾对我的直接下属和更广泛的团队这样做，”约翰斯顿说。她于 6 月从公司职位退休，现在担任高管教练。尽管职业生涯发生了转变，她仍然在周日工作。“我想我只是有问题，”她笑着说。",
+          "text_en": "Joanna Johnston, a longtime tech executive, used to combat her Sunday scaries by getting up as early as 6 a.m. to squeeze in an hour of Monday prep work, then putting in more time in the evenings. When she sent Slack and other messages, it was usually to a peer or in response to a manager. But she didn't always adhere to the unwritten rules of weekend communication with subordinates. “I'm sure before I became more sensitive to the intrusion this caused, I did it to my direct reports and broader team as well,” said Johnston, who retired from corporate roles in June and now coaches executives. Despite the career shift, she's still working on Sundays. “I think I just have a problem,” she laughed."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "几年前，克里斯·凯勒经营自己的营销公司，经常一周工作七天。现在，他担任公司职位，他将自己限制在周日清晨的两个小时内，为新的一周做准备。否则，“我知道情况会迅速失控，”凯勒说，他是信用合作社的营销主管。凯勒说，他通常会利用这段时间，将笔记口述给转录应用程序，为会议做准备。“如果我不把想法和思路表达出来，我就无法享受周末的其他活动，”他说。",
+      "text_en": "Until a few years ago, Chris Keller ran his own marketing agency and often worked seven days a week. Now in a corporate role, he limits himself to two hours on early Sunday mornings to prepare for the week. Otherwise, “I know it could get away from me really quickly,” said Keller, marketing chief at a credit union. Keller said he will typically use the time to dictate notes to a transcription app to prepare for meetings. “If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,” he said.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "几年前，克里斯·凯勒经营自己的营销公司，经常一周工作七天。",
+          "text_en": "Until a few years ago, Chris Keller ran his own marketing agency and often worked seven days a week."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "现在，他担任公司职位，他将自己限制在周日清晨的两个小时内，为新的一周做准备。",
+          "text_en": "Now in a corporate role, he limits himself to two hours on early Sunday mornings to prepare for the week."
+        },
+        {
+          "id": "p11.s3",
+          "text_cn": "否则，“我知道情况会迅速失控，”凯勒说，他是信用合作社的营销主管。",
+          "text_en": "Otherwise, “I know it could get away from me really quickly,” said Keller, marketing chief at a credit union."
+        },
+        {
+          "id": "p11.s4",
+          "text_cn": "凯勒说，他通常会利用这段时间，将笔记口述给转录应用程序，为会议做准备。",
+          "text_en": "Keller said he will typically use the time to dictate notes to a transcription app to prepare for meetings."
+        },
+        {
+          "id": "p11.s5",
+          "text_cn": "“如果我不把想法和思路表达出来，我就无法享受周末的其他活动，”他说。",
+          "text_en": "“If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,” he said."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "精神科医生是否认可这种做法？如果周日做一些工作可以减轻你在周一的焦虑或不知所措的感觉，那么这样做是可以的，但要设定一些限制，克利夫兰诊所行为健康部门的精神科医生基娅-拉伊·普雷维特说。“如果我能快速登录并回复这封电子邮件，那就是我所要做的，”她说。“你必须设定界限，并说：‘我不会回复其他电子邮件。’”",
+      "text_en": "Do psychiatrists approve? If doing some work on Sunday will relieve you of feeling behind or overwhelmed on Monday, it's OK, just set guardrails, said Kia-Rai Prewitt, a psychiatrist with Cleveland Clinic's Behavioral Health. “If I can just log in really quick and respond to this email, that's all I'm going to do,” she said. “You have to set the boundary and say, ‘I'm not going to respond to other emails.’”",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "精神科医生是否认可这种做法？如果周日做一些工作可以减轻你在周一的焦虑或不知所措的感觉，那么这样做是可以的，但要设定一些限制，克利夫兰诊所行为健康部门的精神科医生基娅-拉伊·普雷维特说。“如果我能快速登录并回复这封电子邮件，那就是我所要做的，”她说。“你必须设定界限，并说：‘我不会回复其他电子邮件。’”",
+          "text_en": "Do psychiatrists approve? If doing some work on Sunday will relieve you of feeling behind or overwhelmed on Monday, it's OK, just set guardrails, said Kia-Rai Prewitt, a psychiatrist with Cleveland Clinic's Behavioral Health. “If I can just log in really quick and respond to this email, that's all I'm going to do,” she said. “You have to set the boundary and say, ‘I'm not going to respond to other emails.’”"
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "其他人建议尝试所有方法，以避免完全进行工作。考虑在周五多花一些时间在工作上，“这样你就可以正式完成工作”，或者周一早点到公司，“以免一开局就处于被动”，工业组织心理学家艾米·库珀·哈基姆说。“总有一种方法可以调整这些额外的时间。”",
+      "text_en": "Others recommend exhausting all options to avoid work altogether. Consider spending a little more time at work on Friday “so you can officially be done” or getting to work a little earlier on Monday “so that you're not going to be behind the eight ball,” said Amy Cooper Hakim, an industrial organizational psychologist. “There's always a way to shift those same extra minutes.”",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "其他人建议尝试所有方法，以避免完全进行工作。",
+          "text_en": "Others recommend exhausting all options to avoid work altogether."
+        },
+        {
+          "id": "p13.s2",
+          "text_cn": "考虑在周五多花一些时间在工作上，“这样你就可以正式完成工作”，或者周一早点到公司，“以免一开局就处于被动”，工业组织心理学家艾米·库珀·哈基姆说。",
+          "text_en": "Consider spending a little more time at work on Friday “so you can officially be done” or getting to work a little earlier on Monday “so that you're not going to be behind the eight ball,” said Amy Cooper Hakim, an industrial organizational psychologist."
+        },
+        {
+          "id": "p13.s3",
+          "text_cn": "“总有一种方法可以调整这些额外的时间。”",
+          "text_en": "“There's always a way to shift those same extra minutes.”"
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "如果所有方法都失败了，可以尝试重新定义。吉尔·戴维斯，这位经常在周日下午感到焦虑的人，与一位高管教练合作，帮助她将“周日恐慌”重新定义为“也许是周一”。这个想法是，要以好奇的态度来迎接周一，而不是认为一切都必须在那时完成并达到完美。“我试图减轻那种压力，即一切都必须在周一之前完成，”她说。“我周日晚上睡得更好。”",
+      "text_en": "If all else fails, try a rebrand. Davis, the Sunday afternoon worrier, worked with an executive coach who helped her reimagine the “Sunday scaries” as “Monday maybe.” The idea is to approach Monday with curiosity rather than thinking everything has to be buttoned-up and perfect by then. “I'm trying to release the pressure of what's so special about everything getting done before Monday,” she said. “I sleep better on Sunday nights.”",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "如果所有方法都失败了，可以尝试重新定义。",
+          "text_en": "If all else fails, try a rebrand."
+        },
+        {
+          "id": "p14.s2",
+          "text_cn": "吉尔·戴维斯，这位经常在周日下午感到焦虑的人，与一位高管教练合作，帮助她将“周日恐慌”重新定义为“也许是周一”。",
+          "text_en": "Davis, the Sunday afternoon worrier, worked with an executive coach who helped her reimagine the “Sunday scaries” as “Monday maybe.”"
+        },
+        {
+          "id": "p14.s3",
+          "text_cn": "这个想法是，要以好奇的态度来迎接周一，而不是认为一切都必须在那时完成并达到完美。",
+          "text_en": "The idea is to approach Monday with curiosity rather than thinking everything has to be buttoned-up and perfect by then."
+        },
+        {
+          "id": "p14.s4",
+          "text_cn": "“我试图减轻那种压力，即一切都必须在周一之前完成，”她说。",
+          "text_en": "“I'm trying to release the pressure of what's so special about everything getting done before Monday,” she said."
+        },
+        {
+          "id": "p14.s5",
+          "text_cn": "“我周日晚上睡得更好。”",
+          "text_en": "“I sleep better on Sunday nights.”"
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p2",
+      "quote_cn": "“我是否已经做好充分的准备，并且有条不紊？我是否已经为这次会议做好了准备？”",
+      "quote_en": "“Am I organized and ready enough? Am I prepared for this meeting?”",
+      "speaker_cn": "原文第 2 段直接引述",
+      "role_cn": "Source Block p2",
+      "speaker_en": "Direct Quote (p2)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p6",
+      "quote_cn": "“当沙子流完时，我站起来，离开了房间，去了另一个房间，”",
+      "quote_en": "“when it ran out, I got up and I left and went in the other room,”",
+      "speaker_cn": "原文第 6 段直接引述",
+      "role_cn": "Source Block p6",
+      "speaker_en": "Direct Quote (p6)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q3",
+      "source_block": "p9",
+      "quote_cn": "“我们让星期一毁掉了我们的星期天。停止。与其接受这种默认状态，不如活在当下。”",
+      "quote_en": "“We let Mondays ruin our Sundays. Stop. Be present in your life instead of accepting that default.”",
+      "speaker_cn": "原文第 9 段直接引述",
+      "role_cn": "Source Block p9",
+      "speaker_en": "Direct Quote (p9)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q4",
+      "source_block": "p10",
+      "quote_cn": "“我确信，在我变得更加敏感，意识到这种行为会造成干扰之前，我也曾对我的直接下属和更广泛的团队这样做，”",
+      "quote_en": "“I think I just have a problem,”",
+      "speaker_cn": "原文第 10 段直接引述",
+      "role_cn": "Source Block p10",
+      "speaker_en": "Direct Quote (p10)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q5",
+      "source_block": "p11",
+      "quote_cn": "“如果我不把想法和思路表达出来，我就无法享受周末的其他活动，”",
+      "quote_en": "“If I don't get ideas and thoughts out, I'll not be able to enjoy the other things that I'm supposed to be doing on the weekends,”",
+      "speaker_cn": "原文第 11 段直接引述",
+      "role_cn": "Source Block p11",
+      "speaker_en": "Direct Quote (p11)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p8",
+      "value": "12%",
+      "value_cn": "12%",
+      "label_cn": "根据劳动力分析公司ActivTrak为《华尔街日报》提供的数据，去年员工…",
+      "label_en": "The share of Sundays that employees devoted to work messagin…",
+      "note_cn": "源自正文 [p8]",
+      "note_en": "From paragraph [p8]"
+    }
+  ],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "招聘平台 FlexJobs 10 月对 2100 人的调查显示，超过半数美国员工会经历“周日恐慌”，最常见的原因是未完成的工作清单。劳动力分析公司 ActivTrak 的数据显示，员工周日用于工作消息和聊天的时间占比从 2023 年的 6.6% 升至去年的约 12%。精神科医生建议设定界限（如只回一封邮件），组织心理学家则建议把额外工作挪到周五或周一清晨。",
+    "text_en": "招聘平台 FlexJobs 10 月对 2100 人的调查显示，超过半数美国员工会经历“周日恐慌”，最常见的原因是未完成的工作清单。劳动力分析公司 ActivTrak 的数据显示，员工周日用于工作消息和聊天的时间占比从 2023 年的 6.6% 升至去年的约 12%。精神科医生建议设定界限（如只回一封邮件），组织心理学家则建议把额外工作挪到周五或周一清晨。"
+  },
+  "media": [
+    {
+      "id": "img1",
+      "asset_id": "IMG-E2-010-A1-311",
+      "file": "assets/A1-p1-x311.png",
+      "caption_cn": "",
+      "caption_en": "",
+      "credit": ""
+    }
+  ],
+  "terms": [
+    {
+      "en": "Sunday scaries",
+      "zh_suggested": "周日恐慌",
+      "note": "pre-Monday work dread"
+    },
+    {
+      "en": "FlexJobs",
+      "zh_suggested": "FlexJobs",
+      "note": "job platform"
+    },
+    {
+      "en": "ActivTrak",
+      "zh_suggested": "ActivTrak",
+      "note": "workforce analytics firm"
+    },
+    {
+      "en": "Angie Callen",
+      "zh_suggested": "安吉·卡伦",
+      "note": "待查, executive coach"
+    },
+    {
+      "en": "Scary Good: Discovering Life Beyond the Sunday Scaries",
+      "zh_suggested": "《Scary Good》",
+      "note": "book by Angie Callen"
+    },
+    {
+      "en": "Joanna Johnston",
+      "zh_suggested": "乔安娜·约翰斯顿",
+      "note": "待查"
+    },
+    {
+      "en": "Chris Keller",
+      "zh_suggested": "克里斯·凯勒",
+      "note": "待查"
+    },
+    {
+      "en": "Kia-Rai Prewitt",
+      "zh_suggested": "基娅-拉伊·普雷维特",
+      "note": "待查, Cleveland Clinic psychiatrist"
+    },
+    {
+      "en": "Cleveland Clinic",
+      "zh_suggested": "克利夫兰诊所"
+    },
+    {
+      "en": "Amy Cooper Hakim",
+      "zh_suggested": "艾米·库珀·哈基姆",
+      "note": "待查, industrial organizational psychologist"
+    },
+    {
+      "en": "Jill Davis",
+      "zh_suggested": "吉尔·戴维斯",
+      "note": "待查"
+    },
+    {
+      "en": "Ray A. Smith",
+      "zh_suggested": "雷·A·史密斯",
+      "note": "待查"
+    },
+    {
+      "en": "Merriam-Webster",
+      "zh_suggested": "韦氏词典"
+    }
+  ]
+}

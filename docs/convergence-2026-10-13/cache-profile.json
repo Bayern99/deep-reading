@@ -1,0 +1,42 @@
+{
+  "legacy_stage": [
+    {
+      "mode": "fresh_integrity",
+      "wall_seconds": 1.8555164170684293,
+      "keys": 117,
+      "sample_keys": [
+        "E1-001",
+        "E1-002",
+        "E1-003"
+      ],
+      "log": "integrity: 113 PASS / 4 WARN / 0 BLOCK"
+    },
+    {
+      "mode": "manifest_cache_hit",
+      "wall_seconds": 0.0020735840080305934,
+      "keys": 1,
+      "sample_keys": [
+        "_all"
+      ],
+      "log": "integrity: 缓存命中，跳过"
+    },
+    {
+      "mode": "forced_rerun",
+      "wall_seconds": 1.8383812080137432,
+      "keys": 117,
+      "sample_keys": [
+        "E1-001",
+        "E1-002",
+        "E1-003"
+      ],
+      "log": "integrity: 113 PASS / 4 WARN / 0 BLOCK"
+    }
+  ],
+  "saved_proposal_file_read_parse_median_seconds": 2.1999934688210487e-05,
+  "model_call_seconds": 24.996461916947737,
+  "legacy_cache_result_equivalent": false,
+  "notes": [
+    "Saved proposal read is file reuse, not a production planning-cache implementation.",
+    "Legacy warm path returns manifest instead of gate results; latency cannot establish correctness."
+  ]
+}

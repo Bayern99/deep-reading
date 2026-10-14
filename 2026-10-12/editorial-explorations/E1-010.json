@@ -1,0 +1,219 @@
+{
+  "article_id": "E1-010",
+  "content_digest": "a0ce51837982ccf7024d91f9a373e922b7183a5d3575774521c566f19917619d",
+  "version": "exploration-1",
+  "created": "2026-10-14",
+  "created_by": "Principal Engineer reboot — independent editorial judgment",
+  "schema_version": "enhanced-v1",
+  "analysis": {
+    "topic": "WSJ 调查显示分析师上调长期美债收益率预期：高利率被视为结构性而非暂时冲击。",
+    "structure": [
+      "论点：高利率将塑造未来十年",
+      "调查核心：10年期收益率预测上调",
+      "传导：借贷成本与联邦利息",
+      "成因：增长、通胀、财政与 AI 资本需求",
+      "财政对照：CBO / OMB 路径",
+      "增长与就业附带预测",
+      "反方：劳动力市场脆弱 → 降息可能"
+    ],
+    "reader_need": "读者真正需要并排看见的是同一调查里‘10月预测 vs 7月预测’的三档收益率，而不是再堆一组与正文重复的数字卡片。财政段需要小标题分节；反方观点前需要明确转折。"
+  },
+  "narrative_outline": [
+    {
+      "block_ids": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "function": "claim",
+      "reader_need": "建立结构性利率论点"
+    },
+    {
+      "block_ids": [
+        "p4",
+        "p5"
+      ],
+      "function": "evidence",
+      "reader_need": "看清调查数字对照"
+    },
+    {
+      "block_ids": [
+        "p6",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "function": "evidence",
+      "reader_need": "理解基本面变化与专家判断"
+    },
+    {
+      "block_ids": [
+        "p10",
+        "p11",
+        "p12"
+      ],
+      "function": "background",
+      "reader_need": "通胀与其他推升因素"
+    },
+    {
+      "block_ids": [
+        "p13",
+        "p14",
+        "p15",
+        "p16"
+      ],
+      "function": "consequence",
+      "reader_need": "财政与宏观附带影响"
+    },
+    {
+      "block_ids": [
+        "p17",
+        "p18",
+        "p19"
+      ],
+      "function": "contrast",
+      "reader_need": "反方降息叙事"
+    }
+  ],
+  "text_treatments": [
+    {
+      "pattern_id": "T11",
+      "block_id": "p13",
+      "locale": "cn",
+      "text_exact": "财政压力与增长预期",
+      "action": "subhead",
+      "params": {
+        "title_cn": "财政压力与增长预期",
+        "title_en": "Budget Strain and Growth"
+      },
+      "editorial_added": true,
+      "reason": "从成因转向财政/增长后果，段落主题切换处需要路标。"
+    },
+    {
+      "pattern_id": "T11",
+      "block_id": "p17",
+      "locale": "cn",
+      "text_exact": "反方：劳动力市场更脆弱",
+      "action": "subhead",
+      "params": {
+        "title_cn": "反方：劳动力市场更脆弱",
+        "title_en": "Counterpoint: A Weaker Labor Market"
+      },
+      "editorial_added": true,
+      "reason": "明确对立叙事入口，避免读者把达万观点读成主线延续。"
+    }
+  ],
+  "layout_decisions": [
+    {
+      "pattern_id": "L03",
+      "action": "apply",
+      "params": {
+        "after_block_id": "p5",
+        "dim_labels": [
+          "2026 年底 10 年期收益率",
+          "2027 年中 10 年期收益率",
+          "2027 年底 10 年期收益率"
+        ],
+        "dim_labels_en": [
+          "10-year yield, end of 2026",
+          "10-year yield, mid-2027",
+          "10-year yield, end of 2027"
+        ],
+        "pairs": [
+          [
+            {
+              "cn": "10 月调查：5.1%",
+              "en": "October survey: 5.1%"
+            },
+            {
+              "cn": "7 月调查：4.4%",
+              "en": "July survey: 4.4%"
+            }
+          ],
+          [
+            {
+              "cn": "10 月调查：4.96%",
+              "en": "October survey: 4.96%"
+            },
+            {
+              "cn": "7 月调查：4.3%",
+              "en": "July survey: 4.3%"
+            }
+          ],
+          [
+            {
+              "cn": "10 月调查：4.78%",
+              "en": "October survey: 4.78%"
+            },
+            {
+              "cn": "7 月调查：4.26%",
+              "en": "July survey: 4.26%"
+            }
+          ]
+        ]
+      },
+      "reason": "p4–p5 给出三档同维度成对数据；双栏让‘上调’一眼可见。手机按维度 A→B 交替，不保留并排几何。"
+    }
+  ],
+  "component_plan": [],
+  "rejected_opportunities": [
+    {
+      "pattern_id": "quote",
+      "action": "decline",
+      "reason_against": "p7 已是一段完整、简短的专家直接引语；紧接着再摘录同一句不增加解释。收益率对照承担本篇的主要视觉关系，随后应连续进入成因。"
+    },
+    {
+      "pattern_id": "key_figures",
+      "action": "decline",
+      "reason_against": "核心数字已由 L03 承担对照功能；再做关键数字会第三次复述 5.1%/4.4%。"
+    },
+    {
+      "pattern_id": "timeline",
+      "action": "decline",
+      "reason_against": "文章是预测区间比较，不是事件编年。"
+    },
+    {
+      "pattern_id": "T09",
+      "action": "decline",
+      "reason_against": "p12 虽长，因果链完整；拆分会切断‘通胀缓和但仍担忧债务/AI’。"
+    },
+    {
+      "pattern_id": "L03",
+      "candidate": "p13 CBO vs OMB",
+      "action": "decline",
+      "reason_against": "一边是‘不超过 4.3%’，一边是‘降至 3% 中段’，维度不对等，禁止硬凑双栏。"
+    }
+  ],
+  "reading_treatment": {
+    "profile": "evidence",
+    "reason": "A larger shared comparison field makes three same-tenor forecast revisions readable; the rest remains complete continuous reporting.",
+    "evidence": [
+      {
+        "block_ids": [
+          "p4",
+          "p5"
+        ],
+        "observation": "October and July survey forecasts for the same 10-year yield at three different dates; values are forecasts, not a time-series of realized yields."
+      },
+      {
+        "block_ids": [
+          "p13",
+          "p17"
+        ],
+        "observation": "Fiscal consequences and the opposing labor-market view need distinct entries."
+      }
+    ],
+    "roles": {
+      "cn": {
+        "lead": [
+          "p1"
+        ]
+      },
+      "en": {
+        "lead": [
+          "p1"
+        ]
+      }
+    }
+  }
+}

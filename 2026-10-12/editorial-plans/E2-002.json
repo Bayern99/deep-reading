@@ -1,9 +1,11 @@
 {
   "article_id": "E2-002",
+  "content_digest": "f23b97021f8ae97cc9cc4b7378aadeec13e01296ada75446d2b21e1524419e51",
   "version": "reboot-1",
   "created": "2026-10-13",
   "created_by": "Principal Engineer reboot — independent editorial judgment",
   "schema_version": "enhanced-v1",
+  "headline_phrases_cn": ["监控摄像头", "黑客入侵"],
   "analysis": {
     "topic": "联网摄像头在战争中被劫持为情报工具：从养鸡户摄像头到国家级网络战。",
     "structure": [
@@ -14,7 +16,7 @@
       "机制：设施管理安装、弱口令、IoT 攻击面",
       "信息战与宣传用途"
     ],
-    "reader_need": "长文分段已由原稿小标题完成；读者需要抓住‘民用→战时’的论点句、关键量级数字，以及一处值得脱离正文流的专家引语。不需要时间线或关键数字墙——日期分散且口径不一。",
+    "reader_need": "开篇四段保持场景连续，原稿小标题承担长文结构；只在正文强调‘民用→战时’论点与关键量级。机构边注解释引用来源。不重复抽取同一句引语，不做口径不一的数字总览。",
     "asset_note": "注册表有 A1 小图 104×161，信息量不足，拒绝配图以免装饰性插图。"
   },
   "narrative_outline": [
@@ -91,22 +93,13 @@
       "reason": "p7 首次抛出关键判断；读者未必认识引用来源。边注只解释机构，不复述论点。"
     }
   ],
-  "component_plan": [
-    {
-      "component": "quote",
-      "slot": {"at": "after_para", "para": 7},
-      "reason": "论点句已在正文加粗；引语模块只取同一直接引语一句，形成节奏锚点，人物介绍留在正文。",
-      "data": {
-        "quote": {
-          "text_cn": "我们现在看到，民用监控正在转化为战时情报收集。",
-          "text_en": "We are now seeing the conversion of civilian surveillance into wartime intelligence collection.",
-          "attr_cn": "亚历山大·莱斯利 · Recorded Future",
-          "attr_en": "Alexander Leslie, Recorded Future"
-        }
-      }
-    }
-  ],
+  "component_plan": [],
   "rejected_opportunities": [
+    {
+      "pattern_id": "quote",
+      "action": "decline",
+      "reason_against": "p7 已完整保留专家归属、直接引语和论点强调；紧接着再抽取同一句只会重复并打断 p8 的调查方法说明。"
+    },
     {
       "pattern_id": "T11",
       "action": "decline",

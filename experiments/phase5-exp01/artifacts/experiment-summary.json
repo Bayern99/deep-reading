@@ -1,0 +1,83 @@
+{
+  "article_id": "E2-001",
+  "source_sha256": "56e78230836e09f3dfe7b2e2359dfd2c7a3a97d9840de4127576ee707546b8b8",
+  "results": [
+    {
+      "name": "Phase 4 Golden Baseline",
+      "passed_strict_verbatim": false,
+      "exact_match_cn": "18/20",
+      "exact_match_en": "18/20",
+      "monotonic_order": true,
+      "diff_paragraphs": [
+        "p4",
+        "p20"
+      ]
+    },
+    {
+      "name": "Group B (Free HTML) Run 1",
+      "raw_bytes": 68344,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "diff_paragraphs": []
+    },
+    {
+      "name": "Group B (Free HTML) Run 2",
+      "raw_bytes": 66190,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "diff_paragraphs": []
+    },
+    {
+      "name": "Group B (Free HTML) Run 3",
+      "raw_bytes": 63448,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "diff_paragraphs": []
+    },
+    {
+      "name": "Group C (Source-Referenced HTML) Run 1",
+      "raw_bytes": 43268,
+      "compiled_bytes": 63838,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "highlights_applied": 21,
+      "derived_callouts": 12,
+      "ai_editorial_items": 10,
+      "unverified_editorial_numbers": 9
+    },
+    {
+      "name": "Group C (Source-Referenced HTML) Run 2",
+      "raw_bytes": 48466,
+      "compiled_bytes": 69633,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "highlights_applied": 19,
+      "derived_callouts": 13,
+      "ai_editorial_items": 12,
+      "unverified_editorial_numbers": 4
+    },
+    {
+      "name": "Group C (Source-Referenced HTML) Run 3",
+      "raw_bytes": 50540,
+      "compiled_bytes": 70728,
+      "passed_strict_verbatim": true,
+      "exact_match_cn": "20/20",
+      "exact_match_en": "20/20",
+      "monotonic_order": true,
+      "highlights_applied": 22,
+      "derived_callouts": 12,
+      "ai_editorial_items": 10,
+      "unverified_editorial_numbers": 9
+    }
+  ]
+}

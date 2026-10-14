@@ -138,14 +138,15 @@ def gate_report(results):
 
 
 if __name__ == '__main__':
-    import json, sys
-    fj = sys.argv[1] if len(sys.argv) > 1 else \
-        '/home/hatch/workspace/wsj-deep-read/2026-10-12/final.json'
-    articles = json.load(open(fj, encoding='utf-8'))
-    results = []
-    for a in articles:
-        passed, iss = check_article(a)
-        results.append((a.get('id', '?'), passed, iss))
+    import argparse
+    import json
+    import sys
+    parser = argparse.ArgumentParser(description='Audit a final.json without changing content')
+    parser.add_argument('final_json', help='Path to the issue final.json')
+    args = parser.parse_args()
+    with open(args.final_json, encoding='utf-8') as f:
+        articles = json.load(f)
+    results = [(a.get('id', '?'), *check_article(a)) for a in articles]
     print(gate_report(results))
     n_block = sum(1 for _, p, _ in results if not p)
     sys.exit(1 if n_block else 0)

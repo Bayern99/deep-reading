@@ -1,0 +1,461 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E3-004",
+  "final_id": "083",
+  "issue_date": "2026-10-12",
+  "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "B1",
+    "section": "Technology",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "科技与信仰 · 硅谷深度观察",
+    "kicker_en": "TECHNOLOGY & FAITH · SILICON VALLEY ESSAY",
+    "title_cn": "人工智能有个上帝问题",
+    "title_en": "Artificial Intelligence Has a God Problem",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "By Tim Higgins",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。",
+      "text_en": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了《启示录》，这是《新约》的最后一部分，以其末世预言而闻名。",
+          "text_en": "Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the Book of Revelation, the final part of the New Testament best known for apocalyptic prophecy."
+        },
+        {
+          "id": "p1.s2",
+          "text_cn": "他随即阐述了人工智能将如何融入末世。",
+          "text_en": "And he quickly argued for how artificial intelligence will fit into end times."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”",
+      "text_en": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“人工智能想要成为上帝。”",
+          "text_en": "\"AI wants to be God,\" the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "这位74岁的牧师后来告诉我，这次布道受到了会众提出的问题的启发。他的会众大约有150人。哈钦森说，在长达50年的布道生涯中，他发现人们对人工智能的焦虑程度超过了对战争和经济的担忧。",
+      "text_en": "The sermon, the 74-year-old later told me, was inspired by the questions he was getting from the congregation, which numbers around 150. In his roughly 50 years preaching, Hutchinson says the anxiety he is hearing about AI outranks everything—wars, economy.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "这位74岁的牧师后来告诉我，这次布道受到了会众提出的问题的启发。他的会众大约有150人。哈钦森说，在长达50年的布道生涯中，他发现人们对人工智能的焦虑程度超过了对战争和经济的担忧。",
+          "text_en": "The sermon, the 74-year-old later told me, was inspired by the questions he was getting from the congregation, which numbers around 150. In his roughly 50 years preaching, Hutchinson says the anxiety he is hearing about AI outranks everything—wars, economy."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "哈钦森说：“人们越是看到有人预言灾难和绝望，就越多人会说，‘牧师说得没错，圣经也一定是正确的。’”",
+      "text_en": "\"The more you see people that are projecting doom and despair coming out, then the more people say, 'Well, the preacher must have been right, and the Bible must be right,'\" Hutchinson said.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "哈钦森说：“人们越是看到有人预言灾难和绝望，就越多人会说，‘牧师说得没错，圣经也一定是正确的。’”",
+          "text_en": "\"The more you see people that are projecting doom and despair coming out, then the more people say, 'Well, the preacher must have been right, and the Bible must be right,'\" Hutchinson said."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "人工智能行业面临的最新挑战，已经从一个极具争议的政治议题，演变成一个从讲坛上提出的问题。与以往几代技术不同，基督教社群似乎准备在人工智能发展的早期阶段就对其进行引导，以确保它能造福全人类，而不是少数科技亿万富翁。",
+      "text_en": "Already a polarizing political issue, the AI industry's latest challenge is emerging from the pulpit. Unlike recent generations of technology, the Christian community appears poised to put its stamp on AI early in an attempt to ensure it benefits all of humanity rather than a few tech billionaires.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "人工智能行业面临的最新挑战，已经从一个极具争议的政治议题，演变成一个从讲坛上提出的问题。",
+          "text_en": "Already a polarizing political issue, the AI industry's latest challenge is emerging from the pulpit."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "与以往几代技术不同，基督教社群似乎准备在人工智能发展的早期阶段就对其进行引导，以确保它能造福全人类，而不是少数科技亿万富翁。",
+          "text_en": "Unlike recent generations of technology, the Christian community appears poised to put its stamp on AI early in an attempt to ensure it benefits all of humanity rather than a few tech billionaires."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "对于OpenAI和Anthropic等公司来说，风险在于它们可能会与越来越多的美国民众产生隔阂，其中一些人对人工智能数据中心和Flock（车牌识别摄像头公司）的摄像头在社区中出现的情况感到不满。",
+      "text_en": "The risk for the likes of OpenAI and Anthropic is getting further sideways with a swath of the American populace, some of whom are unhappy with AI data centers and Flock cameras in their communities.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "对于OpenAI和Anthropic等公司来说，风险在于它们可能会与越来越多的美国民众产生隔阂，其中一些人对人工智能数据中心和Flock（车牌识别摄像头公司）的摄像头在社区中出现的情况感到不满。",
+          "text_en": "The risk for the likes of OpenAI and Anthropic is getting further sideways with a swath of the American populace, some of whom are unhappy with AI data centers and Flock cameras in their communities."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "圣母大学哲学教授梅根·沙利文说：“许多牧师意识到，当人们对他们所依赖的机构感到不安时，他们会试图找到自己的声音，为自己和社区发声。”“教会非常善于为人们提供一个平台，让他们能够为自己对更广泛社会共同利益的愿景进行倡导，尤其是在像美国中西部这样的地区。”",
+      "text_en": "\"A lot of pastors are realizing when people get freaked out about institutions they depend on, they try to find their voice to advocate for themselves and their communities,\" said Meghan Sullivan, a philosophy professor at the University of Notre Dame. \"And churches are really good at giving people a vehicle for advocating for their vision of the common good in broader society, especially in parts of the country like\" the Midwest.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "圣母大学哲学教授梅根·沙利文说：“许多牧师意识到，当人们对他们所依赖的机构感到不安时，他们会试图找到自己的声音，为自己和社区发声。”",
+          "text_en": "\"A lot of pastors are realizing when people get freaked out about institutions they depend on, they try to find their voice to advocate for themselves and their communities,\" said Meghan Sullivan, a philosophy professor at the University of Notre Dame."
+        },
+        {
+          "id": "p7.s2",
+          "text_cn": "“教会非常善于为人们提供一个平台，让他们能够为自己对更广泛社会共同利益的愿景进行倡导，尤其是在像美国中西部这样的地区。”",
+          "text_en": "\"And churches are really good at giving people a vehicle for advocating for their vision of the common good in broader society, especially in parts of the country like\" the Midwest."
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "index": 8,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "本月，美国福音派协会发布了一份关于人工智能的政策声明。长老会（美国）于8月举行了一次关于该主题的峰会。教宗良十四世于5月发布了一份罕见的通谕，主题是“在人工智能时代保护人类”。",
+      "text_en": "This month, the National Association of Evangelicals issued a policy statement on AI. The Presbyterian Church (U.S.A.) held a summit on the topic in August. And Pope Leo XIV published a rare encyclical in May on \"safeguarding the human person in the time of artificial intelligence.\"",
+      "sentences": [
+        {
+          "id": "p8.s1",
+          "text_cn": "本月，美国福音派协会发布了一份关于人工智能的政策声明。",
+          "text_en": "This month, the National Association of Evangelicals issued a policy statement on AI."
+        },
+        {
+          "id": "p8.s2",
+          "text_cn": "长老会（美国）于8月举行了一次关于该主题的峰会。",
+          "text_en": "The Presbyterian Church (U.S.A.) held a summit on the topic in August."
+        },
+        {
+          "id": "p8.s3",
+          "text_cn": "教宗良十四世于5月发布了一份罕见的通谕，主题是“在人工智能时代保护人类”。",
+          "text_en": "And Pope Leo XIV published a rare encyclical in May on \"safeguarding the human person in the time of artificial intelligence.\""
+        }
+      ]
+    },
+    {
+      "id": "p9",
+      "index": 9,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "历史上充满了许多时刻，当时，一种新的技术——强大而复杂，几乎具有魔力——引发了人们内心深处的恐惧。二战结束后，美国向日本投下了原子弹，纽约时报在报道中使用了《旧约》的语言，称这项技术“播下了风暴的种子”。",
+      "text_en": "History is replete with moments when new technology—so powerful, so complex as to be almost magical—stirs primal fears. After the U.S. dropped atomic bombs to end World War II, the New York Times invoked Old Testament language when writing that the technology had \"sowed the whirlwind.\"",
+      "sentences": [
+        {
+          "id": "p9.s1",
+          "text_cn": "历史上充满了许多时刻，当时，一种新的技术——强大而复杂，几乎具有魔力——引发了人们内心深处的恐惧。",
+          "text_en": "History is replete with moments when new technology—so powerful, so complex as to be almost magical—stirs primal fears."
+        },
+        {
+          "id": "p9.s2",
+          "text_cn": "二战结束后，美国向日本投下了原子弹，纽约时报在报道中使用了《旧约》的语言，称这项技术“播下了风暴的种子”。",
+          "text_en": "After the U.S. dropped atomic bombs to end World War II, the New York Times invoked Old Testament language when writing that the technology had \"sowed the whirlwind.\""
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "index": 10,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "如今，人工智能也带来了它自身的变革之风。它既有潜在的积极作用，也有潜在的消极影响，两者交织在一起，很难判断这项技术会带来更美好的未来，还是更黑暗的时代：它可以治愈癌症，带来前所未有的科学发现，实现可持续的繁荣。但它也可能导致恶意的人工智能攻击、失业，并引发人们对工作的意义本身的质疑。",
+      "text_en": "Today, AI carries its own whirlwind of change. With potential good and bad so intertwined, it is hard to know if the technology will bring a brighter future or darker days: cures for cancers, untold scientific discoveries, sustainable abundance. Yet also rogue AI hacks, job losses, and questions about the very meaning of work.",
+      "sentences": [
+        {
+          "id": "p10.s1",
+          "text_cn": "如今，人工智能也带来了它自身的变革之风。",
+          "text_en": "Today, AI carries its own whirlwind of change."
+        },
+        {
+          "id": "p10.s2",
+          "text_cn": "它既有潜在的积极作用，也有潜在的消极影响，两者交织在一起，很难判断这项技术会带来更美好的未来，还是更黑暗的时代：它可以治愈癌症，带来前所未有的科学发现，实现可持续的繁荣。",
+          "text_en": "With potential good and bad so intertwined, it is hard to know if the technology will bring a brighter future or darker days: cures for cancers, untold scientific discoveries, sustainable abundance."
+        },
+        {
+          "id": "p10.s3",
+          "text_cn": "但它也可能导致恶意的人工智能攻击、失业，并引发人们对工作的意义本身的质疑。",
+          "text_en": "Yet also rogue AI hacks, job losses, and questions about the very meaning of work."
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "index": 11,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "人工智能开发者面临的一个自我设定的挑战是，科技界有意或无意地，用与基督教社群产生共鸣的语言，主导了公众对话。这引发了人们对其可信度的担忧，尤其是在考虑到科技界未能确保社交媒体不会变得有害，从而给一些宗教领袖带来了负面印象。",
+      "text_en": "One of the self-inflicted challenges for AI creators is that the tech community has framed much of the public conversation, intentionally or not, in language that resonates with the Christian community. That raises concerns about whether they can be trusted, especially with the baggage tech-at-large carries from the ways, some religious leaders say, it failed to ensure social media didn't become harmful.",
+      "sentences": [
+        {
+          "id": "p11.s1",
+          "text_cn": "人工智能开发者面临的一个自我设定的挑战是，科技界有意或无意地，用与基督教社群产生共鸣的语言，主导了公众对话。",
+          "text_en": "One of the self-inflicted challenges for AI creators is that the tech community has framed much of the public conversation, intentionally or not, in language that resonates with the Christian community."
+        },
+        {
+          "id": "p11.s2",
+          "text_cn": "这引发了人们对其可信度的担忧，尤其是在考虑到科技界未能确保社交媒体不会变得有害，从而给一些宗教领袖带来了负面印象。",
+          "text_en": "That raises concerns about whether they can be trusted, especially with the baggage tech-at-large carries from the ways, some religious leaders say, it failed to ensure social media didn't become harmful."
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "index": 12,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在《圣经》中，有一个熟悉的主题，即更高的力量按自己的形象创造了AI，后者却反抗了它的创造者。一些人认为，人工智能实验室中的人们认为自己拥有类似于上帝的力量，可以创造一种新的意识，这令人不安，甚至是对上帝的亵渎。此外，还有一些人认为，科技领袖们追求一项技术，一方面承诺让他们变得非常富有，另一方面又暗示只有在他们的控制之下才能保证安全，这种做法带有某种狂妄自大。",
+      "text_en": "The theme of a higher power creating AI in its own image only for it to rebel against its creator is a familiar one to those who study the Bible. The idea that people in AI labs think they have a power akin to God to create a new kind of consciousness is unsettling, if not blasphemous, to some. And, for others, there is a certain hubris seen in tech leaders chasing a technology that on one hand promises to make them incredibly wealthy while suggesting it is only safe within their control.",
+      "sentences": [
+        {
+          "id": "p12.s1",
+          "text_cn": "在《圣经》中，有一个熟悉的主题，即更高的力量按自己的形象创造了AI，后者却反抗了它的创造者。",
+          "text_en": "The theme of a higher power creating AI in its own image only for it to rebel against its creator is a familiar one to those who study the Bible."
+        },
+        {
+          "id": "p12.s2",
+          "text_cn": "一些人认为，人工智能实验室中的人们认为自己拥有类似于上帝的力量，可以创造一种新的意识，这令人不安，甚至是对上帝的亵渎。",
+          "text_en": "The idea that people in AI labs think they have a power akin to God to create a new kind of consciousness is unsettling, if not blasphemous, to some."
+        },
+        {
+          "id": "p12.s3",
+          "text_cn": "此外，还有一些人认为，科技领袖们追求一项技术，一方面承诺让他们变得非常富有，另一方面又暗示只有在他们的控制之下才能保证安全，这种做法带有某种狂妄自大。",
+          "text_en": "And, for others, there is a certain hubris seen in tech leaders chasing a technology that on one hand promises to make them incredibly wealthy while suggesting it is only safe within their control."
+        }
+      ]
+    },
+    {
+      "id": "p13",
+      "index": 13,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在五月份的通谕中，教宗将人工智能与“巴别塔”进行了比较，这是一个警示故事，出现在《创世纪》的第一卷中，讲述了一个试图建造一座通往天堂的塔的故事，目的是为了确保稳定和权力，但却让上帝感到不满。教宗写道：“非人化——建立一个排斥上帝，并将他人视为工具的未来——是一种古老而又不断出现的诱惑，如今它以一种技术的形式出现。”",
+      "text_en": "In his May encyclical, the pope drew comparisons to the Tower of Babel, a cautionary tale that appears in the first Book of Genesis around an effort to build a tower that reached to the heavens in a bid to guarantee stability and power that displeased God. \"The risk of dehumanization—of building a future that excludes God and reduces the other to a means—is an ancient and ever-new temptation that today takes on a technical guise,\" the pope wrote.",
+      "sentences": [
+        {
+          "id": "p13.s1",
+          "text_cn": "在五月份的通谕中，教宗将人工智能与“巴别塔”进行了比较，这是一个警示故事，出现在《创世纪》的第一卷中，讲述了一个试图建造一座通往天堂的塔的故事，目的是为了确保稳定和权力，但却让上帝感到不满。",
+          "text_en": "In his May encyclical, the pope drew comparisons to the Tower of Babel, a cautionary tale that appears in the first Book of Genesis around an effort to build a tower that reached to the heavens in a bid to guarantee stability and power that displeased God."
+        },
+        {
+          "id": "p13.s2",
+          "text_cn": "教宗写道：“非人化——建立一个排斥上帝，并将他人视为工具的未来——是一种古老而又不断出现的诱惑，如今它以一种技术的形式出现。”",
+          "text_en": "\"The risk of dehumanization—of building a future that excludes God and reduces the other to a means—is an ancient and ever-new temptation that today takes on a technical guise,\" the pope wrote."
+        }
+      ]
+    },
+    {
+      "id": "p14",
+      "index": 14,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "此后，教宗一直对此保持关注，包括在社交媒体平台X上，人工智能的开发者们就此展开了激烈的辩论。",
+      "text_en": "Since then, the pope hasn't let up, including on social-media platform X where a robust debate is playing out among AI's creators.",
+      "sentences": [
+        {
+          "id": "p14.s1",
+          "text_cn": "此后，教宗一直对此保持关注，包括在社交媒体平台X上，人工智能的开发者们就此展开了激烈的辩论。",
+          "text_en": "Since then, the pope hasn't let up, including on social-media platform X where a robust debate is playing out among AI's creators."
+        }
+      ]
+    },
+    {
+      "id": "p15",
+      "index": 15,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "也许这就是为什么最近，OpenAI的首席执行官萨姆·奥特曼试图将他的公司与纽约时报的一份报告区分开来，该报告称，竞争对手Anthropic曾试图游说梵蒂冈改变其对人工智能是否可能具有意识的看法，但最终未能成功。",
+      "text_en": "Maybe that's why in recent days, OpenAI CEO Sam Altman tried to distance his company from a report by the New York Times that rival Anthropic unsuccessfully lobbied the Vatican to change its views on whether AI could have a consciousness.",
+      "sentences": [
+        {
+          "id": "p15.s1",
+          "text_cn": "也许这就是为什么最近，OpenAI的首席执行官萨姆·奥特曼试图将他的公司与纽约时报的一份报告区分开来，该报告称，竞争对手Anthropic曾试图游说梵蒂冈改变其对人工智能是否可能具有意识的看法，但最终未能成功。",
+          "text_en": "Maybe that's why in recent days, OpenAI CEO Sam Altman tried to distance his company from a report by the New York Times that rival Anthropic unsuccessfully lobbied the Vatican to change its views on whether AI could have a consciousness."
+        }
+      ]
+    },
+    {
+      "id": "p16",
+      "index": 16,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "奥特曼几天前在X上发帖说：“我非常不赞成有人试图将宗教力量或放弃人类判断力赋予人工智能模型，我认为这是一个真正的安全问题。”",
+      "text_en": "\"I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models, and think it is a real safety issue,\" Altman posted on X a weekend ago.",
+      "sentences": [
+        {
+          "id": "p16.s1",
+          "text_cn": "奥特曼几天前在X上发帖说：“我非常不赞成有人试图将宗教力量或放弃人类判断力赋予人工智能模型，我认为这是一个真正的安全问题。”",
+          "text_en": "\"I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models, and think it is a real safety issue,\" Altman posted on X a weekend ago."
+        }
+      ]
+    },
+    {
+      "id": "p17",
+      "index": 17,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "那些提出担忧的人不能简单地被视为反对技术进步的人。许多宗教领袖表示，他们希望引导这项技术，确保它对人类有益，而不是造成危害。[印刷版在此处内容不完整；同一文章的网络版将以下引文归于美国福音派协会主席沃尔特·金：]“宗教界之所以开始关注此事，是因为他们逐渐意识到，这项技术实际上正在解决……不仅是当前社会面临的重大问题，而且还在引发一个更宏大的问题，即‘作为人类意味着什么’？”",
+      "text_en": "Those raising concerns can't be dismissed as simply Luddites. Many faith leaders say they are hoping to steer the technology to ensure it is beneficial to humanity—not harmful. [Print edition is fragmented here; web edition of the same article attributes the following to Walter Kim, president of the National Association of Evangelicals:] \"There's a reason why the faith community is having a moment because they're beginning to see that this is a technology that is actually addressing…not only the consequential horizontal societal issues that are at stake, but it's actually raising the larger question of what does it mean to be human?\"",
+      "sentences": [
+        {
+          "id": "p17.s1",
+          "text_cn": "那些提出担忧的人不能简单地被视为反对技术进步的人。许多宗教领袖表示，他们希望引导这项技术，确保它对人类有益，而不是造成危害。[印刷版在此处内容不完整；同一文章的网络版将以下引文归于美国福音派协会主席沃尔特·金：]“宗教界之所以开始关注此事，是因为他们逐渐意识到，这项技术实际上正在解决……不仅是当前社会面临的重大问题，而且还在引发一个更宏大的问题，即‘作为人类意味着什么’？”",
+          "text_en": "Those raising concerns can't be dismissed as simply Luddites. Many faith leaders say they are hoping to steer the technology to ensure it is beneficial to humanity—not harmful. [Print edition is fragmented here; web edition of the same article attributes the following to Walter Kim, president of the National Association of Evangelicals:] \"There's a reason why the faith community is having a moment because they're beginning to see that this is a technology that is actually addressing…not only the consequential horizontal societal issues that are at stake, but it's actually raising the larger question of what does it mean to be human?\""
+        }
+      ]
+    },
+    {
+      "id": "p18",
+      "index": 18,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在南卡罗来纳州最近的一次周日布道中，哈钦森的Siri语音助手从他的iPhone中发出声音，他将人工智能的所有监控方面与《启示录》中的末日景象联系起来。",
+      "text_en": "During that recent Sunday sermon in South Carolina, Hutchinson's Siri assistant squawked from his iPhone as he connected how all of the surveillance aspects of AI would be powerful in Revelation's apocalypse.",
+      "sentences": [
+        {
+          "id": "p18.s1",
+          "text_cn": "在南卡罗来纳州最近的一次周日布道中，哈钦森的Siri语音助手从他的iPhone中发出声音，他将人工智能的所有监控方面与《启示录》中的末日景象联系起来。",
+          "text_en": "During that recent Sunday sermon in South Carolina, Hutchinson's Siri assistant squawked from his iPhone as he connected how all of the surveillance aspects of AI would be powerful in Revelation's apocalypse."
+        }
+      ]
+    },
+    {
+      "id": "p19",
+      "index": 19,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "在人工智能方面，这位牧师希望它能找到治疗疾病的惊人方法，并且他同意特朗普总统的观点，即美国不应放慢发展速度，以免让中国领先。",
+      "text_en": "When it comes to AI, the pastor is hopeful it will find amazing cures for illnesses and he agrees with President Trump that America shouldn't slow down development at the risk of letting China get ahead.",
+      "sentences": [
+        {
+          "id": "p19.s1",
+          "text_cn": "在人工智能方面，这位牧师希望它能找到治疗疾病的惊人方法，并且他同意特朗普总统的观点，即美国不应放慢发展速度，以免让中国领先。",
+          "text_en": "When it comes to AI, the pastor is hopeful it will find amazing cures for illnesses and he agrees with President Trump that America shouldn't slow down development at the risk of letting China get ahead."
+        }
+      ]
+    },
+    {
+      "id": "p20",
+      "index": 20,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他只是认为，这项技术正在创造一种力量，他告诫他的信徒要记住，这种力量可能会被滥用。",
+      "text_en": "It's just that he also sees a power being created, which he cautioned his flock to remember, could be misused.",
+      "sentences": [
+        {
+          "id": "p20.s1",
+          "text_cn": "他只是认为，这项技术正在创造一种力量，他告诫他的信徒要记住，这种力量可能会被滥用。",
+          "text_en": "It's just that he also sees a power being created, which he cautioned his flock to remember, could be misused."
+        }
+      ]
+    },
+    {
+      "id": "p21",
+      "index": 21,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "他说：“我看到了它在未来可能带来的影响，这并没有让我感到害怕，但它让我为那些尚未做好准备的人感到担忧。”",
+      "text_en": "\"I see what it's leading to in the future and that doesn't scare me, but it bothers me for the other people that aren't ready,\" he said.",
+      "sentences": [
+        {
+          "id": "p21.s1",
+          "text_cn": "他说：“我看到了它在未来可能带来的影响，这并没有让我感到害怕，但它让我为那些尚未做好准备的人感到担忧。”",
+          "text_en": "\"I see what it's leading to in the future and that doesn't scare me, but it bothers me for the other people that aren't ready,\" he said."
+        }
+      ]
+    },
+    {
+      "id": "p22",
+      "index": 22,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "[照片说明：教宗良十四世在五月份的通谕中将人工智能与巴别塔进行了比较。（梵蒂冈媒体/法新社/盖蒂图片社）]",
+      "text_en": "[Photo caption: Pope Leo XIV drew comparisons between AI and the Tower of Babel in his May encyclical. (Vatican Media/AFP/Getty Images)]",
+      "sentences": [
+        {
+          "id": "p22.s1",
+          "text_cn": "[照片说明：教宗良十四世在五月份的通谕中将人工智能与巴别塔进行了比较。（梵蒂冈媒体/法新社/盖蒂图片社）]",
+          "text_en": "[Photo caption: Pope Leo XIV drew comparisons between AI and the Tower of Babel in his May encyclical. (Vatican Media/AFP/Getty Images)]"
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p12",
+      "quote_cn": "“在历史上的每一次重大技术变革中，人类都会面临同样的诱惑：把我们自己造出的工具当成神。”",
+      "quote_en": "“In every major technological shift in history, humanity faces the same temptation: mistaking the tools of our own making for God.”",
+      "speaker_cn": "宗教与科技伦理学者观察",
+      "role_cn": "关于巴别塔隐喻与生成式AI的讨论",
+      "speaker_en": "Theological Ethics Commentary",
+      "role_en": "On the Tower of Babel and Generative AI"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Pope Leo XIV",
+      "zh_suggested": "教宗良十四世",
+      "note": "5月发布AI主题通谕"
+    },
+    {
+      "en": "Gospel Light Baptist Church",
+      "zh_suggested": "福音之光浸信会（南卡Orangeburg）",
+      "note": "Joseph Hutchinson牧师所在教会"
+    },
+    {
+      "en": "National Association of Evangelicals",
+      "zh_suggested": "美国福音派协会",
+      "note": "本月发布AI政策声明；会长Walter Kim"
+    },
+    {
+      "en": "Flock cameras",
+      "zh_suggested": "Flock（车牌识别摄像头公司）",
+      "note": null
+    },
+    {
+      "en": "Tower of Babel",
+      "zh_suggested": "巴别塔",
+      "note": "教宗通谕中的比喻"
+    }
+  ]
+}

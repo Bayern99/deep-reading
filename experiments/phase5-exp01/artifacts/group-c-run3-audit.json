@@ -1,0 +1,593 @@
+{
+  "mode": "source-referenced",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 25,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 25,
+    "source_derived_count": 12,
+    "highlights_applied": [
+      {
+        "ref": "ctx1",
+        "applied_cn": [
+          "5%–7%",
+          "12 年",
+          "私人信贷"
+        ],
+        "applied_en": [
+          "private debt",
+          "12 years",
+          "5%–7%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p1",
+        "applied_cn": [
+          "没有损失风险",
+          "4 万美元"
+        ],
+        "applied_en": [
+          "no risk of loss",
+          "$40,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p2",
+        "applied_cn": [
+          "锁定 12 年",
+          "定期降低"
+        ],
+        "applied_en": [
+          "periodically lower",
+          "12 years"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p3",
+        "applied_cn": [
+          "Athene",
+          "3.7%",
+          "两次"
+        ],
+        "applied_en": [
+          "Athene",
+          "twice",
+          "3.7%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p4.s2",
+        "applied_cn": [
+          "每年或每两年更改"
+        ],
+        "applied_en": [
+          "change the amount"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p5",
+        "applied_cn": [
+          "阿波罗和博枫",
+          "401(k)"
+        ],
+        "applied_en": [
+          "Apollo and Brookfield",
+          "401(k)"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p6",
+        "applied_cn": [
+          "吸走了美国家庭的储蓄",
+          "指数型年金"
+        ],
+        "applied_en": [
+          "vacuuming up the savings",
+          "indexed annuities"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p7",
+        "applied_cn": [
+          "特拉华人寿",
+          "联邦调查"
+        ],
+        "applied_en": [
+          "federal investigation",
+          "Delaware Life"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p8",
+        "applied_cn": [
+          "5 万美元或 10 万美元",
+          "永远不会低于零"
+        ],
+        "applied_en": [
+          "never fall below zero",
+          "$50,000 or $100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p9",
+        "applied_cn": [
+          "保险公司在保险期间可以更改的条款",
+          "存款比例",
+          "收益上限",
+          "差额"
+        ],
+        "applied_en": [
+          "terms the insurer can change",
+          "share of the deposit",
+          "spread",
+          "cap"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p10",
+        "applied_cn": [
+          "2.9个百分点的差额",
+          "1%的固定利率",
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "applied_en": [
+          "2.9-percentage-point spread",
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p11",
+        "applied_cn": [
+          "减少了约2个百分点",
+          "69岁"
+        ],
+        "applied_en": [
+          "2 percentage points"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p12",
+        "applied_cn": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "applied_en": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p13",
+        "applied_cn": [
+          "100%的本金保护",
+          "表现出色"
+        ],
+        "applied_en": [
+          "performed exceptionally well",
+          "100% principal protection"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p14",
+        "applied_cn": [
+          "历史低利率与强劲的牛市",
+          "高度误导性"
+        ],
+        "applied_en": [
+          "historically low rates with a strong bull equity market",
+          "highly misleading"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p15",
+        "applied_cn": [
+          "美国证券交易委员会",
+          "最有利可图的产品",
+          "州保险代理人"
+        ],
+        "applied_en": [
+          "Securities and Exchange Commission",
+          "most lucrative products",
+          "state insurance agents"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p16",
+        "applied_cn": [
+          "5%至7%",
+          "约为3%"
+        ],
+        "applied_en": [
+          "around 3%",
+          "5% to 7%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p17",
+        "applied_cn": [
+          "误导性的销售宣传",
+          "复杂性"
+        ],
+        "applied_en": [
+          "misleading sales pitches",
+          "complexity"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p18",
+        "applied_cn": [
+          "股票和加密货币指数",
+          "270万美元",
+          "10万美元",
+          "动量增长"
+        ],
+        "applied_en": [
+          "stock-and-crypto index",
+          "Momentum Growth",
+          "$2.7 million",
+          "$100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p19",
+        "applied_cn": [
+          "金融危机之后",
+          "担保贷款凭证",
+          "资产支持证券",
+          "三到五年",
+          "约十年"
+        ],
+        "applied_en": [
+          "collateralized loan obligations",
+          "After the financial crisis",
+          "asset-backed securities",
+          "three to five years",
+          "about a decade"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p20.s1",
+        "applied_cn": [
+          "降低保单持有者收益上限",
+          "增加利润"
+        ],
+        "applied_en": [
+          "lowering the caps on policyholder gains",
+          "fatten their profits"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p20.s2",
+        "applied_cn": [
+          "改变与消费者的协议"
+        ],
+        "applied_en": [
+          "change the deal on the consumer"
+        ],
+        "ignored_unmatched": []
+      }
+    ],
+    "ai_editorial_items_count": 10,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Capital pipeline diagram",
+        "viewBox": "",
+        "text_labels": [
+          "01 / HOUSEHOLD SAVINGS",
+          "退休人员与家庭储蓄",
+          "Older Savers & Retirees",
+          "投入 $40K / $50K / $100K",
+          "Invest $40K / $50K / $100K",
+          "锁定期约 10–12 年",
+          "Locked up for ~10–12 years",
+          "承诺：0%亏损下限 + 股市挂钩",
+          "Pitch: 0% Floor + Index Link",
+          "02 / INSURER VALVE",
+          "私募控股保险公司",
+          "PE-Backed Insurers",
+          "Athene (Apollo) / 特拉华人寿",
+          "Athene (Apollo) / Delaware Life",
+          "代理佣金高达 5%–7%",
+          "Agent commissions: 5%–7%",
+          "特权：可单方面下调收益比例",
+          "Power: Can lower caps/shares",
+          "03 / PRIVATE CREDIT",
+          "高风险、低流动性信贷",
+          "Illiquid Private Credit",
+          "担保贷款凭证 (CLOs)",
+          "CLOs & Asset-Backed Debt",
+          "向高风险企业放贷扩张",
+          "Lending to risky companies",
+          "超额利差归私募与保险机构",
+          "Excess spread retained by PE"
+        ],
+        "numbers_found": [
+          "01",
+          "$40",
+          "$50",
+          "$100",
+          "$40",
+          "$50",
+          "$100",
+          "10",
+          "12",
+          "10",
+          "12",
+          "0%",
+          "0%",
+          "02",
+          "5%",
+          "7%",
+          "5%",
+          "7%",
+          "03"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "Sabrina Elliott policy ratchet and yield comparison",
+        "viewBox": "",
+        "text_labels": [
+          "A. 与标普500挂钩的资金比例 (其余按1%固定利率)",
+          "A. Share of Money Tied to S&P 500 (Rest at 1% Fixed)",
+          "60%",
+          "第 1 年",
+          "Year 1",
+          "55%",
+          "第 7 年 (下调)",
+          "Yr 7 (Cut 1)",
+          "45%",
+          "第 11 年 (再降)",
+          "Yr 11 (Cut 2)",
+          "扣减项：-2.9个百分点指数差额 | -约2个百分点附加险费",
+          "Deductions: -2.9pp spread | -~2pp lifetime/heirs rider",
+          "未挂钩部分资金仅按 1% 固定利率增长",
+          "Unlinked portion of principal grew at a 1% fixed rate",
+          "B. 12年期实际年化收益率对比 (至2023年底)",
+          "B. 12-Year Annualized Return (Ended Late 2023)",
+          "同期美国国债 (Treasurys)",
+          "U.S. Treasurys Benchmark",
+          "1.9%",
+          "埃利奥特指数型年金实际收益",
+          "Elliott's Indexed Annuity Actual",
+          "3.7%",
+          "同期标普 500 指数年化收益",
+          "S&P 500 Annualized Return",
+          "13%",
+          "注：3.7% 跑赢了 1.9% 的国债，但远逊于标普 500 的 13%",
+          "Note: 3.7% beat 1.9% Treasurys, but paled next to S&P 500's 13%"
+        ],
+        "numbers_found": [
+          "500",
+          "1%",
+          "500",
+          "1%",
+          "60%",
+          "1",
+          "1",
+          "55%",
+          "7",
+          "7",
+          "1",
+          "45%",
+          "11",
+          "11",
+          "2",
+          "2.9",
+          "2",
+          "2.9",
+          "2",
+          "1%",
+          "1%",
+          "12",
+          "2023",
+          "12",
+          "2023",
+          "1.9%",
+          "3.7%",
+          "500",
+          "500",
+          "13%",
+          "3.7%",
+          "1.9%",
+          "500",
+          "13%",
+          "3.7%",
+          "1.9%",
+          "500",
+          "13%"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 3,
+        "aria_label": "Agent commission comparison and Delaware Life pitch",
+        "viewBox": "",
+        "text_labels": [
+          "A. 保险代理人销售佣金率对比 (占保单存款比例)",
+          "A. Agent Commission (% of Policyholder Deposit)",
+          "美国公平人寿 (10年期指数型年金)",
+          "American Equity (10-Yr Indexed Annuity)",
+          "5% – 7%",
+          "博枫旗下保险公司 (简单固定利率年金)",
+          "Brookfield Insurer (Simpler Fixed-Rate)",
+          "~3%",
+          "B. 特拉华人寿“动量增长”年金宣传册推演",
+          "B. Delaware Life \"Momentum Growth\" Pitch",
+          "$100,000 → $2.7M",
+          "宣传册展示的未来 21 年增长前景",
+          "Advertised 21-year hypothetical growth",
+          "• 挂钩去年才成立的股票与加密货币指数",
+          "• Tied to stock-and-crypto index launched last year",
+          "• 基于过去 15 年假设数据（含 11 年股市双位数大涨）",
+          "• Uses 15-yr hypothetical data (11 yrs of double-digit gains)"
+        ],
+        "numbers_found": [
+          "10",
+          "10",
+          "5%",
+          "7%",
+          "3%",
+          "$100,000",
+          "$2.7",
+          "21",
+          "21",
+          "15",
+          "11",
+          "15",
+          "11"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "4万美元遗产与“零亏损”承诺背后的条款",
+        "en": "A $40,000 Inheritance and the Fine Print of \"No Risk\"",
+        "numbers_found": [
+          "4",
+          "$40,000"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "静默的抽水机：华尔街如何吸纳美国家庭储蓄",
+        "en": "The Quiet Vacuum: How Wall Street Taps Household Nest Eggs",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "从退休人员储蓄到私募信贷资产的资金通道",
+        "en": "From Retiree Nest Eggs to Illiquid Private Credit",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "精算棘轮：当13%的大牛市变成3.7%的到手回报",
+        "en": "The Actuarial Ratchet: How a 13% Bull Market Became a 3.7% Return",
+        "numbers_found": [
+          "13%",
+          "3.7%",
+          "13%",
+          "3.7%"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "萨布丽娜·埃利奥特12年保单的两次下调与收益鸿沟",
+        "en": "Sabrina Elliott's 12-Year Policy: Two Participation Cuts & The Yield Gap",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "监管套利、7%高佣金与“改变协议”的私募特权",
+        "en": "Regulatory Arbitrage, 7% Commissions, and Changing the Deal",
+        "numbers_found": [
+          "7%",
+          "7%"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "翻倍的代理人佣金与“10万变270万”的回测幻象",
+        "en": "Doubled Agent Commissions & The $100K-to-$2.7M Backtest Pitch",
+        "numbers_found": [
+          "10",
+          "270",
+          "$100",
+          "$2.7"
+        ]
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "01",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "0%",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "0%",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "02",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "03",
+        "context": "01 / HOUSEHOLD SAVINGS 退休人员与家庭储蓄 Older Savers & Retirees 投入 $40K / $50K / $100K Invest $40K / $50K / $100K"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 9 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

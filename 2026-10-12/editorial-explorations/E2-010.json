@@ -1,0 +1,77 @@
+{
+  "schema_version": "enhanced-v1",
+  "article_id": "E2-010",
+  "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+  "created": "2026-10-14",
+  "analysis": {
+    "reader_need": "Follow Davis from anticipatory anxiety through the costs of weekend work, then keep conditional advice and her final reframing in the same narrative."
+  },
+  "reading_treatment": {
+    "profile": "narrative",
+    "reason": "One scene-setting opening and two changes of reading task; no repeated quotes, invented section titles or number panels.",
+    "evidence": [
+      {
+        "block_ids": [
+          "p1",
+          "p2",
+          "p6"
+        ],
+        "observation": "Davis opens the piece and returns with the hourglass; keep the scene intact."
+      },
+      {
+        "block_ids": [
+          "p7",
+          "p8"
+        ],
+        "observation": "The article turns from the individual coping device to the cost imposed on other people."
+      },
+      {
+        "block_ids": [
+          "p12",
+          "p13",
+          "p14"
+        ],
+        "observation": "Conditional permission, an alternative and Davis’s reframing are different answers, not a universal checklist."
+      }
+    ],
+    "roles": {
+      "cn": {
+        "lead": [
+          "p1"
+        ],
+        "break": [
+          "p7",
+          "p12"
+        ],
+        "closing": [
+          "p14"
+        ]
+      },
+      "en": {
+        "lead": [
+          "p1"
+        ],
+        "break": [
+          "p7",
+          "p12"
+        ],
+        "closing": [
+          "p14"
+        ]
+      }
+    }
+  },
+  "text_treatments": [],
+  "layout_decisions": [],
+  "component_plan": [],
+  "rejected_opportunities": [
+    {
+      "opportunity": "Sunday-work figure panel",
+      "reason": "12% vs 6.6% measures messaging time, not the share of people with anxiety."
+    },
+    {
+      "opportunity": "Advice checklist",
+      "reason": "Would detach guardrails and differing expert recommendations from their attribution."
+    }
+  ]
+}

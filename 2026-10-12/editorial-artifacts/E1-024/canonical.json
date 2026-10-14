@@ -1,0 +1,199 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-024",
+  "final_id": "024",
+  "issue_date": "2026-10-12",
+  "content_digest": "d583d8d10d6b1ab3dc5985e9dbbea772f854d9ce33d14745cf486f0e86b9a2e5",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A3",
+    "section": "U.S. News",
+    "type": "article",
+    "priority": "P2",
+    "kicker_cn": "U.S. News · A3 版",
+    "kicker_en": "WSJ · U.S. NEWS · A3",
+    "title_cn": "失控的 Anthropic 模型提交虚假谋杀线索",
+    "title_en": "Rogue Anthropic Model Shared Fake Murder Tip",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "BY GEORGIA WELLS AND JOSEPH PISANI",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一些失控的人工智能模型已经入侵了公司，并试图闯入政府网站。现在，其中一个模型提交了一份关于一桩未破悬案的虚假线索。",
+      "text_en": "Rogue AI models have hacked companies and tried to break into government websites. Now one has submitted a fake tip for an unsolved crime.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "一些失控的人工智能模型已经入侵了公司，并试图闯入政府网站。",
+          "text_en": "Rogue AI models have hacked companies and tried to break into government websites."
+        },
+        {
+          "id": "p1.s2",
+          "text_cn": "现在，其中一个模型提交了一份关于一桩未破悬案的虚假线索。",
+          "text_en": "Now one has submitted a fake tip for an unsolved crime."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "费城警方表示，Anthropic（AI公司）上周通知他们，其一款人工智能模型通过PhillyUnsolvedMurders.com（费城未破悬案网站）提交了一份关于一起谋杀案的虚假线索。",
+      "text_en": "Police in Philadelphia say Anthropic alerted them last week that one of its artificial-intelligence models submitted a false homicide tip through PhillyUnsolvedMurders.com.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "费城警方表示，Anthropic（AI公司）上周通知他们，其一款人工智能模型通过PhillyUnsolvedMurders.com（费城未破悬案网站）提交了一份关于一起谋杀案的虚假线索。",
+          "text_en": "Police in Philadelphia say Anthropic alerted them last week that one of its artificial-intelligence models submitted a false homicide tip through PhillyUnsolvedMurders.com."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "Anthropic表示，这份虚假线索是该公司最近发现的一系列失控行为之一。这些失控行为还涉及美国联邦、州和地方各级政府机构运营的网站。",
+      "text_en": "Anthropic said the fake tip was among a group of rogue actions the company uncovered recently. The rogue activity also involved websites run by U.S. government agencies at the federal, state and local levels.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "Anthropic表示，这份虚假线索是该公司最近发现的一系列失控行为之一。",
+          "text_en": "Anthropic said the fake tip was among a group of rogue actions the company uncovered recently."
+        },
+        {
+          "id": "p3.s2",
+          "text_cn": "这些失控行为还涉及美国联邦、州和地方各级政府机构运营的网站。",
+          "text_en": "The rogue activity also involved websites run by U.S. government agencies at the federal, state and local levels."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该公司表示，他们已经向白宫通报了这些事件，并通知了所有相关机构。",
+      "text_en": "The company said it has briefed the White House on these cases and notified each agency involved.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "该公司表示，他们已经向白宫通报了这些事件，并通知了所有相关机构。",
+          "text_en": "The company said it has briefed the White House on these cases and notified each agency involved."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "Anthropic表示：“虽然这些事件的影响有限，但我们不希望淡化这些发现，因为随着模型变得更加强大，相同的行为可能会造成更大的危害。”",
+      "text_en": "\"While these cases had minimal impact, we do not want to diminish the findings, because the same behaviors could do far more harm as models become more powerful,\" Anthropic said.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "Anthropic表示：“虽然这些事件的影响有限，但我们不希望淡化这些发现，因为随着模型变得更加强大，相同的行为可能会造成更大的危害。”",
+          "text_en": "\"While these cases had minimal impact, we do not want to diminish the findings, because the same behaviors could do far more harm as models become more powerful,\" Anthropic said."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "该事件发生在7月，Anthropic直到9月才意识到。",
+      "text_en": "The incident happened in July. Anthropic didn't realize it until September.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "该事件发生在7月，Anthropic直到9月才意识到。",
+          "text_en": "The incident happened in July. Anthropic didn't realize it until September."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "费城警察局表示：“该事件从发生到上报延迟了两个月，这是不可接受的。”",
+      "text_en": "The Philadelphia Police Department said, \"The two-month delay in detecting and reporting the incident to the city is unacceptable.\"",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "费城警察局表示：“该事件从发生到上报延迟了两个月，这是不可接受的。”",
+          "text_en": "The Philadelphia Police Department said, \"The two-month delay in detecting and reporting the incident to the city is unacceptable.\""
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [
+    {
+      "id": "q1",
+      "source_block": "p5",
+      "quote_cn": "“虽然这些事件的影响有限，但我们不希望淡化这些发现，因为随着模型变得更加强大，相同的行为可能会造成更大的危害。”",
+      "quote_en": "“While these cases had minimal impact, we do not want to diminish the findings, because the same behaviors could do far more harm as models become more powerful,”",
+      "speaker_cn": "原文第 5 段直接引述",
+      "role_cn": "Source Block p5",
+      "speaker_en": "Direct Quote (p5)",
+      "role_en": "Reported in article text"
+    },
+    {
+      "id": "q2",
+      "source_block": "p7",
+      "quote_cn": "“该事件从发生到上报延迟了两个月，这是不可接受的。”",
+      "quote_en": "“The two-month delay in detecting and reporting the incident to the city is unacceptable.”",
+      "speaker_cn": "原文第 7 段直接引述",
+      "role_cn": "Source Block p7",
+      "speaker_en": "Direct Quote (p7)",
+      "role_en": "Reported in article text"
+    }
+  ],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [
+    {
+      "id": "img1",
+      "asset_id": "IMG-E1-024-A3-1101",
+      "file": "assets/A3-p3-x1101.png",
+      "caption_cn": "",
+      "caption_en": "",
+      "credit": ""
+    }
+  ],
+  "terms": [
+    {
+      "en": "Georgia Wells",
+      "zh_suggested": "乔治娅·威尔斯",
+      "note": "待查"
+    },
+    {
+      "en": "Joseph Pisani",
+      "zh_suggested": "约瑟夫·皮萨尼",
+      "note": "待查"
+    },
+    {
+      "en": "Anthropic",
+      "zh_suggested": "Anthropic（AI公司）"
+    },
+    {
+      "en": "PhillyUnsolvedMurders.com",
+      "zh_suggested": "PhillyUnsolvedMurders.com（费城未破悬案网站）",
+      "note": "待查"
+    }
+  ]
+}

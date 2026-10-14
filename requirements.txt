@@ -1,0 +1,2 @@
+# Production compiler; other production modules use the Python standard library.
+lxml==6.1.1

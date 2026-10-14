@@ -1,5 +1,6 @@
 {
   "article_id": "E1-005",
+  "content_digest": "594d60e5bc886da12bddc698a4ab51cf79c044a1b202044c07b0342e4ced8db3",
   "version": "reboot-1",
   "created": "2026-10-13",
   "created_by": "Principal Engineer reboot — migrate legacy modules.json to enhanced-v1",
@@ -91,8 +92,8 @@
   "component_plan": [
     {
       "component": "key_figures",
-      "slot": {"at": "after_para", "para": 3},
-      "reason": "三项 condensed 数据点；伤亡已在正文，不再复述。",
+      "slot": {"at": "after_para", "para": 5},
+      "reason": "三项 condensed 数据点放在机场袭击 p3–p5 场景结束后，不割开同一事件的连续段落；伤亡已在正文，不再复述。",
       "data": {
         "items": [
           {"label_cn": "利雅得距胡塞控制区", "label_en": "RIYADH TO HOUTHI AREAS", "value_cn": "约500英里", "value_en": "about 500 miles", "note_cn": "首都部分地区已成战场", "note_en": "parts of the capital a battle zone"},

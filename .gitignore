@@ -1,3 +1,29 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Local environments and tooling caches
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Credentials stay outside version control; this sample is safe to track
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# New build snapshots are reproducible; already tracked deliveries stay tracked
+/????-??-??/dist/
+
+# Interrupted atomic queue writes, not durable queue/artifact records
+/????-??-??/editorial-artifacts/_queue.json.tmp.*
+
+# Scratch work has an explicit home; historical evidence remains visible
+.scratch/
+*.log

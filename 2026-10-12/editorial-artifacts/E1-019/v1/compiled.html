@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纽森支持一项旨在对抗富豪税收计划的举措 | WSJ 深读 · Editorial Renaissance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Noto+Sans+SC:wght@400;500;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;0,800;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-dark: #ebe5d8;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c8c0b0;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.13);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-border: #294158;
+    --crimson: #8f2822;
+    --teal: #1d5c57;
+
+    --font-serif-en: 'Playfair Display', Georgia, serif;
+    --font-body-en: 'Lora', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Strict Bilingual Visibility Rules */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    font-family: var(--font-serif-cn);
+    background-color: var(--paper);
+    color: var(--body);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-body-en);
+    line-height: 1.75;
+  }
+
+  /* Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(120deg, rgba(184, 93, 25, 0.16) 0%, rgba(184, 93, 25, 0.24) 100%);
+    color: var(--ink);
+    padding: 0.08em 0.28em;
+    border-bottom: 1.5px solid var(--accent);
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  /* Top Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .progress-track {
+    height: 3px;
+    width: 100%;
+    background: transparent;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.12s ease-out;
+  }
+
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.65rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .wsj-monogram {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    padding-right: 0.75rem;
+    border-right: 1px solid var(--line-strong);
+  }
+
+  .section-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 2px;
+    background: var(--paper-card);
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Header */
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+    border-bottom: 3px double var(--line-strong);
+  }
+
+  .hero-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .hero-kicker .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .article-title {
+    font-family: var(--font-serif-cn);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.2vw, 3.35rem);
+    line-height: 1.24;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    max-width: 24ch;
+    margin-bottom: 1.35rem;
+  }
+
+  html[lang="en"] .article-title {
+    font-family: var(--font-serif-en);
+    font-weight: 800;
+    line-height: 1.12;
+    max-width: 22ch;
+  }
+
+  .hero-dek {
+    font-family: var(--font-sans);
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 760px;
+    margin-bottom: 2rem;
+  }
+
+  .byline-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .byline-author strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .key-dates-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .key-dates-strip span strong {
+    color: var(--accent);
+  }
+
+  /* Main Container */
+  .editorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.75rem 1.5rem 5rem;
+  }
+
+  /* Act 1: Asymmetric Opening Grid */
+  .act-one-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(290px, 4.5fr);
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+  }
+
+  .prose-col {
+    min-width: 0;
+  }
+
+  .prose-p {
+    font-size: 1.125rem;
+    margin-bottom: 1.55rem;
+    color: var(--body);
+  }
+
+  /* Lead paragraph styling (NO ::first-letter on Chinese) */
+  .prose-p.lead-p {
+    font-size: 1.28rem;
+    line-height: 1.82;
+    color: var(--ink);
+    font-weight: 600;
+    padding-left: 1.15rem;
+    border-left: 4px solid var(--accent);
+    margin-bottom: 1.85rem;
+  }
+
+  /* Climax Quote Box for p2.s2 */
+  .statement-callout {
+    margin: 1.65rem 0 2rem;
+    padding: 1.5rem 1.75rem;
+    background: var(--paper-card);
+    border-left: 4px solid var(--ink);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .statement-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 700;
+  }
+
+  .statement-quote {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* Right Rail: Policy Metrics & Ballot Overview */
+  .policy-rail {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 4px solid var(--accent);
+    padding: 1.5rem;
+    position: sticky;
+    top: 4.5rem;
+  }
+
+  .rail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .rail-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+
+  .rail-code {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+
+  .metrics-stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .metric-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 1.15rem 1.25rem;
+  }
+
+  .metric-val {
+    font-family: var(--font-mono);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .rail-foot-box {
+    background: var(--navy-bg);
+    color: #f4f1ea;
+    padding: 1rem 1.15rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .rail-foot-box strong {
+    color: #f6ad55;
+    font-family: var(--font-mono);
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Bespoke Interactive/Visual Policy Architecture Section */
+  .policy-anatomy-board {
+    background: var(--navy-bg);
+    color: #f5f2eb;
+    border-radius: 3px;
+    padding: 2.5rem 2rem;
+    margin: 3.5rem 0;
+    border: 1px solid var(--navy-border);
+    box-shadow: 0 16px 36px rgba(15, 29, 43, 0.12);
+  }
+
+  .board-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    border-bottom: 1px solid var(--navy-border);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .board-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #f6ad55;
+    margin-bottom: 0.4rem;
+  }
+
+  .board-title {
+    font-family: var(--font-serif-cn);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  html[lang="en"] .board-title {
+    font-family: var(--font-serif-en);
+  }
+
+  .board-sub {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    color: #b0c0d0;
+    max-width: 460px;
+  }
+
+  .svg-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: var(--navy-card);
+    border: 1px solid var(--navy-border);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mechanism-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .mech-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--navy-border);
+    padding: 1.15rem;
+  }
+
+  .mech-step {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: #f6ad55;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+  }
+
+  .mech-head {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.45rem;
+  }
+
+  .mech-desc {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+  }
+
+  /* Section Divider */
+  .section-break {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 2rem;
+  }
+
+  .section-break-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 0.2rem 0.55rem;
+    letter-spacing: 0.06em;
+  }
+
+  .section-break-title {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .section-break-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-strong);
+  }
+
+  /* Act 2: Political Standoff & Constitutional Shield */
+  .act-two-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(280px, 4.5fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .constitution-carveout-box {
+    margin: 2rem 0;
+    padding: 1.65rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-left: 5px solid var(--teal);
+  }
+
+  .carveout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px dashed var(--line-strong);
+  }
+
+  .carveout-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  .asset-comparison-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-top: 1.15rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+  }
+
+  .asset-pill {
+    padding: 0.75rem 0.9rem;
+    border-radius: 2px;
+  }
+
+  .asset-pill.shielded {
+    background: rgba(29, 92, 87, 0.1);
+    border: 1px solid rgba(29, 92, 87, 0.35);
+    color: var(--ink);
+  }
+
+  .asset-pill.exempt {
+    background: rgba(184, 93, 25, 0.1);
+    border: 1px solid rgba(184, 93, 25, 0.35);
+    color: var(--ink);
+  }
+
+  .asset-pill strong {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Standoff Matrix Sidebar */
+  .standoff-dossier {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.5rem;
+  }
+
+  .dossier-title {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 1.25rem;
+  }
+
+  .camp-block {
+    padding: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    margin-bottom: 1rem;
+  }
+
+  .camp-block.camp-prop42 {
+    border-left: 4px solid var(--accent);
+  }
+
+  .camp-block.camp-wealthtax {
+    border-left: 4px solid var(--crimson);
+  }
+
+  .camp-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.45rem;
+    display: block;
+  }
+
+  .camp-prop42 .camp-label { color: var(--accent); }
+  .camp-wealthtax .camp-label { color: var(--crimson); }
+
+  .camp-actors {
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .camp-rationale {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Derived Pull Quote */
+  .pull-quote {
+    margin: 1.5rem 0 0;
+    padding: 1.25rem 1.35rem;
+    background: var(--paper);
+    border-top: 2px solid var(--crimson);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .pull-quote .quote-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .pull-quote .quote-attrib {
+    font-family: var(--font-mono);
+    font-size: 0.73rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Final Climax Verdict Box */
+  .verdict-coda {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(180deg, var(--paper-card) 0%, var(--paper-dark) 100%);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--crimson);
+  }
+
+  .coda-label {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--crimson);
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    display: block;
+  }
+
+  .verdict-coda .prose-p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .ed-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    border-top: 1px solid var(--line-strong);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 920px) {
+    .act-one-grid,
+    .act-two-grid,
+    .mechanism-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .policy-rail {
+      position: static;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .masthead-inner {
+      padding: 0.55rem 1rem;
+    }
+    .hero {
+      padding: 2.25rem 1rem 1.75rem;
+    }
+    .editorial-container {
+      padding: 2rem 1rem 3.5rem;
+    }
+    .policy-anatomy-board {
+      padding: 1.5rem 1rem;
+    }
+    .asset-comparison-strip {
+      grid-template-columns: 1fr;
+    }
+    .verdict-coda {
+      padding: 1.35rem 1.15rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Sticky Top Masthead -->
+<header class="masthead">
+  <div class="progress-track">
+    <div class="progress-bar" id="readProgress"></div>
+  </div>
+  <div class="masthead-inner">
+    <div class="brand-group">
+      <span class="wsj-monogram">WSJ</span>
+      <span class="section-pill">
+        <span class="lang-cn">美国新闻 · 财政与税制博弈 · A3版</span>
+        <span class="lang-en">U.S. NEWS · FISCAL &amp; TAX POLICY · PAGE A3</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Selector">
+      <button type="button" class="lang-btn active" id="btn-zh" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Header -->
+<header class="hero">
+  <div class="hero-kicker">
+    <span>E1-019</span>
+    <span class="dot"></span>
+    <span class="lang-cn">加利福尼亚州公投对决 · 42号提案</span>
+    <span class="lang-en">CALIFORNIA BALLOT SHOWDOWN · PROPOSITION 42</span>
+  </div>
+
+  <h1 class="article-title" data-ref="title"><span class="lang-cn">纽森支持一项旨在对抗富豪税收计划的举措</span><span class="lang-en">Newsom Backs Bid To Counter Billionaire Tax Effort</span></h1>
+
+  <p class="hero-dek">
+    <span class="lang-cn">围绕是否对净资产达10亿美元及以上的加州居民一次性征收5%财富税，加州州长纽森与科技亿万富翁联手推起“42号提案”修宪防线，直接迎战州民主党与医护工会。</span>
+    <span class="lang-en">Facing a union-backed ballot drive to levy a novel 5% one-time wealth tax on residents worth $1 billion or more, Gov. Gavin Newsom endorses Proposition 42—a constitutional shield backed by billionaire donors that has fractured California Democrats and labor.</span>
+  </p>
+
+  <div class="byline-bar">
+    <div class="byline-author">
+      <span class="lang-cn">撰文：<strong>PAUL KIERNAN</strong> · 2026年10月12日</span>
+      <span class="lang-en">BY <strong>PAUL KIERNAN</strong> · OCTOBER 12, 2026</span>
+    </div>
+    <div class="key-dates-strip">
+      <span>
+        <span class="lang-cn">公投表决日：<strong>11月3日</strong></span>
+        <span class="lang-en">BALLOT VOTE: <strong>NOV. 3</strong></span>
+      </span>
+      <span>
+        <span class="lang-cn">征税起征点：<strong>10亿美元净资产</strong></span>
+        <span class="lang-en">THRESHOLD: <strong>$1B NET ASSETS</strong></span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- Main Editorial Content -->
+<main class="editorial-container">
+
+  <!-- ACT I: The Endorsement & The Billionaire Tax Catalyst -->
+  <section class="act-one-grid" aria-label="Opening Narrative and Key Fiscal Metrics">
+    <div class="prose-col">
+      <p class="prose-p lead-p" data-ref="p1" data-hl="加利福尼亚州州长加文·纽森 | 禁止征收财富税 | California Gov. Gavin Newsom | prohibiting wealth taxes"><span class="lang-cn"><mark class="ed-hl">加利福尼亚州州长加文·纽森</mark>反对一项备受关注的提案，该提案旨在对亿万富翁的财富征税。现在，他支持另一项提案，旨在<mark class="ed-hl">禁止征收财富税</mark>。</span><span class="lang-en"><mark class="ed-hl">California Gov. Gavin Newsom</mark> has opposed a high-profile ballot measure that would tax billionaires' wealth. Now he is endorsing a different measure aimed at <mark class="ed-hl">prohibiting wealth taxes</mark>.</span></p>
+
+      <p class="prose-p" data-ref="p2.s1" data-hl="42号提案 | Proposition 42"><span class="lang-cn">纽森周五通过支持反对征税提案的竞选团队宣布了他的支持，该提案被称为“<mark class="ed-hl">42号提案</mark>”。</span><span class="lang-en">Newsom announced his endorsement Friday via the campaign backing the antitax measure, known as <mark class="ed-hl">Proposition 42</mark>.</span></p>
+
+      <blockquote class="statement-callout">
+        <span class="statement-tag">
+          <span class="lang-cn">州长背书声明 · 42号提案竞选声明</span>
+          <span class="lang-en">GUBERNATORIAL ENDORSEMENT · PROP. 42 CAMPAIGN</span>
+        </span>
+        <div class="statement-quote" data-ref="p2.s2"><span class="lang-cn">纽森表示：“加利福尼亚人有权保护他们的退休金和生活储蓄，使其免受新的州税影响。”</span><span class="lang-en">"Californians deserve to have their retirement and life savings protected from new state taxes," Newsom said.</span></div>
+      </blockquote>
+
+      <p class="prose-p" data-ref="p3" data-hl="谢尔盖·布林 | 一次性征收 5% 的税 | 11 月 3 日 | Sergey Brin | one-time 5% tax | Nov. 3"><span class="lang-cn">“42号提案”已筹集了数千万美元，资金来自一个政治委员会，该委员会的部分资金来自亿万富翁，包括谷歌联合创始人<mark class="ed-hl">谢尔盖·布林</mark>。在一家医护工作者工会提议对亿万富翁的财富<mark class="ed-hl">一次性征收 5% 的税</mark>后，这项活动获得了推动。选民将于 <mark class="ed-hl">11 月 3 日</mark>就这两项提案进行表决。</span><span class="lang-en">Prop. 42 has raised tens of millions of dollars from a political committee funded in part by billionaires, including Google co-founder <mark class="ed-hl">Sergey Brin</mark>. This effort took off after a healthcare-workers' union proposed a <mark class="ed-hl">one-time 5% tax</mark> on billionaires' wealth. Voters are set to decide on both ballot measures on <mark class="ed-hl">Nov. 3</mark>.</span></p>
+
+      <p class="prose-p" data-ref="p4" data-hl="医疗补助资金 | 10 亿美元或以上 | Medicaid funding | $1 billion or more"><span class="lang-cn">拟议的亿万富翁税旨在抵消特朗普总统去年签署生效的对<mark class="ed-hl">医疗补助资金</mark>的大幅削减，在美国是前所未有的。与大多数美国人缴纳的所得税不同，它将适用于净资产为 <mark class="ed-hl">10 亿美元或以上</mark>的加利福尼亚居民的净资产。</span><span class="lang-en">The proposed billionaire tax, aimed at offsetting steep cuts to <mark class="ed-hl">Medicaid funding</mark> signed into law last year by President Trump, is novel in the U.S. Unlike the income taxes that most Americans pay, it would apply to the net worth of California residents with net assets of <mark class="ed-hl">$1 billion or more</mark>.</span></p>
+    </div>
+
+    <!-- Right Forensic Policy Rail -->
+    <aside class="policy-rail" aria-label="Verified Fiscal Metrics">
+      <div class="rail-header">
+        <span class="rail-title">
+          <span class="lang-cn">核心税制参数核查</span>
+          <span class="lang-en">FISCAL THRESHOLD BRIEF</span>
+        </span>
+        <span class="rail-code">NOV. 3 BALLOT</span>
+      </div>
+
+      <div class="metrics-stack">
+        <div class="metric-card" data-derive="m2">
+          <div class="metric-val" data-field="value"><span class="lang-cn">10 亿美元</span><span class="lang-en">$1 billion</span></div>
+          <div class="metric-lbl" data-field="label"><span class="lang-cn">拟议的亿万富翁税旨在抵消特朗普总统去年签署生效的对医疗补助资金的大幅削减…</span><span class="lang-en">The proposed billionaire tax, aimed at offsetting steep cuts…</span></div>
+          <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p4]</span><span class="lang-en">From paragraph [p4]</span></div>
+        </div>
+
+        <div class="metric-card" data-derive="m1">
+          <div class="metric-val" data-field="value"><span class="lang-cn">5%</span><span class="lang-en">5%</span></div>
+          <div class="metric-lbl" data-field="label"><span class="lang-cn">“42号提案”已筹集了数千万美元，资金来自一个政治委员会，该委员会的部分…</span><span class="lang-en">Prop. 42 has raised tens of millions of dollars from a polit…</span></div>
+          <div class="metric-note" data-field="note"><span class="lang-cn">源自正文 [p3]</span><span class="lang-en">From paragraph [p3]</span></div>
+        </div>
+      </div>
+
+      <div class="rail-foot-box">
+        <strong>
+          <span class="lang-cn">提案背景溯源</span>
+          <span class="lang-en">LEGISLATIVE CATALYST</span>
+        </strong>
+        <span class="lang-cn">医护工会提出的一次性财富税旨在填补联邦医疗补助（Medicaid）资金大幅削减后的缺口，而不同于传统所得税，该税种直接针对达到10亿美元门槛居民的净资产存量。</span>
+        <span class="lang-en">Proposed by a healthcare-workers' union to offset steep federal Medicaid cuts signed into law last year, the novel levy targets net asset stock rather than annual income.</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- BESPOKE DIAGRAM: Constitutional Clash & Asset Carve-Out Architecture -->
+  <section class="policy-anatomy-board" aria-label="Ballot Architecture Diagram">
+    <div class="board-header">
+      <div>
+        <div class="board-kicker">
+          <span class="lang-cn">华尔街日报政策图解 · 11月3日双重公投机制</span>
+          <span class="lang-en">WSJ POLICY ARCHITECTURE · THE NOV. 3 DUAL BALLOT MECHANISM</span>
+        </div>
+        <h2 class="board-title">
+          <span class="lang-cn">10亿美元财富税 vs. “42号提案”修宪防线（房地产除外）</span>
+          <span class="lang-en">$1 Billion Wealth Levy vs. Prop. 42 Constitutional Shield (Real-Estate Carve-Out)</span>
+        </h2>
+      </div>
+      <p class="board-sub">
+        <span class="lang-cn">选民将在11月3日同时表决两项针锋相对的提案。若两项提案双双过关，围绕州宪法修正案优先权的法律战将不可避免。</span>
+        <span class="lang-en">Voters face two competing measures on Nov. 3. If both pass, a constitutional collision in the courts looms immediately.</span>
+      </p>
+    </div>
+
+    <div class="svg-wrapper">
+      <svg viewbox="0 0 920 340" width="100%" role="img" aria-label="Diagram comparing the Healthcare Union Billionaire Wealth Tax and Proposition 42 Constitutional Prohibition">
+        <defs>
+          <marker id="arrowGold" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#f6ad55"></path>
+          </marker>
+          <marker id="arrowRed" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#e57373"></path>
+          </marker>
+        </defs>
+
+        <!-- Background Grid Lines -->
+        <line x1="40" y1="60" x2="880" y2="60" stroke="#294158" stroke-dasharray="3 3"></line>
+        <line x1="40" y1="285" x2="880" y2="285" stroke="#294158" stroke-dasharray="3 3"></line>
+
+        <!-- LEFT BOX: Billionaire Wealth Tax Measure -->
+        <rect x="40" y="38" width="265" height="225" rx="4" fill="#1d3247" stroke="#e57373" stroke-width="1.8"></rect>
+        <rect x="40" y="38" width="265" height="32" rx="4" fill="#8f2822"></rect>
+        <text x="54" y="59" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+          <tspan class="lang-cn">提案 A · 医护工会财富税提案</tspan>
+          <tspan class="lang-en">MEASURE A · BILLIONAIRE WEALTH TAX</tspan>
+        </text>
+
+        <text x="56" y="96" fill="#f6ad55" font-family="JetBrains Mono, monospace" font-size="22" font-weight="700">
+          <tspan class="lang-cn">5% 一次性征税 (≥$1B)</tspan>
+          <tspan class="lang-en">5% ONE-TIME TAX (≥$1B)</tspan>
+        </text>
+        <text x="56" y="122" fill="#e2e8f0" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="600">
+          <tspan class="lang-cn">征税对象：净资产≥10亿美元加州居民</tspan>
+          <tspan class="lang-en">Target: CA residents with ≥$1B net assets</tspan>
+        </text>
+        <text x="56" y="148" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+          <tspan class="lang-cn">• 资金用途：抵消联邦医疗补助大幅削减</tspan>
+          <tspan class="lang-en">• Purpose: Offset steep Medicaid cuts</tspan>
+        </text>
+        <text x="56" y="172" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+          <tspan class="lang-cn">• 税制特征：对净资产而非所得税征收</tspan>
+          <tspan class="lang-en">• Structure: Taxes net worth, not income</tspan>
+        </text>
+        <rect x="56" y="194" width="233" height="50" rx="3" fill="#132232" stroke="#3b5670"></rect>
+        <text x="68" y="214" fill="#f8b4b4" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">
+          <tspan class="lang-cn">支持阵营</tspan>
+          <tspan class="lang-en">KEY BACKERS</tspan>
+        </text>
+        <text x="68" y="233" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="11.5">
+          <tspan class="lang-cn">SEIU-UHW西部分会、加州民主党(8月投票)</tspan>
+          <tspan class="lang-en">SEIU-UHW West, CA Democratic Party</tspan>
+        </text>
+
+        <!-- CENTER ARROWS & COLLISION NODE -->
+        <line x1="305" y1="120" x2="368" y2="120" stroke="#e57373" stroke-width="2" marker-end="url(#arrowRed)"></line>
+        <line x1="615" y1="120" x2="552" y2="120" stroke="#f6ad55" stroke-width="2" marker-end="url(#arrowGold)"></line>
+
+        <rect x="375" y="48" width="170" height="205" rx="4" fill="#132232" stroke="#f6ad55" stroke-width="1.5"></rect>
+        <text x="460" y="74" text-anchor="middle" fill="#f6ad55" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+          <tspan class="lang-cn">宪法与资产边界</tspan>
+          <tspan class="lang-en">ASSET CARVE-OUT</tspan>
+        </text>
+
+        <!-- Protected Box inside Center -->
+        <rect x="389" y="86" width="142" height="68" rx="3" fill="#183836" stroke="#38b2ac"></rect>
+        <text x="460" y="106" text-anchor="middle" fill="#81e6d9" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">
+          <tspan class="lang-cn">42号提案禁止征税</tspan>
+          <tspan class="lang-en">PROP. 42 PROHIBITS</tspan>
+        </text>
+        <text x="460" y="126" text-anchor="middle" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="11.5" font-weight="600">
+          <tspan class="lang-cn">金融资产与个人财产</tspan>
+          <tspan class="lang-en">Financial &amp; Personal</tspan>
+        </text>
+        <text x="460" y="144" text-anchor="middle" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5">
+          <tspan class="lang-cn">（使亿万富翁税失效）</tspan>
+          <tspan class="lang-en">(Invalidates wealth levy)</tspan>
+        </text>
+
+        <!-- Exception Box inside Center -->
+        <rect x="389" y="166" width="142" height="72" rx="3" fill="#3b2618" stroke="#f6ad55"></rect>
+        <text x="460" y="186" text-anchor="middle" fill="#fbd38d" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">
+          <tspan class="lang-cn">明确豁免条款</tspan>
+          <tspan class="lang-en">EXPLICIT EXCEPTION</tspan>
+        </text>
+        <text x="460" y="207" text-anchor="middle" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" font-weight="700">
+          <tspan class="lang-cn">房地产除外</tspan>
+          <tspan class="lang-en">Other Than Real Estate</tspan>
+        </text>
+        <text x="460" y="226" text-anchor="middle" fill="#fbd38d" font-family="Inter, Noto Sans SC, sans-serif" font-size="10.5">
+          <tspan class="lang-cn">不在禁征新税之列</tspan>
+          <tspan class="lang-en">Excluded from ban</tspan>
+        </text>
+
+        <!-- RIGHT BOX: Proposition 42 Counter-Measure -->
+        <rect x="615" y="38" width="265" height="225" rx="4" fill="#1d3247" stroke="#f6ad55" stroke-width="1.8"></rect>
+        <rect x="615" y="38" width="265" height="32" rx="4" fill="#b85d19"></rect>
+        <text x="629" y="59" fill="#ffffff" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+          <tspan class="lang-cn">提案 B · “42号提案”反制举措</tspan>
+          <tspan class="lang-en">MEASURE B · PROPOSITION 42</tspan>
+        </text>
+
+        <text x="631" y="96" fill="#f6ad55" font-family="JetBrains Mono, monospace" font-size="21" font-weight="700">
+          <tspan class="lang-cn">修宪禁止征收财富税</tspan>
+          <tspan class="lang-en">CONSTITUTIONAL BAN</tspan>
+        </text>
+        <text x="631" y="122" fill="#e2e8f0" font-family="Inter, Noto Sans SC, sans-serif" font-size="12.5" font-weight="600">
+          <tspan class="lang-cn">筹资规模：数千万美元政治委员会资金</tspan>
+          <tspan class="lang-en">Funding: Tens of millions raised</tspan>
+        </text>
+        <text x="631" y="148" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+          <tspan class="lang-cn">• 纽森论点：防止最大纳税人逃离加州</tspan>
+          <tspan class="lang-en">• Newsom: Prevent top taxpayers fleeing</tspan>
+        </text>
+        <text x="631" y="172" fill="#cbd5e1" font-family="Inter, Noto Sans SC, sans-serif" font-size="12">
+          <tspan class="lang-cn">• 竞选警告：防立法机构扩大征税范围</tspan>
+          <tspan class="lang-en">• Warning: Block broader tax expansion</tspan>
+        </text>
+        <rect x="631" y="194" width="233" height="50" rx="3" fill="#132232" stroke="#3b5670"></rect>
+        <text x="643" y="214" fill="#fbd38d" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700">
+          <tspan class="lang-cn">支持阵营</tspan>
+          <tspan class="lang-en">KEY BACKERS</tspan>
+        </text>
+        <text x="643" y="233" fill="#ffffff" font-family="Inter, Noto Sans SC, sans-serif" font-size="11.5">
+          <tspan class="lang-cn">州长纽森、谢尔盖·布林等亿万富翁</tspan>
+          <tspan class="lang-en">Gov. Newsom, Sergey Brin &amp; billionaires</tspan>
+        </text>
+
+        <!-- Bottom Timeline Outcome Bar -->
+        <rect x="40" y="280" width="840" height="36" rx="3" fill="#132232" stroke="#3b5670"></rect>
+        <text x="460" y="303" text-anchor="middle" fill="#f6ad55" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">
+          <tspan class="lang-cn">11月3日选民表决 → 若两项提案同时获批，一场围绕州宪法的法律战很可能随之而来</tspan>
+          <tspan class="lang-en">NOV. 3 BALLOT → A LIKELY LEGAL BATTLE LOOMS IF VOTERS APPROVE BOTH MEASURES</tspan>
+        </text>
+      </svg>
+    </div>
+
+    <div class="mechanism-cards">
+      <div class="mech-card">
+        <div class="mech-step">01 / THRESHOLD</div>
+        <div class="mech-head">
+          <span class="lang-cn">10亿美元净资产起征线</span>
+          <span class="lang-en">$1 Billion Net-Worth Trigger</span>
+        </div>
+        <p class="mech-desc">
+          <span class="lang-cn">打破美国常规所得税框架，专门针对净资产达10亿美元或以上的加州居民一次性征收5%财富税。</span>
+          <span class="lang-en">Departs from conventional U.S. income taxes by applying a one-time 5% levy directly on net assets of $1 billion or more.</span>
+        </p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-step">02 / CARVE-OUT</div>
+        <div class="mech-head">
+          <span class="lang-cn">修宪禁令与“房地产除外”</span>
+          <span class="lang-en">Constitutional Ban &amp; Real Estate</span>
+        </div>
+        <p class="mech-desc">
+          <span class="lang-cn">“42号提案”通过修改加州宪法，禁止对金融资产或个人财产（房地产除外）征收新税，从而令富豪税失效。</span>
+          <span class="lang-en">Prop. 42 amends the state constitution to bar new taxes on financial assets or personal property, other than real estate.</span>
+        </p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-step">03 / COLLISION</div>
+        <div class="mech-head">
+          <span class="lang-cn">党内分裂与潜在司法战</span>
+          <span class="lang-en">Intra-Party Rift &amp; Legal Clash</span>
+        </div>
+        <p class="mech-desc">
+          <span class="lang-cn">州长纽森担忧最大纳税人外逃而反对财富税，加州民主党则在8月投票支持征税，双方正面交锋。</span>
+          <span class="lang-en">Newsom warns top taxpayers could flee, while the California Democratic Party voted in August to endorse the wealth tax.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-break">
+    <span class="section-break-num">II</span>
+    <span class="section-break-title">
+      <span class="lang-cn">民主党内部分裂、宪法豁免条款与工会反击</span>
+      <span class="lang-en">DEMOCRATIC DIVISIONS, CONSTITUTIONAL MECHANICS &amp; UNION PUSHBACK</span>
+    </span>
+    <div class="section-break-line"></div>
+  </div>
+
+  <!-- ACT II: Political Standoff & Constitutional Carve-Out -->
+  <section class="act-two-grid" aria-label="Political Standoff and Constitutional Details">
+    <div class="prose-col">
+      <p class="prose-p" data-ref="p5" data-hl="民主党和加利福尼亚州劳工运动内部的严重分歧 | bitter divisions in the Democratic Party"><span class="lang-cn">这项财富税暴露了<mark class="ed-hl">民主党和加利福尼亚州劳工运动内部的严重分歧</mark>。</span><span class="lang-en">The wealth tax has exposed <mark class="ed-hl">bitter divisions in the Democratic Party</mark> and in California's labor movement.</span></p>
+
+      <p class="prose-p" data-ref="p6" data-hl="最大的纳税人逃离 | 8 月投票支持该提案 | largest taxpayers to flee | voted in August to endorse"><span class="lang-cn">纽森去年反对这项税收，时间是在一家医护工作者工会提出该提案的几周后，他认为这项税收可能会导致该州<mark class="ed-hl">最大的纳税人逃离</mark>。与此同时，该州民主党于 <mark class="ed-hl">8 月投票支持该提案</mark>。</span><span class="lang-en">Newsom came out against the tax last year, weeks after it was proposed by a healthcare-workers union, and has argued the levy could push the state's <mark class="ed-hl">largest taxpayers to flee</mark>. The state Democratic Party, meanwhile, <mark class="ed-hl">voted in August to endorse</mark> the measure.</span></p>
+
+      <!-- Highlighted Constitutional Mechanism Box around p7 -->
+      <div class="constitution-carveout-box">
+        <div class="carveout-header">
+          <span class="carveout-badge">
+            <span class="lang-cn">州宪法修正机制解析 · 42号提案核心条款</span>
+            <span class="lang-en">CONSTITUTIONAL MECHANISM · PROP. 42 CLAUSE</span>
+          </span>
+        </div>
+        <p class="prose-p" style="margin-bottom: 0;" data-ref="p7" data-hl="修改加利福尼亚州的宪法 | 金融资产或个人财产（房地产除外） | changing California's constitution | financial assets or personal property, other than real estate"><span class="lang-cn">“42号提案”可以通过<mark class="ed-hl">修改加利福尼亚州的宪法</mark>，禁止对<mark class="ed-hl">金融资产或个人财产（房地产除外）</mark>征收新的税收，从而使亿万富翁税失效。</span><span class="lang-en">Prop. 42 could invalidate a billionaire tax by <mark class="ed-hl">changing California's constitution</mark> to prohibit new taxes on <mark class="ed-hl">financial assets or personal property, other than real estate</mark>.</span></p>
+        <div class="asset-comparison-strip">
+          <div class="asset-pill shielded">
+            <strong>
+              <span class="lang-cn">禁止征收新税范围</span>
+              <span class="lang-en">PROTECTED FROM NEW TAXES</span>
+            </strong>
+            <span class="lang-cn">金融资产与个人财产（使针对亿万富翁净资产的财富税失效）</span>
+            <span class="lang-en">Financial assets &amp; personal property (invalidating the billionaire wealth tax)</span>
+          </div>
+          <div class="asset-pill exempt">
+            <strong>
+              <span class="lang-cn">宪法修正案明确豁免</span>
+              <span class="lang-en">EXPLICIT CARVE-OUT</span>
+            </strong>
+            <span class="lang-cn">房地产除外（Other than real estate）</span>
+            <span class="lang-en">Real estate is explicitly excluded from the new tax prohibition</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="prose-p" data-ref="p8"><span class="lang-cn">加利福尼亚州民主党和几个大型工会反对该提案。</span><span class="lang-en">The California Democratic Party and several large unions oppose it.</span></p>
+
+      <p class="prose-p" data-ref="p9" data-hl="削弱该州的财政基础 | 扩大适用范围 | weaken the state's fiscal base | broader swath of residents"><span class="lang-cn">加利福尼亚州的亿万富翁向竞选活动投入了大量资金，声称这项税收可能会<mark class="ed-hl">削弱该州的财政基础</mark>，或者由立法机构<mark class="ed-hl">扩大适用范围</mark>，覆盖更广泛的居民。</span><span class="lang-en">California billionaires have poured money into campaigns claiming the tax could <mark class="ed-hl">weaken the state's fiscal base</mark> or be expanded by the legislature to apply to a <mark class="ed-hl">broader swath of residents</mark>.</span></p>
+
+      <p class="prose-p" data-ref="p10" data-hl="法律战 | legal battle"><span class="lang-cn">如果选民同时批准这项提案和财富税，一场<mark class="ed-hl">法律战</mark>很可能随之而来。</span><span class="lang-en">A likely <mark class="ed-hl">legal battle</mark> looms if voters approve this measure and the wealth tax.</span></p>
+
+      <!-- Climax Union Verdict Box (p11) -->
+      <div class="verdict-coda">
+        <span class="coda-label">
+          <span class="lang-cn">工会阵营回应 · 服务业雇员国际工会-联合医护工作者西部</span>
+          <span class="lang-en">LABOR RESPONSE · SEIU-UNITED HEALTHCARE WORKERS WEST</span>
+        </span>
+        <p class="prose-p" data-ref="p11" data-hl="服务业雇员国际工会-联合医护工作者西部 | 德布鲁·卡森 | Service Employees International Union-United Healthcare Workers West | Debru Carthan"><span class="lang-cn">支持这项针对富豪征税计划的工会——<mark class="ed-hl">服务业雇员国际工会-联合医护工作者西部</mark>——表示，纽森州长站在加州最富有的居民一边，而不是优先考虑儿童和家庭的医疗保健需求。“纽森州长与支持他的富豪们步调一致，”该工会的副主席<mark class="ed-hl">德布鲁·卡森</mark>说道。</span><span class="lang-en">The union backing the billionaire tax effort—the <mark class="ed-hl">Service Employees International Union-United Healthcare Workers West</mark>—said Newsom was siding with California's wealthiest residents over healthcare for children and families. "Governor Newsom is in lock step with his billionaire-backers," <mark class="ed-hl">Debru Carthan</mark>, the union's vice president, said.</span></p>
+      </div>
+    </div>
+
+    <!-- Right Dossier: Standoff Alignment & Derived Quote -->
+    <aside class="standoff-dossier" aria-label="Political Alignment Dossier">
+      <div class="dossier-title">
+        <span class="lang-cn">加州财富税对决阵营档案</span>
+        <span class="lang-en">POLITICAL STANDOFF DOSSIER</span>
+      </div>
+
+      <div class="camp-block camp-prop42">
+        <span class="camp-label">
+          <span class="lang-cn">支持“42号提案”（反财富税阵营）</span>
+          <span class="lang-en">PRO-PROP. 42 (ANTI-WEALTH TAX)</span>
+        </span>
+        <div class="camp-actors">
+          <span class="lang-cn">州长加文·纽森、谷歌联合创始人谢尔盖·布林及加州亿万富翁资助的政治委员会</span>
+          <span class="lang-en">Gov. Gavin Newsom, Google co-founder Sergey Brin &amp; billionaire-funded political committee</span>
+        </div>
+        <p class="camp-rationale">
+          <span class="lang-cn">核心论据：保护退休金和生活储蓄免受新州税影响；防止加州最大纳税人逃离而削弱财政基础；防止立法机构未来将征税扩大至更广泛居民。</span>
+          <span class="lang-en">Core Argument: Protect retirement and life savings; prevent largest taxpayers from fleeing and weakening the fiscal base; stop legislature from expanding the tax to broader residents.</span>
+        </p>
+      </div>
+
+      <div class="camp-block camp-wealthtax">
+        <span class="camp-label">
+          <span class="lang-cn">支持5%亿万富翁税（反对42号提案）</span>
+          <span class="lang-en">PRO-5% BILLIONAIRE TAX (ANTI-PROP. 42)</span>
+        </span>
+        <div class="camp-actors">
+          <span class="lang-cn">服务业雇员国际工会-联合医护工作者西部（SEIU-UHW West）、加利福尼亚州民主党及多个大型工会</span>
+          <span class="lang-en">SEIU-United Healthcare Workers West, California Democratic Party &amp; major labor unions</span>
+        </div>
+        <p class="camp-rationale">
+          <span class="lang-cn">核心论据：对净资产10亿美元或以上居民一次性征收5%财富税，以抵消特朗普总统去年签署生效的联邦医疗补助资金大幅削减，优先保障儿童和家庭医疗保健。</span>
+          <span class="lang-en">Core Argument: Levy a one-time 5% tax on net worth of $1B+ residents to offset steep federal Medicaid cuts signed last year, prioritizing healthcare for children and families.</span>
+        </p>
+      </div>
+
+      <blockquote class="pull-quote" data-derive="q1">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“加利福尼亚人有权保护他们的退休金和生活储蓄，使其免受新的州税影响。”</span><span class="lang-en">“Californians deserve to have their retirement and life savings protected from new state taxes,”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 原文第 2 段直接引述 · Source Block p2</span><span class="lang-en">— Direct Quote (p2), Reported in article text</span></footer>
+      </blockquote>
+    </aside>
+  </section>
+
+</main>
+
+<footer class="ed-footer">
+  <div>
+    <span class="lang-cn">华尔街日报中文网 · 深度政经报道 (E1-019 · A3版)</span>
+    <span class="lang-en">THE WALL STREET JOURNAL · U.S. NEWS (E1-019 · PAGE A3)</span>
+  </div>
+  <div>
+    <span class="lang-cn">双语排版引擎 · 100% 原文锚点核验</span>
+    <span class="lang-en">BILINGUAL EDITORIAL EDITION · VERBATIM SOURCE PROTOCOL</span>
+  </div>
+</footer>
+
+</body>
+</html>

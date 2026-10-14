@@ -1,0 +1,387 @@
+{
+  "mode": "audit-only",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 20,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 20,
+    "source_derived_count": 0,
+    "highlights_applied": [],
+    "ai_editorial_items_count": 14,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Elliott policy participation cuts and annualized return comparison",
+        "viewBox": "",
+        "text_labels": [
+          "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分",
+          "A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED",
+          "第 1 年",
+          "Year 1",
+          "60% S&P 500",
+          "40% @ 1%",
+          "第 7 年",
+          "Year 7",
+          "55% S&P 500",
+          "45% @ 1%",
+          "第 11 年",
+          "Year 11",
+          "45% S&P 500",
+          "55% @ 1%",
+          "双重扣减：标普挂钩部分扣 2.9 个百分点差额 + 终身/继承人附加险减约 2 个百分点/年",
+          "Deductions: -2.9pp spread on S&P portion + ~2pp annual drag from lifetime/heir riders",
+          "B. 12年锁定期年化收益率对比 (至2023年底)",
+          "B. 12-YEAR ANNUALIZED RETURN COMPARISON (ENDED LATE 2023)",
+          "标普500指数",
+          "S&P 500 Index",
+          "13.0%",
+          "埃利奥特年金",
+          "Elliott Annuity",
+          "3.7%",
+          "美国国债",
+          "U.S. Treasurys",
+          "1.9%",
+          "注：埃利奥特收益超越国债 (+1.8个百分点)，但距同期标普500牛市相差 9.3 个百分点。",
+          "Note: Beat Treasurys by 1.8pp, but trailed the S&P 500 bull market by 9.3pp annualized."
+        ],
+        "numbers_found": [
+          "500",
+          "1%",
+          "500",
+          "2.9",
+          "1%",
+          "1",
+          "1",
+          "60%",
+          "500",
+          "40%",
+          "1%",
+          "7",
+          "7",
+          "55%",
+          "500",
+          "45%",
+          "1%",
+          "11",
+          "11",
+          "45%",
+          "500",
+          "55%",
+          "1%",
+          "2.9",
+          "2",
+          "2.9",
+          "2",
+          "12",
+          "2023",
+          "12",
+          "2023",
+          "500",
+          "500",
+          "13.0%",
+          "3.7%",
+          "1.9%",
+          "1.8",
+          "500",
+          "9.3",
+          "1.8",
+          "500",
+          "9.3"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "Agent commission comparison and Delaware Life hypothetical growth chart",
+        "viewBox": "",
+        "text_labels": [
+          "1. 销售代理人佣金占保单存款比例",
+          "1. AGENT COMMISSION (% OF POLICYHOLDER DEPOSIT)",
+          "美国公平人寿 (10年指数年金)",
+          "American Equity (10-yr Indexed)",
+          "5% – 7%",
+          "博枫旗下保险 (简单固定利率)",
+          "Brookfield Insurer (Fixed-Rate)",
+          "~3%",
+          "监管分野：州保险代理人无需证券执照，不受SEC同等利益冲突披露或最佳利益规则约束",
+          "Oversight Gap: State insurance agents lack SEC fiduciary / conflict-disclosure rules",
+          "2. 特拉华人寿“动量增长”年金宣传册演示 (21年)",
+          "2. DELAWARE LIFE \"MOMENTUM GROWTH\" BROCHURE PITCH (21 YRS)",
+          "初始投入保费",
+          "Initial Premium",
+          "$100K",
+          "21年假设增长",
+          "21-Yr Pitch",
+          "宣传材料演示终值",
+          "Advertised Value",
+          "$2.7M",
+          "宣传背后的回测假设前提：",
+          "The Fine Print Behind the $2.7M Projection:",
+          "• 挂钩标的：一个去年才刚刚成立的股票与加密货币指数",
+          "• Underlying Index: Tied to a stock-and-crypto index established just last year",
+          "• 数据来源：基于过去15年假设数据回测（含11年股市两位数增长）",
+          "• Backtest Window: 15 yrs of hypothetical data (including 11 yrs of double-digit gains)"
+        ],
+        "numbers_found": [
+          "1",
+          "1",
+          "10",
+          "10",
+          "5%",
+          "7%",
+          "3%",
+          "2",
+          "21",
+          "2",
+          "21",
+          "$100",
+          "21",
+          "21",
+          "$2.7",
+          "$2.7",
+          "15",
+          "11",
+          "15",
+          "11"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 3,
+        "aria_label": "Four-stage pipeline from household savings to private credit investments",
+        "viewBox": "",
+        "text_labels": [
+          "STAGE 01 · HOUSEHOLDS",
+          "美国家庭退休储蓄",
+          "Household Savings",
+          "• 典型保费：$4万 / $5万 / $10万",
+          "• Deposits: $40K / $50K / $100K",
+          "• 州保险代理人销售 (5%–7%佣金)",
+          "• State agents (5%–7% commission)",
+          "• 承诺本金不亏 + 挂钩股市收益",
+          "• 0% floor + equity-linked pitch",
+          "STAGE 02 · DURATION ADVANTAGE",
+          "私募控股保险公司保费池",
+          "PE-Owned Insurer Float",
+          "• 指数型年金锁定期：约 10–12 年",
+          "• Indexed lockup: ~10 to 12 years",
+          "• 对比固定利率年金：仅 3–5 年",
+          "• vs. Fixed-rate annuities: 3–5 yrs",
+          "• 赔付时间表相对可预测",
+          "• Predictable payout timetable",
+          "STAGE 03 · PRIVATE CREDIT",
+          "高风险、低流动性信贷资产",
+          "Illiquid Private-Credit Assets",
+          "• 担保贷款凭证 (CLOs)",
+          "• Collateralized Loan Obligations",
+          "• 资产支持证券 (ABS)",
+          "• Asset-Backed Securities (ABS)",
+          "• 向风险企业放贷的私募信贷",
+          "• Private lending to risky companies",
+          "STAGE 04 · THE RATCHET",
+          "单向可调的收益上限阀",
+          "Unilateral Cap Control",
+          "• 投资不佳：下调上限缓冲损失",
+          "• Poor returns: cut caps to cushion",
+          "• 投资良好：下调上限增厚利润",
+          "• Good returns: cut caps to fatten profit",
+          "• 随时“改变与消费者的协议”",
+          "• \"Change the deal on the consumer\"",
+          "反馈回路：保险公司可在10–12年锁定期内定期下调客户分成、上限与利差",
+          "FEEDBACK LOOP: Insurer periodically resets participation rates, caps & spreads"
+        ],
+        "numbers_found": [
+          "01",
+          "$4",
+          "$5",
+          "$10",
+          "$40",
+          "$50",
+          "$100",
+          "5%",
+          "7%",
+          "5%",
+          "7%",
+          "0%",
+          "02",
+          "10",
+          "12",
+          "10",
+          "12",
+          "3",
+          "5",
+          "3",
+          "5",
+          "03",
+          "04",
+          "10",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "十二年锁定期与两次下调的承诺",
+        "en": "The Twelve-Year Lockup and a Shifting Bargain",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "萨布丽娜·埃利奥特 (Sabrina Elliott) 的保单演变",
+        "en": "Inside Sabrina Elliott's 12-Year Policy",
+        "numbers_found": [
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "华尔街私募巨头如何吸纳美国家庭储蓄",
+        "en": "How Private-Asset Giants Vacuumed Up Household Nest Eggs",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "特拉华人寿 (Delaware Life) 遭联邦调查",
+        "en": "Delaware Life Under Federal Investigation",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "5万至10万美元的十年期锁定",
+        "en": "$50,000 to $100,000 Locked for a Decade",
+        "numbers_found": [
+          "5",
+          "10",
+          "$50,000",
+          "$100,000"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "可更改的条款：从标普500牛市到 3.7% 的到手收益",
+        "en": "The Moving Goalposts: How a 13% Bull Market Became 3.7%",
+        "numbers_found": [
+          "500",
+          "3.7%",
+          "13%",
+          "3.7%"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "埃利奥特保单的资金拆分与12年年化回报",
+        "en": "Elliott's Policy Ratchet & 12-Year Annualized Return",
+        "numbers_found": [
+          "12",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "监管套利、高额佣金与“10万变270万”的回测幻象",
+        "en": "Regulatory Gaps, 7% Commissions, and the $2.7 Million Backtest Pitch",
+        "numbers_found": [
+          "10",
+          "270",
+          "7%",
+          "$2.7"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "翻倍的销售佣金与“动量增长”回测宣传",
+        "en": "Commission Spreads & The \"Momentum Growth\" Pitch",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "金融危机后的资本机器：长久期保费如何流向私人信贷",
+        "en": "The Post-Crisis Capital Pipeline: From Sticky Premiums to Private Credit",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "从家庭养老储蓄到高风险私人信贷的四步传导机制",
+        "en": "How Household Savings Are Transformed into Illiquid Private Credit",
+        "numbers_found": []
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "40%",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "13.0%",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "1.8",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "9.3",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "1.8",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "9.3",
+        "context": "A. 与标普500挂钩的资金比例 vs. 1%固定利率部分 A. SHARE TIED TO S&P 500 (MINUS 2.9PP SPREAD) VS. 1% FIXED 第 1 年 Year 1 60% S&P 500"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "01",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$50",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "0%",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "02",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "03",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "04",
+        "context": "STAGE 01 · HOUSEHOLDS 美国家庭退休储蓄 Household Savings • 典型保费：$4万 / $5万 / $10万 • Deposits: $40K / $50K / $100K"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 13 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

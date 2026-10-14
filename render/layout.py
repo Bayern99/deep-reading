@@ -34,14 +34,16 @@ def render_margin_note(anchor_block_id, note_cn, note_en, uid,
 
 
 # ---------------- L03 平行双栏比较 ----------------
-def render_compare(pairs, uid, dim_labels=None):
+def render_compare(pairs, uid, dim_labels=None, dim_labels_en=None):
     """pairs: [((a_cn,a_en),(b_cn,b_en))...] 按维度成对。
     桌面：左右两栏逐维度对照；手机：维度1 A→B，维度2 A→B…纵排。
     DOM 即手机顺序（维度交替），桌面用 CSS order 重排为两栏。"""
     rows = []
     for i, ((acn, aen), (bcn, ben)) in enumerate(pairs):
         lab = dim_labels[i] if dim_labels and i < len(dim_labels) else ''
-        lab_h = f'<div class="ly-dim"><span class="k-cn">{_esc(lab)}</span></div>' if lab else ''
+        lab_en = dim_labels_en[i] if dim_labels_en and i < len(dim_labels_en) else ''
+        lab_h = (f'<div class="ly-dim"><span class="k-cn">{_esc(lab)}</span>'
+                 f'<span class="k-en" hidden>{_esc(lab_en)}</span></div>') if lab or lab_en else ''
         rows.append(f'''<div class="ly-pair" data-dim="{i}">
   {lab_h}
   <div class="ly-a"><span class="k-cn">{_esc(acn)}</span><span class="k-en" hidden>{_esc(aen)}</span></div>
@@ -110,9 +112,8 @@ LAYOUT_CSS = '''
   margin-top:10px;max-width:var(--measure);margin-left:auto;margin-right:auto}
 .ly-wide table{min-width:620px;width:100%;border-collapse:collapse}
 @media(max-width:430px){
-  /* .sheet 在此断点有 20px 留白，负边距实现全幅 */
-  .ly-wide{width:auto;max-width:none;margin-left:-20px;margin-right:-20px}
-  .ly-wide figcaption{padding:0 20px}
+  /* 由 #issue 统一留白；图形可在内部横滑，图注与正文对齐。 */
+  .ly-wide{width:100%;max-width:none;margin-left:0;margin-right:0}
   /* 图表保持可读宽度，横向滚动而非压扁 */
   .ly-wide .ly-wide-scroll img{min-width:560px;max-width:none}
 }

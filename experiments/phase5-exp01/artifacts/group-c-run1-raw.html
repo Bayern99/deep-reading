@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美国人的储蓄助燃私人信贷 | Americans' Savings Help Fuel Private Credit — WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ece6d9;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c2b2;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.12);
+    --navy-bg: #0f1d2b;
+    --navy-card: #16283a;
+    --navy-line: #283e54;
+    --slate-blue: #23496d;
+    --crimson: #9e2a2b;
+    --crimson-soft: rgba(158, 42, 43, 0.1);
+    --forest: #2b593f;
+    --gold: #c98a27;
+    
+    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+    --font-serif-cn: 'Noto Serif SC', 'Source Han Serif SC', serif;
+    --font-serif-en: 'Lora', Georgia, serif;
+    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--paper);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Strict Bilingual Toggle Visibility */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  /* Sticky Top Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line-strong);
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+
+  .masthead-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wsj-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .wsj-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--line-strong);
+  }
+
+  .wsj-rubric {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .masthead-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .edition-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .edition-badge {
+      display: inline-block;
+    }
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    background: var(--paper-deep);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    padding: 2px;
+    gap: 2px;
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.18s ease;
+  }
+
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Main Container */
+  .page-shell {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Hero Header */
+  .hero-header {
+    padding: 56px 0 40px;
+    border-bottom: 3px double var(--ink);
+    margin-bottom: 40px;
+  }
+
+  .hero-kicker-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--paper);
+    background: var(--accent);
+    padding: 4px 10px;
+  }
+
+  .hero-series {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.15rem, 4.4vw, 3.85rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 18px;
+    max-width: 960px;
+  }
+
+  html[lang="zh-CN"] .hero-title {
+    line-height: 1.24;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-dek {
+    font-family: var(--font-serif-en);
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.48;
+    color: var(--muted);
+    max-width: 820px;
+    margin-bottom: 32px;
+  }
+
+  html[lang="zh-CN"] .hero-dek {
+    font-family: var(--font-serif-cn);
+    line-height: 1.65;
+  }
+
+  .hero-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    gap: 16px;
+  }
+
+  .byline-block {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--body);
+  }
+
+  .byline-author {
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .byline-date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-left: 12px;
+  }
+
+  /* Hero Key Ledger Strip */
+  .hero-ledger-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+    margin-bottom: 48px;
+  }
+
+  .ledger-cell {
+    background: var(--paper-card);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ledger-cell .metric-val {
+    font-family: var(--font-mono);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .ledger-cell.highlight-cell .metric-val {
+    color: var(--accent);
+  }
+
+  .ledger-cell .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.35;
+  }
+
+  .ledger-cell .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Typography for Prose */
+  .prose-p {
+    margin-bottom: 1.55rem;
+    color: var(--body);
+  }
+
+  html[lang="zh-CN"] .prose-p {
+    font-family: var(--font-serif-cn);
+    font-size: 1.125rem;
+    line-height: 1.92;
+    letter-spacing: 0.015em;
+  }
+
+  html[lang="en"] .prose-p {
+    font-family: var(--font-serif-en);
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  /* Lead Paragraph Stature (NO Chinese ::first-letter drop-cap) */
+  .prose-p.lead-paragraph {
+    font-size: 1.28rem !important;
+    line-height: 1.78 !important;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 1.8rem;
+  }
+
+  /* Inline Highlight Mark */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);
+    color: inherit;
+    padding: 0 2px;
+    font-weight: 600;
+  }
+
+  /* Section & Chapter Architecture */
+  .editorial-section {
+    margin-bottom: 64px;
+  }
+
+  .section-grid-2col {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) minmax(280px, 380px);
+    gap: 56px;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .prose-column {
+    width: 100%;
+  }
+
+  .side-rail {
+    position: sticky;
+    top: 78px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Chapter Headers */
+  .chapter-banner {
+    border-top: 2px solid var(--ink);
+    padding-top: 16px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .chapter-title {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+
+  /* Dossier Card (Context ctx1) */
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+    padding: 22px 24px;
+  }
+
+  .dossier-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dossier-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+  }
+
+  .dossier-body {
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    line-height: 1.68;
+    color: var(--body);
+  }
+
+  /* Pull Quote Styling */
+  .pull-quote-card {
+    background: var(--paper);
+    border-top: 2px solid var(--accent);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 20px 0;
+    margin: 28px 0;
+  }
+
+  .pull-quote-card .quote-text {
+    font-family: var(--font-display);
+    font-size: 1.22rem;
+    line-height: 1.52;
+    color: var(--ink);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .pull-quote-card .quote-attrib {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Inline Quote Callout within narrative flow (p4) */
+  .inline-spokesperson-box {
+    background: var(--paper-card);
+    border-left: 4px solid var(--ink);
+    padding: 20px 24px;
+    margin: 24px 0 32px;
+  }
+
+  .inline-spokesperson-box .prose-p {
+    margin-bottom: 0.6rem;
+  }
+
+  .inline-spokesperson-box .prose-p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* SVG Exhibit Containers */
+  .exhibit-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 24px;
+    margin: 32px 0;
+  }
+
+  .exhibit-header {
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .exhibit-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .exhibit-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .exhibit-sub {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .exhibit-caption {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    line-height: 1.45;
+  }
+
+  .svg-responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  /* Regulatory Alert Note (p7) */
+  .regulatory-blot {
+    background: var(--crimson-soft);
+    border: 1px solid rgba(158, 42, 43, 0.3);
+    border-left: 4px solid var(--crimson);
+    padding: 18px 22px;
+    margin: 28px 0;
+  }
+
+  .regulatory-blot-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--crimson);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .regulatory-blot .prose-p {
+    margin-bottom: 0;
+    font-size: 1.02rem !important;
+  }
+
+  /* Corporate Defense Dossier (p13 & p14) */
+  .corporate-response-panel {
+    background: var(--navy-bg);
+    color: #f0ede6;
+    padding: 28px 30px;
+    margin: 36px 0;
+    border-top: 4px solid var(--gold);
+  }
+
+  .corp-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .corporate-response-panel .prose-p {
+    color: #e6e2d8;
+    font-size: 1.04rem !important;
+    margin-bottom: 1.1rem;
+  }
+
+  .corporate-response-panel .prose-p:last-child {
+    margin-bottom: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--navy-line);
+  }
+
+  .corporate-response-panel mark.ed-hl {
+    background: rgba(201, 138, 39, 0.28);
+    color: #fff;
+  }
+
+  /* Derived Metric Card in Side Rail */
+  .rail-metric-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 18px 20px;
+  }
+
+  .rail-metric-card .metric-val {
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .rail-metric-card .metric-lbl {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .rail-metric-card .metric-note {
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Climactic Verdict Box (p20) */
+  .verdict-stage {
+    background: var(--paper-card);
+    border: 2px solid var(--ink);
+    padding: 36px 32px;
+    margin-top: 32px;
+    position: relative;
+  }
+
+  .verdict-kicker {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .verdict-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.42;
+    color: var(--ink);
+  }
+
+  /* Footer */
+  .article-footer {
+    border-top: 2px solid var(--ink);
+    margin-top: 72px;
+    padding: 32px 0 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Design for Tablet & Mobile (390px) */
+  @media (max-width: 980px) {
+    .hero-ledger-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-grid-2col {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .side-rail {
+      position: static;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .page-shell {
+      padding: 0 16px;
+    }
+
+    .masthead {
+      padding: 0 14px;
+    }
+
+    .wsj-rubric {
+      display: none;
+    }
+
+    .hero-header {
+      padding: 32px 0 28px;
+    }
+
+    .hero-ledger-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .exhibit-card {
+      padding: 16px;
+    }
+
+    .corporate-response-panel {
+      padding: 20px 18px;
+    }
+
+    .verdict-stage {
+      padding: 24px 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Sticky Top Masthead -->
+  <header class="masthead">
+    <div class="masthead-brand">
+      <span class="wsj-logo">WSJ 深读</span>
+      <span class="wsj-divider"></span>
+      <span class="wsj-rubric">
+        <span class="lang-cn">A1 深度调查 · 私人信贷与家庭储蓄</span>
+        <span class="lang-en">A1 Investigation · Private Credit & Household Savings</span>
+      </span>
+    </div>
+    <div class="masthead-controls">
+      <span class="edition-badge">VOL. CCXXXVIII · E2-001</span>
+      <div class="lang-switch" role="group" aria-label="Language Toggle">
+        <button type="button" class="lang-btn active" id="btn-zh" onclick="switchLang('zh-CN')">中文</button>
+        <button type="button" class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <!-- Hero Section -->
+    <header class="hero-header">
+      <div class="hero-kicker-row">
+        <span class="hero-kicker">
+          <span class="lang-cn">头版深度调查</span>
+          <span class="lang-en">Page One Investigation</span>
+        </span>
+        <span class="hero-series">
+          <span class="lang-cn">年金迷局与华尔街暗流</span>
+          <span class="lang-en">The Annuity Pipeline</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title" data-ref="title"></h1>
+      <p class="hero-dek" data-ref="dek"></p>
+
+      <div class="hero-meta-bar">
+        <div class="byline-block">
+          <span class="byline-author">By Heather Gillers</span>
+          <span class="byline-date">
+            <span class="lang-cn">2026年10月12日</span>
+            <span class="lang-en">October 12, 2026</span>
+          </span>
+        </div>
+        <div class="byline-block">
+          <span class="lang-cn">佛罗里达州奥兰多 / 纽约 联合报道</span>
+          <span class="lang-en">Reporting from Orlando, Fla. & New York</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Key Forensic Metrics Strip (Derived m1, m2, m3, m4) -->
+    <section class="hero-ledger-strip" aria-label="Key Investigative Metrics">
+      <div class="ledger-cell" data-derive="m1">
+        <div class="metric-val" data-field="value"></div>
+        <div class="metric-lbl" data-field="label"></div>
+        <div class="metric-note" data-field="note"></div>
+      </div>
+      <div class="ledger-cell" data-derive="m2">
+        <div class="metric-val" data-field="value"></div>
+        <div class="metric-lbl" data-field="label"></div>
+        <div class="metric-note" data-field="note"></div>
+      </div>
+      <div class="ledger-cell highlight-cell" data-derive="m3">
+        <div class="metric-val" data-field="value"></div>
+        <div class="metric-lbl" data-field="label"></div>
+        <div class="metric-note" data-field="note"></div>
+      </div>
+      <div class="ledger-cell" data-derive="m4">
+        <div class="metric-val" data-field="value"></div>
+        <div class="metric-lbl" data-field="label"></div>
+        <div class="metric-note" data-field="note"></div>
+      </div>
+    </section>
+
+    <!-- CHAPTER I: THE 12-YEAR PROMISE (p1 .. p7) -->
+    <section class="editorial-section">
+      <div class="chapter-banner">
+        <span class="chapter-num">Chapter I · 01</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">十二年锁定期与“零亏损”承诺</span>
+          <span class="lang-en">The 12-Year Lockup and the “No-Loss” Pitch</span>
+        </h2>
+      </div>
+
+      <div class="section-grid-2col">
+        <div class="prose-column">
+          <p class="prose-p lead-paragraph" data-ref="p1" data-hl="4 万美元 | 没有损失风险 | $40,000 | no risk of loss"></p>
+          <p class="prose-p" data-ref="p2" data-hl="锁定 12 年 | 定期降低 | locking up her money for 12 years | periodically lower"></p>
+          <p class="prose-p" data-ref="p3" data-hl="Athene | 两次 | 3.7% | twice"></p>
+
+          <div class="inline-spokesperson-box">
+            <p class="prose-p" data-ref="p4.s1"></p>
+            <p class="prose-p" data-ref="p4.s2" data-hl="每年或每两年更改 | change the amount"></p>
+          </div>
+
+          <p class="prose-p" data-ref="p5" data-hl="阿波罗和博枫 | 401(k) | Apollo and Brookfield"></p>
+          <p class="prose-p" data-ref="p6" data-hl="吸走了美国家庭的储蓄 | 指数型年金 | vacuuming up the savings | indexed annuities"></p>
+
+          <div class="regulatory-blot">
+            <div class="regulatory-blot-label">
+              <span class="lang-cn">监管调查警示 · 特拉华人寿</span>
+              <span class="lang-en">Federal Probe Alert · Delaware Life</span>
+            </div>
+            <p class="prose-p" data-ref="p7" data-hl="特拉华人寿 | 联邦调查 | Delaware Life | federal investigation"></p>
+          </div>
+        </div>
+
+        <!-- Side Rail: Background Context Dossier (ctx1) + Quote q1 -->
+        <aside class="side-rail">
+          <div class="dossier-card">
+            <div class="dossier-kicker">
+              <span class="lang-cn">调查背景档案 · 机制拆解</span>
+              <span class="lang-en">Investigative Dossier · Mechanism</span>
+            </div>
+            <div class="dossier-body" data-ref="ctx1"></div>
+          </div>
+
+          <blockquote class="pull-quote-card" data-derive="q1">
+            <p class="quote-text" data-field="quote"></p>
+            <footer class="quote-attrib" data-field="attribution"></footer>
+          </blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CHAPTER II: THE ARITHMETIC OF RATCHETING DOWN (p8 .. p14) -->
+    <section class="editorial-section">
+      <div class="chapter-banner">
+        <span class="chapter-num">Chapter II · 02</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">被下调的算术：从 13% 牛市到 3.7% 到手收益</span>
+          <span class="lang-en">The Ratchet Arithmetic: How a 13% Bull Market Yielded 3.7%</span>
+        </h2>
+      </div>
+
+      <div class="section-grid-2col">
+        <div class="prose-column">
+          <p class="prose-p" data-ref="p8" data-hl="5 万美元或 10 万美元 | 永远不会低于零 | $50,000 or $100,000 | never fall below zero"></p>
+          <p class="prose-p" data-ref="p9" data-hl="保险公司在保险期间可以更改的条款 | terms the insurer can change"></p>
+          <p class="prose-p" data-ref="p10" data-hl="60% | 2.9个百分点 | 55% | 45% | 1%"></p>
+
+          <!-- Bespoke SVG Exhibit 1: Participation Ratchet Trajectory (Yr 1 -> Yr 7 -> Yr 11) -->
+          <figure class="exhibit-card">
+            <div class="exhibit-header">
+              <div class="exhibit-tag">
+                <span class="lang-cn">图表 01 · 条款棘轮轨迹</span>
+                <span class="lang-en">Exhibit 01 · Participation Ratchet</span>
+              </div>
+              <h3 class="exhibit-title">
+                <span class="lang-cn">埃利奥特保单中与标普500挂钩的资金比例遭两次下调</span>
+                <span class="lang-en">How Athene Twice Lowered Elliott's S&P 500 Participation Share</span>
+              </h3>
+              <p class="exhibit-sub">
+                <span class="lang-cn">挂钩标普500指数部分需再扣除 2.9 个百分点差额；剩余资金仅按 1% 固定利率增长</span>
+                <span class="lang-en">S&P-linked portion subject to a 2.9-percentage-point spread deduction; remaining funds grew at a 1% fixed rate</span>
+              </p>
+            </div>
+
+            <svg class="svg-responsive" viewBox="0 0 620 230" role="img" aria-label="Participation Share Ratchet Chart">
+              <!-- Background Grid -->
+              <line x1="50" y1="35" x2="590" y2="35" stroke="#e4dfd3" stroke-dasharray="3,3" />
+              <line x1="50" y1="95" x2="590" y2="95" stroke="#e4dfd3" stroke-dasharray="3,3" />
+              <line x1="50" y1="155" x2="590" y2="155" stroke="#c9c2b2" stroke-width="1.5" />
+
+              <!-- Y-axis Labels -->
+              <text x="42" y="39" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#646059">100%</text>
+              <text x="42" y="99" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#646059">50%</text>
+              <text x="42" y="159" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#646059">0%</text>
+
+              <!-- Year 1 Bar: 60% S&P / 40% Fixed 1% -->
+              <g transform="translate(85, 0)">
+                <!-- Remainder 40% at 1% fixed -->
+                <rect x="0" y="35" width="110" height="48" fill="#e4dfd3" stroke="#c9c2b2" />
+                <text x="55" y="63" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#646059">40% @ 1% Fixed</text>
+                <!-- S&P Linked 60% -->
+                <rect x="0" y="83" width="110" height="72" fill="#b85d19" />
+                <text x="55" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#faf8f4">60%</text>
+                <text x="55" y="136" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#faf8f4">S&amp;P 500 (-2.9pp)</text>
+                <!-- X Label -->
+                <text x="55" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">
+                  <tspan class="lang-cn">第 1 年</tspan><tspan class="lang-en">Year 1</tspan>
+                </text>
+                <text x="55" y="195" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#646059">
+                  <tspan class="lang-cn">初始合同比例</tspan><tspan class="lang-en">Initial Policy Share</tspan>
+                </text>
+              </g>
+
+              <!-- Step Connector 1 -> 2 -->
+              <path d="M 200 105 L 250 105" stroke="#b85d19" stroke-width="2" fill="none" stroke-dasharray="4,3" />
+              <polygon points="250,101 258,105 250,109" fill="#b85d19" />
+
+              <!-- Year 7 Bar: 55% S&P / 45% Fixed 1% -->
+              <g transform="translate(265, 0)">
+                <rect x="0" y="35" width="110" height="54" fill="#e4dfd3" stroke="#c9c2b2" />
+                <text x="55" y="66" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#646059">45% @ 1% Fixed</text>
+                <rect x="0" y="89" width="110" height="66" fill="#b85d19" />
+                <text x="55" y="121" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#faf8f4">55%</text>
+                <text x="55" y="139" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#faf8f4">S&amp;P 500 (-2.9pp)</text>
+                <text x="55" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">
+                  <tspan class="lang-cn">第 7 年</tspan><tspan class="lang-en">Year 7</tspan>
+                </text>
+                <text x="55" y="195" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#9e2a2b">
+                  <tspan class="lang-cn">第一次下调 (-5pp)</tspan><tspan class="lang-en">First Cut (-5pp)</tspan>
+                </text>
+              </g>
+
+              <!-- Step Connector 2 -> 3 -->
+              <path d="M 380 112 L 430 112" stroke="#b85d19" stroke-width="2" fill="none" stroke-dasharray="4,3" />
+              <polygon points="430,108 438,112 430,116" fill="#b85d19" />
+
+              <!-- Year 11 Bar: 45% S&P / 55% Fixed 1% -->
+              <g transform="translate(445, 0)">
+                <rect x="0" y="35" width="110" height="66" fill="#e4dfd3" stroke="#c9c2b2" />
+                <text x="55" y="72" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#646059">55% @ 1% Fixed</text>
+                <rect x="0" y="101" width="110" height="54" fill="#9e2a2b" />
+                <text x="55" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#faf8f4">45%</text>
+                <text x="55" y="144" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#faf8f4">S&amp;P 500 (-2.9pp)</text>
+                <text x="55" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#141413">
+                  <tspan class="lang-cn">第 11 年</tspan><tspan class="lang-en">Year 11</tspan>
+                </text>
+                <text x="55" y="195" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10" fill="#9e2a2b">
+                  <tspan class="lang-cn">第二次下调 (-10pp)</tspan><tspan class="lang-en">Second Cut (-10pp)</tspan>
+                </text>
+              </g>
+            </svg>
+            <figcaption class="exhibit-caption">
+              <span class="lang-cn">数据来源：报道披露的萨布丽娜·埃利奥特 12 年期指数型年金保单记录（Athene 收购英杰华保险后执行）。</span>
+              <span class="lang-en">Source: Reported policy records of Sabrina Elliott's 12-year indexed annuity under Aviva / Athene.</span>
+            </figcaption>
+          </figure>
+
+          <p class="prose-p" data-ref="p11" data-hl="69岁 | 营养学教授 | 约2个百分点 | 2 percentage points"></p>
+          <p class="prose-p" data-ref="p12" data-hl="3.7% | 1.9% | 13%"></p>
+
+          <!-- Bespoke SVG Exhibit 2: Annualized Return Benchmark Comparison -->
+          <figure class="exhibit-card">
+            <div class="exhibit-header">
+              <div class="exhibit-tag">
+                <span class="lang-cn">图表 02 · 十二年收益率基准对比</span>
+                <span class="lang-en">Exhibit 02 · 12-Year Annualized Return Gap</span>
+              </div>
+              <h3 class="exhibit-title">
+                <span class="lang-cn">跑赢了美国国债，却在 13% 美股大牛市中踏空</span>
+                <span class="lang-en">Beating Treasurys, Paling Beside the S&P 500 Bull Market</span>
+              </h3>
+            </div>
+
+            <svg class="svg-responsive" viewBox="0 0 620 175" role="img" aria-label="12-Year Return Comparison Chart">
+              <!-- Bar 1: S&P 500 (13%) -->
+              <text x="10" y="34" font-family="Inter, Noto Sans SC" font-size="12" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">标准普尔 500 指数</tspan><tspan class="lang-en">S&amp;P 500 Index</tspan>
+              </text>
+              <rect x="175" y="16" width="365" height="26" fill="#23496d" />
+              <text x="550" y="34" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#23496d">13.0%</text>
+
+              <!-- Bar 2: Sabrina Elliott Annuity (3.7%) -->
+              <text x="10" y="86" font-family="Inter, Noto Sans SC" font-size="12" font-weight="700" fill="#b85d19">
+                <tspan class="lang-cn">埃利奥特指数型年金</tspan><tspan class="lang-en">Elliott's Indexed Annuity</tspan>
+              </text>
+              <rect x="175" y="68" width="104" height="26" fill="#b85d19" />
+              <text x="289" y="86" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#b85d19">3.7%</text>
+              <text x="340" y="85" font-family="Inter, Noto Sans SC" font-size="11" fill="#646059">
+                <tspan class="lang-cn">（含附加险扣除约 2 个百分点）</tspan><tspan class="lang-en">(After ~2pp rider deduction)</tspan>
+              </text>
+
+              <!-- Bar 3: U.S. Treasurys (1.9%) -->
+              <text x="10" y="138" font-family="Inter, Noto Sans SC" font-size="12" font-weight="500" fill="#646059">
+                <tspan class="lang-cn">同期美国国债</tspan><tspan class="lang-en">U.S. Treasurys</tspan>
+              </text>
+              <rect x="175" y="120" width="53" height="26" fill="#9c9588" />
+              <text x="238" y="138" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#646059">1.9%</text>
+            </svg>
+          </figure>
+
+          <!-- Corporate Defense Block (p13 & p14) -->
+          <div class="corporate-response-panel">
+            <div class="corp-kicker">
+              <span class="lang-cn">公司官方回应 · 阿波罗旗下 Athene 声明</span>
+              <span class="lang-en">Corporate Response · Athene (Apollo Global Management)</span>
+            </div>
+            <p class="prose-p" data-ref="p13" data-hl="2022年 | 表现出色 | 100%的本金保护 | performed exceptionally well | 100% principal protection"></p>
+            <p class="prose-p" data-ref="p14" data-hl="高度误导性 | highly misleading"></p>
+          </div>
+        </div>
+
+        <!-- Side Rail: Metrics m5, m6 & Quote q2, q3 -->
+        <aside class="side-rail">
+          <div class="rail-metric-card" data-derive="m6">
+            <div class="metric-val" data-field="value"></div>
+            <div class="metric-lbl" data-field="label"></div>
+            <div class="metric-note" data-field="note"></div>
+          </div>
+
+          <div class="rail-metric-card" data-derive="m5">
+            <div class="metric-val" data-field="value"></div>
+            <div class="metric-lbl" data-field="label"></div>
+            <div class="metric-note" data-field="note"></div>
+          </div>
+
+          <blockquote class="pull-quote-card" data-derive="q2">
+            <p class="quote-text" data-field="quote"></p>
+            <footer class="quote-attrib" data-field="attribution"></footer>
+          </blockquote>
+
+          <blockquote class="pull-quote-card" data-derive="q3">
+            <p class="quote-text" data-field="quote"></p>
+            <footer class="quote-attrib" data-field="attribution"></footer>
+          </blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CHAPTER III: REGULATORY ARBITRAGE & PRIVATE CREDIT PIPELINE (p15 .. p20) -->
+    <section class="editorial-section">
+      <div class="chapter-banner">
+        <span class="chapter-num">Chapter III · 03</span>
+        <h2 class="chapter-title">
+          <span class="lang-cn">高佣金诱因、回测幻象与私人信贷资金池</span>
+          <span class="lang-en">Commission Incentives, Hypothetical Pitches, and the Private-Credit Engine</span>
+        </h2>
+      </div>
+
+      <div class="section-grid-2col">
+        <div class="prose-column">
+          <p class="prose-p" data-ref="p15" data-hl="美国证券交易委员会 | 州保险代理人 | 最有利可图的产品 | Securities and Exchange Commission | state insurance agents | most lucrative products"></p>
+          <p class="prose-p" data-ref="p16" data-hl="5%至7% | 3% | 5% to 7%"></p>
+          <p class="prose-p" data-ref="p17" data-hl="复杂性 | 误导性的销售宣传 | complexity | misleading sales pitches"></p>
+          <p class="prose-p" data-ref="p18" data-hl="10万美元 | 270万美元 | 动量增长 | 股票和加密货币指数 | $100,000 | $2.7 million | Momentum Growth"></p>
+
+          <!-- Bespoke SVG Exhibit 3: The Capital Pipeline from Household Savings to Private Credit -->
+          <figure class="exhibit-card">
+            <div class="exhibit-header">
+              <div class="exhibit-tag">
+                <span class="lang-cn">图表 03 · 华尔街私人信贷输血链条</span>
+                <span class="lang-en">Exhibit 03 · The Private-Credit Capital Pipeline</span>
+              </div>
+              <h3 class="exhibit-title">
+                <span class="lang-cn">私募巨头如何将美国家庭 10 年期年金保费转化为高风险私人信贷</span>
+                <span class="lang-en">How Private-Asset Managers Channel 10-Year Annuity Float into Illiquid Debt</span>
+              </h3>
+            </div>
+
+            <svg class="svg-responsive" viewBox="0 0 640 215" role="img" aria-label="Private Credit Capital Flow Diagram">
+              <!-- Node 1: Older Savers -->
+              <rect x="10" y="25" width="175" height="145" fill="#faf8f4" stroke="#141413" stroke-width="1.5" />
+              <rect x="10" y="25" width="175" height="24" fill="#141413" />
+              <text x="97" y="41" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#faf8f4">01 · HOUSEHOLD SAVERS</text>
+              <text x="97" y="72" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="12" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">美国老年储户 ($50K–$100K)</tspan><tspan class="lang-en">Older Savers ($50K–$100K)</tspan>
+              </text>
+              <text x="97" y="96" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10.5" fill="#646059">
+                <tspan class="lang-cn">州保险代理人销售（非SEC监管）</tspan><tspan class="lang-en">Sold via State Agents (Non-SEC)</tspan>
+              </text>
+              <rect x="24" y="115" width="147" height="38" fill="#f3efe6" stroke="#c9c2b2" />
+              <text x="97" y="133" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#b85d19">5% – 7% Commission</text>
+              <text x="97" y="147" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="9.5" fill="#646059">
+                <tspan class="lang-cn">普通固定年金仅约 3%</tspan><tspan class="lang-en">vs. ~3% on fixed annuities</tspan>
+              </text>
+
+              <!-- Arrow 1 -> 2 -->
+              <path d="M 185 98 L 222 98" stroke="#b85d19" stroke-width="2" fill="none" />
+              <polygon points="222,94 230,98 222,102" fill="#b85d19" />
+
+              <!-- Node 2: PE-Backed Insurer -->
+              <rect x="232" y="25" width="175" height="145" fill="#faf8f4" stroke="#141413" stroke-width="1.5" />
+              <rect x="232" y="25" width="175" height="24" fill="#b85d19" />
+              <text x="319" y="41" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#faf8f4">02 · ACQUIRED INSURERS</text>
+              <text x="319" y="72" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="12" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">私募旗下保险公司 (Athene等)</tspan><tspan class="lang-en">PE-Owned Insurers (Athene)</tspan>
+              </text>
+              <text x="319" y="96" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10.5" fill="#646059">
+                <tspan class="lang-cn">锁定期约 10–12 年（固定仅3–5年）</tspan><tspan class="lang-en">~10-12 Yr Lockup (vs. 3-5 Yr Fixed)</tspan>
+              </text>
+              <rect x="246" y="115" width="147" height="38" fill="#f3efe6" stroke="#c9c2b2" />
+              <text x="319" y="133" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10.5" font-weight="700" fill="#141413">
+                <tspan class="lang-cn">可单方面调整收益上限与比例</tspan><tspan class="lang-en">Unilateral Cap &amp; Spread Control</tspan>
+              </text>
+              <text x="319" y="147" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="9.5" fill="#646059">
+                <tspan class="lang-cn">缓冲亏损或增厚私募利润</tspan><tspan class="lang-en">Cushions loss or fattens profit</tspan>
+              </text>
+
+              <!-- Arrow 2 -> 3 -->
+              <path d="M 407 98 L 444 98" stroke="#b85d19" stroke-width="2" fill="none" />
+              <polygon points="444,94 452,98 444,102" fill="#b85d19" />
+
+              <!-- Node 3: Private Credit Assets -->
+              <rect x="454" y="25" width="175" height="145" fill="#0f1d2b" stroke="#0f1d2b" stroke-width="1.5" />
+              <rect x="454" y="25" width="175" height="24" fill="#23496d" />
+              <text x="541" y="41" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#faf8f4">03 · PRIVATE CREDIT</text>
+              <text x="541" y="72" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="12" font-weight="700" fill="#faf8f4">
+                <tspan class="lang-cn">高风险、低流动性私人信贷</tspan><tspan class="lang-en">Illiquid Private Credit</tspan>
+              </text>
+              <text x="541" y="96" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="10.5" fill="#c9c2b2">
+                <tspan class="lang-cn">向风险企业放贷</tspan><tspan class="lang-en">Lending to Risky Companies</tspan>
+              </text>
+              <rect x="468" y="115" width="147" height="38" fill="#16283a" stroke="#283e54" />
+              <text x="541" y="133" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" font-weight="700" fill="#c98a27">CLOs &amp; ABS</text>
+              <text x="541" y="147" text-anchor="middle" font-family="Inter, Noto Sans SC" font-size="9.5" fill="#e4dfd3">
+                <tspan class="lang-cn">担保贷款凭证 / 资产支持证券</tspan><tspan class="lang-en">Collateralized Loan Obligations</tspan>
+              </text>
+            </svg>
+          </figure>
+
+          <p class="prose-p" data-ref="p19" data-hl="约十年 | 三到五年 | 担保贷款凭证 | 资产支持证券 | about a decade | three to five years | collateralized loan obligations | asset-backed securities"></p>
+          <p class="prose-p" data-ref="p20.s1" data-hl="降低保单持有者收益上限 | 增加利润 | lowering the caps | fatten their profits"></p>
+
+          <!-- Climactic Investigative Verdict (p20.s2) -->
+          <div class="verdict-stage">
+            <div class="verdict-kicker">
+              <span class="lang-cn">终局裁决 · Valmark 金融集团首席执行官拉里·里布卡</span>
+              <span class="lang-en">The Investigative Verdict · Larry Rybka, CEO of Valmark Financial Group</span>
+            </div>
+            <blockquote class="verdict-quote" data-ref="p20.s2" data-hl="改变与消费者的协议 | change the deal on the consumer"></blockquote>
+          </div>
+        </div>
+
+        <!-- Side Rail: Metrics m7, m8 & Quote q4 -->
+        <aside class="side-rail">
+          <div class="rail-metric-card" data-derive="m7">
+            <div class="metric-val" data-field="value"></div>
+            <div class="metric-lbl" data-field="label"></div>
+            <div class="metric-note" data-field="note"></div>
+          </div>
+
+          <div class="rail-metric-card" data-derive="m8">
+            <div class="metric-val" data-field="value"></div>
+            <div class="metric-lbl" data-field="label"></div>
+            <div class="metric-note" data-field="note"></div>
+          </div>
+
+          <blockquote class="pull-quote-card" data-derive="q4">
+            <p class="quote-text" data-field="quote"></p>
+            <footer class="quote-attrib" data-field="attribution"></footer>
+          </blockquote>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Article Footer -->
+    <footer class="article-footer">
+      <div>
+        <span class="lang-cn">© 2026 华尔街日报 (WSJ 深读 · Editorial Renaissance) · 保留所有权利</span>
+        <span class="lang-en">© 2026 The Wall Street Journal (WSJ Deep Read · Editorial Renaissance) · All Rights Reserved</span>
+      </div>
+      <div>
+        <span class="lang-cn">调查档案编号：E2-001 · 记者：Heather Gillers</span>
+        <span class="lang-en">Archive Ref: E2-001 · Reported by Heather Gillers</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      document.documentElement.lang = lang;
+      var btnZh = document.getElementById('btn-zh');
+      var btnEn = document.getElementById('btn-en');
+      if (lang === 'zh-CN') {
+        btnZh.classList.add('active');
+        btnEn.classList.remove('active');
+      } else {
+        btnEn.classList.add('active');
+        btnZh.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>

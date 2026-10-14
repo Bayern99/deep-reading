@@ -1,46 +1,77 @@
-# 每日生产 · 构建说明
+# Daily publishing and local Studio operation
 
-先读仓库根目录 `FOUNDATION.md`（原则）和 `DESIGN.md`（视觉）。
+Run these commands from the repository root after [README setup](../README.md#install). Read [FOUNDATION](../FOUNDATION.md) and [DESIGN](../DESIGN.md) before building/restyling; read [ARCHITECTURE](../ARCHITECTURE.md) before changing contracts or persistence.
 
-## 一句话流程
-
-```bash
-cd render && python3 build.py --issue YYYY-MM-DD
-```
-
-输入：`../<日期>/final.json`（内容定稿）+ `../<日期>/front.json`（头版选稿）
-输出：`../<日期>/dist/index.html`
-
-## 前置条件
-
-1. `final.json` 已 QA。渲染器只做排版，一字不改。
-2. `front.json` 写好 dek / lead_id / also_ids。缺省时回退 A1 新闻，仍禁止 digest/图注/生活稿当头版。
-
-## 策展数据（不许自动生成）
-
-| 文件 | 用途 |
-|---|---|
-| `<date>/editorial-plans/<id>.json` | 增强篇；模块必须增加新视角 |
-| `render/images.json` | 已验证图片；宁缺毋滥 |
-| `render/modules.json` | 遗留三件套；新稿走 editorial-plans |
-
-## 构建后必跑的检查
+## Offline verification
 
 ```bash
-cd render && python3 build.py --issue YYYY-MM-DD
+make test
+make smoke
+make gate ISSUE=2026-10-12
 ```
 
-断言覆盖：条目锚点、段落逐字、无 `text-wrap:pretty`、无 duel。另截 1440/390：头版 + digest + 一篇长文，0 横向溢出。读者表面不得出现流水线字样（见 `FOUNDATION.md`）。
+The unittest suites cover static rendering/alignment, canonical compilation, providers, persisted artifacts, HTTP workflow and queue recovery. The separate `test_p1.py` uses custom assertions rather than unittest discovery; `make test` runs both. All permanent generation tests use local deterministic inputs/endpoints. The smoke command builds both real outputs and exercises HTTP on an isolated copy with its queue omitted, without model calls or source writes.
 
-## 新日期期号
+`make gate` audits `final.json` without editing it. Exit 1 means at least one BLOCK; exit 0 can still contain WARN. Confirm every WARN rather than treating a zero exit code as publication approval.
 
-1. 产出 `<新日期>/final.json`。
-2. 写 `<新日期>/front.json`（dek / lead / also）。
-3. 仅当某篇值得模块时，加 `editorial-plans/` 或 `images.json`。
-4. `python3 build.py --issue <新日期>`，交付 `dist/index.html`。
+## Whole-issue newspaper
 
-## 故障排查
+```bash
+make build ISSUE=2026-10-12
+```
 
-- 段落数对不上 → 查 final.json 的 `body_cn` 是否含异常换行，修内容不修渲染器。
-- 表格错位 → data_table 的 `|` 分隔源文本问题，属已知启发式限制（行头合并），数字逐字无误即可。
-- 样式漂移 → 对照 `../DESIGN.md` v1.0 数值表与 `reference/hybrid-v3/index.html` 基准页。
+Inputs: issue `final.json`, `front.json`, `editorial-plans/`, verified images and the legacy global manifests under `render/`. Outputs: issue `dist/index.html`, internal `baseline.html` and `render-receipts.json`. No model invocation occurs. The baseline shares repairs and assets; it is not linked from the reader newspaper.
+
+Only PASS entries that remain selected by curation are published. WARN/BLOCK entries remain in source, with review anchors rather than visible articles. Receipt errors such as `alignment_mismatch`, `en_tail_dropped`, unknown anchors, unsupported operations or stale digests must be repaired from verified evidence; do not bypass them.
+
+For a design exploration using the same renderer:
+
+```bash
+.venv/bin/python render/build.py --issue 2026-10-12 \
+  --plans-dir 2026-10-12/editorial-explorations \
+  --output exploration.html --no-baseline
+```
+
+`--no-baseline` preserves the existing baseline. Use it for explorations after an ordinary build has produced the baseline; current CLI post-checks expect that file for planned articles.
+
+## Stored-article Reader and Studio
+
+```bash
+make reader ISSUE=2026-10-12
+make studio ISSUE=2026-10-12 PORT=8788
+```
+
+The export is issue `dist/editorial-reader.html`. The server binds `127.0.0.1`; open `/reader` or `/studio`. Both use the same embedded client. Source inspection is distinct from artifact reading. Static snapshots reopen saved versions offline; model generation, issue refresh and queue control need live HTTP.
+
+Inspect `_queue.json` before starting Studio. Server startup and payload collection can initialize/recover the queue and resume pending work. Run only one writer per issue/checkout. A finished or failed article does not regenerate when opened; select a saved version or explicitly submit a generation request.
+
+## Generate deliberately
+
+Configure the provider in the launching shell. `.env.example` is a safe sample, not an automatically loaded configuration. Never put tokens into source, prompts, screenshots or Git. The complete `WSJ_LLM_ENDPOINT` is an OpenAI-compatible chat-completions URL, not merely a base URL. `WSJ_LLM_API_KEY` overrides the local Harness registry; explicit `GenerationConfig` endpoint/key-environment selection comes first. See [README](../README.md#model-configuration).
+
+Studio supports model selection, curation recommendations, batch admission and explicit WARN confirmation. Inspect sources and recommendations, then enqueue the selected articles. BLOCK is rejected; a brief receives restrained treatment guidance. Successful compilation adds a version. Failed generation records its failure and preserves the prior active version.
+
+The existing CLI can generate synchronously:
+
+```bash
+.venv/bin/python render/editorial_studio.py --issue 2026-10-12 \
+  --enqueue E1-014 --model google-vertex/gemini-4-argon
+```
+
+This command makes real provider calls, processes the queue and currently implies WARN confirmation. It is suitable only after editorial review. Cancellation does not abort an already running network request. Failed-task retry keeps prior versions; forcing a new submission may duplicate model work.
+
+Compiler success is copy/structure evidence. Inspect generated editorial additions for factual support and inspect Chinese/English at desktop and 390px before regarding a version as visually accepted. Browser verification is recorded separately in artifact metadata.
+
+## Recovery
+
+1. Stop Studio and other writers before copying the full issue artifact tree and queue to a backup outside Git.
+2. Preserve `_index.json`, `_queue.json`, all version directories, `latest.json`, canonical snapshots, failed outputs and `final.json` together. A source-only backup cannot recreate model outputs.
+3. Malformed queue JSON now stops with `Invalid persistent queue`; it is not replaced by an empty queue. Keep the damaged file for diagnosis and restore an intact backup after checking task status. Do not delete the queue to make startup succeed.
+4. If index/latest metadata is inconsistent, inspect preserved version `artifact.json`/`compiled.html` and compiler audit before any restoration. There is no transactional repair command. Avoid overwriting source or silently renumbering versions.
+5. Restart one writer. Pending tasks resume; interrupted tasks can be recognized as completed by timestamp or requeued. Inspect the resulting queue and active version.
+
+## Next real issue
+
+Obtain the original PDF and required extraction/translation tools, then produce and QA the next `final.json`, assets and `front.json`. The repository does not yet provide a complete upstream runner. Do not rerun the historical `assemble.py` over an accepted source.
+
+Before publishing another date, resolve the currently shared manifests/curated derivations and the whole-issue CLI's 117-item assertion. Date discovery and canonical metadata have been generalized; cross-issue content/configuration isolation has not. See the bounded risks in [ARCHITECTURE](../ARCHITECTURE.md#remaining-risks-before-broader-usage).

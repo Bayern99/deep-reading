@@ -1,0 +1,241 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E3-001",
+  "final_id": "080",
+  "issue_date": "2026-10-12",
+  "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "B1",
+    "section": "Business & Finance",
+    "type": "article",
+    "priority": "P1",
+    "kicker_cn": "Business & Finance · B1 版",
+    "kicker_en": "WSJ · BUSINESS & FINANCE · B1",
+    "title_cn": "亚马逊正在洽谈收购一家人工智能初创公司",
+    "title_en": "Amazon in Talks To Buy AI Startup",
+    "dek_cn": "",
+    "dek_en": "",
+    "byline": "By Kate Clark and Lauren Thomas",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据知情人士透露，亚马逊正在与人工智能初创公司Decart（AI初创公司）洽谈收购事宜，交易估值可能达到约70亿美元。",
+      "text_en": "Amazon.com is in talks to acquire artificial-intelligence startup Decart in a deal that could be valued at around $7 billion, according to people familiar with the matter.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "据知情人士透露，亚马逊正在与人工智能初创公司Decart（AI初创公司）洽谈收购事宜，交易估值可能达到约70亿美元。",
+          "text_en": "Amazon.com is in talks to acquire artificial-intelligence startup Decart in a deal that could be valued at around $7 billion, according to people familiar with the matter."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "总部位于旧金山的Decart的软件可以帮助开发者更轻松地在不同的AI芯片之间切换，这在各公司竞相获取更多计算能力的情况下变得越来越重要。",
+      "text_en": "San Francisco-based Decart's software makes it easier for developers to switch between different AI chips, which is increasingly important as companies race to secure more computing power.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "总部位于旧金山的Decart的软件可以帮助开发者更轻松地在不同的AI芯片之间切换，这在各公司竞相获取更多计算能力的情况下变得越来越重要。",
+          "text_en": "San Francisco-based Decart's software makes it easier for developers to switch between different AI chips, which is increasingly important as companies race to secure more computing power."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "index": 3,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "知情人士表示，如果谈判不破裂，或者没有出现其他竞购方，这笔交易可能会很快达成。",
+      "text_en": "A deal could come together soon, the people said, assuming talks don't fall apart or another suitor doesn't emerge.",
+      "sentences": [
+        {
+          "id": "p3.s1",
+          "text_cn": "知情人士表示，如果谈判不破裂，或者没有出现其他竞购方，这笔交易可能会很快达成。",
+          "text_en": "A deal could come together soon, the people said, assuming talks don't fall apart or another suitor doesn't emerge."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "index": 4,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "据PitchBook（创投数据商）的数据，Decart已从红杉资本（Sequoia Capital）、Benchmark（风投）和Radical Ventures（风投）等投资者处筹集了超过4亿美元的风险投资。该公司在5月份的估值接近40亿美元。该公司由三位以色列工程师于2023年创立，他们是兄弟迪恩·莱特斯多夫（Dean Leitersdorf）和奥里安·莱特斯多夫（Orian Leitersdorf）以及莫舍·沙列夫（Moshe Shalev）。Decart正在开发名为Lucy和Oasis的世界模型。世界模型可以生成和模拟现实世界的3D环境。",
+      "text_en": "Decart raised more than $400 million in venture capital funding from investors including Sequoia Capital, Benchmark and Radical Ventures, according to PitchBook. It was valued at nearly $4 billion in May. The company was founded in 2023 by three Israeli engineers, brothers Dean and Orian Leitersdorf and Moshe Shalev. Decart is developing world models known as Lucy and Oasis. World models can generate and simulate real-world 3-D environments.",
+      "sentences": [
+        {
+          "id": "p4.s1",
+          "text_cn": "据PitchBook（创投数据商）的数据，Decart已从红杉资本（Sequoia Capital）、Benchmark（风投）和Radical Ventures（风投）等投资者处筹集了超过4亿美元的风险投资。",
+          "text_en": "Decart raised more than $400 million in venture capital funding from investors including Sequoia Capital, Benchmark and Radical Ventures, according to PitchBook."
+        },
+        {
+          "id": "p4.s2",
+          "text_cn": "该公司在5月份的估值接近40亿美元。",
+          "text_en": "It was valued at nearly $4 billion in May."
+        },
+        {
+          "id": "p4.s3",
+          "text_cn": "该公司由三位以色列工程师于2023年创立，他们是兄弟迪恩·莱特斯多夫（Dean Leitersdorf）和奥里安·莱特斯多夫（Orian Leitersdorf）以及莫舍·沙列夫（Moshe Shalev）。",
+          "text_en": "The company was founded in 2023 by three Israeli engineers, brothers Dean and Orian Leitersdorf and Moshe Shalev."
+        },
+        {
+          "id": "p4.s4",
+          "text_cn": "Decart正在开发名为Lucy和Oasis的世界模型。",
+          "text_en": "Decart is developing world models known as Lucy and Oasis."
+        },
+        {
+          "id": "p4.s5",
+          "text_cn": "世界模型可以生成和模拟现实世界的3D环境。",
+          "text_en": "World models can generate and simulate real-world 3-D environments."
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "index": 5,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "为了与英伟达竞争，亚马逊开发了自己的定制AI芯片Trainium3（亚马逊自研AI芯片），英伟达目前仍是图形处理器市场的领导者，而图形处理器是驱动人工智能发展的专用芯片。据《华尔街日报》报道，亚马逊网络服务（AWS）在与Decart会面并对其创始人印象深刻后，于2025年向该公司提供了对该芯片的早期访问权限。",
+      "text_en": "Amazon developed its own custom AI chip, Trainium3, in competition with Nvidia, which continues to dominate the market for graphics processing units, the specialized chips powering the AI boom. Amazon Web Services gave Decart early access to the chip in 2025 after meeting with the company and being impressed by its founders, The Wall Street Journal has reported.",
+      "sentences": [
+        {
+          "id": "p5.s1",
+          "text_cn": "为了与英伟达竞争，亚马逊开发了自己的定制AI芯片Trainium3（亚马逊自研AI芯片），英伟达目前仍是图形处理器市场的领导者，而图形处理器是驱动人工智能发展的专用芯片。",
+          "text_en": "Amazon developed its own custom AI chip, Trainium3, in competition with Nvidia, which continues to dominate the market for graphics processing units, the specialized chips powering the AI boom."
+        },
+        {
+          "id": "p5.s2",
+          "text_cn": "据《华尔街日报》报道，亚马逊网络服务（AWS）在与Decart会面并对其创始人印象深刻后，于2025年向该公司提供了对该芯片的早期访问权限。",
+          "text_en": "Amazon Web Services gave Decart early access to the chip in 2025 after meeting with the company and being impressed by its founders, The Wall Street Journal has reported."
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "index": 6,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "近年来，亚马逊的其他重大收购包括2022年以65亿美元收购米高梅电影和电视工作室，以及今年早些时候宣布的，以约110亿美元收购星链竞争对手Globalstar（卫星通信公司，星链竞争对手）。",
+      "text_en": "Amazon's other sizable acquisitions in recent years include a $6.5 billion deal for the MGM movie and television studio in 2022 and a roughly $11 billion deal for Starlink rival Globalstar announced earlier this year.",
+      "sentences": [
+        {
+          "id": "p6.s1",
+          "text_cn": "近年来，亚马逊的其他重大收购包括2022年以65亿美元收购米高梅电影和电视工作室，以及今年早些时候宣布的，以约110亿美元收购星链竞争对手Globalstar（卫星通信公司，星链竞争对手）。",
+          "text_en": "Amazon's other sizable acquisitions in recent years include a $6.5 billion deal for the MGM movie and television studio in 2022 and a roughly $11 billion deal for Starlink rival Globalstar announced earlier this year."
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "index": 7,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "以色列新闻媒体Calcalist（以色列财经媒体）本月早些时候报道称，Decart正在与一家大型科技公司进行高级别的收购谈判。",
+      "text_en": "Israeli news outlet Calcalist reported earlier this month that Decart was in advanced talks to be sold to a major technology company.",
+      "sentences": [
+        {
+          "id": "p7.s1",
+          "text_cn": "以色列新闻媒体Calcalist（以色列财经媒体）本月早些时候报道称，Decart正在与一家大型科技公司进行高级别的收购谈判。",
+          "text_en": "Israeli news outlet Calcalist reported earlier this month that Decart was in advanced talks to be sold to a major technology company."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [],
+  "derived_metrics": [
+    {
+      "id": "m1",
+      "source_block": "p1",
+      "value": "$7 billion",
+      "value_cn": "70亿美元",
+      "label_cn": "据知情人士透露，亚马逊正在与人工智能初创公司Decart（AI初创公司）…",
+      "label_en": "Amazon.com is in talks to acquire artificial-intelligence st…",
+      "note_cn": "源自正文 [p1]",
+      "note_en": "From paragraph [p1]"
+    },
+    {
+      "id": "m2",
+      "source_block": "p4",
+      "value": "$400 million",
+      "value_cn": "4亿美元",
+      "label_cn": "据PitchBook（创投数据商）的数据，Decart已从红杉资本（Se…",
+      "label_en": "Decart raised more than $400 million in venture capital fund…",
+      "note_cn": "源自正文 [p4]",
+      "note_en": "From paragraph [p4]"
+    },
+    {
+      "id": "m3",
+      "source_block": "p6",
+      "value": "$6.5 billion",
+      "value_cn": "65亿美元",
+      "label_cn": "近年来，亚马逊的其他重大收购包括2022年以65亿美元收购米高梅电影和电…",
+      "label_en": "Amazon's other sizable acquisitions in recent years include …",
+      "note_cn": "源自正文 [p6]",
+      "note_en": "From paragraph [p6]"
+    }
+  ],
+  "context_dossier": {
+    "id": "ctx1",
+    "source_attr": "原文有",
+    "text_cn": "Decart 是一家总部位于旧金山的人工智能初创公司，2023年由三位以色列工程师（莱特斯多夫兄弟迪恩与奥里安、莫舍·沙列夫）创立，其软件帮助开发者在不同AI芯片之间切换——在各公司竞相获取算力的背景下愈发重要。公司正在开发名为 Lucy 和 Oasis 的“世界模型”（world models），可生成并模拟现实世界的3D环境。知情人士称亚马逊的收购估值约为70亿美元，远高于 Decart 今年5月近40亿美元的估值；此前 Decart 已从红杉资本、Benchmark 等投资者处融资超过4亿美元，亚马逊网络服务也在2025年向其开放了自研AI芯片 Trainium3 的早期使用权限。",
+    "text_en": "Decart 是一家总部位于旧金山的人工智能初创公司，2023年由三位以色列工程师（莱特斯多夫兄弟迪恩与奥里安、莫舍·沙列夫）创立，其软件帮助开发者在不同AI芯片之间切换——在各公司竞相获取算力的背景下愈发重要。公司正在开发名为 Lucy 和 Oasis 的“世界模型”（world models），可生成并模拟现实世界的3D环境。知情人士称亚马逊的收购估值约为70亿美元，远高于 Decart 今年5月近40亿美元的估值；此前 Decart 已从红杉资本、Benchmark 等投资者处融资超过4亿美元，亚马逊网络服务也在2025年向其开放了自研AI芯片 Trainium3 的早期使用权限。"
+  },
+  "media": [],
+  "terms": [
+    {
+      "en": "Decart",
+      "zh_suggested": "Decart（AI初创公司）",
+      "note": "亚马逊拟以约70亿美元收购；开发Lucy和Oasis世界模型"
+    },
+    {
+      "en": "Trainium3",
+      "zh_suggested": "Trainium3（亚马逊自研AI芯片）",
+      "note": "与英伟达GPU竞争"
+    },
+    {
+      "en": "Sequoia Capital",
+      "zh_suggested": "红杉资本",
+      "note": "Decart投资方"
+    },
+    {
+      "en": "Benchmark",
+      "zh_suggested": "Benchmark（风投）",
+      "note": "Decart投资方"
+    },
+    {
+      "en": "Radical Ventures",
+      "zh_suggested": "Radical Ventures（风投）",
+      "note": "Decart投资方"
+    },
+    {
+      "en": "PitchBook",
+      "zh_suggested": "PitchBook（创投数据商）",
+      "note": null
+    },
+    {
+      "en": "Calcalist",
+      "zh_suggested": "Calcalist（以色列财经媒体）",
+      "note": "率先报道Decart出售谈判"
+    },
+    {
+      "en": "Globalstar",
+      "zh_suggested": "Globalstar（卫星通信公司，星链竞争对手）",
+      "note": "亚马逊年初宣布约110亿美元收购"
+    }
+  ]
+}

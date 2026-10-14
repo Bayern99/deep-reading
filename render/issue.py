@@ -186,7 +186,7 @@ def _section_break(sid, cn, en):
 
 def render_issue(articles, modules_all, images_all, img_cache, issue_date,
                  gate_status=None, plans_all=None, asset_loader=None,
-                 curation=None, issue_dir=None):
+                 curation=None, issue_dir=None, execution_receipts=None):
     """gate_status: {aid: ('pass'|'warn'|'block', issues)}。warn/block 不进正文，只进待审核区。
     plans_all: editorial-plans by article id → enhanced production path.
     curation: render/curation.json — exclude 与 data_treatment。
@@ -255,14 +255,18 @@ def render_issue(articles, modules_all, images_all, img_cache, issue_date,
         elif e.get('type') == 'index_digest':
             last_sid = None
         plan = plans_all.get(uid)
+        mods = modules_all.get(uid)
+        imgs = images_all.get(uid)
+        b64 = img_cache.get(uid)
         if plan is not None:
-            parts.append(render_enhanced_article(e, plan, asset_loader=asset_loader))
+            parts.append(render_enhanced_article(
+                e, plan, asset_loader=asset_loader, modules=mods,
+                images=imgs, img_b64=b64, curated=treatments.get(uid),
+                execution_receipts=execution_receipts))
         else:
-            mods = modules_all.get(uid)
-            imgs = images_all.get(uid)
-            b64 = img_cache.get(uid)
-            parts.append(render_article(e, mods, imgs, b64,
-                                        curated=treatments.get(uid)))
+            parts.append(render_article(
+                e, mods, imgs, b64, curated=treatments.get(uid),
+                execution_receipts=execution_receipts))
         prev_e = order[i - 1] if i > 0 else None
         next_e = order[i + 1] if i + 1 < len(order) else None
         parts.append(article_nav(

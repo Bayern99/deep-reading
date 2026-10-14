@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>委内瑞拉涉嫌行贿者被捕 | Venezuelan Bribe Suspect Arrested — WSJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --accent: #b85d19;
+    --navy-bg: #0f1d2b;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Serif SC', 'Lora', Georgia, serif;
+    background-color: var(--paper);
+  }
+
+  html[lang="en"] body {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  /* Sticky Top Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(250, 248, 244, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--ink);
+    box-shadow: 0 1px 0 var(--line);
+  }
+
+  .masthead-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-cluster {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .wsj-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .section-badge {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-left: 1px solid var(--line);
+    padding-left: 0.75rem;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2px;
+  }
+
+  .lang-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.3rem 0.65rem;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s ease;
+  }
+
+  html[lang="zh-CN"] .lang-btn[data-lang="zh-CN"],
+  html[lang="en"] .lang-btn[data-lang="en"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Main Editorial Container */
+  .dispatch-wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4.5rem;
+  }
+
+  /* Print-inspired Newspaper Brief Frame */
+  .brief-card {
+    background: var(--paper);
+    border-top: 3px double var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 2.25rem 0 2.5rem;
+  }
+
+  /* Meta Dateline Bar */
+  .meta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dateline-loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .dateline-loc::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent);
+    border-radius: 50%;
+  }
+
+  .edition-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Headline */
+  .headline {
+    font-family: 'Noto Serif SC', 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(1.85rem, 4vw, 2.55rem);
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  html[lang="en"] .headline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  /* Byline & Timestamp */
+  .byline-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .byline-source {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .byline-date {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  /* Two-Column Asymmetric Dispatch Grid */
+  .dispatch-grid {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .prose-column {
+    min-width: 0;
+  }
+
+  .prose-p {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--body);
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .prose-p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Lead paragraph treatment (no ::first-letter on Chinese text) */
+  .prose-p.lead-p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.1rem;
+    margin-bottom: 1.65rem;
+  }
+
+  html[lang="en"] .prose-p {
+    font-size: 1.12rem;
+    line-height: 1.8;
+  }
+
+  html[lang="en"] .prose-p.lead-p {
+    font-size: 1.22rem;
+    font-weight: 400;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 62%, rgba(184, 93, 25, 0.18) 62%);
+    color: inherit;
+    padding: 0 2px;
+    font-weight: 600;
+  }
+
+  /* Compact Dossier Rail */
+  .dossier-rail {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-top: 2px solid var(--ink);
+    padding: 1.15rem 1.1rem;
+  }
+
+  .dossier-title {
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dossier-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .dossier-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .dossier-key {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+
+  .dossier-val {
+    font-family: 'Noto Serif SC', 'Lora', serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .dossier-val.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--accent);
+  }
+
+  /* Footer Colophon */
+  .colophon {
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* Responsive Mobile Reflow */
+  @media (max-width: 680px) {
+    .dispatch-wrapper {
+      padding: 2rem 1.15rem 3rem;
+    }
+
+    .dispatch-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    .masthead-inner {
+      padding: 0.65rem 1.15rem;
+    }
+
+    .section-badge {
+      display: none;
+    }
+
+    .prose-p.lead-p {
+      font-size: 1.12rem;
+      padding-left: 0.85rem;
+    }
+
+    .prose-p {
+      font-size: 1.05rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-cluster">
+      <span class="wsj-logo">The Wall Street Journal</span>
+      <span class="section-badge">
+        <span class="lang-cn">美国新闻 · 简讯</span>
+        <span class="lang-en">U.S. News · Dispatch</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="dispatch-wrapper">
+  <article class="brief-card">
+    <div class="meta-bar">
+      <div class="dateline-loc" data-ref="dek"><span class="lang-cn">佛罗里达州</span><span class="lang-en">FLORIDA</span></div>
+      <div class="edition-code">E1-014 · PAGE A2</div>
+    </div>
+
+    <h1 class="headline" data-ref="title"><span class="lang-cn">委内瑞拉涉嫌行贿者被捕</span><span class="lang-en">Venezuelan Bribe Suspect Arrested</span></h1>
+
+    <div class="byline-row">
+      <span class="byline-source">—Associated Press</span>
+      <time class="byline-date" datetime="2026-10-12">
+        <span class="lang-cn">2026年10月12日</span>
+        <span class="lang-en">October 12, 2026</span>
+      </time>
+    </div>
+
+    <div class="dispatch-grid">
+      <div class="prose-column">
+        <p class="prose-p lead-p" data-ref="p1" data-hl="已被拘留 | taken into custody"><span class="lang-cn">一名在美国被通缉的商人，他被指控向委内瑞拉高级官员行贿，以换取在委内瑞拉获得有利可图的政府合同，<mark class="ed-hl">已被拘留</mark>。</span><span class="lang-en">A businessman wanted in the U.S. for allegedly paying bribes to top Venezuelan officials in exchange for lucrative state contracts in Venezuela has been <mark class="ed-hl">taken into custody</mark>.</span></p>
+        <p class="prose-p" data-ref="p2" data-hl="阿尔瓦罗·普利多 | Alvaro Pulido | 2019年和2021年 | 2019 and again in 2021 | 阿莱克斯·萨博 | Alex Saab"><span class="lang-cn"><mark class="ed-hl">阿尔瓦罗·普利多</mark>于<mark class="ed-hl">2019年和2021年</mark>在迈阿密联邦法院被起诉，这是对他的长期商业伙伴<mark class="ed-hl">阿莱克斯·萨博</mark>的调查的一部分。<mark class="ed-hl">阿莱克斯·萨博</mark>曾是现已被罢免的总统尼古拉斯·马杜罗的盟友。</span><span class="lang-en"><mark class="ed-hl">Alvaro Pulido</mark> was indicted in Miami federal court in <mark class="ed-hl">2019 and again in 2021</mark> as part of an investigation into his longtime business partner, <mark class="ed-hl">Alex Saab</mark>, a onetime ally of ousted President Nicolás Maduro.</span></p>
+      </div>
+
+      <aside class="dossier-rail" aria-label="Case Dossier">
+        <div class="dossier-title">
+          <span class="lang-cn">案件档案 · 速览</span>
+          <span class="lang-en">Case Dossier · At a Glance</span>
+        </div>
+        <ul class="dossier-list">
+          <li class="dossier-item">
+            <span class="dossier-key">
+              <span class="lang-cn">涉案当事人</span>
+              <span class="lang-en">Defendant</span>
+            </span>
+            <span class="dossier-val">
+              <span class="lang-cn">阿尔瓦罗·普利多</span>
+              <span class="lang-en">Alvaro Pulido</span>
+            </span>
+          </li>
+          <li class="dossier-item">
+            <span class="dossier-key">
+              <span class="lang-cn">管辖法院</span>
+              <span class="lang-en">Jurisdiction</span>
+            </span>
+            <span class="dossier-val">
+              <span class="lang-cn">迈阿密联邦法院</span>
+              <span class="lang-en">Miami Federal Court</span>
+            </span>
+          </li>
+          <li class="dossier-item">
+            <span class="dossier-key">
+              <span class="lang-cn">起诉年份</span>
+              <span class="lang-en">Indictments</span>
+            </span>
+            <span class="dossier-val mono">2019 · 2021</span>
+          </li>
+          <li class="dossier-item">
+            <span class="dossier-key">
+              <span class="lang-cn">关联调查对象</span>
+              <span class="lang-en">Linked Probe</span>
+            </span>
+            <span class="dossier-val">
+              <span class="lang-cn">阿莱克斯·萨博（马杜罗前盟友）</span>
+              <span class="lang-en">Alex Saab (Onetime Maduro Ally)</span>
+            </span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </article>
+</main>
+
+<footer class="colophon">
+  <span>WSJ 深读 · EDITORIAL RENAISSANCE</span>
+  <span>
+    <span class="lang-cn">新闻简报 · 原文双语对照</span>
+    <span class="lang-en">U.S. News Brief · Bilingual Verbatim Edition</span>
+  </span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    try {
+      localStorage.setItem('wsj-brief-lang', lang);
+    } catch (e) {}
+  }
+
+  (function initLang() {
+    try {
+      var saved = localStorage.getItem('wsj-brief-lang');
+      if (saved === 'en' || saved === 'zh-CN') {
+        document.documentElement.setAttribute('lang', saved);
+      }
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

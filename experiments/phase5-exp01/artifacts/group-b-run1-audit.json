@@ -1,0 +1,303 @@
+{
+  "mode": "audit-only",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 20,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 20,
+    "source_derived_count": 0,
+    "highlights_applied": [],
+    "ai_editorial_items_count": 9,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Chart comparing participation cuts and annualized returns",
+        "viewBox": "",
+        "text_labels": [
+          "A. 与标普500挂钩资金比例 (第1年→第7年→第11年)",
+          "A. SHARE TIED TO S&P 500 (YR 1 → YR 7 → YR 11)",
+          "第 1 年",
+          "Year 1",
+          "60%",
+          "40% (@1%)",
+          "第 7 年",
+          "Year 7",
+          "55%",
+          "45% (@1%)",
+          "第 11 年",
+          "Year 11",
+          "45%",
+          "55% (@1%)",
+          "注：橙色为挂钩标普500比例（扣2.9个百分点差额）；灰色按1%增长",
+          "Note: Terracotta = S&P 500 share (-2.9pp spread); Gray = 1% fixed rate",
+          "B. 12年期年化收益率对比 (%)",
+          "B. 12-YR ANNUALIZED RETURN (%)",
+          "标普 500 指数",
+          "S&P 500 Index",
+          "13%",
+          "埃利奥特年金",
+          "Elliott Annuity",
+          "3.7%",
+          "美国国债",
+          "U.S. Treasurys",
+          "1.9%",
+          "附加险使埃利奥特年收益减少约 2 个百分点",
+          "Add-on riders reduced Elliott's annual return by ~2 percentage points"
+        ],
+        "numbers_found": [
+          "500",
+          "1",
+          "7",
+          "11",
+          "500",
+          "1",
+          "7",
+          "11",
+          "1",
+          "1",
+          "60%",
+          "40%",
+          "1%",
+          "7",
+          "7",
+          "55%",
+          "45%",
+          "1%",
+          "11",
+          "11",
+          "45%",
+          "55%",
+          "1%",
+          "500",
+          "2.9",
+          "1%",
+          "500",
+          "2.9",
+          "1%",
+          "12",
+          "12",
+          "500",
+          "500",
+          "13%",
+          "3.7%",
+          "1.9%",
+          "2",
+          "2"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "Comparison of agent commissions and Delaware Life Momentum Growth pitch",
+        "viewBox": "",
+        "text_labels": [
+          "A. 销售代理佣金占保单存款比例",
+          "A. AGENT COMMISSION (% OF DEPOSIT)",
+          "美国公平人寿 (10年指数型)",
+          "American Equity (10-Yr Indexed)",
+          "5% – 7%",
+          "博枫旗下保险公司 (简单固定利率)",
+          "Brookfield Insurer (Simple Fixed)",
+          "~3%",
+          "B. 特拉华人寿“动量增长”年金宣传册",
+          "B. DELAWARE LIFE 'MOMENTUM GROWTH' PITCH",
+          "$100,000",
+          "初始保费",
+          "Initial Premium",
+          "21 YRS",
+          "$2.7M",
+          "宣传假设增长",
+          "Advertised Pitch",
+          "宣传材料背后的三项事实（p18）：",
+          "Three Caveats Behind the Brochure (p18):",
+          "• 挂钩一个去年才成立的股票和加密货币指数",
+          "• Tied to a stock-and-crypto index established just last year",
+          "• 基于过去 15 年假设数据（含 11 年股市两位数增长）",
+          "• Uses 15-yr hypothetical data (11 yrs of double-digit stock gains)"
+        ],
+        "numbers_found": [
+          "10",
+          "10",
+          "5%",
+          "7%",
+          "3%",
+          "$100,000",
+          "21",
+          "$2.7",
+          "18",
+          "18",
+          "15",
+          "11",
+          "15",
+          "11"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 3,
+        "aria_label": "Flowchart from household savings to private credit investments and cap adjustments",
+        "viewBox": "",
+        "text_labels": [
+          "01. HOUSEHOLD SAVINGS",
+          "美国家庭储蓄 ($4万–$10万)",
+          "Retiree Savings ($40K–$100K)",
+          "锁定约 10–12 年 (对比固定年金3–5年)",
+          "Locked ~10–12 yrs (vs. 3–5 yr fixed)",
+          "02. INSURER FLOAT VALVE",
+          "私募控股保险公司",
+          "PE-Backed Insurers",
+          "可预测赔付时间表 + 灵活调整条款",
+          "Predictable payouts + adjustable caps",
+          "03. PRIVATE CREDIT",
+          "高风险、低流动性私募信贷",
+          "Riskier, Illiquid Debt",
+          "担保贷款凭证 (CLO) / 资产支持证券",
+          "CLOs & Asset-Backed Securities",
+          "单向利润调节阀（拉里·里布卡指出）：",
+          "ASYMMETRIC PROFIT RATCHET (LARRY RYBKA, VALMARK CEO):",
+          "• 若投资表现不佳 → 下调保户收益上限以缓冲损失  |  • 若投资表现良好 → 同样下调上限以增厚自身利润",
+          "• If investments do poorly → lower policyholder caps to cushion loss  |  • If investments do well → lower caps to fatten profits"
+        ],
+        "numbers_found": [
+          "01",
+          "$4",
+          "$10",
+          "$40",
+          "$100",
+          "10",
+          "12",
+          "3",
+          "5",
+          "10",
+          "12",
+          "3",
+          "5",
+          "02",
+          "03"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "被锁定的遗产与华尔街的新猎场",
+        "en": "The 12-Year Lockup & Wall Street's Household Harvest",
+        "numbers_found": [
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "收益递减的算术与保险巨头的辩词",
+        "en": "The Ratchet Arithmetic & The Insurer's Defense",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_figcaption",
+        "cn": "数据来源：报道核实保单记录（p10–p12）。",
+        "en": "Source: Reported policy records and benchmark comparisons (p10–p12).",
+        "numbers_found": [
+          "10",
+          "12",
+          "10",
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "监管套利、高额佣金与270万美元的幻象",
+        "en": "Regulatory Blind Spots, 7% Commissions & The $2.7M Pitch",
+        "numbers_found": [
+          "270",
+          "7%",
+          "$2.7"
+        ]
+      },
+      {
+        "category": "editorial_figcaption",
+        "cn": "数据来源：报道核实的美国公平人寿、博枫及特拉华人寿“动量增长”年金材料（p16–p18）。",
+        "en": "Source: Reported commission figures and Delaware Life “Momentum Growth” educational materials (p16–p18).",
+        "numbers_found": [
+          "16",
+          "18",
+          "16",
+          "18"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "终局揭秘：私募巨头为何钟情“可改口”的十年期资金池",
+        "en": "The Endgame: Why Private Equity Loves a 10-Year Float Where It Can Change the Deal",
+        "numbers_found": [
+          "10"
+        ]
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "40%",
+        "context": "A. 与标普500挂钩资金比例 (第1年→第7年→第11年) A. SHARE TIED TO S&P 500 (YR 1 → YR 7 → YR 11) 第 1 年 Year 1 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "18",
+        "context": "A. 销售代理佣金占保单存款比例 A. AGENT COMMISSION (% OF DEPOSIT) 美国公平人寿 (10年指数型) American Equity (10-Yr Indexed) 5% – 7%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "18",
+        "context": "A. 销售代理佣金占保单存款比例 A. AGENT COMMISSION (% OF DEPOSIT) 美国公平人寿 (10年指数型) American Equity (10-Yr Indexed) 5% – 7%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "01",
+        "context": "01. HOUSEHOLD SAVINGS 美国家庭储蓄 ($4万–$10万) Retiree Savings ($40K–$100K) 锁定约 10–12 年 (对比固定年金3–5年) Locked ~10–12 yrs (vs. 3–5 yr fixed)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "01. HOUSEHOLD SAVINGS 美国家庭储蓄 ($4万–$10万) Retiree Savings ($40K–$100K) 锁定约 10–12 年 (对比固定年金3–5年) Locked ~10–12 yrs (vs. 3–5 yr fixed)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "02",
+        "context": "01. HOUSEHOLD SAVINGS 美国家庭储蓄 ($4万–$10万) Retiree Savings ($40K–$100K) 锁定约 10–12 年 (对比固定年金3–5年) Locked ~10–12 yrs (vs. 3–5 yr fixed)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "03",
+        "context": "01. HOUSEHOLD SAVINGS 美国家庭储蓄 ($4万–$10万) Retiree Savings ($40K–$100K) 锁定约 10–12 年 (对比固定年金3–5年) Locked ~10–12 yrs (vs. 3–5 yr fixed)"
+      },
+      {
+        "item": "editorial_figcaption",
+        "number": "16",
+        "context": "数据来源：报道核实的美国公平人寿、博枫及特拉华人寿“动量增长”年金材料（p16–p18）。"
+      },
+      {
+        "item": "editorial_figcaption",
+        "number": "18",
+        "context": "数据来源：报道核实的美国公平人寿、博枫及特拉华人寿“动量增长”年金材料（p16–p18）。"
+      },
+      {
+        "item": "editorial_figcaption",
+        "number": "16",
+        "context": "数据来源：报道核实的美国公平人寿、博枫及特拉华人寿“动量增长”年金材料（p16–p18）。"
+      },
+      {
+        "item": "editorial_figcaption",
+        "number": "18",
+        "context": "数据来源：报道核实的美国公平人寿、博枫及特拉华人寿“动量增长”年金材料（p16–p18）。"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 11 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

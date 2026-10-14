@@ -1,24 +1,26 @@
 # Agent instructions
 
-Daily newspaper, not a lab dump. Content changes every issue; principles do not.
+WSJ 深读 is a daily newspaper with a local editorial Studio. Preserve the validated Phase 1–7 behavior and source data.
 
-**Before building or restyling an issue, read `FOUNDATION.md` then `DESIGN.md`.**
+## Navigate
 
-- `FOUNDATION.md` — product constitution (reader surface, front.json, invariants, next).
-- `DESIGN.md` — visual canon (AJ × WIRED tokens, type, components).
-- Build: `cd render && python3 build.py --issue YYYY-MM-DD` → `../YYYY-MM-DD/dist/index.html`.
-- Per-issue selection: `<date>/front.json`. Do not hardcode story ids in the renderer.
+- Start with `README.md` for setup and commands; read `ARCHITECTURE.md` before changing module/data contracts or persistence.
+- Before building or restyling, read `FOUNDATION.md`, then `DESIGN.md`. Product principles and accepted design experiments are distinct.
+- For content, artifacts, backups or Git cleanup, read `docs/data-policy.md`.
+- For publishing, queue startup or recovery, read `render/BUILD.md`.
+- For domain terms, read `GLOSSARY.md`; translation terminology remains in each issue's separate glossary. Domain-doc convention: `docs/agents/domain.md`.
+- For earlier design/audit claims, use `docs/history/README.md`. Historical drivers under `render/` and issue folders are not production entry points.
 
-## Agent skills
+## Work and verify
 
-### Issue tracker
+Run from the root: bootstrap `.venv` with `requirements.txt`; `make test` runs both test styles, `make smoke` exercises both production paths in an isolated copy without model calls. `make studio ISSUE=YYYY-MM-DD` launches local Reader/Studio; `make build` and `make reader` export different output families.
 
-Issues and specs live as GitHub issues in this repo (Bayern99/deep-reading), driven by the `gh` CLI. See `docs/agents/issue-tracker.md`.
+Inspect current Git changes before editing; preserve the user's work. Keep final source, translation provenance, verified assets, plans and artifact versions. Treat accepted source as read-only during formatting; exact alignment repairs are auditable projections. Story IDs are scoped to an issue; known legacy global records need an explicit migration before second-date publication.
 
-### Triage labels
+Studio startup can resume the persistent queue. Use one writer per issue/checkout; stop it before backup. Use isolated inputs for smoke runs. Confirm model generation intentionally; reopening saved content does not require generation.
 
-Default five-role vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+Finish a change with the affected checks and actual runtime path; UI changes require desktop/mobile bilingual inspection. Update the authoritative document for changed behavior. Avoid incidental package migrations or redesigns. Major refactors, important data deletion, history rewriting, merges, deployment and remote pushes require Jerry's approval.
 
-### Domain docs
+## Tracker
 
-Single-context: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+Issues/specs: private `Bayern99/deep-reading` via `gh`; see `docs/agents/issue-tracker.md`. Default triage roles: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`; see `docs/agents/triage-labels.md`.

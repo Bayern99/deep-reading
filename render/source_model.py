@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """源内容锚定层（Source Anchoring）。
 
-原则（/tmp/kit/EDITORIAL_KNOWLEDGE.md §1, §8）：
+原则：见仓库 FOUNDATION.md 的内容不变量与 ARCHITECTURE.md 的来源契约。
 - OCR 原稿与 QA 译文是只读层，格式化流程不可修改原文。
-- 每个段落有稳定 ID（p1/p2…），原文/译文分别存字符 range。
+- 每个段落有当前来源投影内的 ID（p1/p2…），原文/译文分别存字符 range；来源变更后需重新校验锚定计划。
 - Text Treatment 只生成"操作"（operations），不改原文；操作必须过 source exact match。
 - editorial_added 标记所有新增编辑文字，与记者原文明确区分。
 
@@ -13,11 +13,66 @@ caption_duplicate 检测：
   标记 role='caption_duplicate'，渲染时正文流跳过该段（只在 figure 处渲染一次）。
 - 绝不删除：原文块保留在 source model 中，可审计。
 """
+import hashlib
 import json
 import os
 import re
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+_OVERRIDES = None
+
+
+def _alignment_overrides():
+    global _OVERRIDES
+    if _OVERRIDES is None:
+        with open(os.path.join(BASE, 'alignment_overrides.json'), encoding='utf-8') as f:
+            _OVERRIDES = json.load(f)
+    return _OVERRIDES
+
+
+def _apply_en_repairs(aid, paragraphs):
+    repairs = _alignment_overrides().get(aid) or {}
+    en = list(paragraphs)
+    for exact in repairs.get('drop_en', []):
+        matches = [i for i, text in enumerate(en) if text == exact]
+        if len(matches) != 1:
+            raise ValueError(f'{aid}: drop_en must match once: {exact!r}')
+        en.pop(matches[0])
+    for spec in repairs.get('join_en', []):
+        first = [i for i, text in enumerate(en) if text.startswith(spec['first_prefix'])]
+        second = [i for i, text in enumerate(en) if text.startswith(spec['second_prefix'])]
+        if len(first) != 1 or len(second) != 1 or first[0] == second[0]:
+            raise ValueError(f'{aid}: join_en prefixes must match once: {spec!r}')
+        en[first[0]] += spec.get('joiner', ' ') + en[second[0]]
+        en.pop(second[0])
+    return en
+
+
+def content_digest(entry):
+    """Pin original content plus this article's repair record for pN plan anchors."""
+    payload = {'article': entry,
+               'alignment_repair': _alignment_overrides().get(entry['id']) or {}}
+    serialized = json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
+    return hashlib.sha256(serialized.encode('utf-8')).hexdigest()
+
+
+def source_from_final(entry):
+    """Read-only repaired bilingual projection shared by every production path.
+
+    pN anchors retain the existing enhanced-v1 numbering. An unmatched locale
+    gets an empty counterpart, so an English tail can never be truncated.
+    """
+    sm = SourceModel(entry['id'])
+    cn = [p.strip() for p in (entry.get('body_cn') or '').split('\n\n') if p.strip()]
+    en = [p.strip() for p in (entry.get('body_en') or '').split('\n\n') if p.strip()]
+    en = _apply_en_repairs(entry['id'], en)
+    for i in range(max(len(cn), len(en))):
+        c = cn[i] if i < len(cn) else ''
+        raw_en = en[i] if i < len(en) else ''
+        role = 'source_head' if c and len(c) <= 12 and not re.search(r'[。！？.!?]', c) else 'body'
+        sm.add_block(f'p{i+1}', raw_en, c, role=role)
+    return sm
 
 
 def _norm(s):

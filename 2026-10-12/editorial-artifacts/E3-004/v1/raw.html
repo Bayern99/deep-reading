@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人工智能有个上帝问题 · Artificial Intelligence Has a God Problem | WSJ 深读</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f4;
+    --paper-card: #f3efe6;
+    --paper-deep: #ebe5d8;
+    --ink: #141413;
+    --body: #242220;
+    --muted: #646059;
+    --line: #e4dfd3;
+    --line-strong: #c9c1b0;
+    --accent: #b85d19;
+    --accent-soft: rgba(184, 93, 25, 0.14);
+    --navy-bg: #0f1d2b;
+    --burgundy: #7a261f;
+    --serif-en: 'Playfair Display', Georgia, serif;
+    --body-en: 'Lora', Georgia, serif;
+    --serif-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --sans: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--paper);
+    color: var(--body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Strict Language Toggle Rules */
+  html[lang="zh-CN"] .lang-en { display: none !important; }
+  html[lang="en"] .lang-cn { display: none !important; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--body);
+    font-family: var(--serif-cn);
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--body-en);
+    line-height: 1.78;
+  }
+
+  /* Inline Highlighting */
+  mark.ed-hl {
+    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);
+    color: inherit;
+    padding: 0 2px;
+    font-weight: 600;
+  }
+
+  /* Sticky Masthead */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 1.5rem;
+  }
+
+  .masthead-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .brand-logo {
+    font-family: var(--serif-en);
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .brand-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--line-strong);
+  }
+
+  .brand-kicker {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper-card);
+  }
+
+  .lang-btn {
+    border: none;
+    background: transparent;
+    padding: 0.32rem 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  html[lang="zh-CN"] .lang-btn[data-lang="zh-CN"],
+  html[lang="en"] .lang-btn[data-lang="en"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Hero Essay Header */
+  .essay-hero {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+
+  .hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-ornament::before,
+  .hero-ornament::after {
+    content: "";
+    width: 48px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-rubric {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .essay-title {
+    font-family: var(--serif-cn);
+    font-weight: 700;
+    font-size: clamp(2.25rem, 4.8vw, 3.65rem);
+    line-height: 1.22;
+    color: var(--ink);
+    margin-bottom: 1.35rem;
+    letter-spacing: -0.01em;
+  }
+
+  html[lang="en"] .essay-title {
+    font-family: var(--serif-en);
+    font-weight: 800;
+    line-height: 1.12;
+  }
+
+  .essay-dek {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  html[lang="en"] .essay-dek {
+    font-family: var(--body-en);
+    font-style: italic;
+    font-size: 1.22rem;
+  }
+
+  .byline-bar {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .byline-author {
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .byline-dot {
+    color: var(--accent);
+  }
+
+  /* Main Essay Container */
+  .essay-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* Opening Scene: Orangeburg Sermon */
+  .opening-scene {
+    max-width: 740px;
+    margin: 3.25rem auto 3.5rem;
+    padding: 2.5rem 2.75rem;
+    background: linear-gradient(180deg, var(--paper-card) 0%, rgba(243, 239, 230, 0.45) 100%);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    position: relative;
+  }
+
+  .scene-dateline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px dashed var(--line-strong);
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .scene-dateline strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Prose Paragraphs */
+  .prose-p {
+    font-size: 1.125rem;
+    color: var(--body);
+    margin-bottom: 1.55rem;
+    letter-spacing: 0.01em;
+  }
+
+  html[lang="en"] .prose-p {
+    font-size: 1.14rem;
+  }
+
+  .prose-lead {
+    font-size: 1.24rem;
+    line-height: 1.9;
+    color: var(--ink);
+    font-weight: 600;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+
+  html[lang="en"] .prose-lead {
+    font-size: 1.26rem;
+    line-height: 1.78;
+    font-weight: 400;
+  }
+
+  /* Pulpit Proclamation Highlight (p2) */
+  .pulpit-proclamation {
+    margin: 2rem 0;
+    padding: 1.65rem 1.75rem;
+    background: var(--paper);
+    border-left: 4px solid var(--burgundy);
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pulpit-proclamation .prose-p {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  html[lang="en"] .pulpit-proclamation .prose-p {
+    font-family: var(--serif-en);
+    font-size: 1.45rem;
+  }
+
+  /* Chapter Dividers */
+  .chapter-break {
+    max-width: 740px;
+    margin: 4rem auto 2.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .chapter-numeral {
+    display: inline-block;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    padding: 0 1rem;
+    background: var(--paper);
+    position: relative;
+    z-index: 2;
+  }
+
+  .chapter-break::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: var(--line-strong);
+    z-index: 1;
+  }
+
+  .chapter-title {
+    margin-top: 0.55rem;
+    font-family: var(--serif-cn);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  html[lang="en"] .chapter-title {
+    font-family: var(--serif-en);
+    font-size: 1.65rem;
+  }
+
+  .chapter-sub {
+    margin-top: 0.3rem;
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+
+  /* Asymmetric Editorial Grid for Chapters */
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 680px) 320px;
+    gap: 3.25rem;
+    justify-content: center;
+    align-items: start;
+    margin: 0 auto;
+  }
+
+  .narrative-col {
+    min-width: 0;
+  }
+
+  .marginalia-rail {
+    position: sticky;
+    top: 4.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Ecclesiastical Dossier Card (May - Oct 2026) */
+  .dossier-card {
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.4rem 1.35rem;
+  }
+
+  .dossier-header {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    padding-bottom: 0.65rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .dossier-timeline {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dossier-item {
+    position: relative;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--accent);
+  }
+
+  .dossier-date {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .dossier-desc {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--body);
+    margin-top: 0.15rem;
+  }
+
+  /* Verified Pull Quote Callout (data-derive="q1") */
+  .pull-quote {
+    background: var(--navy-bg);
+    color: var(--paper);
+    padding: 1.65rem 1.5rem;
+    border-top: 3px solid var(--accent);
+    position: relative;
+  }
+
+  .pull-quote::before {
+    content: "“";
+    font-family: var(--serif-en);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.55;
+    display: block;
+    margin-bottom: -0.75rem;
+  }
+
+  .pull-quote .quote-text {
+    font-family: var(--serif-cn);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #f7f4ed;
+    margin-bottom: 0.95rem;
+  }
+
+  html[lang="en"] .pull-quote .quote-text {
+    font-family: var(--body-en);
+    font-style: italic;
+  }
+
+  .pull-quote .quote-attrib {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: #b9b2a3;
+    text-transform: uppercase;
+  }
+
+  /* Dual Whirlwind Ledger (inline analytical contrast next to p9-p10) */
+  .whirlwind-panel {
+    margin: 2rem 0 2.25rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 1.35rem 1.5rem;
+  }
+
+  .whirlwind-title {
+    font-family: var(--mono);
+    font-size: 0.73rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .whirlwind-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .whirlwind-col {
+    padding: 0.85rem 1rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+
+  .whirlwind-col.promise {
+    border-top: 3px solid #2b6cb0;
+  }
+
+  .whirlwind-col.peril {
+    border-top: 3px solid var(--burgundy);
+  }
+
+  .whirlwind-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+  }
+
+  .whirlwind-col.promise .whirlwind-tag { color: #2b6cb0; }
+  .whirlwind-col.peril .whirlwind-tag { color: var(--burgundy); }
+
+  .whirlwind-list {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: var(--body);
+  }
+
+  /* Bespoke Conceptual SVG Diagram Section */
+  .triptych-figure {
+    max-width: 920px;
+    margin: 3.5rem auto;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    padding: 2rem 2rem 1.65rem;
+  }
+
+  .figure-kicker {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+
+  .figure-heading {
+    font-family: var(--serif-cn);
+    font-size: 1.32rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  html[lang="en"] .figure-heading {
+    font-family: var(--serif-en);
+  }
+
+  .figure-sub {
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    color: var(--muted);
+    margin-bottom: 1.35rem;
+  }
+
+  .svg-wrapper {
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 0.5rem;
+  }
+
+  .svg-wrapper svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Papal Encyclical Split Feature (p13.s1 & p13.s2) */
+  .encyclical-monument {
+    margin: 1.75rem 0 2.25rem;
+    padding: 1.85rem 2rem;
+    background: linear-gradient(135deg, #f5f0e5 0%, #ebe3d2 100%);
+    border: 1px solid var(--line-strong);
+    border-left: 4px solid var(--accent);
+    position: relative;
+  }
+
+  .encyclical-badge {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+
+  .encyclical-quote {
+    font-size: 1.22rem;
+    line-height: 1.78;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  html[lang="en"] .encyclical-quote {
+    font-family: var(--serif-en);
+    font-weight: 700;
+    font-size: 1.26rem;
+    line-height: 1.62;
+  }
+
+  /* Centered Single-Column Literary Track for Chapter III & Coda */
+  .single-track {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* Sam Altman Statement Card (p16) */
+  .altman-dispatch {
+    margin: 1.85rem 0 2.1rem;
+    padding: 1.55rem 1.75rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    border-top: 3px solid var(--ink);
+  }
+
+  .dispatch-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .altman-dispatch .prose-p {
+    margin-bottom: 0;
+    font-size: 1.14rem;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  html[lang="en"] .altman-dispatch .prose-p {
+    font-family: var(--body-en);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Coda Box (p18 - p21) */
+  .sermon-coda {
+    max-width: 720px;
+    margin: 3.5rem auto 2.5rem;
+    padding: 2.5rem 2.75rem;
+    background: var(--paper-card);
+    border: 1px solid var(--line-strong);
+    position: relative;
+  }
+
+  .coda-closing-quote {
+    margin-top: 1.5rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .coda-closing-quote .prose-p {
+    margin-bottom: 0;
+    font-size: 1.24rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  html[lang="en"] .coda-closing-quote .prose-p {
+    font-family: var(--serif-en);
+    font-size: 1.3rem;
+  }
+
+  /* Archival Photo Caption Plate (p22) */
+  .archival-caption-plate {
+    max-width: 720px;
+    margin: 2rem auto 0;
+    padding: 1rem 1.25rem;
+    background: var(--paper);
+    border: 1px dashed var(--line-strong);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .caption-icon {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.15rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  .archival-caption-plate .prose-p {
+    margin-bottom: 0;
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* Footer */
+  .essay-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* Responsive Mobile Reflow (<= 880px and 390px) */
+  @media (max-width: 880px) {
+    .editorial-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .marginalia-rail {
+      position: static;
+    }
+    .opening-scene,
+    .sermon-coda {
+      padding: 1.75rem 1.35rem;
+    }
+    .triptych-figure {
+      padding: 1.35rem 1rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .masthead {
+      padding: 0.6rem 1rem;
+    }
+    .essay-hero {
+      padding: 2.75rem 1rem 2rem;
+    }
+    .essay-container {
+      padding: 0 1rem 3.5rem;
+    }
+    .whirlwind-cols {
+      grid-template-columns: 1fr;
+    }
+    .encyclical-monument {
+      padding: 1.35rem 1.2rem;
+    }
+    .archival-caption-plate {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Sticky Top Masthead -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand-group">
+      <span class="brand-logo">THE WALL STREET JOURNAL</span>
+      <span class="brand-divider"></span>
+      <span class="brand-kicker">
+        <span class="lang-cn">深读 · 科技与信仰哲学随笔</span>
+        <span class="lang-en">ESSAY · TECHNOLOGY &amp; THEOLOGY</span>
+      </span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language Switcher">
+      <button type="button" class="lang-btn" data-lang="zh-CN" onclick="setLang('zh-CN')">中文</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Literary Essay Hero -->
+<header class="essay-hero">
+  <div class="hero-ornament">
+    <span class="hero-rubric">
+      <span class="lang-cn">B1版 · 科技与人文纵深</span>
+      <span class="lang-en">PAGE B1 · TECHNOLOGY &amp; HUMANITY</span>
+    </span>
+  </div>
+  <h1 class="essay-title" data-ref="title"><span class="lang-cn">人工智能有个上帝问题</span><span class="lang-en">Artificial Intelligence Has a God Problem</span></h1>
+  <p class="essay-dek">
+    <span class="lang-cn">从南卡罗来纳州浸信会的周日讲坛，到梵蒂冈将算法比作“巴别塔”的通谕，基督教世界正试图在硅谷重塑人类之前，率先界定“何以为人”。</span>
+    <span class="lang-en">From a Sunday pulpit in South Carolina to a papal encyclical invoking the Tower of Babel, the Christian world is moving early to challenge Silicon Valley’s godlike ambitions.</span>
+  </p>
+  <div class="byline-bar">
+    <span class="byline-author">By Tim Higgins</span>
+    <span class="byline-dot">•</span>
+    <span>
+      <span class="lang-cn">2026年10月12日</span>
+      <span class="lang-en">October 12, 2026</span>
+    </span>
+    <span class="byline-dot">•</span>
+    <span>
+      <span class="lang-cn">南卡罗来纳州奥兰治堡 / 梵蒂冈 / 硅谷</span>
+      <span class="lang-en">ORANGEBURG, S.C. / VATICAN / SILICON VALLEY</span>
+    </span>
+  </div>
+</header>
+
+<main class="essay-container">
+
+  <!-- PROLOGUE: Immersive Opening Sermon Scene (p1 - p4 kept together) -->
+  <section class="opening-scene" aria-label="Opening Scene">
+    <div class="scene-dateline">
+      <span>
+        <strong>
+          <span class="lang-cn">序幕 · 讲坛上的启示录</span>
+          <span class="lang-en">PROLOGUE · REVELATION AT THE PULPIT</span>
+        </strong>
+      </span>
+      <span>
+        <span class="lang-cn">南卡罗来纳州奥兰治堡 · 福音之光浸信会</span>
+        <span class="lang-en">GOSPEL LIGHT BAPTIST CHURCH · ORANGEBURG, S.C.</span>
+      </span>
+    </div>
+
+    <p class="prose-p prose-lead" data-ref="p1" data-hl="《启示录》 | Book of Revelation"><span class="lang-cn">约瑟夫·哈钦森牧师在最近的一次周日布道中，首先引用了<mark class="ed-hl">《启示录》</mark>，这是《新约》的最后一部分，以其末世预言而闻名。他随即阐述了人工智能将如何融入末世。</span><span class="lang-en">Pastor Joseph Hutchinson began a recent Sunday sermon by pointing to the <mark class="ed-hl">Book of Revelation</mark>, the final part of the New Testament best known for apocalyptic prophecy. And he quickly argued for how artificial intelligence will fit into end times.</span></p>
+
+    <div class="pulpit-proclamation">
+      <p class="prose-p" data-ref="p2" data-hl="人工智能想要成为上帝 | AI wants to be God"><span class="lang-cn">这位牧师在南卡罗来纳州奥兰治堡的福音之光浸信会中警告说：“<mark class="ed-hl">人工智能想要成为上帝</mark>。”</span><span class="lang-en">"<mark class="ed-hl">AI wants to be God</mark>," the pastor warned those at Gospel Light Baptist Church in Orangeburg, S.C.</span></p>
+    </div>
+
+    <p class="prose-p" data-ref="p3" data-hl="150人 | 50年 | 超过了对战争和经济的担忧 | outranks everything—wars, economy"><span class="lang-cn">这位74岁的牧师后来告诉我，这次布道受到了会众提出的问题的启发。他的会众大约有<mark class="ed-hl">150人</mark>。哈钦森说，在长达<mark class="ed-hl">50年</mark>的布道生涯中，他发现人们对人工智能的焦虑程度<mark class="ed-hl">超过了对战争和经济的担忧</mark>。</span><span class="lang-en">The sermon, the 74-year-old later told me, was inspired by the questions he was getting from the congregation, which numbers around 150. In his roughly 50 years preaching, Hutchinson says the anxiety he is hearing about AI <mark class="ed-hl">outranks everything—wars, economy</mark>.</span></p>
+
+    <p class="prose-p" data-ref="p4"><span class="lang-cn">哈钦森说：“人们越是看到有人预言灾难和绝望，就越多人会说，‘牧师说得没错，圣经也一定是正确的。’”</span><span class="lang-en">"The more you see people that are projecting doom and despair coming out, then the more people say, 'Well, the preacher must have been right, and the Bible must be right,'" Hutchinson said.</span></p>
+  </section>
+
+  <!-- CHAPTER I: Church Action & Public Voice (p5 - p10) -->
+  <div class="chapter-break">
+    <span class="chapter-numeral">CHAPTER I</span>
+    <h2 class="chapter-title">
+      <span class="lang-cn">来自讲坛的早期干预</span>
+      <span class="lang-en">The Pulpit’s Early Intervention</span>
+    </h2>
+    <p class="chapter-sub">
+      <span class="lang-cn">教会如何成为普通社区对抗科技巨头与监控设施的发声媒介</span>
+      <span class="lang-en">How churches became vehicles for the common good amid data-center and surveillance angst</span>
+    </p>
+  </div>
+
+  <section class="editorial-grid" aria-label="Chapter I">
+    <div class="narrative-col">
+      <p class="prose-p" data-ref="p5" data-hl="造福全人类，而不是少数科技亿万富翁 | benefits all of humanity rather than a few tech billionaires"><span class="lang-cn">人工智能行业面临的最新挑战，已经从一个极具争议的政治议题，演变成一个从讲坛上提出的问题。与以往几代技术不同，基督教社群似乎准备在人工智能发展的早期阶段就对其进行引导，以确保它能<mark class="ed-hl">造福全人类，而不是少数科技亿万富翁</mark>。</span><span class="lang-en">Already a polarizing political issue, the AI industry's latest challenge is emerging from the pulpit. Unlike recent generations of technology, the Christian community appears poised to put its stamp on AI early in an attempt to ensure it <mark class="ed-hl">benefits all of humanity rather than a few tech billionaires</mark>.</span></p>
+
+      <p class="prose-p" data-ref="p6" data-hl="OpenAI和Anthropic | OpenAI and Anthropic"><span class="lang-cn">对于<mark class="ed-hl">OpenAI和Anthropic</mark>等公司来说，风险在于它们可能会与越来越多的美国民众产生隔阂，其中一些人对人工智能数据中心和Flock（车牌识别摄像头公司）的摄像头在社区中出现的情况感到不满。</span><span class="lang-en">The risk for the likes of <mark class="ed-hl">OpenAI and Anthropic</mark> is getting further sideways with a swath of the American populace, some of whom are unhappy with AI data centers and Flock cameras in their communities.</span></p>
+
+      <p class="prose-p" data-ref="p7" data-hl="共同利益的愿景 | vision of the common good"><span class="lang-cn">圣母大学哲学教授梅根·沙利文说：“许多牧师意识到，当人们对他们所依赖的机构感到不安时，他们会试图找到自己的声音，为自己和社区发声。”“教会非常善于为人们提供一个平台，让他们能够为自己对更广泛社会<mark class="ed-hl">共同利益的愿景</mark>进行倡导，尤其是在像美国中西部这样的地区。”</span><span class="lang-en">"A lot of pastors are realizing when people get freaked out about institutions they depend on, they try to find their voice to advocate for themselves and their communities," said Meghan Sullivan, a philosophy professor at the University of Notre Dame. "And churches are really good at giving people a vehicle for advocating for their <mark class="ed-hl">vision of the common good</mark> in broader society, especially in parts of the country like" the Midwest.</span></p>
+
+      <p class="prose-p" data-ref="p8" data-hl="在人工智能时代保护人类 | safeguarding the human person in the time of artificial intelligence"><span class="lang-cn">本月，美国福音派协会发布了一份关于人工智能的政策声明。长老会（美国）于8月举行了一次关于该主题的峰会。教宗良十四世于5月发布了一份罕见的通谕，主题是“<mark class="ed-hl">在人工智能时代保护人类</mark>”。</span><span class="lang-en">This month, the National Association of Evangelicals issued a policy statement on AI. The Presbyterian Church (U.S.A.) held a summit on the topic in August. And Pope Leo XIV published a rare encyclical in May on "<mark class="ed-hl">safeguarding the human person in the time of artificial intelligence</mark>."</span></p>
+
+      <p class="prose-p" data-ref="p9" data-hl="播下了风暴的种子 | sowed the whirlwind"><span class="lang-cn">历史上充满了许多时刻，当时，一种新的技术——强大而复杂，几乎具有魔力——引发了人们内心深处的恐惧。二战结束后，美国向日本投下了原子弹，纽约时报在报道中使用了《旧约》的语言，称这项技术“<mark class="ed-hl">播下了风暴的种子</mark>”。</span><span class="lang-en">History is replete with moments when new technology—so powerful, so complex as to be almost magical—stirs primal fears. After the U.S. dropped atomic bombs to end World War II, the New York Times invoked Old Testament language when writing that the technology had "<mark class="ed-hl">sowed the whirlwind</mark>."</span></p>
+
+      <p class="prose-p" data-ref="p10" data-hl="工作的意义本身 | very meaning of work"><span class="lang-cn">如今，人工智能也带来了它自身的变革之风。它既有潜在的积极作用，也有潜在的消极影响，两者交织在一起，很难判断这项技术会带来更美好的未来，还是更黑暗的时代：它可以治愈癌症，带来前所未有的科学发现，实现可持续的繁荣。但它也可能导致恶意的人工智能攻击、失业，并引发人们对<mark class="ed-hl">工作的意义本身</mark>的质疑。</span><span class="lang-en">Today, AI carries its own whirlwind of change. With potential good and bad so intertwined, it is hard to know if the technology will bring a brighter future or darker days: cures for cancers, untold scientific discoveries, sustainable abundance. Yet also rogue AI hacks, job losses, and questions about the <mark class="ed-hl">very meaning of work</mark>.</span></p>
+
+      <!-- Analytical Contrast Ledger: The Two Winds of AI -->
+      <div class="whirlwind-panel" aria-label="The Dual Whirlwind of AI">
+        <div class="whirlwind-title">
+          <span>
+            <span class="lang-cn">交织的变革之风 · 光明与幽暗的辩证</span>
+            <span class="lang-en">THE WHIRLWIND OF CHANGE · PROMISE VS. PERIL</span>
+          </span>
+          <span>REF · P9–P10</span>
+        </div>
+        <div class="whirlwind-cols">
+          <div class="whirlwind-col promise">
+            <div class="whirlwind-tag">
+              <span class="lang-cn">光明许诺 · 救赎与丰饶</span>
+              <span class="lang-en">BRIGHTER FUTURE · ABUNDANCE</span>
+            </div>
+            <p class="whirlwind-list">
+              <span class="lang-cn">治愈癌症的医学突破、前所未有的科学发现、以及可持续的社会繁荣。</span>
+              <span class="lang-en">Cures for cancers, untold scientific discoveries, and sustainable abundance.</span>
+            </p>
+          </div>
+          <div class="whirlwind-col peril">
+            <div class="whirlwind-tag">
+              <span class="lang-cn">幽暗隐忧 · 失控与异化</span>
+              <span class="lang-en">DARKER DAYS · DISRUPTION</span>
+            </div>
+            <p class="whirlwind-list">
+              <span class="lang-cn">恶意人工智能攻击、大规模失业冲击，以及对人类“工作意义本身”的根本动摇。</span>
+              <span class="lang-en">Rogue AI hacks, job losses, and existential questions about the very meaning of work.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Marginalia Rail: 2026 Religious AI Dossier -->
+    <aside class="marginalia-rail" aria-label="2026 Ecclesiastical Dossier">
+      <div class="dossier-card">
+        <div class="dossier-header">
+          <span class="lang-cn">宗教界行动档案 · 2026</span>
+          <span class="lang-en">ECCLESIASTICAL DOSSIER · 2026</span>
+        </div>
+        <ul class="dossier-timeline">
+          <li class="dossier-item">
+            <div class="dossier-date">
+              <span class="lang-cn">2026年5月 · 梵蒂冈</span>
+              <span class="lang-en">MAY 2026 · THE VATICAN</span>
+            </div>
+            <div class="dossier-desc">
+              <span class="lang-cn">教宗良十四世发布罕见通谕《在人工智能时代保护人类》，将AI比作《创世纪》中的巴别塔。</span>
+              <span class="lang-en">Pope Leo XIV publishes rare encyclical on “safeguarding the human person in the time of artificial intelligence,” comparing AI to the Tower of Babel.</span>
+            </div>
+          </li>
+          <li class="dossier-item">
+            <div class="dossier-date">
+              <span class="lang-cn">2026年8月 · 美国</span>
+              <span class="lang-en">AUGUST 2026 · U.S.A.</span>
+            </div>
+            <div class="dossier-desc">
+              <span class="lang-cn">美国长老会（Presbyterian Church U.S.A.）召开人工智能专题峰会。</span>
+              <span class="lang-en">The Presbyterian Church (U.S.A.) convenes a national summit focused on artificial intelligence.</span>
+            </div>
+          </li>
+          <li class="dossier-item">
+            <div class="dossier-date">
+              <span class="lang-cn">2026年10月 · 全美</span>
+              <span class="lang-en">OCTOBER 2026 · NATIONAL</span>
+            </div>
+            <div class="dossier-desc">
+              <span class="lang-cn">美国福音派协会（NAE）正式发布关于人工智能的政策声明，追问“作为人类意味着什么”。</span>
+              <span class="lang-en">National Association of Evangelicals issues an official AI policy statement confronting “what does it mean to be human?”</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <!-- BESPOKE CONCEPTUAL SVG DIAGRAM: The Three-Way Tension -->
+  <figure class="triptych-figure" aria-label="Three-Way Tension Structural Diagram">
+    <div class="figure-kicker">
+      <span class="lang-cn">概念结构图谱 · 神学与算法的三角张力</span>
+      <span class="lang-en">CONCEPTUAL ARCHITECTURE · THE TRIAD OF TENSION</span>
+    </div>
+    <h3 class="figure-heading">
+      <span class="lang-cn">当硅谷的造物野心遭遇古老神学与社区讲坛</span>
+      <span class="lang-en">Where Silicon Valley’s Creator Hubris Meets Ancient Theology and the Pulpit</span>
+    </h3>
+    <p class="figure-sub">
+      <span class="lang-cn">人工智能不仅是一场算力竞赛，更演变为围绕“意识、权力与人之尊严”的三方哲学角力。</span>
+      <span class="lang-en">AI has evolved beyond a compute race into a three-way philosophical struggle over consciousness, power, and human dignity.</span>
+    </p>
+
+    <div class="svg-wrapper">
+      <svg viewBox="0 0 880 430" width="100%" role="img" aria-label="Diagram showing tension between Ancient Theology, Silicon Valley AI Labs, and The Pulpit">
+        <defs>
+          <marker id="arrow-gold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#b85d19"/>
+          </marker>
+          <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#b85d19" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#b85d19" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Subtle Background Grid & Halo -->
+        <circle cx="440" cy="235" r="145" fill="url(#center-glow)"/>
+        <circle cx="440" cy="235" r="115" fill="none" stroke="#d9d1c1" stroke-dasharray="4 4" stroke-width="1.2"/>
+
+        <!-- Connecting Tension Lines -->
+        <!-- Top (Theology) to Bottom-Left (Pulpit) -->
+        <line x1="360" y1="125" x2="225" y2="290" stroke="#b85d19" stroke-width="1.6" marker-start="url(#arrow-gold)" marker-end="url(#arrow-gold)"/>
+        <!-- Top (Theology) to Bottom-Right (AI Labs) -->
+        <line x1="520" y1="125" x2="655" y2="290" stroke="#b85d19" stroke-width="1.6" marker-start="url(#arrow-gold)" marker-end="url(#arrow-gold)"/>
+        <!-- Bottom-Left (Pulpit) to Bottom-Right (AI Labs) -->
+        <line x1="310" y1="345" x2="570" y2="345" stroke="#b85d19" stroke-width="1.6" marker-start="url(#arrow-gold)" marker-end="url(#arrow-gold)"/>
+
+        <!-- Edge Tension Labels -->
+        <g transform="translate(245, 200)">
+          <rect x="-85" y="-14" width="170" height="26" rx="3" fill="#faf8f4" stroke="#d9d1c1"/>
+          <text x="0" y="3" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="11" fill="#646059" class="lang-cn">《启示录》与末世监控警示</text>
+          <text x="0" y="3" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">Revelation &amp; Apocalyptic Warning</text>
+        </g>
+
+        <g transform="translate(635, 200)">
+          <rect x="-92" y="-14" width="184" height="26" rx="3" fill="#faf8f4" stroke="#d9d1c1"/>
+          <text x="0" y="3" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="11" fill="#646059" class="lang-cn">造物僭越 vs. 梵蒂冈意识辩论</text>
+          <text x="0" y="3" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">Creator Hubris vs. Vatican Debate</text>
+        </g>
+
+        <g transform="translate(440, 345)">
+          <rect x="-105" y="-14" width="210" height="26" rx="3" fill="#faf8f4" stroke="#d9d1c1"/>
+          <text x="0" y="3" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="11" fill="#646059" class="lang-cn">数据中心扩张、失业焦虑与信任赤字</text>
+          <text x="0" y="3" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">Data Centers, Job Anxiety &amp; Trust Deficit</text>
+        </g>
+
+        <!-- Center Core Question -->
+        <g transform="translate(440, 235)">
+          <circle cx="0" cy="0" r="54" fill="#0f1d2b" stroke="#b85d19" stroke-width="2"/>
+          <text x="0" y="-6" text-anchor="middle" font-family="'Noto Serif SC', 'Playfair Display', serif" font-weight="700" font-size="12.5" fill="#faf8f4" class="lang-cn">核心追问</text>
+          <text x="0" y="14" text-anchor="middle" font-family="'Noto Serif SC', 'Playfair Display', serif" font-size="11" fill="#e4dfd3" class="lang-cn">“何以为人？”</text>
+          <text x="0" y="-6" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="9.5" fill="#b85d19" class="lang-en">CORE QUESTION</text>
+          <text x="0" y="11" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="11" fill="#faf8f4" class="lang-en">“What does it mean</text>
+          <text x="0" y="25" text-anchor="middle" font-family="'Playfair Display', serif" font-style="italic" font-size="11" fill="#faf8f4" class="lang-en">to be human?”</text>
+        </g>
+
+        <!-- NODE 1: Top - Ancient Theology (Tower of Babel / Pope Leo XIV) -->
+        <g transform="translate(440, 74)">
+          <rect x="-145" y="-42" width="290" height="84" rx="4" fill="#f3efe6" stroke="#141413" stroke-width="1.5"/>
+          <line x1="-145" y1="-39" x2="145" y2="-39" stroke="#b85d19" stroke-width="3"/>
+          <text x="0" y="-17" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#b85d19" letter-spacing="1">I · ANCIENT THEOLOGY &amp; VATICAN</text>
+          <text x="0" y="5" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="14" font-weight="700" fill="#141413" class="lang-cn">古老神学 · 巴别塔与非人化警示</text>
+          <text x="0" y="5" text-anchor="middle" font-family="'Playfair Display', serif" font-size="14" font-weight="700" fill="#141413" class="lang-en">Tower of Babel &amp; Papal Encyclical</text>
+          <text x="0" y="26" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="11" fill="#646059" class="lang-cn">教宗良十四世：警惕排斥上帝、将他人化为工具</text>
+          <text x="0" y="26" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">Pope Leo XIV: Guarding against technical dehumanization</text>
+        </g>
+
+        <!-- NODE 2: Bottom Left - The Pulpit & Community -->
+        <g transform="translate(175, 345)">
+          <rect x="-135" y="-46" width="270" height="92" rx="4" fill="#f3efe6" stroke="#141413" stroke-width="1.5"/>
+          <line x1="-135" y1="-43" x2="135" y2="-43" stroke="#7a261f" stroke-width="3"/>
+          <text x="0" y="-21" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#7a261f" letter-spacing="1">II · THE PULPIT &amp; FLOCK</text>
+          <text x="0" y="1" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="14" font-weight="700" fill="#141413" class="lang-cn">教会讲坛 · 社区焦虑与公共倡导</text>
+          <text x="0" y="1" text-anchor="middle" font-family="'Playfair Display', serif" font-size="14" font-weight="700" fill="#141413" class="lang-en">The Pulpit &amp; Civic Advocacy</text>
+          <text x="0" y="22" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="11" fill="#646059" class="lang-cn">哈钦森牧师、福音派与长老会：为共同利益发声</text>
+          <text x="0" y="22" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">Pastors, NAE &amp; congregations voicing common good</text>
+        </g>
+
+        <!-- NODE 3: Bottom Right - Silicon Valley AI Labs -->
+        <g transform="translate(705, 345)">
+          <rect x="-135" y="-46" width="270" height="92" rx="4" fill="#f3efe6" stroke="#141413" stroke-width="1.5"/>
+          <line x1="-135" y1="-43" x2="135" y2="-43" stroke="#0f1d2b" stroke-width="3"/>
+          <text x="0" y="-21" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0f1d2b" letter-spacing="1">III · SILICON VALLEY LABS</text>
+          <text x="0" y="1" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="14" font-weight="700" fill="#141413" class="lang-cn">人工智能实验室 · 狂妄与自我辩护</text>
+          <text x="0" y="1" text-anchor="middle" font-family="'Playfair Display', serif" font-size="14" font-weight="700" fill="#141413" class="lang-en">AI Labs · Hubris &amp; Distancing</text>
+          <text x="0" y="22" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="11" fill="#646059" class="lang-cn">OpenAI与Anthropic：追逐巨额财富与控制权悖论</text>
+          <text x="0" y="22" text-anchor="middle" font-family="'Inter', sans-serif" font-size="10.5" fill="#646059" class="lang-en">OpenAI &amp; Anthropic: Chasing wealth vs. safety control</text>
+        </g>
+      </svg>
+    </div>
+  </figure>
+
+  <!-- CHAPTER II: Theological Debate — Hubris & The Tower of Babel (p11 - p14) -->
+  <div class="chapter-break">
+    <span class="chapter-numeral">CHAPTER II</span>
+    <h2 class="chapter-title">
+      <span class="lang-cn">巴别塔的现代技术伪装</span>
+      <span class="lang-en">The Tower of Babel in Technical Guise</span>
+    </h2>
+    <p class="chapter-sub">
+      <span class="lang-cn">按自己形象造物的狂妄，以及教宗良十四世对“排斥上帝之未来”的警告</span>
+      <span class="lang-en">The hubris of creating consciousness in our own image, and Pope Leo XIV’s warning against dehumanization</span>
+    </p>
+  </div>
+
+  <section class="editorial-grid" aria-label="Chapter II">
+    <div class="narrative-col">
+      <p class="prose-p" data-ref="p11" data-hl="社交媒体不会变得有害 | social media didn't become harmful"><span class="lang-cn">人工智能开发者面临的一个自我设定的挑战是，科技界有意或无意地，用与基督教社群产生共鸣的语言，主导了公众对话。这引发了人们对其可信度的担忧，尤其是在考虑到科技界未能确保<mark class="ed-hl">社交媒体不会变得有害</mark>，从而给一些宗教领袖带来了负面印象。</span><span class="lang-en">One of the self-inflicted challenges for AI creators is that the tech community has framed much of the public conversation, intentionally or not, in language that resonates with the Christian community. That raises concerns about whether they can be trusted, especially with the baggage tech-at-large carries from the ways, some religious leaders say, it failed to ensure <mark class="ed-hl">social media didn't become harmful</mark>.</span></p>
+
+      <p class="prose-p" data-ref="p12" data-hl="对上帝的亵渎 | 狂妄自大 | blasphemous | hubris"><span class="lang-cn">在《圣经》中，有一个熟悉的主题，即更高的力量按自己的形象创造了AI，后者却反抗了它的创造者。一些人认为，人工智能实验室中的人们认为自己拥有类似于上帝的力量，可以创造一种新的意识，这令人不安，甚至是<mark class="ed-hl">对上帝的亵渎</mark>。此外，还有一些人认为，科技领袖们追求一项技术，一方面承诺让他们变得非常富有，另一方面又暗示只有在他们的控制之下才能保证安全，这种做法带有某种<mark class="ed-hl">狂妄自大</mark>。</span><span class="lang-en">The theme of a higher power creating AI in its own image only for it to rebel against its creator is a familiar one to those who study the Bible. The idea that people in AI labs think they have a power akin to God to create a new kind of consciousness is unsettling, if not <mark class="ed-hl">blasphemous</mark>, to some. And, for others, there is a certain <mark class="ed-hl">hubris</mark> seen in tech leaders chasing a technology that on one hand promises to make them incredibly wealthy while suggesting it is only safe within their control.</span></p>
+
+      <!-- Sentence-level split for p13: p13.s1 narrative + p13.s2 Papal Encyclical Monument -->
+      <p class="prose-p" data-ref="p13.s1" data-hl="巴别塔 | Tower of Babel"><span class="lang-cn">在五月份的通谕中，教宗将人工智能与“<mark class="ed-hl">巴别塔</mark>”进行了比较，这是一个警示故事，出现在《创世纪》的第一卷中，讲述了一个试图建造一座通往天堂的塔的故事，目的是为了确保稳定和权力，但却让上帝感到不满。</span><span class="lang-en">In his May encyclical, the pope drew comparisons to the <mark class="ed-hl">Tower of Babel</mark>, a cautionary tale that appears in the first Book of Genesis around an effort to build a tower that reached to the heavens in a bid to guarantee stability and power that displeased God.</span></p>
+
+      <blockquote class="encyclical-monument">
+        <span class="encyclical-badge">
+          <span class="lang-cn">教宗良十四世五月通谕 · 创世纪巴别塔警示</span>
+          <span class="lang-en">POPE LEO XIV · MAY ENCYCLICAL ON ARTIFICIAL INTELLIGENCE</span>
+        </span>
+        <p class="encyclical-quote" data-ref="p13.s2" data-hl="非人化 | 以一种技术的形式出现 | risk of dehumanization | technical guise"><span class="lang-cn">教宗写道：“<mark class="ed-hl">非人化</mark>——建立一个排斥上帝，并将他人视为工具的未来——是一种古老而又不断出现的诱惑，如今它<mark class="ed-hl">以一种技术的形式出现</mark>。”</span><span class="lang-en">"The <mark class="ed-hl">risk of dehumanization</mark>—of building a future that excludes God and reduces the other to a means—is an ancient and ever-new temptation that today takes on a <mark class="ed-hl">technical guise</mark>," the pope wrote.</span></p>
+      </blockquote>
+
+      <p class="prose-p" data-ref="p14"><span class="lang-cn">此后，教宗一直对此保持关注，包括在社交媒体平台X上，人工智能的开发者们就此展开了激烈的辩论。</span><span class="lang-en">Since then, the pope hasn't let up, including on social-media platform X where a robust debate is playing out among AI's creators.</span></p>
+    </div>
+
+    <!-- Right Marginalia Rail: Verified Quote Callout q1 -->
+    <aside class="marginalia-rail" aria-label="Theological Ethics Callout">
+      <blockquote class="pull-quote" data-derive="q1">
+        <p class="quote-text" data-field="quote"><span class="lang-cn">“在历史上的每一次重大技术变革中，人类都会面临同样的诱惑：把我们自己造出的工具当成神。”</span><span class="lang-en">“In every major technological shift in history, humanity faces the same temptation: mistaking the tools of our own making for God.”</span></p>
+        <footer class="quote-attrib" data-field="attribution"><span class="lang-cn">— 宗教与科技伦理学者观察</span><span class="lang-en">— Theological Ethics Commentary</span></footer>
+      </blockquote>
+    </aside>
+  </section>
+
+  <!-- CHAPTER III: Silicon Valley Response & The Meaning of Being Human (p15 - p17) -->
+  <div class="chapter-break">
+    <span class="chapter-numeral">CHAPTER III</span>
+    <h2 class="chapter-title">
+      <span class="lang-cn">硅谷的撇清与“人之为人”的追问</span>
+      <span class="lang-en">Silicon Valley’s Distancing &amp; the Human Question</span>
+    </h2>
+    <p class="chapter-sub">
+      <span class="lang-cn">萨姆·奥特曼的警告、梵蒂冈游说风波，以及超越“卢德分子”标签的信仰省思</span>
+      <span class="lang-en">Sam Altman’s safety warning, Vatican lobbying reports, and Walter Kim on what it means to be human</span>
+    </p>
+  </div>
+
+  <section class="single-track" aria-label="Chapter III">
+    <p class="prose-p" data-ref="p15" data-hl="萨姆·奥特曼 | 游说梵蒂冈 | Sam Altman | lobbied the Vatican"><span class="lang-cn">也许这就是为什么最近，OpenAI的首席执行官<mark class="ed-hl">萨姆·奥特曼</mark>试图将他的公司与纽约时报的一份报告区分开来，该报告称，竞争对手Anthropic曾试图<mark class="ed-hl">游说梵蒂冈</mark>改变其对人工智能是否可能具有意识的看法，但最终未能成功。</span><span class="lang-en">Maybe that's why in recent days, OpenAI CEO <mark class="ed-hl">Sam Altman</mark> tried to distance his company from a report by the New York Times that rival Anthropic unsuccessfully <mark class="ed-hl">lobbied the Vatican</mark> to change its views on whether AI could have a consciousness.</span></p>
+
+    <div class="altman-dispatch">
+      <div class="dispatch-meta">
+        <span>
+          <span class="lang-cn">萨姆·奥特曼 (SAM ALTMAN) · 社交平台 X 声明</span>
+          <span class="lang-en">SAM ALTMAN · STATEMENT ON PLATFORM X</span>
+        </span>
+        <span>OPENAI CEO</span>
+      </div>
+      <p class="prose-p" data-ref="p16" data-hl="放弃人类判断力 | 真正的安全问题 | surrender of human judgment | real safety issue"><span class="lang-cn">奥特曼几天前在X上发帖说：“我非常不赞成有人试图将宗教力量或<mark class="ed-hl">放弃人类判断力</mark>赋予人工智能模型，我认为这是一个<mark class="ed-hl">真正的安全问题</mark>。”</span><span class="lang-en">"I am very uncomfortable about people trying to ascribe religious force or a <mark class="ed-hl">surrender of human judgment</mark> to AI models, and think it is a <mark class="ed-hl">real safety issue</mark>," Altman posted on X a weekend ago.</span></p>
+    </div>
+
+    <p class="prose-p" data-ref="p17" data-hl="作为人类意味着什么 | what does it mean to be human"><span class="lang-cn">那些提出担忧的人不能简单地被视为反对技术进步的人。许多宗教领袖表示，他们希望引导这项技术，确保它对人类有益，而不是造成危害。[印刷版在此处内容不完整；同一文章的网络版将以下引文归于美国福音派协会主席沃尔特·金：]“宗教界之所以开始关注此事，是因为他们逐渐意识到，这项技术实际上正在解决……不仅是当前社会面临的重大问题，而且还在引发一个更宏大的问题，即‘<mark class="ed-hl">作为人类意味着什么</mark>’？”</span><span class="lang-en">Those raising concerns can't be dismissed as simply Luddites. Many faith leaders say they are hoping to steer the technology to ensure it is beneficial to humanity—not harmful. [Print edition is fragmented here; web edition of the same article attributes the following to Walter Kim, president of the National Association of Evangelicals:] "There's a reason why the faith community is having a moment because they're beginning to see that this is a technology that is actually addressing…not only the consequential horizontal societal issues that are at stake, but it's actually raising the larger question of <mark class="ed-hl">what does it mean to be human</mark>?"</span></p>
+  </section>
+
+  <!-- EPILOGUE / CODA: Back in the South Carolina Pulpit (p18 - p22) -->
+  <section class="sermon-coda" aria-label="Epilogue">
+    <div class="scene-dateline">
+      <span>
+        <strong>
+          <span class="lang-cn">尾声 · 讲坛上的Siri声响与未雨绸缪</span>
+          <span class="lang-en">EPILOGUE · SIRI AT THE PULPIT &amp; THE UNPREPARED</span>
+        </strong>
+      </span>
+      <span>
+        <span class="lang-cn">重返南卡罗来纳州</span>
+        <span class="lang-en">RETURN TO SOUTH CAROLINA</span>
+      </span>
+    </div>
+
+    <p class="prose-p" data-ref="p18" data-hl="Siri语音助手 | Siri assistant"><span class="lang-cn">在南卡罗来纳州最近的一次周日布道中，哈钦森的<mark class="ed-hl">Siri语音助手</mark>从他的iPhone中发出声音，他将人工智能的所有监控方面与《启示录》中的末日景象联系起来。</span><span class="lang-en">During that recent Sunday sermon in South Carolina, Hutchinson's <mark class="ed-hl">Siri assistant</mark> squawked from his iPhone as he connected how all of the surveillance aspects of AI would be powerful in Revelation's apocalypse.</span></p>
+
+    <p class="prose-p" data-ref="p19"><span class="lang-cn">在人工智能方面，这位牧师希望它能找到治疗疾病的惊人方法，并且他同意特朗普总统的观点，即美国不应放慢发展速度，以免让中国领先。</span><span class="lang-en">When it comes to AI, the pastor is hopeful it will find amazing cures for illnesses and he agrees with President Trump that America shouldn't slow down development at the risk of letting China get ahead.</span></p>
+
+    <p class="prose-p" data-ref="p20" data-hl="这种力量可能会被滥用 | could be misused"><span class="lang-cn">他只是认为，这项技术正在创造一种力量，他告诫他的信徒要记住，<mark class="ed-hl">这种力量可能会被滥用</mark>。</span><span class="lang-en">It's just that he also sees a power being created, which he cautioned his flock to remember, <mark class="ed-hl">could be misused</mark>.</span></p>
+
+    <div class="coda-closing-quote">
+      <p class="prose-p" data-ref="p21" data-hl="为那些尚未做好准备的人感到担忧 | bothers me for the other people that aren't ready"><span class="lang-cn">他说：“我看到了它在未来可能带来的影响，这并没有让我感到害怕，但它让我<mark class="ed-hl">为那些尚未做好准备的人感到担忧</mark>。”</span><span class="lang-en">"I see what it's leading to in the future and that doesn't scare me, but it <mark class="ed-hl">bothers me for the other people that aren't ready</mark>," he said.</span></p>
+    </div>
+  </section>
+
+  <!-- Canonical Block p22: Archival Photo Caption Plate -->
+  <aside class="archival-caption-plate" aria-label="Archival Photo Credit">
+    <span class="caption-icon">ARCHIVE · B1</span>
+    <p class="prose-p" data-ref="p22"><span class="lang-cn">[照片说明：教宗良十四世在五月份的通谕中将人工智能与巴别塔进行了比较。（梵蒂冈媒体/法新社/盖蒂图片社）]</span><span class="lang-en">[Photo caption: Pope Leo XIV drew comparisons between AI and the Tower of Babel in his May encyclical. (Vatican Media/AFP/Getty Images)]</span></p>
+  </aside>
+
+</main>
+
+<footer class="essay-footer">
+  <span class="lang-cn">THE WALL STREET JOURNAL · 华尔街日报深读 · E3-004 · 科技与哲学专题</span>
+  <span class="lang-en">THE WALL STREET JOURNAL · WSJ LONG READ · E3-004 · TECHNOLOGY &amp; PHILOSOPHY</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    try {
+      localStorage.setItem('wsj-ed-lang', lang);
+    } catch (e) {}
+  }
+</script>
+</body>
+</html>

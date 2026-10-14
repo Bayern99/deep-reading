@@ -1,0 +1,608 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E2-001",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T05:22:43Z",
+  "status": "verified",
+  "notes": "Phase 5 Group C verified generation (Run 1)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+    "paragraph_count": 20,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "google-vertex",
+    "model_id": "gemini-4-argon",
+    "temperature": 0.2
+  },
+  "usage_metadata": {
+    "completion_chars": 41759
+  },
+  "files": {
+    "raw_html": "E2-001/v1/raw.html",
+    "compiled_html": "E2-001/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-deep: #ece6d9;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c9c2b2;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.12);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283a;\n    --navy-line: #283e54;\n    --slate-blue: #23496d;\n    --crimson: #9e2a2b;\n    --crimson-soft: rgba(158, 42, 43, 0.1);\n    --forest: #2b593f;\n    --gold: #c98a27;\n    \n    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    --font-serif-cn: 'Noto Serif SC', 'Source Han Serif SC', serif;\n    --font-serif-en: 'Lora', Georgia, serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-size: 16px;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    scroll-behavior: smooth;\n  }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    overflow-x: hidden;\n    width: 100%;\n    position: relative;\n  }\n\n  /* Strict Bilingual Toggle Visibility */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.94);\n    backdrop-filter: blur(10px);\n    -webkit-backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line-strong);\n    height: 54px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 0 24px;\n  }\n\n  .masthead-brand {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n  }\n\n  .wsj-logo {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.05rem;\n    letter-spacing: 0.06em;\n    color: var(--ink);\n    text-transform: uppercase;\n  }\n\n  .wsj-divider {\n    width: 1px;\n    height: 16px;\n    background: var(--line-strong);\n  }\n\n  .wsj-rubric {\n    font-family: var(--font-sans);\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n\n  .masthead-controls {\n    display: flex;\n    align-items: center;\n    gap: 16px;\n  }\n\n  .edition-badge {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    color: var(--muted);\n    letter-spacing: 0.04em;\n    display: none;\n  }\n\n  @media (min-width: 768px) {\n    .edition-badge {\n      display: inline-block;\n    }\n  }\n\n  .lang-switch {\n    display: inline-flex;\n    background: var(--paper-deep);\n    border: 1px solid var(--line-strong);\n    border-radius: 4px;\n    padding: 2px;\n    gap: 2px;\n  }\n\n  .lang-btn {\n    border: none;\n    background: transparent;\n    font-family: var(--font-sans);\n    font-size: 0.75rem;\n    font-weight: 600;\n    padding: 4px 10px;\n    border-radius: 2px;\n    cursor: pointer;\n    color: var(--muted);\n    transition: all 0.18s ease;\n  }\n\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Main Container */\n  .page-shell {\n    max-width: 1240px;\n    margin: 0 auto;\n    padding: 0 24px;\n  }\n\n  /* Hero Header */\n  .hero-header {\n    padding: 56px 0 40px;\n    border-bottom: 3px double var(--ink);\n    margin-bottom: 40px;\n  }\n\n  .hero-kicker-row {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 12px;\n    margin-bottom: 20px;\n  }\n\n  .hero-kicker {\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--paper);\n    background: var(--accent);\n    padding: 4px 10px;\n  }\n\n  .hero-series {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    font-weight: 500;\n    color: var(--muted);\n    letter-spacing: 0.05em;\n  }\n\n  .hero-title {\n    font-family: var(--font-display);\n    font-size: clamp(2.15rem, 4.4vw, 3.85rem);\n    font-weight: 800;\n    line-height: 1.15;\n    color: var(--ink);\n    letter-spacing: -0.015em;\n    margin-bottom: 18px;\n    max-width: 960px;\n  }\n\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.24;\n    letter-spacing: 0.01em;\n  }\n\n  .hero-dek {\n    font-family: var(--font-serif-en);\n    font-size: clamp(1.15rem, 2vw, 1.5rem);\n    font-weight: 400;\n    line-height: 1.48;\n    color: var(--muted);\n    max-width: 820px;\n    margin-bottom: 32px;\n  }\n\n  :host([lang=\"zh-CN\"]) .hero-dek {\n    font-family: var(--font-serif-cn);\n    line-height: 1.65;\n  }\n\n  .hero-meta-bar {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    padding-top: 20px;\n    border-top: 1px solid var(--line);\n    gap: 16px;\n  }\n\n  .byline-block {\n    font-family: var(--font-sans);\n    font-size: 0.85rem;\n    color: var(--body);\n  }\n\n  .byline-author {\n    font-weight: 700;\n    color: var(--ink);\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n  }\n\n  .byline-date {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n    color: var(--muted);\n    margin-left: 12px;\n  }\n\n  /* Hero Key Ledger Strip */\n  .hero-ledger-strip {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 1px;\n    background: var(--line-strong);\n    border: 1px solid var(--line-strong);\n    margin-bottom: 48px;\n  }\n\n  .ledger-cell {\n    background: var(--paper-card);\n    padding: 18px 20px;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n  }\n\n  .ledger-cell .metric-val {\n    font-family: var(--font-mono);\n    font-size: 1.6rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.1;\n    margin-bottom: 6px;\n  }\n\n  .ledger-cell.highlight-cell .metric-val {\n    color: var(--accent);\n  }\n\n  .ledger-cell .metric-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.8rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 4px;\n    line-height: 1.35;\n  }\n\n  .ledger-cell .metric-note {\n    font-family: var(--font-sans);\n    font-size: 0.72rem;\n    color: var(--muted);\n    line-height: 1.4;\n  }\n\n  /* Typography for Prose */\n  .prose-p {\n    margin-bottom: 1.55rem;\n    color: var(--body);\n  }\n\n  :host([lang=\"zh-CN\"]) .prose-p {\n    font-family: var(--font-serif-cn);\n    font-size: 1.125rem;\n    line-height: 1.92;\n    letter-spacing: 0.015em;\n  }\n\n  :host([lang=\"en\"]) .prose-p {\n    font-family: var(--font-serif-en);\n    font-size: 1.125rem;\n    line-height: 1.8;\n  }\n\n  /* Lead Paragraph Stature (NO Chinese ::first-letter drop-cap) */\n  .prose-p.lead-paragraph {\n    font-size: 1.28rem !important;\n    line-height: 1.78 !important;\n    font-weight: 600;\n    color: var(--ink);\n    border-left: 3px solid var(--accent);\n    padding-left: 18px;\n    margin-bottom: 1.8rem;\n  }\n\n  /* Inline Highlight Mark */\n  mark.ed-hl {\n    background: linear-gradient(180deg, transparent 58%, rgba(184, 93, 25, 0.22) 58%);\n    color: inherit;\n    padding: 0 2px;\n    font-weight: 600;\n  }\n\n  /* Section & Chapter Architecture */\n  .editorial-section {\n    margin-bottom: 64px;\n  }\n\n  .section-grid-2col {\n    display: grid;\n    grid-template-columns: minmax(0, 680px) minmax(280px, 380px);\n    gap: 56px;\n    justify-content: space-between;\n    align-items: start;\n  }\n\n  .prose-column {\n    width: 100%;\n  }\n\n  .side-rail {\n    position: sticky;\n    top: 78px;\n    display: flex;\n    flex-direction: column;\n    gap: 24px;\n  }\n\n  /* Chapter Headers */\n  .chapter-banner {\n    border-top: 2px solid var(--ink);\n    padding-top: 16px;\n    margin-bottom: 32px;\n    display: flex;\n    align-items: baseline;\n    justify-content: space-between;\n    gap: 16px;\n  }\n\n  .chapter-num {\n    font-family: var(--font-mono);\n    font-size: 0.8rem;\n    font-weight: 700;\n    color: var(--accent);\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n  }\n\n  .chapter-title {\n    font-family: var(--font-display);\n    font-size: 1.55rem;\n    font-weight: 700;\n    color: var(--ink);\n    flex: 1;\n  }\n\n  /* Dossier Card (Context ctx1) */\n  .dossier-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 22px 24px;\n  }\n\n  .dossier-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.09em;\n    color: var(--accent);\n    margin-bottom: 10px;\n    display: flex;\n    align-items: center;\n    gap: 8px;\n  }\n\n  .dossier-kicker::before {\n    content: \"\";\n    display: inline-block;\n    width: 7px;\n    height: 7px;\n    background: var(--accent);\n  }\n\n  .dossier-body {\n    font-family: var(--font-sans);\n    font-size: 0.88rem;\n    line-height: 1.68;\n    color: var(--body);\n  }\n\n  /* Pull Quote Styling */\n  .pull-quote-card {\n    background: var(--paper);\n    border-top: 2px solid var(--accent);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 20px 0;\n    margin: 28px 0;\n  }\n\n  .pull-quote-card .quote-text {\n    font-family: var(--font-display);\n    font-size: 1.22rem;\n    line-height: 1.52;\n    color: var(--ink);\n    font-weight: 700;\n    margin-bottom: 12px;\n  }\n\n  .pull-quote-card .quote-attrib {\n    font-family: var(--font-sans);\n    font-size: 0.78rem;\n    font-weight: 600;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.04em;\n  }\n\n  /* Inline Quote Callout within narrative flow (p4) */\n  .inline-spokesperson-box {\n    background: var(--paper-card);\n    border-left: 4px solid var(--ink);\n    padding: 20px 24px;\n    margin: 24px 0 32px;\n  }\n\n  .inline-spokesperson-box .prose-p {\n    margin-bottom: 0.6rem;\n  }\n\n  .inline-spokesperson-box .prose-p:last-child {\n    margin-bottom: 0;\n    font-weight: 600;\n    color: var(--ink);\n  }\n\n  /* SVG Exhibit Containers */\n  .exhibit-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 24px;\n    margin: 32px 0;\n  }\n\n  .exhibit-header {\n    border-bottom: 1px solid var(--line-strong);\n    padding-bottom: 12px;\n    margin-bottom: 20px;\n  }\n\n  .exhibit-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--accent);\n    margin-bottom: 4px;\n  }\n\n  .exhibit-title {\n    font-family: var(--font-display);\n    font-size: 1.2rem;\n    font-weight: 700;\n    color: var(--ink);\n    line-height: 1.3;\n    margin-bottom: 4px;\n  }\n\n  .exhibit-sub {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: var(--muted);\n    line-height: 1.45;\n  }\n\n  .exhibit-caption {\n    font-family: var(--font-sans);\n    font-size: 0.75rem;\n    color: var(--muted);\n    margin-top: 14px;\n    padding-top: 12px;\n    border-top: 1px solid var(--line);\n    line-height: 1.45;\n  }\n\n  .svg-responsive {\n    width: 100%;\n    height: auto;\n    display: block;\n    overflow: visible;\n  }\n\n  /* Regulatory Alert Note (p7) */\n  .regulatory-blot {\n    background: var(--crimson-soft);\n    border: 1px solid rgba(158, 42, 43, 0.3);\n    border-left: 4px solid var(--crimson);\n    padding: 18px 22px;\n    margin: 28px 0;\n  }\n\n  .regulatory-blot-label {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    color: var(--crimson);\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    margin-bottom: 6px;\n  }\n\n  .regulatory-blot .prose-p {\n    margin-bottom: 0;\n    font-size: 1.02rem !important;\n  }\n\n  /* Corporate Defense Dossier (p13 & p14) */\n  .corporate-response-panel {\n    background: var(--navy-bg);\n    color: #f0ede6;\n    padding: 28px 30px;\n    margin: 36px 0;\n    border-top: 4px solid var(--gold);\n  }\n\n  .corp-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    color: var(--gold);\n    margin-bottom: 14px;\n  }\n\n  .corporate-response-panel .prose-p {\n    color: #e6e2d8;\n    font-size: 1.04rem !important;\n    margin-bottom: 1.1rem;\n  }\n\n  .corporate-response-panel .prose-p:last-child {\n    margin-bottom: 0;\n    padding-top: 12px;\n    border-top: 1px solid var(--navy-line);\n  }\n\n  .corporate-response-panel mark.ed-hl {\n    background: rgba(201, 138, 39, 0.28);\n    color: #fff;\n  }\n\n  /* Derived Metric Card in Side Rail */\n  .rail-metric-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 18px 20px;\n  }\n\n  .rail-metric-card .metric-val {\n    font-family: var(--font-mono);\n    font-size: 1.75rem;\n    font-weight: 700;\n    color: var(--accent);\n    margin-bottom: 6px;\n  }\n\n  .rail-metric-card .metric-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.84rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 4px;\n  }\n\n  .rail-metric-card .metric-note {\n    font-family: var(--font-sans);\n    font-size: 0.76rem;\n    color: var(--muted);\n    line-height: 1.45;\n  }\n\n  /* Climactic Verdict Box (p20) */\n  .verdict-stage {\n    background: var(--paper-card);\n    border: 2px solid var(--ink);\n    padding: 36px 32px;\n    margin-top: 32px;\n    position: relative;\n  }\n\n  .verdict-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.12em;\n    color: var(--accent);\n    margin-bottom: 14px;\n  }\n\n  .verdict-quote {\n    font-family: var(--font-display);\n    font-size: clamp(1.35rem, 2.2vw, 1.75rem);\n    font-weight: 700;\n    line-height: 1.42;\n    color: var(--ink);\n  }\n\n  /* Footer */\n  .article-footer {\n    border-top: 2px solid var(--ink);\n    margin-top: 72px;\n    padding: 32px 0 64px;\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 16px;\n    font-family: var(--font-sans);\n    font-size: 0.8rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Design for Tablet & Mobile (390px) */\n  @media (max-width: 980px) {\n    .hero-ledger-strip {\n      grid-template-columns: repeat(2, 1fr);\n    }\n\n    .section-grid-2col {\n      grid-template-columns: 1fr;\n      gap: 32px;\n    }\n\n    .side-rail {\n      position: static;\n    }\n  }\n\n  @media (max-width: 560px) {\n    .page-shell {\n      padding: 0 16px;\n    }\n\n    .masthead {\n      padding: 0 14px;\n    }\n\n    .wsj-rubric {\n      display: none;\n    }\n\n    .hero-header {\n      padding: 32px 0 28px;\n    }\n\n    .hero-ledger-strip {\n      grid-template-columns: 1fr;\n    }\n\n    .exhibit-card {\n      padding: 16px;\n    }\n\n    .corporate-response-panel {\n      padding: 20px 18px;\n    }\n\n    .verdict-stage {\n      padding: 24px 18px;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><!-- Sticky Top Masthead -->\n  \n<header class=\"masthead\">\n    <div class=\"masthead-brand\">\n      <span class=\"wsj-logo\">WSJ 深读</span>\n      <span class=\"wsj-divider\"></span>\n      <span class=\"wsj-rubric\">\n        <span class=\"lang-cn\">A1 深度调查 · 私人信贷与家庭储蓄</span>\n        <span class=\"lang-en\">A1 Investigation · Private Credit &amp; Household Savings</span>\n      </span>\n    </div>\n    <div class=\"masthead-controls\">\n      <span class=\"edition-badge\">VOL. CCXXXVIII · E2-001</span>\n      <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Toggle\">\n        <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\">中文</button>\n        <button type=\"button\" class=\"lang-btn\" id=\"btn-en\">EN</button>\n      </div>\n    </div>\n  </header>\n\n  \n<main class=\"page-shell\">\n    <!-- Hero Section -->\n    <header class=\"hero-header\">\n      <div class=\"hero-kicker-row\">\n        <span class=\"hero-kicker\">\n          <span class=\"lang-cn\">头版深度调查</span>\n          <span class=\"lang-en\">Page One Investigation</span>\n        </span>\n        <span class=\"hero-series\">\n          <span class=\"lang-cn\">年金迷局与华尔街暗流</span>\n          <span class=\"lang-en\">The Annuity Pipeline</span>\n        </span>\n      </div>\n\n      <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">美国人的储蓄助燃私人信贷</span><span class=\"lang-en\">Americans' Savings Help Fuel Private Credit</span></h1>\n      <p class=\"hero-dek\" data-ref=\"dek\"><span class=\"lang-cn\">并推动了私募机构向风险企业放贷业务的增长</span><span class=\"lang-en\">and helped power the rise of their private lending to risky companies</span></p>\n\n      <div class=\"hero-meta-bar\">\n        <div class=\"byline-block\">\n          <span class=\"byline-author\">By Heather Gillers</span>\n          <span class=\"byline-date\">\n            <span class=\"lang-cn\">2026年10月12日</span>\n            <span class=\"lang-en\">October 12, 2026</span>\n          </span>\n        </div>\n        <div class=\"byline-block\">\n          <span class=\"lang-cn\">佛罗里达州奥兰多 / 纽约 联合报道</span>\n          <span class=\"lang-en\">Reporting from Orlando, Fla. &amp; New York</span>\n        </div>\n      </div>\n    </header>\n\n    <!-- Key Forensic Metrics Strip (Derived m1, m2, m3, m4) -->\n    <section class=\"hero-ledger-strip\" aria-label=\"Key Investigative Metrics\">\n      <div class=\"ledger-cell\" data-derive=\"m1\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">4万美元</span><span class=\"lang-en\">$40,000</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">埃利奥特初始投资本金</span><span class=\"lang-en\">Sabrina Elliott's initial principal</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">继承遗产后投入英杰华指数型年金</span><span class=\"lang-en\">Inherited savings invested in Aviva indexed annuity</span></div>\n      </div>\n      <div class=\"ledger-cell\" data-derive=\"m2\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">12年</span><span class=\"lang-en\">12 yrs</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">保单资金锁定期限</span><span class=\"lang-en\">Policy lockup period</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">至2023年底保单到期</span><span class=\"lang-en\">Ended in late 2023</span></div>\n      </div>\n      <div class=\"ledger-cell highlight-cell\" data-derive=\"m3\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">3.7%</span><span class=\"lang-en\">3.7%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">埃利奥特12年实际年化收益率</span><span class=\"lang-en\">Elliott's actual annualized return</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">经历两次收益比例下调及附加险扣除约2个百分点后</span><span class=\"lang-en\">After two participation cuts and ~2pp rider cost</span></div>\n      </div>\n      <div class=\"ledger-cell\" data-derive=\"m4\">\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">13%</span><span class=\"lang-en\">13%</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">同期标普500指数年化收益率</span><span class=\"lang-en\">S&amp;P 500 annualized return over same period</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">同期的美股强劲牛市基准</span><span class=\"lang-en\">Concurrent strong bull equity market benchmark</span></div>\n      </div>\n    </section>\n\n    <!-- CHAPTER I: THE 12-YEAR PROMISE (p1 .. p7) -->\n    <section class=\"editorial-section\">\n      <div class=\"chapter-banner\">\n        <span class=\"chapter-num\">Chapter I · 01</span>\n        <h2 class=\"chapter-title\">\n          <span class=\"lang-cn\">十二年锁定期与“零亏损”承诺</span>\n          <span class=\"lang-en\">The 12-Year Lockup and the “No-Loss” Pitch</span>\n        </h2>\n      </div>\n\n      <div class=\"section-grid-2col\">\n        <div class=\"prose-column\">\n          <p class=\"prose-p lead-paragraph\" data-ref=\"p1\" data-hl=\"4 万美元 | 没有损失风险 | $40,000 | no risk of loss\"><span class=\"lang-cn\">当萨布丽娜·埃利奥特继承了一些钱时，她的女婿帮助她投资了 <mark class=\"ed-hl\">4 万美元</mark>，购买了一种产品，该产品承诺在<mark class=\"ed-hl\">没有损失风险</mark>的情况下，让她的投资与股市收益挂钩。</span><span class=\"lang-en\">When Sabrina Elliott inherited some money, her son-in-law helped her invest <mark class=\"ed-hl\">$40,000</mark> in a product that dangled the prospect of stock-market gains with <mark class=\"ed-hl\">no risk of loss</mark>.</span></p>\n          <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"锁定 12 年 | 定期降低 | locking up her money for 12 years | periodically lower\"><span class=\"lang-cn\">作为回报，她需要将资金<mark class=\"ed-hl\">锁定 12 年</mark>，该产品承诺收益与市场表现挂钩。但有一个限制：提供该产品的公司英杰华保险，可能会<mark class=\"ed-hl\">定期降低</mark>埃利奥特获得的股市收益比例。</span><span class=\"lang-en\">In exchange for <mark class=\"ed-hl\">locking up her money for 12 years</mark>, it promised returns tied to the market's performance. One catch: The company behind the product, Aviva, could <mark class=\"ed-hl\">periodically lower</mark> the portion of market gains Elliott received.</span></p>\n          <p class=\"prose-p\" data-ref=\"p3\" data-hl=\"Athene | 两次 | 3.7% | twice\"><span class=\"lang-cn\">在英杰华保险被阿波罗全球管理公司支持的保险公司 <mark class=\"ed-hl\">Athene</mark> 收购后，这种情况发生了<mark class=\"ed-hl\">两次</mark>。到 2023 年底该保单到期时，她的年化收益率为 <mark class=\"ed-hl\">3.7%</mark>。</span><span class=\"lang-en\">That happened <mark class=\"ed-hl\">twice</mark> after Aviva was purchased by <mark class=\"ed-hl\">Athene</mark>, an insurer backed by private-asset giant Apollo Global Management. By the time the policy ended in late 2023, her annualized return had come to <mark class=\"ed-hl\">3.7%</mark>.</span></p>\n\n          <div class=\"inline-spokesperson-box\">\n            <p class=\"prose-p\" data-ref=\"p4.s1\"><span class=\"lang-cn\">“这是指数型年金的一个缺点，”埃利奥特的女婿、位于佛罗里达州奥兰多市的理财顾问小卡洛斯·迪亚斯说道，</span><span class=\"lang-en\">\"That's one of the downfalls of the indexed annuities,\" said Carlos Dias Jr., Elliott's son-in-law and a financial adviser outside Orlando, Fla.</span></p>\n            <p class=\"prose-p\" data-ref=\"p4.s2\" data-hl=\"每年或每两年更改 | change the amount\"><span class=\"lang-cn\">“保险公司可以<mark class=\"ed-hl\">每年或每两年更改</mark>从特定指数中获得的收益金额。”</span><span class=\"lang-en\">\"Insurance companies can <mark class=\"ed-hl\">change the amount</mark> that's received from the particular index every year, every two years.\"</span></p>\n          </div>\n\n          <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"阿波罗和博枫 | 401(k) | Apollo and Brookfield\"><span class=\"lang-cn\">华尔街巨头，如<mark class=\"ed-hl\">阿波罗和博枫</mark>，现在才开始寻找方法，以利用 <mark class=\"ed-hl\">401(k)</mark> 退休储蓄计划中庞大的资金，并将他们的另类投资作为人们增加财富的另一种方式进行推广。</span><span class=\"lang-en\">Wall Street behemoths like <mark class=\"ed-hl\">Apollo and Brookfield</mark> are just now starting to find ways to tap in to the vast sums of money in <mark class=\"ed-hl\">401(k)</mark> accounts, pitching their alternative investments as another way for people to grow their nest eggs.</span></p>\n          <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"吸走了美国家庭的储蓄 | 指数型年金 | vacuuming up the savings | indexed annuities\"><span class=\"lang-cn\">但私人资产管理公司已经通过<mark class=\"ed-hl\">指数型年金</mark>，<mark class=\"ed-hl\">吸走了美国家庭的储蓄</mark>，而指数型年金在过去十年中越来越受欢迎。</span><span class=\"lang-en\">But private-asset managers have already been <mark class=\"ed-hl\">vacuuming up the savings</mark> of American households through <mark class=\"ed-hl\">indexed annuities</mark>, which have surged in popularity over the past decade</span></p>\n\n          <div class=\"regulatory-blot\">\n            <div class=\"regulatory-blot-label\">\n              <span class=\"lang-cn\">监管调查警示 · 特拉华人寿</span>\n              <span class=\"lang-en\">Federal Probe Alert · Delaware Life</span>\n            </div>\n            <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"特拉华人寿 | 联邦调查 | Delaware Life | federal investigation\"><span class=\"lang-cn\"><mark class=\"ed-hl\">特拉华人寿</mark>最近因受到负面评价，该公司是一家由道奇队老板马克·沃尔特控制的保险公司，该公司披露，由于未能报告其向其拥有的其他实体提供的贷款，该公司正在接受<mark class=\"ed-hl\">联邦调查</mark>。</span><span class=\"lang-en\">The annuity industry recently got a black mark after <mark class=\"ed-hl\">Delaware Life</mark>, an insurer controlled by Dodgers owner Mark Walter, disclosed it was under <mark class=\"ed-hl\">federal investigation</mark> for failing to report loans to other entities he owned.</span></p>\n          </div>\n        </div>\n\n        <!-- Side Rail: Background Context Dossier (ctx1) + Quote q1 -->\n        <aside class=\"side-rail\">\n          <div class=\"dossier-card\">\n            <div class=\"dossier-kicker\">\n              <span class=\"lang-cn\">调查背景档案 · 机制拆解</span>\n              <span class=\"lang-en\">Investigative Dossier · Mechanism</span>\n            </div>\n            <div class=\"dossier-body\" data-ref=\"ctx1\"><span class=\"lang-cn\">指数型年金锁定资金约 12 年，承诺收益与股市挂钩、本金不亏，但保险公司可定期下调客户能拿到的收益分成、上限和利差。销售佣金高达保单存款的 5%–7%，远高于普通固定年金的约 3%。私募巨头收购保险公司后，可将保费池投向担保贷款凭证等流动性差的私人信贷资产；投资不佳时就下调保户收益上限来缓冲。</span><span class=\"lang-en\">Indexed annuities lock up consumer capital for approximately 12 years with promises of equity-linked returns and zero downside risk. However, insurers hold unilateral discretion to lower participation rates, caps, and spreads. Lucrative 5%–7% agent commissions drive sales outside SEC fiduciary oversight, channeling sticky consumer float directly into illiquid private debt (CLOs, asset-backed securities).</span></div>\n          </div>\n\n          <blockquote class=\"pull-quote-card\" data-derive=\"q1\">\n            <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“这是指数型年金的一个缺点。保险公司可以每年或每两年更改从特定指数中获得的收益金额。”</span><span class=\"lang-en\">“That's one of the downfalls of the indexed annuities. Insurance companies can change the amount that's received from the particular index every year, every two years.”</span></p>\n            <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— 小卡洛斯·迪亚斯 (Carlos Dias Jr.) · 佛罗里达州奥兰多市理财顾问、埃利奥特的女婿</span><span class=\"lang-en\">— Carlos Dias Jr., Financial adviser outside Orlando, Fla. &amp; Sabrina Elliott's son-in-law</span></footer>\n          </blockquote>\n        </aside>\n      </div>\n    </section>\n\n    <!-- CHAPTER II: THE ARITHMETIC OF RATCHETING DOWN (p8 .. p14) -->\n    <section class=\"editorial-section\">\n      <div class=\"chapter-banner\">\n        <span class=\"chapter-num\">Chapter II · 02</span>\n        <h2 class=\"chapter-title\">\n          <span class=\"lang-cn\">被下调的算术：从 13% 牛市到 3.7% 到手收益</span>\n          <span class=\"lang-en\">The Ratchet Arithmetic: How a 13% Bull Market Yielded 3.7%</span>\n        </h2>\n      </div>\n\n      <div class=\"section-grid-2col\">\n        <div class=\"prose-column\">\n          <p class=\"prose-p\" data-ref=\"p8\" data-hl=\"5 万美元或 10 万美元 | 永远不会低于零 | $50,000 or $100,000 | never fall below zero\"><span class=\"lang-cn\">指数型年金旨在吸引那些可能拥有固定收入，且风险承受能力较低，但仍然希望获得一定程度的股市收益的老年人。人们将价值 <mark class=\"ed-hl\">5 万美元或 10 万美元</mark>的储蓄投入其中，期限约为十年。保险公司保证他们的投资收益<mark class=\"ed-hl\">永远不会低于零</mark>，并且有可能获得比定期存款或储蓄账户更高的收益。</span><span class=\"lang-en\">Indexed annuities are meant to appeal to older people who may be on fixed incomes and have little appetite for risk, but still want some exposure to stock-market gains. People turn over <mark class=\"ed-hl\">$50,000 or $100,000</mark> worth of savings for a decade or so. Insurers guarantee that their investment return will <mark class=\"ed-hl\">never fall below zero</mark>, with the potential for better returns than a CD or savings account.</span></p>\n          <p class=\"prose-p\" data-ref=\"p9\" data-hl=\"保险公司在保险期间可以更改的条款 | terms the insurer can change\"><span class=\"lang-cn\">具体而言，个人的资金增长多少，取决于<mark class=\"ed-hl\">保险公司在保险期间可以更改的条款</mark>，例如可以获得市场收益的存款比例、收益上限以及从收益中扣除的任何差额。</span><span class=\"lang-en\">Exactly how much a person's money grows is based on <mark class=\"ed-hl\">terms the insurer can change</mark> during the life of policy, such as the share of the deposit that can earn market returns, any cap on returns and any spread subtracted from those returns.</span></p>\n          <p class=\"prose-p\" data-ref=\"p10\" data-hl=\"60% | 2.9个百分点 | 55% | 45% | 1%\"><span class=\"lang-cn\">在埃利奥特购买保险的第一年，她的资金有<mark class=\"ed-hl\">60%</mark>的收益与标准普尔500指数挂钩，扣除<mark class=\"ed-hl\">2.9个百分点</mark>的差额。在保险的第七年，Athene将这一比例降低到<mark class=\"ed-hl\">55%</mark>，然后在第11年降低到<mark class=\"ed-hl\">45%</mark>。剩余的资金以<mark class=\"ed-hl\">1%</mark>的固定利率增长。</span><span class=\"lang-en\">In the first year of Elliott's policy, <mark class=\"ed-hl\">60%</mark> of her money earned returns tied to the S&amp;P 500, minus a 2.9-percentage-point spread. In the policy's seventh year, Athene lowered that share to <mark class=\"ed-hl\">55%</mark>, then to <mark class=\"ed-hl\">45%</mark> in the 11th year. The rest of the money grew at a fixed rate of <mark class=\"ed-hl\">1%</mark>.</span></p>\n\n          <!-- Bespoke SVG Exhibit 1: Participation Ratchet Trajectory (Yr 1 -> Yr 7 -> Yr 11) -->\n          <figure class=\"exhibit-card\">\n            <div class=\"exhibit-header\">\n              <div class=\"exhibit-tag\">\n                <span class=\"lang-cn\">图表 01 · 条款棘轮轨迹</span>\n                <span class=\"lang-en\">Exhibit 01 · Participation Ratchet</span>\n              </div>\n              <h3 class=\"exhibit-title\">\n                <span class=\"lang-cn\">埃利奥特保单中与标普500挂钩的资金比例遭两次下调</span>\n                <span class=\"lang-en\">How Athene Twice Lowered Elliott's S&amp;P 500 Participation Share</span>\n              </h3>\n              <p class=\"exhibit-sub\">\n                <span class=\"lang-cn\">挂钩标普500指数部分需再扣除 2.9 个百分点差额；剩余资金仅按 1% 固定利率增长</span>\n                <span class=\"lang-en\">S&amp;P-linked portion subject to a 2.9-percentage-point spread deduction; remaining funds grew at a 1% fixed rate</span>\n              </p>\n            </div>\n\n            <svg class=\"svg-responsive\" viewbox=\"0 0 620 230\" role=\"img\" aria-label=\"Participation Share Ratchet Chart\">\n              <!-- Background Grid -->\n              <line x1=\"50\" y1=\"35\" x2=\"590\" y2=\"35\" stroke=\"#e4dfd3\" stroke-dasharray=\"3,3\"></line>\n              <line x1=\"50\" y1=\"95\" x2=\"590\" y2=\"95\" stroke=\"#e4dfd3\" stroke-dasharray=\"3,3\"></line>\n              <line x1=\"50\" y1=\"155\" x2=\"590\" y2=\"155\" stroke=\"#c9c2b2\" stroke-width=\"1.5\"></line>\n\n              <!-- Y-axis Labels -->\n              <text x=\"42\" y=\"39\" text-anchor=\"end\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">100%</text>\n              <text x=\"42\" y=\"99\" text-anchor=\"end\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">50%</text>\n              <text x=\"42\" y=\"159\" text-anchor=\"end\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">0%</text>\n\n              <!-- Year 1 Bar: 60% S&P / 40% Fixed 1% -->\n              <g transform=\"translate(85, 0)\">\n                <!-- Remainder 40% at 1% fixed -->\n                <rect x=\"0\" y=\"35\" width=\"110\" height=\"48\" fill=\"#e4dfd3\" stroke=\"#c9c2b2\"></rect>\n                <text x=\"55\" y=\"63\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">40% @ 1% Fixed</text>\n                <!-- S&P Linked 60% -->\n                <rect x=\"0\" y=\"83\" width=\"110\" height=\"72\" fill=\"#b85d19\"></rect>\n                <text x=\"55\" y=\"118\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"16\" font-weight=\"700\" fill=\"#faf8f4\">60%</text>\n                <text x=\"55\" y=\"136\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#faf8f4\">S&amp;P 500 (-2.9pp)</text>\n                <!-- X Label -->\n                <text x=\"55\" y=\"178\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                  <tspan class=\"lang-cn\">第 1 年</tspan><tspan class=\"lang-en\">Year 1</tspan>\n                </text>\n                <text x=\"55\" y=\"195\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#646059\">\n                  <tspan class=\"lang-cn\">初始合同比例</tspan><tspan class=\"lang-en\">Initial Policy Share</tspan>\n                </text>\n              </g>\n\n              <!-- Step Connector 1 -> 2 -->\n              <path d=\"M 200 105 L 250 105\" stroke=\"#b85d19\" stroke-width=\"2\" fill=\"none\" stroke-dasharray=\"4,3\"></path>\n              <polygon points=\"250,101 258,105 250,109\" fill=\"#b85d19\"></polygon>\n\n              <!-- Year 7 Bar: 55% S&P / 45% Fixed 1% -->\n              <g transform=\"translate(265, 0)\">\n                <rect x=\"0\" y=\"35\" width=\"110\" height=\"54\" fill=\"#e4dfd3\" stroke=\"#c9c2b2\"></rect>\n                <text x=\"55\" y=\"66\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">45% @ 1% Fixed</text>\n                <rect x=\"0\" y=\"89\" width=\"110\" height=\"66\" fill=\"#b85d19\"></rect>\n                <text x=\"55\" y=\"121\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"16\" font-weight=\"700\" fill=\"#faf8f4\">55%</text>\n                <text x=\"55\" y=\"139\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#faf8f4\">S&amp;P 500 (-2.9pp)</text>\n                <text x=\"55\" y=\"178\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                  <tspan class=\"lang-cn\">第 7 年</tspan><tspan class=\"lang-en\">Year 7</tspan>\n                </text>\n                <text x=\"55\" y=\"195\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#9e2a2b\">\n                  <tspan class=\"lang-cn\">第一次下调 (-5pp)</tspan><tspan class=\"lang-en\">First Cut (-5pp)</tspan>\n                </text>\n              </g>\n\n              <!-- Step Connector 2 -> 3 -->\n              <path d=\"M 380 112 L 430 112\" stroke=\"#b85d19\" stroke-width=\"2\" fill=\"none\" stroke-dasharray=\"4,3\"></path>\n              <polygon points=\"430,108 438,112 430,116\" fill=\"#b85d19\"></polygon>\n\n              <!-- Year 11 Bar: 45% S&P / 55% Fixed 1% -->\n              <g transform=\"translate(445, 0)\">\n                <rect x=\"0\" y=\"35\" width=\"110\" height=\"66\" fill=\"#e4dfd3\" stroke=\"#c9c2b2\"></rect>\n                <text x=\"55\" y=\"72\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"11\" fill=\"#646059\">55% @ 1% Fixed</text>\n                <rect x=\"0\" y=\"101\" width=\"110\" height=\"54\" fill=\"#9e2a2b\"></rect>\n                <text x=\"55\" y=\"128\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"16\" font-weight=\"700\" fill=\"#faf8f4\">45%</text>\n                <text x=\"55\" y=\"144\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#faf8f4\">S&amp;P 500 (-2.9pp)</text>\n                <text x=\"55\" y=\"178\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                  <tspan class=\"lang-cn\">第 11 年</tspan><tspan class=\"lang-en\">Year 11</tspan>\n                </text>\n                <text x=\"55\" y=\"195\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10\" fill=\"#9e2a2b\">\n                  <tspan class=\"lang-cn\">第二次下调 (-10pp)</tspan><tspan class=\"lang-en\">Second Cut (-10pp)</tspan>\n                </text>\n              </g>\n            </svg>\n            <figcaption class=\"exhibit-caption\">\n              <span class=\"lang-cn\">数据来源：报道披露的萨布丽娜·埃利奥特 12 年期指数型年金保单记录（Athene 收购英杰华保险后执行）。</span>\n              <span class=\"lang-en\">Source: Reported policy records of Sabrina Elliott's 12-year indexed annuity under Aviva / Athene.</span>\n            </figcaption>\n          </figure>\n\n          <p class=\"prose-p\" data-ref=\"p11\" data-hl=\"69岁 | 营养学教授 | 约2个百分点 | 2 percentage points\"><span class=\"lang-cn\"><mark class=\"ed-hl\">69岁</mark>的埃利奥特是佛罗里达州立大学系统的一名<mark class=\"ed-hl\">营养学教授</mark>。她购买了附加险，可以选择在她的整个生命周期内或在她去世后将资金分配给她的继承人。这使她的年收益减少了<mark class=\"ed-hl\">约2个百分点</mark>。</span><span class=\"lang-en\">Elliott, a 69-year-old professor of nutrition in the Florida university system, had paid for add-ons that let her choose to parcel out payments over her lifetime or to her heirs. That reduced her annual return by about <mark class=\"ed-hl\">2 percentage points</mark>.</span></p>\n          <p class=\"prose-p\" data-ref=\"p12\" data-hl=\"3.7% | 1.9% | 13%\"><span class=\"lang-cn\">她在12年保险期内获得的年化收益率为<mark class=\"ed-hl\">3.7%</mark>，高于她若投资美国国债本可获得的<mark class=\"ed-hl\">1.9%</mark>。但与标准普尔500指数的年化收益率<mark class=\"ed-hl\">13%</mark>相比，这个收益率显得微不足道。</span><span class=\"lang-en\">The <mark class=\"ed-hl\">3.7%</mark> annualized rate she earned over the 12-year life of her annuity beat the <mark class=\"ed-hl\">1.9%</mark> she would have gotten from Treasurys. But it paled next to the annualized return of <mark class=\"ed-hl\">13%</mark> on the S&amp;P 500.</span></p>\n\n          <!-- Bespoke SVG Exhibit 2: Annualized Return Benchmark Comparison -->\n          <figure class=\"exhibit-card\">\n            <div class=\"exhibit-header\">\n              <div class=\"exhibit-tag\">\n                <span class=\"lang-cn\">图表 02 · 十二年收益率基准对比</span>\n                <span class=\"lang-en\">Exhibit 02 · 12-Year Annualized Return Gap</span>\n              </div>\n              <h3 class=\"exhibit-title\">\n                <span class=\"lang-cn\">跑赢了美国国债，却在 13% 美股大牛市中踏空</span>\n                <span class=\"lang-en\">Beating Treasurys, Paling Beside the S&amp;P 500 Bull Market</span>\n              </h3>\n            </div>\n\n            <svg class=\"svg-responsive\" viewbox=\"0 0 620 175\" role=\"img\" aria-label=\"12-Year Return Comparison Chart\">\n              <!-- Bar 1: S&P 500 (13%) -->\n              <text x=\"10\" y=\"34\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                <tspan class=\"lang-cn\">标准普尔 500 指数</tspan><tspan class=\"lang-en\">S&amp;P 500 Index</tspan>\n              </text>\n              <rect x=\"175\" y=\"16\" width=\"365\" height=\"26\" fill=\"#23496d\"></rect>\n              <text x=\"550\" y=\"34\" font-family=\"JetBrains Mono\" font-size=\"14\" font-weight=\"700\" fill=\"#23496d\">13.0%</text>\n\n              <!-- Bar 2: Sabrina Elliott Annuity (3.7%) -->\n              <text x=\"10\" y=\"86\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"700\" fill=\"#b85d19\">\n                <tspan class=\"lang-cn\">埃利奥特指数型年金</tspan><tspan class=\"lang-en\">Elliott's Indexed Annuity</tspan>\n              </text>\n              <rect x=\"175\" y=\"68\" width=\"104\" height=\"26\" fill=\"#b85d19\"></rect>\n              <text x=\"289\" y=\"86\" font-family=\"JetBrains Mono\" font-size=\"14\" font-weight=\"700\" fill=\"#b85d19\">3.7%</text>\n              <text x=\"340\" y=\"85\" font-family=\"Inter, Noto Sans SC\" font-size=\"11\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">（含附加险扣除约 2 个百分点）</tspan><tspan class=\"lang-en\">(After ~2pp rider deduction)</tspan>\n              </text>\n\n              <!-- Bar 3: U.S. Treasurys (1.9%) -->\n              <text x=\"10\" y=\"138\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"500\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">同期美国国债</tspan><tspan class=\"lang-en\">U.S. Treasurys</tspan>\n              </text>\n              <rect x=\"175\" y=\"120\" width=\"53\" height=\"26\" fill=\"#9c9588\"></rect>\n              <text x=\"238\" y=\"138\" font-family=\"JetBrains Mono\" font-size=\"14\" font-weight=\"700\" fill=\"#646059\">1.9%</text>\n            </svg>\n          </figure>\n\n          <!-- Corporate Defense Block (p13 & p14) -->\n          <div class=\"corporate-response-panel\">\n            <div class=\"corp-kicker\">\n              <span class=\"lang-cn\">公司官方回应 · 阿波罗旗下 Athene 声明</span>\n              <span class=\"lang-en\">Corporate Response · Athene (Apollo Global Management)</span>\n            </div>\n            <p class=\"prose-p\" data-ref=\"p13\" data-hl=\"2022年 | 表现出色 | 100%的本金保护 | performed exceptionally well | 100% principal protection\"><span class=\"lang-cn\">Athene在<mark class=\"ed-hl\">2022年</mark>被阿波罗完全收购。该公司在一份声明中表示，该保险“<mark class=\"ed-hl\">表现出色</mark>，收益远高于类似的安全收益替代品，保证<mark class=\"ed-hl\">100%的本金保护</mark>，并提供可选的额外死亡赔偿和保证终身收入。”</span><span class=\"lang-en\">Athene, which Apollo fully took over in 2022, said in a statement that the annuity “<mark class=\"ed-hl\">performed exceptionally well</mark>, earning returns well in excess of similar safe yield alternatives, guaranteeing <mark class=\"ed-hl\">100% principal protection</mark>, and providing optional enhanced death benefits and guaranteed lifetime income.”</span></p>\n            <p class=\"prose-p\" data-ref=\"p14\" data-hl=\"高度误导性 | highly misleading\"><span class=\"lang-cn\">该公司表示，“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有<mark class=\"ed-hl\">高度误导性</mark>。”</span><span class=\"lang-en\">The company said “it is <mark class=\"ed-hl\">highly misleading</mark> to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”</span></p>\n          </div>\n        </div>\n\n        <!-- Side Rail: Metrics m5, m6 & Quote q2, q3 -->\n        <aside class=\"side-rail\">\n          <div class=\"rail-metric-card\" data-derive=\"m6\">\n            <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">60% → 55% → 45%</span><span class=\"lang-en\">60% → 55% → 45%</span></div>\n            <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">与标普500挂钩的资金比例下调轨迹</span><span class=\"lang-en\">Share of money tied to S&amp;P 500 (Yr 1 → Yr 7 → Yr 11)</span></div>\n            <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">扣除2.9个百分点差额；其余资金按1%固定利率增长</span><span class=\"lang-en\">Minus 2.9pp spread; remainder grew at 1% fixed rate</span></div>\n          </div>\n\n          <div class=\"rail-metric-card\" data-derive=\"m5\">\n            <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">1.9%</span><span class=\"lang-en\">1.9%</span></div>\n            <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">同期美国国债年化收益率</span><span class=\"lang-en\">Treasurys annualized return over same period</span></div>\n            <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">无风险国债替代收益基准</span><span class=\"lang-en\">Safe government bond alternative</span></div>\n          </div>\n\n          <blockquote class=\"pull-quote-card\" data-derive=\"q2\">\n            <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“表现出色，收益远高于类似的安全收益替代品，保证100%的本金保护，并提供可选的额外死亡赔偿和保证终身收入。”</span><span class=\"lang-en\">“performed exceptionally well, earning returns well in excess of similar safe yield alternatives, guaranteeing 100% principal protection, and providing optional enhanced death benefits and guaranteed lifetime income.”</span></p>\n            <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— Athene (阿波罗全球管理旗下保险公司) · 公司官方声明</span><span class=\"lang-en\">— Athene (Apollo Global Management), Company official statement</span></footer>\n          </blockquote>\n\n          <blockquote class=\"pull-quote-card\" data-derive=\"q3\">\n            <p class=\"quote-text\" data-field=\"quote\"><span class=\"lang-cn\">“使用一种将历史低利率与强劲的牛市相结合的情景来衡量固定指数型年金的表现，具有高度误导性。”</span><span class=\"lang-en\">“it is highly misleading to measure the performance of fixed indexed annuities using a scenario that pairs historically low rates with a strong bull equity market.”</span></p>\n            <footer class=\"quote-attrib\" data-field=\"attribution\"><span class=\"lang-cn\">— Athene (阿波罗全球管理旗下保险公司) · 关于评估情景的回应声明</span><span class=\"lang-en\">— Athene (Apollo Global Management), Statement on benchmark scenario</span></footer>\n          </blockquote>\n        </aside>\n      </div>\n    </section>\n\n    <!-- CHAPTER III: REGULATORY ARBITRAGE & PRIVATE CREDIT PIPELINE (p15 .. p20) -->\n    <section class=\"editorial-section\">\n      <div class=\"chapter-banner\">\n        <span class=\"chapter-num\">Chapter III · 03</span>\n        <h2 class=\"chapter-title\">\n          <span class=\"lang-cn\">高佣金诱因、回测幻象与私人信贷资金池</span>\n          <span class=\"lang-en\">Commission Incentives, Hypothetical Pitches, and the Private-Credit Engine</span>\n        </h2>\n      </div>\n\n      <div class=\"section-grid-2col\">\n        <div class=\"prose-column\">\n          <p class=\"prose-p\" data-ref=\"p15\" data-hl=\"美国证券交易委员会 | 州保险代理人 | 最有利可图的产品 | Securities and Exchange Commission | state insurance agents | most lucrative products\"><span class=\"lang-cn\">与股市挂钩的产品通常由<mark class=\"ed-hl\">美国证券交易委员会</mark>监管，销售这些产品通常需要证券许可证。但指数型年金也可以由<mark class=\"ed-hl\">州保险代理人</mark>销售，这些代理人不受关于披露利益冲突或以客户的最佳利益行事的相同规则的约束。指数型年金通常是这些代理人可以销售的<mark class=\"ed-hl\">最有利可图的产品</mark>之一。</span><span class=\"lang-en\">Products tied to the stock market are typically overseen by the <mark class=\"ed-hl\">Securities and Exchange Commission</mark>, and selling them often requires a securities license. But indexed annuities can also be sold by <mark class=\"ed-hl\">state insurance agents</mark>, who aren't subject to the same rules on disclosing conflicts of interest or acting in a client's best interest. Indexed annuities are often among the <mark class=\"ed-hl\">most lucrative products</mark> these agents can sell.</span></p>\n          <p class=\"prose-p\" data-ref=\"p16\" data-hl=\"5%至7% | 3% | 5% to 7%\"><span class=\"lang-cn\">例如，美国公平人寿公司为某些10年期指数型年金的保单持有人支付的佣金为保单存款的<mark class=\"ed-hl\">5%至7%</mark>。相比之下，博枫旗下的保险公司销售的简单固定利率年金的佣金约为<mark class=\"ed-hl\">3%</mark>。</span><span class=\"lang-en\">American Equity, for instance, pays agents a commission of <mark class=\"ed-hl\">5% to 7%</mark> of a policyholder's deposit on some 10-year indexed annuities. That is compared with around <mark class=\"ed-hl\">3%</mark> for simpler annuities with fixed rates sold by the Brookfield-owned insurer.</span></p>\n          <p class=\"prose-p\" data-ref=\"p17\" data-hl=\"复杂性 | 误导性的销售宣传 | complexity | misleading sales pitches\"><span class=\"lang-cn\">保险公司表示，较高的佣金反映了这些产品的<mark class=\"ed-hl\">复杂性</mark>，需要更详细的解释。尽管如此，消费者权益倡导者表示，指数型年金可能成为具有<mark class=\"ed-hl\">误导性的销售宣传</mark>的诱饵。</span><span class=\"lang-en\">Insurers say the higher commissions reflect the <mark class=\"ed-hl\">complexity</mark> of the products, which require greater explanation. Still, consumer advocates say indexed annuities can be a magnet for <mark class=\"ed-hl\">misleading sales pitches</mark>.</span></p>\n          <p class=\"prose-p\" data-ref=\"p18\" data-hl=\"10万美元 | 270万美元 | 动量增长 | 股票和加密货币指数 | $100,000 | $2.7 million | Momentum Growth\"><span class=\"lang-cn\">例如，特拉华人寿公司销售的一种指数型年金的宣传材料显示，<mark class=\"ed-hl\">10万美元</mark>的保费在未来21年内增长到<mark class=\"ed-hl\">270万美元</mark>。但这种名为“<mark class=\"ed-hl\">动量增长</mark>”的年金与一个去年才成立的<mark class=\"ed-hl\">股票和加密货币指数</mark>挂钩。宣传的收益基于过去15年的假设数据——这一时期包括11年股市实现两位数增长。</span><span class=\"lang-en\">Educational materials for an indexed annuity sold by Delaware Life, for instance, show a premium of <mark class=\"ed-hl\">$100,000</mark> growing to <mark class=\"ed-hl\">$2.7 million</mark> over the next 21 years. But the “<mark class=\"ed-hl\">Momentum Growth</mark>” annuity is tied to a stock-and-crypto index established just last year. The returns advertised draw on hypothetical data based on the past 15 years—a period that included 11 years with double-digit stock-market gains.</span></p>\n\n          <!-- Bespoke SVG Exhibit 3: The Capital Pipeline from Household Savings to Private Credit -->\n          <figure class=\"exhibit-card\">\n            <div class=\"exhibit-header\">\n              <div class=\"exhibit-tag\">\n                <span class=\"lang-cn\">图表 03 · 华尔街私人信贷输血链条</span>\n                <span class=\"lang-en\">Exhibit 03 · The Private-Credit Capital Pipeline</span>\n              </div>\n              <h3 class=\"exhibit-title\">\n                <span class=\"lang-cn\">私募巨头如何将美国家庭 10 年期年金保费转化为高风险私人信贷</span>\n                <span class=\"lang-en\">How Private-Asset Managers Channel 10-Year Annuity Float into Illiquid Debt</span>\n              </h3>\n            </div>\n\n            <svg class=\"svg-responsive\" viewbox=\"0 0 640 215\" role=\"img\" aria-label=\"Private Credit Capital Flow Diagram\" viewBox=\"-16 0 656 215\" data-repaired-viewbox=\"0 0 640 215\">\n              <!-- Node 1: Older Savers -->\n              <rect x=\"10\" y=\"25\" width=\"175\" height=\"145\" fill=\"#faf8f4\" stroke=\"#141413\" stroke-width=\"1.5\"></rect>\n              <rect x=\"10\" y=\"25\" width=\"175\" height=\"24\" fill=\"#141413\"></rect>\n              <text x=\"97\" y=\"41\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"10\" font-weight=\"700\" fill=\"#faf8f4\">01 · HOUSEHOLD SAVERS</text>\n              <text x=\"97\" y=\"72\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                <tspan class=\"lang-cn\">美国老年储户 ($50K–$100K)</tspan><tspan class=\"lang-en\">Older Savers ($50K–$100K)</tspan>\n              </text>\n              <text x=\"97\" y=\"96\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10.5\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">州保险代理人销售（非SEC监管）</tspan><tspan class=\"lang-en\">Sold via State Agents (Non-SEC)</tspan>\n              </text>\n              <rect x=\"24\" y=\"115\" width=\"147\" height=\"38\" fill=\"#f3efe6\" stroke=\"#c9c2b2\"></rect>\n              <text x=\"97\" y=\"133\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"11\" font-weight=\"700\" fill=\"#b85d19\">5% – 7% Commission</text>\n              <text x=\"97\" y=\"147\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"9.5\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">普通固定年金仅约 3%</tspan><tspan class=\"lang-en\">vs. ~3% on fixed annuities</tspan>\n              </text>\n\n              <!-- Arrow 1 -> 2 -->\n              <path d=\"M 185 98 L 222 98\" stroke=\"#b85d19\" stroke-width=\"2\" fill=\"none\"></path>\n              <polygon points=\"222,94 230,98 222,102\" fill=\"#b85d19\"></polygon>\n\n              <!-- Node 2: PE-Backed Insurer -->\n              <rect x=\"232\" y=\"25\" width=\"175\" height=\"145\" fill=\"#faf8f4\" stroke=\"#141413\" stroke-width=\"1.5\"></rect>\n              <rect x=\"232\" y=\"25\" width=\"175\" height=\"24\" fill=\"#b85d19\"></rect>\n              <text x=\"319\" y=\"41\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"10\" font-weight=\"700\" fill=\"#faf8f4\">02 · ACQUIRED INSURERS</text>\n              <text x=\"319\" y=\"72\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n                <tspan class=\"lang-cn\">私募旗下保险公司 (Athene等)</tspan><tspan class=\"lang-en\">PE-Owned Insurers (Athene)</tspan>\n              </text>\n              <text x=\"319\" y=\"96\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10.5\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">锁定期约 10–12 年（固定仅3–5年）</tspan><tspan class=\"lang-en\">~10-12 Yr Lockup (vs. 3-5 Yr Fixed)</tspan>\n              </text>\n              <rect x=\"246\" y=\"115\" width=\"147\" height=\"38\" fill=\"#f3efe6\" stroke=\"#c9c2b2\"></rect>\n              <text x=\"319\" y=\"133\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10.5\" font-weight=\"700\" fill=\"#141413\">\n                <tspan class=\"lang-cn\">可单方面调整收益上限与比例</tspan><tspan class=\"lang-en\">Unilateral Cap &amp; Spread Control</tspan>\n              </text>\n              <text x=\"319\" y=\"147\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"9.5\" fill=\"#646059\">\n                <tspan class=\"lang-cn\">缓冲亏损或增厚私募利润</tspan><tspan class=\"lang-en\">Cushions loss or fattens profit</tspan>\n              </text>\n\n              <!-- Arrow 2 -> 3 -->\n              <path d=\"M 407 98 L 444 98\" stroke=\"#b85d19\" stroke-width=\"2\" fill=\"none\"></path>\n              <polygon points=\"444,94 452,98 444,102\" fill=\"#b85d19\"></polygon>\n\n              <!-- Node 3: Private Credit Assets -->\n              <rect x=\"454\" y=\"25\" width=\"175\" height=\"145\" fill=\"#0f1d2b\" stroke=\"#0f1d2b\" stroke-width=\"1.5\"></rect>\n              <rect x=\"454\" y=\"25\" width=\"175\" height=\"24\" fill=\"#23496d\"></rect>\n              <text x=\"541\" y=\"41\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"10\" font-weight=\"700\" fill=\"#faf8f4\">03 · PRIVATE CREDIT</text>\n              <text x=\"541\" y=\"72\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"12\" font-weight=\"700\" fill=\"#faf8f4\">\n                <tspan class=\"lang-cn\">高风险、低流动性私人信贷</tspan><tspan class=\"lang-en\">Illiquid Private Credit</tspan>\n              </text>\n              <text x=\"541\" y=\"96\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"10.5\" fill=\"#c9c2b2\">\n                <tspan class=\"lang-cn\">向风险企业放贷</tspan><tspan class=\"lang-en\">Lending to Risky Companies</tspan>\n              </text>\n              <rect x=\"468\" y=\"115\" width=\"147\" height=\"38\" fill=\"#16283a\" stroke=\"#283e54\"></rect>\n              <text x=\"541\" y=\"133\" text-anchor=\"middle\" font-family=\"JetBrains Mono\" font-size=\"10.5\" font-weight=\"700\" fill=\"#c98a27\">CLOs &amp; ABS</text>\n              <text x=\"541\" y=\"147\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC\" font-size=\"9.5\" fill=\"#e4dfd3\">\n                <tspan class=\"lang-cn\">担保贷款凭证 / 资产支持证券</tspan><tspan class=\"lang-en\">Collateralized Loan Obligations</tspan>\n              </text>\n            </svg>\n          </figure>\n\n          <p class=\"prose-p\" data-ref=\"p19\" data-hl=\"约十年 | 三到五年 | 担保贷款凭证 | 资产支持证券 | about a decade | three to five years | collateralized loan obligations | asset-backed securities\"><span class=\"lang-cn\">在金融危机之后，私人资产管理公司开始收购保险公司，以获取其庞大的保单持有人保费。指数型年金尤其具有吸引力。支付时间表相对可预测，而且这些保单通常持续<mark class=\"ed-hl\">约十年</mark>，而固定利率年金的期限约为<mark class=\"ed-hl\">三到五年</mark>。这使资产管理公司能够灵活地将资金投入到风险更高、流动性较差的私人信贷投资中，例如<mark class=\"ed-hl\">担保贷款凭证</mark>或<mark class=\"ed-hl\">资产支持证券</mark>。</span><span class=\"lang-en\">After the financial crisis, private-asset managers began buying up insurers to access their huge pools of policyholder premiums. Indexed annuities were particularly attractive. Payouts follow a relatively predictable timetable, and the policies typically last <mark class=\"ed-hl\">about a decade</mark>, compared with about <mark class=\"ed-hl\">three to five years</mark> for fixed-rate annuities. That gives asset managers flexibility to put the money into riskier, less-liquid private-credit investments like <mark class=\"ed-hl\">collateralized loan obligations</mark> or <mark class=\"ed-hl\">asset-backed securities</mark>.</span></p>\n          <p class=\"prose-p\" data-ref=\"p20.s1\" data-hl=\"降低保单持有者收益上限 | 增加利润 | lowering the caps | fatten their profits\"><span class=\"lang-cn\">Valmark金融集团首席执行官拉里·里布卡表示，该公司销售人寿保险、年金和投资产品。他说，如果投资表现不佳，保险公司可以通过<mark class=\"ed-hl\">降低保单持有者收益上限</mark>来减少损失；如果投资表现良好，它们也可以通过同样的方式<mark class=\"ed-hl\">增加利润</mark>。</span><span class=\"lang-en\">If their investments do poorly, the insurer can cushion against loss by <mark class=\"ed-hl\">lowering the caps</mark> on policyholder gains, and if their investments do well they can <mark class=\"ed-hl\">fatten their profits</mark> the same way, said Larry Rybka, chief executive of Valmark Financial Group, which sells life insurance, annuities and investment products.</span></p>\n\n          <!-- Climactic Investigative Verdict (p20.s2) -->\n          <div class=\"verdict-stage\">\n            <div class=\"verdict-kicker\">\n              <span class=\"lang-cn\">终局裁决 · Valmark 金融集团首席执行官拉里·里布卡</span>\n              <span class=\"lang-en\">The Investigative Verdict · Larry Rybka, CEO of Valmark Financial Group</span>\n            </div>\n            <blockquote class=\"verdict-quote\" data-ref=\"p20.s2\" data-hl=\"改变与消费者的协议 | change the deal on the consumer\"><span class=\"lang-cn\">“这就是私募股权公司喜欢这种方式的原因，因为它们可以<mark class=\"ed-hl\">改变与消费者的协议</mark>。”</span><span class=\"lang-en\">“That's why private equity likes this, because they can <mark class=\"ed-hl\">change the deal on the consumer</mark>,” Rybka said.</span></blockquote>\n          </div>\n        </div>\n\n        <!-- Side Rail: Metrics m7, m8 & Quote q4 -->\n        <aside class=\"side-rail\">\n          <div class=\"rail-metric-card\" data-derive=\"m7\">\n            <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">5%至7%</span><span class=\"lang-en\">5% – 7%</span></div>\n            <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">美国公平人寿10年期指数型年金代理佣金</span><span class=\"lang-en\">American Equity 10-yr indexed annuity agent commission</span></div>\n            <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">对比博枫旗下简单固定利率年金佣金约为3%</span><span class=\"lang-en\">Compared with ~3% for simpler fixed-rate annuities (Brookfield)</span></div>\n          </div>\n\n          <div class=\"rail-metric-card\" data-derive=\"m8\">\n            <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">10万美元 → 270万美元</span><span class=\"lang-en\">$100K → $2.7M</span></div>\n            <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">特拉华人寿“动量增长”年金宣传册21年假设增长</span><span class=\"lang-en\">Delaware Life 'Momentum Growth' 21-yr hypothetical pitch</span></div>\n            <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">挂钩去年才成立的股票与加密货币指数，基于过去15年含11年双位数牛市的假设回测</span><span class=\"lang-en\">Tied to year-old stock-and-crypto index using 15-yr hypothetical backtest</span></div>\n          </div>\n\n          </aside>\n      </div>\n    </section>\n\n    <!-- Article Footer -->\n    <footer class=\"article-footer\">\n      <div>\n        <span class=\"lang-cn\">© 2026 华尔街日报 (WSJ 深读 · Editorial Renaissance) · 保留所有权利</span>\n        <span class=\"lang-en\">© 2026 The Wall Street Journal (WSJ Deep Read · Editorial Renaissance) · All Rights Reserved</span>\n      </div>\n      <div>\n        <span class=\"lang-cn\">调查档案编号：E2-001 · 记者：Heather Gillers</span>\n        <span class=\"lang-en\">Archive Ref: E2-001 · Reported by Heather Gillers</span>\n      </div>\n    </footer>\n  </main>\n\n  </div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E2-001",
+        "content_digest": "ae422bf57e347b777ca379d41ffe335426e0905e3ee0bdabbafa57497d1ce673",
+        "exact_match_cn": "20/20",
+        "exact_match_en": "20/20",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 20,
+        "observed_narrative_elements": 25,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 12,
+        "derived_items": [
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p1"
+          },
+          {
+            "id": "m2",
+            "kind": "metric",
+            "source_block": "p2"
+          },
+          {
+            "id": "m3",
+            "kind": "metric",
+            "source_block": "p3,p12"
+          },
+          {
+            "id": "m4",
+            "kind": "metric",
+            "source_block": "p12"
+          },
+          {
+            "id": "q1",
+            "kind": "quote",
+            "source_block": "p4"
+          },
+          {
+            "id": "m6",
+            "kind": "metric",
+            "source_block": "p10"
+          },
+          {
+            "id": "m5",
+            "kind": "metric",
+            "source_block": "p12"
+          },
+          {
+            "id": "q2",
+            "kind": "quote",
+            "source_block": "p13"
+          },
+          {
+            "id": "q3",
+            "kind": "quote",
+            "source_block": "p14"
+          },
+          {
+            "id": "m7",
+            "kind": "metric",
+            "source_block": "p16"
+          },
+          {
+            "id": "m8",
+            "kind": "metric",
+            "source_block": "p18"
+          },
+          {
+            "id": "q4",
+            "kind": "quote_deduped_removed",
+            "source_block": "p20"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "没有损失风险",
+              "4 万美元"
+            ],
+            "applied_en": [
+              "no risk of loss",
+              "$40,000"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "锁定 12 年",
+              "定期降低"
+            ],
+            "applied_en": [
+              "locking up her money for 12 years",
+              "periodically lower"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p3",
+            "applied_cn": [
+              "Athene",
+              "3.7%",
+              "两次"
+            ],
+            "applied_en": [
+              "Athene",
+              "twice",
+              "3.7%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4.s2",
+            "applied_cn": [
+              "每年或每两年更改"
+            ],
+            "applied_en": [
+              "change the amount"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "阿波罗和博枫",
+              "401(k)"
+            ],
+            "applied_en": [
+              "Apollo and Brookfield",
+              "401(k)"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "吸走了美国家庭的储蓄",
+              "指数型年金"
+            ],
+            "applied_en": [
+              "vacuuming up the savings",
+              "indexed annuities"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "特拉华人寿",
+              "联邦调查"
+            ],
+            "applied_en": [
+              "federal investigation",
+              "Delaware Life"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p8",
+            "applied_cn": [
+              "5 万美元或 10 万美元",
+              "永远不会低于零"
+            ],
+            "applied_en": [
+              "never fall below zero",
+              "$50,000 or $100,000"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p9",
+            "applied_cn": [
+              "保险公司在保险期间可以更改的条款"
+            ],
+            "applied_en": [
+              "terms the insurer can change"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p10",
+            "applied_cn": [
+              "2.9个百分点",
+              "60%",
+              "55%",
+              "45%",
+              "1%"
+            ],
+            "applied_en": [
+              "60%",
+              "55%",
+              "45%",
+              "1%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p11",
+            "applied_cn": [
+              "约2个百分点",
+              "营养学教授",
+              "69岁"
+            ],
+            "applied_en": [
+              "2 percentage points"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p12",
+            "applied_cn": [
+              "3.7%",
+              "1.9%",
+              "13%"
+            ],
+            "applied_en": [
+              "3.7%",
+              "1.9%",
+              "13%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p13",
+            "applied_cn": [
+              "100%的本金保护",
+              "2022年",
+              "表现出色"
+            ],
+            "applied_en": [
+              "performed exceptionally well",
+              "100% principal protection"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p14",
+            "applied_cn": [
+              "高度误导性"
+            ],
+            "applied_en": [
+              "highly misleading"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p15",
+            "applied_cn": [
+              "美国证券交易委员会",
+              "最有利可图的产品",
+              "州保险代理人"
+            ],
+            "applied_en": [
+              "Securities and Exchange Commission",
+              "most lucrative products",
+              "state insurance agents"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p16",
+            "applied_cn": [
+              "5%至7%",
+              "3%"
+            ],
+            "applied_en": [
+              "5% to 7%",
+              "3%"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p17",
+            "applied_cn": [
+              "误导性的销售宣传",
+              "复杂性"
+            ],
+            "applied_en": [
+              "misleading sales pitches",
+              "complexity"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p18",
+            "applied_cn": [
+              "股票和加密货币指数",
+              "270万美元",
+              "10万美元",
+              "动量增长"
+            ],
+            "applied_en": [
+              "Momentum Growth",
+              "$2.7 million",
+              "$100,000"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p19",
+            "applied_cn": [
+              "担保贷款凭证",
+              "资产支持证券",
+              "三到五年",
+              "约十年"
+            ],
+            "applied_en": [
+              "collateralized loan obligations",
+              "asset-backed securities",
+              "three to five years",
+              "about a decade"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p20.s1",
+            "applied_cn": [
+              "降低保单持有者收益上限",
+              "增加利润"
+            ],
+            "applied_en": [
+              "fatten their profits",
+              "lowering the caps"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p20.s2",
+            "applied_cn": [
+              "改变与消费者的协议"
+            ],
+            "applied_en": [
+              "change the deal on the consumer"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 10,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              "100%",
+              "50%",
+              "0%",
+              "40% @ 1% Fixed",
+              "60%",
+              "S&P 500 (-2.9pp)",
+              "第 1 年",
+              "Year 1",
+              "初始合同比例",
+              "Initial Policy Share",
+              "45% @ 1% Fixed",
+              "55%",
+              "S&P 500 (-2.9pp)",
+              "第 7 年",
+              "Year 7",
+              "第一次下调 (-5pp)",
+              "First Cut (-5pp)",
+              "55% @ 1% Fixed",
+              "45%",
+              "S&P 500 (-2.9pp)",
+              "第 11 年",
+              "Year 11",
+              "第二次下调 (-10pp)",
+              "Second Cut (-10pp)"
+            ],
+            "numbers_found": [
+              "100%",
+              "50%",
+              "0%",
+              "40%",
+              "1%",
+              "60%",
+              "500",
+              "2.9",
+              "1",
+              "1",
+              "45%",
+              "1%",
+              "55%",
+              "500",
+              "2.9",
+              "7",
+              "7",
+              "5",
+              "5",
+              "55%",
+              "1%",
+              "45%",
+              "500",
+              "2.9",
+              "11",
+              "11",
+              "10",
+              "10"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "",
+            "text_labels": [
+              "标准普尔 500 指数",
+              "S&P 500 Index",
+              "13.0%",
+              "埃利奥特指数型年金",
+              "Elliott's Indexed Annuity",
+              "3.7%",
+              "（含附加险扣除约 2 个百分点）",
+              "(After ~2pp rider deduction)",
+              "同期美国国债",
+              "U.S. Treasurys",
+              "1.9%"
+            ],
+            "numbers_found": [
+              "500",
+              "500",
+              "13.0%",
+              "3.7%",
+              "2",
+              "2",
+              "1.9%"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 3,
+            "viewBox": "-16 0 656 215",
+            "text_labels": [
+              "01 · HOUSEHOLD SAVERS",
+              "美国老年储户 ($50K–$100K)",
+              "Older Savers ($50K–$100K)",
+              "州保险代理人销售（非SEC监管）",
+              "Sold via State Agents (Non-SEC)",
+              "5% – 7% Commission",
+              "普通固定年金仅约 3%",
+              "vs. ~3% on fixed annuities",
+              "02 · ACQUIRED INSURERS",
+              "私募旗下保险公司 (Athene等)",
+              "PE-Owned Insurers (Athene)",
+              "锁定期约 10–12 年（固定仅3–5年）",
+              "~10-12 Yr Lockup (vs. 3-5 Yr Fixed)",
+              "可单方面调整收益上限与比例",
+              "Unilateral Cap & Spread Control",
+              "缓冲亏损或增厚私募利润",
+              "Cushions loss or fattens profit",
+              "03 · PRIVATE CREDIT",
+              "高风险、低流动性私人信贷",
+              "Illiquid Private Credit",
+              "向风险企业放贷",
+              "Lending to Risky Companies",
+              "CLOs & ABS",
+              "担保贷款凭证 / 资产支持证券",
+              "Collateralized Loan Obligations"
+            ],
+            "numbers_found": [
+              "01",
+              "$50",
+              "$100",
+              "$50",
+              "$100",
+              "5%",
+              "7%",
+              "3%",
+              "3%",
+              "02",
+              "10",
+              "12",
+              "3",
+              "5",
+              "10",
+              "12",
+              "3",
+              "5",
+              "03"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "十二年锁定期与“零亏损”承诺",
+            "en": "The 12-Year Lockup and the “No-Loss” Pitch",
+            "numbers_found": [
+              "12"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "被下调的算术：从 13% 牛市到 3.7% 到手收益",
+            "en": "The Ratchet Arithmetic: How a 13% Bull Market Yielded 3.7%",
+            "numbers_found": [
+              "13%",
+              "3.7%",
+              "13%",
+              "3.7%"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "埃利奥特保单中与标普500挂钩的资金比例遭两次下调",
+            "en": "How Athene Twice Lowered Elliott's S&P 500 Participation Share",
+            "numbers_found": [
+              "500",
+              "500"
+            ]
+          },
+          {
+            "category": "editorial_figcaption",
+            "cn": "数据来源：报道披露的萨布丽娜·埃利奥特 12 年期指数型年金保单记录（Athene 收购英杰华保险后执行）。",
+            "en": "Source: Reported policy records of Sabrina Elliott's 12-year indexed annuity under Aviva / Athene.",
+            "numbers_found": [
+              "12",
+              "12"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "跑赢了美国国债，却在 13% 美股大牛市中踏空",
+            "en": "Beating Treasurys, Paling Beside the S&P 500 Bull Market",
+            "numbers_found": [
+              "13%",
+              "500"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "高佣金诱因、回测幻象与私人信贷资金池",
+            "en": "Commission Incentives, Hypothetical Pitches, and the Private-Credit Engine",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "私募巨头如何将美国家庭 10 年期年金保费转化为高风险私人信贷",
+            "en": "How Private-Asset Managers Channel 10-Year Annuity Float into Illiquid Debt",
+            "numbers_found": [
+              "10",
+              "10"
+            ]
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 3,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 640 215",
+          "repaired_viewBox": "-16 0 656 215",
+          "repaired": true,
+          "offending_nodes": [
+            "text('01 · HOUSEHOLD ' left=-8<0)"
+          ]
+        }
+      ],
+      "sanitization_log": [
+        "Removed inline event handler onclick on <button>",
+        "Removed inline event handler onclick on <button>"
+      ],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

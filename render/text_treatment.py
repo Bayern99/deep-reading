@@ -148,17 +148,47 @@ def _esc(s):
 
 
 def _apply_wraps(text, wraps):
-    """wraps: [(start,end,html_open,html_close)]，由外向内套用。"""
-    # 按 start 降序插入，避免偏移失效
-    events = []
-    for s, e, o, c in wraps:
-        events.append((s, o, 1))
-        events.append((e, c, 0))
-    events.sort(key=lambda x: (-x[0], x[2]))
-    out = text
-    for pos, html, _ in events:
-        out = out[:pos] + html + out[pos:]
-    return out
+    """Escape source slices after indexing; entities never shift source ranges."""
+    events = {}
+    for index, (start, end, opening, closing) in enumerate(wraps):
+        events.setdefault(start, []).append((True, end, index, opening))
+        events.setdefault(end, []).append((False, start, index, closing))
+    out, cursor = [], 0
+    for position in sorted(events):
+        out.append(_esc(text[cursor:position]))
+        # Close inner spans first, then open outer spans first.
+        for opening, other, index, markup in sorted(
+                events[position], key=lambda e: (e[0], -e[1], e[2] if e[0] else -e[2])):
+            out.append(markup)
+        cursor = position
+    out.append(_esc(text[cursor:]))
+    return ''.join(out)
+
+
+def validate_text_op(block, op):
+    """Reject operations this renderer cannot execute instead of silently dropping them."""
+    supported = {'T01': 'wrap', 'T03': 'wrap', 'T06': 'wrap',
+                 'T10': 'group', 'T11': 'subhead', 'T17': 'mix'}
+    if supported.get(op.pattern_id) != op.action:
+        raise ValueError(f'unsupported text operation: {op.pattern_id}/{op.action}')
+    if op.block_id != block['id']:
+        raise ValueError(f'missing text anchor: {op.block_id}')
+    if op.locale not in ('cn', 'en'):
+        raise ValueError(f'unsupported text locale: {op.locale}')
+    text = block[op.locale]
+    if op.action in ('wrap', 'mix'):
+        if not op.text_exact or op.text_exact not in text:
+            raise ValueError(f'stale exact text: {op.pattern_id} {op.block_id}')
+    if op.action == 'mix':
+        spans = op.params.get('spans')
+        if not spans or any(not isinstance(s, int) or not isinstance(e, int)
+                            or not 0 <= s < e <= len(text) for s, e in spans):
+            raise ValueError(f'invalid mix spans: {op.block_id}')
+    if op.action == 'subhead':
+        if not op.editorial_added or not op.params.get('title_cn'):
+            raise ValueError(f'subhead must be explicit editorial addition: {op.block_id}')
+        if op.text_exact != op.params['title_cn']:
+            raise ValueError(f'stale editorial subhead text: {op.block_id}')
 
 
 def render_block(block, ops, css_classes=True):
@@ -167,8 +197,7 @@ def render_block(block, ops, css_classes=True):
     cn_wraps, en_wraps = [], []
 
     for op in ops:
-        if op.block_id != block['id']:
-            continue
+        validate_text_op(block, op)
         loc = op.locale
         text = cn if loc == 'cn' else en
         if op.action == 'wrap':
@@ -183,17 +212,23 @@ def render_block(block, ops, css_classes=True):
             elif op.pattern_id == 'T06':
                 tag = ('<span class="tt-attr">', '</span>')
             else:
-                tag = ('<span>', '</span>')
+                raise ValueError(f'unsupported wrap: {op.pattern_id}')
             (cn_wraps if loc == 'cn' else en_wraps).append((s, e, tag[0], tag[1]))
-        elif op.action == 'split':
-            pass  # 由上层处理
+        elif op.action in ('group', 'subhead'):
+            raise ValueError(f'block renderer cannot execute {op.action}')
         elif op.action == 'mix':
             for s, e in op.params['spans']:
                 (cn_wraps if loc == 'cn' else en_wraps).append(
                     (s, e, '<span class="tt-mix">', '</span>'))
 
-    cn_h = _apply_wraps(_esc(cn), [(s, e, o, c) for s, e, o, c in cn_wraps])
-    en_h = _apply_wraps(_esc(en), [(s, e, o, c) for s, e, o, c in en_wraps])
+    for wraps in (cn_wraps, en_wraps):
+        ordered = sorted(wraps, key=lambda w: (w[0], -w[1]))
+        for i, (start, end, *_rest) in enumerate(ordered):
+            for other_start, other_end, *_ in ordered[i+1:]:
+                if start < other_start < end < other_end:
+                    raise ValueError(f'crossing text treatments: {block["id"]}')
+    cn_h = _apply_wraps(cn, cn_wraps)
+    en_h = _apply_wraps(en, en_wraps)
     return cn_h, en_h
 
 
@@ -213,10 +248,6 @@ def _norm_ws(s):
 TEXT_CSS = '''
 /* ---- Editorial Content Container 契约 ---- */
 .sheet>.ed-block{max-width:var(--measure);margin-left:auto;margin-right:auto}
-/* 移动端：.sheet 统一左右留白（正文+标题）；全幅元素用负边距破格 */
-@media(max-width:430px){
-  .sheet{padding-left:20px;padding-right:20px}
-}
 /* ---- Text Treatment（阅读增强文字层） ---- */
 .tt-b{font-weight:700;color:var(--ink)}                 /* T01 语义加粗：只加重点，不变色 */
 .tt-num{font-weight:700;color:var(--ink);               /* T03 数值内联强调 */
@@ -231,11 +262,10 @@ TEXT_CSS = '''
 .tt-group p:last-child{margin-bottom:0}
 ul.tt-list{margin:0 0 1em;padding:0;list-style:none}     /* T13 并列列表 */
 ul.tt-list li{position:relative;padding-left:1.2em;margin:0 0 .5em;
-  font:400 16px/1.8 var(--font-body);color:var(--body)}
+  font:400 var(--body-size)/var(--body-leading) var(--font-body);color:var(--body)}
 ul.tt-list li::before{content:"·";position:absolute;left:.2em;color:var(--ink);
   font-weight:700}
 @media(max-width:430px){
   .tt-subhead{font-size:16px}
-  ul.tt-list li{font-size:16px;line-height:1.75}
 }
 '''

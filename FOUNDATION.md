@@ -1,16 +1,16 @@
 # WSJ 深读 · Foundation
 
-Date locked: 2026-10-13. Branch: `reboot/reconstruction-brief`.
-Audience: the agent (or person) who builds **tomorrow's** issue.
+Audience: the person or agent building and maintaining future issues.
 
 This file is the product constitution. `DESIGN.md` is the visual canon.
-Content changes every day. These rules do not.
+Current modules and limitations live in `ARCHITECTURE.md`; commands and recovery live in `render/BUILD.md`.
+Content changes every day. These principles do not.
 
 ---
 
 ## Product
 
-A Chinese digital newspaper people open every day: faithful WSJ content, selective editorial help, AJ × WIRED design, mobile-first, bilingual.
+A Chinese AI-native digital newspaper people open every day: faithful WSJ journalism, editorial judgment from typography through whole-issue composition, a distinctive identity developed from AJ × WIRED, mobile-first, bilingual.
 
 One-line test: **does this look like a newspaper, or a production log?**
 If a reader can see the pipeline, the surface is wrong.
@@ -21,10 +21,10 @@ If a reader can see the pipeline, the surface is wrong.
 
 | Layer | File | Changes when |
 |---|---|---|
-| Visual tokens, type, measure | `DESIGN.md`, `render/tokens.css`, `reference/hybrid-v3/` | Almost never. Jerry already accepted hybrid-v3. |
+| Visual tokens, type, measure | `DESIGN.md`, `render/tokens.css`, `reference/hybrid-v3/` | Evolve from the accepted baseline when real reading evidence justifies it; preserve the publication's identity. |
 | Reader surface rules | this file | When the newspaper identity changes, not when a story changes. |
-| Renderer | `render/issue.py` `article.py` `components.py` `build.py` | Bugfix / new type, not per-article hacks. |
-| Integrity | `render/integrity_gate.py`, build assertions | When a new failure mode appears. |
+| Publishing implementations | Static renderer and generated-article compiler / publisher | Bugfixes and reusable capabilities, not per-article renderer hacks. |
+| Integrity | Shared source projection, gate and compiler audits | When a new failure mode appears. |
 
 ## What is daily (must change)
 
@@ -33,8 +33,9 @@ If a reader can see the pipeline, the surface is wrong.
 | Copy | `<date>/final.json` | extraction → glossary → translation → QA |
 | Front-page selection | `<date>/front.json` | editor / agent following § Front |
 | Editorial plans | `<date>/editorial-plans/*.json` | only where a module earns its place |
-| Photos / charts | `render/images.json` + issue `assets/` | verified crops only |
-| Delivery | `<date>/dist/index.html` | `python3 build.py --issue <date>` |
+| Photos / charts | issue `assets/` and verified manifests | verified crops only; legacy global manifests are described in ARCHITECTURE |
+| Generated article versions | `<date>/editorial-artifacts/` | publisher; preserve prior verified versions |
+| Delivery | issue `dist/` | deterministic issue build or saved-artifact Reader export |
 
 Do not copy 2026-10-12 story IDs into renderer code. Pin them in that day's `front.json`.
 
@@ -42,15 +43,17 @@ Do not copy 2026-10-12 story IDs into renderer code. Pin them in that day's `fro
 
 ## Invariants
 
-1. **Verbatim body.** `final.json` is the only copy source. The renderer does not rewrite, retranslate, or pretty-wrap Chinese (`text-wrap: pretty` is banned).
-2. **AJ structure, WIRED type.** Tokens, 640px body / 760px head, orange only as square + kicker bar, red only as timeline dots, radius 0 on news modules. See `DESIGN.md`.
+1. **Verbatim body.** `final.json` is the approved copy source. Both publishing paths use its auditable bilingual projection; verified artifacts preserve their source digest. Formatting and generation never rewrite or retranslate canonical narrative text, and never use `text-wrap: pretty` on Chinese prose.
+2. **Coherent editorial identity.** Develop from AJ × WIRED: 640px body / 760px head, restrained color and structure; variation must express real content relationships. Typography is reading craft, not a frozen prototype. See `DESIGN.md`.
 3. **No pipeline chrome on the reader surface.** Forbidden on `index.html`: 「机器辅助翻译」, 「逐版摘要」, 「P1 必读」, 「编辑增强」, 「对照纯排版」, article counts as dek, baseline links. Internal ids may exist hidden for asserts.
 4. **No invented modules.** key_figures / timeline / quote / photos appear only from plans, `images.json`, or `context_cn`. Empty plan → clean article.
 5. **No restatement.** A module must add a view the body does not already give. If the dek already says 「至少 12 人死亡」, key_figures must not say it again.
 6. **No 「主张与现实」 / duel.** Deleted. Do not revive.
 7. **Type is layout.** `article`/`opinion` full head; `brief`/`letter` compact; `index_digest` What's News column; `photo_caption` caption entry; `data_table` appendix table. Do not stamp the long-article header on a digest.
-8. **Single-file delivery.** `dist/index.html`, Google Fonts only, no npm.
-9. **Mobile is the product.** 390px must read as a newspaper: 0 horizontal overflow, 16px body, rail gone.
+8. **Self-contained delivery.** The whole issue and saved-article Reader export as standalone HTML; Google Fonts may be external, with no npm runtime. Live Studio generation and queue controls require the local server.
+9. **Mobile is the product.** 390px must read comfortably: 17px / 1.85 body, one 20px inset per side, semantic reflow of notes and comparisons. Zero overflow alone does not prove reading quality.
+10. **Confirmed alignment repair only.** A QA-confirmed extraction defect (duplicated print marker, sentence split by a column break) is repaired from `render/alignment_overrides.json` — per article, exact-match text, applied identically on ordinary/enhanced/baseline paths, and folded into each plan's `content_digest`. The renderer never silently edits copy; unconfirmed misalignment fails the build (receipt `alignment_mismatch` / `en_tail_dropped`) instead of truncating.
+11. **Digest number fidelity.** A live `data_table`/`index_digest` must show every decimal number of its source. A curated summary (`suppress_body`) must present the same decimal-number set in `insight_cn` and `insight_en`: a summary may drop rows, never make one language's reader blind to a number the other language kept.
 
 ---
 
@@ -93,26 +96,11 @@ Do not regenerate all enhanced pages for a new date. Start from a clean issue; e
 
 ---
 
-## Daily build
+## Acceptance principles
 
-```bash
-cd render && python3 build.py --issue YYYY-MM-DD
-# → ../YYYY-MM-DD/dist/index.html
-```
+A published reading experience preserves source copy, bilingual order, verified visual evidence and the publication's editorial identity. Compiler/gate success does not replace reading and visual review.
 
-Done when:
+Inspect desktop and 390px mobile, Chinese and English, navigation, figures and at least one long article and digest. Confirm no horizontal overflow, no duplicated interventions and comfortable continuous reading. Baseline comparisons use identical source repairs and verified assets.
 
-1. Assertions pass (verbatim paras, no duel, no pretty, gate).
-2. `index.html` contains none of the pipeline strings in § Invariants.
-3. Front pack shows the chosen lead + two also-reads.
-4. What's News is a column, not a 40px story.
-5. Screenshots at 1440 and 390: masthead, front, one enhanced article, one digest — 0 overflow.
+Operational commands and their current limitations are maintained in `render/BUILD.md` and `ARCHITECTURE.md`, not repeated here.
 
----
-
-## Next (in order)
-
-1. **Run a second date through this foundation** without editing renderer principles. Only `final.json` + `front.json` + whatever plans/images that day earns. That is the proof the foundation holds.
-2. Keep enhancement rare. The 10-12 issue proved five plans can ship; it did not prove 117 should.
-3. Move remaining pipeline reports out of the reader path. `baseline.html` is an internal artifact, not a link from the newspaper.
-4. Do not invent a new design system. If hybrid-v3 and `DESIGN.md` feel tight, the work is selection and restraint, not tokens.

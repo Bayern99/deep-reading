@@ -1,0 +1,64 @@
+/* Article-specific reading roles selected from source evidence.
+   Copy, paragraph order, publication tokens and language switching stay shared. */
+.story[data-reading-profile]{--measure:620px;--body-size:18px;--body-leading:1.9;
+  --lead-size:22px;--lead-leading:1.75;--lead-font:var(--font-body);
+  --lead-weight:400;--closing-size:18px;--chapter-space:2.2em}
+.story[data-reading-profile] .ahead{padding-bottom:14px}
+.story[data-reading-profile] .arule{border-top-color:var(--line)}
+.story[data-reading-profile] .sheet p[data-block]{font-size:var(--body-size);
+  line-height:var(--body-leading);margin-bottom:1em}
+html[lang="zh-CN"] .story[data-reading-profile] p[data-reading-cn="lead"],
+html[lang="en"] .story[data-reading-profile] p[data-reading-en="lead"]{
+  font-family:var(--lead-font);font-size:var(--lead-size);font-weight:var(--lead-weight);
+  line-height:var(--lead-leading);color:var(--ink);margin-top:28px;margin-bottom:30px}
+html[lang="zh-CN"] .story[data-reading-profile] p[data-reading-cn="break"],
+html[lang="en"] .story[data-reading-profile] p[data-reading-en="break"]{
+  margin-top:var(--chapter-space);padding-top:20px;border-top:1px solid var(--line)}
+html[lang="zh-CN"] .story[data-reading-profile] p[data-reading-cn="closing"],
+html[lang="en"] .story[data-reading-profile] p[data-reading-en="closing"]{
+  font-size:var(--closing-size);line-height:1.9;color:var(--ink);margin-top:1.5em}
+.story[data-reading-profile] .tt-subhead{font:700 20px/1.5 var(--font-display);
+  padding-left:0;margin-top:2.2em;margin-bottom:1em}
+.story[data-reading-profile] .tt-subhead::before{display:none}
+.story[data-reading-profile] .ly-note{border-left-color:var(--line)}
+/* Narrative: the scene stays continuous; quiet pauses mark a change of task. */
+.story[data-reading-profile="narrative"]{--body-size:18.5px;--body-leading:1.95;
+  --lead-size:23px;--closing-size:19.5px;--chapter-space:2.5em}
+.story[data-reading-profile="narrative"] .deck{max-width:660px;line-height:1.8}
+.story[data-reading-profile="narrative"] .rail{display:none}
+/* Analysis: distinguish the proposition from the evidence and qualification. */
+.story[data-reading-profile="analysis"]{--measure:610px;--body-size:17.5px;
+  --body-leading:1.85;--lead-font:var(--font-meta);--lead-weight:500;
+  --lead-size:20.5px;--lead-leading:1.8;--closing-size:17.5px}
+.story[data-reading-profile="analysis"] .deck{font-family:var(--font-meta);line-height:1.75}
+.story[data-reading-profile="analysis"] .tt-b{font-weight:700}
+/* Evidence: give the comparison one larger field without making a second body. */
+.story[data-reading-profile="evidence"]{--body-size:17.5px;--body-leading:1.85;
+  --lead-size:21px;--closing-size:17.5px}
+.story[data-reading-profile="evidence"] .ly-compare{border-top:1px solid var(--ink);
+  margin-top:1.8em;margin-bottom:2em}
+.story[data-reading-profile="evidence"] .ly-pair{padding:18px 0}
+.story[data-reading-profile="evidence"] .ly-dim{font-size:13px;letter-spacing:.02em;
+  color:var(--ink);margin-bottom:12px}
+.story[data-reading-profile="evidence"] :is(.ly-a,.ly-b){font:400 20px/1.65 var(--font-body);
+  font-variant-numeric:tabular-nums}
+.story[data-reading-profile="evidence"] :is(.ly-a,.ly-b)::before{display:none}
+@media(min-width:900px){
+  .story[data-reading-profile="evidence"] .ly-compare{width:calc(100% + 96px);
+    margin-left:-48px;margin-right:-48px}
+  .story[data-reading-profile="evidence"] .ly-pair{column-gap:40px}
+}
+@media(max-width:767px){
+  .story[data-reading-profile]{--body-size:17px;--body-leading:1.9;--lead-size:20px;
+    --lead-leading:1.8;--closing-size:17px;--chapter-space:2em}
+  .story[data-reading-profile="narrative"]{--body-size:17.5px;--body-leading:1.95;
+    --lead-size:20.5px;--closing-size:18px;--chapter-space:2.2em}
+  .story[data-reading-profile="analysis"]{--lead-size:19px;--lead-weight:500}
+  .story[data-reading-profile] .sheet>p{max-width:100%}
+  .story[data-reading-profile] .tt-subhead{font-size:19px;margin-top:1.9em}
+  html[lang="zh-CN"] .story[data-reading-profile] p[data-reading-cn="lead"],
+  html[lang="en"] .story[data-reading-profile] p[data-reading-en="lead"]{
+    margin-top:24px;margin-bottom:26px}
+  .story[data-reading-profile="evidence"] :is(.ly-a,.ly-b){font-size:18px}
+  .story[data-reading-profile="evidence"] .ly-pair{padding:16px 0}
+}

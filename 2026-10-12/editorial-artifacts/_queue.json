@@ -1,0 +1,63 @@
+{
+  "schema_version": "editorial-queue-v1",
+  "issue_date": "2026-10-12",
+  "updated_at": "2026-10-14T07:07:20Z",
+  "tasks": [
+    {
+      "task_id": "task-920123cf",
+      "issue": "2026-10-12",
+      "article_id": "E2-010",
+      "title_cn": "“周日恐慌”真实存在——而且愈演愈烈",
+      "title_en": "The Sunday Scaries Are Real—And They're Getting Worse",
+      "provider": "magpie",
+      "model_id": "google-vertex/gemini-4-argon",
+      "temperature": 0.2,
+      "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8",
+      "custom_instructions": "",
+      "confirm_warn": false,
+      "status": "completed",
+      "stage": "completed",
+      "detail": "已完成 v1 — 原文逐字核验 CN 14/14, EN 14/14",
+      "created_at": "2026-10-14T07:02:48Z",
+      "started_at": "2026-10-14T07:02:48Z",
+      "finished_at": "2026-10-14T07:04:40Z",
+      "updated_at": "2026-10-14T07:04:39Z",
+      "artifact_version": "v1",
+      "error": null,
+      "audit_summary": {
+        "exact_match_cn": "14/14",
+        "exact_match_en": "14/14",
+        "content_digest": "aee1969b60d4d51b8f728f863a3ffdc1c0fddcd3b0a6499fb325c4ad25e0d9b8"
+      },
+      "recovered_from_restart": false
+    },
+    {
+      "task_id": "task-00abe5fc",
+      "issue": "2026-10-12",
+      "article_id": "E3-001",
+      "title_cn": "亚马逊正在洽谈收购一家人工智能初创公司",
+      "title_en": "Amazon in Talks To Buy AI Startup",
+      "provider": "magpie",
+      "model_id": "google-vertex/gemini-4-argon",
+      "temperature": 0.2,
+      "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+      "custom_instructions": "",
+      "confirm_warn": false,
+      "status": "completed",
+      "stage": "completed",
+      "detail": "已完成 v2 — 原文逐字核验 CN 7/7, EN 7/7",
+      "created_at": "2026-10-14T07:02:48Z",
+      "started_at": "2026-10-14T07:05:13Z",
+      "finished_at": "2026-10-14T07:07:20Z",
+      "updated_at": "2026-10-14T07:07:17Z",
+      "artifact_version": "v2",
+      "error": null,
+      "audit_summary": {
+        "exact_match_cn": "7/7",
+        "exact_match_en": "7/7",
+        "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b"
+      },
+      "recovered_from_restart": false
+    }
+  ]
+}

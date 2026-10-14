@@ -8,12 +8,15 @@ import base64
 import json
 import os
 import sys
+import re
+from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from issue import render_issue, reading_order
 from enhanced_render import load_plans
 from text_treatment import TEXT_CSS
 from layout import LAYOUT_CSS
+from source_model import source_from_final
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -21,7 +24,9 @@ CSS = '''
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--body);
-  font-family:var(--font-meta);-webkit-font-smoothing:antialiased}
+  font-family:var(--font-meta);font-synthesis:none;-webkit-font-smoothing:antialiased}
+html[lang="zh-CN"]{line-break:strict;word-break:normal;text-autospace:normal;
+  text-spacing-trim:trim-start}
 ::selection{background:#111;color:#fdfbf8}
 
 /* masthead */
@@ -32,7 +37,7 @@ body{margin:0;background:var(--paper);color:var(--body);
 .wm{font-weight:700;font-size:15px;letter-spacing:.06em;color:var(--ink)}
 .mast-meta{font-size:13px;color:var(--mut)}
 .pill{background:#111;color:#fff;border:0;border-radius:9999px;padding:8px 20px;
-  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none}
+  font-family:var(--font-meta);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;flex:none;min-height:44px}
 .pill:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 .skip{position:absolute;left:-9999px;top:0;background:#111;color:#fff;padding:8px 16px;z-index:99}
 .skip:focus{left:8px;top:8px}
@@ -58,9 +63,21 @@ body{margin:0;background:var(--paper);color:var(--body);
 .front-also{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .front-also li{border-bottom:1px solid var(--line)}
 .front-also a{display:block;padding:14px 0;text-decoration:none;color:var(--ink)}
-.front-also .toc-t{font-size:20px}
+.front-also .toc-t{display:block;font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.45}
 .front-also-dek{display:block;margin-top:4px;font-family:var(--font-display);font-size:15px;
-  line-height:1.6;color:var(--mut)}
+  line-height:1.6;color:var(--mut);text-wrap:balance}
+@media(min-width:1024px){
+  .issue-hero{max-width:var(--page)}
+  .front-pack:has(.front-also){max-width:var(--page);display:grid;
+    grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:36px;
+    border-top:1px solid var(--ink);padding-top:24px;padding-bottom:22px}
+  .front-hero{padding-bottom:0}
+  .front-also{margin-top:42px;padding-left:28px;border-top:0;border-left:1px solid var(--line)}
+  .front-also a{padding:0 0 18px}
+  .front-also li + li a{padding-top:18px}
+  .front-also li:last-child{border-bottom:0}
+  #issue>.toc{max-width:var(--page)}
+}
 .toc{max-width:var(--head-measure);margin:20px auto 8px}
 .toc-jump{list-style:none;margin:0;padding:12px 0 4px;display:flex;flex-wrap:wrap;gap:0;
   border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
@@ -92,7 +109,8 @@ body{margin:0;background:var(--paper);color:var(--body);
 .ahead-compact .kicker{margin-bottom:12px}
 .kbar{width:8px;height:22px;background:var(--orange);display:inline-block;flex:none}
 .art-title{font-family:var(--font-display);font-weight:700;font-size:40px;line-height:1.3;
-  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:.01em}
+  color:var(--ink);margin:0 0 14px;text-wrap:balance;letter-spacing:0}
+.headline-phrase{display:inline-block;max-width:100%;vertical-align:baseline;text-wrap:wrap}
 h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
 .deck{font-family:var(--font-display);font-size:18px;line-height:1.7;color:var(--mut);margin:0 0 20px}
 .deck-compact{font-size:16px;margin-bottom:12px}
@@ -116,17 +134,15 @@ h2.art-title.art-compact{font-size:26px;line-height:1.35;margin-bottom:10px}
 
 /* body */
 .sheet>p,.sheet>.mod,.sheet>figure.fig{max-width:var(--measure);margin-left:auto;margin-right:auto}
-.sheet>p{font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--body);
-  margin-top:0;margin-bottom:1.05em}
-html[lang="en"] .sheet>p{font-family:"Lora",Georgia,serif}
-.k-en{font-family:"Lora",Georgia,serif}
-p .k-en{font-size:.96em}
+.sheet>p,.sheet p[data-block]{font-family:var(--font-body);font-size:var(--body-size);
+  line-height:var(--body-leading);color:var(--body);margin-top:0;margin-bottom:1.05em}
+.arule + :is(p,.tt-group,.ly-anchor){margin-top:24px}
 .cap-lede{font-size:15px;color:var(--mut)}
 
 /* quote module (AJ scale, WIRED serif): direct quote only */
 .quote{margin-top:2em;margin-bottom:2em;padding:2px 0 2px 18px;border-left:3px solid var(--ink)}
 .quote .qt{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.7;color:var(--ink)}
-html[lang="en"] .quote .qt{font-family:"Playfair Display","Noto Serif SC",serif}
+html[lang="en"] .quote .qt{font-family:var(--font-display)}
 .quote .qa{font-family:var(--font-meta);font-size:13px;color:var(--mut);margin-top:10px}
 
 /* modules */
@@ -233,7 +249,6 @@ html[lang="en"] .bar-label{font-family:var(--font-mono)}
   .issue-title{font-size:28px}
   .front-title{font-size:30px;line-height:1.3}
   .issue-dek{font-size:16px}
-  .sheet>p{font-size:16px;line-height:1.75}
   .quote .qt{font-size:19px}
   .kval{font-size:22px;width:165px}
   .keyfig .krow{gap:12px}
@@ -292,12 +307,128 @@ FONTS = ('https://fonts.googleapis.com/css2?'
          '&family=Noto+Sans+Mono:wght@400;700'
          '&family=Playfair+Display:wght@700'
          '&family=Lora:ital,wght@0,400;0,700;1,400'
-         '&family=Inter:wght@500;600&display=swap')
+         '&family=Inter:wght@400;500;600;700&display=swap')
 
 
 def load_json(p):
     with open(p, encoding='utf-8') as f:
         return json.load(f)
+
+
+class _RenderedCopy(HTMLParser):
+    """Read body blocks from actual markup, excluding added aids and metadata."""
+    def __init__(self):
+        super().__init__()
+        self.articles = {}
+        self.stack = []
+        self._in_table = False
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        aid, block, locale = self.stack[-1][1:] if self.stack else (None, None, None)
+        if tag == 'article' and attrs.get('id', '').startswith('s-'):
+            aid, block, locale = attrs['id'][2:], None, None
+            if aid in self.articles:
+                raise ValueError(f'duplicate rendered article: {aid}')
+            self.articles[aid] = {'blocks': [], 'images': [], 'locale_text': {'cn': '', 'en': ''},
+                                  'table_text': ''}
+        if aid is not None and 'data-block' in attrs:
+            block = {'id': attrs['data-block'], 'cn': '', 'en': ''}
+            self.articles[aid]['blocks'].append(block)
+        classes = attrs.get('class', '').split()
+        if 'k-cn' in classes:
+            locale = 'cn'
+        elif 'k-en' in classes:
+            locale = 'en'
+        if aid is not None and locale is not None:
+            self.articles[aid]['locale_text'][locale] += ' '
+        if aid is not None and tag == 'img':
+            self.articles[aid]['images'].append(attrs.get('src', ''))
+        if tag == 'table':
+            self._in_table = True
+            if aid is not None:
+                self.articles[aid]['table_text'] += ' '
+        if tag not in ('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+                        'link', 'meta', 'param', 'source', 'track', 'wbr'):
+            self.stack.append((tag, aid, block, locale))
+
+    def handle_endtag(self, tag):
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                if tag == 'table':
+                    self._in_table = False
+                    closed_aid = self.stack[index][1]
+                    if closed_aid is not None:
+                        self.articles[closed_aid]['table_text'] += ' '
+                del self.stack[index:]
+                break
+
+    def handle_data(self, text):
+        if self.stack:
+            _, aid, block, locale = self.stack[-1]
+            if locale is not None:
+                if aid is not None:
+                    self.articles[aid]['locale_text'][locale] += text
+                if block is not None:
+                    block[locale] += text
+                elif self._in_table:
+                    current = next((f[1] for f in reversed(self.stack) if f[1]), None)
+                    if current is not None:
+                        self.articles[current]['table_text'] += text + ' '
+            elif self._in_table and aid is not None:
+                self.articles[aid]['table_text'] += text + ' '
+
+
+def _numset(text):
+    return set(re.findall(r'\d+(?:\.\d+)+', re.sub(r',', '', text or '')))
+
+
+def check_digest_copy(document, entries, curation):
+    """Digest/table bodies are reflowed, not block-projected.
+
+    Live bodies must carry every source number. When curation suppresses the
+    body on purpose, the bilingual insights must present the same numbers in
+    both locales; a summary may drop rows but not one language's copy of a
+    number that the other language kept.
+    """
+    parsed = _RenderedCopy()
+    parsed.feed(document)
+    treatments = (curation or {}).get('data_treatment') or {}
+    for entry in entries:
+        if entry.get('type') not in ('data_table', 'index_digest'):
+            continue
+        rendered = parsed.articles.get(entry['id'])
+        if rendered is None:
+            raise ValueError(f'{entry["id"]}: digest article missing from page')
+        treat = treatments.get(entry['id']) or {}
+        if treat.get('suppress_body'):
+            cn = _numset(treat.get('insight_cn', ''))
+            en = _numset(treat.get('insight_en', ''))
+            if (cn or en) and cn != en:
+                diff = ', '.join(sorted(cn ^ en))
+                raise ValueError(
+                    f'{entry["id"]}: digest insight number parity broken: {diff}')
+            continue
+        for locale, field in (('cn', 'body_cn'), ('en', 'body_en')):
+            missing = _numset(entry.get(field) or '') - _numset(
+                rendered['locale_text'][locale] + rendered['table_text'])
+            for tok in sorted(missing):
+                raise ValueError(
+                    f'{entry["id"]}: digest {locale} number dropped: {tok}')
+
+
+def check_body_copy(document, entries):
+    parsed = _RenderedCopy()
+    parsed.feed(document)
+    for entry in entries:
+        if entry.get('type') in ('data_table', 'index_digest'):
+            continue  # Contained by check_digest_copy, not a block projection.
+        expected = [{'id': b['id'], 'cn': b['cn'], 'en': b['en']}
+                    for b in source_from_final(entry).blocks]
+        actual = parsed.articles.get(entry['id'], {}).get('blocks')
+        if actual != expected:
+            raise ValueError(f'{entry["id"]}: rendered full copy/order differs from input projection')
+    return parsed.articles
 
 
 def _asset_loader_for_issue(issue_dir):
@@ -318,7 +449,72 @@ def _asset_loader_for_issue(issue_dir):
     return load
 
 
-def build_issue(issue, plans_all=None, write_baseline=True):
+def _write_receipts(issue_dir, issue, receipts, baseline_receipts, error=None,
+                    filename='render-receipts.json'):
+    dist = os.path.join(issue_dir, 'dist')
+    os.makedirs(dist, exist_ok=True)
+    payload = {'issue': issue, 'status': 'failed' if error else 'complete',
+               'articles': receipts, 'baseline': baseline_receipts}
+    if error is not None:
+        payload['error'] = f'{type(error).__name__}: {error}'
+    with open(os.path.join(dist, filename), 'w', encoding='utf-8') as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+
+
+def _baseline_plans(plans):
+    """Keep original visual assets in the comparison, without editorial treatments."""
+    out = {}
+    for aid, plan in plans.items():
+        assets = [cp for cp in plan.get('component_plan') or []
+                  if cp.get('asset') and cp.get('component') in ('figure', 'chart', 'infographic')]
+        visuals = []
+        for layout in plan.get('layout_decisions') or []:
+            if layout.get('action') == 'decline':
+                continue
+            params = layout.get('params') or {}
+            if layout.get('pattern_id') == 'L08':
+                visuals.append(layout)
+            elif layout.get('pattern_id') == 'L05':
+                visual_params = {'inner_html': params['img_html']}
+                if params.get('after_block_id'):
+                    visual_params['after_block_id'] = params['after_block_id']
+                visuals.append({'pattern_id': 'L08', 'action': 'apply', 'params': visual_params})
+        if assets or visuals:
+            out[aid] = {'article_id': aid, 'component_plan': assets, 'layout_decisions': visuals}
+    return out
+
+
+def _render_body(final, modules_all, images_all, img_cache, issue, *, gate_status,
+                 plans_all, asset_loader, curation, issue_dir, execution_receipts,
+                 receipts, baseline_receipts, receipt_filename='render-receipts.json'):
+    try:
+        body, order = render_issue(
+            final, modules_all, images_all, img_cache, issue,
+            gate_status=gate_status, plans_all=plans_all,
+            asset_loader=asset_loader, curation=curation, issue_dir=issue_dir,
+            execution_receipts=execution_receipts)
+        rendered = {receipt['article_id'] for receipt in execution_receipts}
+        for aid in plans_all:
+            if aid not in rendered:
+                error = ValueError(f'planned article was not rendered: {aid}')
+                execution_receipts.append({'article_id': aid, 'status': 'failed',
+                                           'operations': [], 'error': str(error)})
+                raise error
+        return body, order
+    except Exception as error:
+        _write_receipts(issue_dir, issue, receipts, baseline_receipts, error,
+                        filename=receipt_filename)
+        raise
+
+
+def build_issue(issue, plans_all=None, write_baseline=True, output_name='index.html'):
+    if os.path.basename(output_name) != output_name or not output_name.endswith('.html'):
+        raise ValueError('output must be an HTML filename within the issue dist directory')
+    if output_name == 'baseline.html':
+        raise ValueError('baseline.html is reserved for the comparison')
+    receipt_filename = ('render-receipts.json' if output_name == 'index.html'
+                        else f'{os.path.splitext(output_name)[0]}-receipts.json')
     issue_dir = os.path.join(os.path.dirname(BASE), issue)
     final = load_json(os.path.join(issue_dir, 'final.json'))
     modules_all = load_json(os.path.join(BASE, 'modules.json'))
@@ -361,10 +557,12 @@ def build_issue(issue, plans_all=None, write_baseline=True):
     print(f'gate: {n_pass} PASS / {n_warn} WARN / {n_block} BLOCK')
 
     asset_loader = _asset_loader_for_issue(issue_dir)
-    body, order = render_issue(
+    receipts, baseline_receipts = [], []
+    body, order = _render_body(
         final, modules_all, images_all, img_cache, issue,
-        gate_status=gate_status, plans_all=plans_all,
-        asset_loader=asset_loader, curation=curation, issue_dir=issue_dir)
+        gate_status=gate_status, plans_all=plans_all, asset_loader=asset_loader,
+        curation=curation, issue_dir=issue_dir, execution_receipts=receipts,
+        receipts=receipts, baseline_receipts=baseline_receipts, receipt_filename=receipt_filename)
 
     enh_css = (
         TEXT_CSS + LAYOUT_CSS +
@@ -382,6 +580,7 @@ def build_issue(issue, plans_all=None, write_baseline=True):
         '\n.dcal-d{font:700 13px/1.5 var(--font-meta);letter-spacing:.04em;color:var(--mut)}'
         '\n@media(max-width:430px){.dcal li{grid-template-columns:1fr;gap:2px}}'
     )
+    enh_css += '\n' + open(os.path.join(BASE, 'editorial.css'), encoding='utf-8').read()
 
     def wrap_doc(body_html, title_suffix=''):
         from issue import load_front as _lf
@@ -412,28 +611,38 @@ def build_issue(issue, plans_all=None, write_baseline=True):
 
     dist = os.path.join(issue_dir, 'dist')
     os.makedirs(dist, exist_ok=True)
-    out = os.path.join(dist, 'index.html')
+    out = os.path.join(dist, output_name)
     doc = wrap_doc(body)
+    base_doc = None
+    if write_baseline:
+        body_b, _ = _render_body(
+            final, modules_all, images_all, img_cache, issue,
+            gate_status=gate_status, plans_all=_baseline_plans(plans_all), asset_loader=asset_loader,
+            curation=curation, issue_dir=issue_dir, execution_receipts=baseline_receipts,
+            receipts=receipts, baseline_receipts=baseline_receipts, receipt_filename=receipt_filename)
+        base_doc = wrap_doc(body_b, 'baseline')
+    try:
+        enhanced_copy = check_body_copy(doc, order)
+        check_digest_copy(doc, order, curation)
+        if base_doc is not None:
+            baseline_copy = check_body_copy(base_doc, order)
+            check_digest_copy(base_doc, order, curation)
+            for aid in enhanced_copy:
+                if enhanced_copy[aid]['images'] != baseline_copy[aid]['images']:
+                    raise ValueError(f'{aid}: baseline visual assets differ')
+    except Exception as error:
+        _write_receipts(issue_dir, issue, receipts, baseline_receipts, error,
+                        filename=receipt_filename)
+        raise
     with open(out, 'w', encoding='utf-8') as f:
         f.write(doc)
-    print(f'wrote {out} ({len(doc)//1024} KB, {len(order)} articles, '
-          f'{len(plans_all)} enhanced)')
-
-    if write_baseline:
-        body_b, _ = render_issue(
-            final, modules_all, images_all, img_cache, issue,
-            gate_status=gate_status, plans_all={}, asset_loader=asset_loader,
-            curation=curation, issue_dir=issue_dir)
-        # Force pure typography for the four reboot articles too: drop modules
-        # only where we want before/after. Baseline = no enhanced plans.
+    print(f'wrote {out} ({len(doc)//1024} KB, {len(order)} articles, {len(plans_all)} planned)')
+    if base_doc is not None:
         base_out = os.path.join(dist, 'baseline.html')
-        base_doc = wrap_doc(body_b, 'baseline')
-        # Point baseline note targets back to enhanced issue
-        base_doc = base_doc.replace('href="baseline.html#', 'href="index.html#')
         with open(base_out, 'w', encoding='utf-8') as f:
             f.write(base_doc)
         print(f'wrote {base_out} ({len(base_doc)//1024} KB)')
-
+    _write_receipts(issue_dir, issue, receipts, baseline_receipts, filename=receipt_filename)
     return out, final, order, gate_status, plans_all
 
 
@@ -449,8 +658,18 @@ def check_no_duel(html):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--issue', required=True)
+    ap.add_argument('--plans-dir', help='Additional enhanced-v1 plans overriding issue plans')
+    ap.add_argument('--output', default='index.html', help='HTML filename in the issue dist directory')
+    ap.add_argument('--no-baseline', action='store_true',
+                    help='Do not (re)write dist/baseline.html; use for exploration outputs')
     args = ap.parse_args()
-    out, final, order, gate_status, plans_all = build_issue(args.issue)
+    plans = None
+    if args.plans_dir:
+        plans = load_plans(os.path.join(os.path.dirname(BASE), args.issue, 'editorial-plans'))
+        plans.update(load_plans(args.plans_dir))
+    out, final, order, gate_status, plans_all = build_issue(
+        args.issue, plans_all=plans, output_name=args.output,
+        write_baseline=not args.no_baseline)
 
     # ---- 自查断言 ----
     html = open(out, encoding='utf-8').read()
@@ -480,7 +699,6 @@ def main():
     _issue_dir = os.path.join(os.path.dirname(BASE), args.issue)
     assert [e['id'] for e in order] == [e['id'] for e in reading_order(pub_final, load_front(_issue_dir))]
     # 每篇段落数一致（正文逐字）
-    from components import paras as _paras
     for e in final:
         if e.get('type') == 'data_table':
             continue
@@ -490,29 +708,16 @@ def main():
             continue
         got = html.count(f'id="s-{e["id"]}"')
         assert got == 1, f'{e["id"]} anchor count {got}'
-    # 段落级校验：正文文字必须保留。增强篇会插入标签，故在 article 切片上去标签后核对。
-    import re as _re
-    for e in final:
-        if e.get('type') == 'data_table':
-            continue
-        if gate_status.get(e['id'], ('pass', []))[0] != 'pass':
-            continue
-        if e['id'] in excluded:
-            continue
-        m = _re.search(
-            rf'<article[^>]*id="s-{_re.escape(e["id"])}"[^>]*>(.*?)</article>',
-            html, _re.S)
-        assert m, f'missing article slice {e["id"]}'
-        plain = _re.sub(r'<[^>]+>', '', m.group(1))
-        for cn, _ in _paras(e.get('body_cn'), e.get('body_en')):
-            key = cn[:24].strip()
-            if key:
-                assert key in plain, f'{e["id"]} para missing: {key[:20]}'
-    # Enhanced articles present
+    # Full bilingual text and paragraph order were checked before writing both pages.
+    # Planned articles must have a successful per-article execution receipt;
+    # preserved plans deliberately emit the identical ordinary article markup.
+    receipt_name = ('render-receipts.json' if args.output == 'index.html'
+                    else f'{os.path.splitext(args.output)[0]}-receipts.json')
+    receipt_data = load_json(os.path.join(os.path.dirname(out), receipt_name))
+    by_article = {r['article_id']: r for r in receipt_data['articles']}
     for aid in plans_all:
-        assert f'data-enhanced="true"' in html
+        assert by_article[aid]['status'] in ('preserved', 'applied'), f'plan failed: {aid}'
         assert f'id="s-{aid}"' in html
-        # baseline counterpart exists
         assert os.path.isfile(os.path.join(os.path.dirname(out), 'baseline.html'))
     check_no_duel(html)
     assert 'text-wrap:pretty' not in html and 'text-wrap: pretty' not in html
@@ -524,8 +729,8 @@ def main():
                          and aid not in plans_all)
     # plan path may add images later; for now reboot plans add none
     assert html.count('data:image/png;base64') >= _expected_imgs
-    print(f'assertions passed: 117 articles, {len(plans_all)} enhanced, '
-          f'paras verbatim, no duel, no pretty')
+    print(f'checks passed: {len(final)} inputs, {len(order)} published, '
+          f'{len(plans_all)} planned; full bilingual prose copy/order and equal baseline assets')
 
 
 if __name__ == '__main__':

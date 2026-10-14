@@ -2,9 +2,10 @@
 """WSJ 深读 · 文章渲染（按 type 分流）
 铁律：正文逐字来自 final.json；模块只来自 modules.json / images.json / context_cn。
 """
-from components import (esc, pair, paras, article_header, body_paras, key_figures,
+from components import (esc, pair, article_header, body_paras, key_figures,
                         timeline, quote, context_box, figure, data_table, rail,
                         bargraph, kicker_pair)
+from source_model import source_from_final
 
 
 def _schedule_block(uid, days):
@@ -85,11 +86,12 @@ def _digest_groups(cn_text, en_text):
         return groups
     cn_g, en_g = parts(cn_text), parts(en_text)
     out = []
-    for i, (h_cn, items_cn) in enumerate(cn_g):
+    for i in range(max(len(cn_g), len(en_g))):
+        h_cn, items_cn = cn_g[i] if i < len(cn_g) else ('', [])
         h_en, items_en = en_g[i] if i < len(en_g) else ('', [])
-        pairs = []
-        for j, c in enumerate(items_cn):
-            pairs.append((c, items_en[j] if j < len(items_en) else ''))
+        pairs = [(items_cn[j] if j < len(items_cn) else '',
+                  items_en[j] if j < len(items_en) else '')
+                 for j in range(max(len(items_cn), len(items_en)))]
         out.append((h_cn, h_en, pairs))
     return out
 
@@ -100,7 +102,9 @@ def _render_digest(e):
              '<span class="k-cn">最新消息</span><span class="k-en" hidden>WHAT\'S NEWS</span></div>')
     h.append('</header>')
     h.append('<div class="wn">')
-    for h_cn, h_en, items in _digest_groups(e.get('body_cn'), e.get('body_en')):
+    blocks = source_from_final(e).blocks
+    for h_cn, h_en, items in _digest_groups(
+            '\n\n'.join(b['cn'] for b in blocks), '\n\n'.join(b['en'] for b in blocks)):
         if h_cn or h_en:
             h.append(
                 f'<h3 class="wn-h"><span class="k-cn">{esc(h_cn)}</span>'
@@ -132,11 +136,14 @@ def _compact_head(e, kicker_cn, kicker_en):
     return '\n'.join(h)
 
 
-def render_article(e, modules, images, img_b64=None, curated=None):
+def _render_article(e, modules, images, img_b64=None, curated=None):
     """返回 article HTML。modules/images 为该文章的策展数据（可为 None）。
     curated: curation.json 的 data_treatment（仅数据稿使用）。"""
     uid = e['id']
     t = e.get('type')
+    if t not in ('article', 'opinion', 'brief', 'letter', 'index_digest',
+                 'data_table', 'photo_caption', 'correction'):
+        raise ValueError(f'unknown article type: {t}')
     h = [f'<article class="story story-{t}" id="s-{uid}" aria-label="{esc(e.get("title_cn") or e.get("title") or uid)}">']
     h.append('<div class="sheet">')
 
@@ -153,13 +160,13 @@ def render_article(e, modules, images, img_b64=None, curated=None):
         if images and img_b64:
             h.append(figure(img_b64, images['caption_cn'], images.get('caption_en', ''),
                             images.get('credit', ''), uid))
-        ps = paras(e.get('body_cn'), e.get('body_en'))
+        ps = [(b['cn'], b['en']) for b in source_from_final(e).blocks]
         n = len(ps)
         kf_at = min(1, n - 1)
         tl_at = min(6, n - 1)
         q_at = _quote_after_index(e, modules['quote']) if modules and modules.get('quote') else None
         for i, (cn, en) in enumerate(ps):
-            h.append(pair(cn, en))
+            h.append(pair(cn, en, block_id=f'p{i+1}'))
             if modules and modules.get('key_figures') and i == kf_at:
                 h.append(key_figures(modules['key_figures'], uid))
             if modules and modules.get('timeline') and i == tl_at:
@@ -183,7 +190,7 @@ def render_article(e, modules, images, img_b64=None, curated=None):
                  f'<span class="k-en" hidden>{esc(e.get("title"))}</span></div>')
         h.extend(_curated_blocks(uid, curated))
         if not (curated or {}).get('suppress_body'):
-            h.append(data_table(e.get('body_en')))
+            h.append(data_table('\n\n'.join(b['en'] for b in source_from_final(e).blocks)))
 
     elif t == 'photo_caption':
         kick_cn, kick_en = kicker_pair(e)
@@ -202,6 +209,21 @@ def render_article(e, modules, images, img_b64=None, curated=None):
     h.append('</div>')
     h.append('</article>')
     return '\n'.join(h)
+
+
+def render_article(e, modules, images, img_b64=None, curated=None, execution_receipts=None):
+    """Ordinary rendering with an optional execution receipt, including failures."""
+    receipt = {'article_id': e['id'], 'status': 'preserved', 'operations': []}
+    try:
+        html = _render_article(e, modules, images, img_b64, curated)
+    except Exception as error:
+        receipt.update(status='failed', error=f'{type(error).__name__}: {error}')
+        if execution_receipts is not None:
+            execution_receipts.append(receipt)
+        raise
+    if execution_receipts is not None:
+        execution_receipts.append(receipt)
+    return html
 
 
 def article_nav(prev_id, prev_title_cn, next_id, next_title_cn):

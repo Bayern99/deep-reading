@@ -1,0 +1,308 @@
+{
+  "schema_version": "editorial-artifact-v1",
+  "article_id": "E3-001",
+  "artifact_version": "v1",
+  "created_at": "2026-10-14T07:06:54Z",
+  "status": "verified",
+  "notes": "Queue task task-00abe5fc (google-vertex/gemini-4-argon)",
+  "source_reference": {
+    "issue_date": "2026-10-12",
+    "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+    "paragraph_count": 7,
+    "locales": [
+      "zh-CN",
+      "en"
+    ]
+  },
+  "model_metadata": {
+    "provider": "magpie",
+    "model_id": "google-vertex/gemini-4-argon",
+    "temperature": 0.2,
+    "max_output_tokens": 32000
+  },
+  "usage_metadata": {
+    "prompt_chars": 11043,
+    "completion_chars": 35935,
+    "input_tokens": 3626,
+    "output_tokens": 13963,
+    "total_tokens": 17589,
+    "latency_seconds": 94.084
+  },
+  "files": {
+    "raw_html": "E3-001/v1/raw.html",
+    "compiled_html": "E3-001/v1/compiled.html"
+  },
+  "shadow_bundle": {
+    "shadow_css": "\n:host { display: block; width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n.wsj-shadow-body { width: 100%; max-width: 100%; overflow-x: clip; box-sizing: border-box; }\n\n  :host {\n    --paper: #faf8f4;\n    --paper-card: #f3efe6;\n    --paper-elevated: #ece6d8;\n    --ink: #141413;\n    --body: #242220;\n    --muted: #646059;\n    --line: #e4dfd3;\n    --line-strong: #c9c1b0;\n    --accent: #b85d19;\n    --accent-soft: rgba(184, 93, 25, 0.14);\n    --navy-bg: #0f1d2b;\n    --navy-card: #16283b;\n    --navy-line: #28415a;\n    --gold: #d99b52;\n    --teal: #2a6f78;\n    --font-display: 'Playfair Display', 'Noto Serif SC', Georgia, serif;\n    --font-serif: 'Lora', 'Noto Serif SC', Georgia, serif;\n    --font-sans: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;\n    --font-mono: 'JetBrains Mono', monospace;\n  }\n\n  * {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n  }\n\n  html {\n    background-color: var(--paper);\n    color: var(--body);\n    font-family: var(--font-serif);\n    scroll-behavior: smooth;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  /* Strict Language Switching Rules */\n  :host([lang=\"zh-CN\"]) .lang-en { display: none !important; }\n  :host([lang=\"en\"]) .lang-cn { display: none !important; }\n\n  .wsj-shadow-body {\n    background-color: var(--paper);\n    color: var(--body);\n    overflow-x: hidden;\n    line-height: 1.78;\n  }\n\n  /* Reading Progress Bar */\n  .progress-rail {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 3px;\n    background: rgba(20, 20, 19, 0.08);\n    z-index: 1001;\n  }\n  .progress-fill {\n    height: 100%;\n    width: 0%;\n    background: var(--accent);\n    transition: width 0.12s ease-out;\n  }\n\n  /* Sticky Top Masthead */\n  .masthead {\n    position: sticky;\n    top: 0;\n    z-index: 1000;\n    background: rgba(250, 248, 244, 0.95);\n    backdrop-filter: blur(10px);\n    border-bottom: 1px solid var(--line-strong);\n    padding: 0.7rem 1.5rem;\n  }\n  .masthead-inner {\n    max-width: 1180px;\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n  }\n  .wsj-brand {\n    display: flex;\n    align-items: baseline;\n    gap: 0.75rem;\n    text-decoration: none;\n    color: var(--ink);\n  }\n  .wsj-logo {\n    font-family: var(--font-display);\n    font-weight: 800;\n    font-size: 1.15rem;\n    letter-spacing: 0.06em;\n    text-transform: uppercase;\n  }\n  .wsj-sub {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    color: var(--accent);\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    font-weight: 600;\n    border-left: 1px solid var(--line-strong);\n    padding-left: 0.75rem;\n  }\n  .masthead-controls {\n    display: flex;\n    align-items: center;\n    gap: 1rem;\n  }\n  .edition-tag {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    color: var(--muted);\n    letter-spacing: 0.05em;\n  }\n  .lang-switch {\n    display: inline-flex;\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-radius: 3px;\n    overflow: hidden;\n  }\n  .lang-btn {\n    appearance: none;\n    border: none;\n    background: transparent;\n    padding: 0.32rem 0.7rem;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 600;\n    color: var(--muted);\n    cursor: pointer;\n    transition: all 0.18s ease;\n  }\n  .lang-btn.active {\n    background: var(--ink);\n    color: var(--paper);\n  }\n\n  /* Main Container */\n  .page-shell {\n    max-width: 1180px;\n    margin: 0 auto;\n    padding: 2.5rem 1.5rem 5rem;\n  }\n\n  /* Hero Header */\n  .article-hero {\n    border-bottom: 2px solid var(--ink);\n    padding-bottom: 2.25rem;\n    margin-bottom: 2.75rem;\n  }\n  .kicker-row {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    gap: 0.75rem;\n    margin-bottom: 1.1rem;\n  }\n  .kicker-badge {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 700;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--paper);\n    background: var(--accent);\n    padding: 0.22rem 0.6rem;\n  }\n  .kicker-meta {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n    letter-spacing: 0.06em;\n    text-transform: uppercase;\n  }\n\n  .hero-title {\n    font-family: var(--font-display);\n    font-weight: 800;\n    color: var(--ink);\n    font-size: clamp(2.1rem, 4.3vw, 3.55rem);\n    line-height: 1.16;\n    letter-spacing: -0.015em;\n    margin-bottom: 1.25rem;\n    max-width: 24ch;\n  }\n  :host([lang=\"zh-CN\"]) .hero-title {\n    line-height: 1.26;\n    letter-spacing: 0.01em;\n    max-width: 26ch;\n  }\n\n  .hero-dek {\n    font-family: var(--font-serif);\n    font-size: clamp(1.08rem, 1.5vw, 1.32rem);\n    color: var(--muted);\n    line-height: 1.65;\n    max-width: 78ch;\n    margin-bottom: 1.65rem;\n  }\n\n  .byline-strip {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: space-between;\n    gap: 1rem;\n    padding-top: 1.1rem;\n    border-top: 1px solid var(--line);\n    font-family: var(--font-sans);\n    font-size: 0.85rem;\n    color: var(--muted);\n  }\n  .byline-authors strong {\n    color: var(--ink);\n    font-weight: 600;\n  }\n  .byline-date {\n    font-family: var(--font-mono);\n    font-size: 0.78rem;\n  }\n\n  /* Executive Context Dossier Banner (ctx1) */\n  .context-dossier {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-left: 4px solid var(--accent);\n    padding: 1.4rem 1.65rem;\n    margin-bottom: 3rem;\n    position: relative;\n  }\n  .dossier-head {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin-bottom: 0.65rem;\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    font-weight: 700;\n    letter-spacing: 0.09em;\n    text-transform: uppercase;\n    color: var(--accent);\n  }\n  .dossier-body {\n    font-family: var(--font-sans);\n    font-size: 0.94rem;\n    line-height: 1.72;\n    color: var(--body);\n  }\n\n  /* Asymmetric Editorial Grid */\n  .editorial-grid {\n    display: grid;\n    grid-template-columns: minmax(0, 1.65fr) minmax(290px, 1fr);\n    gap: 3rem;\n    align-items: start;\n    margin-bottom: 3.25rem;\n  }\n\n  .narrative-col {\n    min-width: 0;\n  }\n  .sidebar-col {\n    min-width: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n  }\n\n  /* Section Dividers */\n  .section-marker {\n    display: flex;\n    align-items: center;\n    gap: 0.85rem;\n    margin: 2.4rem 0 1.35rem;\n    padding-top: 1.5rem;\n    border-top: 1px solid var(--line-strong);\n  }\n  .section-marker:first-child {\n    margin-top: 0;\n    padding-top: 0;\n    border-top: none;\n  }\n  .marker-num {\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    font-weight: 700;\n    color: var(--paper);\n    background: var(--ink);\n    padding: 0.18rem 0.5rem;\n    letter-spacing: 0.06em;\n  }\n  .marker-title {\n    font-family: var(--font-sans);\n    font-size: 0.86rem;\n    font-weight: 700;\n    text-transform: uppercase;\n    letter-spacing: 0.09em;\n    color: var(--ink);\n  }\n\n  /* Prose Paragraphs */\n  .prose-p {\n    font-family: var(--font-serif);\n    font-size: 1.125rem;\n    line-height: 1.88;\n    color: var(--body);\n    margin-bottom: 1.45rem;\n  }\n  :host([lang=\"en\"]) .prose-p {\n    line-height: 1.8;\n  }\n\n  /* Lead Paragraph Scale + Border-left (No Chinese drop-cap) */\n  .prose-lead {\n    font-size: 1.24rem;\n    line-height: 1.82;\n    color: var(--ink);\n    font-weight: 600;\n    border-left: 3px solid var(--accent);\n    padding-left: 1.15rem;\n    margin-bottom: 1.65rem;\n  }\n\n  /* Inline Highlighting */\n  mark.ed-hl {\n    background: linear-gradient(120deg, rgba(184, 93, 25, 0.18) 0%, rgba(184, 93, 25, 0.26) 100%);\n    color: var(--ink);\n    padding: 0.06em 0.28em;\n    border-bottom: 1.5px solid var(--accent);\n    font-weight: 600;\n    border-radius: 2px;\n  }\n\n  /* Derived Metric Cards */\n  .metric-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    border-top: 3px solid var(--ink);\n    padding: 1.35rem 1.4rem;\n  }\n  .metric-card.accent-top {\n    border-top-color: var(--accent);\n  }\n  .metric-eyebrow {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    text-transform: uppercase;\n    letter-spacing: 0.08em;\n    color: var(--muted);\n    margin-bottom: 0.35rem;\n  }\n  .metric-val {\n    font-family: var(--font-display);\n    font-size: 2.35rem;\n    font-weight: 800;\n    color: var(--accent);\n    line-height: 1.1;\n    margin-bottom: 0.45rem;\n  }\n  .metric-lbl {\n    font-family: var(--font-sans);\n    font-size: 0.9rem;\n    font-weight: 600;\n    color: var(--ink);\n    line-height: 1.45;\n    margin-bottom: 0.35rem;\n  }\n  .metric-note {\n    font-family: var(--font-mono);\n    font-size: 0.73rem;\n    color: var(--muted);\n  }\n\n  /* Valuation Jump Graphic Box */\n  . graphic-panel {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.4rem;\n  }\n  .graphic-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.72rem;\n    font-weight: 700;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    color: var(--accent);\n    margin-bottom: 0.3rem;\n  }\n  .graphic-title {\n    font-family: var(--font-display);\n    font-size: 1.18rem;\n    font-weight: 700;\n    color: var(--ink);\n    margin-bottom: 0.35rem;\n  }\n  .graphic-desc {\n    font-family: var(--font-sans);\n    font-size: 0.82rem;\n    color: var(--muted);\n    line-height: 1.5;\n    margin-bottom: 1rem;\n  }\n  .graphic-foot {\n    font-family: var(--font-mono);\n    font-size: 0.71rem;\n    color: var(--muted);\n    border-top: 1px solid var(--line);\n    padding-top: 0.65rem;\n    margin-top: 0.75rem;\n  }\n\n  /* Navy Technical Architecture Feature Band */\n  .architecture-band {\n    background: var(--navy-bg);\n    color: #f4f1ea;\n    border: 1px solid var(--navy-line);\n    padding: 2.2rem 2rem;\n    margin: 2.75rem 0;\n  }\n  .arch-header {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    align-items: flex-end;\n    gap: 1rem;\n    border-bottom: 1px solid var(--navy-line);\n    padding-bottom: 1.15rem;\n    margin-bottom: 1.5rem;\n  }\n  .arch-kicker {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--gold);\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    margin-bottom: 0.35rem;\n  }\n  .arch-title {\n    font-family: var(--font-display);\n    font-size: 1.55rem;\n    font-weight: 700;\n    color: #ffffff;\n  }\n  .arch-sub {\n    font-family: var(--font-sans);\n    font-size: 0.86rem;\n    color: #b7c4d1;\n    max-width: 56ch;\n  }\n  .arch-pills {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 1rem;\n    margin-top: 1.35rem;\n  }\n  .arch-pill {\n    background: var(--navy-card);\n    border: 1px solid var(--navy-line);\n    padding: 1rem 1.1rem;\n  }\n  .arch-pill-tag {\n    font-family: var(--font-mono);\n    font-size: 0.7rem;\n    color: var(--gold);\n    text-transform: uppercase;\n    letter-spacing: 0.07em;\n    margin-bottom: 0.3rem;\n  }\n  .arch-pill-head {\n    font-family: var(--font-sans);\n    font-size: 0.94rem;\n    font-weight: 700;\n    color: #fff;\n    margin-bottom: 0.3rem;\n  }\n  .arch-pill-text {\n    font-family: var(--font-sans);\n    font-size: 0.81rem;\n    color: #c2cedb;\n    line-height: 1.55;\n  }\n\n  /* Founders & Entity Dossier Table */\n  .entity-card {\n    background: var(--paper-card);\n    border: 1px solid var(--line-strong);\n    padding: 1.35rem 1.45rem;\n  }\n  .entity-row {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 0.75rem;\n    padding: 0.58rem 0;\n    border-bottom: 1px dashed var(--line-strong);\n    font-family: var(--font-sans);\n    font-size: 0.84rem;\n  }\n  .entity-row:last-child {\n    border-bottom: none;\n    padding-bottom: 0;\n  }\n  .entity-key {\n    font-family: var(--font-mono);\n    font-size: 0.74rem;\n    color: var(--muted);\n    text-transform: uppercase;\n    letter-spacing: 0.05em;\n    flex-shrink: 0;\n  }\n  .entity-val {\n    color: var(--ink);\n    font-weight: 600;\n    text-align: right;\n  }\n\n  /* Footer */\n  .wsj-footer {\n    margin-top: 4rem;\n    padding-top: 1.75rem;\n    border-top: 2px solid var(--ink);\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 1rem;\n    font-family: var(--font-mono);\n    font-size: 0.75rem;\n    color: var(--muted);\n  }\n\n  /* Responsive Mobile Reflow */\n  @media (max-width: 860px) {\n    .editorial-grid {\n      grid-template-columns: 1fr;\n      gap: 2rem;\n    }\n    .arch-pills {\n      grid-template-columns: 1fr;\n    }\n    .page-shell {\n      padding: 1.5rem 1.1rem 3.5rem;\n    }\n    .architecture-band {\n      padding: 1.45rem 1.15rem;\n    }\n    .masthead {\n      padding: 0.65rem 1rem;\n    }\n    .edition-tag {\n      display: none;\n    }\n  }\n",
+    "shadow_html": "<div class=\"wsj-shadow-body\"><div class=\"progress-rail\" aria-hidden=\"true\">\n  <div class=\"progress-fill\" id=\"progressFill\"></div>\n</div>\n\n\n<header class=\"masthead\">\n  <div class=\"masthead-inner\">\n    <a href=\"#top\" class=\"wsj-brand\">\n      <span class=\"wsj-logo\">The Wall Street Journal</span>\n      <span class=\"wsj-sub\">\n        <span class=\"lang-cn\">商业与金融 · 独家并购深读</span>\n        <span class=\"lang-en\">Business &amp; Finance · M&amp;A Dossier</span>\n      </span>\n    </a>\n    <div class=\"masthead-controls\">\n      <span class=\"edition-tag\">PAGE B1 · E3-001</span>\n      <div class=\"lang-switch\" role=\"group\" aria-label=\"Language Switcher\">\n        <button type=\"button\" class=\"lang-btn active\" id=\"btn-zh\" onclick=\"setLang('zh-CN')\">中文</button>\n        <button type=\"button\" class=\"lang-btn\" id=\"btn-en\" onclick=\"setLang('en')\">EN</button>\n      </div>\n    </div>\n  </div>\n</header>\n\n\n<main class=\"page-shell\" id=\"top\">\n\n  <!-- HERO HEADER -->\n  <header class=\"article-hero\">\n    <div class=\"kicker-row\">\n      <span class=\"kicker-badge\">\n        <span class=\"lang-cn\">独家报道 · AI算力并购</span>\n        <span class=\"lang-en\">EXCLUSIVE · AI SILICON &amp; M&amp;A</span>\n      </span>\n      <span class=\"kicker-meta\">\n        <span class=\"lang-cn\">商业与金融 · 第B1版</span>\n        <span class=\"lang-en\">BUSINESS &amp; FINANCE · PAGE B1</span>\n      </span>\n    </div>\n\n    <h1 class=\"hero-title\" data-ref=\"title\"><span class=\"lang-cn\">亚马逊正在洽谈收购一家人工智能初创公司</span><span class=\"lang-en\">Amazon in Talks To Buy AI Startup</span></h1>\n\n    <p class=\"hero-dek\">\n      <span class=\"lang-cn\">在各大科技巨头竞相争夺算力并试图打破英伟达芯片锁定的背景下，亚马逊正洽谈以约70亿美元收购旧金山初创公司Decart——后者的跨芯片开发软件与3D“世界模型”成为最新焦点。</span>\n      <span class=\"lang-en\">As cloud giants race to secure computing power and loosen Nvidia's grip on AI developers, Amazon is in talks for a roughly $7 billion acquisition of San Francisco-based Decart, prized for its chip-switching software and 3-D world models.</span>\n    </p>\n\n    <div class=\"byline-strip\">\n      <div class=\"byline-authors\">\n        <span class=\"lang-cn\">撰文 <strong>Kate Clark</strong> / <strong>Lauren Thomas</strong></span>\n        <span class=\"lang-en\">By <strong>Kate Clark</strong> and <strong>Lauren Thomas</strong></span>\n      </div>\n      <div class=\"byline-date\">\n        <span class=\"lang-cn\">2026年10月12日 · 旧金山 / 纽约</span>\n        <span class=\"lang-en\">October 12, 2026 · SAN FRANCISCO / NEW YORK</span>\n      </div>\n    </div>\n  </header>\n\n  <!-- REPORTER'S BACKGROUND CONTEXT DOSSIER (ctx1) -->\n  <section class=\"context-dossier\" aria-label=\"Reporter Background Context\">\n    <div class=\"dossier-head\">\n      <span>\n        <span class=\"lang-cn\">记者背景简报 · 交易核心脉络</span>\n        <span class=\"lang-en\">REPORTER'S DOSSIER · DEAL OVERVIEW</span>\n      </span>\n      <span>WSJ BRIEFING</span>\n    </div>\n    <p class=\"dossier-body\" data-ref=\"ctx1\"><span class=\"lang-cn\">Decart 是一家总部位于旧金山的人工智能初创公司，2023年由三位以色列工程师（莱特斯多夫兄弟迪恩与奥里安、莫舍·沙列夫）创立，其软件帮助开发者在不同AI芯片之间切换——在各公司竞相获取算力的背景下愈发重要。公司正在开发名为 Lucy 和 Oasis 的“世界模型”（world models），可生成并模拟现实世界的3D环境。知情人士称亚马逊的收购估值约为70亿美元，远高于 Decart 今年5月近40亿美元的估值；此前 Decart 已从红杉资本、Benchmark 等投资者处融资超过4亿美元，亚马逊网络服务也在2025年向其开放了自研AI芯片 Trainium3 的早期使用权限。</span><span class=\"lang-en\">Decart 是一家总部位于旧金山的人工智能初创公司，2023年由三位以色列工程师（莱特斯多夫兄弟迪恩与奥里安、莫舍·沙列夫）创立，其软件帮助开发者在不同AI芯片之间切换——在各公司竞相获取算力的背景下愈发重要。公司正在开发名为 Lucy 和 Oasis 的“世界模型”（world models），可生成并模拟现实世界的3D环境。知情人士称亚马逊的收购估值约为70亿美元，远高于 Decart 今年5月近40亿美元的估值；此前 Decart 已从红杉资本、Benchmark 等投资者处融资超过4亿美元，亚马逊网络服务也在2025年向其开放了自研AI芯片 Trainium3 的早期使用权限。</span></p>\n  </section>\n\n  <!-- ACT I: THE $7B DEAL TALKS & VALUATION SURGE (p1 .. p4) -->\n  <div class=\"editorial-grid\">\n    <div class=\"narrative-col\">\n      <div class=\"section-marker\">\n        <span class=\"marker-num\">01</span>\n        <h2 class=\"marker-title\">\n          <span class=\"lang-cn\">70亿美元谈判桌与跨芯片软件筹码</span>\n          <span class=\"lang-en\">The $7 Billion Table &amp; Chip-Switching Leverage</span>\n        </h2>\n      </div>\n\n      <p class=\"prose-p prose-lead\" data-ref=\"p1\" data-hl=\"约70亿美元 | around $7 billion | Decart\"><span class=\"lang-cn\">据知情人士透露，亚马逊正在与人工智能初创公司<mark class=\"ed-hl\">Decart</mark>（AI初创公司）洽谈收购事宜，交易估值可能达到<mark class=\"ed-hl\">约70亿美元</mark>。</span><span class=\"lang-en\">Amazon.com is in talks to acquire artificial-intelligence startup <mark class=\"ed-hl\">Decart</mark> in a deal that could be valued at <mark class=\"ed-hl\">around $7 billion</mark>, according to people familiar with the matter.</span></p>\n      <p class=\"prose-p\" data-ref=\"p2\" data-hl=\"在不同的AI芯片之间切换 | switch between different AI chips\"><span class=\"lang-cn\">总部位于旧金山的Decart的软件可以帮助开发者更轻松地<mark class=\"ed-hl\">在不同的AI芯片之间切换</mark>，这在各公司竞相获取更多计算能力的情况下变得越来越重要。</span><span class=\"lang-en\">San Francisco-based Decart's software makes it easier for developers to <mark class=\"ed-hl\">switch between different AI chips</mark>, which is increasingly important as companies race to secure more computing power.</span></p>\n      <p class=\"prose-p\" data-ref=\"p3\"><span class=\"lang-cn\">知情人士表示，如果谈判不破裂，或者没有出现其他竞购方，这笔交易可能会很快达成。</span><span class=\"lang-en\">A deal could come together soon, the people said, assuming talks don't fall apart or another suitor doesn't emerge.</span></p>\n\n      <div class=\"section-marker\">\n        <span class=\"marker-num\">02</span>\n        <h2 class=\"marker-title\">\n          <span class=\"lang-cn\">五个月估值跃升与三维“世界模型”</span>\n          <span class=\"lang-en\">Five-Month Valuation Leap &amp; 3-D World Models</span>\n        </h2>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p4\" data-hl=\"超过4亿美元 | more than $400 million | 接近40亿美元 | nearly $4 billion | Lucy和Oasis | Lucy and Oasis\"><span class=\"lang-cn\">据PitchBook（创投数据商）的数据，Decart已从红杉资本（Sequoia Capital）、Benchmark（风投）和Radical Ventures（风投）等投资者处筹集了<mark class=\"ed-hl\">超过4亿美元</mark>的风险投资。该公司在5月份的估值<mark class=\"ed-hl\">接近40亿美元</mark>。该公司由三位以色列工程师于2023年创立，他们是兄弟迪恩·莱特斯多夫（Dean Leitersdorf）和奥里安·莱特斯多夫（Orian Leitersdorf）以及莫舍·沙列夫（Moshe Shalev）。Decart正在开发名为<mark class=\"ed-hl\">Lucy和Oasis</mark>的世界模型。世界模型可以生成和模拟现实世界的3D环境。</span><span class=\"lang-en\">Decart raised <mark class=\"ed-hl\">more than $400 million</mark> in venture capital funding from investors including Sequoia Capital, Benchmark and Radical Ventures, according to PitchBook. It was valued at <mark class=\"ed-hl\">nearly $4 billion</mark> in May. The company was founded in 2023 by three Israeli engineers, brothers Dean and Orian Leitersdorf and Moshe Shalev. Decart is developing world models known as <mark class=\"ed-hl\">Lucy and Oasis</mark>. World models can generate and simulate real-world 3-D environments.</span></p>\n    </div>\n\n    <!-- ASYMMETRIC SIDEBAR RAIL: VERIFIED METRICS & VALUATION SVG -->\n    <aside class=\"sidebar-col\">\n      <div class=\"metric-card accent-top\" data-derive=\"m1\">\n        <div class=\"metric-eyebrow\">\n          <span class=\"lang-cn\">潜在收购估值</span>\n          <span class=\"lang-en\">POTENTIAL DEAL VALUATION</span>\n        </div>\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">70亿美元</span><span class=\"lang-en\">$7 billion</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">据知情人士透露，亚马逊正在与人工智能初创公司Decart（AI初创公司）…</span><span class=\"lang-en\">Amazon.com is in talks to acquire artificial-intelligence st…</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p1]</span><span class=\"lang-en\">From paragraph [p1]</span></div>\n      </div>\n\n      <div class=\"metric-card\" data-derive=\"m2\">\n        <div class=\"metric-eyebrow\">\n          <span class=\"lang-cn\">累计风险投资总额</span>\n          <span class=\"lang-en\">VENTURE CAPITAL RAISED</span>\n        </div>\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">4亿美元</span><span class=\"lang-en\">$400 million</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">据PitchBook（创投数据商）的数据，Decart已从红杉资本（Se…</span><span class=\"lang-en\">Decart raised more than $400 million in venture capital fund…</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p4]</span><span class=\"lang-en\">From paragraph [p4]</span></div>\n      </div>\n\n      <!-- BESPOKE SVG 1: DECART VALUATION TRAJECTORY -->\n      <div class=\"graphic-panel\">\n        <div class=\"graphic-kicker\">\n          <span class=\"lang-cn\">估值轨迹 · 2023—2026</span>\n          <span class=\"lang-en\">VALUATION STEP-UP · 2023–2026</span>\n        </div>\n        <div class=\"graphic-title\">\n          <span class=\"lang-cn\">从4亿美元融资到70亿美元并购洽谈</span>\n          <span class=\"lang-en\">From $400M+ VC Backing to ~$7B Talks</span>\n        </div>\n        <p class=\"graphic-desc\">\n          <span class=\"lang-cn\">Decart在2026年5月估值接近40亿美元，数月内亚马逊洽谈收购估值已攀升至约70亿美元。</span>\n          <span class=\"lang-en\">Valued at nearly $4B in May 2026, Decart's potential acquisition price tag has climbed to roughly $7B.</span>\n        </p>\n\n        <svg viewbox=\"0 0 420 235\" width=\"100%\" role=\"img\" aria-label=\"Decart Valuation Step-Up Chart\">\n          <!-- Subtle grid lines -->\n          <line x1=\"40\" y1=\"185\" x2=\"385\" y2=\"185\" stroke=\"#c9c1b0\" stroke-width=\"1.5\"></line>\n          <line x1=\"40\" y1=\"130\" x2=\"385\" y2=\"130\" stroke=\"#e4dfd3\" stroke-dasharray=\"3,3\" stroke-width=\"1\"></line>\n          <line x1=\"40\" y1=\"70\" x2=\"385\" y2=\"70\" stroke=\"#e4dfd3\" stroke-dasharray=\"3,3\" stroke-width=\"1\"></line>\n\n          <!-- Bar 1: Cumulative VC ($0.4B+) -->\n          <rect x=\"62\" y=\"168\" width=\"72\" height=\"17\" fill=\"#646059\" rx=\"2\"></rect>\n          <text x=\"98\" y=\"159\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">&gt;$400M</text>\n          <text x=\"98\" y=\"204\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\" font-weight=\"600\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">累计风投融资</tspan>\n            <tspan class=\"lang-en\">VC Funding</tspan>\n          </text>\n          <text x=\"98\" y=\"220\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#646059\">PitchBook</text>\n\n          <!-- Bar 2: May Valuation (~$4B) -->\n          <rect x=\"174\" y=\"108\" width=\"72\" height=\"77\" fill=\"#16283b\" rx=\"2\"></rect>\n          <text x=\"210\" y=\"98\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"12.5\" font-weight=\"700\" fill=\"#16283b\">~$4.0B</text>\n          <text x=\"210\" y=\"204\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\" font-weight=\"600\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">5月私募估值</tspan>\n            <tspan class=\"lang-en\">May Valuation</tspan>\n          </text>\n          <text x=\"210\" y=\"220\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#646059\">2026.05</text>\n\n          <!-- Connector Arrow (+75% Premium) -->\n          <path d=\"M 230 84 Q 272 42 308 42\" fill=\"none\" stroke=\"#b85d19\" stroke-width=\"1.6\" stroke-dasharray=\"4,3\"></path>\n          <rect x=\"234\" y=\"28\" width=\"76\" height=\"20\" rx=\"3\" fill=\"#b85d19\"></rect>\n          <text x=\"272\" y=\"42\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" font-weight=\"700\" fill=\"#faf8f4\">+75% JUMP</text>\n\n          <!-- Bar 3: Amazon Talks (~$7B) -->\n          <rect x=\"286\" y=\"50\" width=\"72\" height=\"135\" fill=\"#b85d19\" rx=\"2\"></rect>\n          <text x=\"322\" y=\"40\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"13.5\" font-weight=\"700\" fill=\"#b85d19\">~$7.0B</text>\n          <text x=\"322\" y=\"204\" text-anchor=\"middle\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11\" font-weight=\"700\" fill=\"#b85d19\">\n            <tspan class=\"lang-cn\">亚马逊洽谈估值</tspan>\n            <tspan class=\"lang-en\">Amazon Talks</tspan>\n          </text>\n          <text x=\"322\" y=\"220\" text-anchor=\"middle\" font-family=\"JetBrains Mono, monospace\" font-size=\"10\" fill=\"#646059\">2026.10</text>\n        </svg>\n\n        <div class=\"graphic-foot\">\n          <span class=\"lang-cn\">资料来源：PitchBook及知情人士（正文 p1, p4）</span>\n          <span class=\"lang-en\">Source: PitchBook and people familiar with the matter (p1, p4)</span>\n        </div>\n      </div>\n\n      <!-- ENTITY PROFILE CARD -->\n      <div class=\"entity-card\">\n        <div class=\"graphic-kicker\">\n          <span class=\"lang-cn\">初创公司档案 · DECART</span>\n          <span class=\"lang-en\">TARGET DOSSIER · DECART</span>\n        </div>\n        <div class=\"entity-row\">\n          <span class=\"entity-key\"><span class=\"lang-cn\">创立时间 / 总部</span><span class=\"lang-en\">FOUNDED / HQ</span></span>\n          <span class=\"entity-val\"><span class=\"lang-cn\">2023年 · 旧金山</span><span class=\"lang-en\">2023 · San Francisco</span></span>\n        </div>\n        <div class=\"entity-row\">\n          <span class=\"entity-key\"><span class=\"lang-cn\">三位以色列创始人</span><span class=\"lang-en\">ISRAELI FOUNDERS</span></span>\n          <span class=\"entity-val\">Dean &amp; Orian Leitersdorf, Moshe Shalev</span>\n        </div>\n        <div class=\"entity-row\">\n          <span class=\"entity-key\"><span class=\"lang-cn\">核心投资方</span><span class=\"lang-en\">KEY INVESTORS</span></span>\n          <span class=\"entity-val\">Sequoia Capital, Benchmark, Radical Ventures</span>\n        </div>\n        <div class=\"entity-row\">\n          <span class=\"entity-key\"><span class=\"lang-cn\">世界模型产品</span><span class=\"lang-en\">WORLD MODELS</span></span>\n          <span class=\"entity-val\">Lucy &amp; Oasis (3-D Environments)</span>\n        </div>\n      </div>\n    </aside>\n  </div>\n\n  <!-- BESPOKE TECHNICAL ARCHITECTURE BAND (BRIDGING p4 & p5) -->\n  <section class=\"architecture-band\" aria-label=\"Decart Silicon and World Model Architecture\">\n    <div class=\"arch-header\">\n      <div>\n        <div class=\"arch-kicker\">\n          <span class=\"lang-cn\">战略技术图解 · 为什么亚马逊看重DECART</span>\n          <span class=\"lang-en\">STRATEGIC TECH DIAGRAM · WHY AMAZON PRIZES DECART</span>\n        </div>\n        <h3 class=\"arch-title\">\n          <span class=\"lang-cn\">打通AI芯片壁垒：从英伟达GPU到亚马逊Trainium3的切换桥梁</span>\n          <span class=\"lang-en\">Breaking Silicon Lock-In: Bridging Nvidia GPUs and AWS Trainium3</span>\n        </h3>\n      </div>\n      <p class=\"arch-sub\">\n        <span class=\"lang-cn\">Decart不仅开发可模拟现实世界3D环境的Lucy与Oasis世界模型，其底层软件更能帮助开发者在不同AI芯片间顺畅切换，直接赋能AWS自研芯片Trainium3。</span>\n        <span class=\"lang-en\">Beyond building the Lucy and Oasis 3-D world models, Decart's software lets developers switch seamlessly across AI chips—bolstering AWS's custom Trainium3 silicon against Nvidia.</span>\n      </p>\n    </div>\n\n    <svg viewbox=\"0 0 920 240\" width=\"100%\" role=\"img\" aria-label=\"Decart Cross-Chip Switching and World Model Diagram\">\n      <!-- Left Box: Workloads & World Models -->\n      <rect x=\"35\" y=\"32\" width=\"245\" height=\"176\" rx=\"4\" fill=\"#16283b\" stroke=\"#d99b52\" stroke-width=\"1.5\"></rect>\n      <text x=\"55\" y=\"60\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" fill=\"#d99b52\">01 · WORKLOADS &amp; WORLD MODELS</text>\n      <text x=\"55\" y=\"88\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"15\" font-weight=\"700\" fill=\"#ffffff\">\n        <tspan class=\"lang-cn\">开发者AI工作负载与世界模型</tspan>\n        <tspan class=\"lang-en\">AI Workloads &amp; World Models</tspan>\n      </text>\n      <rect x=\"55\" y=\"106\" width=\"205\" height=\"38\" rx=\"3\" fill=\"#0f1d2b\" stroke=\"#28415a\"></rect>\n      <text x=\"68\" y=\"130\" font-family=\"JetBrains Mono, monospace\" font-size=\"12\" fill=\"#f4f1ea\">Lucy &amp; Oasis (3-D Sim)</text>\n      <rect x=\"55\" y=\"154\" width=\"205\" height=\"36\" rx=\"3\" fill=\"#0f1d2b\" stroke=\"#28415a\"></rect>\n      <text x=\"68\" y=\"177\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" fill=\"#b7c4d1\">\n        <tspan class=\"lang-cn\">生成并模拟现实世界3D环境</tspan>\n        <tspan class=\"lang-en\">Real-world 3-D simulation</tspan>\n      </text>\n\n      <!-- Arrow 1 -->\n      <line x1=\"280\" y1=\"120\" x2=\"338\" y2=\"120\" stroke=\"#d99b52\" stroke-width=\"2\"></line>\n      <polygon points=\"338,115 348,120 338,125\" fill=\"#d99b52\"></polygon>\n\n      <!-- Center Box: Decart Chip-Switching Layer -->\n      <rect x=\"350\" y=\"32\" width=\"230\" height=\"176\" rx=\"4\" fill=\"#b85d19\" stroke=\"#f4f1ea\" stroke-width=\"1.5\"></rect>\n      <text x=\"370\" y=\"60\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" fill=\"#faf8f4\">02 · DECART CORE SOFTWARE</text>\n      <text x=\"370\" y=\"90\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"15.5\" font-weight=\"700\" fill=\"#ffffff\">\n        <tspan class=\"lang-cn\">Decart 跨芯片切换软件</tspan>\n        <tspan class=\"lang-en\">Decart Switching Layer</tspan>\n      </text>\n      <text x=\"370\" y=\"122\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12.5\" fill=\"#faf8f4\">\n        <tspan class=\"lang-cn\">帮助开发者更轻松地在</tspan>\n        <tspan class=\"lang-en\">Enables developers to switch</tspan>\n      </text>\n      <text x=\"370\" y=\"142\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12.5\" fill=\"#faf8f4\">\n        <tspan class=\"lang-cn\">不同AI芯片之间自由切换</tspan>\n        <tspan class=\"lang-en\">across rival AI silicon</tspan>\n      </text>\n      <rect x=\"370\" y=\"160\" width=\"190\" height=\"30\" rx=\"2\" fill=\"rgba(20,20,19,0.28)\"></rect>\n      <text x=\"382\" y=\"180\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" fill=\"#ffffff\">HQ: San Francisco (2023)</text>\n\n      <!-- Split Arrows to Silicon -->\n      <path d=\"M 580 95 L 642 72\" fill=\"none\" stroke=\"#d99b52\" stroke-width=\"2\"></path>\n      <polygon points=\"640,67 650,70 643,77\" fill=\"#d99b52\"></polygon>\n      <path d=\"M 580 145 L 642 168\" fill=\"none\" stroke=\"#8fa6bc\" stroke-width=\"2\" stroke-dasharray=\"4,3\"></path>\n      <polygon points=\"643,163 650,170 640,173\" fill=\"#8fa6bc\"></polygon>\n\n      <!-- Right Top Box: AWS Trainium3 -->\n      <rect x=\"652\" y=\"32\" width=\"232\" height=\"80\" rx=\"4\" fill=\"#16283b\" stroke=\"#d99b52\" stroke-width=\"1.5\"></rect>\n      <text x=\"670\" y=\"55\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" fill=\"#d99b52\">AWS CUSTOM AI CHIP</text>\n      <text x=\"670\" y=\"77\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"14\" font-weight=\"700\" fill=\"#ffffff\">Amazon Trainium3</text>\n      <text x=\"670\" y=\"97\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11.5\" fill=\"#c2cedb\">\n        <tspan class=\"lang-cn\">2025年向Decart开放早期权限</tspan>\n        <tspan class=\"lang-en\">Early access granted in 2025</tspan>\n      </text>\n\n      <!-- Right Bottom Box: Nvidia GPUs -->\n      <rect x=\"652\" y=\"128\" width=\"232\" height=\"80\" rx=\"4\" fill=\"#16283b\" stroke=\"#28415a\" stroke-width=\"1.5\"></rect>\n      <text x=\"670\" y=\"151\" font-family=\"JetBrains Mono, monospace\" font-size=\"11\" font-weight=\"700\" fill=\"#8fa6bc\">MARKET LEADER · GPUs</text>\n      <text x=\"670\" y=\"173\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"14\" font-weight=\"700\" fill=\"#ffffff\">\n        <tspan class=\"lang-cn\">英伟达 (Nvidia) 图形处理器</tspan>\n        <tspan class=\"lang-en\">Nvidia Graphics Processors</tspan>\n      </text>\n      <text x=\"670\" y=\"193\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"11.5\" fill=\"#c2cedb\">\n        <tspan class=\"lang-cn\">目前仍主导AI专用芯片市场</tspan>\n        <tspan class=\"lang-en\">Dominates specialized AI chips</tspan>\n      </text>\n    </svg>\n\n    <div class=\"arch-pills\">\n      <div class=\"arch-pill\">\n        <div class=\"arch-pill-tag\">SILICON PORTABILITY · P2</div>\n        <div class=\"arch-pill-head\">\n          <span class=\"lang-cn\">降低芯片迁移门槛</span>\n          <span class=\"lang-en\">Frictionless Chip Switching</span>\n        </div>\n        <p class=\"arch-pill-text\">\n          <span class=\"lang-cn\">在各公司竞相获取更多计算能力的背景下，跨芯片切换能力对云厂商至关重要。</span>\n          <span class=\"lang-en\">As companies race for compute capacity, easing developer migration across AI chips is critical.</span>\n        </p>\n      </div>\n      <div class=\"arch-pill\">\n        <div class=\"arch-pill-tag\">WORLD MODELS · P4</div>\n        <div class=\"arch-pill-head\">\n          <span class=\"lang-cn\">Lucy 与 Oasis 世界模型</span>\n          <span class=\"lang-en\">Lucy &amp; Oasis World Models</span>\n        </div>\n        <p class=\"arch-pill-text\">\n          <span class=\"lang-cn\">由三位以色列工程师于2023年创立，致力于生成和模拟现实世界的3D环境。</span>\n          <span class=\"lang-en\">Founded in 2023 by three Israeli engineers, generating and simulating real-world 3-D environments.</span>\n        </p>\n      </div>\n      <div class=\"arch-pill\">\n        <div class=\"arch-pill-tag\">AWS SYNERGY · P5</div>\n        <div class=\"arch-pill-head\">\n          <span class=\"lang-cn\">Trainium3 早期合作伙伴</span>\n          <span class=\"lang-en\">Trainium3 Early Access</span>\n        </div>\n        <p class=\"arch-pill-text\">\n          <span class=\"lang-cn\">AWS在与Decart会面并对其创始人印象深刻后，于2025年向其提供了Trainium3早期访问权。</span>\n          <span class=\"lang-en\">Impressed by Decart's founders, AWS granted early access to its custom Trainium3 chip in 2025.</span>\n        </p>\n      </div>\n    </div>\n  </section>\n\n  <!-- ACT II: SILICON RIVALRY & AMAZON'S M&A BENCHMARK (p5 .. p7) -->\n  <div class=\"editorial-grid\">\n    <div class=\"narrative-col\">\n      <div class=\"section-marker\">\n        <span class=\"marker-num\">03</span>\n        <h2 class=\"marker-title\">\n          <span class=\"lang-cn\">挑战英伟达霸权与AWS自研芯片布局</span>\n          <span class=\"lang-en\">Challenging Nvidia &amp; AWS's Custom Silicon Bet</span>\n        </h2>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p5\" data-hl=\"Trainium3 | 英伟达 | Nvidia | 2025年 | 2025\"><span class=\"lang-cn\">为了与<mark class=\"ed-hl\">英伟达</mark>竞争，亚马逊开发了自己的定制AI芯片<mark class=\"ed-hl\">Trainium3</mark>（亚马逊自研AI芯片），英伟达目前仍是图形处理器市场的领导者，而图形处理器是驱动人工智能发展的专用芯片。据《华尔街日报》报道，亚马逊网络服务（AWS）在与Decart会面并对其创始人印象深刻后，于<mark class=\"ed-hl\"><mark class=\"ed-hl\">2025</mark>年</mark>向该公司提供了对该芯片的早期访问权限。</span><span class=\"lang-en\">Amazon developed its own custom AI chip, <mark class=\"ed-hl\">Trainium3</mark>, in competition with <mark class=\"ed-hl\">Nvidia</mark>, which continues to dominate the market for graphics processing units, the specialized chips powering the AI boom. Amazon Web Services gave Decart early access to the chip in <mark class=\"ed-hl\">2025</mark> after meeting with the company and being impressed by its founders, The Wall Street Journal has reported.</span></p>\n\n      <div class=\"section-marker\">\n        <span class=\"marker-num\">04</span>\n        <h2 class=\"marker-title\">\n          <span class=\"lang-cn\">亚马逊近年百亿级并购版图</span>\n          <span class=\"lang-en\">Amazon's Multi-Billion Acquisition Playbook</span>\n        </h2>\n      </div>\n\n      <p class=\"prose-p\" data-ref=\"p6\" data-hl=\"65亿美元 | $6.5 billion | 约110亿美元 | roughly $11 billion | Globalstar\"><span class=\"lang-cn\">近年来，亚马逊的其他重大收购包括2022年以<mark class=\"ed-hl\">65亿美元</mark>收购米高梅电影和电视工作室，以及今年早些时候宣布的，以<mark class=\"ed-hl\">约110亿美元</mark>收购星链竞争对手<mark class=\"ed-hl\">Globalstar</mark>（卫星通信公司，星链竞争对手）。</span><span class=\"lang-en\">Amazon's other sizable acquisitions in recent years include a <mark class=\"ed-hl\">$6.5 billion</mark> deal for the MGM movie and television studio in 2022 and a <mark class=\"ed-hl\">roughly $11 billion</mark> deal for Starlink rival <mark class=\"ed-hl\">Globalstar</mark> announced earlier this year.</span></p>\n      <p class=\"prose-p\" data-ref=\"p7\" data-hl=\"Calcalist\"><span class=\"lang-cn\">以色列新闻媒体<mark class=\"ed-hl\">Calcalist</mark>（以色列财经媒体）本月早些时候报道称，Decart正在与一家大型科技公司进行高级别的收购谈判。</span><span class=\"lang-en\">Israeli news outlet <mark class=\"ed-hl\">Calcalist</mark> reported earlier this month that Decart was in advanced talks to be sold to a major technology company.</span></p>\n    </div>\n\n    <!-- SIDEBAR RAIL: M3 METRIC & AMAZON M&A COMPARISON CHART -->\n    <aside class=\"sidebar-col\">\n      <div class=\"metric-card\" data-derive=\"m3\">\n        <div class=\"metric-eyebrow\">\n          <span class=\"lang-cn\">过往重大并购参照 · 2022</span>\n          <span class=\"lang-en\">PRIOR DEAL BENCHMARK · 2022</span>\n        </div>\n        <div class=\"metric-val\" data-field=\"value\"><span class=\"lang-cn\">65亿美元</span><span class=\"lang-en\">$6.5 billion</span></div>\n        <div class=\"metric-lbl\" data-field=\"label\"><span class=\"lang-cn\">近年来，亚马逊的其他重大收购包括2022年以65亿美元收购米高梅电影和电…</span><span class=\"lang-en\">Amazon's other sizable acquisitions in recent years include …</span></div>\n        <div class=\"metric-note\" data-field=\"note\"><span class=\"lang-cn\">源自正文 [p6]</span><span class=\"lang-en\">From paragraph [p6]</span></div>\n      </div>\n\n      <!-- BESPOKE SVG 2: AMAZON'S LANDMARK ACQUISITIONS COMPARISON -->\n      <div class=\"graphic-panel\">\n        <div class=\"graphic-kicker\">\n          <span class=\"lang-cn\">并购规模对比 · 亚马逊重大交易</span>\n          <span class=\"lang-en\">DEAL SCALE · AMAZON'S SIZABLE BETS</span>\n        </div>\n        <div class=\"graphic-title\">\n          <span class=\"lang-cn\">Decart洽谈估值超越米高梅收购案</span>\n          <span class=\"lang-en\">Decart Talks Top MGM Studio Deal</span>\n        </div>\n        <p class=\"graphic-desc\">\n          <span class=\"lang-cn\">若以约70亿美元达成，Decart将超过2022年米高梅收购案（65亿美元），仅次于今年早些时候宣布的Globalstar交易（约110亿美元）。</span>\n          <span class=\"lang-en\">At ~$7B, Decart would eclipse Amazon's $6.5B MGM acquisition in 2022, trailing its ~$11B Globalstar deal announced earlier this year.</span>\n        </p>\n\n        <svg viewbox=\"0 0 420 215\" width=\"100%\" role=\"img\" aria-label=\"Amazon Landmark Acquisitions Comparison\" viewBox=\"0 0 438 215\" data-repaired-viewbox=\"0 0 420 215\">\n          <!-- Item 1: Globalstar (~$11B) -->\n          <text x=\"35\" y=\"34\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\" fill=\"#141413\">\n            <tspan class=\"lang-cn\">Globalstar（卫星通信 / 今年早些时候）</tspan>\n            <tspan class=\"lang-en\">Globalstar (Satellite · Earlier in 2026)</tspan>\n          </text>\n          <rect x=\"35\" y=\"42\" width=\"300\" height=\"24\" fill=\"#16283b\" rx=\"2\"></rect>\n          <text x=\"343\" y=\"59\" font-family=\"JetBrains Mono, monospace\" font-size=\"12.5\" font-weight=\"700\" fill=\"#16283b\">~$11.0B</text>\n\n          <!-- Item 2: Decart (~$7B) -->\n          <text x=\"35\" y=\"98\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"700\" fill=\"#b85d19\">\n            <tspan class=\"lang-cn\">Decart（AI初创公司 · 正在洽谈）</tspan>\n            <tspan class=\"lang-en\">Decart (AI Startup · In Talks)</tspan>\n          </text>\n          <rect x=\"35\" y=\"106\" width=\"191\" height=\"24\" fill=\"#b85d19\" rx=\"2\"></rect>\n          <text x=\"234\" y=\"123\" font-family=\"JetBrains Mono, monospace\" font-size=\"12.5\" font-weight=\"700\" fill=\"#b85d19\">~$7.0B</text>\n\n          <!-- Item 3: MGM ($6.5B) -->\n          <text x=\"35\" y=\"162\" font-family=\"Inter, Noto Sans SC, sans-serif\" font-size=\"12\" font-weight=\"600\" fill=\"#242220\">\n            <tspan class=\"lang-cn\">米高梅 MGM（影视工作室 · 2022年）</tspan>\n            <tspan class=\"lang-en\">MGM Studio (Film &amp; TV · 2022)</tspan>\n          </text>\n          <rect x=\"35\" y=\"170\" width=\"177\" height=\"24\" fill=\"#646059\" rx=\"2\"></rect>\n          <text x=\"220\" y=\"187\" font-family=\"JetBrains Mono, monospace\" font-size=\"12.5\" font-weight=\"700\" fill=\"#646059\">$6.5B</text>\n        </svg>\n\n        <div class=\"graphic-foot\">\n          <span class=\"lang-cn\">注：数据源自《华尔街日报》正文（p1, p6）</span>\n          <span class=\"lang-en\">Note: Figures from WSJ article text (p1, p6)</span>\n        </div>\n      </div>\n    </aside>\n  </div>\n\n  <footer class=\"wsj-footer\">\n    <div>\n      <span class=\"lang-cn\">© 2026 道琼斯公司 · 《华尔街日报》商业与金融版 (Page B1)</span>\n      <span class=\"lang-en\">© 2026 Dow Jones &amp; Company, Inc. · The Wall Street Journal · Page B1</span>\n    </div>\n    <div>\n      <span>ARCHIVE REF: E3-001 · KATE CLARK &amp; LAUREN THOMAS</span>\n    </div>\n  </footer>\n\n</main>\n\n</div>"
+  },
+  "validation": {
+    "compiler_audit": {
+      "passed": true,
+      "source_integrity": {
+        "article_id": "E3-001",
+        "content_digest": "3373709813073ceddd470d33c2632f0ea642f678240cc805afe117890674d66b",
+        "exact_match_cn": "7/7",
+        "exact_match_en": "7/7",
+        "verbatim_diffs": []
+      },
+      "structural_integrity": {
+        "total_canonical_paragraphs": 7,
+        "observed_narrative_elements": 9,
+        "missing_units": [],
+        "duplicate_units": [],
+        "monotonic_order": true
+      },
+      "derived_and_editorial_inventory": {
+        "source_derived_count": 3,
+        "derived_items": [
+          {
+            "id": "m1",
+            "kind": "metric",
+            "source_block": "p1"
+          },
+          {
+            "id": "m2",
+            "kind": "metric",
+            "source_block": "p4"
+          },
+          {
+            "id": "m3",
+            "kind": "metric",
+            "source_block": "p6"
+          }
+        ],
+        "highlights_applied": [
+          {
+            "ref": "p1",
+            "applied_cn": [
+              "约70亿美元",
+              "Decart"
+            ],
+            "applied_en": [
+              "around $7 billion",
+              "Decart"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p2",
+            "applied_cn": [
+              "在不同的AI芯片之间切换"
+            ],
+            "applied_en": [
+              "switch between different AI chips"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p4",
+            "applied_cn": [
+              "Lucy和Oasis",
+              "接近40亿美元",
+              "超过4亿美元"
+            ],
+            "applied_en": [
+              "more than $400 million",
+              "nearly $4 billion",
+              "Lucy and Oasis"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p5",
+            "applied_cn": [
+              "Trainium3",
+              "2025年",
+              "2025",
+              "英伟达"
+            ],
+            "applied_en": [
+              "Trainium3",
+              "Nvidia",
+              "2025"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p6",
+            "applied_cn": [
+              "Globalstar",
+              "约110亿美元",
+              "65亿美元"
+            ],
+            "applied_en": [
+              "roughly $11 billion",
+              "$6.5 billion",
+              "Globalstar"
+            ],
+            "ignored_unmatched": []
+          },
+          {
+            "ref": "p7",
+            "applied_cn": [
+              "Calcalist"
+            ],
+            "applied_en": [
+              "Calcalist"
+            ],
+            "ignored_unmatched": []
+          }
+        ],
+        "ai_editorial_items_count": 8,
+        "ai_editorial_items": [
+          {
+            "category": "svg_graphic",
+            "index": 1,
+            "viewBox": "",
+            "text_labels": [
+              ">$400M",
+              "累计风投融资",
+              "VC Funding",
+              "PitchBook",
+              "~$4.0B",
+              "5月私募估值",
+              "May Valuation",
+              "2026.05",
+              "+75% JUMP",
+              "~$7.0B",
+              "亚马逊洽谈估值",
+              "Amazon Talks",
+              "2026.10"
+            ],
+            "numbers_found": [
+              "$400",
+              "$4.0",
+              "5",
+              "2026.05",
+              "75%",
+              "$7.0",
+              "2026.10"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 2,
+            "viewBox": "",
+            "text_labels": [
+              "01 · WORKLOADS & WORLD MODELS",
+              "开发者AI工作负载与世界模型",
+              "AI Workloads & World Models",
+              "Lucy & Oasis (3-D Sim)",
+              "生成并模拟现实世界3D环境",
+              "Real-world 3-D simulation",
+              "02 · DECART CORE SOFTWARE",
+              "Decart 跨芯片切换软件",
+              "Decart Switching Layer",
+              "帮助开发者更轻松地在",
+              "Enables developers to switch",
+              "不同AI芯片之间自由切换",
+              "across rival AI silicon",
+              "HQ: San Francisco (2023)",
+              "AWS CUSTOM AI CHIP",
+              "Amazon Trainium3",
+              "2025年向Decart开放早期权限",
+              "Early access granted in 2025",
+              "MARKET LEADER · GPUs",
+              "英伟达 (Nvidia) 图形处理器",
+              "Nvidia Graphics Processors",
+              "目前仍主导AI专用芯片市场",
+              "Dominates specialized AI chips"
+            ],
+            "numbers_found": [
+              "01",
+              "3",
+              "3",
+              "3",
+              "02",
+              "2023",
+              "3",
+              "2025",
+              "2025"
+            ]
+          },
+          {
+            "category": "svg_graphic",
+            "index": 3,
+            "viewBox": "0 0 438 215",
+            "text_labels": [
+              "Globalstar（卫星通信 / 今年早些时候）",
+              "Globalstar (Satellite · Earlier in 2026)",
+              "~$11.0B",
+              "Decart（AI初创公司 · 正在洽谈）",
+              "Decart (AI Startup · In Talks)",
+              "~$7.0B",
+              "米高梅 MGM（影视工作室 · 2022年）",
+              "MGM Studio (Film & TV · 2022)",
+              "$6.5B"
+            ],
+            "numbers_found": [
+              "2026",
+              "$11.0",
+              "$7.0",
+              "2022",
+              "2022",
+              "$6.5"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "70亿美元谈判桌与跨芯片软件筹码",
+            "en": "The $7 Billion Table & Chip-Switching Leverage",
+            "numbers_found": [
+              "70",
+              "$7"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "五个月估值跃升与三维“世界模型”",
+            "en": "Five-Month Valuation Leap & 3-D World Models",
+            "numbers_found": [
+              "3"
+            ]
+          },
+          {
+            "category": "editorial_h3",
+            "cn": "打通AI芯片壁垒：从英伟达GPU到亚马逊Trainium3的切换桥梁",
+            "en": "Breaking Silicon Lock-In: Bridging Nvidia GPUs and AWS Trainium3",
+            "numbers_found": [
+              "3",
+              "3"
+            ]
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "挑战英伟达霸权与AWS自研芯片布局",
+            "en": "Challenging Nvidia & AWS's Custom Silicon Bet",
+            "numbers_found": []
+          },
+          {
+            "category": "editorial_h2",
+            "cn": "亚马逊近年百亿级并购版图",
+            "en": "Amazon's Multi-Billion Acquisition Playbook",
+            "numbers_found": []
+          }
+        ]
+      },
+      "svg_diagnostics": [
+        {
+          "svg_index": 3,
+          "issue_type": "element_or_text_exceeds_viewBox",
+          "original_viewBox": "0 0 420 215",
+          "repaired_viewBox": "0 0 438 215",
+          "repaired": true,
+          "offending_nodes": [
+            "text('~$11.0B' right=430>420)"
+          ]
+        }
+      ],
+      "sanitization_log": [],
+      "errors": [],
+      "warnings": []
+    },
+    "rendered_integrity": {
+      "status": "pending_browser_check"
+    }
+  }
+}

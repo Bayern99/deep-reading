@@ -1,0 +1,74 @@
+{
+  "schema_version": "canonical-source-v1",
+  "article_id": "E1-014",
+  "final_id": "014",
+  "issue_date": "2026-10-12",
+  "content_digest": "0641de0a6112efd6cf71e6c13408aff7b8268b90c7afc28fc7968d25881e51d1",
+  "integrity_gate": {
+    "passed": true,
+    "status": "pass",
+    "issues": []
+  },
+  "metadata": {
+    "page": "A2",
+    "section": "U.S. News",
+    "type": "brief",
+    "priority": "P3",
+    "kicker_cn": "U.S. News · A2 版",
+    "kicker_en": "WSJ · U.S. NEWS · A2",
+    "title_cn": "委内瑞拉涉嫌行贿者被捕",
+    "title_en": "Venezuelan Bribe Suspect Arrested",
+    "dek_cn": "佛罗里达州",
+    "dek_en": "FLORIDA",
+    "byline": "—Associated Press",
+    "date_cn": "2026年10月12日",
+    "date_en": "October 12, 2026"
+  },
+  "blocks": [
+    {
+      "id": "p1",
+      "index": 1,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "一名在美国被通缉的商人，他被指控向委内瑞拉高级官员行贿，以换取在委内瑞拉获得有利可图的政府合同，已被拘留。",
+      "text_en": "A businessman wanted in the U.S. for allegedly paying bribes to top Venezuelan officials in exchange for lucrative state contracts in Venezuela has been taken into custody.",
+      "sentences": [
+        {
+          "id": "p1.s1",
+          "text_cn": "一名在美国被通缉的商人，他被指控向委内瑞拉高级官员行贿，以换取在委内瑞拉获得有利可图的政府合同，已被拘留。",
+          "text_en": "A businessman wanted in the U.S. for allegedly paying bribes to top Venezuelan officials in exchange for lucrative state contracts in Venezuela has been taken into custody."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "index": 2,
+      "type": "paragraph",
+      "role": "body",
+      "text_cn": "阿尔瓦罗·普利多于2019年和2021年在迈阿密联邦法院被起诉，这是对他的长期商业伙伴阿莱克斯·萨博的调查的一部分。阿莱克斯·萨博曾是现已被罢免的总统尼古拉斯·马杜罗的盟友。",
+      "text_en": "Alvaro Pulido was indicted in Miami federal court in 2019 and again in 2021 as part of an investigation into his longtime business partner, Alex Saab, a onetime ally of ousted President Nicolás Maduro.",
+      "sentences": [
+        {
+          "id": "p2.s1",
+          "text_cn": "阿尔瓦罗·普利多于2019年和2021年在迈阿密联邦法院被起诉，这是对他的长期商业伙伴阿莱克斯·萨博的调查的一部分。阿莱克斯·萨博曾是现已被罢免的总统尼古拉斯·马杜罗的盟友。",
+          "text_en": "Alvaro Pulido was indicted in Miami federal court in 2019 and again in 2021 as part of an investigation into his longtime business partner, Alex Saab, a onetime ally of ousted President Nicolás Maduro."
+        }
+      ]
+    }
+  ],
+  "derived_quotes": [],
+  "derived_metrics": [],
+  "context_dossier": null,
+  "media": [],
+  "terms": [
+    {
+      "en": "Alvaro Pulido",
+      "zh_suggested": "阿尔瓦罗·普利多",
+      "note": "待查"
+    },
+    {
+      "en": "Alex Saab",
+      "zh_suggested": "阿莱克斯·萨博"
+    }
+  ]
+}

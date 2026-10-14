@@ -1,0 +1,499 @@
+{
+  "mode": "source-referenced",
+  "passed": true,
+  "total_canonical_paragraphs": 20,
+  "observed_narrative_elements": 24,
+  "missing_units": [],
+  "duplicate_units": [],
+  "monotonic_order": true,
+  "exact_match_cn": "20/20",
+  "exact_match_en": "20/20",
+  "verbatim_diffs": [],
+  "content_breakdown": {
+    "canonical_ref_count": 24,
+    "source_derived_count": 13,
+    "highlights_applied": [
+      {
+        "ref": "p1",
+        "applied_cn": [
+          "没有损失风险",
+          "4 万美元"
+        ],
+        "applied_en": [
+          "no risk of loss",
+          "$40,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p2",
+        "applied_cn": [
+          "锁定 12 年",
+          "定期降低"
+        ],
+        "applied_en": [
+          "locking up her money for 12 years",
+          "periodically lower"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p3",
+        "applied_cn": [
+          "阿波罗全球管理公司",
+          "3.7%"
+        ],
+        "applied_en": [
+          "Apollo Global Management",
+          "3.7%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p5",
+        "applied_cn": [
+          "401(k)",
+          "阿波罗和博枫"
+        ],
+        "applied_en": [
+          "Apollo and Brookfield",
+          "401(k)"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p6",
+        "applied_cn": [
+          "吸走了美国家庭的储蓄",
+          "指数型年金"
+        ],
+        "applied_en": [
+          "vacuuming up the savings",
+          "indexed annuities"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p7",
+        "applied_cn": [
+          "特拉华人寿",
+          "联邦调查"
+        ],
+        "applied_en": [
+          "federal investigation",
+          "Delaware Life"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p8",
+        "applied_cn": [
+          "5 万美元或 10 万美元",
+          "永远不会低于零"
+        ],
+        "applied_en": [
+          "never fall below zero",
+          "$50,000 or $100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p9",
+        "applied_cn": [
+          "保险公司在保险期间可以更改的条款"
+        ],
+        "applied_en": [
+          "terms the insurer can change"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p10",
+        "applied_cn": [
+          "2.9个百分点",
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "applied_en": [
+          "60%",
+          "55%",
+          "45%",
+          "1%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p11",
+        "applied_cn": [
+          "减少了约2个百分点",
+          "69岁"
+        ],
+        "applied_en": [
+          "2 percentage points"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p12",
+        "applied_cn": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "applied_en": [
+          "3.7%",
+          "1.9%",
+          "13%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p13",
+        "applied_cn": [
+          "100%的本金保护",
+          "2022年"
+        ],
+        "applied_en": [
+          "100% principal protection"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p14",
+        "applied_cn": [
+          "高度误导性"
+        ],
+        "applied_en": [
+          "highly misleading"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p15",
+        "applied_cn": [
+          "最有利可图的产品之一",
+          "美国证券交易委员会",
+          "州保险代理人"
+        ],
+        "applied_en": [
+          "Securities and Exchange Commission",
+          "most lucrative products",
+          "state insurance agents"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p16",
+        "applied_cn": [
+          "5%至7%",
+          "3%"
+        ],
+        "applied_en": [
+          "5% to 7%",
+          "3%"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p17",
+        "applied_cn": [
+          "误导性的销售宣传"
+        ],
+        "applied_en": [
+          "misleading sales pitches"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p18",
+        "applied_cn": [
+          "270万美元",
+          "10万美元",
+          "去年才成立",
+          "动量增长"
+        ],
+        "applied_en": [
+          "Momentum Growth",
+          "$2.7 million",
+          "$100,000"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p19",
+        "applied_cn": [
+          "担保贷款凭证",
+          "资产支持证券",
+          "三到五年",
+          "约十年"
+        ],
+        "applied_en": [
+          "collateralized loan obligations",
+          "asset-backed securities",
+          "three to five years",
+          "about a decade"
+        ],
+        "ignored_unmatched": []
+      },
+      {
+        "ref": "p20.s1",
+        "applied_cn": [
+          "降低保单持有者收益上限",
+          "增加利润"
+        ],
+        "applied_en": [
+          "lowering the caps on policyholder gains",
+          "fatten their profits"
+        ],
+        "ignored_unmatched": []
+      }
+    ],
+    "ai_editorial_items_count": 12,
+    "ai_editorial_items": [
+      {
+        "category": "svg_graphic",
+        "index": 1,
+        "aria_label": "Elliott Policy Timeline",
+        "viewBox": "",
+        "text_labels": [
+          "YEAR 1 · $40,000 PRINCIPAL",
+          "投入英杰华保险，锁定12年，标普挂钩比例 60%",
+          "Invested with Aviva (12-yr lockup, 60% S&P share)",
+          "ATHENE TAKEOVER · 2 CUTS",
+          "阿波罗旗下 Athene 收购后，第7年降至55%，第11年降至45%",
+          "Athene cuts participation to 55% (Yr 7) & 45% (Yr 11)",
+          "LATE 2023 · POLICY MATURES",
+          "最终实际年化收益率定格于 3.7%（同期标普 13%）",
+          "Final annualized return: 3.7% (vs. 13% S&P 500)"
+        ],
+        "numbers_found": [
+          "1",
+          "$40,000",
+          "12",
+          "60%",
+          "12",
+          "60%",
+          "2",
+          "7",
+          "55%",
+          "11",
+          "45%",
+          "55%",
+          "7",
+          "45%",
+          "11",
+          "2023",
+          "3.7%",
+          "13%",
+          "3.7%",
+          "13%",
+          "500"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 2,
+        "aria_label": "Participation Share Ratchet Chart",
+        "viewBox": "",
+        "text_labels": [
+          "100%",
+          "60%",
+          "20%",
+          "40% @ 1%",
+          "60%",
+          "YEAR 1",
+          "45% @ 1%",
+          "55%",
+          "YEAR 7",
+          "55% @ 1%",
+          "45%",
+          "YEAR 11"
+        ],
+        "numbers_found": [
+          "100%",
+          "60%",
+          "20%",
+          "40%",
+          "1%",
+          "60%",
+          "1",
+          "45%",
+          "1%",
+          "55%",
+          "7",
+          "55%",
+          "1%",
+          "45%",
+          "11"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 3,
+        "aria_label": "Annualized Return Comparison Chart",
+        "viewBox": "",
+        "text_labels": [
+          "同期美国国债 (Treasurys)",
+          "U.S. Treasurys Benchmark",
+          "1.9%",
+          "埃利奥特指数型年金实际年化收益 (扣除~2%附加险后)",
+          "Elliott's Indexed Annuity Actual Return (after ~2pp rider cost)",
+          "3.7%",
+          "同期标准普尔 500 指数年化收益率 (S&P 500)",
+          "S&P 500 Annualized Return Over Same 12-Year Period",
+          "13.0%"
+        ],
+        "numbers_found": [
+          "1.9%",
+          "2%",
+          "2",
+          "3.7%",
+          "500",
+          "500",
+          "500",
+          "12",
+          "13.0%"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 4,
+        "aria_label": "Agent Commission Comparison",
+        "viewBox": "",
+        "text_labels": [
+          "美国公平人寿 · 10年期指数型年金 (American Equity)",
+          "American Equity · 10-Yr Indexed Annuity",
+          "5% – 7%",
+          "博枫旗下保险公司 · 简单固定利率年金 (Brookfield)",
+          "Brookfield Insurer · Simpler Fixed-Rate Annuity",
+          "~3%"
+        ],
+        "numbers_found": [
+          "10",
+          "10",
+          "5%",
+          "7%",
+          "3%"
+        ]
+      },
+      {
+        "category": "svg_graphic",
+        "index": 5,
+        "aria_label": "Private Credit Capital Pipeline",
+        "viewBox": "",
+        "text_labels": [
+          "STEP 1 · HOUSEHOLD SAVINGS ($40K–$100K)",
+          "老年人通过州保险代理人购买指数型年金（佣金 5%–7%）",
+          "Sold by state agents (5%–7% commission) outside SEC rules",
+          "STEP 2 · PE-OWNED INSURER (~10-YR LOCKUP)",
+          "远长于固定利率年金（3–5年），且可随时下调客户分成上限",
+          "~10-yr lockup (vs. 3–5 yrs fixed) + unilateral cap cuts",
+          "Apollo / Athene · Brookfield · Delaware Life",
+          "STEP 3 · ILLIQUID PRIVATE CREDIT ASSETS",
+          "投入风险更高、流动性较差的担保贷款凭证 (CLO) 与 ABS",
+          "Deployed into riskier, less-liquid CLOs & ABS",
+          "Insurer cushions loss or fattens profit via cap cuts"
+        ],
+        "numbers_found": [
+          "1",
+          "$40",
+          "$100",
+          "5%",
+          "7%",
+          "5%",
+          "7%",
+          "2",
+          "10",
+          "3",
+          "5",
+          "10",
+          "3",
+          "5",
+          "3"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "“无损失风险”的诱惑与十二年锁定期",
+        "en": "The Allure of “No Risk of Loss” and a 12-Year Lockup",
+        "numbers_found": [
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "埃利奥特保单所有权与条款演变",
+        "en": "Inside Sabrina Elliott's 12-Year Policy Journey",
+        "numbers_found": [
+          "12"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "收益被层层削薄的算术：从 60% 到 45%",
+        "en": "The Arithmetic of Diminishing Returns: From 60% to 45%",
+        "numbers_found": [
+          "60%",
+          "45%",
+          "60%",
+          "45%"
+        ]
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "绕开 SEC 监管的丰厚佣金与“270万美元”幻象",
+        "en": "Lucrative Commissions Outside SEC Rules and the $2.7 Million Pitch",
+        "numbers_found": [
+          "270",
+          "$2.7"
+        ]
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "代理人销售佣金翻倍激励",
+        "en": "How Commission Incentives Tilt Toward Complexity",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h2",
+        "cn": "私人信贷的燃料池：当私募巨头随时能“改变与消费者的协议”",
+        "en": "Fueling Private Credit: Why Private Equity Loves Being Able to “Change the Deal”",
+        "numbers_found": []
+      },
+      {
+        "category": "editorial_h3",
+        "cn": "家庭养老储蓄如何转化为高风险私人信贷",
+        "en": "How Household Savings Transform Into Illiquid Private Credit",
+        "numbers_found": []
+      }
+    ],
+    "unverified_editorial_numbers": [
+      {
+        "item": "svg_graphic",
+        "number": "20%",
+        "context": "100% 60% 20% 40% @ 1% 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "40%",
+        "context": "100% 60% 20% 40% @ 1% 60%"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "13.0%",
+        "context": "同期美国国债 (Treasurys) U.S. Treasurys Benchmark 1.9% 埃利奥特指数型年金实际年化收益 (扣除~2%附加险后) Elliott's Indexed Annuity Actual Return (after ~2pp rider cost)"
+      },
+      {
+        "item": "svg_graphic",
+        "number": "$40",
+        "context": "STEP 1 · HOUSEHOLD SAVINGS ($40K–$100K) 老年人通过州保险代理人购买指数型年金（佣金 5%–7%） Sold by state agents (5%–7% commission) outside SEC rules STEP 2 · PE-OWNED INSURER (~10-YR LOCKUP) 远长于固定利率年金（3–5年），且可随时下调客户分成上限"
+      }
+    ]
+  },
+  "errors": [],
+  "warnings": [
+    "Found 4 numeric tokens in AI-generated editorial labels/SVGs requiring human review."
+  ]
+}

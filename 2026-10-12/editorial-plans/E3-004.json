@@ -1,5 +1,6 @@
 {
   "article_id": "E3-004",
+  "content_digest": "a31b03290bec47ff8bb55adead72e5a885623069d7d7814d0e9c060aab142417",
   "version": "reboot-1",
   "created": "2026-10-13",
   "created_by": "Principal Engineer reboot — independent editorial judgment",
@@ -15,7 +16,7 @@
       "Altman 划界",
       "收束：牧师的希望与警戒"
     ],
-    "reader_need": "观点长文需要节奏与路标，不需要数据组件。保留一处核心引语；用小标题切开‘现场→教会行动→神学争议→公司回应’。末段照片说明是印刷残留，渲染时降级为图注样式而非正文论点。"
+    "reader_need": "开场四段必须连续呈现布道现场，以正文内的短语强调承接标题；不在 p2 后重复引语。小标题区分教会行动、神学争议与公司回应；边注解释巴别塔的文化前提，不添加数据组件。"
   },
   "narrative_outline": [
     {"block_ids": ["p1", "p2", "p3", "p4"], "function": "scene", "reader_need": "进入布道现场"},
@@ -117,22 +118,13 @@
       "reason": "教宗类比是文章神学核心；边注只补文化前提，不复述通谕金句。"
     }
   ],
-  "component_plan": [
-    {
-      "component": "quote",
-      "slot": {"at": "after_para", "para": 2},
-      "reason": "牧师警告句既是现场声，也是标题回声；作为唯一引语模块，避免再摘通谕长段造成说教感。",
-      "data": {
-        "quote": {
-          "text_cn": "人工智能想要成为上帝。",
-          "text_en": "AI wants to be God.",
-          "attr_cn": "约瑟夫·哈钦森牧师 · 福音之光浸信会",
-          "attr_en": "Pastor Joseph Hutchinson, Gospel Light Baptist Church"
-        }
-      }
-    }
-  ],
+  "component_plan": [],
   "rejected_opportunities": [
+    {
+      "pattern_id": "quote",
+      "action": "decline",
+      "reason_against": "p2 的警告已在正文强调；另做引语会在布道场景中途重复标题命题，割开 p1–p4 的连续叙事。"
+    },
     {
       "pattern_id": "key_figures",
       "action": "decline",

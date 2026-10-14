@@ -1,0 +1,700 @@
+{
+  "golden": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 6462,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "17px",
+        "lineHeight": "31.45px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 126
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "19px",
+        "lineHeight": "33.25px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 149
+      },
+      "svgCount": 0,
+      "svgStats": []
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 4053,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18.5px",
+        "lineHeight": "35.15px",
+        "fontFamily": "Noto Serif SC",
+        "width": 692,
+        "height": 70
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "22px",
+        "lineHeight": "39.6px",
+        "fontFamily": "Noto Serif SC",
+        "width": 692,
+        "height": 137
+      },
+      "svgCount": 0,
+      "svgStats": []
+    }
+  },
+  "group-b-run1": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 8682,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "16.8px",
+        "lineHeight": "30.576px",
+        "fontFamily": "Noto Serif SC",
+        "width": 355,
+        "height": 122
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "18.88px",
+        "lineHeight": "33.04px",
+        "fontFamily": "Noto Serif SC",
+        "width": 355,
+        "height": 153
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 318,
+          "height": 126,
+          "textCount": 19,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 318,
+          "height": 108,
+          "textCount": 14,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 316,
+          "height": 100,
+          "textCount": 11,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 5751,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "33.84px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 68
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "21.12px",
+        "lineHeight": "36.96px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 132
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 632,
+          "height": 251,
+          "textCount": 19,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 632,
+          "height": 214,
+          "textCount": 14,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 622,
+          "height": 197,
+          "textCount": 11,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  },
+  "group-c-run1": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 8996,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 22,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "34.56px",
+        "fontFamily": "Noto Serif SC",
+        "width": 358,
+        "height": 138
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "20.48px",
+        "lineHeight": "36.4544px",
+        "fontFamily": "Noto Serif SC",
+        "width": 358,
+        "height": 182
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 324,
+          "height": 120,
+          "textCount": 18,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 324,
+          "height": 91,
+          "textCount": 7,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 324,
+          "height": 109,
+          "textCount": 15,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 5276,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 22,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "34.56px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 69
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "20.48px",
+        "lineHeight": "36.4544px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 109
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 630,
+          "height": 234,
+          "textCount": 18,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 630,
+          "height": 178,
+          "textCount": 7,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 630,
+          "height": 212,
+          "textCount": 15,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  },
+  "group-b-run2": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 8882,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "16.8px",
+        "lineHeight": "31.08px",
+        "fontFamily": "Noto Serif SC",
+        "width": 358,
+        "height": 124
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "18.24px",
+        "lineHeight": "32.4672px",
+        "fontFamily": "Noto Serif SC",
+        "width": 358,
+        "height": 130
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 324,
+          "height": 301,
+          "textCount": 19,
+          "textClippedOutsideSvg": 2
+        },
+        {
+          "index": 2,
+          "width": 324,
+          "height": 274,
+          "textCount": 15,
+          "textClippedOutsideSvg": 1
+        },
+        {
+          "index": 3,
+          "width": 326,
+          "height": 85,
+          "textCount": 21,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 5092,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "33.3px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 67
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "20.48px",
+        "lineHeight": "36.4544px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 109
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 362,
+          "height": 336,
+          "textCount": 19,
+          "textClippedOutsideSvg": 2
+        },
+        {
+          "index": 2,
+          "width": 362,
+          "height": 306,
+          "textCount": 15,
+          "textClippedOutsideSvg": 1
+        },
+        {
+          "index": 3,
+          "width": 1108,
+          "height": 288,
+          "textCount": 21,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  },
+  "group-c-run2": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 9898,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 21,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "16.8px",
+        "lineHeight": "30.576px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 122
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "17.92px",
+        "lineHeight": "32.6144px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 130
+      },
+      "svgCount": 5,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 320,
+          "height": 196,
+          "textCount": 9,
+          "textClippedOutsideSvg": 1
+        },
+        {
+          "index": 2,
+          "width": 320,
+          "height": 160,
+          "textCount": 12,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 320,
+          "height": 160,
+          "textCount": 9,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 4,
+          "width": 320,
+          "height": 133,
+          "textCount": 6,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 5,
+          "width": 320,
+          "height": 253,
+          "textCount": 11,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 5362,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 21,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "34.2px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 68
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "20.48px",
+        "lineHeight": "37.888px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 114
+      },
+      "svgCount": 5,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 374,
+          "height": 229,
+          "textCount": 9,
+          "textClippedOutsideSvg": 1
+        },
+        {
+          "index": 2,
+          "width": 532,
+          "height": 266,
+          "textCount": 12,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 532,
+          "height": 266,
+          "textCount": 9,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 4,
+          "width": 374,
+          "height": 156,
+          "textCount": 6,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 5,
+          "width": 374,
+          "height": 296,
+          "textCount": 11,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  },
+  "group-b-run3": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 8752,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "17.5px",
+        "lineHeight": "32.9px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 132
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "19.5px",
+        "lineHeight": "36.66px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 191
+      },
+      "svgCount": 2,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 320,
+          "height": 131,
+          "textCount": 18,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 320,
+          "height": 118,
+          "textCount": 15,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 6353,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 20,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "19px",
+        "lineHeight": "37.05px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 111
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "22px",
+        "lineHeight": "40.7px",
+        "fontFamily": "Noto Serif SC",
+        "width": 680,
+        "height": 130
+      },
+      "svgCount": 2,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 614,
+          "height": 250,
+          "textCount": 18,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 614,
+          "height": 226,
+          "textCount": 15,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  },
+  "group-c-run3": {
+    "390": {
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 8922,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 22,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "16.8px",
+        "lineHeight": "30.24px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 121
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "18.24px",
+        "lineHeight": "32.4672px",
+        "fontFamily": "Noto Serif SC",
+        "width": 354,
+        "height": 130
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 324,
+          "height": 94,
+          "textCount": 27,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 324,
+          "height": 122,
+          "textCount": 28,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 324,
+          "height": 90,
+          "textCount": 17,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    },
+    "1440": {
+      "viewportWidth": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 5915,
+      "hasHorizontalOverflow": false,
+      "overflowingElementCount": 0,
+      "overflowSample": [],
+      "narrativeBlockCount": 22,
+      "hiddenOrZeroHeightBlocks": 0,
+      "clippedBlocks": 0,
+      "sampleParagraphStyle": {
+        "ref": "p2",
+        "fontSize": "18px",
+        "lineHeight": "33.84px",
+        "fontFamily": "Noto Serif SC",
+        "width": 628,
+        "height": 101
+      },
+      "leadParagraphStyle": {
+        "ref": "p1",
+        "fontSize": "20.48px",
+        "lineHeight": "36.4544px",
+        "fontFamily": "Noto Serif SC",
+        "width": 628,
+        "height": 109
+      },
+      "svgCount": 3,
+      "svgStats": [
+        {
+          "index": 1,
+          "width": 570,
+          "height": 165,
+          "textCount": 27,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 2,
+          "width": 570,
+          "height": 214,
+          "textCount": 28,
+          "textClippedOutsideSvg": 0
+        },
+        {
+          "index": 3,
+          "width": 570,
+          "height": 158,
+          "textCount": 17,
+          "textClippedOutsideSvg": 0
+        }
+      ]
+    }
+  }
+}
