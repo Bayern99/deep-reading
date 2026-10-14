@@ -4,7 +4,7 @@
 
 Preserve the validated Phase 1–7 implementation, make the real runtime navigable, establish a portable local development entry point, and record risks before actual usage testing. No visual redesign, upstream engine replacement, package migration or transactional-store rewrite was undertaken.
 
-Checkpoint `f8ff92b` includes both the pre-existing uncommitted implementation/evidence and the governance changes. It was created on `governance/phase7-foundation`; at Jerry's request, that branch was renamed to `main`, the sole local branch for ongoing work. The older local `master` and `reboot/reconstruction-brief` names were removed after confirming their commits were ancestors of the checkpoint. All history is retained. No merge, deployment or remote push occurred.
+Checkpoint `f8ff92b` includes both the pre-existing uncommitted implementation/evidence and the governance changes. At Jerry's request, `governance/phase7-foundation` was renamed to `main`, the sole local working branch; the older local `master` and `reboot/reconstruction-brief` names were removed after confirming their commits were ancestors of the checkpoint. Jerry subsequently requested the same remote convention: `main` is now the sole remote branch and the GitHub default. The remote's independent placeholder initialization commit was preserved through a merge that left project files unchanged, then the full project history was published and the redundant remote branches removed. All history is retained; no history rewrite or deployment occurred.
 
 ## Main findings
 
