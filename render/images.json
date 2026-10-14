@@ -1,7 +1,7 @@
 {
   "_note": "图片清单。只收已验证的真实图片（宁缺毋滥）。path 相对 render/。photo_caption 只收最大可用裁切（宽≥220 或面积足够阅读）。",
   "E3-002": {
-    "file": "../2026-10-12/cases/assets/b1-000.png",
+    "file": "../2026-10-12/assets/b1-000.png",
     "caption_cn": "新的充电站拥有更多的充电桩和更强大的充电器，以缩短等待时间。",
     "caption_en": "New stations have more plugs and powerful chargers to cut down on wait time.",
     "credit": "Angus Mordant/彭博新闻，原图取自《华尔街日报》2026年10月12日 B1 版"

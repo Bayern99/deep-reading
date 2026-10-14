@@ -55,7 +55,7 @@ flowchart TD
     N --> BL[baseline.html]
 ```
 
-入口是 [build.py](../../render/build.py:333)，分流位于 [issue.py](../../render/issue.py:257)。本轮成功输出：
+入口是 [build.py](../../../render/build.py:333)，分流位于 [issue.py](../../../render/issue.py:257)。本轮成功输出：
 
 ```text
 enhanced plans: ['E1-005', 'E1-010', 'E1-014', 'E2-002', 'E3-004']
@@ -79,7 +79,7 @@ assertions passed: 117 articles, 5 enhanced, paras verbatim, no duel, no pretty
 
 92 项实际发布：34 article、22 photo_caption、11 brief、11 opinion、6 data_table、6 letter、1 index_digest、1 correction。另有 21 项策展排除、4 项 WARN 不进入读者正文；四个 WARN 是 E1-004、E1-007、E3-002、E3-005 的续文未确认。
 
-[issue.py:199](../../render/issue.py:199) 只发布无警告的 PASS。WARN/BLOCK 仅留下隐藏锚点，没有可见待审核内容，也没有持久的审核处置协议。原始 117 项仍在定稿中；发布不完整与正文被意外截断必须分开记录。
+[issue.py:199](../../../render/issue.py:199) 只发布无警告的 PASS。WARN/BLOCK 仅留下隐藏锚点，没有可见待审核内容，也没有持久的审核处置协议。原始 117 项仍在定稿中；发布不完整与正文被意外截断必须分开记录。
 
 ## 3. 生产、实验与历史实现
 
@@ -99,15 +99,15 @@ assertions passed: 117 articles, 5 enhanced, paras verbatim, no duel, no pretty
 | `merge.py → trans-T*.json → assemble.py` | 这一期输入的历史组装链 | 输入适配器与数据谱系，非核心编辑 Engine |
 | `gen-test/pipeline.py` | 固定四篇、Hy-MT2 调用、分段与渲染实验 | 没有证明当前整期内容已经走该模型链 |
 
-证据：[计划渲染](../../render/plan_render.py:102)、[本地 Planner](../../render/autonomous_planner.py:119)、[实验重放](../../render/run_blind5.py:407)、[单篇编排](../../render/orchestrate.py:221)、[阶段入口](../../render/pipeline.py:91)、[历史组装](../../2026-10-12/assemble.py:18)、[Hy-MT2 实验配置](../../2026-10-12/gen-test/pipeline.py:24)。
+证据：[计划渲染](../../../archive/render-experiments/plan_render.py:102)、[本地 Planner](../../../archive/render-experiments/autonomous_planner.py:119)、[实验重放](../../../archive/render-experiments/run_blind5.py:407)、[单篇编排](../../../archive/render-experiments/orchestrate.py:221)、[阶段入口](../../../archive/render-experiments/pipeline.py:91)、[历史组装](../../../2026-10-12/archive/legacy-scripts/assemble.py:18)、[Hy-MT2 实验配置](../../../2026-10-12/archive/experiments/gen-test/pipeline.py:24)。
 
-Git 记录 `f1f013a` 已把增强计划接入正式路径，之后发生了策展、头版和 Foundation 收敛。[历史 Reconstruction Brief](../history/PROJECT_RECONSTRUCTION_BRIEF.md) 中“117 个 article、仅一张图片、增强没进入生产”等描述不能代表当前状态；`AUDIT_MATRIX.md` 中 T/L 全未实现的描述也已过时。
+Git 记录 `f1f013a` 已把增强计划接入正式路径，之后发生了策展、头版和 Foundation 收敛。[历史 Reconstruction Brief](../PROJECT_RECONSTRUCTION_BRIEF.md) 中“117 个 article、仅一张图片、增强没进入生产”等描述不能代表当前状态；`AUDIT_MATRIX.md` 中 T/L 全未实现的描述也已过时。
 
 ## 4. 核心风险与实跑证据
 
 | 编号 | 当前事实 | 产品影响与修复范围 |
 |---|---|---|
-| A01 | [components.paras](../../render/components.py:27) 仅遍历中文段数；E2-010 有 14 段中文、16 段英文，正式 DOM 只含 14 段英文，最后两段丢失 | 双语阅读完整性失败；共享正文投影应保留双方全部内容并显式记录未对齐状态 |
+| A01 | [components.paras](../../../render/components.py:27) 仅遍历中文段数；E2-010 有 14 段中文、16 段英文，正式 DOM 只含 14 段英文，最后两段丢失 | 双语阅读完整性失败；共享正文投影应保留双方全部内容并显式记录未对齐状态 |
 | A02 | E1-014 的零操作计划走 enhanced brief 头部，佛罗里达州 dek 与 Associated Press byline 消失；普通路径保留两者 | “不干预”竟改变元数据；空计划必须等价于忠实 Baseline |
 | A03 | E1-005/E2-002 的英语合段/移除 marker 只在增强路径执行，普通 Baseline 保留原始错位 | 比较同时混入内容修复与编辑效果，不能归因于编辑判断 |
 | A04 | `source_from_final` 按本次段序创建 pN；≤12 中文字符且无句末标点就推断 source_head | 插入段落可使全部计划漂移；短句可被误当来源小标题。短句“预计暂不会降息”的探针确实被分类为 source_head |
@@ -120,7 +120,7 @@ Git 记录 `f1f013a` 已把增强计划接入正式路径，之后发生了策�
 | A11 | `pipeline.py` 内容缓存键只含 ID + 中文前 100 字，英语与中文后文变化不改变键 | 错误地复用旧完整性结果；还遗漏模型、提示、设计与资产版本 |
 | A12 | integrity 冷运行返回 article 结果，热运行返回 `_manifest.json` 的 `_all` | 断点恢复无法依赖一致返回类型；实际两次调用已复现 |
 
-主要执行点：[源投影](../../render/enhanced_render.py:62)、[生产操作分发](../../render/enhanced_render.py:237)、[转义与坐标](../../render/text_treatment.py:164)、[计划加载](../../render/enhanced_render.py:24)、[嵌套引语](../../render/plan_validate.py:43)、[产物写出与断言](../../render/build.py:425)、[缓存](../../render/pipeline.py:66)。
+主要执行点：[源投影](../../../render/enhanced_render.py:62)、[生产操作分发](../../../render/enhanced_render.py:237)、[转义与坐标](../../../render/text_treatment.py:164)、[计划加载](../../../render/enhanced_render.py:24)、[嵌套引语](../../../archive/render-experiments/plan_validate.py:43)、[产物写出与断言](../../../render/build.py:425)、[缓存](../../../archive/render-experiments/pipeline.py:66)。
 
 新结构化单篇输入的真实 CLI 实跑分两步：
 
@@ -140,7 +140,7 @@ Git 记录 `f1f013a` 已把增强计划接入正式路径，之后发生了策�
 
 当前增强路径不会自动继承普通路径的 images/curation；目前五份生产计划没有图片，因此眼前页面没有因此损失这五篇的已选图片。风险在于未来给一个已有图片的文章添加计划，就改变资产行为。
 
-缺失原图表的项目不能用生成摘要“恢复”。[curation](../../render/curation.json:31) 的 suppress_body 与图表重绘必须单独记录编辑取舍；英文碎片仍在 final.json 不等于读者可以访问原证据。
+缺失原图表的项目不能用生成摘要“恢复”。[curation](../../../render/curation.json:31) 的 suppress_body 与图表重绘必须单独记录编辑取舍；英文碎片仍在 final.json 不等于读者可以访问原证据。
 
 ## 6. Editorial Intelligence 的真实覆盖
 

@@ -33,9 +33,9 @@ from integrity_gate import check_article
 from orchestrate import validate_quote_bilingual
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(BASE)
+ROOT = os.path.dirname(os.path.dirname(BASE))
 FINAL = json.load(open(os.path.join(ROOT, '2026-10-12', 'final.json'), encoding='utf-8'))
-OUT = os.path.join(ROOT, '2026-10-12', 'auto-test')
+OUT = os.path.join(ROOT, '2026-10-12', 'archive', 'historical-outputs', 'auto-test')
 IDS = json.load(open('/tmp/blind18.json'))
 
 PW = '/home/hatch/workspace/.tmp-chrome/shot-venv/bin/python'
@@ -220,7 +220,7 @@ def render_body_flow(sm, treatments, layouts):
 
 
 def extract_shell():
-    src = os.path.join(ROOT, '2026-10-12', 'gen-test', 'E1-025', 'article.html')
+    src = os.path.join(ROOT, '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025', 'article.html')
     return open(src, encoding='utf-8').read()
 
 

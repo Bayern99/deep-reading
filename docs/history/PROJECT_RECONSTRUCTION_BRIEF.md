@@ -53,7 +53,7 @@ No other WSJ Deep Read git repos found under Documents. This export **is** the c
 - `2026-10-12/assets/`: 92 image files; `asset_registry.json`: **79** registered assets, **72** article-linked.
 - Coverage: extracted 45 / no_asset 49 / unrecoverable 22 / needs_review 1.
 - Honest gap: B5/B6 market charts are vector drawings → marked unrecoverable by raster pipeline.
-- Manually recovered high-value visuals in `ovis-test/visual-assets/`:
+- Manually recovered high-value visuals (originally under `ovis-test/visual-assets/`, now in the issue `assets/` directory):
   - `infographic-newleft-donors.png` (E1-033)
   - `chart-dow-jones.png`, `chart-sp500.png` (E3-014)
 

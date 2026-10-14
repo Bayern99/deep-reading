@@ -1,6 +1,6 @@
 # WSJ 深读
 
-A bilingual WSJ reading system with two production paths: a deterministic whole-issue newspaper and a local editorial Studio that generates, verifies, versions and reopens individual article artifacts. Phase 1–7 implementations and their evidence are preserved. Runtime checks and remaining limits are recorded in [the governance record](docs/governance-2026-10-14.md).
+A bilingual WSJ reading system with two production paths: a deterministic whole-issue newspaper and a local editorial Studio that generates, verifies, versions and reopens individual article artifacts. Phase 1–7 implementations and their evidence are preserved. Runtime checks and remaining limits are recorded in [the governance record](docs/history/governance-2026-10-14.md).
 
 ## Start here
 
@@ -13,6 +13,7 @@ A bilingual WSJ reading system with two production paths: a deterministic whole-
 | [BUILD](render/BUILD.md) | Publishing, Studio operation and recovery commands |
 | [Claim Provenance](docs/claim-provenance.md) | Evidence/semantic review required for new generated editorial publication; historical audits remain distinct |
 | [Data and Git policy](docs/data-policy.md) | Protected data, generated outputs and safe Git handling |
+| [Governance record](docs/history/governance-2026-10-14.md) | What the last full governance pass actually changed and verified |
 | [Historical evidence](docs/history/README.md) | Dated investigations, prototypes and validation records |
 
 Use current code and current documents together. Historical reports establish what was observed at their date; they do not certify today's model deployment or production readiness.

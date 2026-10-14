@@ -1,6 +1,6 @@
 # Claim Provenance Contract
 
-Implemented by [`render/claim_provenance.py`](../render/claim_provenance.py). Experiment evidence: [Experiment 0](research-2026-10-14/EXPERIMENT-0.md). Scope: new canonical-derived and authored content passing through the generated-article compiler and ArtifactStore. Approved narrative, source repairs, historical artifacts and the deterministic whole-issue renderer retain their existing contracts.
+Implemented by [`render/claim_provenance.py`](../render/claim_provenance.py). Experiment evidence: [Experiment 0](history/research-2026-10-14/EXPERIMENT-0.md). Scope: new canonical-derived and authored content passing through the generated-article compiler and ArtifactStore. Approved narrative, source repairs, historical artifacts and the deterministic whole-issue renderer retain their existing contracts.
 
 ## Trust boundary
 

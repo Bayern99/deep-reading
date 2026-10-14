@@ -1,33 +1,45 @@
-# Archived render drivers
+# Archived code
 
-Historical, non-production scripts moved out of `render/` so that directory holds
-only modules the two production paths import. They are kept as evidence of how the
-October 2026 pattern, planner, layout and case work was actually produced.
+Historical, non-production code moved out of the working tree so that production
+locations say what they are. It is kept as primary evidence of how the October 2026
+pattern, planner, layout, extraction and case work was actually produced.
 
-None of these is an entry point. `make build`, `make reader`, `make studio`,
-`make gate`, `make test` and `make smoke` do not use them.
+None of it is an entry point. `make build`, `make reader`, `make studio`, `make gate`,
+`make test`, `make check` and `make smoke` do not use any of it.
 
-| Script | What it was | Why it is here |
-|---|---|---|
-| `plan_render.py` | Earlier `component_plan`/`data_ref` renderer | Superseded by `enhanced_render.py` |
-| `plan_adapter.py`, `plan_validate.py` | Old plan conversion and validation dialect | Not in the production import chain |
-| `autonomous_planner.py` | Prompted planner with local inference | Used only by the archived auto-test runner |
-| `orchestrate.py` | Hardcoded E1-025 outline and plan build | Case implementation, not a general orchestrator |
-| `pipeline.py` | Stage-name CLI that ran integrity only | Superseded by `build.py` |
-| `run_auto_test.py`, `run_blind5.py` | Planner batch runners and replay harnesses | Historical QA with their own PASS semantics |
-| `build_layout_test.py`, `build_layout_configs.py`, `build_prototype.py`, `build_test_pages.py`, `build_reboot_four.py` | Test pages, prototypes and proof strips | Example generators, not product entry points |
-| `turn_page.py` | Continuation recovery using PyMuPDF and fixed offsets | Depends on a source PDF that is not in the repository |
+## Where it lives
 
-Their imports assume `render/` is on `sys.path`, and several contain absolute paths
-from an earlier machine. To run one deliberately:
+| Location | What is there |
+|---|---|
+| `archive/render-experiments/` | Drivers that used to sit in `render/`: the old plan renderer and validators, the prompted planner, layout/prototype/case builders, the stage CLI, the PyMuPDF continuation repair |
+| `2026-10-12/archive/experiments/` | Named experiments with their own code or study notes: `gen-test/`, `cases/`, `ovis-test/` |
+| `2026-10-12/archive/legacy-scripts/` | One-off issue builders and the earlier input assembly chain: `build_html.py`, `build_v2.py`–`build_v6.py`, `merge.py`, `assemble.py`, `trans-T*.py`, `seed_glossary.py`, `check_delivery.py` |
+| `2026-10-12/archive/historical-outputs/` | Generated pages, screenshots, stage artifacts and deliveries: `test-pages/`, `auto-test/`, `layout-test/`, `blind5/`, `reboot-proof/`, `convergence-before/`, `review-evidence/`, `stages/`, the interior prototype archive, the pre-October-13 `final.json` backup |
+| `2026-10-12/archive/pre-reboot-html/` | The pre-reboot hand-built newspaper versions |
+
+The split rule is content, not location: a **driver** is code, an **experiment** pairs code or
+study notes with its result, an **output** is generated and reproducible from a driver.
+
+## Running one deliberately
 
 ```bash
-PYTHONPATH=render .venv/bin/python archive/render-experiments/<script>.py
+PYTHONPATH=render:archive/render-experiments .venv/bin/python archive/render-experiments/<script>.py
 ```
 
-Issue-local historical drivers (`2026-10-12/gen-test/`, `cases/`, `auto-test/`,
-`layout-test/`, `blind5/`) stay where they are. The `gen-test/` pipelines import
-`plan_render` and `build_test_pages` from this directory, so they need
-`PYTHONPATH=render:archive/render-experiments`, and their hardcoded `/home/hatch/...`
-paths mean they do not run on this machine as they stand. Dated reports that
-describe them are in [docs/history](../docs/history/README.md).
+The drivers compute the repository root as two levels above their own directory
+(`archive/render-experiments/`), and the issue-local scripts compute the issue directory as two
+levels above theirs (`2026-10-12/archive/legacy-scripts/`). Their read and write paths were updated
+to the archived locations, with deliberate exceptions: `build_reboot_four.py` still writes
+`2026-10-12/dist/reboot-four.html` beside the delivery it proofs, and `turn_page.py` plus
+`assemble.py` rewrite the issue `final.json` by design. Treat the last two as content migrations,
+not routine steps.
+
+## Known limits
+
+Several drivers were already unrunnable on this machine before they were archived, and stay that
+way: `gen-test/pipeline*.py` hardcode a Linux checkout and model endpoints, `build_v2.py`–`
+build_v6.py` write to `/home/hatch/...`, `trans-T1-*.py` and `trans-T2-runner.py` read
+`~/workspace/...`, and `build_layout_test.py`/`run_auto_test.py` read scratch files under `/tmp`
+and `/tmp/blind18.json`. Their paths describe the machine and date they were written for.
+
+Dated reports that describe this work are indexed in [docs/history](../docs/history/README.md).

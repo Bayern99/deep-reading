@@ -5,7 +5,7 @@
 | Class | Examples | Treatment |
 |---|---|---|
 | Approved source and provenance | issue `final.json`, `raw.txt`, `extract-E*.json`, `merged.json`, `trans-T*.json`, QA notes, issue translation glossary | Preserve and review as content. Keep in the private project history; take an external backup before any content migration. |
-| Verified media and editorial decisions | issue assets, `cases/assets/`, recovered figures, `front.json`, plans, alignment repairs and manifests | Preserve, track deliberately and retain source attribution. Some historically placed assets remain production dependencies. |
+| Verified media and editorial decisions | issue `assets/`, figures recovered from the print edition, `front.json`, plans, alignment repairs and manifests | Preserve, track deliberately and retain source attribution. |
 | Saved model output and evidence | `editorial-artifacts/` versions, failures, canonical snapshots, audits, screenshots, experiments and dated reports | Durable primary evidence, not a regenerable cache. Keep existing data; inspect model output/notes for credentials before adding a version to Git. |
 | Queue and mutable pointers | `_queue.json`, `_index.json`, `latest.json` | Persist and back up with artifact files while writers are stopped. Track deliberate release checkpoints, not every transient status update; do not omit them from a recovery backup. |
 | Reproducible delivery | issue `dist/` HTML and receipts | New outputs are ignored. Existing tracked deliveries stay tracked as historical acceptance evidence; ignoring does not untrack them. |

@@ -32,7 +32,7 @@
       "suppress_body": "图已恢复；原文是印刷页说明+扫码提示，数字版无阅读价值",
       "figures": [
         {
-          "file": "ovis-test/visual-assets/infographic-newleft-donors.png",
+          "file": "assets/infographic-newleft-donors.png",
           "caption_cn": "各州进步派团体投入资金对比（密歇根 $1270 万、宾夕法尼亚 $910 万；含 24 个进步派 PAC 与倡导组织，2025 年 1 月 1 日—10 月 7 日）",
           "caption_en": "Funding by state for progressive groups (Michigan $12.7M; Pennsylvania $9.1M; 24 progressive PACs and advocacy groups, Jan 1–Oct 7, 2025)",
           "credit": "AdImpact"
@@ -43,13 +43,13 @@
       "suppress_body": "正文为图形标签碎片（含邻栏串栏文字），图已恢复，原文无阅读价值",
       "figures": [
         {
-          "file": "ovis-test/visual-assets/chart-dow-jones.png",
+          "file": "assets/chart-dow-jones.png",
           "caption_cn": "道琼斯工业平均指数 52 周高低开收（周五收盘 51654.95，上周 +0.93%；市盈率 21.03，股息率 1.54%）",
           "caption_en": "DJIA 52-week high/low/open/close (Fri close 51,654.95, +0.93% last week; trailing P/E 21.03; dividend yield 1.54%)",
           "credit": "《华尔街日报》"
         },
         {
-          "file": "ovis-test/visual-assets/chart-sp500.png",
+          "file": "assets/chart-sp500.png",
           "caption_cn": "标准普尔 500 指数 52 周高低开收（收盘 7811.54，上周 +1.15%；市盈率 24.92，股息率 1.62%）",
           "caption_en": "S&P 500 52-week high/low/open/close (close 7,811.54, +1.15% last week; trailing P/E 24.92; dividend yield 1.62%)",
           "credit": "《华尔街日报》"

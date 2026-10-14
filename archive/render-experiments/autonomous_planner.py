@@ -169,7 +169,8 @@ def load_assets_for_article(aid, registry_path=None):
     """从 asset_registry.json 取某文章的可用资产。"""
     import json as _json, os as _os
     rp = registry_path or _os.path.join(
-        _os.path.dirname(_os.path.abspath(__file__)), 'asset_registry.json')
+        _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))),
+        'render', 'asset_registry.json')
     try:
         reg = _json.load(open(rp, encoding='utf-8'))
     except FileNotFoundError:

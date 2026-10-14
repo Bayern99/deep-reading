@@ -2,7 +2,7 @@
 
 Status: implemented bounded gate; isolated reference validation completed. This implements [REPORT Experiment 0](REPORT.md#experiment-0--establish-the-factual-publication-input-contract) against the [seven-story Golden panel](GOLDEN-BASELINE.md). It does not migrate historical artifacts or establish independent editorial approval for every saved page.
 
-Authoritative contract: [Claim Provenance](../claim-provenance.md). Final machine-readable evidence: [results.json](experiment0/complete/results.json), including implementation hashes. Earlier run directories retain intermediate evidence; `experiment0/complete/` is the final run.
+Authoritative contract: [Claim Provenance](../../claim-provenance.md). Final machine-readable evidence: [results.json](experiment0/complete/results.json), including implementation hashes. Earlier run directories retain intermediate evidence; `experiment0/complete/` is the final run.
 
 ## Outcome
 

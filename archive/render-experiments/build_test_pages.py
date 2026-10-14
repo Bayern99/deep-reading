@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """WSJ 深读 · Editorial Plan 测试页构建器。
 为指定文章生成独立 HTML 页（Plan 驱动），用于端到端验证。
-用法：python3 build_test_pages.py [--no-plan]  (输出 2026-10-12/test-pages/)
+用法：python3 build_test_pages.py [--no-plan]  (输出 2026-10-12/archive/historical-outputs/test-pages/)
 """
 import argparse
 import base64
@@ -15,9 +15,9 @@ import build as B
 from plan_render import load_plan, render_article_with_plan, render_clean
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-ISSUE_DIR = os.path.join(os.path.dirname(BASE), '2026-10-12')
+ISSUE_DIR = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12')
 TEST_IDS = ['E1-005', 'E3-014', 'E1-033']
-ASSET_DIR = os.path.join(ISSUE_DIR, 'ovis-test', 'visual-assets')
+ASSET_DIR = os.path.join(ISSUE_DIR, 'assets')
 
 
 def asset_loader(fname):
@@ -26,7 +26,7 @@ def asset_loader(fname):
 
 
 def build_page(e, article_html, tag):
-    tokens = open(os.path.join(BASE, 'tokens.css'), encoding='utf-8').read()
+    tokens = open(os.path.join(B.BASE, 'tokens.css'), encoding='utf-8').read()
     doc = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -70,9 +70,9 @@ def main():
     args = ap.parse_args()
 
     final = B.load_json(os.path.join(ISSUE_DIR, 'final.json'))
-    modules_all = B.load_json(os.path.join(BASE, 'modules.json'))
+    modules_all = B.load_json(os.path.join(B.BASE, 'modules.json'))
     plans_dir = os.path.join(ISSUE_DIR, 'editorial-plans')
-    out_dir = os.path.join(ISSUE_DIR, 'test-pages')
+    out_dir = os.path.join(ISSUE_DIR, 'archive', 'historical-outputs', 'test-pages')
     os.makedirs(out_dir, exist_ok=True)
 
     for aid in TEST_IDS:

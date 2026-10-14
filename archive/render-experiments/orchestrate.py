@@ -257,7 +257,7 @@ def orchestrate_e1025(gen_test_dir):
 
 
 if __name__ == '__main__':
-    gen_test = os.path.join(os.path.dirname(BASE), '2026-10-12', 'gen-test')
+    gen_test = os.path.join(os.path.dirname(os.path.dirname(BASE)), '2026-10-12', 'archive', 'experiments', 'gen-test')
     plan, sm, treatments = orchestrate_e1025(gen_test)
     out = os.path.join(gen_test, 'E1-025', 'plan-enhanced.json')
     json.dump(plan, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

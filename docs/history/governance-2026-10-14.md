@@ -12,7 +12,7 @@ Checkpoint `f8ff92b` includes both the pre-existing uncommitted implementation/e
 - There are two real publishing paths: the deterministic whole-issue renderer, and canonical generation → compiler → versioned artifact store → Studio/Reader. The first does not read the generated artifact store. Neither command runs the entire upstream PDF/OCR/translation workflow.
 - The PDF is missing. Historical input adapters rely on external translation scripts and old paths. `render/pipeline.py` executes integrity only; it is not a complete daily orchestrator.
 - Historical documents mixed early absence claims with newer results. The old BUILD_SPEC described absolute paths, a fixed input count and an outdated priority-group reader. The root lacked a project entry point and current architecture reference.
-- Production still depends on one image in `2026-10-12/cases/assets/`. Historical directories cannot be deleted or moved merely because they contain experiments.
+- Production still depends on one image in `2026-10-12/cases/assets/`. Historical directories cannot be deleted or moved merely because they contain experiments. Follow-up in the deep-structure pass: that image and the recovered figures moved into `2026-10-12/assets/`, the archived asset candidate was dropped from the build loader, and the smoke copy scope narrowed to the real dependencies.
 - Git had 34 commits, 1,847 tracked files, approximately 152 MiB of objects, and approximately 226 MB of non-cache working files at initial measurement. HTML/images/ZIP evidence dominate storage; largest observed file/blob was about 5.2 MB. No large-file/history migration was justified.
 
 ## Changes actually made
@@ -49,7 +49,7 @@ The four behavioral fixes each had a failing-before/passing-after regression. No
 | Preservation | Byte hashes checked across existing issue source, assets, artifact tree, experiments and reference evidence; no protected content changes. macOS `.DS_Store` metadata is excluded from this guarantee. `final.json` SHA-256 remains `00fa35e8f5a9bc164da3dae3af41c6b659c1e2c609d1e535729a6fbb3efd5782`. |
 | Documentation | Current entry documents and newly archived root reports have valid local file links. Historical evidence intentionally retains its original unavailable external-machine references. |
 
-Browser images: [newspaper desktop](governance-2026-10-14/newspaper-desktop.png), [newspaper mobile](governance-2026-10-14/newspaper-mobile.png), [Reader desktop](governance-2026-10-14/reader-desktop.png), [Reader mobile](governance-2026-10-14/reader-mobile.png).
+Browser images: [newspaper desktop](browser-evidence-2026-10-14/newspaper-desktop.png), [newspaper mobile](browser-evidence-2026-10-14/newspaper-mobile.png), [Reader desktop](browser-evidence-2026-10-14/reader-desktop.png), [Reader mobile](browser-evidence-2026-10-14/reader-mobile.png).
 
 The first isolated smoke exposed a missing copied `cases/assets/` dependency. The copy scope was corrected; the production asset and its historical location were preserved. Verification used a temporary queue rather than resuming the real queue. No live external model, full PDF extraction, new-date publication, Safari or Firefox run was performed.
 

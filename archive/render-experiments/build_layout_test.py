@@ -30,9 +30,9 @@ from layout import (
 from components import esc, article_header
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(BASE)
+ROOT = os.path.dirname(os.path.dirname(BASE))
 FINAL = json.load(open(os.path.join(ROOT, '2026-10-12', 'final.json'), encoding='utf-8'))
-OUT = os.path.join(ROOT, '2026-10-12', 'layout-test')
+OUT = os.path.join(ROOT, '2026-10-12', 'archive', 'historical-outputs', 'layout-test')
 
 # 素材
 KYIV_IMG = '/tmp/kyiv/p17-000.png'
@@ -59,7 +59,7 @@ def make_source(aid):
 
 
 def extract_shell():
-    src = os.path.join(ROOT, '2026-10-12', 'gen-test', 'E1-025', 'article.html')
+    src = os.path.join(ROOT, '2026-10-12', 'archive', 'experiments', 'gen-test', 'E1-025', 'article.html')
     html = open(src, encoding='utf-8').read()
     return html
 

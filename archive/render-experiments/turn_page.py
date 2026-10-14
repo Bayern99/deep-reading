@@ -265,7 +265,7 @@ def merge_continuation(article_id, pdf_path, final_json_path=None,
     """
     if final_json_path is None:
         final_json_path = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             '..', '2026-10-12', 'final.json')
     data = json.load(open(final_json_path, encoding='utf-8'))
     art = next((e for e in data if e['id'] == article_id), None)

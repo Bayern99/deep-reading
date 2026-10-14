@@ -34,7 +34,7 @@ def main() -> None:
         shutil.copy2(source, issue / "final.json")
         if (original / "front.json").is_file():
             shutil.copy2(original / "front.json", issue / "front.json")
-        for name in ("assets", "cases/assets", "ovis-test", "editorial-plans", "editorial-artifacts"):
+        for name in ("assets", "editorial-plans", "editorial-artifacts"):
             if (original / name).is_dir():
                 # The historical queue stays on disk; a smoke run must not resume paid work.
                 shutil.copytree(original / name, issue / name, ignore=shutil.ignore_patterns("__pycache__", "shots", "_queue.json", "_queue.json.tmp.*"))

@@ -169,7 +169,7 @@ def build_source(article_id, translation_path, plan=None, asset_manifest=None,
                  p1_is_title=True):
     """从 translation.json 构建源模型；plan 用于注册图注。
 
-    p1_is_title：gen-test 约定 translation.json 的 p1 是标题块（跳过正文流）；
+    p1_is_title：归档的 gen-test 适配器约定 translation.json 的 p1 是标题块（跳过正文流）；
     若 paragraphs 全为正文段（标题在 meta），传 False。
     """
     t = json.load(open(translation_path, encoding='utf-8'))

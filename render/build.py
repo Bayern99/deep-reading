@@ -438,7 +438,6 @@ def _asset_loader_for_issue(issue_dir):
         candidates = [
             os.path.join(issue_dir, path_or_name),
             os.path.join(issue_dir, 'assets', os.path.basename(path_or_name)),
-            os.path.join(issue_dir, 'ovis-test', 'visual-assets', os.path.basename(path_or_name)),
             os.path.normpath(os.path.join(BASE, path_or_name)),
         ]
         for fp in candidates:

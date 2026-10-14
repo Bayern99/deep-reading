@@ -38,7 +38,7 @@ This is **not** a multi-issue benchmark run, fresh OCR/translation certification
 
 The established foundation is not the Studio. It is the ability to preserve bilingual journalism while producing content-conditioned reading experiences: coherent identity, prose-centered typography, selected explanatory interventions, exact narrative injection, inspectable failures and saved versions.
 
-[FOUNDATION](../../FOUNDATION.md) (lines 44–56) and [DESIGN](../../DESIGN.md) (lines 10–28) already say that source copy is immutable, modules must add a view, empty intervention is valid, and typography/reading rhythm precede decoration. The publishing prompt also explicitly rejects rigid templates and asks for genre/narrative analysis (`render/editorial_publisher.py:28–77`). Those principles survive an agent-native cutover.
+[FOUNDATION](../../../FOUNDATION.md) (lines 44–56) and [DESIGN](../../../DESIGN.md) (lines 10–28) already say that source copy is immutable, modules must add a view, empty intervention is valid, and typography/reading rhythm precede decoration. The publishing prompt also explicitly rejects rigid templates and asks for genre/narrative analysis (`render/editorial_publisher.py:28–77`). Those principles survive an agent-native cutover.
 
 The current Foundation describes a daily Chinese AI-native newspaper. **Recommendation:** distinguish that reader outcome from the operator/distribution model. A faithful newspaper/Reader delivered by a host agent preserves the reader principles without requiring a separate AI Studio. Do not silently rewrite Foundation in this research; a later accepted decision should reconcile its wording with the agent-native operator intent.
 
@@ -102,7 +102,7 @@ The existing `import_raw_generation(...)` is important: host-composed HTML can a
 
 `render/pipeline.py:23–35,71,107–112` hardcodes the issue, hashes only the first 100 Chinese characters per item, and mostly prints stage labels after running integrity. Do not build future incremental execution on its cache or describe it as a PDF-to-reader orchestrator.
 
-Upstream is a distinct uncertainty from downstream quality. The [TranslateGemma proof](../../docs/history/translate-gemma-proof.md) establishes historical small-sample translation/terminology behavior, not today's service availability or whole-issue translation accuracy. The [AnyDoc evaluation](../../docs/history/anydoc-eval.md) explains rejection of one extraction approach; it does not prove that an unintegrated alternative will work. New extraction-engine selection is not necessary to test editorial decisions on already available text.
+Upstream is a distinct uncertainty from downstream quality. The [TranslateGemma proof](../../../docs/history/translate-gemma-proof.md) establishes historical small-sample translation/terminology behavior, not today's service availability or whole-issue translation accuracy. The [AnyDoc evaluation](../../../docs/history/anydoc-eval.md) explains rejection of one extraction approach; it does not prove that an unintegrated alternative will work. New extraction-engine selection is not necessary to test editorial decisions on already available text.
 
 ### 1.5 The Golden Baseline protects capabilities, not every pixel or historical claim
 
@@ -147,7 +147,7 @@ A second conversation manager, generic agent memory, model-chat runtime or unive
 
 Non-narrative **generation admission** is also not the same as preservation/reading value. A correction may be important, a table may be essential evidence, and a caption may connect a crucial photograph. They may need ordinary preservation or structured presentation without a generated feature page.
 
-[SELECTION_VALIDATION_REPORT](../history/SELECTION_VALIDATION_REPORT.md) (lines 13–36) historically describes an 18-item layout exercise with 16 no-intervention outputs and two sidebars, and reports no omissions from an abstracted spot-check. This is encouraging evidence of restraint. It is not independent full-edition selection recall, is not the current source-referenced Publisher path, and does not establish multi-issue editorial judgment.
+[SELECTION_VALIDATION_REPORT](../SELECTION_VALIDATION_REPORT.md) (lines 13–36) historically describes an 18-item layout exercise with 16 no-intervention outputs and two sidebars, and reports no omissions from an abstracted spot-check. This is encouraging evidence of restraint. It is not independent full-edition selection recall, is not the current source-referenced Publisher path, and does not establish multi-issue editorial judgment.
 
 ### 2.4 The deeper integrity gap crosses the deterministic/generative seam
 
@@ -376,7 +376,7 @@ No WSJ-owned conversation runtime, persistent model-context manager, autonomous-
 
 ### 5.2 Preserve deep modules and expose tasks, not every Python symbol
 
-The [current architecture](../../ARCHITECTURE.md) already locates reusable capabilities. Keep shared implementations; small command entry points/adapters may expose needed operations in a later experiment.
+The [current architecture](../../../ARCHITECTURE.md) already locates reusable capabilities. Keep shared implementations; small command entry points/adapters may expose needed operations in a later experiment.
 
 | Existing module/group | Future position | Change justified before broader use |
 |---|---|---|
@@ -538,7 +538,7 @@ Small implementation slices justified by evidence would be: common admission/rec
 - [Standalone observations](evidence/browser-observations.json): 36 states; requested locale differs from actual for four failed switches.
 - [Saved Reader observations](evidence/reader-observations.json): 32 states; outer locale controls worked for all sampled versions/widths.
 - [Newspaper observations](evidence/newspaper-observations.json): four states; 92 items, 18 loaded images each, no document overflow.
-- [Governance](../../docs/governance-2026-10-14.md), [actual architecture](../../ARCHITECTURE.md), [build/recovery contracts](../../render/BUILD.md), [data policy](../../docs/data-policy.md), [domain terms](../../GLOSSARY.md).
+- [Governance](../../../docs/history/governance-2026-10-14.md), [actual architecture](../../../ARCHITECTURE.md), [build/recovery contracts](../../../render/BUILD.md), [data policy](../../../docs/data-policy.md), [domain terms](../../../GLOSSARY.md).
 
 Representative visual evidence is linked inline in the Golden Baseline; further head/body captures sit in `evidence/`. They are current research captures, not silently substituted historical screenshots.
 
