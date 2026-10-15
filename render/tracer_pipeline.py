@@ -16,6 +16,7 @@ import argparse
 import base64
 import html
 import sys
+import time
 from pathlib import Path
 
 import lxml.html
@@ -30,6 +31,7 @@ from tracer.compose import (
     anchor_figures,
     composite_letters_unit,
     compose_article_unit,
+    load_full_data,
     load_pilot_data,
 )
 from tracer.shell import UnitEntry, build_issue_artifact
@@ -47,6 +49,7 @@ ISSUE_DATE_CN = "2026年10月14日 · 星期三"
 ISSUE_DATE_EN = "Wednesday, October 14, 2026"
 FRONT_DEK_CN = "利率阴影笼罩华尔街大行；比弗利山庄的豪宅项目向买家借钱；加州财富税公投逼近。"
 DEFAULT_OUTPUT = "/tmp/wsj-2026-10-14-tracer.html"
+DEFAULT_OUTPUT_FULL = "/tmp/wsj-2026-10-14-full.html"
 
 
 def _data_uri(webp: bytes) -> str:
@@ -288,18 +291,61 @@ def para_texts_condo(data):
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="Compile the 2026-10-14 vertical tracer Issue Artifact")
-    ap.add_argument("--output", default=DEFAULT_OUTPUT)
+    ap = argparse.ArgumentParser(
+        description="Compile the 2026-10-14 WSJ 深读 Issue Artifact (vertical tracer)"
+    )
+    ap.add_argument(
+        "--mode", choices=("tracer", "full"), default="full",
+        help="tracer: the five-unit pilot slice; full: the whole 86-item issue (default)",
+    )
+    ap.add_argument(
+        "--units", default=None,
+        help="comma-separated unit ids to keep (fast subset runs, e.g. the five pilot units)",
+    )
+    ap.add_argument("--output", default=None)
+    ap.add_argument(
+        "--gate-report", default=None,
+        help="path for the two-stage LQA gate report JSON (full mode; "
+        "never embedded in the reader HTML)",
+    )
     ap.add_argument("--fast", action="store_true", help="skip PDF raster work (smoke)")
     args = ap.parse_args(argv)
 
-    data = load_pilot_data()
-    entries = build_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast)
+    if args.mode == "tracer":
+        out = Path(args.output or DEFAULT_OUTPUT)
+        data = load_pilot_data()
+        entries = build_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast)
+    else:
+        from tracer.full_compose import build_full_units
+        from tracer.gate import run_gate, write_gate_report
+        from tracer.routing import TIER1_IDS
+
+        out = Path(args.output or DEFAULT_OUTPUT_FULL)
+        data = load_full_data()
+        started = time.perf_counter()
+        entries = build_full_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast)
+        build_s = time.perf_counter() - started
+        if args.units:
+            keep = {u.strip() for u in args.units.split(",") if u.strip()}
+            entries = [e for e in entries if e.unit_id in keep]
+            missing = keep - {e.unit_id for e in entries}
+            if missing:
+                raise SystemExit(f"--units ids not found in issue: {sorted(missing)}")
+        report = run_gate(data.translations, issue="2026-10-14", tier1_ids=TIER1_IDS)
+        gate_path = Path(args.gate_report) if args.gate_report else out.parent / "gate-report.json"
+        write_gate_report(report, gate_path)
+        tiers = {t: sum(1 for e in entries if e.tier == t) for t in (1, 2, 3)}
+        print(
+            f"gate: {report.units_scanned} units scanned in {report.duration_s:.3f}s, "
+            f"{len(report.findings)} findings ({report.by_kind()}) -> {gate_path}"
+        )
+        print(f"full issue: {len(entries)} units {tiers} compiled in {build_s:.1f}s")
+
     doc = build_issue_artifact(
         date_cn=ISSUE_DATE_CN, date_en=ISSUE_DATE_EN, units=entries,
         front_dek_cn=FRONT_DEK_CN,
     )
-    out = Path(args.output)
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, "utf-8")
     print(f"artifact: {out} ({out.stat().st_size} bytes, {len(entries)} units)")
     return 0

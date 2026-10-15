@@ -228,3 +228,299 @@ WEALTH = {
         "p10": {"cn": "14%", "en": "14%"},
     },
 }
+
+# --- Tier 1 additions for the full 2026-10-14 issue (Ticket 2, Issue #3) ------
+
+GREECE = {
+    # Documentary sub-mode: one original photo woven at its after-pK position.
+    "takeaways": [
+        {
+            "cn": "金伯莉·吉尔福伊尔辞去美国驻希腊大使一职，此前白宫要求其辞职。",
+            "en": "Kimberly Guilfoyle resigned as U.S. ambassador to Greece after the White House asked her to step down.",
+            "data_src": "p1",
+        },
+        {
+            "cn": "此前《华尔街日报》报道称，吉尔福伊尔曾于确认任命听证会前夕向一位特朗普的捐赠者索要10万美元。",
+            "en": "The Journal reported that Guilfoyle had sought $100,000 from a Trump donor in the run-up to her confirmation hearing last year.",
+            "data_src": "p1 p7",
+        },
+        {
+            "cn": "特朗普表示，他不喜欢读到的有关吉尔福伊尔的内容，也尚未与她交谈。",
+            "en": "Trump said he didn't like what he had read about Guilfoyle and hadn't spoken with her.",
+            "data_src": "p5",
+        },
+    ],
+    "highlights": {
+        "p1": {"cn": "10万美元", "en": "$100,000"},
+        "p7": {"cn": "10万美元", "en": "$100,000"},
+    },
+}
+
+CHINA_YOUTH = {
+    # Documentary sub-mode (original photos) + four printed-chart companions.
+    "takeaways": [
+        {
+            "cn": "27岁的马永健在计算机科学硕士学业中途停止上课；软件工程这一曾经稳妥的选择，在AI崛起与中国科技行业裁员潮下不再保险。",
+            "en": "The 27-year-old stopped attending his computer-science master's program; software engineering, once a safe career, no longer is amid the AI rise and tech layoffs.",
+            "data_src": "p2",
+        },
+        {
+            "cn": "“以前大家都觉得生活会越来越好，收入也会不断增加。如今情况却不同了，”马永健说道。",
+            "en": "\"Before, everyone expected life would keep getting better, your income would keep growing. Now, it's different,\" said Ma.",
+            "data_src": "p5",
+        },
+        {
+            "cn": "技术甚至开始威胁年轻人转向的零工工作，如网约车、外卖配送和直播。",
+            "en": "Technology is even starting to threaten the part-time gigs young people have turned to, such as ride hailing, food delivery and livestreaming.",
+            "data_src": "p34",
+        },
+    ],
+    # Inventory subheading paragraphs rendered verbatim as section heads.
+    "subheading_paragraphs": ["p14", "p20", "p30", "p39"],
+    "pull_quote": {
+        "paragraph": "p5",
+        "sentence": 3,
+        "cn": "“放眼未来，实在看不到多少希望。”",
+    },
+}
+
+CARFREE = {
+    # Mechanism/quantitative sub-mode: campaign-money comparison primitive.
+    "takeaways": [
+        {
+            "cn": "旧金山选民永久封闭上大公路大部分路段、建成“日落沙丘公园”后，每天多达20,000辆车被迫改道，西区民怨沸腾。",
+            "en": "After voters permanently closed most of Upper Great Highway for Sunset Dunes park, as many as 20,000 cars a day were diverted, inflaming the West Side.",
+            "data_src": "p3",
+        },
+        {
+            "cn": "G提案将于11月3日付诸表决：若获通过，该路段平日将重新对车辆开放。",
+            "en": "Proposition G is on the Nov. 3 ballot; if passed, the stretch would reopen to cars on weekdays.",
+            "data_src": "p5",
+        },
+        {
+            "cn": "Yelp首席执行官为“反对G提案”阵营捐款约80万美元筹款额的一半；支持方仅筹集约13万美元。",
+            "en": "Yelp's CEO bankrolled about half of the $800,000 raised for No on G; the Yes side has raised about $130,000.",
+            "data_src": "p6",
+        },
+    ],
+    "highlights": {
+        "p3": {"cn": "20,000", "en": "20,000"},
+        "p6": {"cn": "80万美元", "en": "$800,000"},
+    },
+    "wsj_charts": [
+        {
+            "id": "carfree-money",
+            "type": "comparison",
+            "title_cn": "G提案竞选资金对比",
+            "title_en": "Campaign Money on Proposition G",
+            "data_src": "p6",
+            "items": [
+                {"label_cn": "反对G提案（No on G）", "label_en": "No on G", "value": 800000,
+                 "display_cn": "约80万美元", "display_en": "about $800,000", "emphasis": True},
+                {"label_cn": "支持G提案（Yes on G）", "label_en": "Yes on G", "value": 130000,
+                 "display_cn": "约13万美元", "display_en": "about $130,000", "emphasis": False},
+            ],
+            "caption_cn": "Yelp首席执行官为反对阵营提供了约80万美元筹款额的一半；支持方筹集约13万美元。",
+            "caption_en": "Yelp's CEO bankrolled about half of the $800,000 raised for No on G; supporters have raised about $130,000.",
+        },
+    ],
+}
+
+PRIVATE_EQUITY = {
+    # Mechanism/quantitative sub-mode: fundraising comparison primitive.
+    "takeaways": [
+        {
+            "cn": "过去一年，New State Capital Partners约三分之一的员工离职，获得高额报酬的前景变得黯淡。",
+            "en": "About one-third of New State Capital Partners' employees have left over the past year as prospects for big payouts dimmed.",
+            "data_src": "p1",
+        },
+        {
+            "cn": "风险最大的是管理规模不足约150亿美元、缺乏其他业务对冲困境的小型公司；阿波罗、黑石与KKR等巨头则建立了多条盈利业务线。",
+            "en": "The firms most at risk manage less than around $15 billion and lack other businesses to offset trouble; giants like Apollo, Blackstone and KKR have built multiple lucrative arms.",
+            "data_src": "p6",
+        },
+        {
+            "cn": "今年截至9月30日私募股权募资2220亿美元，去年全年为3300亿美元，按此进度将创下至少2020年以来最差年份。",
+            "en": "Firms have raised $222 billion this year through Sept. 30, compared with $330 billion for all of last year — on pace for the worst year since at least 2020.",
+            "data_src": "p14",
+        },
+    ],
+    "subheading_paragraphs": ["p13", "p19"],
+    "highlights": {
+        "p14": {"cn": "2220亿美元", "en": "$222 billion"},
+    },
+    "wsj_charts": [
+        {
+            "id": "pe-fundraising",
+            "type": "comparison",
+            "title_cn": "私募股权募资额",
+            "title_en": "Private-Equity Fundraising",
+            "data_src": "p14",
+            "items": [
+                {"label_cn": "今年（截至9月30日）", "label_en": "This year through Sept. 30", "value": 222000000000,
+                 "display_cn": "2220亿美元", "display_en": "$222 billion", "emphasis": False},
+                {"label_cn": "去年全年", "label_en": "All of last year", "value": 330000000000,
+                 "display_cn": "3300亿美元", "display_en": "$330 billion", "emphasis": True},
+            ],
+            "caption_cn": "据PitchBook统计，今年截至9月30日私募股权募资2220亿美元，低于去年全年的3300亿美元。",
+            "caption_en": "Firms have raised $222 billion this year through Sept. 30, below $330 billion for all of last year, per PitchBook.",
+        },
+    ],
+}
+
+FACTORIES = {
+    # Documentary sub-mode: four original photos woven across the story.
+    "takeaways": [
+        {
+            "cn": "特朗普声称能吸引数十亿美元投资让制造业重返美国，但项目落地仍面临劳动力稀缺、工资偏高与产品价格缺乏竞争力等老障碍。",
+            "en": "Trump touts billions in investment to revive U.S. manufacturing, but the projects face the same old hurdles: scarce workers, high wages and uncompetitive prices.",
+            "data_src": "p1 p2",
+        },
+        {
+            "cn": "费城一项50亿美元的造船厂项目急需更多造船空间，且难以吸引业主韩国韩华海运以外的客户。",
+            "en": "A $5 billion Philadelphia shipyard project needs more shipbuilding space and struggles to attract customers beyond owner Hanwha Ocean.",
+            "data_src": "p3",
+        },
+        {
+            "cn": "爱荷华州钢厂重启动用了2000多名承包商；现有250多名全职员工，竣工后预计雇佣约1700人。",
+            "en": "Restarting the Iowa mill took over 2,000 contractors; it now has well over 250 full-time employees and will employ about 1,700 when completed.",
+            "data_src": "p23",
+        },
+    ],
+    "highlights": {
+        "p3": {"cn": "50亿美元", "en": "$5 billion"},
+        "p23": {"cn": "2000多名", "en": "over 2,000"},
+    },
+}
+
+# --- Bilingual Chart Companions for all 21 printed charts (Ticket 2) ---------
+# title_cn is the editorial Chinese rendering of the lossless Retina* title;
+# takeaways are grounded in the chart's data-src paragraphs (verified).  Charts
+# without printed series labels carry an empty series list.
+
+CHART_COMPANIONS: dict[str, dict[str, object]] = {
+    "p02-b78": {  # BANKS FICC — authored layer above (content.BANKS)
+        "use_authored": "BANKS",
+    },
+    "p02-b83": {
+        "use_authored": "BANKS",
+    },
+    "p10-b57": {
+        "title_cn": "就业人数年度变化、城镇失业率、人均可支配收入增速与消费者信心指数",
+        "data_src": "p30 p33",
+        "takeaway_cn": "上海科技大学的一项研究分析了2022年至2026年间中国五大招聘平台上的7亿条招聘信息：人工智能对拥有1至3年工作经验的初级至中级从业者的招聘需求削减最为明显。",
+        "takeaway_en": "A ShanghaiTech study of 700 million job postings from 2022 to 2026 found AI has cut hiring demand most for entry- to midlevel workers with one to three years of experience.",
+    },
+    "p10-b59": {
+        "title_cn": "城镇青年失业率（16—24岁与25—29岁，不含在校生）",
+        "takeaway_cn": "现年28岁的李杰瑞自去年秋开始求职以来已投递约100份简历，至今仍未找到合适的工作。",
+        "takeaway_en": "Li, 28, has applied for roughly 100 jobs since last fall without landing one.",
+    },
+    "p10-b63": {
+        "title_cn": "城镇居民人均可支配收入同比变化",
+        "data_src": "p30 p33",
+        "takeaway_cn": "城镇居民人均可支配收入的增速持续放缓，与青年就业市场的困境相互映照。",
+        "takeaway_en": "Growth in urban disposable income per capita keeps slowing, mirroring the youth jobs malaise.",
+    },
+    "p10-b68": {
+        "title_cn": "消费者信心指数",
+        "data_src": "p33",
+        "takeaway_cn": "消费者信心指数长期处于低位，年轻人对“努力就有回报”的信念正在动摇。",
+        "takeaway_en": "The consumer confidence index remains depressed as young people lose faith in the promise of hard work.",
+    },
+    "p02-b21": {
+        "title_cn": "美国成房中位价同比变化",
+        "takeaway_cn": "9月份全美现有住房中位价同比上涨1.3%，达到417,500美元。",
+        "takeaway_en": "The national median existing-home price rose 1.3% from a year earlier to $417,500 in September.",
+    },
+    "p09-b48": {
+        "title_cn": "2025年人均国民总收入",
+        "data_src": "p6",
+        "takeaway_cn": "2025年中国人均国民总收入为14,230美元，略低于14,375美元的高收入门槛。",
+        "takeaway_en": "The World Bank measured China's 2025 GNI per capita at $14,230, just below the $14,375 high-income threshold.",
+    },
+    "p09-b50": {
+        "title_cn": "中国人均国民总收入与高收入门槛",
+        "data_src": "p6 p7",
+        "takeaway_cn": "2026年高收入门槛可能升至14,554美元，中国人均国民总收入需增长2.3%才能跨越。",
+        "takeaway_en": "The high-income threshold is likely to rise to $14,554 for 2026; China's GNI per capita would need to grow 2.3% to cross it.",
+    },
+    "p11-b45": {
+        "title_cn": "美国国债收益率：年初至今",
+        "data_src": "p2",
+        "takeaway_cn": "利率高位波动之下，买入高收益率债券仍需防范收益率进一步上行的风险。",
+        "takeaway_en": "With yields volatile at elevated levels, buying high-yield bonds still carries the risk of further rises.",
+    },
+    "p19-b17": {
+        "title_cn": "美国私募股权募资活动",
+        "data_src": "p14",
+        "takeaway_cn": "今年截至9月30日私募股权募资2220亿美元，去年全年为3300亿美元，按此进度将创下至少2020年以来最差年份。",
+        "takeaway_en": "Firms raised $222 billion through Sept. 30 versus $330 billion for all of last year, on pace for the worst year since at least 2020.",
+    },
+    "p19-b82": {
+        "title_cn": "数据中心总装机容量",
+        "data_src": "p2 p19",
+        "takeaway_cn": "AI电力需求激增推动装机容量预测屡创新高；一些州已要求大型用电客户按每兆瓦5万美元缴纳保证金，以筛除“幽灵”项目。",
+        "takeaway_en": "AI demand keeps lifting capacity projections, while some states now require a $50,000-a-megawatt deposit to weed out phantom projects.",
+    },
+    "p20-b45": {
+        "title_cn": "联合健康季度营收及同比变化",
+        "takeaway_cn": "2026年第三季度联合健康净利润41.1亿美元，折合每股4.56美元；去年同期为23.5亿美元、每股2.59美元。",
+        "takeaway_en": "UnitedHealth's third-quarter net income was $4.11 billion, or $4.56 a share, versus $2.35 billion, or $2.59 a share, a year earlier.",
+    },
+    "p20-b72": {
+        "title_cn": "强生季度营收",
+        "takeaway_cn": "强生7月宣布投入55亿美元解决相关诉讼，收购与合伙交易也在本季度带来额外支出。",
+        "takeaway_en": "J&J said in July it would commit $5.5 billion to resolve lawsuits; acquisitions and partnerships also added charges.",
+    },
+    "p21-b9": {
+        "title_cn": "Stellantis第三季度分区域交付量同比变化",
+        "takeaway_cn": "零跑品牌车辆为欧洲增长作出贡献：出货量增加3.4万辆，达到约4.4万辆。",
+        "takeaway_en": "Leapmotor vehicles added 34,000 units of European volume, reaching around 44,000 vehicles.",
+    },
+    "p21-b43": {
+        "title_cn": "达美乐美国同店销售同比变化",
+        "takeaway_cn": "这份财报是新任首席执行官乔·乔丹本月上任后发布的首份财报。",
+        "takeaway_en": "The report is the first under new chief executive Joe Jordan, who took over this month.",
+    },
+    "p22-b22": {
+        "title_cn": "艾伯森同店销售同比变化",
+        "takeaway_cn": "艾伯森旗下拥有Safeway、Jewel-Osco及ACME等品牌，共计约2200家门店。",
+        "takeaway_en": "Albertsons owns banners including Safeway, Jewel-Osco and ACME, about 2,200 stores in all.",
+    },
+    "p24-b6": {
+        "title_cn": "2019至2025年房屋翻售数量变化",
+        "takeaway_cn": "巴尔的摩空置街区的新式30年期贷款吸引投机者涌入，部分贷款随后违约。",
+        "takeaway_en": "The new 30-year loan type drew speculators to Baltimore's vacant blocks, and many mortgages later defaulted.",
+    },
+    "p31-b8": {
+        "title_cn": "美国小市值高盈利股票相对市场的超额收益",
+        "data_src": "p3",
+        "takeaway_cn": "小盘股、低相对价格、高盈利三因子组合自1963年7月以来年化收益达17.1%，同期美股整体为10.9%。",
+        "takeaway_en": "The small-value-high-profitability combo returned 17.1% annualized since July 1963, versus 10.9% for U.S. stocks overall.",
+    },
+    "p31-b68": {
+        "title_cn": "个股与指数近两日表现",
+        "takeaway_cn": "长鑫存储总裁透露公司计划推出新型DRAM芯片，存储板块股价应声波动。",
+        "takeaway_en": "CXMT's president said the company plans a new type of DRAM chip, moving memory-chip stocks.",
+    },
+    "p32-b26": {
+        "title_cn": "全球自然灾害上半年保险损失（按年份）",
+        "takeaway_cn": "若伊萨亚斯风力不足以致触发巨灾债券损失，部分保险相关证券投资者反而可能受益。",
+        "takeaway_en": "If Isaias isn't large enough to trigger catastrophe-bond losses, some insurance-linked securities investors may benefit.",
+    },
+}
+
+# article id -> authored editorial layer (Tier 1 full composition, Tier 2 specials)
+CONTENT_BY_ID = {
+    "PILOT-A1-BANKS": BANKS,
+    "PILOT-A1-CONDO": CONDO,
+    "PILOT-A1-NAVY": NAVY,
+    "PILOT-A15-EDGEWORTH": EDGEWORTH,
+    "PILOT-A16-WEALTH": WEALTH,
+    "PILOT-A1-GREECE": GREECE,
+    "PILOT-A1-CHINA-YOUTH": CHINA_YOUTH,
+    "PILOT-A1-CARFREE": CARFREE,
+    "CASE-B1B2-PRIVATE-EQUITY": PRIVATE_EQUITY,
+    "PILOT-B1-FACTORIES": FACTORIES,
+}

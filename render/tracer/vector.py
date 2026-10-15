@@ -224,10 +224,27 @@ def chart_webp(pdf_path: str | Path, cv: ChartVector, dpi: int = CROP_DPI) -> by
     return encode_webp(crop_pdf_region(pdf_path, cv.page, cv.union_bbox_points, dpi=dpi))
 
 
-def reencode_image_file(path: str | Path, quality: int = 85) -> bytes:
-    """Re-encode a verified asset file (e.g. inventory figure PNG) as WebP."""
+def reencode_image_file(path: str | Path, quality: int = 85, max_dim: int | None = None) -> bytes:
+    """Re-encode a verified asset file (e.g. inventory figure PNG) as WebP.
+
+    ``max_dim`` bounds the longest edge (preserving aspect) so full-issue
+    photo weaving stays inside the lightweight artifact budget.
+    """
     with open(path, "rb") as fh:
-        return encode_webp(fh.read(), quality=quality)
+        data = fh.read()
+    if not max_dim:
+        return encode_webp(data, quality=quality)
+    from PIL import Image  # lazy
+
+    with Image.open(io.BytesIO(data)) as im:
+        im = im.convert("RGB")
+        w, h = im.size
+        scale = min(1.0, max_dim / max(w, h))
+        if scale < 1.0:
+            im = im.resize((round(w * scale), round(h * scale)), Image.LANCZOS)
+        out = io.BytesIO()
+        im.save(out, format="WEBP", quality=quality, method=6)
+        return out.getvalue()
 
 
 def esc(text: str) -> str:
