@@ -153,7 +153,13 @@ def surgical_narrative_completion(
     seen: dict[str, lxml.html.HtmlElement] = {}
     for p in prose:
         ref = p.get("data-ref")
-        if ref in wanted_index and ref not in seen:
+        if ref not in wanted_index:
+            continue
+        if ref in seen:
+            # duplicate data-ref="pK": remove the extra block, keep the first
+            p.getparent().remove(p)
+            repairs.append(f"dedup:{ref}")
+        else:
             seen[ref] = p
 
     # Relocate blocks that are missing or misordered: walk the canonical id

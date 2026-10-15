@@ -43,8 +43,9 @@ from tracer.vector import (
 )
 from tracer.verify import TracerCompilationError, split_sentences, verify_element_numbers
 
-ISSUE_DATE_CN = "2026年10月14日"
-ISSUE_DATE_EN = "October 14, 2026"
+ISSUE_DATE_CN = "2026年10月14日 · 星期三"
+ISSUE_DATE_EN = "Wednesday, October 14, 2026"
+FRONT_DEK_CN = "利率阴影笼罩华尔街大行；比弗利山庄的豪宅项目向买家借钱；加州财富税公投逼近。"
 DEFAULT_OUTPUT = "/tmp/wsj-2026-10-14-tracer.html"
 
 
@@ -69,8 +70,11 @@ def build_companion_element(cv, spec, series_cn: list[str], title_cn: str, data_
         src_texts,
         extra_grounding=[cv.grounding_text()],
     )
+    # The reader looks at an English printed chart, so the series key pairs the
+    # English chart term with its Chinese translation (Citigroup · 花旗集团);
+    # EN mode shows the chart term only.
     series_items = "".join(
-        f"<li><span class=\"lang-cn\">{esc(cn)}</span><span class=\"co-en\">{esc(en)}</span></li>"
+        f'<li><span class="co-term">{esc(en)}</span><span class="co-cn"> · {esc(cn)}</span></li>'
         for cn, en in zip(series_cn, cv.series_labels_en)
     )
     source_line = ""
@@ -131,7 +135,7 @@ def build_units(data, root: Path, pdf_path: Path, fast: bool = False) -> list[Un
     bilingual = data.bilingual("PILOT-A1-BANKS")
     para_texts = {pid: {"en": bilingual[pid]["en"], "cn": bilingual[pid]["cn"]} for pid in bilingual}
     native2 = data.natives[2]
-    anchors = {m["id"]: m["anchor"] for m in anchor_figures(banks, page_widths, page_heights)}
+    anchors = {m["id"]: m["anchor"] for m in anchor_figures(banks, page_widths, page_heights, data.natives)}
     figures = []
     for spec in content.BANKS["companions"]:
         cid = spec["chart_id"]
@@ -190,14 +194,12 @@ def build_units(data, root: Path, pdf_path: Path, fast: bool = False) -> list[Un
     # --- PILOT-A1-NAVY: natural after-pK figure anchoring ----------------------
     navy = data.articles["PILOT-A1-NAVY"]
     figures = []
-    for n, m in enumerate(anchor_figures(navy, page_widths, page_heights), 1):
+    for n, m in enumerate(anchor_figures(navy, page_widths, page_heights, data.natives), 1):
         img_path = root / next(mm["image"] for mm in navy["media"] if mm["id"] == m["id"])
         webp = b"" if fast else reencode_image_file(img_path)
-        if m["id"] in content.NAVY.get("ad_media_ids", []):
-            cap_cn, cap_en = content.NAVY["ad_caption_cn"], content.NAVY["ad_caption_en"]
-        else:
-            cap_cn, cap_en = content.NAVY["figure_caption_cn"], content.NAVY["figure_caption_en"]
-        fig = build_photo_figure(m["id"], webp, cap_cn, cap_en, n)
+        fig = build_photo_figure(
+            m["id"], webp, content.NAVY["figure_caption_cn"], content.NAVY["figure_caption_en"], n
+        )
         figures.append({
             "anchor": m["anchor"],
             "element": lxml.html.fragment_fromstring(f"<div>{fig}</div>", create_parent=False),
@@ -272,7 +274,7 @@ def build_units(data, root: Path, pdf_path: Path, fast: bool = False) -> list[Un
     entries.append(UnitEntry(
         unit_id="COMPOSITE-A16-LETTERS", section="opinion", kicker="来信 · LETTERS · A16",
         title_cn="读者来信",
-        dek_cn="九封读者来信，五封同声反对柴油计划",
+        dek_cn="读者就柴油计划、教育创新、审批改革与和平奖评选发声。",
         element_html=lxml.html.tostring(composite, encoding="unicode"),
         tier=3, genre="letters",
     ))
@@ -293,7 +295,10 @@ def main(argv: list[str] | None = None) -> int:
 
     data = load_pilot_data()
     entries = build_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast)
-    doc = build_issue_artifact(date_cn=ISSUE_DATE_CN, date_en=ISSUE_DATE_EN, units=entries)
+    doc = build_issue_artifact(
+        date_cn=ISSUE_DATE_CN, date_en=ISSUE_DATE_EN, units=entries,
+        front_dek_cn=FRONT_DEK_CN,
+    )
     out = Path(args.output)
     out.write_text(doc, "utf-8")
     print(f"artifact: {out} ({out.stat().st_size} bytes, {len(entries)} units)")

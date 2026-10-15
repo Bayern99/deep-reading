@@ -120,8 +120,10 @@ CONDO = {
             "title_en": "Founder Bond Fundraising",
             "data_src": "p14",
             "items": [
-                {"label_cn": "已募集", "label_en": "Raised so far", "value": 350000000, "display": "约3.5亿美元 / ~$350 million", "emphasis": False},
-                {"label_cn": "目标规模", "label_en": "Target", "value": 1600000000, "display": "超过16亿美元 / over $1.6 billion", "emphasis": True},
+                {"label_cn": "已募集", "label_en": "Raised so far", "value": 350000000,
+                 "display_cn": "约3.5亿美元", "display_en": "~$350 million", "emphasis": False},
+                {"label_cn": "目标规模", "label_en": "Target", "value": 1600000000,
+                 "display_cn": "超16亿美元", "display_en": "over $1.6 billion", "emphasis": True},
             ],
             "caption_cn": "Cain已通过创始债券募集约3.5亿美元，并计划将规模提升至16亿美元以上。",
             "caption_en": "Cain has raised about $350 million through Founder Bonds and aims to push the total above $1.6 billion.",
@@ -177,12 +179,6 @@ NAVY = {
     "kicker": "U.S. News · A1",
     "figure_caption_cn": "刊载于印刷版的图示与照片",
     "figure_caption_en": "Graphics and photographs from the printed edition",
-    # p06-b60 is a public-service advertisement that shares the story's printed
-    # column; it is carried verbatim with an explicit caption rather than
-    # silently dropped or mislabelled as a news photo.
-    "ad_caption_cn": "与本文同栏刊载的公益广告",
-    "ad_caption_en": "Public-service advertisement printed alongside this story",
-    "ad_media_ids": ["p06-b60"],
 }
 
 # --- PILOT-A15-EDGEWORTH (Tier 2, review) -------------------------------------

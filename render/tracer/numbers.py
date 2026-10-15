@@ -30,8 +30,12 @@ _EN_TOKEN = re.compile(
 )
 
 _CN_TOKEN = re.compile(
-    r"(?P<num>\d[\d.]*)\s*(?P<unit>亿|万|千)?\s*(?P<pct>%|％)?"
+    r"(?P<num>\d[\d.]*)\s*(?P<unit>亿|万|千)?\s*(?P<cur>美元|英镑|欧元|加元|澳元|港元|日元|韩元|人民币|卢布)?\s*(?P<pct>%|％)?"
 )
+
+# Currency names normalize to the same "money" kind as $ / £ / € so that
+# 「9.99美元」 and "$9.99" are the same token and "$5.57" vs 「9.99美元」 mismatches.
+_CN_CURRENCY = ("美元", "英镑", "欧元", "加元", "澳元", "港元", "日元", "韩元", "人民币", "卢布")
 
 
 @dataclass(frozen=True)
@@ -89,12 +93,16 @@ def _cn_tokens(text: str) -> list[NumberToken]:
         if num is None:
             continue
         unit = m.group("unit")
+        cur = m.group("cur")
         pct = m.group("pct")
         if pct:
             out.append(NumberToken(num, "pct", m.group(0).strip()))
         elif unit:
             mult = {"千": Decimal(1e3), "万": Decimal(1e4), "亿": Decimal(1e8)}[unit]
             out.append(NumberToken(num * mult, "money", m.group(0).strip()))
+        elif cur:
+            # bare Chinese currency: 9.99美元 / 32美元 / 5.57美元
+            out.append(NumberToken(num, "money", m.group(0).strip()))
         elif num >= Decimal(1000):
             out.append(NumberToken(num, "count", m.group(0).strip()))
     return out

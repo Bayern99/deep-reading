@@ -16,8 +16,11 @@ the reader shell shows exactly one language layer so text never collides.
 from __future__ import annotations
 
 import html
+import re
+from decimal import Decimal
 from typing import Any
 
+from .numbers import extract_substantive_numbers
 from .verify import TracerCompilationError, verify_element_numbers
 
 INK = "#111111"
@@ -39,6 +42,40 @@ def _t(x: float, y: float, text: str, cls: str = "l-cn", size: int = 13, weight:
         f'<text x="{x:.1f}" y="{y:.1f}" class="{cls}" font-family="{fam}" '
         f'font-size="{size}" font-weight="{weight}" fill="{fill}" text-anchor="{anchor}">{html.escape(text)}</text>'
     )
+
+
+def _est_text_width(text: str, size: float) -> float:
+    """Estimated rendered width: CJK glyphs ≈ size, ASCII ≈ 0.6 * size."""
+    return sum(size if ord(c) >= 0x2E80 else 0.6 * size for c in text)
+
+
+_TEXT_RE = re.compile(
+    r'<text x="(-?[\d.]+)" y="(-?[\d.]+)"([^>]*)>(.*?)</text>', re.S
+)
+
+
+def _validate_svg_text_bounds(svg: str, viewbox_w: int, label: str) -> None:
+    """Clip-free guarantee: every <text> node's estimated extent stays in [0, W].
+
+    Raises TracerCompilationError on any overflow — never silently clip.
+    """
+    for m in _TEXT_RE.finditer(svg):
+        x = float(m.group(1))
+        attrs = m.group(3)
+        size_m = re.search(r'font-size="(\d+)"', attrs)
+        size = int(size_m.group(1)) if size_m else 13
+        anchor_m = re.search(r'text-anchor="(\w+)"', attrs)
+        anchor = anchor_m.group(1) if anchor_m else "start"
+        raw = m.group(4)
+        text = html.unescape(re.sub(r"<[^>]+>", "", raw))
+        tw = _est_text_width(text, size)
+        left = x - (tw / 2 if anchor == "middle" else tw if anchor == "end" else 0.0)
+        right = x + (tw / 2 if anchor == "middle" else 0.0 if anchor == "end" else tw)
+        if left < -1.0 or right > viewbox_w + 1.0:
+            raise TracerCompilationError(
+                f"wsj-chart[{label}]: text {text[:40]!r} extends [{left:.0f},{right:.0f}] "
+                f"past viewBox width {viewbox_w}"
+            )
 
 
 def _bilingual(x: float, y: float, cn: str, en: str, *, size: int = 13, weight: int = 400,
@@ -63,8 +100,9 @@ def _spec_numbers(spec: dict[str, Any]) -> str:
     grid slots), not reader-facing text; their printable form lives in
     ``display``/labels, which is what gets verified.
     """
-    parts: list[str] = [spec.get("title_cn", ""), spec.get("title_en", "")]
     layout_keys = {"value", "row", "w", "x", "y"}
+    parts: list[str] = [spec.get("title_cn", ""), spec.get("title_en", ""),
+                        spec.get("caption_cn", ""), spec.get("caption_en", "")]
     for group in ("items", "nodes", "rows", "cols"):
         for item in spec.get(group, []):
             parts.extend(str(v) for k, v in item.items() if k not in layout_keys and isinstance(v, (str, int, float)))
@@ -89,6 +127,19 @@ def compile_wsj_chart(spec: dict[str, Any], paragraph_texts: dict[str, dict[str,
         raise TracerCompilationError(f"wsj-chart data-src references unknown paragraphs: {unknown}")
     verify_element_numbers(f"wsj-chart[{spec.get('type')}:{spec.get('id', '?')}]", _spec_numbers(spec), sources)
 
+    # comparison: each bar's layout magnitude must match the number printed
+    # in its display label — no silent scale/display divergence.
+    if spec.get("type") == "comparison":
+        for item in spec.get("items", []):
+            value = Decimal(str(item.get("value")))
+            label = f"{item.get('display_cn', '')} {item.get('display_en', '')}"
+            label_nums = extract_substantive_numbers(label)
+            if not any(t.kind == "money" and t.value == value for t in label_nums):
+                raise TracerCompilationError(
+                    f"wsj-chart[comparison:{spec.get('id', '?')}]: bar value {value} "
+                    f"not found in display label {label.strip()!r}"
+                )
+
     ctype = spec.get("type")
     if ctype == "comparison":
         body = _render_comparison(spec)
@@ -101,6 +152,7 @@ def compile_wsj_chart(spec: dict[str, Any], paragraph_texts: dict[str, dict[str,
     else:
         raise TracerCompilationError(f"unknown wsj-chart type: {ctype!r}")
     w, h = spec["_size"]
+    _validate_svg_text_bounds(body, w, f"{ctype}:{spec.get('id', '?')}")
     return _svg("", body, w, h)
 
 
@@ -110,21 +162,38 @@ def _render_comparison(spec: dict[str, Any]) -> str:
     items = spec["items"]
     maxv = max(abs(float(i["value"])) for i in items) or 1.0
     label_w = max(max(len(str(i["label_cn"])) for i in items) * 13, 90) + 8
-    bar_h, gap, top, right = 22, 14, 44, 70
+    # Reserve an explicit right-side value column inside the viewBox so value
+    # labels never extend past x=W (no clipping at narrow widths).
+    value_w = (
+        max(
+            max(_est_text_width(str(i.get("display_cn", "")), 12),
+                _est_text_width(str(i.get("display_en", "")), 11))
+            for i in items
+        )
+        + 12
+    )
+    pad = 10
     W = 640
-    track = W - label_w - right
-    H = top + len(items) * (bar_h + gap) + 26
+    track = W - label_w - value_w - pad
+    if track < 80:
+        raise TracerCompilationError(
+            f"wsj-chart[comparison:{spec.get('id', '?')}]: labels leave no room for bars"
+        )
+    bar_h, gap, top = 22, 16, 46
+    H = top + len(items) * (bar_h + gap) + 28
     spec["_size"] = (W, H)
     out = [_bilingual(0, 20, spec["title_cn"], spec["title_en"], size=14, weight=700, fill=INK)]
     y = top
-    for i, item in enumerate(items):
+    for item in items:
         frac = abs(float(item["value"])) / maxv
         bw = max(frac * track, 2)
-        out.append(_bilingual(0, y + bar_h / 2 + 4, str(item["label_cn"]), str(item["label_en"]), size=12, anchor="start"))
-        out.append(f'<rect x="{label_w}" y="{y}" width="{track}" height="{bar_h}" fill="{PAPER}" stroke="{LINE}"/>')
+        out.append(_bilingual(0, y + bar_h / 2 + 5, str(item["label_cn"]), str(item["label_en"]), size=12))
+        out.append(f'<rect x="{label_w}" y="{y}" width="{track:.1f}" height="{bar_h}" fill="{PAPER}" stroke="{LINE}"/>')
         color = ORANGE if item.get("emphasis") else INK
         out.append(f'<rect x="{label_w}" y="{y}" width="{bw:.1f}" height="{bar_h}" fill="{color}"/>')
-        out.append(_t(label_w + bw + 6, y + bar_h / 2 + 4, str(item["display"]), "l-cn", 12, 700, INK))
+        vx = W - pad
+        out.append(_t(vx, y + 15, str(item.get("display_cn", "")), "l-cn", 12, 700, INK, "end"))
+        out.append(_t(vx, y + 29, str(item.get("display_en", "")), "l-en", 11, 400, MUT, "end"))
         y += bar_h + gap
     return "".join(out)
 

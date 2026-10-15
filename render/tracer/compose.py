@@ -155,22 +155,62 @@ def figure_print_key(
     return (pg, col, y0)
 
 
+# Markers that identify non-editorial print advertisements (PSAs) placed in a
+# story's column; such regions are excluded from reader figures.  Ad copy is
+# set in non-Dow-Jones fonts (e.g. Gotham) and never carries editorial
+# captions or credits; photo regions of genuine figures contain only Dow Jones
+# print families (Exchange/DJ5/Escrow/Retina/Dispatch) or no text at all.
+AD_MARKERS = ("Ad Council", "FeedingAmerica", "Feeding America", "feedingamerica", "ad council")
+WSJ_FONT_PREFIXES = ("Exchange", "DJ5", "Escrow", "Retina", "Dispatch", "Archer", "Steed", "Bell")
+
+
+def is_print_ad(media: dict[str, Any], natives: dict[int, dict[str, Any]] | None) -> bool:
+    """A print ad has ad copy (non-WSJ fonts or ad markers) in its region."""
+    if media.get("type") not in ("photo", "image"):
+        return False
+    native = (natives or {}).get(int(media["page"]))
+    if not native:
+        return False
+    W, H = float(native["width"]), float(native["height"])
+    x0, y0, x1, y1 = [float(v) for v in media["bbox_normalized_top_left"]]
+    bx0, by0, bx1, by1 = x0 * W, y0 * H, x1 * W, y1 * H
+    non_wsj_lines = 0
+    for line in native["lines"]:
+        b = line["bbox"]
+        if b[3] < by0 - 5 or b[1] > by1 + 5 or b[2] < bx0 - 5 or b[0] > bx1 + 5:
+            continue
+        text = line.get("text", "")
+        if any(marker in text for marker in AD_MARKERS):
+            return True
+        chars = line.get("chars") or []
+        if not chars:
+            continue
+        font = chars[0].get("font", "")
+        if not font.startswith(WSJ_FONT_PREFIXES):
+            non_wsj_lines += 1
+    return non_wsj_lines >= 2
+
+
 def anchor_figures(
     article: dict[str, Any],
     page_widths: dict[int, float] | None = None,
     page_heights: dict[int, float] | None = None,
+    natives: dict[int, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    """Natural narrative anchor for every figure: ``after pK`` in print order.
+    """Natural narrative anchor for every editorial figure: ``after pK`` in
+    print order.
 
     Returns media entries enriched with ``anchor`` (paragraph id) and
-    ``print_key``, sorted by physical print order.  Anchors are monotonic by
-    construction; at most one lead figure may land before ``p2`` when a photo
-    genuinely sits above the second paragraph on the printed page.
+    ``print_key``, sorted by physical print order.  Print advertisements are
+    excluded.  Anchors are monotonic by construction; at most one lead figure
+    may land before ``p2`` when a photo genuinely sits above the second
+    paragraph on the printed page.
     """
     pkeys = paragraph_print_keys(article, page_heights)
     pids = [p["id"] for p in article["paragraphs"]]
     out = []
-    for m in sorted(article.get("media") or [], key=lambda m: m["id"]):
+    media = [m for m in (article.get("media") or []) if not is_print_ad(m, natives)]
+    for m in sorted(media, key=lambda m: m["id"]):
         fkey = figure_print_key(m, article, page_widths)
         anchor = None
         for pid in pids:
@@ -209,8 +249,22 @@ def prose_block(pid: str, cn: str, en: str, hl_cn: str = "", hl_en: str = "") ->
     return p
 
 
+def _append_text(node: lxml.html.HtmlElement, text: str) -> None:
+    if len(node):
+        last = node[-1]
+        last.tail = (last.tail or "") + text
+    else:
+        node.text = (node.text or "") + text
+
+
 def _apply_mark_tails(p: lxml.html.HtmlElement) -> None:
-    """lxml cannot mix text and inline marks without tails; rebuild cleanly."""
+    """Apply every pipe-separated ``data-hl`` phrase to the span text.
+
+    Each matched phrase is wrapped in ``<mark class="ed-hl">`` at its first
+    occurrence; overlapping matches are resolved left-to-right (longer phrase
+    wins at the same offset).  Unmatched phrases are ignored; the density cap
+    is enforced over all applied marks by ``check_highlight_density``.
+    """
     for span in p.xpath("./span[contains(@class,'lang-cn') or contains(@class,'lang-en')]"):
         cls = span.get("class")
         hl = span.get("data-hl") or ""
@@ -219,21 +273,28 @@ def _apply_mark_tails(p: lxml.html.HtmlElement) -> None:
             span.remove(child)
         span.text = None
         phrases = [x.strip() for x in hl.split("|") if x.strip()]
-        pos = 0
-        target = None
-        for phrase in sorted(phrases, key=len, reverse=True):
+        matches: list[tuple[int, int]] = []
+        for phrase in phrases:
             idx = text.find(phrase)
             if idx >= 0:
-                pos, target = idx, phrase
-                break
-        if target is None:
-            span.text = text
-            continue
-        span.text = text[:pos]
-        mark = _el("mark", "ed-hl")
-        mark.text = target
-        mark.tail = text[pos + len(target):]
-        span.append(mark)
+                matches.append((idx, len(phrase)))
+        matches.sort(key=lambda m: (m[0], -m[1]))
+        chosen: list[tuple[int, int]] = []
+        end = 0
+        for idx, ln in matches:
+            if idx >= end:
+                chosen.append((idx, ln))
+                end = idx + ln
+        pos = 0
+        for idx, ln in chosen:
+            if idx > pos:
+                _append_text(span, text[pos:idx])
+            mark = _el("mark", "ed-hl")
+            mark.text = text[idx:idx + ln]
+            span.append(mark)
+            pos = idx + ln
+        if pos < len(text):
+            _append_text(span, text[pos:])
         span.set("class", cls)
 
 
@@ -249,14 +310,17 @@ def prose_block(pid: str, cn: str, en: str, hl_cn: str = "", hl_en: str = "") ->
     return p
 
 
-def section_heading(doc: lxml.html.HtmlElement, tag: str, cn: str, en: str, data_ref: str) -> lxml.html.HtmlElement:
-    h = _el(tag, "sec-h", data_ref=data_ref)
-    h.text = cn
-    if en:
-        sub = _el("span", "sec-h-en")
-        sub.text = en
-        sub.tail = ""
-        h.append(sub)
+def section_subheading(doc: lxml.html.HtmlElement, pid: str, cn: str, en: str,
+                       data_src: str) -> lxml.html.HtmlElement:
+    h = _el("h2", "sec-h")
+    h.set("data-ref", pid)
+    h.set("data-src", data_src)
+    h_cn = _el("span", "lang-cn")
+    h_cn.text = cn
+    h.append(h_cn)
+    h_en = _el("span", "sec-h-en")
+    h_en.text = en
+    h.append(h_en)
     doc.append(h)
     return h
 
@@ -440,7 +504,9 @@ def compose_article_unit(
             h = _el("h2", "sec-h")
             h.set("data-ref", pid)
             h.set("data-src", sub.get("data_src", pid))
-            h.text = sub["cn"]
+            h_cn = _el("span", "lang-cn")
+            h_cn.text = sub["cn"]
+            h.append(h_cn)
             h_en = _el("span", "sec-h-en")
             h_en.text = sub["en"]
             h.append(h_en)

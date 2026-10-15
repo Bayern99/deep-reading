@@ -82,7 +82,8 @@ html[lang="en"] svg .l-en{display:block}
 .thesis-box{max-width:640px;margin:20px auto;border-left:3px solid var(--ink);padding:10px 18px;font-size:18px;font-weight:700;line-height:1.7;color:var(--ink);background:#f6f3ec}
 .sec-h{font-size:21px;line-height:1.4;color:var(--ink);margin:1.6em 0 .6em;font-weight:700}
 .sec-h-en{display:none;font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:400;color:var(--mut);margin-left:10px}
-html[lang="en"] .sec-h .lang-cn,html[lang="bi"] .sec-h .sec-h-en{display:inline}
+html[lang="en"] .sec-h .lang-cn{display:none}
+html[lang="en"] .sec-h .sec-h-en,html[lang="bi"] .sec-h .sec-h-en{display:inline}
 .pull-quote{max-width:600px;margin:26px auto;border-left:3px solid var(--ink);padding:4px 0 4px 18px;font-size:20px;font-weight:700;line-height:1.7;color:var(--ink)}
 .book-details{max-width:640px;margin:18px auto;border:1px solid var(--line);padding:14px 18px;background:#f6f3ec}
 .book-details .bd-title_cn{font-size:17px;font-weight:700;color:var(--ink)}
@@ -98,6 +99,9 @@ figcaption{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--mut)
 html[lang="en"] .companion .co-en{display:block}
 html[lang="bi"] .companion .co-en{display:block}
 .companion ul{margin:6px 0;padding-left:18px;font-size:13.5px;line-height:1.7}
+.companion .co-term{font-weight:700;color:var(--ink)}
+.companion .co-cn{color:var(--body)}
+html[lang="en"] .companion .co-cn{display:none}
 .companion .co-src{font-size:12px;color:var(--mut);border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
 .wsj-chart{max-width:640px;margin:26px auto;border:1px solid var(--line);padding:16px;background:#fff}
 .wsj-chart h3{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 6px;font-family:'Noto Sans SC',sans-serif}
@@ -110,7 +114,6 @@ mark.ed-hl{background:linear-gradient(transparent 62%,rgba(250,144,0,.4) 62%);co
 .section-head{max-width:760px;margin:44px auto 0;border-bottom:1px solid var(--ink);padding-bottom:6px}
 .section-head h2{font-size:24px;color:var(--ink);margin:0}
 .section-head .en{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--mut);margin-left:8px}
-.section-empty{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--mut);max-width:760px;margin:8px auto}
 @media(max-width:768px){.unit-head h1{font-size:30px}.pull-quote{font-size:19px}}
 @media(max-width:430px){body{font-size:17px}.unit-head h1{font-size:30px}h1.page-title{font-size:28px}}
 """
@@ -151,15 +154,17 @@ def build_issue_artifact(
     date_cn: str,
     date_en: str,
     units: list[UnitEntry],
+    front_dek_cn: str = "",
     extra_head_html: str = "",
 ) -> str:
     """Assemble the self-contained single-file Issue Artifact HTML string."""
     by_section: dict[str, list[UnitEntry]] = {key: [] for key, _, _ in SECTIONS}
     for u in units:
         by_section[u.section].append(u)
+    populated = [(key, cn, en) for key, cn, en in SECTIONS if by_section[key]]
 
     nav = "".join(
-        f'<a href="#sec-{key}">{html.escape(cn)}</a>' for key, cn, _ in SECTIONS
+        f'<a href="#sec-{key}">{html.escape(cn)}</a>' for key, cn, _ in populated
     )
     overview_items = "".join(
         f'<a class="ov-item" href="#u-{html.escape(u.unit_id)}" data-tier="{u.tier}">'
@@ -170,28 +175,25 @@ def build_issue_artifact(
     )
 
     section_blocks = []
-    for key, cn, en in SECTIONS:
+    for key, cn, en in populated:
         members = by_section[key]
         head = (
             f'<div class="section-head" id="sec-{key}"><h2>{html.escape(cn)}'
             f'<span class="en">{html.escape(en)}</span></h2></div>'
         )
-        if members:
-            body = "".join(
-                f'<div class="unit" id="u-{html.escape(m.unit_id)}" data-unit="{html.escape(m.unit_id)}" '
-                f'data-tier="{m.tier}" data-genre="{html.escape(m.genre)}">{m.element_html}</div>'
-                for m in members
-            )
-            section_blocks.append(head + body)
-        else:
-            section_blocks.append(head + '<p class="section-empty">本期追踪单元未覆盖本版。</p>')
+        body = "".join(
+            f'<div class="unit" id="u-{html.escape(m.unit_id)}" data-unit="{html.escape(m.unit_id)}" '
+            f'data-tier="{m.tier}" data-genre="{html.escape(m.genre)}">{m.element_html}</div>'
+            for m in members
+        )
+        section_blocks.append(head + body)
 
     doc = f"""<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WSJ 深读 · {html.escape(date_cn)} · Vertical Tracer</title>
+<title>WSJ 深读 · {html.escape(date_cn)}</title>
 <style>{CSS}</style>
 {extra_head_html}
 </head>
@@ -211,7 +213,7 @@ def build_issue_artifact(
 <button class="pill" data-view="read">沉浸阅读</button>
 </div>
 <h1 class="page-title">本期概览 <span style="font-family:'Noto Sans SC';font-size:14px;color:var(--mut)">Edition Overview</span></h1>
-<p class="front-dek">2026年10月14日 · 三期编辑层级垂直追踪样本 · 五个代表性阅读单元</p>
+<p class="front-dek">{html.escape(front_dek_cn)}</p>
 <div class="overview">{overview_items}</div>
 {''.join(section_blocks)}
 </div></main>

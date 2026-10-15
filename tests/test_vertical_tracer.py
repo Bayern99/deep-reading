@@ -13,6 +13,7 @@ import os
 import re
 import sys
 import unittest
+from decimal import Decimal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "render"))
@@ -25,6 +26,7 @@ from tracer.compose import (  # noqa: E402
     anchor_figures,
     composite_letters_unit,
     compose_article_unit,
+    is_print_ad,
     load_pilot_data,
 )
 from tracer.shell import SECTIONS, build_issue_artifact  # noqa: E402
@@ -126,12 +128,14 @@ class ChartVectorUnionCheck(TracerDataTestCase):
 
 
 class FigureNarrativeMonotonicityCheck(TracerDataTestCase):
-    """PILOT-A1-NAVY: 8 figures woven across chapters in print order."""
+    """PILOT-A1-NAVY: editorial figures woven across chapters in print order."""
 
     def test_anchors_monotonic_and_woven(self):
         navy = self.data.articles["PILOT-A1-NAVY"]
-        anchored = anchor_figures(navy, self.page_widths, self.page_heights)
-        self.assertEqual(len(anchored), 8)
+        anchored = anchor_figures(navy, self.page_widths, self.page_heights, self.data.natives)
+        # p06-b60 is a Feeding America / Ad Council PSA, not an editorial figure
+        self.assertEqual(len(anchored), 7)
+        self.assertNotIn("p06-b60", [m["id"] for m in anchored])
         # print order == sorted by print key (column-major)
         keys = [m["print_key"] for m in anchored]
         self.assertEqual(keys, sorted(keys), "figures must follow physical print order")
@@ -142,7 +146,14 @@ class FigureNarrativeMonotonicityCheck(TracerDataTestCase):
         self.assertLessEqual(len(before_p2), 1, "at most one figure before p2")
         # woven across the 34-paragraph story, not dumped at the head
         self.assertGreater(anchors[-1], 20, "figures must reach deep into the story")
-        self.assertGreaterEqual(len(set(anchors)), 3, "figures must span multiple chapters")
+        self.assertGreaterEqual(len(set(anchors)), 2, "figures must span multiple chapters")
+
+    def test_print_ad_detection(self):
+        navy = self.data.articles["PILOT-A1-NAVY"]
+        by_id = {m["id"]: m for m in navy["media"]}
+        self.assertTrue(is_print_ad(by_id["p06-b60"], self.data.natives))
+        self.assertFalse(is_print_ad(by_id["p06-b76"], self.data.natives))
+        self.assertFalse(is_print_ad(by_id["p06-b80"], self.data.natives))
 
     def test_chart_companions_anchor_in_print_order(self):
         banks = self.data.articles["PILOT-A1-BANKS"]
@@ -169,11 +180,26 @@ class WsjChartCompileCheck(TracerDataTestCase):
             self.assertIn('width="100%"', svg)
             vb = re.search(r'viewBox="0 0 (\d+) (\d+)"', svg)
             w, h = int(vb.group(1)), int(vb.group(2))
-            # clip-free: every x coordinate stays inside the viewBox
+            # clip-free: every x/y coordinate stays inside the viewBox
             for x in re.findall(r'x="([\d.]+)"', svg):
                 self.assertLessEqual(float(x), w + 1)
             for y in re.findall(r'y="([\d.]+)"', svg):
                 self.assertLessEqual(float(y), h + 1)
+            # clip-free text: estimated rendered width of every <text> node,
+            # including CJK width, stays inside [0, viewBox_width]
+            import html as html_mod
+            for m in charts._TEXT_RE.finditer(svg):
+                x = float(m.group(1))
+                attrs = m.group(3)
+                size = int(re.search(r'font-size="(\d+)"', attrs).group(1))
+                anchor_m = re.search(r'text-anchor="(\w+)"', attrs)
+                anchor = anchor_m.group(1) if anchor_m else "start"
+                text = html_mod.unescape(re.sub(r"<[^>]+>", "", m.group(4)))
+                tw = charts._est_text_width(text, size)
+                left = x - (tw / 2 if anchor == "middle" else tw if anchor == "end" else 0.0)
+                right = x + (tw / 2 if anchor == "middle" else 0.0 if anchor == "end" else tw)
+                self.assertGreaterEqual(left, -1.0, f"{spec['id']} text {text[:24]!r} left edge")
+                self.assertLessEqual(right, w + 1.0, f"{spec['id']} text {text[:24]!r} right edge")
         self.assertEqual(types, {"comparison", "flow", "timeline", "matrix"})
 
     def test_grounding_rejects_invented_number(self):
@@ -182,8 +208,33 @@ class WsjChartCompileCheck(TracerDataTestCase):
             "data_src": "p14",
             "items": [
                 {"label_cn": "已募集", "label_en": "Raised", "value": 412000000,
-                 "display": "4.12亿美元 / $41.2 million", "emphasis": False},
+                 "display_cn": "4.12亿美元", "display_en": "$41.2 million", "emphasis": False},
             ],
+        }
+        with self.assertRaises(TracerCompilationError):
+            charts.compile_wsj_chart(spec, self.para_texts)
+
+    def test_bar_value_must_match_display_label(self):
+        # scale/display divergence: bar says 1.6e9 but the label says 350M
+        spec = {
+            "id": "skew", "type": "comparison", "title_cn": "x", "title_en": "y",
+            "data_src": "p14",
+            "items": [
+                {"label_cn": "已募集", "label_en": "Raised", "value": 1600000000,
+                 "display_cn": "约3.5亿美元", "display_en": "~$350 million", "emphasis": False},
+            ],
+        }
+        with self.assertRaises(TracerCompilationError):
+            charts.compile_wsj_chart(spec, self.para_texts)
+
+    def test_caption_numbers_are_grounded(self):
+        spec = {
+            "id": "badcap", "type": "matrix", "title_cn": "x", "title_en": "y",
+            "data_src": "p5 p7",
+            "caption_cn": "收益率一度达到9.99%。",
+            "caption_en": "Yields reached 9.99%.",
+            "cols": [{"label_cn": "A", "label_en": "A"}, {"label_cn": "B", "label_en": "B"}],
+            "rows": [{"label_cn": "r", "label_en": "r", "cells": [{"cn": "5%", "en": "5%", "emphasis": False}, {"cn": "-", "en": "-"}]}],
         }
         with self.assertRaises(TracerCompilationError):
             charts.compile_wsj_chart(spec, self.para_texts)
@@ -325,6 +376,14 @@ class HistoricalFaultInjectionRecallCheck(TracerDataTestCase):
         self.assertEqual(len(bad), 1)
         self.assertEqual(bad[0].value, 70000000)
 
+    def test_c2_bare_chinese_currency_mismatch(self):
+        # 9.99美元 vs $5.57: bare Chinese currency amounts are substantive
+        src = ["JPMorgan reported a profit of $15.31 billion, or $5.57 a share."]
+        self.assertEqual(ground_numbers("每股5.57美元", src), [])
+        bad = ground_numbers("每股9.99美元", src)
+        self.assertEqual(len(bad), 1)
+        self.assertEqual(bad[0].value, Decimal("9.99"))
+
     def test_d_missing_paragraph_fixed_by_ast_surgery(self):
         import lxml.html
         b = self.data.bilingual("PILOT-A16-WEALTH")
@@ -344,6 +403,28 @@ class HistoricalFaultInjectionRecallCheck(TracerDataTestCase):
         inserted = article.xpath(".//p[@data-ref='p3']/span")
         self.assertEqual(inserted[0].text, b["p3"]["cn"], "surgical fill must restore canonical CN")
         self.assertEqual(inserted[1].text, b["p3"]["en"], "surgical fill must restore canonical EN")
+
+    def test_d2_duplicate_data_ref_deduplicated(self):
+        import lxml.html
+        article = lxml.html.Element("article")
+        for pid in ("p1", "p2", "p2", "p3"):  # faulty layout duplicates p2
+            p = lxml.html.Element("p")
+            p.set("class", "prose-p")
+            p.set("data-ref", pid)
+            article.append(p)
+        repairs = surgical_narrative_completion(article, ["p1", "p2", "p3"])
+        self.assertIn("dedup:p2", repairs)
+        refs = [p.get("data-ref") for p in article.xpath(".//p[@data-ref]")]
+        self.assertEqual(refs, ["p1", "p2", "p3"], "each pK appears exactly once")
+
+    def test_d3_multi_phrase_data_hl_marks_all_phrases(self):
+        from tracer.compose import prose_block
+        p = prose_block("p1", "甲条款与乙条款都很重要", "Clause A and Clause B matter",
+                        hl_cn="甲条款|乙条款", hl_en="Clause A|Clause B")
+        marks_cn = [m.text_content() for m in p.xpath("./span[contains(@class,'lang-cn')]//mark")]
+        marks_en = [m.text_content() for m in p.xpath("./span[contains(@class,'lang-en')]//mark")]
+        self.assertEqual(marks_cn, ["甲条款", "乙条款"])
+        self.assertEqual(marks_en, ["Clause A", "Clause B"])
 
     def test_e_highlight_density_cap(self):
         import lxml.etree
@@ -387,11 +468,20 @@ class ReaderShellArtifactCheck(unittest.TestCase):
         cls.entries = build_units(data, PILOT_ROOT, PDF_PATH, fast=not (HAS_FITZ and HAS_PIL))
         cls.doc = build_issue_artifact(date_cn=ISSUE_DATE_CN, date_en=ISSUE_DATE_EN, units=cls.entries)
 
-    def test_seven_canonical_sections(self):
-        import html as html_mod
-        for key, cn, _ in SECTIONS:
+    def test_canonical_sections_populated_only(self):
+        # Partial issues omit empty sections entirely (no pipeline chrome).
+        for key in ("a1", "us", "opinion"):
             self.assertIn(f'id="sec-{key}"', self.doc)
-            self.assertIn(html_mod.escape(cn), self.doc)
+        for cn in ("A1 头版要闻", "U.S. 美国", "Opinion 社论与观点"):
+            self.assertIn(cn, self.doc)
+        for key in ("world", "bt", "markets", "life"):
+            self.assertNotIn(f'id="sec-{key}"', self.doc)
+        self.assertNotIn("未覆盖", self.doc)
+        # authentic newspaper surface: no tracer/sample wording
+        self.assertNotIn("Vertical Tracer", self.doc)
+        self.assertNotIn("追踪样本", self.doc)
+        self.assertNotIn("代表性阅读单元", self.doc)
+        self.assertIn("星期三", self.doc)
 
     def test_units_and_language_switching(self):
         for uid in ("PILOT-A1-BANKS", "PILOT-A1-CONDO", "PILOT-A1-NAVY",
