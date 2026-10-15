@@ -55,6 +55,15 @@ make reader ISSUE=2026-10-12
 
 The outputs are `2026-10-12/dist/index.html` (whole issue), `baseline.html` (internal comparison), and `editorial-reader.html` (saved-artifact Reader snapshot). The snapshot can reopen saved content offline; generation and queue controls require the live server. `make build` does not consume generated editorial artifacts. `make reader` does not rebuild the whole-issue newspaper. See [BUILD](render/BUILD.md) before generating new content.
 
+For the lightweight portable Issue Artifact of the 2026-10-14 pilot issue (no Studio server, no model calls; see [ADR 0001](docs/adr/0001-three-tier-editorial-composition.md) and `skills/wsj-deep-read/SKILL.md`):
+
+```bash
+make tracer          # full-issue artifact + LQA gate report
+make tracer-certify  # ... + deterministic 7-Oracle certification
+```
+
+Both write to `/tmp` (`wsj-2026-10-14.html`, `gate-report.json`, `oracle-certification.json`) and use the system Python with `fitz`/`PIL` (`TRACER_PYTHON` overrides).
+
 ## Repository map
 
 ```text

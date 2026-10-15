@@ -308,6 +308,12 @@ def main(argv: list[str] | None = None) -> int:
         help="path for the two-stage LQA gate report JSON (full mode; "
         "never embedded in the reader HTML)",
     )
+    ap.add_argument(
+        "--certify", default=None, metavar="CERT.json",
+        help="full mode only: run the 7-Oracle certification over the generated "
+        "artifact and write the compact certification JSON (never embedded "
+        "in the reader HTML); exits non-zero when any oracle fails",
+    )
     ap.add_argument("--fast", action="store_true", help="skip PDF raster work (smoke)")
     args = ap.parse_args(argv)
 
@@ -348,6 +354,21 @@ def main(argv: list[str] | None = None) -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, "utf-8")
     print(f"artifact: {out} ({out.stat().st_size} bytes, {len(entries)} units)")
+
+    if args.certify:
+        if args.mode != "full":
+            raise SystemExit("--certify requires --mode full")
+        from tracer.oracles import certify
+
+        cert = certify(out, data, out_path=args.certify, check_budget=not args.fast)
+        verdict = "PASS" if cert.passed else "FAIL"
+        print(
+            f"certify: {verdict} "
+            + " ".join(f"{o.name}={'ok' if o.passed else 'FAIL'}" for o in cert.oracles)
+            + f" -> {args.certify}"
+        )
+        if not cert.passed:
+            return 1
     return 0
 
 

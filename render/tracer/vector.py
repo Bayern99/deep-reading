@@ -12,7 +12,9 @@ The union cropper repairs normalized inventory bboxes that chopped chart
 headers/sources: it scans the chart's horizontal column span for adjacent
 ``Retina*`` lines above and below, computes the union bounding box with clean
 padding, and crops the region directly from the original print PDF at high
-DPI, encoded once as reading-grade WebP.
+DPI, encoded once as reading-grade WebP.  Shared multi-column source lines
+are never cropped into — their full text is recovered separately so the
+Bilingual Chart Companion can print the complete source as HTML text.
 
 `fitz` (PyMuPDF) and `PIL` are imported lazily so the module stays importable
 without them.
@@ -48,6 +50,12 @@ _LOCK_PAD_PT = 10.0
 _CONTAIN_PAD_PT = 15.0
 # Multi-column source lines keep only this slice of the chart's column.
 _SRC_CLAMP_PT = 6.0
+# A RetinaMPNarrowLt line wider than this factor of the chart's own width is
+# a shared multi-column source line: its full text is extracted into
+# ``ChartVectorMeta.source`` but it never expands the WebP crop (Reviewer-G
+# follow-up: clamping it into a 1-column crop left sliced fragments like a
+# hyphen or "and S" at the bottom edge of p10-b59/63/68).
+_MULTI_COL_FACTOR = 1.35
 # Body prose families that must never be crossed or cropped into a chart.
 _BODY_FONTS = ("Exchange", "DJ5Exchange", "Escrow", "Dispatch", "Archer", "Steed", "Bell")
 
@@ -116,13 +124,17 @@ def union_chart_bbox(
     - **Column lock** — the union never extends horizontally beyond
       ``[orig_x0 - 10pt, orig_x1 + 10pt]``; only lines substantially
       contained in ``[orig_x0 - 15pt, orig_x1 + 15pt]`` join.  A shared
-      multi-column ``RetinaMPNarrowLt`` source line is clamped to the
-      chart's own column slice.
+      multi-column ``RetinaMPNarrowLt`` source line (>1.35x the chart width)
+      is never cropped into: it is returned separately in ``text_only`` so
+      its full text is recovered while the crop stops just above it.
+      Slightly wider single-column sources keep the chart-column slice.
     - **Sibling barrier** — the vertical walk stops at any other media
       item's bbox on the page and never absorbs a sibling's title (a line
       sitting directly above a sibling, centered in its span).
     - **Prose barrier** — the walk never crosses an ``ExchangeBook`` /
       ``DJ5Exchange*`` body line, so prose can never enter the crop.
+
+    Returns ``(union_bbox_points, members, text_only)``.
     """
     W, H = float(native["width"]), float(native["height"])
     cx0, cy0, cx1, cy1 = [float(v) for v in chart_norm]
@@ -132,6 +144,7 @@ def union_chart_bbox(
     src_clamp = (bx0 - _SRC_CLAMP_PT, bx1 + _SRC_CLAMP_PT)
     siblings = list(sibling_bboxes or [])
     members: list[dict[str, Any]] = []
+    text_only: list[dict[str, Any]] = []  # full text extracted, crop untouched
     clamps: dict[int, tuple[float, float]] = {}  # id(line) -> x clamp for source lines
 
     retina = [l for l in native["lines"] if is_retina(l) and l.get("chars")]
@@ -150,10 +163,22 @@ def union_chart_bbox(
         return False
 
     def include(l: dict[str, Any]) -> bool:
-        """True when the line may join the union (clamping multi-column sources)."""
+        """True when the line may join the union (clamping multi-column sources).
+
+        A ``RetinaMPNarrowLt`` line much wider than the chart's own column is
+        a shared multi-column source line (p10-b59/63/68): its full text is
+        still recovered (into ``text_only``, hence ``ChartVectorMeta.source``
+        and the Chart Companion card) but it never expands the WebP crop, so
+        no sliced half-word can sit at a crop's bottom edge.  Slightly wider
+        single-column sources keep the old column-clamped slice (e.g.
+        ``Source: the companies`` under p02-b78 stays inside the crop).
+        """
         if contain[0] <= l["bbox"][0] and l["bbox"][2] <= contain[1]:
             return True
         if line_font(l).startswith(RETINA_SOURCE_FONT):
+            if (l["bbox"][2] - l["bbox"][0]) > _MULTI_COL_FACTOR * (bx1 - bx0):
+                text_only.append(l)
+                return False
             clamps[id(l)] = src_clamp  # contribute only this chart's column slice
             return True
         return False
@@ -211,10 +236,15 @@ def union_chart_bbox(
     uy0 = min([by0] + [l["bbox"][1] for l in members]) - _UNION_PAD_PT
     ux1 = max([bx1] + xs1) + _UNION_PAD_PT
     uy1 = max([by1] + [l["bbox"][3] for l in members]) + _UNION_PAD_PT
+    if text_only:
+        # Never crop into a shared multi-column source line: stop the crop
+        # just above the first one even when a single-column source line
+        # above it already joined the union.
+        uy1 = min(uy1, min(l["bbox"][1] for l in text_only) - 0.5)
     # Hard column lock: never crop outside the chart's own column.
     ux0 = max(0.0, ux0, lock[0])
     ux1 = min(W, ux1, lock[1])
-    return [ux0, max(0.0, uy0), ux1, min(H, uy1)], members
+    return [ux0, max(0.0, uy0), ux1, min(H, uy1)], members, text_only
 
 
 def media_sibling_bboxes(
@@ -247,14 +277,15 @@ def extract_chart_vectors(
     """Recover title / series labels / axis ticks / source for one chart.
 
     The union bbox (used for cropping) covers the chart plus adjacent
-    title/source lines, locked to the chart's own column; the structured
-    strings also read every ``Retina*`` line inside the chart region itself
-    (series labels, axis ticks).  ``sibling_bboxes`` (points, same page)
-    fence the vertical walk so one chart never absorbs a sibling's title or
-    a multi-column caption.
+    title/source lines, locked to the chart's own column; shared
+    multi-column source lines contribute their full text but never expand
+    the crop.  The structured strings also read every ``Retina*`` line
+    inside the chart region itself (series labels, axis ticks).
+    ``sibling_bboxes`` (points, same page) fence the vertical walk so one
+    chart never absorbs a sibling's title or a multi-column caption.
     """
     W, H = float(native["width"]), float(native["height"])
-    union_pt, members = union_chart_bbox(native, chart_norm, sibling_bboxes)
+    union_pt, members, text_only = union_chart_bbox(native, chart_norm, sibling_bboxes)
     cx0, cy0, cx1, cy1 = [float(v) for v in chart_norm]
     bx0, by0, bx1, by1 = cx0 * W, cy0 * H, cx1 * W, cy1 * H
 
@@ -272,7 +303,7 @@ def extract_chart_vectors(
         and l["bbox"][3] >= by0 - 1.0 and l["bbox"][1] <= by1 + 1.0
         and _x_overlap(l["bbox"][0], l["bbox"][2], bx0, bx1, _X_PAD_PT)
     ]
-    member_set = list(members)
+    member_set = list(members) + list(text_only)  # text_only: source text, no crop
     member_set.sort(key=lambda l: (l["bbox"][1], l["bbox"][0]))
     inside.sort(key=lambda l: (l["bbox"][1], l["bbox"][0]))
 
