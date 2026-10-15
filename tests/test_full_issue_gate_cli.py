@@ -13,6 +13,7 @@ import sys
 import tempfile
 import time
 import unittest
+from decimal import Decimal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "render"))
@@ -180,6 +181,145 @@ class NumbersDedupCheck(unittest.TestCase):
             extract_substantive_numbers("5万亿")[0].value,
             extract_substantive_numbers("$5 trillion")[0].value,
         )
+
+    def test_calendar_years_and_decades_are_not_counts(self):
+        """Years/decades rendered as 「上世纪80年代」 must not flag magnitudes."""
+        for text in ("in the 1980s", "in 1890", "the early 1900s", "上世纪80年代",
+                     "19世纪90年代", "the mid-2010s", "1969-70"):
+            toks = extract_substantive_numbers(text)
+            self.assertEqual(toks, [], f"{text!r} should yield no tokens, got {toks}")
+        # real counts stay substantive
+        self.assertTrue(any(t.value == Decimal("47000") for t in extract_substantive_numbers("47000 vehicles")))
+
+    def test_chinese_range_endpoints_share_trailing_unit(self):
+        toks = extract_substantive_numbers("仅收取约20至50美元的人工费")
+        self.assertEqual(
+            sorted((str(t.value), t.kind) for t in toks),
+            [("20", "money"), ("50", "money")],
+        )
+
+    def test_hyphenated_money_suffix(self):
+        toks = extract_substantive_numbers("a $50,000-a-megawatt deposit")
+        self.assertIn(("50000", "money"), [(str(t.value), t.kind) for t in toks])
+
+    def test_verbal_fractions(self):
+        toks = extract_substantive_numbers("roughly half a million followers")
+        self.assertIn(("500000", "money"), [(str(t.value), t.kind) for t in toks])
+
+    def test_sentence_final_scale_word_kept(self):
+        toks = extract_substantive_numbers("Revenue rose 9% to $115 billion.")
+        self.assertIn("115000000000", [str(t.value) for t in toks])
+
+
+@unittest.skipUnless(HAS_DATA, "2026-10-14 pilot dataset not present")
+class ChartUnionCropCheck(FullIssueDataTestCase):
+    """Reviewer-G round 1: union crops locked to the chart's own column."""
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        from tracer.vector import media_sibling_bboxes
+        cls.extracted = {}
+        for aid, a in cls.articles.items():
+            for m in a.get("media", []):
+                if m.get("type") != "chart":
+                    continue
+                native = cls.data.natives[int(m["page"])]
+                W, H = float(native["width"]), float(native["height"])
+                sibs = media_sibling_bboxes(a.get("media") or [], int(m["page"]), m["id"], W, H)
+                cv = extract_chart_vectors(native, m["id"], int(m["page"]), m["bbox_normalized_top_left"], sibs)
+                cls.extracted[m["id"]] = (m, native, cv)
+
+    def test_all_21_charts_extracted(self):
+        self.assertEqual(len(self.extracted), 21)
+
+    def test_union_never_balloons_past_own_column(self):
+        for cid, (m, native, cv) in self.extracted.items():
+            with self.subTest(chart=cid):
+                W = float(native["width"])
+                ox0, _, ox1, _ = [float(v) for v in m["bbox_normalized_top_left"]]
+                orig_w = (ox1 - ox0) * W
+                ux0, _, ux1, _ = cv.union_bbox_points
+                self.assertLessEqual(ux1 - ux0, orig_w + 24.0, f"{cid} union too wide")
+
+    def test_zero_body_prose_inside_union_crops(self):
+        from tracer.vector import line_font
+        for cid, (m, native, cv) in self.extracted.items():
+            with self.subTest(chart=cid):
+                ux0, uy0, ux1, uy1 = cv.union_bbox_points
+                for l in native["lines"]:
+                    font = line_font(l)
+                    if not (font.startswith("Exchange") or font.startswith("DJ5Exchange")):
+                        continue
+                    cx = (l["bbox"][0] + l["bbox"][2]) / 2
+                    cy = (l["bbox"][1] + l["bbox"][3]) / 2
+                    self.assertFalse(
+                        ux0 <= cx <= ux1 and uy0 <= cy <= uy1,
+                        f"{cid} crops body prose line {l.get('text', '')[:50]!r}",
+                    )
+
+    def test_clean_nonconcatenated_titles(self):
+        def de_lig(s: str) -> str:
+            return s.replace("\ufb01", "fi").replace("\ufb02", "fl").replace("\ufb00", "ff")
+
+        titles = {cid: de_lig(cv.title_en) for cid, (_, _, cv) in self.extracted.items()}
+        self.assertEqual(titles["p20-b72"], "Johnson & Johnson quarterly revenue")
+        self.assertEqual(titles["p10-b59"], "Urban unemployment rate")
+        self.assertEqual(titles["p10-b63"], "Urban disposable income per capita, year-over-year change")
+        self.assertEqual(titles["p10-b68"], "Consumer confidence index")
+        self.assertEqual(titles["p10-b57"], "Annual change in number of employed")
+        for cid, title in titles.items():
+            self.assertNotIn("bellwether", title, f"{cid} absorbed the photo caption")
+            self.assertLessEqual(len(title), 120, f"{cid} title looks concatenated: {title!r}")
+
+
+@unittest.skipUnless(HAS_DATA, "2026-10-14 pilot dataset not present")
+class Tier2NoRestatementCheck(FullIssueDataTestCase):
+    """FOUNDATION.md Invariant 5: no Tier 2 element restates the lede or a
+    sentence already used by another element."""
+
+    def test_takeaways_never_select_the_lede(self):
+        from tracer.full_compose import genre_layer
+        for aid in ("PILOT-A2-HOMES", "PILOT-A7-POPE", "PILOT-B4-ALBERTSONS", "PILOT-B2-JNJ"):
+            layer = genre_layer(self.data, aid, "article")
+            if "takeaways" not in layer:
+                continue
+            with self.subTest(unit=aid):
+                pids = [tk["data_src"] for tk in layer["takeaways"]]
+                self.assertNotIn("p1", pids, f"{aid} takeaway restates the lede")
+                units = self.data.units(aid)
+                for tk in layer["takeaways"]:
+                    self.assertIn(tk["en"], units[tk["data_src"]]["en"])
+
+    def test_thesis_box_not_the_lede(self):
+        from tracer.full_compose import genre_layer
+        layer = genre_layer(self.data, "PILOT-A15-FRANK", "opinion")
+        if "thesis" in layer:
+            self.assertNotEqual(layer["thesis"]["data_src"], "p1")
+
+    def test_pull_quote_not_repeating_takeaway_or_thesis(self):
+        from tracer.full_compose import genre_layer
+        for aid, genre in (("PILOT-A15-FRANK", "opinion"), ("PILOT-A17-FRIEDMAN", "opinion")):
+            layer = genre_layer(self.data, aid, genre)
+            if "pull_quote" not in layer:
+                continue
+            with self.subTest(unit=aid):
+                pq = layer["pull_quote"]
+                used = set()
+                for tk in layer.get("takeaways", []):
+                    used.add(tk["en"])
+                if "thesis" in layer:
+                    used.add(layer["thesis"]["en"])
+                self.assertNotIn(pq["en"], used)
+
+    def test_companion_data_src_matches_chart_topic(self):
+        """Printed charts ground their companion in the on-topic paragraph."""
+        for e in self.entries:
+            for cid, expect_pid in (("p10-b59", "p12"), ("p20-b45", "p6"), ("p21-b43", "p4")):
+                if f'data-chart="{cid}"' not in e.element_html:
+                    continue
+                frag = e.element_html.split(f'data-chart="{cid}"')[0]
+                self.assertIn(f'data-src="{expect_pid}"', frag[-200:], f"{cid} topic anchor")
 
 
 class CompositeGroupingCheck(FullIssueDataTestCase):

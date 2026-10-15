@@ -413,8 +413,9 @@ CHART_COMPANIONS: dict[str, dict[str, object]] = {
     },
     "p10-b59": {
         "title_cn": "城镇青年失业率（16—24岁与25—29岁，不含在校生）",
-        "takeaway_cn": "现年28岁的李杰瑞自去年秋开始求职以来已投递约100份简历，至今仍未找到合适的工作。",
-        "takeaway_en": "Li, 28, has applied for roughly 100 jobs since last fall without landing one.",
+        "data_src": "p12",
+        "takeaway_cn": "截至8月，中国16至24岁且非在校群体的城市失业率约为19%，25至29岁群体为7.5%，均明显高于美国同年龄段水平。",
+        "takeaway_en": "As of August, China's urban jobless rate among 16- to 24-year-olds, excluding students, stands at roughly 19%; for those aged 25 to 29 it is 7.5% — both well above U.S. levels.",
     },
     "p10-b63": {
         "title_cn": "城镇居民人均可支配收入同比变化",
@@ -465,8 +466,9 @@ CHART_COMPANIONS: dict[str, dict[str, object]] = {
     },
     "p20-b45": {
         "title_cn": "联合健康季度营收及同比变化",
-        "takeaway_cn": "2026年第三季度联合健康净利润41.1亿美元，折合每股4.56美元；去年同期为23.5亿美元、每股2.59美元。",
-        "takeaway_en": "UnitedHealth's third-quarter net income was $4.11 billion, or $4.56 a share, versus $2.35 billion, or $2.59 a share, a year earlier.",
+        "data_src": "p6",
+        "takeaway_cn": "第三季度公司营收为1126.9亿美元，略低于去年同期的1131.6亿美元。",
+        "takeaway_en": "Revenue for the third quarter was $112.69 billion, compared with $113.16 billion a year earlier.",
     },
     "p20-b72": {
         "title_cn": "强生季度营收",
@@ -480,8 +482,9 @@ CHART_COMPANIONS: dict[str, dict[str, object]] = {
     },
     "p21-b43": {
         "title_cn": "达美乐美国同店销售同比变化",
-        "takeaway_cn": "这份财报是新任首席执行官乔·乔丹本月上任后发布的首份财报。",
-        "takeaway_en": "The report is the first under new chief executive Joe Jordan, who took over this month.",
+        "data_src": "p4",
+        "takeaway_cn": "美国市场的同店销售额增速由去年同期的5.2%大幅放缓至0.3%。",
+        "takeaway_en": "Same-store sales growth in the U.S. slowed to 0.3% from 5.2% a year earlier.",
     },
     "p22-b22": {
         "title_cn": "艾伯森同店销售同比变化",

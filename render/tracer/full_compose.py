@@ -10,6 +10,7 @@ before assembly; unknown inventory types or unresolvable anchors raise
 from __future__ import annotations
 
 import base64
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -39,6 +40,7 @@ from .vector import (
     encode_webp,
     esc,
     extract_chart_vectors,
+    media_sibling_bboxes,
     reencode_image_file,
 )
 from .verify import (
@@ -47,6 +49,7 @@ from .verify import (
     verify_element_numbers,
 )
 from .whatsnews import HEADER_PARAGRAPHS, deep_link_badge, resolve_whatsnews
+from .numbers import extract_substantive_numbers, ground_numbers
 
 _SENT_SPLIT_CN = "。！？；\n"
 
@@ -85,21 +88,32 @@ def inventory_subheadings(data: PilotData, aid: str) -> tuple[dict[str, dict[str
 
 # --- rule-based genre layer (Tier 2) -------------------------------------------
 
-def _first_prose_paragraphs(data: PilotData, aid: str, limit: int = 3) -> list[str]:
+def _prose_paragraphs_after_lede(data: PilotData, aid: str) -> list[str]:
+    """Prose paragraph ids after the opening lede: restating p1 in a
+    takeaway/thesis box is forbidden (FOUNDATION.md Invariant 5 — the reader
+    reads p1 immediately below the box)."""
     units = data.units(aid)
     out = []
     for p in data.articles[aid]["paragraphs"]:
         if p.get("type") == "subheading" or p["id"] not in units:
             continue
         out.append(p["id"])
-        if len(out) >= limit:
-            break
-    return out
+    return out[1:] if len(out) > 1 else out
 
 
-def _auto_pull_quote(data: PilotData, aid: str) -> dict[str, Any] | None:
+def _numbered_first(pids: list[str], units: dict[str, dict[str, str]], limit: int) -> list[str]:
+    """Paragraphs carrying substantive numbers first (findings over filler),
+    original print order preserved within each class."""
+    with_nums = [p for p in pids if extract_substantive_numbers(units[p]["en"])]
+    ordered = with_nums + [p for p in pids if p not in with_nums]
+    return ordered[:limit]
+
+
+def _auto_pull_quote(data: PilotData, aid: str, used: set[str]) -> dict[str, Any] | None:
     """First verbatim quoted sentence of the story (EN) paired with the same
-    paragraph's first quoted CN sentence; both must exist."""
+    paragraph's first quoted CN sentence; both must exist.  ``used`` holds
+    whitespace-normalized EN sentences already spent on takeaways/thesis so
+    a pull quote never restates them (Invariant 5)."""
     units = data.units(aid)
     for p in data.articles[aid]["paragraphs"]:
         pid = p["id"]
@@ -108,6 +122,9 @@ def _auto_pull_quote(data: PilotData, aid: str) -> dict[str, Any] | None:
         en = units[pid]["en"]
         for i, s in enumerate(split_sentences(en), 1):
             if "“" in s and "”" in s:
+                norm = re.sub(r"\s+", " ", s).strip()
+                if norm in used:
+                    continue
                 cn_para = units[pid]["cn"]
                 start = cn_para.find("“")
                 end = cn_para.find("”", start + 1)
@@ -121,19 +138,23 @@ def genre_layer(data: PilotData, aid: str, genre: str) -> dict[str, Any]:
     """Deterministic genre-aware typographic layer for Tier 2 units.
 
     ``article`` / ``analysis``: opening 1-2-3 takeaway bullets (``data-src``
-    first sentences, verbatim).  ``opinion`` / ``editorial``: core thesis box
-    (first sentence of p1) + verbatim pull quote.  Every element is sourced
-    from the canonical projection; nothing is invented.
+    first sentences, verbatim, from p2..pN with numbered paragraphs first —
+    never the lede).  ``opinion`` / ``editorial``: core thesis box (first
+    sentence of the first post-lede paragraph) + verbatim pull quote.  Every
+    element is sourced from the canonical projection; nothing is invented,
+    nothing restated.
     """
     layer: dict[str, Any] = {}
     units = data.units(aid)
+    used: set[str] = set()
     if genre in ("article", "analysis"):
         takeaways = []
-        for pid in _first_prose_paragraphs(data, aid, 3):
+        for pid in _numbered_first(_prose_paragraphs_after_lede(data, aid), units, 3):
             en = units[pid]["en"]
             sentences = split_sentences(en)
             if not sentences:
                 continue
+            used.add(re.sub(r"\s+", " ", sentences[0]).strip())
             takeaways.append({
                 "cn": _cn_first_sentence(units[pid]["cn"]),
                 "en": sentences[0],
@@ -142,17 +163,18 @@ def genre_layer(data: PilotData, aid: str, genre: str) -> dict[str, Any]:
         if takeaways:
             layer["takeaways"] = takeaways
     elif genre in ("opinion", "editorial"):
-        first = _first_prose_paragraphs(data, aid, 1)
-        if first:
-            pid = first[0]
+        after = _prose_paragraphs_after_lede(data, aid)
+        if after:
+            pid = after[0]
             sentences = split_sentences(units[pid]["en"])
             if sentences:
+                used.add(re.sub(r"\s+", " ", sentences[0]).strip())
                 layer["thesis"] = {
                     "cn": _cn_first_sentence(units[pid]["cn"]),
                     "en": sentences[0],
                     "data_src": pid,
                 }
-        pq = _auto_pull_quote(data, aid)
+        pq = _auto_pull_quote(data, aid, used)
         if pq:
             layer["pull_quote"] = pq
     return layer
@@ -257,6 +279,42 @@ def build_companion_element(cv, spec, series_cn: list[str], title_cn: str, data_
     )
 
 
+def _topic_matched_data_src(
+    cv,
+    takeaway_text: str,
+    paragraph_texts: dict[str, dict[str, str]],
+    fallback_pid: str,
+) -> str:
+    """Pick the paragraph that best matches the chart's Retina title/series
+    keywords and numbers AND grounds the authored takeaway (Reviewer-G: the
+    youth-unemployment chart anchors the unemployment-rate paragraph, not Li's
+    job applications; the UnitedHealth revenue chart anchors the revenue
+    paragraph, not EPS)."""
+    from .whatsnews import _keywords
+
+    chart_kw = _keywords(cv.title_en + " " + " ".join(cv.series_labels_en))
+    chart_nums = {(t.value, t.kind) for t in extract_substantive_numbers(cv.grounding_text())}
+    scored = []
+    for pid, texts in paragraph_texts.items():
+        if not re.fullmatch(r"p\d+", pid):
+            continue
+        para_kw = _keywords(texts["en"])
+        para_nums = {(t.value, t.kind) for t in extract_substantive_numbers(texts["en"])}
+        score = 2 * len(chart_kw & para_kw) + 6 * len(chart_nums & para_nums)
+        scored.append((score, int(pid[1:]), pid))
+    scored.sort(key=lambda s: (-s[0], s[1]))
+    for score, _, pid in scored:
+        if score <= 0:
+            break
+        if not ground_numbers(
+            takeaway_text,
+            [paragraph_texts[pid]["en"], paragraph_texts[pid]["cn"]],
+            extra_grounding=[cv.grounding_text()],
+        ):
+            return pid
+    return fallback_pid
+
+
 def build_chart_companion_figures(data: PilotData, aid: str, pdf_path: Path,
                                   fast: bool) -> list[dict[str, Any]]:
     """Union re-crop + bilingual companion for every printed chart of a unit."""
@@ -272,7 +330,11 @@ def build_chart_companion_figures(data: PilotData, aid: str, pdf_path: Path,
         native = data.natives.get(int(m["page"]))
         if native is None:
             raise TracerCompilationError(f"{aid}: chart {cid} has no native vector page")
-        cv = extract_chart_vectors(native, cid, int(m["page"]), m["bbox_normalized_top_left"])
+        sibs = media_sibling_bboxes(
+            article.get("media") or [], int(m["page"]), cid,
+            float(native["width"]), float(native["height"]),
+        )
+        cv = extract_chart_vectors(native, cid, int(m["page"]), m["bbox_normalized_top_left"], sibs)
         authored = content.CHART_COMPANIONS.get(cid, {})
         if authored.get("use_authored") == "BANKS":
             spec = next(s for s in content.BANKS["companions"] if s["chart_id"] == cid)
@@ -283,8 +345,10 @@ def build_chart_companion_figures(data: PilotData, aid: str, pdf_path: Path,
         else:
             title_cn = str(authored.get("title_cn") or cv.title_en)
             series_cn = list(authored.get("series_cn", []))
-            data_src = str(authored.get("data_src") or anchored.get(cid) or next(iter(bilingual)))
             comp_spec = {"takeaway_cn": authored["takeaway_cn"], "takeaway_en": authored["takeaway_en"]}
+            takeaway_text = str(authored["takeaway_cn"]) + "\n" + str(authored["takeaway_en"])
+            fallback = str(anchored.get(cid) or next(iter(bilingual)))
+            data_src = str(authored.get("data_src") or _topic_matched_data_src(cv, takeaway_text, para_texts, fallback))
         webp = b"" if fast else chart_webp(pdf_path, cv)
         anchor = anchored.get(cid) or data_src.split()[0]
         figure_html = "" if fast else build_chart_figure(cv, webp, title_cn)

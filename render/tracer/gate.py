@@ -46,15 +46,25 @@ from .numbers import extract_substantive_numbers
 # A qualifier only counts inside a sentence that also carries a substantive
 # numeral, so prose like "up to speed" or 「优先级低于其他债务」 never flags.
 _CN_QUALIFIERS = (
-    "最多", "高达", "至多", "至少", "最少", "超过", "逾", "多于", "不到", "少于",
-    "低于", "将近", "接近", "近", "约", "大约", "中段", "区间", "基点",
+    # more than / over
+    "超过", "逾", "多于", "以上", "不止", "多达", "最多", "高达", "至多",
+    # at least
+    "至少", "最少", "不下",
+    # less than / under / fewer than
+    "不到", "少于", "低于", "不足", "以内",
+    # approximators
+    "将近", "接近", "近", "约", "大约", "中段", "中期", "区间", "基点", "可享", "上限", "左右",
 )
 _EN_QUALIFIER_RE = re.compile(
     r"(?<![-\w])(up to|at least|more than|less than|nearly|mid-|basis points?|bps?|"
-    r"as much as|as many as)\b|(?<![-\w])(?:about|roughly|some)\s+[$€£]?\d",
+    r"as much as|as many as)\b|(?<![-\w])(?:about|roughly|some|over|under)\s+[$€£]?\d",
     re.I,
 )
-_CN_QUALIFIER_RE = re.compile("|".join(_CN_QUALIFIERS))
+# Digit-adjacent 「至」("可达至10%") and 「多/余」("2000多名" == more than 2,000),
+# excluding common non-qualifier compounds (截至/至今/甚至/由至/乃至).
+_CN_QUALIFIER_RE = re.compile(
+    "|".join(_CN_QUALIFIERS) + r"|(?<![截至今乃甚由])至(?=\d)|(?<=\d)(?:多|余)(?![\d%])"
+)
 _HAS_DIGIT_RE = re.compile(r"\d")
 _SENT_SPLIT_CN = re.compile(r"(?<=[。！？；])")
 
@@ -94,6 +104,11 @@ KNOWN_ANOMALIES: dict[str, str] = {
     "PILOT-B1-APPLECEO:p3": (
         "dangling modifier in approved source ('but closed below that level' "
         "lacks an explicit subject); translation review confirmed the reading"
+    ),
+    "PILOT-A15-NATIONALISM:p1": (
+        "unclosed quotation mark in the approved English print source (the "
+        "quoted list continues across paragraphs); translation review "
+        "confirmed the reading"
     ),
 }
 
