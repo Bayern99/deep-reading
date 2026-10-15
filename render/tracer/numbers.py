@@ -34,6 +34,30 @@ _EN_TOKEN = re.compile(
 _EN_VERBAL_FRACTION = re.compile(r"\bhalf a (million|billion|trillion)\b", re.I)
 _VERBAL_FRACTION_VALUE = {"million": Decimal(5e5), "billion": Decimal(5e8), "trillion": Decimal(5e11)}
 
+# Spelled-out English cardinals with a scale word (PILOT-A16-CORRECTION p1):
+# "Four hundred thousand dollars" == 400,000 USD == 「40万美元」;
+# "seven hundred million" == 700,000,000 == 「7亿」.  Only expressions
+# carrying thousand/million/billion are substantive money by construction.
+_SPELL_UNITS = {
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+    "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16,
+    "seventeen": 17, "eighteen": 18, "nineteen": 19,
+}
+_SPELL_TENS = {
+    "twenty": 20, "thirty": 30, "forty": 40, "fifty": 50,
+    "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+}
+_EN_SPELL = re.compile(
+    r"\b(?P<w1>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+    r"thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|"
+    r"thirty|forty|fifty|sixty|seventy|eighty|ninety)"
+    r"(?P<hundred>\s+hundred)?"
+    r"\s+(?P<scale>thousand|million|billion)(?P<dollars>\s+dollars)?\b",
+    re.I,
+)
+_SPELL_SCALE_MULT = {"thousand": Decimal(1e3), "million": Decimal(1e6), "billion": Decimal(1e9)}
+
 # Calendar years / decades are structural time references, not substantive
 # counts: Chinese routinely renders "1980s" as 「上世纪80年代」 or "in 1890" as
 # 「19世纪90年代」, which must not flag as magnitude errors (Reviewer-G).
@@ -101,6 +125,13 @@ def _en_tokens_spanned(text: str) -> list[tuple[int, int, NumberToken]]:
     for m in _EN_VERBAL_FRACTION.finditer(text or ""):
         scale = m.group(1).lower()
         out.append((m.start(), m.end(), NumberToken(_VERBAL_FRACTION_VALUE[scale], "money", m.group(0).strip())))
+    for m in _EN_SPELL.finditer(text or ""):
+        w1 = m.group("w1").lower()
+        base = Decimal(_SPELL_UNITS.get(w1) or _SPELL_TENS[w1])
+        if m.group("hundred"):
+            base *= Decimal(100)
+        value = base * _SPELL_SCALE_MULT[m.group("scale").lower()]
+        out.append((m.start(), m.end(), NumberToken(value, "money", m.group(0).strip())))
     for m in _EN_TOKEN.finditer(text or ""):
         num = _dec(m.group("num"))
         if num is None:

@@ -18,17 +18,40 @@ The unittest suites cover static rendering/alignment, canonical compilation, pro
 
 ```bash
 /opt/homebrew/bin/python3 render/tracer_pipeline.py --mode full \
-    --output /tmp/wsj-2026-10-14-full.html --gate-report /tmp/gate-report.json
+    --output /tmp/wsj-2026-10-14.html --gate-report /tmp/gate-report.json
+```
+
+With the deterministic 7-Oracle certification (Ticket 3; exits non-zero on any
+oracle failure):
+
+```bash
+/opt/homebrew/bin/python3 render/tracer_pipeline.py --mode full \
+    --output /tmp/wsj-2026-10-14.html --gate-report /tmp/gate-report.json \
+    --certify /tmp/oracle-certification.json
+# or: make tracer-certify
 ```
 
 Compiles the whole 86-item 2026-10-14 issue into one self-contained Issue Artifact
-(~71 units: 8 Tier 1 flagships, 54 Tier 2 genre units, 9 Tier 3 compact units) and
-runs the two-stage LQA funnel gate over all 1,257 bilingual units (<0.5s Stage 1).
-The compact `gate-report.json` is written next to the output (or `--gate-report`)
-and is never embedded in the reader HTML. `--mode tracer` keeps the five-unit pilot
-slice; `--units id,...` filters to a subset (use `--fast` to skip PDF raster work);
-`--fast` smoke runs need no `fitz`/`PIL`. Stage-2 findings are dispositions
-(recorded / escalate), not rewrites: canonical text stays read-only.
+(~71 units: 8 Tier 1 flagships, 54 Tier 2 genre units, 9 Tier 3 compact units; target
+5–8 MB, budget [4.5 MB, 10 MB]) and runs the two-stage LQA funnel gate over all 1,257
+bilingual units (<0.5s Stage 1). The compact `gate-report.json` is written next to the
+output (or `--gate-report`) and is never embedded in the reader HTML. `--mode tracer`
+keeps the five-unit pilot slice; `--units id,...` filters to a subset (use `--fast` to
+skip PDF raster work); `--fast` smoke runs need no `fitz`/`PIL` and skip the
+payload-budget check. Stage-2 findings are dispositions (recorded / escalate), not
+rewrites: canonical text stays read-only.
+
+The 7-Oracle certification (`render/tracer/oracles.py`) verifies the generated HTML
+end-to-end: (1) SHA256 narrative round-trip for all 86 raw items; (2) 100%
+paragraph-scoped numeric grounding of every authored element; (3) `Retina*` chart
+vector coverage for all 21 printed charts (union crops locked to the chart column,
+zero sliced shared multi-column source lines, paired companions); (4) figure
+print-order monotonicity and print-ad exclusion; (5) 6/6 historical fault-injection
+recall; (6) print hierarchy (86→71 units, 7 canonical sections, 16/16 deep links,
+zero Tier 2 lede restatement); (7) payload budget, zero forbidden pipeline strings
+and a Headless Chrome geometry probe (1440x900 and 390x844 in 中文/EN/双语: no
+horizontal overflow, no broken images, no clipped SVG text). The certification JSON
+is a workspace report, never reader chrome.
 
 ## Whole-issue newspaper
 

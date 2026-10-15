@@ -646,6 +646,14 @@ def build_tier2_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
     authored = content.CONTENT_BY_ID.get(aid, {})
     layer = genre_layer(data, aid, route.genre)
     subs, skip = inventory_subheadings(data, aid)
+    # FOUNDATION.md Invariant 5: a Tier 2 thesis box never restates the lede.
+    # An authored thesis pinned to p1 (e.g. PILOT-A16-WEALTH) is replaced by
+    # the deterministic genre-layer thesis from the first post-lede paragraph
+    # — the numbers in the lede-condensed text exist only in p1, so no
+    # p1-grounded thesis can satisfy the invariant.
+    thesis = authored.get("thesis")
+    if isinstance(thesis, dict) and "p1" in str(thesis.get("data_src", "")).split():
+        thesis = None
     pull_quote = authored.get("pull_quote")
     if isinstance(pull_quote, dict) and "paragraph" in pull_quote:
         pid = pull_quote["paragraph"]
@@ -673,7 +681,7 @@ def build_tier2_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
     unit = compose_article_unit(
         data, aid, tier=2, genre=route.genre, kicker=route.kicker,
         takeaways=authored.get("takeaways") or layer.get("takeaways"),
-        thesis=authored.get("thesis") or layer.get("thesis"),
+        thesis=thesis or layer.get("thesis"),
         subheadings={**subs, **authored.get("subheadings", {})} or None,
         highlights=authored.get("highlights"),
         pull_quote=pull_quote or layer.get("pull_quote"),
