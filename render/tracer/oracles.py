@@ -34,7 +34,9 @@ generated HTML end-to-end and asserts the 7 Objective Oracles:
 7. **Viewport geometry, clean surface & payload budget** — single-file
    size within [4.5 MB, 10 MB], zero forbidden pipeline strings, and a
    Headless Chrome DOM geometry probe across 1440x900 and 390x844 in
-   ``中文`` / ``EN`` / ``双语`` modes: ``scrollWidth <= clientWidth``,
+   ``中文`` / ``EN`` / ``双语`` modes, measuring both the overview and the
+   immersive-reader (``read``) views — only elements actually rendered in
+   the active view are checked: ``scrollWidth <= clientWidth``,
    0 broken images, 0 clipped SVG text nodes.
 
 The certification JSON is a compact workspace report (like the gate
@@ -693,15 +695,18 @@ def oracle_print_hierarchy(root: lxml.html.HtmlElement, data: PilotData) -> Orac
         target = href.removeprefix("#u-")
         if not re.fullmatch(r"[A-Z0-9-]+", target) or target not in units:
             failures.append(f"deep link {href} does not resolve to a unit")
-    # zero Tier 2 takeaway/thesis elements cite p1
+    # zero Tier 2 takeaway/thesis elements cite p1 (token-split: multi-ref
+    # data-src="p1 p2" still cites the lede)
     for uid, unit in units.items():
         if unit.get("data-tier") != "2":
             continue
         for el in unit.xpath(
-            ".//li[contains(@class,'takeaway')][@data-src='p1']"
-            "| .//div[contains(@class,'thesis-box')][@data-src='p1']"
+            ".//li[contains(@class,'takeaway')][@data-src]"
+            "| .//div[contains(@class,'thesis-box')][@data-src]"
         ):
-            failures.append(f"{uid}: Tier 2 element cites p1 ({el.get('class')})")
+            refs = re.split(r"[\s,]+", (el.get("data-src") or "").strip())
+            if "p1" in refs:
+                failures.append(f"{uid}: Tier 2 element cites p1 ({el.get('class')})")
     return OracleResult(
         "print_hierarchy_composite_grouping_zero_lede_restatement",
         passed=not failures,
@@ -730,45 +735,66 @@ def find_chrome() -> str | None:
 _PROBE_JS = """
 window.addEventListener('load', function () { setTimeout(function () {
   try { setLang('%(lang)s'); } catch (e) {}
-  var res = { overflow: [], overflowCount: 0, brokenImages: 0, clippedSvgText: [], clippedCount: 0 };
-  var de = document.documentElement;
-  if (de.scrollWidth > de.clientWidth) { res.overflow.push('document'); res.overflowCount++; }
-  var els = document.querySelectorAll('body *');
-  for (var i = 0; i < els.length; i++) {
-    var el = els[i];
-    try {
-      if (el.scrollWidth > el.clientWidth + 1 && el.clientWidth > 0) {
-        res.overflowCount++;
-        if (res.overflow.length < 5) {
-          res.overflow.push(el.tagName + '.' + (el.getAttribute('class') || '') + '#' + (el.id || ''));
-        }
-      }
-    } catch (e) {}
+  function visible(el) {
+    var cs = window.getComputedStyle(el);
+    return cs.display !== 'none' && cs.visibility !== 'hidden';
   }
-  var imgs = document.querySelectorAll('img');
-  for (var j = 0; j < imgs.length; j++) {
-    if (imgs[j].complete && imgs[j].naturalWidth === 0) res.brokenImages++;
-  }
-  var svgs = document.querySelectorAll('svg');
-  for (var k = 0; k < svgs.length; k++) {
-    var svg = svgs[k];
-    var vb = svg.viewBox && svg.viewBox.baseVal;
-    if (!vb || !vb.width) continue;
-    var texts = svg.querySelectorAll('text');
-    for (var t = 0; t < texts.length; t++) {
-      var node = texts[t];
+  function measure() {
+    var res = { overflow: [], overflowCount: 0, brokenImages: 0, clippedSvgText: [], clippedCount: 0 };
+    var de = document.documentElement;
+    if (de.scrollWidth > de.clientWidth) { res.overflow.push('document'); res.overflowCount++; }
+    var els = document.querySelectorAll('body *');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
       try {
-        var bb = node.getBBox();
-        if (bb.x < -1 || bb.y < -1 || bb.x + bb.width > vb.width + 1 || bb.y + bb.height > vb.height + 1) {
-          res.clippedCount++;
-          if (res.clippedSvgText.length < 5) {
-            res.clippedSvgText.push((svg.getAttribute('data-chart') || svg.parentNode.getAttribute('data-chart') || 'svg') + ':' + node.textContent.slice(0, 30));
+        // only elements actually rendered in the current view: .unit is
+        // display:none in overview mode, so read-view overflow must be
+        // measured after setView('read')
+        if (el.scrollWidth > el.clientWidth + 1 && el.clientWidth > 0 && visible(el)) {
+          res.overflowCount++;
+          if (res.overflow.length < 5) {
+            res.overflow.push(el.tagName + '.' + (el.getAttribute('class') || '') + '#' + (el.id || ''));
           }
         }
       } catch (e) {}
     }
+    var imgs = document.querySelectorAll('img');
+    for (var j = 0; j < imgs.length; j++) {
+      // --fast smoke artifacts embed empty data-URI placeholders; a real
+      // broken image carries a non-empty URI that fails to decode
+      if (imgs[j].src === 'data:image/webp;base64,') continue;
+      if (imgs[j].complete && imgs[j].naturalWidth === 0) res.brokenImages++;
+    }
+    var svgs = document.querySelectorAll('svg');
+    for (var k = 0; k < svgs.length; k++) {
+      var svg = svgs[k];
+      var vb = svg.viewBox && svg.viewBox.baseVal;
+      if (!vb || !vb.width || !visible(svg)) continue;
+      var texts = svg.querySelectorAll('text');
+      for (var t = 0; t < texts.length; t++) {
+        var node = texts[t];
+        try {
+          var bb = node.getBBox();
+          if (bb.x < -1 || bb.y < -1 || bb.x + bb.width > vb.width + 1 || bb.y + bb.height > vb.height + 1) {
+            res.clippedCount++;
+            if (res.clippedSvgText.length < 5) {
+              res.clippedSvgText.push((svg.getAttribute('data-chart') || svg.parentNode.getAttribute('data-chart') || 'svg') + ':' + node.textContent.slice(0, 30));
+            }
+          }
+        } catch (e) {}
+      }
+    }
+    return res;
   }
-  document.title = 'PROBE:' + JSON.stringify(res);
+  var out = {};
+  try { setView('overview'); } catch (e) {}
+  out.overview = measure();
+  try { setView('read'); } catch (e) {}
+  out.read = measure();
+  out.passed = [out.overview, out.read].every(function (v) {
+    return v.overflowCount === 0 && v.brokenImages === 0 && v.clippedCount === 0;
+  });
+  document.title = 'PROBE:' + JSON.stringify(out);
 }, 400); });
 """
 
@@ -812,11 +838,11 @@ def run_chrome_geometry_probe(html_path: str | Path, chrome: str | None = None,
                 import json
 
                 data = json.loads(payload)
-                data["passed"] = (
-                    data["overflowCount"] == 0
-                    and data["brokenImages"] == 0
-                    and data["clippedCount"] == 0
-                )
+                views = {v: data[v] for v in ("overview", "read") if v in data}
+                data["passed"] = all(
+                    v["overflowCount"] == 0 and v["brokenImages"] == 0 and v["clippedCount"] == 0
+                    for v in views.values()
+                ) and bool(views)
                 results[f"{width}x{height}/{lang}"] = data
     return results
 

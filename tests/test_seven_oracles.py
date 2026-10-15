@@ -286,6 +286,78 @@ class SevenOraclesFastArtifactCheck(unittest.TestCase):
         self.assertNotIn("gate-report", doc)
 
 
+@unittest.skipUnless(HAS_DATA, "2026-10-14 pilot dataset not present")
+class Oracle7GeometryProbeCheck(unittest.TestCase):
+    """Reviewer-G round 2: the probe must measure the read view too.
+
+    On load the artifact sits in ``overview`` mode where every ``.unit`` is
+    ``display:none``; an overflow planted inside ``.unit-body`` is only
+    observable after ``setView('read')``.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        import tracer_pipeline
+
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.out = Path(cls.tmp.name) / "full.html"
+        rc = tracer_pipeline.main([
+            "--mode", "full", "--fast", "--output", str(cls.out),
+            "--gate-report", str(Path(cls.tmp.name) / "gate.json"),
+        ])
+        assert rc == 0
+        cls.data = load_full_data()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def _planted(self) -> Path:
+        import lxml.html
+
+        root = lxml.html.fromstring(self.out.read_text("utf-8"))
+        body = root.xpath(".//div[@data-unit='PILOT-A2-HOMES']//div[contains(@class,'unit-body')]")[0]
+        body.append(lxml.html.fragment_fromstring(
+            '<div style="white-space:nowrap;width:2000px">planted overflow</div>'
+        ))
+        planted = Path(self.tmp.name) / "planted.html"
+        planted.write_text(lxml.html.tostring(root, encoding="unicode"), "utf-8")
+        return planted
+
+    @unittest.skipUnless(
+        __import__("tracer.oracles", fromlist=["find_chrome"]).find_chrome(),
+        "Headless Chrome not available",
+    )
+    def test_read_view_overflow_is_detected(self):
+        from tracer.oracles import certify
+
+        report = certify(
+            self._planted(), self.data, check_budget=False, run_geometry_probe=True
+        )
+        o7 = report.oracle("viewport_geometry_clean_surface_payload")
+        self.assertFalse(o7.passed)
+        self.assertTrue(
+            any("overflow" in f for f in o7.detail["failures"]),
+            f"planted read-view overflow not reported: {o7.detail['failures']}",
+        )
+        # control: the clean artifact passes the same probe
+        clean = certify(self.out, self.data, check_budget=False, run_geometry_probe=True)
+        self.assertTrue(clean.oracle("viewport_geometry_clean_surface_payload").passed)
+
+    def test_probe_measures_overview_and_read_views(self):
+        import json
+        import re
+
+        from tracer.oracles import _PROBE_JS
+
+        self.assertIn("setView('read')", _PROBE_JS)
+        self.assertIn("setView('overview')", _PROBE_JS)
+        self.assertIn("getComputedStyle(el)", _PROBE_JS)
+        self.assertIn("display !== 'none'", _PROBE_JS)
+        # the probe payload reports one result object per view
+        self.assertEqual(len(re.findall(r"out\.\w+ = measure\(\);", _PROBE_JS)), 2)
+
+
 @unittest.skipUnless(HAS_DATA and HAS_RASTER, "pilot dataset and fitz/PIL required")
 class SevenOraclesEndToEndCheck(unittest.TestCase):
     """Real full-issue pipeline + 7-Oracle certification through the CLI."""
