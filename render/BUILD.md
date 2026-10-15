@@ -14,6 +14,22 @@ The unittest suites cover static rendering/alignment, canonical compilation, pro
 
 `make gate` audits `final.json` without editing it. Exit 1 means at least one BLOCK; exit 0 can still contain WARN. Confirm every WARN rather than treating a zero exit code as publication approval.
 
+### Full-issue vertical tracer (2026-10-14 pilot)
+
+```bash
+/opt/homebrew/bin/python3 render/tracer_pipeline.py --mode full \
+    --output /tmp/wsj-2026-10-14-full.html --gate-report /tmp/gate-report.json
+```
+
+Compiles the whole 86-item 2026-10-14 issue into one self-contained Issue Artifact
+(~71 units: 8 Tier 1 flagships, 54 Tier 2 genre units, 9 Tier 3 compact units) and
+runs the two-stage LQA funnel gate over all 1,257 bilingual units (<0.5s Stage 1).
+The compact `gate-report.json` is written next to the output (or `--gate-report`)
+and is never embedded in the reader HTML. `--mode tracer` keeps the five-unit pilot
+slice; `--units id,...` filters to a subset (use `--fast` to skip PDF raster work);
+`--fast` smoke runs need no `fitz`/`PIL`. Stage-2 findings are dispositions
+(recorded / escalate), not rewrites: canonical text stays read-only.
+
 ## Whole-issue newspaper
 
 ```bash

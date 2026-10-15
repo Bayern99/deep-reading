@@ -90,6 +90,30 @@ def load_pilot_data(root: Path | str = PILOT_ROOT) -> PilotData:
     return PilotData(inventory=inventory, articles=articles, translations=translations, natives=natives)
 
 
+def load_full_data(root: Path | str = PILOT_ROOT) -> PilotData:
+    """Load the complete 86-item issue: every reviewed translation and every
+    native vector page referenced by any item's print regions/media."""
+    root = Path(root)
+    inventory = json.loads((root / "inventory.json").read_text("utf-8"))
+    articles = {a["id"]: a for a in inventory["articles"]}
+    translations: dict[str, dict[str, dict[str, str]]] = {}
+    for aid in articles:
+        t = json.loads((root / "translations-reviewed" / f"{aid}.json").read_text("utf-8"))
+        translations[aid] = {u["id"]: {"en": u["en"], "cn": u["zh_CN"]} for u in t["units"]}
+    pages: set[int] = set()
+    for a in articles.values():
+        pages.update(int(p) for p in a.get("all_pages", []))
+        for m in a.get("media") or []:
+            if m.get("page") is not None:
+                pages.add(int(m["page"]))
+    natives: dict[int, dict[str, Any]] = {}
+    for pg in sorted(pages):
+        p = root / "evidence" / f"p{pg:02d}-native.json"
+        if p.exists():
+            natives[pg] = json.loads(p.read_text("utf-8"))
+    return PilotData(inventory=inventory, articles=articles, translations=translations, natives=natives)
+
+
 # --- physical print order ----------------------------------------------------
 
 def _column_origins(article: dict[str, Any]) -> dict[int, list[float]]:
@@ -397,12 +421,15 @@ def compose_article_unit(
     chart_companions: list[dict[str, Any]] | None = None,
     figures: list[dict[str, Any]] | None = None,
     body_elements: list[lxml.html.HtmlElement] | None = None,
+    skip_prose: set[str] | None = None,
 ) -> lxml.html.HtmlElement:
     """Compose one Tier 1/2 reading unit over the canonical bilingual source.
 
     Every authored intervention (takeaway, subheading, chart, companion) is
     numerically verified against its ``data-src`` paragraphs before assembly;
     narrative blocks are surgically completed; highlight density is enforced.
+    ``skip_prose`` lists paragraph ids whose text is rendered as a section
+    subheading instead of a prose block (inventory ``subheading`` paragraphs).
     """
     article = data.articles[article_id]
     bilingual = data.bilingual(article_id)
@@ -498,6 +525,13 @@ def compose_article_unit(
         figures_by_anchor.setdefault(fig["anchor"], []).append(fig)
 
     body = _el("div", "unit-body")
+    # lead figures physically before the first paragraph (anchor "p0")
+    for fig in figures_by_anchor.get("p0", []):
+        body.append(fig["element"])
+    for comp in companions_by_anchor.get("p0", []):
+        body.append(comp["element"])
+    for ch in charts_by_anchor.get("p0", []):
+        body.append(ch["element"])
     for pid in pids:
         if pid in subheadings:
             sub = subheadings[pid]
@@ -511,6 +545,15 @@ def compose_article_unit(
             h_en.text = sub["en"]
             h.append(h_en)
             body.append(h)
+        if skip_prose and pid in skip_prose:
+            # figures anchored at a heading paragraph still attach after it
+            for fig in figures_by_anchor.get(pid, []):
+                body.append(fig["element"])
+            for comp in companions_by_anchor.get(pid, []):
+                body.append(comp["element"])
+            for ch in charts_by_anchor.get(pid, []):
+                body.append(ch["element"])
+            continue
         hl = highlights.get(pid, {})
         body.append(prose_block(pid, bilingual[pid]["cn"], bilingual[pid]["en"], hl.get("cn", ""), hl.get("en", "")))
         for fig in figures_by_anchor.get(pid, []):
@@ -536,7 +579,10 @@ def compose_article_unit(
         root.append(pq)
 
     # AST surgical completion + highlight density, then report repairs
-    repairs = surgical_narrative_completion(root, pids, {pid: (bilingual[pid]["cn"], bilingual[pid]["en"]) for pid in pids})
+    prose_pids = [p for p in pids if not (skip_prose and p in skip_prose)]
+    repairs = surgical_narrative_completion(
+        root, prose_pids, {pid: (bilingual[pid]["cn"], bilingual[pid]["en"]) for pid in prose_pids}
+    )
     root.set("data-repairs", ";".join(repairs))
     check_highlight_density(root)
     return root

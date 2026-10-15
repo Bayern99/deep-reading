@@ -109,13 +109,23 @@ html[lang="en"] .companion .co-cn{display:none}
 .letter-group-title{font-size:20px;line-height:1.4;color:var(--ink);margin:1.4em 0 .4em;font-weight:700}
 .letter{border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px}
 .letter-title{font-size:18px;margin:0 0 6px;color:var(--ink)}
+.letter-title-en{display:none;font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:400;color:var(--mut);margin-left:8px}
+html[lang="en"] .letter-title .letter-title-en,html[lang="bi"] .letter-title .letter-title-en{display:inline}
 .letter-sig{font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:700;color:var(--mut);text-align:right;margin:4px 0 0}
+.wn-link{margin:-0.6em 0 1.2em;text-align:right}
+.wn-link a{font-family:'Noto Sans SC',sans-serif;font-size:13px;font-weight:700;color:var(--orange);text-decoration:none}
+.wn-link a:hover{text-decoration:underline}
+.wn-en{color:var(--mut);font-weight:400}
+.sidebar-link{max-width:640px;margin:18px auto;border:1px solid var(--line);border-left:3px solid var(--orange);padding:10px 16px;font-size:14px;font-family:'Noto Sans SC',sans-serif;color:var(--body)}
+.sidebar-link a{color:var(--ink);font-weight:700;text-decoration:none}
+.sidebar-link a:hover{text-decoration:underline}
+figure.wsj-fig.view-only img{border:1px solid var(--line);background:#fff}
 mark.ed-hl{background:linear-gradient(transparent 62%,rgba(250,144,0,.4) 62%);color:inherit;padding:0}
 .section-head{max-width:760px;margin:44px auto 0;border-bottom:1px solid var(--ink);padding-bottom:6px}
 .section-head h2{font-size:24px;color:var(--ink);margin:0}
 .section-head .en{font-family:'Noto Sans SC',sans-serif;font-size:13px;color:var(--mut);margin-left:8px}
 @media(max-width:768px){.unit-head h1{font-size:30px}.pull-quote{font-size:19px}}
-@media(max-width:430px){body{font-size:17px}.unit-head h1{font-size:30px}h1.page-title{font-size:28px}}
+@media(max-width:430px){body{font-size:17px}.unit-head h1{font-size:30px}h1.page-title{font-size:28px}.masthead .date{display:none}}
 """
 
 JS = """

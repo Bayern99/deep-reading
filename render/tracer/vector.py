@@ -39,6 +39,17 @@ _X_PAD_PT = 6.0
 _UNION_PAD_PT = 4.0
 # Render DPI for reading-grade chart crops.
 CROP_DPI = 220
+# Horizontal column lock: the union bbox never extends beyond the chart's own
+# column plus this pad, so a 1-column chart can never balloon into a
+# multi-column crop (Reviewer-G: p10-b59/63/68, p20-b72).
+_LOCK_PAD_PT = 10.0
+# A Retina line only joins the union when substantially contained in the
+# chart column widened by this pad (excludes multi-column photo captions).
+_CONTAIN_PAD_PT = 15.0
+# Multi-column source lines keep only this slice of the chart's column.
+_SRC_CLAMP_PT = 6.0
+# Body prose families that must never be crossed or cropped into a chart.
+_BODY_FONTS = ("Exchange", "DJ5Exchange", "Escrow", "Dispatch", "Archer", "Steed", "Bell")
 
 
 def line_font(line: dict[str, Any]) -> str:
@@ -87,59 +98,163 @@ class ChartVector:
         return "\n".join(p for p in parts if p)
 
 
-def union_chart_bbox(native: dict[str, Any], chart_norm: list[float]) -> tuple[list[float], list[dict[str, Any]]]:
-    """Union of the chart bbox with adjacent `Retina*` title/source/axis lines.
+def _line_in_bbox(l: dict[str, Any], bb: list[float], pad: float = 1.0) -> bool:
+    return (bb[0] - pad <= l["bbox"][0] and l["bbox"][2] <= bb[2] + pad
+            and bb[1] - pad <= l["bbox"][1] and l["bbox"][3] <= bb[3] + pad)
 
-    Walks upward from the chart top including contiguous `Retina*` lines whose
-    horizontal center falls inside the chart column span (chart titles and
-    top-axis labels such as ``$20billion``), and downward for the contiguous
-    `Retina*` source line.  Returns (union_bbox_points, member_lines).
+
+def union_chart_bbox(
+    native: dict[str, Any],
+    chart_norm: list[float],
+    sibling_bboxes: list[list[float]] | None = None,
+) -> tuple[list[float], list[dict[str, Any]]]:
+    """Union of the chart bbox with adjacent `Retina*` title/source lines,
+    locked to the chart's own column.
+
+    Rules (Reviewer-G, Ticket 2 round 1):
+
+    - **Column lock** — the union never extends horizontally beyond
+      ``[orig_x0 - 10pt, orig_x1 + 10pt]``; only lines substantially
+      contained in ``[orig_x0 - 15pt, orig_x1 + 15pt]`` join.  A shared
+      multi-column ``RetinaMPNarrowLt`` source line is clamped to the
+      chart's own column slice.
+    - **Sibling barrier** — the vertical walk stops at any other media
+      item's bbox on the page and never absorbs a sibling's title (a line
+      sitting directly above a sibling, centered in its span).
+    - **Prose barrier** — the walk never crosses an ``ExchangeBook`` /
+      ``DJ5Exchange*`` body line, so prose can never enter the crop.
     """
     W, H = float(native["width"]), float(native["height"])
     cx0, cy0, cx1, cy1 = [float(v) for v in chart_norm]
     bx0, by0, bx1, by1 = cx0 * W, cy0 * H, cx1 * W, cy1 * H
+    lock = (bx0 - _LOCK_PAD_PT, bx1 + _LOCK_PAD_PT)
+    contain = (bx0 - _CONTAIN_PAD_PT, bx1 + _CONTAIN_PAD_PT)
+    src_clamp = (bx0 - _SRC_CLAMP_PT, bx1 + _SRC_CLAMP_PT)
+    siblings = list(sibling_bboxes or [])
     members: list[dict[str, Any]] = []
+    clamps: dict[int, tuple[float, float]] = {}  # id(line) -> x clamp for source lines
 
     retina = [l for l in native["lines"] if is_retina(l) and l.get("chars")]
+
+    def blocked(l: dict[str, Any]) -> bool:
+        """True when the walk must stop at this line."""
+        if line_font(l).startswith(_BODY_FONTS):
+            return True
+        if any(_line_in_bbox(l, s) for s in siblings):
+            return True
+        # A line sitting directly above a sibling chart is the sibling's title.
+        cx = (l["bbox"][0] + l["bbox"][2]) / 2
+        for s in siblings:
+            if s[1] - _GAP_TOL_PT <= l["bbox"][3] <= s[1] + 1.0 and s[0] <= cx <= s[2]:
+                return True
+        return False
+
+    def include(l: dict[str, Any]) -> bool:
+        """True when the line may join the union (clamping multi-column sources)."""
+        if contain[0] <= l["bbox"][0] and l["bbox"][2] <= contain[1]:
+            return True
+        if line_font(l).startswith(RETINA_SOURCE_FONT):
+            clamps[id(l)] = src_clamp  # contribute only this chart's column slice
+            return True
+        return False
+
+    def _inside_own(l: dict[str, Any]) -> bool:
+        return (bx0 <= l["bbox"][0] and l["bbox"][2] <= bx1
+                and by0 <= l["bbox"][1] and l["bbox"][3] <= by1)
+
     # Above: contiguous block, nearest-first, x-center inside the chart span.
+    # Lines inside the chart's own bbox are read by the inside scan, not the
+    # walk, so they never consume the adjacency gap budget.
     above = [
         l for l in retina
-        if l["bbox"][3] <= by0 + _GAP_TOL_PT and bx0 <= (l["bbox"][0] + l["bbox"][2]) / 2 <= bx1
+        if not _inside_own(l)
+        and l["bbox"][3] <= by0 + _GAP_TOL_PT and bx0 <= (l["bbox"][0] + l["bbox"][2]) / 2 <= bx1
     ]
     above.sort(key=lambda l: -l["bbox"][3])
     anchor = by0
     for l in above:
-        if anchor - l["bbox"][3] <= _GAP_TOL_PT:
+        if anchor - l["bbox"][3] > _GAP_TOL_PT:
+            break
+        if blocked(l):
+            break
+        if include(l):
             members.append(l)
             anchor = l["bbox"][1]
     # Below: contiguous Retina lines (the RetinaMPNarrowLt source line).
     below = [
         l for l in retina
-        if l["bbox"][1] >= by1 - _GAP_TOL_PT and _x_overlap(l["bbox"][0], l["bbox"][2], bx0, bx1, _X_PAD_PT)
+        if not _inside_own(l)
+        and l["bbox"][1] >= by1 - _GAP_TOL_PT and _x_overlap(l["bbox"][0], l["bbox"][2], bx0, bx1, _X_PAD_PT)
     ]
     below.sort(key=lambda l: l["bbox"][1])
     anchor = by1
     for l in below:
-        if l["bbox"][1] - anchor <= _GAP_TOL_PT:
+        if l["bbox"][1] - anchor > _GAP_TOL_PT:
+            break
+        if blocked(l):
+            break
+        if include(l):
             members.append(l)
             anchor = l["bbox"][3]
 
-    ux0 = min([bx0] + [l["bbox"][0] for l in members]) - _UNION_PAD_PT
+    xs0: list[float] = []
+    xs1: list[float] = []
+    for l in members:
+        clamp = clamps.get(id(l))
+        if clamp:
+            xs0.append(max(l["bbox"][0], clamp[0]))
+            xs1.append(min(l["bbox"][2], clamp[1]))
+        else:
+            xs0.append(l["bbox"][0])
+            xs1.append(l["bbox"][2])
+    ux0 = min([bx0] + xs0) - _UNION_PAD_PT
     uy0 = min([by0] + [l["bbox"][1] for l in members]) - _UNION_PAD_PT
-    ux1 = max([bx1] + [l["bbox"][2] for l in members]) + _UNION_PAD_PT
+    ux1 = max([bx1] + xs1) + _UNION_PAD_PT
     uy1 = max([by1] + [l["bbox"][3] for l in members]) + _UNION_PAD_PT
-    return [max(0.0, ux0), max(0.0, uy0), min(W, ux1), min(H, uy1)], members
+    # Hard column lock: never crop outside the chart's own column.
+    ux0 = max(0.0, ux0, lock[0])
+    ux1 = min(W, ux1, lock[1])
+    return [ux0, max(0.0, uy0), ux1, min(H, uy1)], members
 
 
-def extract_chart_vectors(native: dict[str, Any], chart_id: str, page: int, chart_norm: list[float]) -> ChartVector:
+def media_sibling_bboxes(
+    media: list[dict[str, Any]],
+    page: int,
+    self_id: str,
+    page_width: float,
+    page_height: float,
+) -> list[list[float]]:
+    """Same-page sibling media bboxes in PDF points (union-walk barriers)."""
+    out = []
+    for m in media:
+        if m.get("id") == self_id or int(m.get("page", -1)) != page:
+            continue
+        box = m.get("bbox_normalized_top_left")
+        if not box:
+            continue
+        x0, y0, x1, y1 = [float(v) for v in box]
+        out.append([x0 * page_width, y0 * page_height, x1 * page_width, y1 * page_height])
+    return out
+
+
+def extract_chart_vectors(
+    native: dict[str, Any],
+    chart_id: str,
+    page: int,
+    chart_norm: list[float],
+    sibling_bboxes: list[list[float]] | None = None,
+) -> ChartVector:
     """Recover title / series labels / axis ticks / source for one chart.
 
     The union bbox (used for cropping) covers the chart plus adjacent
-    title/source lines; the structured strings also read every ``Retina*`` line
-    inside the chart region itself (series labels, axis ticks).
+    title/source lines, locked to the chart's own column; the structured
+    strings also read every ``Retina*`` line inside the chart region itself
+    (series labels, axis ticks).  ``sibling_bboxes`` (points, same page)
+    fence the vertical walk so one chart never absorbs a sibling's title or
+    a multi-column caption.
     """
     W, H = float(native["width"]), float(native["height"])
-    union_pt, members = union_chart_bbox(native, chart_norm)
+    union_pt, members = union_chart_bbox(native, chart_norm, sibling_bboxes)
     cx0, cy0, cx1, cy1 = [float(v) for v in chart_norm]
     bx0, by0, bx1, by1 = cx0 * W, cy0 * H, cx1 * W, cy1 * H
 
@@ -168,7 +283,7 @@ def extract_chart_vectors(native: dict[str, Any], chart_id: str, page: int, char
             text = re.sub(r"\s+", " ", l.get("text", "")).strip()
             if not text:
                 continue
-            if zone == "adjacent":
+            if zone == "adjacent" or font.startswith(RETINA_TITLE_FONT):
                 cv.retina_lines.append(text)
             y0, y1 = l["bbox"][1], l["bbox"][3]
             if font.startswith(RETINA_TITLE_FONT):
@@ -224,10 +339,27 @@ def chart_webp(pdf_path: str | Path, cv: ChartVector, dpi: int = CROP_DPI) -> by
     return encode_webp(crop_pdf_region(pdf_path, cv.page, cv.union_bbox_points, dpi=dpi))
 
 
-def reencode_image_file(path: str | Path, quality: int = 85) -> bytes:
-    """Re-encode a verified asset file (e.g. inventory figure PNG) as WebP."""
+def reencode_image_file(path: str | Path, quality: int = 85, max_dim: int | None = None) -> bytes:
+    """Re-encode a verified asset file (e.g. inventory figure PNG) as WebP.
+
+    ``max_dim`` bounds the longest edge (preserving aspect) so full-issue
+    photo weaving stays inside the lightweight artifact budget.
+    """
     with open(path, "rb") as fh:
-        return encode_webp(fh.read(), quality=quality)
+        data = fh.read()
+    if not max_dim:
+        return encode_webp(data, quality=quality)
+    from PIL import Image  # lazy
+
+    with Image.open(io.BytesIO(data)) as im:
+        im = im.convert("RGB")
+        w, h = im.size
+        scale = min(1.0, max_dim / max(w, h))
+        if scale < 1.0:
+            im = im.resize((round(w * scale), round(h * scale)), Image.LANCZOS)
+        out = io.BytesIO()
+        im.save(out, format="WEBP", quality=quality, method=6)
+        return out.getvalue()
 
 
 def esc(text: str) -> str:
