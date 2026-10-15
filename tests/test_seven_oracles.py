@@ -254,6 +254,26 @@ class SevenOraclesFastArtifactCheck(unittest.TestCase):
         self.assertEqual(o.detail["raw_items"], 86)
         self.assertEqual(o.detail["deep_links"], 16)
 
+    def test_oracle_6_rejects_multi_token_p1_in_tier2(self):
+        import lxml.html
+
+        from tracer.oracles import oracle_print_hierarchy
+
+        for mutated in ("p1 p2", "p1,p2"):
+            with self.subTest(data_src=mutated):
+                root = lxml.html.fromstring(self.out.read_text("utf-8"))
+                victims = root.xpath(
+                    './/div[@data-tier="2"]//li[contains(@class,"takeaway")][@data-src]'
+                )
+                self.assertTrue(victims, "no Tier 2 takeaway to mutate")
+                victims[0].set("data-src", mutated)
+                result = oracle_print_hierarchy(root, self.data)
+                self.assertFalse(result.passed)
+                self.assertTrue(
+                    any("cites p1" in f for f in result.detail["failures"]),
+                    f"multi-token {mutated!r} not rejected: {result.detail['failures']}",
+                )
+
     def test_oracle7_clean_surface(self):
         o = self.report.oracle("viewport_geometry_clean_surface_payload")
         self.assertEqual(o.detail["failures"], [])
@@ -386,13 +406,20 @@ class SevenOraclesEndToEndCheck(unittest.TestCase):
                 for cell, data in cells.items():
                     self.assertTrue(data["passed"], f"geometry probe {cell}")
             # zero Tier 2 takeaway/thesis cites p1 in the shipped artifact
+            # (data-src token-split on whitespace/commas)
+            import re
+
             import lxml.html
 
             root = lxml.html.fromstring(out.read_text("utf-8"))
-            lede_cites = root.xpath(
-                './/div[@data-tier="2"]//li[contains(@class,"takeaway")][@data-src="p1"]'
-                '| .//div[@data-tier="2"]//div[contains(@class,"thesis-box")][@data-src="p1"]'
-            )
+            lede_cites = [
+                el
+                for el in root.xpath(
+                    './/div[@data-tier="2"]//li[contains(@class,"takeaway")][@data-src]'
+                    '| .//div[@data-tier="2"]//div[contains(@class,"thesis-box")][@data-src]'
+                )
+                if "p1" in re.split(r"[\s,]+", (el.get("data-src") or "").strip())
+            ]
             self.assertEqual(lede_cites, [])
 
 
