@@ -27,4 +27,6 @@ History currently contains many HTML/image versions from the Studio era. Preserv
 
 For the Issue Artifact path: retain the print PDF, `PILOT_ROOT` (or the future issue-local vector/translation tree) and any workspace reports you still need. There is no Studio writer lock on this path.
 
+The pinned inputs have no in-repo copy, so their integrity rests on one external directory: `/Users/dmus/Documents/deep-reading/backup-pilot-2026-10-16` (taken 2026-10-16, outside every Git repository, covered by Time Machine to `Kuanfu`). It holds `first-issue-pilot/`, the print PDFs, `reading-cases/`, the generator scripts and a regenerable cache, with `MANIFEST.sha256` covering every file and `MANIFEST.md` recording the expected rebuild result. Verify with `shasum -a 256 -c MANIFEST.sha256`; refresh the copy after any change to reviewed translations or evidence.
+
 Studio-era trees remain restorable evidence: if you copy `2026-10-12/editorial-artifacts/`, stop leftover writers first and copy queue/index/latest together. Do not revive that store as daily publishing. [BUILD](../render/BUILD.md#recovery) describes current recovery on the product path.
