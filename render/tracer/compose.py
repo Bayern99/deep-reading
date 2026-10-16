@@ -435,10 +435,14 @@ def _en_label_note(en: str, raw: str) -> tuple[str, str]:
     return _clip(label, 60), _clip(sentence.strip(), 160)
 
 
+_CN_CURRENCY_UNITS = ("美元", "港元", "日元", "欧元", "英镑", "加元", "澳元", "人民币", "元")
+
+
 def _extend_cn_scale(cn: str, raw: str) -> str:
     """Re-attach CJK scale characters (亿/兆) that follow the match so the
     isolated display value keeps its in-context magnitude (``1.5万`` inside
-    「1.5万亿美元」 must not render as a bare 15,000)."""
+    「1.5万亿美元」 must not render as a bare 15,000), plus any trailing
+    currency unit (美元/港元/日元/欧元/英镑/加元/澳元/元)."""
     idx = (cn or "").find(raw)
     if idx < 0:
         return raw
@@ -446,6 +450,10 @@ def _extend_cn_scale(cn: str, raw: str) -> str:
     while end < len(cn) and cn[end] in "亿兆":
         raw += cn[end]
         end += 1
+    for unit in _CN_CURRENCY_UNITS:
+        if (cn or "").startswith(unit, end):
+            raw += unit
+            break
     return raw
 
 

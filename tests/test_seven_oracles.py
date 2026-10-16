@@ -387,6 +387,20 @@ class SevenOraclesFastArtifactCheck(unittest.TestCase):
                 chart.xpath("ancestor::div[contains(@class,'exhibit-box')]")
             )
 
+    def test_key_stat_cn_scale_keeps_currency_unit(self):
+        """Reviewer-G (Issue #5 review): 「1.5万亿美元」 must render as a
+        full stat value — never the bare, wrong-magnitude 「1.5万亿」."""
+        _, defense = self._unit_root("PILOT-A17-DEFENSE")
+        vals = [
+            v.text_content().strip()
+            for v in defense.xpath(
+                ".//div[contains(@class,'metric-val')]"
+                "| .//div[contains(@class,'mini-stat-val')]"
+            )
+        ]
+        self.assertIn("1.5万亿美元", vals)
+        self.assertNotIn("1.5万亿", vals)
+
     def test_oracle2_rejects_mutated_metric_card(self):
         """Oracle 2 grounds the extracted rail metric cards: an invented
         value fails certification deterministically (mutation test)."""
