@@ -706,7 +706,7 @@ def build_full_units(data: PilotData, root: Path, pdf_path: Path,
 
     ``date_cn``/``date_en`` render each Tier 1/2 hero's date line (Group C
     Forensic Dossier hero meta grid)."""
-    routes = route_issue(data.articles)
+    routes = route_issue(data.articles, data.natives)
     composite_members = {m for spec in COMPOSITES.values() for m in spec["members"]}
     links = resolve_whatsnews(data, composite_members)
 

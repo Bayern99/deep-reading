@@ -324,7 +324,7 @@ def main(argv: list[str] | None = None) -> int:
     else:
         from tracer.full_compose import build_full_units
         from tracer.gate import run_gate, write_gate_report
-        from tracer.routing import TIER1_IDS
+        from tracer.routing import route_issue
 
         out = Path(args.output or DEFAULT_OUTPUT_FULL)
         data = load_full_data()
@@ -338,7 +338,8 @@ def main(argv: list[str] | None = None) -> int:
             missing = keep - {e.unit_id for e in entries}
             if missing:
                 raise SystemExit(f"--units ids not found in issue: {sorted(missing)}")
-        report = run_gate(data.translations, issue="2026-10-14", tier1_ids=TIER1_IDS)
+        tier1_ids = [r.unit_id for r in route_issue(data.articles, data.natives) if r.tier == 1]
+        report = run_gate(data.translations, issue="2026-10-14", tier1_ids=tier1_ids)
         gate_path = Path(args.gate_report) if args.gate_report else out.parent / "gate-report.json"
         write_gate_report(report, gate_path)
         tiers = {t: sum(1 for e in entries if e.tier == t) for t in (1, 2, 3)}

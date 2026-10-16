@@ -38,7 +38,7 @@ Entry points: `render/tracer_pipeline.py` (`make tracer`, `make tracer-certify`)
 | Module | Actual responsibility |
 |---|---|
 | `tracer/vector.py` | Primary Vector Signals: font-role taxonomy, `Retina*` chart titles/sources, union crop locked to the chart column, WebP encode. |
-| `tracer/routing.py` | Print-signal Curation: 28 raw section strings → 7 canonical sections, rubric kickers, Tier 1/2/3, Composite Columns, sidebar parent links. |
+| `tracer/routing.py` | Print-signal Curation: 28 raw section strings → 7 canonical sections, rubric kickers, Tier 1/2/3, Composite Columns, sidebar parent links. Tier 1 is derived, not listed: a multi-page story starting on a section front is a flagship, with the business front requiring body ≥ 850 words. Verified to reproduce the 2026-10-14 eight, and to hold on the held-out 2026-10-10 front page. |
 | `tracer/compose.py`, `tracer/full_compose.py` | Reading-unit composition, natural `after pK` figure anchoring from print $(x, y)$, Composite Columns, Forensic Dossier hero/rail, AST surgical narrative completion. |
 | `tracer/content.py` | Per-story editorial layers for the 2026-10-14 flagships (including Group C Forensic Dossier copy). |
 | `tracer/charts.py` | Compile `<wsj-chart data-src="pK">` into clip-free SVG; numbers must ground in the named paragraphs. |
@@ -87,7 +87,7 @@ Dated reports live under [docs/history](docs/history/README.md).
 
 | Concern | Evidence / next bounded decision |
 |---|---|
-| Second real issue | Routing and oracles are calibrated on the 2026-10-14 86-item fixture (`EXPECTED_TIERS`, unit counts, 21 charts, 16 deep links). A new date needs a new inventory, translations, `native.json` and oracle fixtures. |
+| Second real issue | Routing is no longer tabulated for 2026-10-14 — Tier 1 is derived from print signals and reproduces the reference eight, holding on the held-out front page. Still calibrated to one issue: oracles carry `EXPECTED_TIERS`/unit counts/21 charts/16 deep links, and the composite columns and section map are the reference issue's. A new date needs a new inventory, translations, `native.json` and oracle fixtures. |
 | Pinned external inputs | `PILOT_ROOT` and `PDF_PATH` are absolute paths outside this repo. The pipeline is not portable until those pins become issue-local, documented inputs. |
 | Upstream reproducibility | A fresh PDF still has no in-repo hop that emits `native.json` and reviewed bilingual units. The 2026-10-15 pipeline probe recorded PARTIAL/BLOCKED extraction hops on the old chain; that probe does not certify the vector path either. |
 | Model-authored layers | Flagship copy in `tracer/content.py` (including Forensic Dossier) is issue-specific. Daily Full Editorial Composition still needs a bounded model seam that emits primitives and dossier grammar without reviving Studio generation. |

@@ -36,7 +36,6 @@ from tracer.numbers import extract_substantive_numbers  # noqa: E402
 from tracer.routing import (  # noqa: E402
     COMPOSITES,
     SECTION_MAP,
-    TIER1_IDS,
     canonical_section,
     route_issue,
 )
@@ -63,7 +62,7 @@ class FullIssueDataTestCase(unittest.TestCase):
     def setUpClass(cls):
         cls.data = load_full_data()
         cls.articles = cls.data.articles
-        cls.routes = route_issue(cls.articles)
+        cls.routes = route_issue(cls.articles, cls.data.natives)
         cls.entries = build_full_units(cls.data, PILOT_ROOT, __import__("tracer.compose", fromlist=["PDF_PATH"]).PDF_PATH, fast=True)
         cls.entries_by_id = {e.unit_id: e for e in cls.entries}
 
@@ -72,10 +71,11 @@ class GateRadarTimingAndRecall(FullIssueDataTestCase):
     """Stage 1: <0.5s over all 1,257 units; 100% recall on injected faults."""
 
     def test_scans_all_units_under_half_second(self):
-        report = run_gate(self.data.translations, issue="2026-10-14", tier1_ids=TIER1_IDS)
+        tier1_ids = [r.unit_id for r in self.routes if r.tier == 1]
+        report = run_gate(self.data.translations, issue="2026-10-14", tier1_ids=tier1_ids)
         self.assertEqual(report.units_scanned, 1257)
         self.assertLess(report.duration_s, 0.5)
-        self.assertEqual(len(report.spot_checked), len(TIER1_IDS))
+        self.assertEqual(len(report.spot_checked), len(tier1_ids))
 
     def _kinds(self, en: str, cn: str) -> set[str]:
         return {f.kind for f in scan_pair("INJECTED", "p1", en, cn)}
@@ -145,7 +145,8 @@ class GateRadarTimingAndRecall(FullIssueDataTestCase):
 
     def test_gate_report_written_to_workspace_not_html(self):
         import lxml.html
-        report = run_gate(self.data.translations, issue="2026-10-14", tier1_ids=TIER1_IDS)
+        tier1_ids = [r.unit_id for r in self.routes if r.tier == 1]
+        report = run_gate(self.data.translations, issue="2026-10-14", tier1_ids=tier1_ids)
         with tempfile.TemporaryDirectory() as tmp:
             path = write_gate_report(report, Path(tmp) / "gate-report.json")
             loaded = json.loads(path.read_text("utf-8"))

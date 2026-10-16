@@ -13,6 +13,7 @@ rubric — zero silent fallback; any inventory item that matches no route raises
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 from .verify import TracerCompilationError
@@ -119,13 +120,87 @@ COMPOSITES: dict[str, dict[str, object]] = {
     },
 }
 
-# --- Tier 1 flagships (print-signal curated, ADR 0001) ------------------------
+# --- Tier 1 flagships (print-signal derived) ----------------------------------
+# ADR 0001 promises that print signals deterministically classify Tier 1. The
+# rule below does that; the ids are no longer listed here.
+#
+# Measured on 2026-10-14 (86 items, 8 known flagships) and reproduced exactly on
+# the held-out 2026-10-10 front page:
+#
+#   flagship = multi-page story AND (
+#         starts on the paper's front page (folio A1)
+#      OR starts on another section front (folio X1) AND body >= 850 words
+#     )
+#
+# Why A1 is unconditional: on the reference issue every multi-page story that
+# starts on A1 is a flagship (6 of 6), and the one A1 item that is not is the
+# What's News digest, which is single-page. Position encodes hierarchy — the
+# WSJ 2002 redesign fixed the front-page column roles (Poynter, "Behind the
+# Redesign: WSJ").
+#
+# Why the B1 branch also needs a length test: the business front carried 6
+# multi-page stories but only 2 flagships. Two independent signals agree on
+# which 2 (left column + top half; and the two largest by body text), and
+# length is the one computable from the inventory, so it is the one used.
+#
+# The word threshold is a DECLARED judgement, not a fitted constant: 830 fails
+# and 911 passes on the reference issue, and every value in 850-900 gives the
+# identical result, so it is not balanced on a single observation.
+FLAGSHIP_MIN_BODY_WORDS = 850
 
-TIER1_IDS = [
-    "PILOT-A1-BANKS", "PILOT-A1-CONDO", "PILOT-A1-GREECE", "PILOT-A1-CHINA-YOUTH",
-    "PILOT-A1-NAVY", "PILOT-A1-CARFREE",
-    "CASE-B1B2-PRIVATE-EQUITY", "PILOT-B1-FACTORIES",
-]
+#: Print identifier carried by every page, e.g. P2JW287000-5-A00100 -> stack A,
+#: folio 001. Read rather than assumed: the reference issue has stacks A/B/S
+#: across 36 pages, the held-out issue has A/B/C/D/R across 55, so any hardcoded
+#: page boundary is wrong for one of them.
+_PRINT_ID_RE = re.compile(r"P2JW\d+-\d+-([A-Z])(\d{3})\d{2}")
+
+
+def _body_words(article: dict) -> int:
+    return sum(len((p.get("text") or "").split()) for p in article.get("paragraphs") or [])
+
+
+def _folio(page: int, natives: dict[int, dict] | None) -> tuple[str, int] | None:
+    """(stack, folio) for a physical page, read from the paper's print id."""
+    native = (natives or {}).get(page)
+    if native:
+        for line in native.get("lines", []):
+            m = _PRINT_ID_RE.search(line.get("text", ""))
+            if m:
+                return m.group(1), int(m.group(2))
+    return None
+
+
+def is_front_page(page: int, natives: dict[int, dict] | None = None) -> bool:
+    """Whether a printed page is the paper's front page (stack A, folio 1)."""
+    pos = _folio(page, natives)
+    if pos:
+        return pos == ("A", 1)
+    return page == 1
+
+
+def is_section_front(page: int, natives: dict[int, dict] | None = None) -> bool:
+    """Whether a printed page is any section front (folio 1), read from the paper.
+
+    Falls back to the physical-page convention only when no native page is
+    available, so a caller without the vector layer can still route.
+    """
+    pos = _folio(page, natives)
+    if pos:
+        return pos[1] == 1
+    return page in (1, 19)
+
+
+def is_flagship(article: dict, natives: dict[int, dict] | None = None) -> bool:
+    """ADR 0001 Tier 1, from print signals alone."""
+    pages = article.get("all_pages") or []
+    if len(pages) < 2:
+        return False
+    start = int(article.get("start_page") or pages[0])
+    if not is_section_front(start, natives):
+        return False
+    if is_front_page(start, natives):
+        return True
+    return _body_words(article) >= FLAGSHIP_MIN_BODY_WORDS
 
 # Tier 3 standalone items (compact functional format) beyond the composites.
 TIER3_STANDALONE = {
@@ -179,18 +254,18 @@ def rubric_kicker(article: dict) -> str:
     return f"{label} · {print_page_label(int(page))}"
 
 
-def route_article(article: dict) -> Route:
+def route_article(article: dict, natives: dict[int, dict] | None = None) -> Route:
     """Deterministic three-tier routing for one non-composite inventory item."""
     aid = article["id"]
     raw = article.get("section", "")
     section = canonical_section(raw)
-    page = article.get("start_page") or (article.get("all_pages") or [0])[0]
 
-    if aid in TIER1_IDS:
-        return Route(aid, 1, article["type"], section, rubric_kicker(article), (aid,))
     if aid in TIER3_STANDALONE:
         spec = TIER3_STANDALONE[aid]
         return Route(aid, 3, spec["genre"], spec["section"], spec["kicker"], (aid,))
+
+    if is_flagship(article, natives):
+        return Route(aid, 1, article["type"], section, rubric_kicker(article), (aid,))
 
     atype = article["type"]
     if atype in ("article", "analysis", "opinion", "editorial", "review", "sidebar"):
@@ -214,7 +289,8 @@ def composite_route(unit_id: str) -> Route:
     )
 
 
-def route_issue(articles: dict[str, dict]) -> list[Route]:
+def route_issue(articles: dict[str, dict],
+                natives: dict[int, dict] | None = None) -> list[Route]:
     """Route the whole issue; every raw item lands in exactly one unit."""
     routes: list[Route] = []
     composite_members = {m for spec in COMPOSITES.values() for m in spec["members"]}
@@ -222,7 +298,7 @@ def route_issue(articles: dict[str, dict]) -> list[Route]:
         article = articles[aid]
         if aid in composite_members:
             continue
-        routes.append(route_article(article))
+        routes.append(route_article(article, natives))
     for uid in COMPOSITES:
         routes.append(composite_route(uid))
     routed = {aid for r in routes for aid in r.article_ids}
