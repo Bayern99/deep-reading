@@ -28,3 +28,7 @@ htmlcov/
 # Scratch work has an explicit home; historical evidence remains visible
 .scratch/
 *.log
+
+# Local Issue Artifact compiles (make tracer defaults to /tmp)
+/wsj-*.html
+/blobs/

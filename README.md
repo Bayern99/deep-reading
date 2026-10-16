@@ -1,101 +1,77 @@
 # WSJ 深读
 
-A bilingual WSJ reading system with two production paths: a deterministic whole-issue newspaper and a local editorial Studio that generates, verifies, versions and reopens individual article artifacts. Phase 1–7 implementations and their evidence are preserved. Runtime checks and remaining limits are recorded in [the governance record](docs/history/governance-2026-10-14.md).
+A bilingual WSJ reading system. The daily product is one portable Issue Artifact compiled from Primary Vector Signals through three-tier editorial composition, the LQA Funnel and seven Certification Oracles ([ADR 0001](docs/adr/0001-three-tier-editorial-composition.md), [ADR 0002](docs/adr/0002-issue-artifact-only-product.md)).
+
+The Studio workbench, per-article Editorial Artifact store, generation queue and `claim-evidence-v1` sidecar are not the product. Dated evidence of that pipeline lives under [docs/history](docs/history/README.md).
 
 ## Start here
 
 | Document | Authority |
 |---|---|
 | [FOUNDATION](FOUNDATION.md) | Long-lived product and content invariants |
-| [ARCHITECTURE](ARCHITECTURE.md) | Actual modules, data flow, persistence and current limits |
-| [DESIGN](DESIGN.md) | Visual canon and explicitly labeled design experiments |
+| [ARCHITECTURE](ARCHITECTURE.md) | Actual modules, data flow and current limits |
+| [DESIGN](DESIGN.md) | Visual canon of the Issue Artifact Reader |
 | [GLOSSARY](GLOSSARY.md) | Shared domain terms; distinct from issue translation glossaries |
-| [BUILD](render/BUILD.md) | Publishing, Studio operation and recovery commands |
-| [Claim Provenance](docs/claim-provenance.md) | Evidence/semantic review required for new generated editorial publication; historical audits remain distinct |
+| [BUILD](render/BUILD.md) | Compile, LQA and Oracle commands |
 | [Data and Git policy](docs/data-policy.md) | Protected data, generated outputs and safe Git handling |
-| [Governance record](docs/history/governance-2026-10-14.md) | What the last full governance pass actually changed and verified |
-| [Historical evidence](docs/history/README.md) | Dated investigations, prototypes and validation records |
+| [Historical evidence](docs/history/README.md) | Dated investigations, including the superseded claim-provenance contract |
 
-Use current code and current documents together. Historical reports establish what was observed at their date; they do not certify today's model deployment or production readiness.
+Use current code and current documents together. Historical reports establish what was observed at their date; they do not certify today's model deployment or a second issue.
 
 ## Install
 
-Run from the repository root. Python 3.11+ is the development target; governance was exercised with Python 3.14.7. Production requires only `lxml` beyond the standard library. No Node/npm runtime is required.
+Run from the repository root. Python 3.11+ is the development target. The Issue Artifact path needs `lxml`; real (non-`--fast`) compiles also need `fitz` (PyMuPDF) and `PIL`. No Node/npm runtime is required.
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 ```
 
-The isolated environment avoids dependencies and configuration installed by a particular Coding Agent harness. Poppler/PyMuPDF and model services are needed for some historical extraction experiments, not for reopening saved artifacts or the offline test suite.
+The isolated environment avoids dependencies installed by a particular Coding Agent harness. Poppler and OCR services are not required to compile the pinned 2026-10-14 Issue Artifact.
+
+The tracer CLI defaults to `/opt/homebrew/bin/python3` (`TRACER_PYTHON` overrides). The pilot dataset and print PDF are pinned outside this repository in `render/tracer/compose.py`.
 
 ## Verify before changing anything
 
 ```bash
-make hooks     # once per checkout: install the tracked guardrails
-make check     # make test + make smoke
+make hooks           # once per checkout: install the tracked guardrails
+make check           # tracer unit tests + --fast smoke
+make tracer-certify  # Issue Artifact + LQA Funnel + Certification Oracles
 ```
 
-`make test` runs the `tests/` unittest suites and the separate legacy content-gate assertions. `make check` adds `make smoke`, which copies production inputs into a temporary workspace, executes both real build commands and the local Studio HTTP routes, verifies existing artifacts, and removes the copy. It never resumes the production queue or calls a model. `make hooks` installs the tracked hooks: a commit that stages live queue/artifact state needs the `[data]` marker, and a push runs `make check`. See [data policy](docs/data-policy.md). Current acceptance data is the preserved `2026-10-12` issue.
+See [data policy](docs/data-policy.md).
 
 ## Open the product
 
 ```bash
-make studio ISSUE=2026-10-12 PORT=8788
-```
-
-Open `http://127.0.0.1:8788/reader` for saved articles and `/studio` for the source library, curation and queue. Reopening a saved article does not regenerate it. Starting Studio resumes pending/interrupted queue work; inspect `2026-10-12/editorial-artifacts/_queue.json` first if you only intend to browse. Run one Studio writer per checkout/issue.
-
-For standalone outputs:
-
-```bash
-make build ISSUE=2026-10-12
-make reader ISSUE=2026-10-12
-```
-
-The outputs are `2026-10-12/dist/index.html` (whole issue), `baseline.html` (internal comparison), and `editorial-reader.html` (saved-artifact Reader snapshot). The snapshot can reopen saved content offline; generation and queue controls require the live server. `make build` does not consume generated editorial artifacts. `make reader` does not rebuild the whole-issue newspaper. See [BUILD](render/BUILD.md) before generating new content.
-
-For the lightweight portable Issue Artifact of the 2026-10-14 pilot issue (no Studio server, no model calls; see [ADR 0001](docs/adr/0001-three-tier-editorial-composition.md) and `skills/wsj-deep-read/SKILL.md`):
-
-```bash
-make tracer          # full-issue artifact + LQA gate report
+make tracer          # full-issue Issue Artifact + LQA report → /tmp
 make tracer-certify  # ... + deterministic 7-Oracle certification
 ```
 
-Both write to `/tmp` (`wsj-2026-10-14.html`, `gate-report.json`, `oracle-certification.json`) and use the system Python with `fitz`/`PIL` (`TRACER_PYTHON` overrides).
+Open the HTML file. There is no Studio server. The Reader lives inside the Issue Artifact (`中文` / `EN` / `双语`, overview and immersive views).
+
+Cloud / bot VM: [skills/wsj-deep-read/SKILL.md](skills/wsj-deep-read/SKILL.md).
 
 ## Repository map
 
 ```text
-render/                    Production Python modules, styles and configuration
-tests/                     Unittest suites plus the legacy content-gate runner
-scripts/                   Runtime entry points: smoke.py, experiment0.py
-archive/render-experiments/ Historical drivers; not entry points, and some
-                           need PYTHONPATH=render and old external paths
-YYYY-MM-DD/                Issue source, translation provenance, assets, plans,
-                           versioned artifacts, queue and historical evidence
+render/tracer/             Issue Artifact pipeline (the product)
+render/tracer_pipeline.py  CLI entry
+skills/wsj-deep-read/      Agent Skill wrapper
+tests/                     Unittest suites (tracer + leftover Studio-era files)
+YYYY-MM-DD/                Issue trees; 2026-10-12 is Studio-era evidence
 docs/                      Current operating policy plus dated evidence
-docs/history/              Dated investigations, including the reports moved
-                           out of render/
+docs/adr/                  Product decisions (0001 composition, 0002 Issue Artifact only)
+docs/history/              Dated investigations
+archive/render-experiments/ Historical drivers; not entry points
 experiments/               Preserved independent experiments; not production
-reference/hybrid-v3/       Accepted visual starting point
+reference/hybrid-v3/       Superseded visual starting point
 ```
 
-Start code changes at the responsible module, not a historical issue builder:
-
-- Content/alignment and factual provenance: `integrity_gate.py`, `source_model.py`, `canonical_builder.py`, `claim_provenance.py`.
-- Whole issue: `build.py`, `issue.py`, `article.py`, `enhanced_render.py`, `text_treatment.py`, `layout.py`, `components.py`.
-- Generated article: `editorial_publisher.py`, `model_provider.py`, `editorial_compiler.py`, `artifact_store.py`.
-- Studio, source library and queue: `editorial_studio.py`, `generation_queue.py`.
-
-## Model configuration
-
-Browsing and tests need no credentials. Generation sends canonical article text to the selected endpoint and may incur provider charges. The [credential-free sample](.env.example) shows the portable OpenAI-compatible configuration; Python does not load `.env` automatically. Export values in your launching shell or source your ignored local file explicitly.
-
-The complete `WSJ_LLM_ENDPOINT` and `WSJ_LLM_API_KEY` take precedence over local Harness registry settings unless an explicit `GenerationConfig` overrides them. Model inventory can also be read from `~/.pi/agent/models.json` or `~/.omp/agent/models.json`; neither file belongs in Git. Direct Anthropic generation uses `ANTHROPIC_API_KEY`. Registry fallback does not prove an endpoint or model is available.
+Start code changes in `render/tracer/`. Frozen Studio-era runtime is git branch `archive/studio-phase1-7`; do not reintroduce it on `main`.
 
 ## Protect the work
 
-Keep `final.json`, OCR/translation provenance, verified images, plans and editorial artifact versions. New build snapshots, credentials and local environments are ignored; existing tracked deliveries remain tracked. Phase 5–7 code and artifacts were untracked when governance started; the local governance checkpoint includes their validated implementation and preserved evidence. Review that checkpoint before a release or remote publication.
+Keep Primary Vector Signals, reviewed translations, verified chart crops and dated evidence. The print PDF is not in Git. New compile snapshots in `/tmp` or at the repo root are not source.
 
 The [data policy](docs/data-policy.md) defines backup and version-control treatment. Major refactors, important data deletion, history rewriting, merges, deployment and remote pushes need Jerry's approval.

@@ -1,6 +1,6 @@
 #!/bin/sh
 # Nothing leaves this checkout without the repository's own check command passing.
-# make check is make test plus make smoke; both run on isolated copies and call no model.
+# make check is make test plus make smoke on the Issue Artifact path; no model calls.
 set -eu
 echo 'pre-push: make check'
 make check

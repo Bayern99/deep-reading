@@ -1,13 +1,13 @@
 ---
 name: wsj-deep-read
-description: Compile a daily WSJ print PDF into a portable single-file bilingual Issue Artifact and certify it with the deterministic 7-Oracle verifier. Use when a cloud agent or bot VM needs to build and validate the WSJ 深读 lightweight issue artifact without the local Studio server.
+description: Compile a daily WSJ print PDF into a portable single-file bilingual Issue Artifact and certify it with the LQA Funnel and seven Certification Oracles. Use when a cloud agent or bot VM needs to build and validate the WSJ 深读 Issue Artifact as a CLI or Skill.
 ---
 
 # WSJ 深读 · Lightweight Full-Issue Pipeline
 
-Compiles one WSJ print issue into a single self-contained HTML artifact
-(target 5–8 MB) using only primary PDF vector/font signals — no Studio
-server, no queue daemon, no model calls, no external asset directories.
+Compiles one WSJ print issue into a single self-contained HTML Issue Artifact
+(target 5–8 MB) from Primary Vector Signals — no operator workbench, no queue
+daemon, no evidence sidecar, no external asset directories on the reader surface.
 
 ## Run
 

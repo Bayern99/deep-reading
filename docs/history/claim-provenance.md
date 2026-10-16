@@ -1,6 +1,8 @@
+Superseded 2026-10-16 by ADR 0002. The Issue Artifact verifies by paragraph-scoped `data-src="pK"`, the LQA Funnel and Certification Oracles (`render/tracer/verify.py`, `gate.py`, `oracles.py`). This sidecar contract (`claim-evidence-v1`, ArtifactStore, Studio compiler) is dated Experiment 0 evidence, not current publication authority. Original body follows unchanged.
+
 # Claim Provenance Contract
 
-Implemented by [`render/claim_provenance.py`](../render/claim_provenance.py). Experiment evidence: [Experiment 0](history/research-2026-10-14/EXPERIMENT-0.md). Scope: new canonical-derived and authored content passing through the generated-article compiler and ArtifactStore. Approved narrative, source repairs, historical artifacts and the deterministic whole-issue renderer retain their existing contracts.
+Implemented by [`render/claim_provenance.py`](../../render/claim_provenance.py). Experiment evidence: [Experiment 0](research-2026-10-14/EXPERIMENT-0.md). Scope: new canonical-derived and authored content passing through the generated-article compiler and ArtifactStore. Approved narrative, source repairs, historical artifacts and the deterministic whole-issue renderer retain their existing contracts.
 
 ## Trust boundary
 

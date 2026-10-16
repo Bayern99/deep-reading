@@ -1,9 +1,9 @@
 # WSJ 深读 · Foundation
 
-Audience: the person or agent building and maintaining future issues.
+Audience: the person or agent compiling the next Issue Artifact.
 
-This file is the product constitution. `DESIGN.md` is the visual canon.
-Current modules and limitations live in `ARCHITECTURE.md`; commands and recovery live in `render/BUILD.md`.
+This file is the product constitution. `DESIGN.md` is the visual canon of the Issue Artifact.
+Current modules and limitations live in `ARCHITECTURE.md`; commands live in `render/BUILD.md`.
 Content changes every day. These principles do not.
 
 ---
@@ -11,6 +11,8 @@ Content changes every day. These principles do not.
 ## Product
 
 A Chinese AI-native digital newspaper people open every day: faithful WSJ journalism, editorial judgment from typography through whole-issue composition, a distinctive identity developed from AJ × WIRED, mobile-first, bilingual.
+
+Delivery is one lightweight Issue Artifact compiled from Primary Vector Signals. There is no operator workbench on the reader surface.
 
 One-line test: **does this look like a newspaper, or a production log?**
 If a reader can see the pipeline, the surface is wrong.
@@ -21,86 +23,64 @@ If a reader can see the pipeline, the surface is wrong.
 
 | Layer | File | Changes when |
 |---|---|---|
-| Visual tokens, type, measure | `DESIGN.md`, `render/tokens.css`, `reference/hybrid-v3/` | Evolve from the accepted baseline when real reading evidence justifies it; preserve the publication's identity. |
+| Visual tokens, type, measure | `DESIGN.md`, `render/tracer/shell.py` | Evolve from the Issue Artifact when real reading evidence justifies it. |
 | Reader surface rules | this file | When the newspaper identity changes, not when a story changes. |
-| Publishing implementations | Static renderer and generated-article compiler / publisher | Bugfixes and reusable capabilities, not per-article renderer hacks. |
-| Integrity | Shared source projection, gate and compiler audits | When a new failure mode appears. |
+| Publishing implementation | `render/tracer/` compiler, LQA Funnel, Certification Oracles | Bugfixes and reusable capabilities, not per-article renderer hacks. |
+| Integrity | Paragraph-scoped `data-src`, LQA Funnel, Certification Oracles | When a new failure mode appears. |
 
 ## What is daily (must change)
 
 | Layer | File | Owner |
 |---|---|---|
-| Copy | `<date>/final.json` | extraction → glossary → translation → QA |
-| Front-page selection | `<date>/front.json` | editor / agent following § Front |
-| Editorial plans | `<date>/editorial-plans/*.json` | only where a module earns its place |
-| Photos / charts | issue `assets/` and verified manifests | verified crops only; legacy global manifests are described in ARCHITECTURE |
-| Generated article versions | `<date>/editorial-artifacts/` | publisher; preserve prior verified versions |
-| Delivery | issue `dist/` | deterministic issue build or saved-artifact Reader export |
+| Print PDF | external protected original | retain outside Git |
+| Primary Vector Signals | issue `native.json` / pinned `PILOT_ROOT` | vector extraction |
+| Reviewed bilingual units | issue translation inventory | extraction → glossary → translation → QA |
+| Curation | print-signal routing in `tracer/routing.py` | editor / agent following print hierarchy |
+| Flagship editorial layers | `tracer/content.py` (issue-specific) | Full Editorial Composition, including Forensic Dossier |
+| Delivery | Issue Artifact HTML | `make tracer` / `make tracer-certify` |
 
-Do not copy 2026-10-12 story IDs into renderer code. Pin them in that day's `front.json`.
+Do not copy 2026-10-12 or 2026-10-14 story IDs into renderer code as if they were the next issue.
 
 ---
 
 ## Invariants
 
-1. **Verbatim body.** `final.json` is the approved copy source. Both publishing paths use its auditable bilingual projection; verified artifacts preserve their source digest. Formatting and generation never rewrite or retranslate canonical narrative text, and never use `text-wrap: pretty` on Chinese prose.
-2. **Coherent editorial identity.** Develop from AJ × WIRED: 640px body / 760px head, restrained color and structure; variation must express real content relationships. Typography is reading craft, not a frozen prototype. See `DESIGN.md`.
-3. **No pipeline chrome on the reader surface.** Forbidden on `index.html`: 「机器辅助翻译」, 「逐版摘要」, 「P1 必读」, 「编辑增强」, 「对照纯排版」, article counts as dek, baseline links. Internal ids may exist hidden for asserts.
-4. **No invented modules.** key_figures / timeline / quote / photos appear only from plans, `images.json`, or `context_cn`. Empty plan → clean article.
-5. **No restatement.** A module must add a view the body does not already give. If the dek already says 「至少 12 人死亡」, key_figures must not say it again.
+1. **Verbatim body.** Reviewed English source and Chinese translation are the approved copy. Compilation never rewrites or retranslates narrative text, and never uses `text-wrap: pretty` on Chinese prose. The LQA Funnel records dispositions; it does not edit paragraphs.
+2. **Coherent editorial identity.** Develop from AJ × WIRED. Variation must express real content relationships. Typography is reading craft. See `DESIGN.md`.
+3. **No pipeline chrome on the Reader surface.** Forbidden: machine-translation banners, per-edition summaries as dek, "Vertical Tracer", gate-report dumps, article counts as dek, baseline links, operator queue UI. Internal ids may exist hidden for asserts. Workspace JSON never ships inside the Issue Artifact.
+4. **No invented modules.** Takeaways, thesis boxes, Forensic Dossier panels, charts and companions appear only from print-grounded composition. Empty editorial layer → clean article.
+5. **No restatement.** A module must add a view the body does not already give. Tier 2 takeaway/thesis elements do not cite the lede (`p1`).
 6. **No 「主张与现实」 / duel.** Deleted. Do not revive.
-7. **Type is layout.** `article`/`opinion` full head; `brief`/`letter` compact; `index_digest` What's News column; `photo_caption` caption entry; `data_table` appendix table. Do not stamp the long-article header on a digest.
-8. **Self-contained delivery.** The whole issue and saved-article Reader export as standalone HTML; Google Fonts may be external, with no npm runtime. Live Studio generation and queue controls require the local server.
-9. **Mobile is the product.** 390px must read comfortably: 17px / 1.85 body, one 20px inset per side, semantic reflow of notes and comparisons. Zero overflow alone does not prove reading quality.
-10. **Confirmed alignment repair only.** A QA-confirmed extraction defect (duplicated print marker, sentence split by a column break) is repaired from `render/alignment_overrides.json` — per article, exact-match text, applied identically on ordinary/enhanced/baseline paths, and folded into each plan's `content_digest`. The renderer never silently edits copy; unconfirmed misalignment fails the build (receipt `alignment_mismatch` / `en_tail_dropped`) instead of truncating.
-11. **Digest number fidelity.** A live `data_table`/`index_digest` must show every decimal number of its source. A curated summary (`suppress_body`) must present the same decimal-number set in `insight_cn` and `insight_en`: a summary may drop rows, never make one language's reader blind to a number the other language kept.
+7. **Type is layout.** Full Editorial Composition, Typographic Editorial Composition and Compact Functional Format are different surfaces. Do not stamp a flagship header on a digest or a Composite Column.
+8. **Self-contained delivery.** The Issue Artifact is one HTML file (target 5–8 MB). Google Fonts may be external. No Studio server, no npm runtime, no embedded PDF, no full-page PNG evidence bundle.
+9. **Mobile is the product.** 390px must read comfortably: 17px / 1.85 body, one 20px inset per side. Certification Oracle 7 probes 1440×900 and 390×844 in 中文 / EN / 双语. Zero overflow alone does not prove reading quality.
+10. **Primary Vector Signals over secondary crops.** Printed charts re-crop from the PDF union of the graphic and adjacent `Retina*` title/source lines. Do not prefer chopped PNG crops or OCR tables for chart labels.
+11. **Paragraph-scoped fidelity.** Every authored element's substantive numbers ground in its `data-src` paragraphs (plus `Retina*` text for Chart Companions). Cross-language magnitude must match (`$2.3 billion` ≡ 「23亿美元」). Fail the compile rather than silently drop a number or a tier.
 
 ---
 
 ## Front (every issue)
 
-File: `<date>/front.json`
+The Issue Artifact opens on an edition overview, then immersive reading units. The dek is today's reason to open, not a production statistic. Lead treatment follows print A1 news, not What's News, not a photo caption, not a table.
 
-```json
-{
-  "date_cn": "2026年10月12日",
-  "date_en": "October 12, 2026",
-  "weekday_cn": "星期一",
-  "weekday_en": "Mon",
-  "dek_cn": "一句值得打开的话。",
-  "dek_en": "One sentence worth opening.",
-  "lead_id": "E1-005",
-  "also_ids": ["E2-002", "E2-001"]
-}
-```
+Jump navigation is the seven canonical sections, not a file tree of raw section strings.
 
-Rules:
-
-- **dek** is today's reason to open, not a production statistic.
-- **lead** is one A1 *news* article. Not What's News, not a photo caption, not Personal Journal, not a table.
-- **also** is two more A1 news articles. Same exclusions.
-- Jump TOC is section names only (最新消息 / 要闻 / 美国 / 世界 / 生活 / 观点 / 商业与金融 / 数据). Not a 90-row file tree.
-- If `front.json` is missing, the renderer falls back to A1 news by priority. Still never puts digest/caption/life in the lead slot.
-
-Kicker on stories: `section label · page` only. Priority (P1/P2/P3) is internal.
+Kicker on stories: print rubric / section label. Priority codes are internal.
 
 ---
 
-## Editorial plans
+## Editorial composition
 
-Plans live in `<date>/editorial-plans/<id>.json` (`enhanced-v1`). They are optional.
+Curation is print-signal routing into three tiers and Composite Columns (ADR 0001). Flagship layers may include Forensic Dossier grammar. Models emit Declarative Visual Primitives, not raw SVG coordinates.
 
-Use a module when it changes how a reader *moves through* the piece (timeline for escalation, condensed figures the body buries, one direct quote). Decline when it restates, fills a column, or was copied from yesterday.
-
-Do not regenerate all enhanced pages for a new date. Start from a clean issue; enhance fewer stories than you think.
+Decline a module when it restates, fills a column, or was copied from yesterday.
 
 ---
 
 ## Acceptance principles
 
-A published reading experience preserves source copy, bilingual order, verified visual evidence and the publication's editorial identity. Compiler/gate success does not replace reading and visual review.
+A published Issue Artifact preserves source copy (Certification Oracle 1), bilingual numeric and qualifier agreement (LQA Funnel), printed-chart vectors, figure order, and the publication's editorial identity. Oracle PASS does not replace reading the newspaper.
 
-Inspect desktop and 390px mobile, Chinese and English, navigation, figures and at least one long article and digest. Confirm no horizontal overflow, no duplicated interventions and comfortable continuous reading. Baseline comparisons use identical source repairs and verified assets.
+Inspect desktop and 390px, Chinese, English and bilingual, overview and immersive views, figures, one flagship and one digest. Confirm no horizontal overflow, no duplicated interventions and comfortable continuous reading.
 
-Operational commands and their current limitations are maintained in `render/BUILD.md` and `ARCHITECTURE.md`, not repeated here.
-
+Operational commands and current limitations: `render/BUILD.md` and `ARCHITECTURE.md`.

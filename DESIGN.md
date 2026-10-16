@@ -1,9 +1,8 @@
 # WSJ 深读 · 设计规范（DESIGN.md）
 
-版本：v1.1（2026-10-13，阅读工艺修订）。已获认可的视觉起点为 `reference/hybrid-v3/index.html`；本次依据 Editorial Design & Reading Experience Charter 演进。
+版本：v2（2026-10-16）。视觉权威是 Issue Artifact 的 Reader：`render/tracer/shell.py`。
+`reference/hybrid-v3/` 和 2026-10-13 静态渲染器数值是被取代的起点，不是现行 tokens。
 字体、密度和编排需要通过真实文章验证。原型是起点，不能把历史数值当作设计探索的终点。
-
-适用范围：本文的具体 tokens 与组件数值是整期静态渲染器的视觉基线。Phase 5–7 生成文章也须满足忠实正文、编辑价值与移动阅读原则；当前生成提示的字体／色板存在偏离，见 `ARCHITECTURE.md`。历史探索记录不自动成为已接受规范。
 
 ---
 
@@ -14,6 +13,7 @@
 - **正文是主要设计材料**：先治理字体、混排、行宽、行高、段落和章节，再判断图片、边注或对照是否有独立价值。
 - **颜色纪律**：颜色标记状态、身份和行动，不代替排版表达。
 - **编辑判断包括不干预**：数字、日期、人物数量不决定组件；克制也不意味着所有文章只能采用同一种单栏表达。
+- **三档是不同的表面**：Full Editorial Composition、Typographic Editorial Composition、Compact Functional Format 不共用旗舰头。Forensic Dossier 是第一档里一类故事的文法，不是第四档。
 
 ### 五个相连的设计尺度
 
@@ -30,162 +30,130 @@
 ## 2. Typography（字体家族）
 
 | 角色 | 中文模式 | 英文模式 | 说明 |
-|---|---|---|---|
-| 展示标题 | Noto Serif SC 700 | Playfair Display 700 | WIRED 式衬线标题，但字重 700（中文 900 压迫感过强，已降级） |
-| 正文 | Noto Serif SC 400（含配套西文字形） | Lora 400 | 中文混排沿用思源宋体自身的字面协调；英文阅读整体切换 |
-| 元数据/标签/按钮 | Noto Sans SC 400/500/700 | Inter 400/500/600/700 | kicker、byline、模块标签、按钮；保持实际字重 |
-| 数据/序号/时间戳 | Noto Sans SC 700（中文数字） | Noto Sans Mono / IBM Plex Mono 700 | 只用于：关键数字序号与时间标签、时间线时间戳 |
+|---|---|---|
+| 展示标题 | Noto Serif SC | Playfair Display 800 | Issue Artifact 标题字重 800 |
+| 正文 | Noto Serif SC 400 | Lora 400 | 中文混排沿用思源宋体；英文阅读整体切换 |
+| 元数据/标签/按钮 | Noto Sans SC | Inter | kicker、byline、模块标签、语言切换 |
+| 数据/序号/时间戳 | Noto Sans SC / JetBrains Mono | JetBrains Mono | 关键数字、masthead 日期、section 编号 |
 
 铁律：
 - 中文连续正文**禁用** `text-wrap: pretty` / `text-wrap: balance`；自然折行。`balance` 只用于标题与头版短导语。
-- 中文**禁用**首字下沉（不适合中文，已验证）。
+- 中文**禁用**首字下沉。
 - 正文不许伪粗体；不许为视觉随意加小标题。
-- 中文采用 `line-break:strict`、`word-break:normal`、`text-autospace:normal` 与 `text-spacing-trim:trim-start`。这些是呈现规则，不替换全角标点、不向定稿写入空格；不支持的浏览器保留自然排版。
-- 标题、正文、元数据的英文片段继承各自角色字体，不能把所有 `.k-en` 统一成正文 Lora，也不能任意缩小英文段落。
-- 精调只保护编辑指定的短标题词组。计划中的可选 `headline_phrases_cn` 必须逐字命中标题一次；按屏宽自然折行，过窄时允许词组内部自然回流，不固定 `<br>`。长篇正文不逐词包裹。
-- 参考：[Apple 官网排版细节鉴赏](https://skywt.cn/blog/apple-typography-details)、[W3C 中文排版需求](https://w3c.github.io/clreq/)、[MDN text-autospace](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-autospace)、[MDN text-spacing-trim](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-spacing-trim)。学习光学协调与工艺，不复制 Apple 私有字体或营销页排版。
+- 双语模式只配对主叙事散文。SVG 内部标签和微控件保持单语言，避免几何溢出。
+- 参考：[Apple 官网排版细节鉴赏](https://skywt.cn/blog/apple-typography-details)、[W3C 中文排版需求](https://w3c.github.io/clreq/)。学习光学协调与工艺，不复制 Apple 私有字体。
 
-## 3. Typography scale（真实数值）
+## 3. Typography scale（Issue Artifact）
 
-### 桌面（≥768px）
+权威实现：`render/tracer/shell.py` 的 `CSS`。
+
+### 桌面
 
 | 元素 | 字号 | 字重 | 行高 | 颜色 |
 |---|---|---|---|---|
-| h1 标题 | 40px | 700 衬线 | 1.3 | #111111 |
-| deck 导语 | 18px | 400 衬线 | 1.7 | #5f6462 |
-| kicker | 13px | 700 无衬线，字距 0.14em | — | #5f6462（+ 8px 橙竖条） |
-| byline 作者 | 13px | 700 无衬线，字距 0.04em | — | #111111 |
-| byline 日期 | 13px | 400 无衬线 | — | #5f6462 |
-| 正文 | 17px | 400 衬线 | 1.85 | #1f1f1f |
-| 引语 | 20px | 700 衬线 | 1.7 | #111111（+ 3px 黑左线，署名 13px 无衬线 #5f6462） |
-| 关键数字值 | 28px | 700 衬线 | 1.2 | #111111 |
-| 关键数字序号 | 13px | mono 400 | — | #5f6462 |
-| 关键数字标签 | 13px | 700 无衬线 | — | #111111 |
-| 关键数字注释 | 13px | 400 无衬线，1.7 | — | #5f6462 |
-| 时间线时间戳 | 13px | mono 700，字距 0.04em | — | #111111 |
-| 时间线正文 | 15px | 400 衬线 | 1.75 | #1f1f1f |
-| 背景资料正文 | 15px | 400 衬线 | 1.8 | #1f1f1f |
-| 模块标签 | 13px | 700 无衬线，字距 0.16em | — | #111111 |
+| 阅读单元 h1 | 42px | 800 衬线 | 1.25 | --ink |
+| 概览页标题 | 32px | 800 衬线 | 1.3 | --ink |
+| deck / 头版 dek | 18px | 400 | 1.7 | --mut |
+| kicker | 13px | 700 无衬线，字距 0.14em | — | --mut（+ accent 方块） |
+| byline | 13px | 700 无衬线 | — | --ink |
+| 正文 | 17px | 400 衬线 | 1.85 | --body |
+| 引语 | 19px | 700 衬线 | 1.6 | --ink |
+| 论点盒 | 18px | 700 | 1.7 | --ink |
+| 要点 | 15.5px | 400 | 1.7 | --body |
 
 ### 移动（≤430px）
 
-| 元素 | 字号 | 行高 |
-|---|---|---|
-| h1 标题 | 30px | 1.35 |
-| deck 导语 | 17px | 1.7 |
-| 正文 | 17px | 1.85 |
-| 引语 | 19px | 1.7 |
-| 关键数字值 | 22px | 1.2 |
+| 元素 | 字号 |
+|---|---|
+| 阅读单元 h1 | 28px |
+| 概览页标题 | 26px |
+| 正文 | 17px / 1.85 |
 
-（768px 以下标题 32px；首屏留白 56→40→32px 逐档收紧。）
+768px 以下阅读单元 h1 为 30px。
 
 ## 4. Layout
 
-- 正文栏：640px 居中（17px 下约 37 个中文全字宽）；段落进入分组或边注容器后仍须保留相同正文样式。
-- 标题头：760px 居中（比正文栏宽，AJ 式标题-正文关系）。
-- 页面：1080px；右 rail 180px（≥1200px 显示，sticky，跟随模块锚点）。
-- 段落间距：1.05em；模块上下边距：2em；首屏标题头上留白 40px（桌面）；标题分隔线与首段之间 24px。
-- 对齐：关键数字数值列固定宽度（桌面 200px / 手机 165px），四行标签左沿严格对齐。
-- 禁止：整页大边框卡片；为填满栏位造模块。
-- 头版在 ≥1024px 以主稿／两则次稿形成非等宽编辑层级；平板和手机保持主稿 → 次稿的 DOM 阅读顺序，不增加卡片或装饰配图。
+- 外壳最大宽 1120px，左右 20px。
+- Compact Functional Format 单元头和正文收至 680px。
+- 非对称旗舰：正文列约 650px + sticky 右栏 280–380px；≤980px 单栏。
+- 段落间距 1.05em。
+- 概览与阅读是同一份 Issue Artifact 里的两种视图，不是两个站点。
+- 禁止：整页大边框卡片；为填满栏位造模块；把印刷广告收成读者图。
 
 ## 5. Tokens
 
 ```css
---paper:#fdfbf8; --ink:#111111; --body:#1f1f1f; --mut:#5f6462;
---line:#e5e2da; --orange:#fa9000; --red:#c31833;
+--paper:#faf8f4; --paper-card:#f3efe6; --paper-deep:#ebe5d8;
+--ink:#141413; --body:#242220; --mut:#646059; --line:#dcd6c8;
+--accent:#b85d19; --accent-soft:rgba(184,93,25,0.14);
+--navy-bg:#0f1d2b; --navy-card:#16283b; --gold:#c99738;
+--orange:#b85d19; --red:#9e2a2b;
 ```
 
-- 橙 #fa9000：只做 masthead 方块 + kicker/模块标签 8px 竖条（marker 笔，不做交互）。
-- 红 #c31833：只做时间线圆点（专属突发/时间线）。
-- 黑 pill：中英切换、回顶部。页内再无其他颜色。
-- 边框：1px hairline #e5e2da；结构线 1px #111。
-- 圆角：0（新闻模块）；pill 控件 9999px。
-- 进度条：顶部 2px 黑色。
+- accent：masthead 方块、kicker 方点、强调边、部分数值。不是交互色。
+- navy / gold：仅 Forensic Dossier 的 defense 面板。
+- 黑底 accent 左边：仅卷宗收束 verdict。
+- 语言切换：黑 pill。
+- 圆角：新闻模块 0；pill 9999px；defense 面板 3px。
+- 结构线：masthead 底 2px --ink；章节底 2px --ink。
+
+被取代的 hybrid-v3 色板（`--paper:#fdfbf8`、`--orange:#fa9000`）不再约束 Issue Artifact。
 
 ## 6. Article hierarchy
 
-masthead（橙方块 + wordmark + 黑 pill 切换）→ kicker → h1 → deck → byline（作者 700 + 日期）→ 黑 hairline →
-正文流（17px/1.85 衬线）→ 模块按叙事位置嵌入 → 背景资料（底部折叠）→ 来源注 → ■ 结束符 → 回顶部。
+masthead（accent 方块 + wordmark + 黑 pill 中文/EN/双语）→ 七个 canonical section 导航 → 概览或阅读视图切换 →
+单元：kicker → h1 → dek → byline → 按档位嵌入的模块（要点 / 论点盒 / Forensic Dossier / 图与 Chart Companion / `<wsj-chart>`）→ 正文流。
 
-## 7. Components
+印刷图锚在 `after pK`，不堆在第一段前。
 
-### 关键数字（key figures）
-- AJ ranked 条目：序号（mono 灰）+ 大数字（衬线 700）+ 标签（700）+ 注释（灰），hairline 分隔，无卡片。
-- 数字需要同时理解才做总览；位置服从叙事单元边界，不能插在同一场景的连续段落中途。
+## 7. Composition surfaces
 
-### 时间线（timeline）
-- AJ live 语言：红圆点 + 银灰竖轨（2px #d9d9d9）+ mono 时间戳；移动端不断轨。
-- 条目为单句 condensed 文本，提供叙事顺序之外的编年视角。
+### Full Editorial Composition
+叙事节奏、原图按印刷顺序入文、Declarative Visual Primitive、或 Forensic Dossier（hero ledger、rail metric、defense 面板、verdict）。数字必须段落锚定。
 
-### 引语（quote）
-- **只取直接引语的一句**，人物介绍与记者叙述留在正文流（普通正文）。
-- 样式：20px/700 衬线 + 3px 黑左线 + 18px 左缩进，署名行 13px 无衬线灰。
-- 禁止：整段 breakout、大字号（>22px）、大留白（>40px）。
-- 短段直接引语、正文已有强调的句子，不紧接着再做摘录；先判断是否真能改变阅读节奏。摄像头、收益率、AI／宗教稿保留正文引语，取消重复模块。
+### Typographic Editorial Composition
+按体裁：分析要点（不引用 lede）、意见论点盒 + 直接引语、书评作品元数据卡、sidebar 链到父篇。
 
-### 背景资料（context）
-- 页面**底部**折叠 `<details>`（AJ 原型式样），默认收起；summary 行 15px/700 + 右侧 +/– 指示；键盘可用（原生 summary）。
-- 不许做成文内大卡片打断叙事。
+### Compact Functional Format
+What's News（深链）、Composite Column、短讯、更正、只读行情表。不要旗舰头。
 
-### 图片/图注（figure）
-- 只用已验证的真实图片（清单见 `render/images.json`）；宁缺毋滥。
-- 图注 13px 无衬线灰，必带来源署名。
+### Chart Companion 与印刷图
+原图 WebP + 双语伴读卡，标签来自 `Retina*`，不来自 OCR 表。
 
-### 数据表（data table）
-- 真表格 + 列头 + caption；移动端允许横滑；不许做成"数字墙"段落。
-
-### 已删除的组件
-- **"主张与现实"对照模块**：内容为正文 P5+P2 的复述，叙事本身已用转折完成对照，独立模块切碎文章——删除，零残留。（2026-10-13 决策，见 hybrid review.md）
+### 已删除
+- 「主张与现实」对照模块。
+- Studio 操作台、队列、版本浏览器出现在 Reader 表面。
 
 ## 8. Mobile behavior
 
-- 390px：单栏；标题 30px／正文 17px、1.85；`#issue` 统一左右各 20px 留白，正文可用宽度 350px，`.sheet` 不再叠加边距。模块顺序、边注位置仍服从报道逻辑。
-- 关键数字：数值列固定 165px，标签对齐不断裂。
-- 折叠组件（背景资料）原生 `<details>`，触控目标 ≥44px。
-- 横向溢出必须为 0（自动化检查）。
-- 桌面边注在相关段落右侧；平板和手机在该段之后、下一段之前。跨栏图形可内部横滑，图注与正文对齐；不能把图缩到信息无法辨认。
+- 390px：单栏；正文 17px / 1.85；左右 20px。
+- Certification Oracle 7 在 1440×900 与 390×844、三种语言、概览与阅读视图上要求 `scrollWidth <= clientWidth`、无破图、SVG 字不裁切。
+- 零溢出不能代替整篇实读。
 
-## 9. Content presentation（内容 → 形式）
+## 9. Content presentation
 
-| 内容类型 | 呈现形式 | 说明 |
-|---|---|---|
-| article / opinion 长文 | 完整 hybrid 文章页 | 标题/导语/正文/按需模块 |
-| brief 短讯 | 紧凑条目 | 标题 + 导语 + 2-4 段正文，无模块 |
-| letter 读者来信 | 紧凑条目 | 同 brief，标注"读者来信" |
-| data_table 数据表 | 附录式表格 | 真表格 + caption，沉底 |
-| photo_caption | 图注条目 | 有验证图片则配图，无则纯图注 |
-| index_digest / correction | What's News 栏目／紧凑更正 | 避免长文头部；按条目性质呈现 |
+| 内容 | 表面 |
+|---|---|
+| 头版/机制/调查旗舰 | Full Editorial Composition，必要时 Forensic Dossier |
+| 标准稿 / 分析 / 意见 / 书评 | Typographic Editorial Composition |
+| 短讯、摘要、来信、更正、行情表 | Compact Functional Format / Composite Column |
 
-原则：**不同类型不许机械套用全部组件**。静态模块来自经验证的每期编辑计划、内容自带 context 或图片清单；`render/modules.json` 只保留遗留已确认内容。生成制品使用规范来源锚定，不得为填满页面编造数据。
+不同类型不许机械套用全部组件。模型写原语，编译器出 SVG；不许为填满页面编造数据。
 
-## 10. 可访问性与验收标准
+## 10. 可访问性与验收
 
-- skip link、全键盘可操作（toggle/折叠/锚点/回顶）、语义化标签（header/main/article/aside/footer、h1、ol 时间线）。
-- 对比度：正文 ≥4.5:1（#1f1f1f on #fdfbf8 ≈ 15:1；#5f6462 ≈ 5.8:1）。
-- 焦点可见（2px 橙 outline）。
-- 验收（每次构建必跑）：定稿文字保留、无错序；中英切换正确；真实资产与图注正常；1440／768／390px 阅读舒适且无溢出；导航可用；分组段落不丢失正文样式；标题重要词组不被拆开；组件不重复强调同一信息。零溢出和孤立组件的精致都不能代替整篇实读。
+- 语义结构、键盘可操作、语言切换可见状态。
+- 对比度按 --ink / --body / --mut 落在 --paper 上验收。
+- 每次发布：叙事守恒、段落数字锚定、印刷图向量、无管道字符串、桌面与 390px 双语可读。
 
 ## 11. 生产流程
 
-实际数据流、两条出版路径、模块边界和上游依赖见根目录 `ARCHITECTURE.md`；构建、Studio 启动和恢复命令见 `render/BUILD.md`。内容定稿是唯一内容依据，格式化不改写正文。
+数据流与剩余风险见 `ARCHITECTURE.md`；命令见 `render/BUILD.md`。Primary Vector Signals 加已审双语单元是内容依据，格式化不改写正文。
 
-策展判断记录在每期计划或生成制品中。计划可由 AI 辅助，但每次干预须依据报道、解释阅读价值；不能从关键词自动制造组件。下文是有时点的实施／探索证据，不代替当前运行验证。
+下文是有时点的实施／探索证据，不代替当前运行验证。
 
-## 12. v1.1 实施记录
+## 12. Historical notes (not current tokens)
 
-- 修复分组／边注中的正文退回无衬线默认行高；统一为 17px／1.85。移除手机双重留白与任意缩小英文的规则。
-- 摄像头稿保护两个标题短语，保留六个源小标题；AI／宗教稿保持开篇四段连续；收益率稿让比较成为主要视觉关系；沙特稿的数字总览移到机场袭击场景之后。
-- Chromium 实页检查：1440／768／390／320px，中英切换和整页溢出通过；733 个正文段落字体、字号、行高一致；62 篇已发布文字稿的中文段落与定稿逐段一致。18 张已嵌入图像正常加载。
-- 图像与阅读证据见 `2026-10-12/archive/historical-outputs/reboot-proof/`。未在 Safari／Firefox 验证，也未恢复现有定稿缺失的原始图表；本次排版检查不等同于译文准确性或资产完整性审核。
-
-## 13. v1.2 阅读节奏探索记录（2026-10-14，未并入生产页）
-
-以下数值只出现在 `dist/exploration.html`（`reading_treatment` 计划驱动），`index.html` 仍执行 §3／§8 canonical；假设经实读裁决后才谈并入。
-
-- narrative（E2-010）：桌面 lead 23px、正文 18.5px／1.95、两处章节细线、收束段加深，撤右栏；手机正文 17.5px／1.95。
-- analysis（E1-019）：lead 20.5px 无衬线（--font-meta），正文 17.5px，原句内口径强调（`$1 billion`、`房地产除外`），两处论证停顿；手机 17.5px。
-- evidence（E1-010）：删除与正文重复的加粗／小标题，仅保留三对同口径预测的放大比较场；比较块以居中 620px 栏为基准向两侧各扩 48px，两个源小标题保留。
-- 实测（Chromium 1440／1080／900／390）：三篇双语段落全保留、`scrollWidth ≤ viewport`；比较块右缘 801@900、891@1080，无横向溢出。
-- 与 canonical 的偏离（measure 620／610、narrative 手机 17.5／1.9、analysis lead 无衬线）是有记录的假设值，不是对 §3 的改写；裁决前 §3 数值仍是生产标准。
-
+- v1.1（2026-10-13）静态渲染器：h1 40px/700，`--paper:#fdfbf8`，`--orange:#fa9000`。证据见 `2026-10-12/archive/historical-outputs/reboot-proof/`。
+- v1.2（2026-10-14）阅读节奏探索从未并入生产页。
+- Studio 生成提示的另一套色板已随 ADR 0002 退出产品。
