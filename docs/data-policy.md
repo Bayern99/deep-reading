@@ -8,7 +8,7 @@
 | Verified media | union-cropped print charts, recovered figures, issue `assets/` | Preserve, track deliberately and retain source attribution. |
 | Issue Artifact compiles | `/tmp` HTML, repo-root `wsj-*.html`, `gate-report.json`, `oracle-certification.json` | Workspace output, not source. Do not treat a compile snapshot as approved narrative. |
 | Dated evidence (Studio-era) | `2026-10-12/` Final Source, `editorial-artifacts/` versions, `_queue.json`, `dist/` snapshots, experiments, dated reports | Durable primary evidence of the superseded pipeline, not a regenerable cache and not a daily runner. Keep existing data; inspect model output/notes for credentials before adding a version to Git. |
-| Local configuration/cache | `.venv/`, `.env*`, bytecode, test/tool caches, logs | Ignored. `.env.example` is the tracked credential-free exception. Credentials belong in environment variables or a secret manager. |
+| Local configuration/cache | `.venv/`, `.env*`, bytecode, test/tool caches, logs | Ignored. Credentials belong in environment variables or a secret manager; credentials are never committed. |
 | Source PDF | An externally supplied issue PDF | Not in the repository. Retain an external protected original; approve its storage/distribution separately rather than adding it incidentally. Pins currently live in `render/tracer/compose.py`. |
 
 Newspaper data and historical model outputs are not disposable fixtures. Re-running a Studio-era generation may incur cost and does not reproduce the same artifact. The Issue Artifact path does not keep a per-article version store.
