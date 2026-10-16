@@ -14,6 +14,8 @@ make tracer-certify
 
 `make test` discovers `tests/test_*.py`: `tests/test_vertical_tracer.py`, `tests/test_full_issue_gate_cli.py`, `tests/test_seven_oracles.py`. `make smoke` runs `scripts/smoke.py --fast` (no `fitz`/`PIL`; not a publishable Issue Artifact). `make check` is test + smoke.
 
+84 of the 102 tests read the pinned pilot dataset and print PDF. When those pins are absent the suites fail with `RuntimeError: pinned pilot inputs are missing ...` rather than skipping quietly, because a run in which every data-backed test skipped still exits 0 and would report OK without checking the product. Set `WSJ_ALLOW_MISSING_PILOT=1` to skip them instead, which leaves the ~18 fixture-free tests running; that is the mode for a machine with no pinned inputs. `fitz`/`PIL` absent is a separate, legitimate skip. Restoring the pins: [data policy](../docs/data-policy.md) (Backup and restore).
+
 ## Compile the Issue Artifact (2026-10-14 pilot)
 
 ```bash

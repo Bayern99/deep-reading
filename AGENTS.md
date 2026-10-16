@@ -13,7 +13,7 @@ WSJ 深读 is a daily newspaper delivered as one Issue Artifact. Product path: P
 
 ## Work and verify
 
-Run from the root: bootstrap `.venv` with `requirements.txt`. Product proof is `make tracer-certify` (needs the pinned PDF and `PILOT_ROOT` in `render/tracer/compose.py`). `make test` runs the tracer suites; `make smoke` runs `scripts/smoke.py --fast`. `make check` is both.
+Run from the root: bootstrap `.venv` with `requirements.txt`. Product proof is `make tracer-certify` (needs the pinned PDF and `PILOT_ROOT` in `render/tracer/compose.py`). `make test` runs the tracer suites; `make smoke` runs `scripts/smoke.py --fast`. `make check` is both. Absent pins now fail `make test` instead of skipping quietly (`WSJ_ALLOW_MISSING_PILOT=1` restores skips).
 
 Inspect current Git changes before editing; preserve the user's work. Keep Primary Vector Signals, translation provenance, verified chart evidence, plans and dated reports. Treat approved narrative as read-only during compilation; the LQA Funnel records dispositions and never rewrites paragraphs. Story IDs are scoped to an issue.
 

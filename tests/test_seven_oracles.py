@@ -3,7 +3,10 @@
 Ticket 3 (GitHub Issue #4) acceptance tests.  Run with the system interpreter
 (has fitz/PIL):  /opt/homebrew/bin/python3 -m unittest tests/test_seven_oracles.py -v
 
-Tests skip gracefully when the 2026-10-14 pilot dataset is unavailable.
+The pinned pilot dataset is required: when it is absent these tests fail
+rather than skip, so `make test` cannot report OK without checking the
+product (set WSJ_ALLOW_MISSING_PILOT=1 to skip the data-backed classes
+instead).
 """
 from __future__ import annotations
 
@@ -15,6 +18,9 @@ from decimal import Decimal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "render"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from pilot_prereq import require_pilot  # noqa: E402
 
 from tracer.compose import PILOT_ROOT, load_full_data  # noqa: E402
 from tracer.gate import scan_pair  # noqa: E402
@@ -26,7 +32,7 @@ from tracer.vector import (  # noqa: E402
     union_chart_bbox,
 )
 
-HAS_DATA = PILOT_ROOT.exists()
+HAS_DATA = require_pilot()
 try:
     import fitz  # noqa: F401
     import PIL  # noqa: F401

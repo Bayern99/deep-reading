@@ -3,8 +3,10 @@
 Run with the system interpreter (has fitz/PIL):
     /opt/homebrew/bin/python3 -m unittest tests/test_vertical_tracer.py -v
 
-Tests skip gracefully when the 2026-10-14 pilot dataset or PyMuPDF/PIL are
-unavailable so `make test` stays green in any environment.
+The pinned pilot dataset is required: when it is absent these tests fail
+rather than skip, so `make test` cannot report OK without checking the
+product (set WSJ_ALLOW_MISSING_PILOT=1 to skip the data-backed classes
+instead). PyMuPDF/PIL absent is a separate, legitimate skip.
 """
 from __future__ import annotations
 
@@ -17,6 +19,9 @@ from decimal import Decimal
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "render"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from pilot_prereq import require_pilot  # noqa: E402
 
 from tracer import charts, content  # noqa: E402
 from tracer.compose import (  # noqa: E402
@@ -58,7 +63,7 @@ try:
 except ImportError:
     HAS_PIL = False
 
-HAS_DATA = PILOT_ROOT.exists()
+HAS_DATA = require_pilot()
 
 BANKS_BOXES = {
     "p02-b78": [0.198, 0.736, 0.415, 0.822],
