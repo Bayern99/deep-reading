@@ -292,6 +292,137 @@ class SevenOraclesFastArtifactCheck(unittest.TestCase):
         self.assertFalse(report.passed)
         self.assertFalse(report.oracle("narrative_conservation").passed)
 
+    # --- Issue #5: Group C Forensic Dossier (Variant A) production fold-in ---
+
+    def _unit_root(self, uid: str):
+        import lxml.html
+
+        root = lxml.html.fromstring(self.out.read_text("utf-8"))
+        return root, root.xpath(f".//div[@data-unit='{uid}']")[0]
+
+    def test_variant_a_hero_meta_grid_and_dossier_card(self):
+        """Hero: byline block + key-ledger strip + executive dossier card
+        housing the story's takeaways."""
+        _, banks = self._unit_root("PILOT-A1-BANKS")
+        grid = banks.xpath(".//div[contains(@class,'hero-meta-grid')]")
+        self.assertEqual(len(grid), 1, "exactly one hero meta grid per unit")
+        card = banks.xpath(".//aside[contains(@class,'dossier-card')]")
+        self.assertEqual(len(card), 1)
+        self.assertTrue(
+            card[0].xpath(".//ul[contains(@class,'takeaways')]/li[@data-src]"),
+            "dossier card must house the verified takeaways",
+        )
+        self.assertIn("核心提要", card[0].text_content())
+        ledger = banks.xpath(
+            ".//div[contains(@class,'key-ledger-strip')]/div[@data-src]"
+        )
+        self.assertTrue(ledger, "key-ledger strip carries extracted stats")
+        self.assertLessEqual(len(ledger), 3)
+        for item in ledger:
+            self.assertRegex(item.get("data-src") or "", r"^p\d+$")
+        # editorial thesis units house the thesis box in the dossier card
+        _, wealth = self._unit_root("PILOT-A16-WEALTH")
+        self.assertTrue(
+            wealth.xpath(
+                ".//aside[contains(@class,'dossier-card')]"
+                "//div[contains(@class,'thesis-box')][@data-src]"
+            )
+        )
+
+    def test_variant_a_chapter_sections_and_sticky_rail(self):
+        """Tier 1/2 bodies partition into chapter sections over the
+        asymmetric two-column grid with a sticky rail column."""
+        _, banks = self._unit_root("PILOT-A1-BANKS")
+        sections = banks.xpath(".//section[contains(@class,'editorial-section')]")
+        self.assertGreaterEqual(len(sections), 1)
+        for i, sec in enumerate(sections, 1):
+            nums = sec.xpath(".//div[contains(@class,'section-banner')]"
+                             "/span[contains(@class,'section-num')]")
+            self.assertEqual(len(nums), 1, f"chapter {i} banner number")
+            self.assertIn(f"CHAPTER {i:02d}", nums[0].text_content())
+            self.assertTrue(sec.xpath(".//div[contains(@class,'grid-asymmetric')]"))
+            self.assertTrue(sec.xpath(".//div[contains(@class,'prose-column')]"))
+        self.assertTrue(
+            banks.xpath(".//aside[contains(@class,'rail-column')]"
+                        "/div[contains(@class,'metric-card')][@data-src]"),
+            "rail column carries extracted metric cards",
+        )
+        # multi-chapter unit: authored subheadings become chapter banners
+        _, wealth = self._unit_root("PILOT-A16-WEALTH")
+        heads = wealth.xpath(
+            ".//div[contains(@class,'section-banner')]"
+            "/h2[contains(@class,'sec-h')][@data-ref][@data-src]"
+        )
+        self.assertEqual(len(heads), 4, "WEALTH has four authored subheadings")
+        self.assertEqual(
+            [h.get("data-ref") for h in heads], ["p5", "p7", "p11", "p14"]
+        )
+
+    def test_variant_a_dramatic_containers_and_sticky_fix(self):
+        """Lead paragraph, verdict box, exhibit boxes, text-wrap balance and
+        the overflow-x:clip sticky fix ship in the artifact surface."""
+        doc = self.out.read_text("utf-8")
+        self.assertIn("overflow-x:clip", doc)
+        self.assertNotIn("overflow-x:hidden", doc)
+        self.assertIn("text-wrap:balance", doc)
+        self.assertIn("fonts.googleapis.com", doc)
+        self.assertIn("Playfair+Display", doc)
+        self.assertIn("JetBrains+Mono", doc)
+        _, banks = self._unit_root("PILOT-A1-BANKS")
+        self.assertTrue(
+            banks.xpath(".//p[contains(@class,'prose-p')]"
+                        "[contains(@class,'lead-paragraph')][@data-ref='p1']")
+        )
+        verdict = banks.xpath(
+            ".//div[contains(@class,'verdict-box')]"
+            "//p[contains(@class,'prose-p')][@data-ref='p24']"
+        )
+        self.assertEqual(len(verdict), 1, "closing paragraph closes in the verdict box")
+        # every compiled wsj-chart primitive sits inside an exhibit box
+        _, condo = self._unit_root("PILOT-A1-CONDO")
+        charts = condo.xpath(".//div[contains(@class,'wsj-chart')]")
+        self.assertTrue(charts, "CONDO compiles wsj-chart primitives")
+        for chart in charts:
+            self.assertTrue(
+                chart.xpath("ancestor::div[contains(@class,'exhibit-box')]")
+            )
+
+    def test_key_stat_cn_scale_keeps_currency_unit(self):
+        """Reviewer-G (Issue #5 review): 「1.5万亿美元」 must render as a
+        full stat value — never the bare, wrong-magnitude 「1.5万亿」."""
+        _, defense = self._unit_root("PILOT-A17-DEFENSE")
+        vals = [
+            v.text_content().strip()
+            for v in defense.xpath(
+                ".//div[contains(@class,'metric-val')]"
+                "| .//div[contains(@class,'mini-stat-val')]"
+            )
+        ]
+        self.assertIn("1.5万亿美元", vals)
+        self.assertNotIn("1.5万亿", vals)
+
+    def test_oracle2_rejects_mutated_metric_card(self):
+        """Oracle 2 grounds the extracted rail metric cards: an invented
+        value fails certification deterministically (mutation test)."""
+        import lxml.html
+
+        from tracer.oracles import oracle_numeric_grounding
+
+        root = lxml.html.fromstring(self.out.read_text("utf-8"))
+        victims = root.xpath(".//div[contains(@class,'metric-card')][@data-src]")
+        self.assertTrue(victims, "no metric card to mutate")
+        for victim in victims:
+            val = victim.xpath(".//div[contains(@class,'metric-val')]")
+            if val:
+                val[0].text = "999%"
+                break
+        result = oracle_numeric_grounding(root, self.data)
+        self.assertFalse(result.passed)
+        self.assertTrue(
+            any("metric-card" in f for f in result.detail["failures"]),
+            f"mutated metric card not rejected: {result.detail['failures']}",
+        )
+
     def test_cert_json_written(self):
         from tracer.oracles import certify
 

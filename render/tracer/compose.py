@@ -24,9 +24,12 @@ import lxml.html
 from .verify import (
     TracerCompilationError,
     check_highlight_density,
+    split_sentences,
     surgical_narrative_completion,
     verify_element_numbers,
 )
+
+from .numbers import extract_substantive_numbers
 
 PILOT_ROOT = Path("/Users/dmus/Documents/deep-reading/wsj-deep-read-bakeoff/experiments/pdf-parser-bakeoff/first-issue-pilot")
 PDF_PATH = Path("/Users/dmus/Documents/deep-reading/WSJ Row/RZuKHuduV9Bwqu9z5TqB-WSJNewsPaper-10-14-2026.pdf")
@@ -349,6 +352,261 @@ def section_subheading(doc: lxml.html.HtmlElement, pid: str, cn: str, en: str,
     return h
 
 
+# --- Variant A (Group C Forensic Dossier) editorial containers ---------------
+
+_QUOTED_RE = re.compile(r"“[^”]+”|\"[^\"]+\"")
+_CN_ATTRIBUTION_RE = re.compile(
+    r"(说道|表示|指出|认为|警告|坦言|写道|解释道|补充道|回忆道|强调|坚称|承认|称|说)"
+)
+_EN_ATTRIBUTION_RE = re.compile(
+    r"\b(said|says|according to|wrote|argues|added|explained)\b", re.I
+)
+_CN_CLAUSE_SPLIT_RE = re.compile(r"(?<=[。！？；])")
+
+
+def _quote_spans(text: str) -> list[str]:
+    spans = re.findall(r"“([^”]+)”", text or "")
+    if spans:
+        return spans
+    return re.findall(r'"([^"]+)"', text or "")
+
+
+def is_quote_callout(cn: str, en: str) -> bool:
+    """A quote-bearing narrative paragraph: direct speech plus attribution.
+
+    The attribution clause may precede or follow the quoted segment(s), so it
+    is searched in the text with the quoted spans removed.
+    """
+    if not (_quote_spans(cn) and _quote_spans(en)):
+        return False
+    rest_cn = _QUOTED_RE.sub("", cn or "")
+    rest_en = _QUOTED_RE.sub("", en or "")
+    return bool(
+        _CN_ATTRIBUTION_RE.search(rest_cn)
+        or _EN_ATTRIBUTION_RE.search(rest_en)
+    )
+
+
+def _clip(text: str, limit: int) -> str:
+    """Trim to a clause/sentence boundary inside ``limit``; never leaves a
+    currency amount orphaned from its scale word at the cut edge."""
+    text = (text or "").strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    for sep in (" ", "，", "。", "；", "、", ",", ";", "：", ":"):
+        idx = cut.rfind(sep)
+        if idx >= limit // 2:
+            cut = cut[:idx]
+            break
+    cut = re.sub(r"[$€£]\s*\d[\d,]*(?:\.\d+)?\s*$", "", cut)
+    return cut.rstrip(" ,，。;；、：:") + "…"
+
+
+@dataclass
+class KeyStat:
+    """One extracted key numeric stat for the hero ledger / chapter rail."""
+
+    value: str
+    lbl_cn: str
+    lbl_en: str
+    note_cn: str
+    note_en: str
+    accent: bool
+    pid: str
+
+
+def _cn_label_note(cn: str, raw: str) -> tuple[str, str]:
+    clauses = [c for c in _CN_CLAUSE_SPLIT_RE.split(cn or "") if c.strip()]
+    clause = next((c for c in clauses if raw in c), clauses[0] if clauses else "")
+    idx = clause.find(raw)
+    label = clause[:idx].strip(" ，,、：:　") if idx >= 0 else ""
+    return _clip(label, 30), _clip(clause.strip(), 140)
+
+
+def _en_label_note(en: str, raw: str) -> tuple[str, str]:
+    sentences = split_sentences(en or "")
+    sentence = next((s for s in sentences if raw in s), sentences[0] if sentences else "")
+    idx = sentence.find(raw)
+    words = (sentence[:idx] if idx >= 0 else "").split()
+    label = " ".join(words[-5:])
+    if len(words) > 5:
+        label = "… " + label
+    return _clip(label, 60), _clip(sentence.strip(), 160)
+
+
+_CN_CURRENCY_UNITS = ("美元", "港元", "日元", "欧元", "英镑", "加元", "澳元", "人民币", "元")
+
+
+def _extend_cn_scale(cn: str, raw: str) -> str:
+    """Re-attach CJK scale characters (亿/兆) that follow the match so the
+    isolated display value keeps its in-context magnitude (``1.5万`` inside
+    「1.5万亿美元」 must not render as a bare 15,000), plus any trailing
+    currency unit (美元/港元/日元/欧元/英镑/加元/澳元/元)."""
+    idx = (cn or "").find(raw)
+    if idx < 0:
+        return raw
+    end = idx + len(raw)
+    while end < len(cn) and cn[end] in "亿兆":
+        raw += cn[end]
+        end += 1
+    for unit in _CN_CURRENCY_UNITS:
+        if (cn or "").startswith(unit, end):
+            raw += unit
+            break
+    return raw
+
+
+def _key_stat(pid: str, cn: str, en: str, accent: bool) -> KeyStat | None:
+    """First substantive number of a paragraph with bilingual labels/notes,
+    every fragment a substring of the source (verified, never invented)."""
+    cn_toks = extract_substantive_numbers(cn)
+    en_toks = extract_substantive_numbers(en)
+    if not cn_toks and not en_toks:
+        return None
+    if cn_toks:
+        raw = _extend_cn_scale(cn, cn_toks[0].raw.strip())
+    else:
+        raw = en_toks[0].raw.strip()
+    label_cn, note_cn = _cn_label_note(cn, raw)
+    if en_toks:
+        label_en, note_en = _en_label_note(en, en_toks[0].raw.strip())
+    else:
+        label_en, note_en = "", ""
+    if not label_cn:
+        label_cn = "关键数据"
+    if not label_en:
+        label_en = "Key figure"
+    # Verify exactly what will render.  Labels precede the first substantive
+    # number so they are number-free by construction; the note carries the
+    # source sentence and a hard clip could orphan an amount, so a note that
+    # fails grounding is dropped (never the whole stat, never silent).
+    core = "\n".join((raw, label_cn, label_en))
+    authored = core
+    for candidate in ("\n".join((core, note_cn, note_en)), core):
+        try:
+            verify_element_numbers(f"{pid} key-stat", candidate, [cn, en])
+            authored = candidate
+            break
+        except TracerCompilationError:
+            continue
+    else:
+        return None
+    if authored == core:
+        note_cn = ""
+        note_en = ""
+    return KeyStat(raw, label_cn, label_en, note_cn, note_en, accent, pid)
+
+
+def _key_stats(
+    bilingual: dict[str, dict[str, str]], pids: list[str], limit: int
+) -> list[KeyStat]:
+    """Numbered paragraphs first (findings over filler), print order kept."""
+    numbered = [
+        p for p in pids if extract_substantive_numbers(bilingual[p]["en"])
+        or extract_substantive_numbers(bilingual[p]["cn"])
+    ]
+    ordered = numbered + [p for p in pids if p not in numbered]
+    out: list[KeyStat] = []
+    for i, pid in enumerate(ordered[:limit]):
+        stat = _key_stat(pid, bilingual[pid]["cn"], bilingual[pid]["en"], accent=(i == 0))
+        if stat is not None:
+            out.append(stat)
+    return out
+
+
+def _metric_card(stat: KeyStat) -> lxml.html.HtmlElement:
+    card = _el(
+        "div",
+        "metric-card accent-top" if stat.accent else "metric-card",
+        data_src=stat.pid,
+    )
+    val = _el("div", "metric-val")
+    val.text = stat.value
+    card.append(val)
+    lbl = _el("div", "metric-lbl")
+    for cls, text in (("lang-cn", stat.lbl_cn), ("lang-en", stat.lbl_en)):
+        span = _el("span", cls)
+        span.text = text
+        lbl.append(span)
+    card.append(lbl)
+    note = _el("div", "metric-note")
+    for cls, text in (("lang-cn", stat.note_cn), ("lang-en", stat.note_en)):
+        span = _el("span", cls)
+        span.text = text
+        note.append(span)
+    card.append(note)
+    return card
+
+
+def _mini_stat(stat: KeyStat) -> lxml.html.HtmlElement:
+    div = _el("div", "mini-stat", data_src=stat.pid)
+    val = _el("div", "mini-stat-val")
+    val.text = stat.value
+    div.append(val)
+    lbl = _el("div", "mini-stat-lbl")
+    for cls, text in (("lang-cn", stat.lbl_cn), ("lang-en", stat.lbl_en)):
+        span = _el("span", cls)
+        span.text = text
+        lbl.append(span)
+    div.append(lbl)
+    return div
+
+
+def _exhibit_box(elements: list[lxml.html.HtmlElement]) -> lxml.html.HtmlElement:
+    """EXHIBIT wrapper around print-chart figures, photos and companions."""
+    box = _el("div", "exhibit-box")
+    kick = _el("div", "exhibit-kicker")
+    kick.text = "EXHIBIT · 视觉展板"
+    box.append(kick)
+    for el in elements:
+        for child in list(el):
+            box.append(child)
+    return box
+
+
+def _callout_box(p: lxml.html.HtmlElement) -> lxml.html.HtmlElement:
+    box = _el("div", "inline-adviser-callout")
+    kick = _el("div", "callout-kicker")
+    kick.text = "一手证词 · IN THEIR OWN WORDS"
+    box.append(kick)
+    box.append(p)
+    return box
+
+
+def _defense_dossier(paras: list[lxml.html.HtmlElement]) -> lxml.html.HtmlElement:
+    box = _el(
+        "div", "defense-dossier",
+        data_src=" ".join(p.get("data-ref") or "" for p in paras),
+    )
+    kick = _el("div", "defense-kicker")
+    s_cn = _el("span", "lang-cn")
+    s_cn.text = "焦点辩护与风险结构 · COUNTERPOINT DOSSIER"
+    s_en = _el("span", "lang-en")
+    s_en.text = "COUNTERPOINT & RISK DOSSIER"
+    kick.append(s_cn)
+    kick.append(s_en)
+    box.append(kick)
+    for p in paras:
+        box.append(p)
+    return box
+
+
+def _verdict_box(p: lxml.html.HtmlElement) -> lxml.html.HtmlElement:
+    box = _el("div", "verdict-box")
+    kick = _el("div", "verdict-kicker")
+    s_cn = _el("span", "lang-cn")
+    s_cn.text = "终局裁决 · THE BOTTOM LINE"
+    s_en = _el("span", "lang-en")
+    s_en.text = "INVESTIGATIVE VERDICT · THE BOTTOM LINE"
+    kick.append(s_cn)
+    kick.append(s_en)
+    box.append(kick)
+    p.set("class", "prose-p verdict-prose")
+    box.append(p)
+    return box
+
+
 # --- composite column ----------------------------------------------------------
 
 def composite_letters_unit(data: PilotData, letter_ids: list[str] | None = None) -> lxml.html.HtmlElement:
@@ -422,6 +680,8 @@ def compose_article_unit(
     figures: list[dict[str, Any]] | None = None,
     body_elements: list[lxml.html.HtmlElement] | None = None,
     skip_prose: set[str] | None = None,
+    date_cn: str = "",
+    date_en: str = "",
 ) -> lxml.html.HtmlElement:
     """Compose one Tier 1/2 reading unit over the canonical bilingual source.
 
@@ -430,6 +690,17 @@ def compose_article_unit(
     narrative blocks are surgically completed; highlight density is enforced.
     ``skip_prose`` lists paragraph ids whose text is rendered as a section
     subheading instead of a prose block (inventory ``subheading`` paragraphs).
+
+    Variant A (Group C Forensic Dossier, Issue #5): the header widens into a
+    hero meta grid (byline/date/key-ledger strip + executive dossier card
+    housing the takeaways or thesis); the body partitions into chapter
+    ``section.editorial-section`` blocks, each an asymmetric two-column grid
+    (``prose-column`` + sticky ``rail-column`` with extracted metric cards,
+    the pull quote and book details).  Dramatic containers — lead paragraph,
+    inline-adviser callout, defense dossier, verdict box, exhibit boxes —
+    wrap the canonical prose blocks; every ``p.prose-p[data-ref]`` keeps its
+    bilingual spans 100% verbatim so Oracle 1's SHA256 round-trip is exact.
+    ``date_cn``/``date_en`` render the hero date line when provided.
     """
     article = data.articles[article_id]
     bilingual = data.bilingual(article_id)
@@ -472,44 +743,70 @@ def compose_article_unit(
         d_en.text = dek["en"]
         d.append(d_en)
         head.append(d)
+
+    # Variant A hero meta grid: byline block + executive dossier card
+    hero = _el("div", "hero-meta-grid")
+    byline_block = _el("div", "byline-block")
     byline = (article.get("byline") or "").strip()
     if byline:
         b = _el("p", "byline")
         b.text = byline.title()
-        head.append(b)
+        byline_block.append(b)
+    if date_cn or date_en:
+        dl = _el("div", "date-line")
+        if date_cn:
+            s = _el("span", "lang-cn")
+            s.text = date_cn
+            dl.append(s)
+        if date_en:
+            s = _el("span", "lang-en")
+            s.text = date_en
+            dl.append(s)
+        byline_block.append(dl)
+    ledger = _key_stats(bilingual, [p for p in pids if not (skip_prose and p in skip_prose)], 3)
+    if ledger:
+        strip = _el("div", "key-ledger-strip")
+        for stat in ledger:
+            strip.append(_mini_stat(stat))
+        byline_block.append(strip)
+    hero.append(byline_block)
+    if takeaways or thesis:
+        card = _el("aside", "dossier-card")
+        srcs = [tk["data_src"] for tk in takeaways] if takeaways else [thesis["data_src"]]
+        card.set("data-src", " ".join(srcs))
+        dh = _el("div", "dossier-header")
+        s_cn = _el("span", "lang-cn")
+        s_cn.text = "核心提要 · 调查档案"
+        s_en = _el("span", "lang-en")
+        s_en.text = "EXECUTIVE DOSSIER"
+        dh.append(s_cn)
+        dh.append(s_en)
+        card.append(dh)
+        if takeaways:
+            ul = _el("ul", "takeaways")
+            for tk in takeaways:
+                li = _el("li", "takeaway")
+                li.set("data-src", tk["data_src"])
+                li.text = tk["cn"]
+                li_en = _el("span", "lang-en-block")
+                li_en.text = tk["en"]
+                li.append(li_en)
+                ul.append(li)
+            card.append(ul)
+        else:
+            box = _el("div", "thesis-box")
+            box.set("data-src", thesis["data_src"])
+            box.text = thesis["cn"]
+            box_en = _el("span", "lang-en-block")
+            box_en.text = thesis["en"]
+            box.append(box_en)
+            card.append(box)
+        hero.append(card)
+    head.append(hero)
     root.append(head)
 
-    if thesis:
-        box = _el("div", "thesis-box")
-        box.set("data-src", thesis["data_src"])
-        box.text = thesis["cn"]
-        box_en = _el("span", "lang-en-block")
-        box_en.text = thesis["en"]
-        box.append(box_en)
-        root.append(box)
-
-    if takeaways:
-        ul = _el("ul", "takeaways")
-        for tk in takeaways:
-            li = _el("li", "takeaway")
-            li.set("data-src", tk["data_src"])
-            li.text = tk["cn"]
-            li_en = _el("span", "lang-en-block")
-            li_en.text = tk["en"]
-            li.append(li_en)
-            ul.append(li)
-        root.append(ul)
-
-    if book_details:
-        bd = _el("aside", "book-details")
-        bd.set("data-ref", "caption:book-details")
-        for line in ("title_cn", "title_en", "author", "imprint"):
-            div = _el("div", f"bd-{line}")
-            div.text = book_details.get(line, "")
-            bd.append(div)
-        root.append(bd)
-
-    # body: merge authored elements with canonical narrative in paragraph order
+    # body: canonical narrative woven with authored elements in print order,
+    # partitioned into chapter sections over an asymmetric sticky rail grid
     highlights = highlights or {}
     subheadings = subheadings or {}
     charts_by_anchor: dict[str, list[dict[str, Any]]] = {}
@@ -524,59 +821,171 @@ def compose_article_unit(
     for fig in figures or []:
         figures_by_anchor.setdefault(fig["anchor"], []).append(fig)
 
-    body = _el("div", "unit-body")
-    # lead figures physically before the first paragraph (anchor "p0")
-    for fig in figures_by_anchor.get("p0", []):
-        body.append(fig["element"])
-    for comp in companions_by_anchor.get("p0", []):
-        body.append(comp["element"])
-    for ch in charts_by_anchor.get("p0", []):
-        body.append(ch["element"])
+    prose_pids = [p for p in pids if not (skip_prose and p in skip_prose)]
+    last_prose_pid = prose_pids[-1] if prose_pids else None
+    lead_pid = prose_pids[0] if prose_pids else None
+
+    # pull quote: verified here, dropped into its chapter's rail column
+    pq_el: lxml.html.HtmlElement | None = None
+    if pull_quote:
+        m = int(pull_quote["sentence"])
+        from .verify import verify_quote_anchor
+        verify_quote_anchor(bilingual[pull_quote["paragraph"]]["en"], m, pull_quote["en"])
+        pq_el = _el("blockquote", "pull-quote")
+        pq_el.set("data-ref", f"{pull_quote['paragraph']}.s{m}")
+        pq_el.text = pull_quote["cn"]
+        pq_en = _el("span", "lang-en-block")
+        pq_en.text = pull_quote["en"]
+        pq_el.append(pq_en)
+
+    # chapter partition: a new chapter opens at every subheading paragraph;
+    # an authored (non-inventory) subheading also keeps its own prose block
+    # in the chapter (condensed rendering, prose preserved)
+    chapters: list[tuple[str | None, list[str]]] = []
     for pid in pids:
         if pid in subheadings:
-            sub = subheadings[pid]
+            chapters.append((pid, []))
+            if not (skip_prose and pid in skip_prose):
+                chapters[-1][1].append(pid)
+        else:
+            if not chapters:
+                chapters.append((None, []))
+            chapters[-1][1].append(pid)
+
+    def classify(pid: str, chapter_idx: int) -> str:
+        """Dramatic container class for one prose paragraph (verbatim text is
+        never altered — only the wrapping container changes)."""
+        if pid == last_prose_pid:
+            return "verdict"
+        if pull_quote and pid == pull_quote["paragraph"]:
+            return "plain"  # quoted again in the rail; keep the prose plain
+        if is_quote_callout(bilingual[pid]["cn"], bilingual[pid]["en"]):
+            # multi-chapter units: attributed counterpoint closes in the navy
+            # dossier; everywhere else it renders as an inline adviser callout
+            if len(chapters) > 1 and chapter_idx == len(chapters) - 1:
+                return "defense"
+            return "callout"
+        return "plain"
+
+    def anchored_elements(pid: str) -> list[lxml.html.HtmlElement]:
+        out: list[lxml.html.HtmlElement] = []
+        for fig in figures_by_anchor.get(pid, []):
+            out.append(fig["element"])
+        for comp in companions_by_anchor.get(pid, []):
+            out.append(comp["element"])
+        for ch in charts_by_anchor.get(pid, []):
+            out.append(ch["element"])
+        return out
+
+    body = _el("div", "unit-body")
+    last_prose_col: lxml.html.HtmlElement | None = None
+    for ci, (opener, members) in enumerate(chapters):
+        section = _el("section", "editorial-section")
+        banner = _el("div", "section-banner")
+        num = _el("span", "section-num")
+        num.text = f"CHAPTER {ci + 1:02d}"
+        banner.append(num)
+        if opener is not None:
+            sub = subheadings[opener]
             h = _el("h2", "sec-h")
-            h.set("data-ref", pid)
-            h.set("data-src", sub.get("data_src", pid))
+            h.set("data-ref", opener)
+            h.set("data-src", sub.get("data_src", opener))
             h_cn = _el("span", "lang-cn")
             h_cn.text = sub["cn"]
             h.append(h_cn)
             h_en = _el("span", "sec-h-en")
             h_en.text = sub["en"]
             h.append(h_en)
-            body.append(h)
-        if skip_prose and pid in skip_prose:
-            # figures anchored at a heading paragraph still attach after it
-            for fig in figures_by_anchor.get(pid, []):
-                body.append(fig["element"])
-            for comp in companions_by_anchor.get(pid, []):
-                body.append(comp["element"])
-            for ch in charts_by_anchor.get(pid, []):
-                body.append(ch["element"])
-            continue
-        hl = highlights.get(pid, {})
-        body.append(prose_block(pid, bilingual[pid]["cn"], bilingual[pid]["en"], hl.get("cn", ""), hl.get("en", "")))
-        for fig in figures_by_anchor.get(pid, []):
-            body.append(fig["element"])
-        for comp in companions_by_anchor.get(pid, []):
-            body.append(comp["element"])
-        for ch in charts_by_anchor.get(pid, []):
-            body.append(ch["element"])
-    for extra in body_elements or []:
-        body.append(extra)
-    root.append(body)
+            banner.append(h)
+        else:
+            # no inventory/authored subheading opens this chapter: the banner
+            # carries the rubric kicker as its chapter heading (not a sec-h,
+            # so authored-subheading counts and oracle contracts are intact)
+            h = _el("h2", "chapter-kicker")
+            h.text = kicker
+            banner.append(h)
+        section.append(banner)
+        grid = _el("div", "grid-asymmetric")
+        prose_col = _el("div", "prose-column")
+        rail_col = _el("aside", "rail-column")
+        last_prose_col = prose_col
 
-    if pull_quote:
-        m = int(pull_quote["sentence"])
-        from .verify import verify_quote_anchor
-        verify_quote_anchor(bilingual[pull_quote["paragraph"]]["en"], m, pull_quote["en"])
-        pq = _el("blockquote", "pull-quote")
-        pq.set("data-ref", f"{pull_quote['paragraph']}.s{m}")
-        pq.text = pull_quote["cn"]
-        pq_en = _el("span", "lang-en-block")
-        pq_en.text = pull_quote["en"]
-        pq.append(pq_en)
-        root.append(pq)
+        # rail: extracted metric cards from the chapter's numbered paragraphs
+        chapter_prose = [p for p in members if not (skip_prose and p in skip_prose)]
+        for stat in _key_stats(bilingual, chapter_prose, 2):
+            rail_col.append(_metric_card(stat))
+        if pq_el is not None and pull_quote and pull_quote["paragraph"] in members:
+            rail_col.append(pq_el)
+            pq_el = None
+        if ci == 0 and book_details:
+            bd = _el("aside", "book-details")
+            bd.set("data-ref", "caption:book-details")
+            for line in ("title_cn", "title_en", "author", "imprint"):
+                div = _el("div", f"bd-{line}")
+                div.text = book_details.get(line, "")
+                bd.append(div)
+            rail_col.append(bd)
+
+        # lead figures physically before the first paragraph (anchor "p0")
+        if ci == 0:
+            pre = anchored_elements("p0")
+            if pre:
+                prose_col.append(_exhibit_box(pre))
+        # figures anchored at an inventory-subheading opener attach right
+        # after its banner (the opener renders no prose of its own)
+        if opener is not None and skip_prose and opener in skip_prose:
+            pre = anchored_elements(opener)
+            if pre:
+                prose_col.append(_exhibit_box(pre))
+
+        defense_run: list[lxml.html.HtmlElement] = []
+        for pid in members:
+            anchored = anchored_elements(pid)
+            if skip_prose and pid in skip_prose:
+                if anchored:
+                    prose_col.append(_exhibit_box(anchored))
+                continue
+            kind = classify(pid, ci)
+            if kind == "defense":
+                p = prose_block(
+                    pid, bilingual[pid]["cn"], bilingual[pid]["en"],
+                    highlights.get(pid, {}).get("cn", ""), highlights.get(pid, {}).get("en", ""),
+                )
+                defense_run.append(p)
+                if anchored:
+                    prose_col.append(_defense_dossier(defense_run))
+                    defense_run = []
+                    prose_col.append(_exhibit_box(anchored))
+                continue
+            if defense_run:
+                prose_col.append(_defense_dossier(defense_run))
+                defense_run = []
+            p = prose_block(
+                pid, bilingual[pid]["cn"], bilingual[pid]["en"],
+                highlights.get(pid, {}).get("cn", ""), highlights.get(pid, {}).get("en", ""),
+            )
+            if pid == lead_pid and ci == 0:
+                p.set("class", "prose-p lead-paragraph")
+            if kind == "verdict":
+                prose_col.append(_verdict_box(p))
+            elif kind == "callout":
+                prose_col.append(_callout_box(p))
+            else:
+                prose_col.append(p)
+            # anchored figures/companion/charts attach AFTER their paragraph
+            if anchored:
+                prose_col.append(_exhibit_box(anchored))
+        if defense_run:
+            prose_col.append(_defense_dossier(defense_run))
+        grid.append(prose_col)
+        if len(rail_col):
+            grid.append(rail_col)
+        section.append(grid)
+        body.append(section)
+
+    for extra in body_elements or []:
+        (last_prose_col if last_prose_col is not None else body).append(extra)
+    root.append(body)
 
     # AST surgical completion + highlight density, then report repairs
     prose_pids = [p for p in pids if not (skip_prose and p in skip_prose)]

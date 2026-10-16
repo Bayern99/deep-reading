@@ -588,7 +588,7 @@ def _unit_header_text(data: PilotData, aid: str) -> tuple[str, str]:
 
 
 def build_tier1_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Path,
-                      fast: bool) -> UnitEntry:
+                      fast: bool, date_cn: str = "", date_en: str = "") -> UnitEntry:
     authored = content.CONTENT_BY_ID.get(aid, {})
     subs, skip = inventory_subheadings(data, aid)
     for pid in authored.get("subheading_paragraphs", []):
@@ -632,6 +632,7 @@ def build_tier1_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
         subheadings=subs or None, highlights=authored.get("highlights"),
         pull_quote=pull_quote, book_details=authored.get("book_details"),
         figures=figures + chart_elements, skip_prose=skip or None,
+        date_cn=date_cn, date_en=date_en,
     )
     title_cn, dek_cn = _unit_header_text(data, aid)
     return UnitEntry(
@@ -642,7 +643,7 @@ def build_tier1_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
 
 
 def build_tier2_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Path,
-                      fast: bool) -> UnitEntry:
+                      fast: bool, date_cn: str = "", date_en: str = "") -> UnitEntry:
     authored = content.CONTENT_BY_ID.get(aid, {})
     layer = genre_layer(data, aid, route.genre)
     subs, skip = inventory_subheadings(data, aid)
@@ -688,6 +689,7 @@ def build_tier2_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
         book_details=authored.get("book_details"),
         figures=figures, body_elements=body_elements or None,
         skip_prose=skip or None,
+        date_cn=date_cn, date_en=date_en,
     )
     title_cn, dek_cn = _unit_header_text(data, aid)
     return UnitEntry(
@@ -698,8 +700,12 @@ def build_tier2_entry(data: PilotData, aid: str, route, root: Path, pdf_path: Pa
 
 
 def build_full_units(data: PilotData, root: Path, pdf_path: Path,
-                     fast: bool = False) -> list[UnitEntry]:
-    """Compile every Tier 1/2/3 unit of the issue; zero silent tier fallback."""
+                     fast: bool = False, date_cn: str = "",
+                     date_en: str = "") -> list[UnitEntry]:
+    """Compile every Tier 1/2/3 unit of the issue; zero silent tier fallback.
+
+    ``date_cn``/``date_en`` render each Tier 1/2 hero's date line (Group C
+    Forensic Dossier hero meta grid)."""
     routes = route_issue(data.articles)
     composite_members = {m for spec in COMPOSITES.values() for m in spec["members"]}
     links = resolve_whatsnews(data, composite_members)
@@ -712,9 +718,11 @@ def build_full_units(data: PilotData, root: Path, pdf_path: Path,
     entries: list[UnitEntry] = []
     for route in sorted(routes, key=print_order):
         if route.tier == 1:
-            entries.append(build_tier1_entry(data, route.article_ids[0], route, root, pdf_path, fast))
+            entries.append(build_tier1_entry(data, route.article_ids[0], route, root, pdf_path, fast,
+                                             date_cn=date_cn, date_en=date_en))
         elif route.tier == 2:
-            entries.append(build_tier2_entry(data, route.article_ids[0], route, root, pdf_path, fast))
+            entries.append(build_tier2_entry(data, route.article_ids[0], route, root, pdf_path, fast,
+                                             date_cn=date_cn, date_en=date_en))
         elif route.unit_id in COMPOSITES:
             element = compose_composite_column(data, route.unit_id)
             spec = COMPOSITES[route.unit_id]
