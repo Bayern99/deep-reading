@@ -58,7 +58,7 @@ Cloud / bot VM: [skills/wsj-deep-read/SKILL.md](skills/wsj-deep-read/SKILL.md).
 render/tracer/             Issue Artifact pipeline (the product)
 render/tracer_pipeline.py  CLI entry
 skills/wsj-deep-read/      Agent Skill wrapper
-tests/                     Unittest suites (tracer + leftover Studio-era files)
+tests/                     Unittest suites for the Issue Artifact pipeline
 YYYY-MM-DD/                Issue trees; 2026-10-12 is Studio-era evidence
 docs/                      Current operating policy plus dated evidence
 docs/adr/                  Product decisions (0001 composition, 0002 Issue Artifact only)
