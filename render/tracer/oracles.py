@@ -12,7 +12,9 @@ generated HTML end-to-end and asserts the 7 Objective Oracles:
    subheading, pull quote, ``<wsj-chart>`` and Chart Companion carries a
    valid ``data-src`` / ``data-ref`` and 100% of its substantive numbers
    ground in the declared paragraph(s) (plus the chart's ``Retina*`` vector
-   text for companions).
+   text for companions).  Issue #5 extends this to the Group C dossier
+   containers: hero ledger mini-stats, rail metric cards, navy defense
+   dossiers and the executive dossier card.
 3. **Native ``Retina*`` chart vector coverage** — all 21 printed charts:
    union crop width <= orig width + 24pt, zero body-prose line centers
    inside the crop, zero sliced multi-column source fragments inside the
@@ -321,11 +323,15 @@ def oracle_numeric_grounding(root: lxml.html.HtmlElement, data: PilotData) -> Or
     failures: list[str] = []
     for uid, unit in units.items():
         para_texts = _unit_paragraph_texts(unit)
-        # data-src-bearing authored elements
+        # data-src-bearing authored elements (Issue #5 adds the Group C
+        # dossier containers: hero ledger mini-stats, rail metric cards,
+        # defense dossiers and the executive dossier card)
         for el in unit.xpath(
             ".//*[@data-src and (contains(@class,'takeaway') or contains(@class,'thesis-box')"
             " or contains(@class,'sec-h') or contains(@class,'wsj-chart')"
-            " or contains(@class,'companion'))]"
+            " or contains(@class,'companion') or contains(@class,'metric-card')"
+            " or contains(@class,'mini-stat') or contains(@class,'defense-dossier')"
+            " or contains(@class,'dossier-card'))]"
         ):
             cls = el.get("class") or ""
             extra: list[str] = []

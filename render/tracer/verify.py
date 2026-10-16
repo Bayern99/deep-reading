@@ -165,17 +165,21 @@ def surgical_narrative_completion(
     # Relocate blocks that are missing or misordered: walk the canonical id
     # list, keep an "anchor" (last block placed in document order) and insert
     # each block right after the anchor when it is absent or out of place.
+    # Ordering is validated by document position (not sibling identity) so
+    # blocks nested in editorial containers — callouts, dossiers, verdict
+    # boxes — and chapters partitioned across columns are never flattened.
+    positions = {el: i for i, el in enumerate(article_el.iter())}
     anchor: lxml.html.HtmlElement | None = None
     for pid in paragraph_ids:
         el = seen.get(pid)
         if el is not None and anchor is not None and el.getparent() is not None:
-            siblings = list(anchor.itersiblings())
-            if el in siblings:
+            if positions[el] > positions[anchor]:
                 anchor = el
                 continue
             el.getparent().remove(el)
             anchor.addnext(el)
             repairs.append(f"reorder:{pid}")
+            positions[el] = positions[anchor] + 0.5
             anchor = el
             continue
         if el is not None:
@@ -196,15 +200,18 @@ def surgical_narrative_completion(
         inserted = False
         if anchor is not None:
             anchor.addnext(p)
+            positions[p] = positions[anchor] + 0.5
             inserted = True
         else:
             for later in paragraph_ids[wanted_index[pid] + 1:]:
                 if later in seen and seen[later].getparent() is not None:
                     seen[later].addprevious(p)
+                    positions[p] = positions[later] - 0.5
                     inserted = True
                     break
         if not inserted:
             article_el.append(p)
+            positions[p] = (max(positions.values()) if positions else 0) + 1.0
         seen[pid] = p
         repairs.append(f"insert:{pid}")
         anchor = p

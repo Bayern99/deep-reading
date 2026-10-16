@@ -50,8 +50,8 @@ BANKS = {
         {
             "chart_id": "p02-b78",
             "anchor": None,  # computed from print order at build time
-            "takeaway_cn": "固定收益、外汇与大宗商品业务成为本轮增长引擎：高盛该项收入同比跳升72%，为花旗与富国同项收入增幅的两倍以上。",
-            "takeaway_en": "FICC revenue powered the quarter: Goldman's jumped 72% year over year, more than double Citigroup's and Wells Fargo's gains.",
+            "takeaway_cn": "股票交易业务成为本轮增长引擎：高盛股票交易营收同比跳升72%；四大银行股票交易营收平均增长39%。",
+            "takeaway_en": "Equities trading powered the quarter: Goldman's equities-trading revenue jumped 72% from a year earlier, while the four big banks' equities-trading revenue rose 39% on average.",
             "data_src": "p14 p15",
         },
         {

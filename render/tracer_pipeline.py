@@ -329,7 +329,8 @@ def main(argv: list[str] | None = None) -> int:
         out = Path(args.output or DEFAULT_OUTPUT_FULL)
         data = load_full_data()
         started = time.perf_counter()
-        entries = build_full_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast)
+        entries = build_full_units(data, PILOT_ROOT, PDF_PATH, fast=args.fast,
+                                   date_cn=ISSUE_DATE_CN, date_en=ISSUE_DATE_EN)
         build_s = time.perf_counter() - started
         if args.units:
             keep = {u.strip() for u in args.units.split(",") if u.strip()}
