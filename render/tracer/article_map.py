@@ -550,6 +550,51 @@ _TYPE_FROM_RUBRIC = {
 }
 
 
+#: Recurring WSJ columns whose short items form one Composite Column (ADR 0001).
+#: Grouping is by the printed rubric, which is also what the reference issue's
+#: hand-made table encodes: nine letters, five Spotlight notes, three U.S. Watch
+#: briefs, two World Watch briefs, two corrections. Derived here instead of listed
+#: by id, so a new issue groups its own items.
+COMPOSITE_RUBRICS: dict[str, dict[str, str]] = {
+    "letters": {"genre": "letters", "section": "opinion"},
+    "stockspotlight": {"genre": "spotlight", "section": "markets"},
+    "uswatch": {"genre": "watch", "section": "us"},
+    "worldwatch": {"genre": "watch", "section": "world"},
+    "corrections": {"genre": "corrections", "section": "opinion"},
+}
+
+
+def derive_composites(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Group records into Composite Columns by their printed rubric."""
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for record in records:
+        section = str(record.get("section") or "")
+        rubric = section.split(" / ")[-1] if " / " in section else section
+        key = _norm_rubric(rubric)
+        if key in COMPOSITE_RUBRICS:
+            groups.setdefault(key, []).append(record)
+
+    units: list[dict[str, Any]] = []
+    for key in sorted(groups):
+        members = sorted(groups[key], key=lambda r: (r["start_page"], r["start_line_id"]))
+        if len(members) < 2:
+            # A lone item is not a column; it routes on its own.
+            continue
+        spec = COMPOSITE_RUBRICS[key]
+        unit_id = f"COMPOSITE-{key.upper()}"
+        units.append(
+            {
+                "unit_id": unit_id,
+                "members": [r["id"] for r in members],
+                "section": spec["section"],
+                "genre": spec["genre"],
+                "kicker": f"{members[0]['section']} · {print_page_label(members[0]['start_page'])}",
+                "all_pages": sorted({p for r in members for p in r["all_pages"]}),
+            }
+        )
+    return units
+
+
 def _type_from_section(section: str, judged: str) -> str:
     rubric = section.split(" / ")[-1] if " / " in section else section
     return _TYPE_FROM_RUBRIC.get(_norm_rubric(rubric), judged)

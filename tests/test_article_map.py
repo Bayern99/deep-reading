@@ -204,6 +204,69 @@ class ReferenceParityTests(unittest.TestCase):
                 self.assertEqual(len(entry["bbox_points"]), 4)
                 self.assertTrue(entry["raw"])
 
+    def test_composites_derive_by_printed_rubric(self) -> None:
+        """The five Composite Columns group by rubric, not by a table of ids."""
+        from tracer.article_map import derive_composites
+
+        derived = derive_article_map(self.natives, self.cache_path)
+        units = {u["unit_id"].split("-", 1)[1]: u for u in derive_composites(derived)}
+        self.assertEqual(
+            sorted(units),
+            ["CORRECTIONS", "LETTERS", "STOCKSPOTLIGHT", "USWATCH", "WORLDWATCH"],
+        )
+        sizes = {key: len(unit["members"]) for key, unit in units.items()}
+        # Four match the golden table exactly. Spotlight derives four, not five:
+        # the reference issue's hand-made table also groups `In Market History`,
+        # whose printed rubric is `Money & Investing`. That one grouping is an
+        # editorial call the paper does not print, so it is left out rather than
+        # special-cased. It routes on its own and still lands in Tier 3.
+        self.assertEqual(
+            sizes,
+            {"LETTERS": 9, "STOCKSPOTLIGHT": 4, "USWATCH": 3, "WORLDWATCH": 2, "CORRECTIONS": 2},
+        )
+        # A lone item under a composite rubric is not a column.
+        all_members = [m for unit in units.values() for m in unit["members"]]
+        self.assertEqual(len(all_members), len(set(all_members)))
+
+    def test_routing_tier_parity_from_derived_map(self) -> None:
+        """Curation over a derived map reproduces the golden tier per item."""
+        from tracer.article_map import _norm_title, derive_composites
+        from tracer.routing import route_issue
+
+        derived = derive_article_map(self.natives, self.cache_path)
+        composites = {u["unit_id"]: u for u in derive_composites(derived)}
+        routes = route_issue({r["id"]: r for r in derived}, self.natives, composites=composites)
+        tier_by_id = {aid: r.tier for r in routes for aid in r.article_ids}
+
+        from tracer.compose import load_full_data
+
+        data = load_full_data()
+        golden_tier = {aid: r.tier for r in route_issue(data.articles, data.natives) for aid in r.article_ids}
+
+        matched = mismatched = 0
+        used: set[str] = set()
+        for g in self.golden:
+            want = _norm_title(g.get("original_title") or "")
+            candidates = [
+                r for r in derived
+                if r["start_page"] == g["start_page"]
+                and r["id"] not in used
+                and _norm_title(r["original_title"])
+                and _norm_title(r["original_title"]) in want
+            ]
+            if not candidates:
+                continue
+            candidates.sort(key=lambda r: -len(_norm_title(r["original_title"])))
+            record = candidates[0]
+            used.add(record["id"])
+            if tier_by_id.get(record["id"]) == golden_tier.get(g["id"]):
+                matched += 1
+            else:
+                mismatched += 1
+        self.assertGreaterEqual(matched, 78, f"matched {matched}, mismatched {mismatched}")
+        self.assertEqual(mismatched, 0)
+        self.assertEqual(sum(1 for r in routes if r.tier == 1), 8)
+
     def test_type_accuracy_beats_the_model_baseline(self) -> None:
         """Derived types beat the measured Jev baseline on the reference issue.
 

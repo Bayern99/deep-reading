@@ -286,6 +286,10 @@ def route_article(article: dict, natives: dict[int, dict] | None = None) -> Rout
         return Route(aid, 3, "brief", section, rubric_kicker(article), (aid,))
     if atype == "photo_caption":
         return Route(aid, 3, "photo_caption", section, rubric_kicker(article), (aid,))
+    if atype == "news_digest":
+        # The front-page bullet roundup. On the reference issue it is named in
+        # TIER3_STANDALONE; a derived map reaches it by type.
+        return Route(aid, 3, "digest", section, rubric_kicker(article), (aid,))
     raise TracerCompilationError(f"{aid}: no route for inventory type {atype!r}")
 
 
@@ -302,17 +306,31 @@ def composite_route(unit_id: str) -> Route:
 
 
 def route_issue(articles: dict[str, dict],
-                natives: dict[int, dict] | None = None) -> list[Route]:
-    """Route the whole issue; every raw item lands in exactly one unit."""
+                natives: dict[int, dict] | None = None,
+                composites: dict[str, dict] | None = None) -> list[Route]:
+    """Route the whole issue; every raw item lands in exactly one unit.
+
+    ``composites`` lets a derived issue map supply its own Composite Columns
+    (grouped by printed rubric) instead of the reference issue's hand-made table.
+    Curation stays the single source of tiers either way.
+    """
+    table = COMPOSITES if composites is None else composites
     routes: list[Route] = []
-    composite_members = {m for spec in COMPOSITES.values() for m in spec["members"]}
+    composite_members = {m for spec in table.values() for m in spec["members"]}
     for aid in sorted(articles):
         article = articles[aid]
         if aid in composite_members:
             continue
         routes.append(route_article(article, natives))
-    for uid in COMPOSITES:
-        routes.append(composite_route(uid))
+    for uid, spec in table.items():
+        routes.append(Route(
+            unit_id=uid,
+            tier=3,
+            genre=str(spec["genre"]),
+            section=str(spec["section"]),
+            kicker=str(spec["kicker"]),
+            article_ids=tuple(spec["members"]),
+        ))
     routed = {aid for r in routes for aid in r.article_ids}
     missing = set(articles) - routed
     if missing:
