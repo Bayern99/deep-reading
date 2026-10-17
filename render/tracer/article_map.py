@@ -1002,7 +1002,13 @@ def assemble(
             markers,
         )
 
-        # Pass 2: emit records.
+        # Pass 2: emit records. The column grid and each item's column are needed
+        # by every item on the page, so they are computed once here.
+        page_grid = _column_grid(page_native)
+        page_starts = [
+            (line, _column_index(page_grid, float(line["bbox"][0])))
+            for _item, line, _first, _kind in kept
+        ]
         for item, start_line, first_line, kind in kept:
             base = _section_head_text(page_native)
             supplied = str(item.get("section") or "").strip()
@@ -1072,15 +1078,7 @@ def assemble(
                         page_native,
                         start_line,
                         marker,
-                        [
-                            (_line_by_id(page_native, o["start_line"]), _column_index(
-                                _column_grid(page_native),
-                                (_line_by_id(page_native, o["start_line"]) or {}).get("bbox", [0])[0],
-                            ))
-                            for o in reader_items_by_page[page]
-                            if o.get("start_line") != start_line.get("id")
-                            and _line_by_id(page_native, o["start_line"])
-                        ],
+                        [entry for entry in page_starts if entry[0] is not start_line],
                     ),
                     "continuation_evidence": evidence,
                     "start_line_id": start_line.get("id"),
