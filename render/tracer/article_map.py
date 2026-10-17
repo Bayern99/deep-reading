@@ -540,6 +540,21 @@ def _assign_markers(
     return best_pairs
 
 
+#: A rubric whose items are short briefs by editorial convention. `Stock
+#: Spotlight` is a recurring WSJ column of one-paragraph company notes; the
+#: reader calls them sidebars because they sit beside a longer story, which
+#: moves them from Tier 3 to Tier 2. Measured on the reference issue: five of the
+#: six tier misclassifications came from exactly this.
+_TYPE_FROM_RUBRIC = {
+    "stockspotlight": "brief",
+}
+
+
+def _type_from_section(section: str, judged: str) -> str:
+    rubric = section.split(" / ")[-1] if " / " in section else section
+    return _TYPE_FROM_RUBRIC.get(_norm_rubric(rubric), judged)
+
+
 def _lead_position(page_native: dict[str, Any], start_line: dict[str, Any]) -> bool:
     """Whether a story occupies the paper's lead position on its page.
 
@@ -746,6 +761,7 @@ def assemble(
                             break
             all_pages = sorted({page, *([target] if target else [])})
 
+            kind = _type_from_section(section, kind)
             rec_id = _make_id(page, first_line, kind, used_ids)
             records.append(
                 {

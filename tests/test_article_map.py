@@ -204,6 +204,44 @@ class ReferenceParityTests(unittest.TestCase):
                 self.assertEqual(len(entry["bbox_points"]), 4)
                 self.assertTrue(entry["raw"])
 
+    def test_type_accuracy_beats_the_model_baseline(self) -> None:
+        """Derived types beat the measured Jev baseline on the reference issue.
+
+        Jev scored 86.0% exact and 93.0% tier. The reader supplies each item's
+        kind and a printed rubric closes the `brief` boundary. Measured here so a
+        regression in either half shows up.
+        """
+        from tracer.article_map import _norm_title
+
+        tier2 = {"article", "analysis", "opinion", "editorial", "review", "sidebar"}
+
+        def tier_of(kind: str) -> int:
+            return 2 if kind in tier2 else 3
+
+        derived = derive_article_map(self.natives, self.cache_path)
+        used: set[str] = set()
+        exact = tier = total = 0
+        for g in self.golden:
+            want = _norm_title(g.get("original_title") or "")
+            candidates = [
+                r for r in derived
+                if r["start_page"] == g["start_page"]
+                and r["id"] not in used
+                and _norm_title(r["original_title"])
+                and _norm_title(r["original_title"]) in want
+            ]
+            if not candidates:
+                continue
+            candidates.sort(key=lambda r: -len(_norm_title(r["original_title"])))
+            record = candidates[0]
+            used.add(record["id"])
+            total += 1
+            exact += record["type"] == g["type"]
+            tier += tier_of(record["type"]) == tier_of(g["type"])
+        self.assertGreaterEqual(total, 78, f"matched only {total} golden items")
+        self.assertGreaterEqual(exact / total, 0.86, f"exact {exact}/{total}")
+        self.assertGreaterEqual(tier / total, 0.93, f"tier {tier}/{total}")
+
     def test_flagship_set_from_derived_records(self) -> None:
         """Tier 1 is reproducible from a derived map, with no paragraphs.
 
