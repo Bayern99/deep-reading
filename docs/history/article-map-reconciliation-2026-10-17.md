@@ -64,7 +64,19 @@ Measured examples:
 | how to get it | the reader already reads the page; add `lines: [line_id, …]` to its answer |
 | status | **implemented** — the contract validates it, the map prefers it, geometry is only the fallback |
 | what it unlocks | `regions` at IoU median 0.92 against the hand-drawn set, and `body_words` if it is ever wanted again |
-| what remains | the reader pass itself has to be re-run over the 25 pages that carry items (~16k lines). The implementation is proven on the derivation side; the cache in the reference pilot predates `lines` |
+| what remains | the reader pass itself has to be re-run over the 25 pages that carry items (~16k lines). The cache in the reference pilot predates `lines` |
+| end-to-end proof | page 14 was read by hand into the contract and run through the real cache: `PILOT-A14-BREWERS` scores IoU 0.948 / 0.830 / 0.898 / 0.939 / 0.937 across its five columns, mean **0.91**, with `regions_source` = `reader_lines` |
+
+The 0.91 rather than 1.00 is a band convention, not a membership error: the golden
+boxes start ~6pt above the headline's top and end ~33pt below the last body line,
+i.e. they are the column boxes the page's layout reserves, while the derived box is
+the text's own extent. Membership is now exact; only that padding differs.
+
+A hand pass over the remaining 24 pages was started and abandoned on evidence:
+page 1 alone carries cross-column word fragments (`Purchasers / of / the / site's
+/ firm` split across columns 1 and 2) and chart label lines interleaved with body
+text, so line assignment there is a semantic judgement. That is what the reader
+model exists for — the contract now asks for it, and the fallback stays geometric.
 
 Everything that *is* printed is derived and reconciled: folio from each page's
 printed id, jump markers both directions, section banners and rubric heads, the
