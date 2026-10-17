@@ -146,6 +146,64 @@ class ReferenceParityTests(unittest.TestCase):
         ]
         self.assertEqual(mismatches, [], f"per-page section sets differ: {mismatches[:6]}")
 
+    def test_all_pages_match_golden(self) -> None:
+        """Every multi-page story resolves the pages its printed markers name.
+
+        The derived title is the headline's first printed line; the golden title
+        is the whole headline, so matching is by substring after normalisation.
+        """
+        from tracer.article_map import _norm_title
+
+        derived = derive_article_map(self.natives, self.cache_path)
+        golden_multi = [g for g in self.golden if len(g.get("all_pages") or []) > 1]
+        self.assertEqual(len(golden_multi), 12)
+        mismatches = []
+        used: set[str] = set()
+        for g in golden_multi:
+            want = _norm_title(g.get("original_title") or "")
+            candidates = [
+                r for r in derived
+                if r["start_page"] == g["start_page"]
+                and r["id"] not in used
+                and _norm_title(r["original_title"])
+                and (
+                    _norm_title(r["original_title"]) in want
+                    or want.startswith(_norm_title(r["original_title"]))
+                )
+            ]
+            candidates.sort(key=lambda r: -len(_norm_title(r["original_title"])))
+            if not candidates:
+                mismatches.append((g["id"], g["all_pages"], "no candidate"))
+                continue
+            record = candidates[0]
+            used.add(record["id"])
+            if record["all_pages"] != g["all_pages"]:
+                mismatches.append((g["id"], g["all_pages"], record["all_pages"]))
+        self.assertEqual(mismatches, [], f"all_pages mismatches: {mismatches}")
+
+    def _start_y(self, record) -> float:
+        from tracer.article_map import _line_by_id
+
+        native = self.natives[record["start_page"]]
+        line = _line_by_id(native, record["start_line_id"])
+        return float(line["bbox"][1])
+
+    def test_continuation_evidence_cites_the_printed_markers(self) -> None:
+        """Each multi-page story cites both marker directions with a line id."""
+        derived = derive_article_map(self.natives, self.cache_path)
+        for record in derived:
+            if len(record["all_pages"]) < 2:
+                continue
+            evidence = record["continuation_evidence"]
+            self.assertGreaterEqual(len(evidence), 2, record["original_title"])
+            self.assertEqual(
+                {entry["page"] for entry in evidence}, set(record["all_pages"])
+            )
+            for entry in evidence:
+                self.assertTrue(entry["line_id"])
+                self.assertEqual(len(entry["bbox_points"]), 4)
+                self.assertTrue(entry["raw"])
+
     def test_every_section_is_canonical(self) -> None:
         for record in derive_article_map(self.natives, self.cache_path):
             self.assertIn(record["section"], SECTION_MAP)

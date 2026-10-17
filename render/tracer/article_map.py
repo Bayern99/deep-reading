@@ -217,18 +217,6 @@ def _parse_folio_token(token: str) -> tuple[str, int] | None:
     return m.group(1).upper(), int(m.group(2))
 
 
-def _folio_token_to_page(token: str) -> int | None:
-    parsed = _parse_folio_token(token)
-    if not parsed:
-        return None
-    stack, num = parsed
-    if stack == "A":
-        return num
-    if stack == "B":
-        return num + 18
-    return None
-
-
 def _is_ad_page(page_native: dict[str, Any]) -> bool:
     """Whether a page carries no article text (an image-only advertisement)."""
     chars = sum(len(line.get("chars") or ()) for line in page_native.get("lines") or ())
@@ -408,26 +396,137 @@ def _compose_section(
     )
 
 
-def _forward_continuation_page(
+def _folio_index(natives: dict[int, dict[str, Any]]) -> dict[tuple[str, int], int]:
+    """(stack, folio) -> physical page, read from each page's printed id.
+
+    This replaces any per-issue page boundary: the reference issue carries
+    stacks A/B/S and the second issue A/B/C/D/R, so a hardcoded offset is wrong
+    for one of them.
+    """
+    index: dict[tuple[str, int], int] = {}
+    for page in natives:
+        pos = _folio(page, natives)
+        if pos:
+            index[pos] = page
+    return index
+
+
+def _resolve_folio(token: str, index: dict[tuple[str, int], int]) -> int | None:
+    parsed = _parse_folio_token(token)
+    if not parsed:
+        return None
+    return index.get(parsed)
+
+
+def _continuation_evidence(
     page: int,
     page_native: dict[str, Any],
     start_line: dict[str, Any],
-) -> int | None:
+    index: dict[tuple[str, int], int],
+    natives: dict[int, dict[str, Any]],
+) -> tuple[int | None, list[dict[str, Any]]]:
+    """The story's continuation page and the printed markers that prove it.
+
+    Both directions are printed: the start page carries `Pleaseturn...`, the
+    continuation page carries `Continued...`. The evidence keeps each marker's
+    line id and bbox so the link is auditable. A marker naming a folio that is
+    not in the issue raises rather than silently dropping the page.
+    """
     sb = start_line["bbox"]
-    markers = []
+    forward: list[tuple[dict[str, Any], int]] = []
     for entry in _continuation_markers(page_native)["forward"]:
-        line = entry["line"]
-        tp = _folio_token_to_page(entry["folio"])
-        if tp is None:
-            continue
-        markers.append((line, tp))
-    if not markers:
-        return None
-    cand = [m for m in markers if _x_overlap(sb, m[0]["bbox"])]
-    if not cand:
-        cand = markers
-    line, target = max(cand, key=lambda m: m[0]["bbox"][1])
-    return target
+        target = _resolve_folio(entry["folio"], index)
+        if target is None:
+            raise TracerCompilationError(
+                f"page {page}: continuation marker names an unreachable folio "
+                f"{entry['folio']!r} (line {entry['line'].get('id')})"
+            )
+        forward.append((entry["line"], target))
+    if not forward:
+        return None, []
+
+    overlaps = [entry for entry in forward if _x_overlap(sb, entry[0]["bbox"])]
+    line, target = max(overlaps or forward, key=lambda entry: entry[0]["bbox"][1])
+
+    evidence = [
+        {
+            "page": page,
+            "line_id": line.get("id"),
+            "raw": line.get("text", "").strip(),
+            "bbox_points": [round(float(v), 2) for v in line["bbox"]],
+        }
+    ]
+    target_native = natives.get(target)
+    if target_native is not None:
+        for entry in _continuation_markers(target_native)["backward"]:
+            origin = _resolve_folio(entry["folio"], index)
+            if origin == page:
+                back = entry["line"]
+                evidence.append(
+                    {
+                        "page": target,
+                        "line_id": back.get("id"),
+                        "raw": back.get("text", "").strip(),
+                        "bbox_points": [round(float(v), 2) for v in back["bbox"]],
+                    }
+                )
+                break
+    return target, evidence
+
+
+def _assign_markers(
+    items: list[dict[str, Any]],
+    markers: list[tuple[dict[str, Any], int]],
+) -> dict[str, tuple[int, dict[str, Any]]]:
+    """Pair jump markers with the stories they end, one marker per story.
+
+    A marker sits at the end of a story's text, so its column is the story's
+    *last* column, not its first — nearest-per-marker therefore misassigns once a
+    page carries several jumps. What works is a global one-to-one assignment.
+
+    Not every story continues and not every marker is usable, so an item may stay
+    unassigned at a fixed cost; the optimum decides. Verified on the reference
+    front page: seven items, six markers, and the optimum reproduces all six
+    targets while leaving the single-page digest unassigned.
+    """
+    import itertools
+
+    if not items or not markers:
+        return {}
+    # A marker above a story's start cannot belong to it.
+    usable = [
+        pair
+        for pair in markers
+        if any(float(pair[0]["bbox"][1]) > float(it["bbox"][1]) for it in items)
+    ]
+    if not usable:
+        return {}
+
+    #: Cost of leaving one story without a marker, in points of horizontal
+    #: distance. A story that truly continues sits close to its marker; a
+    #: single-page item is far from every one.
+    unassigned_cost = 120.0
+
+    def cost(item: dict[str, Any], marker: dict[str, Any]) -> float:
+        if float(marker["bbox"][1]) <= float(item["bbox"][1]):
+            return 1e6
+        return abs(float(marker["bbox"][0]) - float(item["bbox"][0]))
+
+    best_total: float | None = None
+    best_pairs: dict[str, tuple[int, dict[str, Any]]] = {}
+    size = min(len(items), len(usable))
+    for subset in itertools.combinations(range(len(items)), size):
+        chosen = [items[i] for i in subset]
+        for perm in itertools.permutations(range(len(usable)), size):
+            total = (len(items) - size) * unassigned_cost
+            pairs: dict[str, tuple[int, dict[str, Any]]] = {}
+            for item, marker_index in zip(chosen, perm):
+                marker, target = usable[marker_index]
+                total += cost(item, marker)
+                pairs[str(item.get("start_line_id") or item.get("id"))] = (target, marker)
+            if best_total is None or total < best_total:
+                best_total, best_pairs = total, pairs
+    return best_pairs
 
 
 def _stable_topic_slug(first_line: str) -> str:
@@ -503,16 +602,18 @@ def assemble(
 ) -> list[dict[str, Any]]:
     """Bind reader items to vector lines and emit map records.
 
-    The reader enumerates what it sees on the page. Three printed facts then
-    decide whether an enumerated item is a *new* reading item, so the reader is
-    never asked to know a newspaper convention it cannot see from one page:
+    The reader enumerates what it sees on the page. Printed facts then decide
+    whether an enumerated item is a *new* reading item, so the reader is never
+    asked to know a newspaper convention it cannot see from one page:
 
     - a jump-page continuation headline is not a new story (`_is_jump_headline`);
     - a photo caption only stands alone with a printed label (`_is_standalone_caption`);
-    - an image-only page is not editorial (`_is_ad_page`).
+    - an image-only page is not editorial (`_is_ad_page`);
+    - a jump marker belongs to exactly one story (`_assign_markers`).
     """
     records: list[dict[str, Any]] = []
     used_ids: set[str] = set()
+    folio_index = _folio_index(natives)
 
     for page in sorted(reader_items_by_page):
         page_native = natives.get(page)
@@ -523,6 +624,8 @@ def assemble(
                 raise TracerCompilationError(f"ad page {page} has reader items")
             continue
 
+        # Pass 1: validate, then drop what a printed rule says is not an item.
+        kept: list[tuple[dict[str, Any], dict[str, Any], str, str]] = []
         for item in reader_items_by_page[page]:
             kind = str(item.get("kind") or "").strip()
             if kind not in READER_KINDS:
@@ -534,12 +637,32 @@ def assemble(
             first_line = str(item.get("first_line") or start_line.get("text") or "").strip()
             if not first_line:
                 raise TracerCompilationError(f"page {page}: empty first_line for {line_id}")
-
             if _is_jump_headline(page_native, start_line):
                 continue
             if kind == "photo_caption" and not _is_standalone_caption(first_line):
                 continue
+            kept.append((item, start_line, first_line, kind))
 
+        # Jump markers on this page, resolved through the issue's folio index.
+        markers: list[tuple[dict[str, Any], int]] = []
+        for entry in _continuation_markers(page_native)["forward"]:
+            target = _resolve_folio(entry["folio"], folio_index)
+            if target is None:
+                raise TracerCompilationError(
+                    f"page {page}: continuation marker names an unreachable folio "
+                    f"{entry['folio']!r} (line {entry['line'].get('id')})"
+                )
+            markers.append((entry["line"], target))
+        assignment = _assign_markers(
+            [
+                {"id": start_line.get("id"), "start_line_id": start_line.get("id"), "bbox": start_line["bbox"]}
+                for _item, start_line, _first, _kind in kept
+            ],
+            markers,
+        )
+
+        # Pass 2: emit records.
+        for item, start_line, first_line, kind in kept:
             base = _section_head_text(page_native)
             supplied = str(item.get("section") or "").strip()
             if supplied:
@@ -565,8 +688,33 @@ def assemble(
                     raise
                 section = judged
             canonical_section(section)
-            cont_page = _forward_continuation_page(page, page_native, start_line)
-            all_pages = sorted({page, *( [cont_page] if cont_page else [] )})
+
+            target, marker = assignment.get(str(start_line.get("id")), (None, None))
+            evidence: list[dict[str, Any]] = []
+            if marker is not None:
+                evidence.append(
+                    {
+                        "page": page,
+                        "line_id": marker.get("id"),
+                        "raw": (marker.get("text") or "").strip(),
+                        "bbox_points": [round(float(v), 2) for v in marker["bbox"]],
+                    }
+                )
+                target_native = natives.get(target)
+                if target_native is not None:
+                    for entry in _continuation_markers(target_native)["backward"]:
+                        if _resolve_folio(entry["folio"], folio_index) == page:
+                            back = entry["line"]
+                            evidence.append(
+                                {
+                                    "page": target,
+                                    "line_id": back.get("id"),
+                                    "raw": (back.get("text") or "").strip(),
+                                    "bbox_points": [round(float(v), 2) for v in back["bbox"]],
+                                }
+                            )
+                            break
+            all_pages = sorted({page, *([target] if target else [])})
 
             rec_id = _make_id(page, first_line, kind, used_ids)
             records.append(
@@ -577,7 +725,8 @@ def assemble(
                     "section": section,
                     "type": kind,
                     "all_pages": all_pages,
-                    "start_line_id": line_id,
+                    "continuation_evidence": evidence,
+                    "start_line_id": start_line.get("id"),
                 }
             )
 
