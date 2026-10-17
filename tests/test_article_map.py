@@ -295,6 +295,19 @@ class ReferenceParityTests(unittest.TestCase):
         self.assertEqual(after.count((1, 12)), 1)
         self.assertNotEqual(before, after)
 
+    def test_a_marker_naming_an_unreachable_folio_raises(self) -> None:
+        """A jump marker pointing outside the issue is a broken page, not a page to drop."""
+        import copy
+
+        perturbed = copy.deepcopy(self.natives)
+        page = perturbed[1]
+        target = next(
+            line for line in page["lines"] if line["text"].strip() == "PleaseturntopageA4"
+        )
+        target["text"] = "PleaseturntopageA99"
+        with self.assertRaisesRegex(TracerCompilationError, "unreachable folio"):
+            derive_article_map(perturbed, self.cache_path)
+
     def test_type_accuracy_beats_the_model_baseline(self) -> None:
         """Derived types beat the measured Jev baseline on the reference issue.
 
