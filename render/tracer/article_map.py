@@ -147,7 +147,9 @@ def _column_grid(page_native: dict[str, Any]) -> list[float]:
     buckets: dict[int, int] = {}
     for line in page_native.get("lines") or []:
         font, size = _dominant_char(line)
-        if not _is_dj_font(font) or size < 8.5:
+        # Body text is set at 8.4pt on the reference issue; a 8.5pt floor
+        # silently emptied the grid on most pages.
+        if not _is_dj_font(font) or size < 8.0:
             continue
         text = (line.get("text") or "").strip()
         if len(text) < 10:
@@ -155,8 +157,17 @@ def _column_grid(page_native: dict[str, Any]) -> list[float]:
         x0 = float((line.get("bbox") or [0])[0])
         key = int(round(x0 / 4.0) * 4)
         buckets[key] = buckets.get(key, 0) + 1
-    cols = sorted(k for k, c in buckets.items() if c >= 5)
-    return [float(c) for c in cols]
+    xs = sorted(k for k, c in buckets.items() if c >= 5)
+    # Body lines in one column do not share an exact left edge — different faces
+    # carry different left bearings, and indented lines sit further right. Group
+    # by the printed column pitch (about 123pt) and keep the leftmost edge, which
+    # is the column origin the golden regions record.
+    cols: list[float] = []
+    for x in xs:
+        if cols and x - cols[-1] < 100:
+            continue
+        cols.append(float(x))
+    return cols
 
 
 def _section_head_text(page_native: dict[str, Any]) -> str | None:
