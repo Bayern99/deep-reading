@@ -1,6 +1,6 @@
 """Collect strong-model reader output into ``evidence/reader-items.json``.
 
-The reader is the strong-model pass that enumerates a page's reading items. It is
+The reading pass is the strong-model pass that enumerates a page's reading items. It is
 run out of band — one reader per page — because the enumeration is a reading
 judgement, not a printed fact (see ADR 0003 and FOUNDATION 12). This module only
 normalises and validates the reader's answer; it never reads a golden article

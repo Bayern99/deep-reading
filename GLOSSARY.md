@@ -42,7 +42,10 @@ _Avoid_: Single-paragraph standalone article fragments.
 _Avoid_: Studio workbench, Editorial Artifact, whole-issue `dist/index.html`, raw evidence bundle.
 
 **Reader（阅读器）**: The reader-facing experience inside the Issue Artifact for browsing the edition and reading bilingual articles.
-_Avoid_: Operator console, pipeline inspector.
+_Avoid_: Operator console, pipeline inspector, the model pass that enumerates a page.
+
+**Reading Pass（阅读遍）**: The strong-model pass that enumerates a page's reading items and, when asked, names the lines or blocks each item owns. It runs out of band, one pass per page, because item ownership is a reading judgement rather than a printed fact. Artifacts and identifiers keep the `reader` name — `reader-items.json`, `reader_cache` — and refer to this pass, not to the Reader experience.
+_Avoid_: Bare "reader" when the model pass is meant; treating its cached cache as an issue's ground truth.
 
 **LQA Funnel（语言质量漏斗）**: The two-stage bilingual gate over every paragraph pair: a deterministic five-invariant radar, then spot-check of flagged paragraphs and every Tier 1 flagship. It records dispositions; it never rewrites narrative. The report stays in the workspace, not in the Issue Artifact.
 _Avoid_: Integrity Gate, claim-evidence sidecar.
