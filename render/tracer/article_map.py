@@ -807,6 +807,17 @@ def regions_from_lines(
         # page grid is the right answer there, because the band has only one layout.
         columns = column_grid(in_band) or column_grid(native)
         if not columns:
+            left = min(float(line["bbox"][0]) for line in lines)
+            top = min(float(line["bbox"][1]) for line in lines)
+            right = max(float(line["bbox"][2]) for line in lines)
+            bottom = max(float(line["bbox"][3]) for line in lines)
+            regions.append(
+                {
+                    "page": page,
+                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
+                    "column_origin": round(left, 2),
+                }
+            )
             continue
         by_column: list[list[dict[str, Any]]] = [[] for _ in columns]
         for line in lines:
@@ -825,6 +836,7 @@ def regions_from_lines(
             if len(origins) > 1
             else 150.0
         )
+        before = len(regions)
         for column in sorted((i for i in range(len(columns)) if by_column[i]), key=lambda i: origins[i]):
             members = by_column[column]
             # The column origin is its own printed edge, not the leftmost member:
@@ -840,6 +852,22 @@ def regions_from_lines(
                     "page": page,
                     "bbox": [round(left, 2), round(band_top, 2), round(right, 2), round(band_bottom, 2)],
                     "column_origin": round(origins[column], 2),
+                }
+            )
+        if len(regions) == before:
+            # A table or a centred list has no line at a column edge, so it
+            # defines no column. It is still an item; give it one box so the
+            # map never carries a placement-less record.
+            left = min(float(line["bbox"][0]) for line in lines)
+            top = min(float(line["bbox"][1]) for line in lines)
+            right = max(float(line["bbox"][2]) for line in lines)
+            bottom = max(float(line["bbox"][3]) for line in lines)
+            origin = min(origins, key=lambda value: abs(value - left)) if origins else left
+            regions.append(
+                {
+                    "page": page,
+                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
+                    "column_origin": round(origin, 2),
                 }
             )
     return regions

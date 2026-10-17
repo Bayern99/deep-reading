@@ -1,10 +1,10 @@
-# Reading Pass over the reference issue (2026-10-17)
+# Reading Pass records for both pilot issues (2026-10-17)
 
-Ticket #14, reference-issue half. Every content page's reading items now answer
-which MinerU blocks they own. The second issue is untouched: it has no MinerU
-parse, so its pass cannot run yet.
+Ticket #14. Every content page's reading items now answer which MinerU blocks
+they own, for the reference issue (2026-10-14) and the held-out second issue
+(2026-10-10).
 
-## What ran
+## Reference issue: 2026-10-14
 
 - 25 content pages, 100 reading items across the reference issue.
 - Each answer names block indices per item, including the reprinted headline of
@@ -51,6 +51,41 @@ that differs by more than the 2pt grid-rounding tolerance:
 These are draft-region differences. They are not compile inputs: the composer
 reads the page column grid (ADR 0004).
 
+## Second issue: 2026-10-10
+
+The same pass was run on the held-out issue after parsing it.
+
+- **MinerU parse:** all 55 pages parsed with the pinned MinerU 4.0.7 local
+  server (`structured_content`/middle schema 2.0), written beside the issue's
+  other evidence. Seven ad pages were skipped by the pass.
+- **Reading Pass:** 48 content pages, 140 enumerated items. Reprinted
+  continuation headlines were left unassigned rather than enumerated as new
+  items.
+- **Derivation:** 135 records, **0 geometric** and **0 placement-less**, 133 with
+  derived paragraphs (1,591 paragraphs), 9 multi-page stories, 1 flagged.
+- **Section vocabulary:** the issue prints weekend sections the reference map
+  did not: `Review`, `Fall Books`, `Style & Fashion`, `Wellness & Beauty`,
+  `Eating & Drinking`, `Design & Decorating`, `Adventure & Travel`. All map to
+  the `life` canonical section and are now in `SECTION_MAP`.
+- **Two placement fallbacks:** a table or centred list has no line at a column
+  edge, and a page of market tables has no recoverable body grid. Both now get
+  one union box rather than an empty `regions` list, so the any-issue rule
+  "every item has at least one region" holds.
+
+Known limits of this scale run, not defects in the deriver:
+
+- Market-data pages (21, 22) enumerate their table sections as `sidebar` items;
+  they derive a region but no paragraphs.
+- Two continuation markers read "Continued from the prior page" and name no
+  folio, so `_continuation_markers` cannot resolve them; those stories are
+  enumerated on the page where the reprint appears. Nine multi-page stories are
+  resolved against eleven printed markers.
+- Continuation regions added by `_attach_continuation_regions` are still
+  geometric; the record's `regions_source` reflects its start page.
+
+The second issue's cache is
+`second-issue-pilot-2026-10-10/evidence/reader-items.json`.
+
 ## Acceptance against #14
 
 - Answers validate, and every item's blocks map onto native lines by
@@ -58,4 +93,5 @@ reads the page column grid (ADR 0004).
 - Reference issue: no record is geometric. The ticket's
   `require_exact_regions=True` wording is stale; ADR 0004 removed that compile
   gate, and the equivalent check is `regions_source != "geometry"`.
-- Second issue: not run. It needs a MinerU parse before the same pass can run.
+- Second issue: the deriver completes and reports 135 items and 1 flagged
+  record, which unblocks the scale check in #12.

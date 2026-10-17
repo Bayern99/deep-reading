@@ -377,9 +377,9 @@ class ReferenceParityTests(unittest.TestCase):
 
     def test_a_missing_reading_pass_cache_raises(self) -> None:
         """An issue with no pass is a missing input, not a zero-item issue."""
-        natives = load_natives_from_pilot(SECOND_ISSUE)
+        natives = load_natives_from_pilot(PILOT_ROOT)
         with self.assertRaisesRegex(TracerCompilationError, "no Reading Pass cache"):
-            derive_article_map(natives, pilot_root=SECOND_ISSUE)
+            derive_article_map(natives, pilot_root=Path("/tmp/wsj-no-reading-pass"))
 
 
 @unittest.skipUnless(HAS_DATA, "pinned pilot dataset required")
@@ -543,6 +543,25 @@ class SecondIssueScaleTests(unittest.TestCase):
         backward = sum(len(_continuation_markers(p)["backward"]) for p in self.natives.values())
         self.assertEqual(forward, 11)
         self.assertEqual(backward, 11)
+
+    def test_reading_pass_derives_the_issue(self) -> None:
+        """The 10-10 pass completes: no geometric or placement-less item.
+
+        There is no golden map for this issue; this is the scale check, not
+        parity. 48 content pages produced 140 items and 135 records.
+        """
+        cache = default_reader_cache_path(SECOND_ISSUE)
+        if not cache.exists():
+            self.skipTest("second-issue Reading Pass not present")
+        derived = derive_article_map(self.natives, cache, pilot_root=SECOND_ISSUE)
+        self.assertGreaterEqual(len(derived), 120)
+        self.assertLessEqual(len(derived), 150)
+        self.assertEqual(
+            [r["id"] for r in derived if r["regions_source"] == "geometry"], []
+        )
+        self.assertEqual([r["id"] for r in derived if not r["regions"]], [])
+        self.assertGreaterEqual(sum(1 for r in derived if r.get("paragraphs")), 125)
+        self.assertLessEqual(sum(1 for r in derived if r["needs_review"]), 10)
 
     def test_column_grid_recovers_on_editorial_pages(self) -> None:
         from tracer.article_map import column_grid, _is_ad_page
