@@ -52,6 +52,50 @@ The seven Certification Oracles (`render/tracer/oracles.py`) inspect the generat
 
 `--certify` exits non-zero on any oracle failure. The certification JSON is a workspace report, never Reader chrome.
 
+## Reading Pass (article discovery)
+
+The article map is derived from an issue's pages; the Reading Pass is the
+out-of-band model judgement that names each item's lines or blocks. The caches
+live beside the issue's evidence, not in Git.
+
+### MinerU middle JSON
+
+```bash
+MINERU_HOME=/Users/dmus/Documents/deep-reading/bakeoff-mineru-409 \
+    /Users/dmus/.local/share/uv/tools/mineru/bin/mineru server start
+MINERU_HOME=/Users/dmus/Documents/deep-reading/bakeoff-mineru-409 \
+    python parse_one.py pages/p01.pdf evidence/p01-mineru.json
+```
+
+`parse_one.py` must be a file with an `if __name__ == "__main__"` guard (the PDF
+renderer uses multiprocessing spawn, which cannot import a stdin script):
+
+```python
+from mineru.parser import parse
+result = parse(Path(sys.argv[1]))
+Path(sys.argv[2]).write_text(result.to_json(), encoding="utf-8")
+```
+
+Output must be `schema: docvortex.middle`, `schema_version: 2.0`, blocks with
+`index` / `type` / `bbox`. Three traps: `mineru parse --format markdown` writes
+markdown (also with `--json`); `docvortex 0.5.x convert --format
+structured_content` is not the middle schema; and the local parse server must be
+healthy (`mineru server status`).
+
+### Orchestration
+
+```bash
+make reading-pass ARGS="bundle --pilot-root P --out /tmp/pass/bundles"
+make reading-pass ARGS="validate --bundles /tmp/pass/bundles --answers /tmp/pass/answers"
+make reading-pass ARGS="merge --pilot-root P --bundles /tmp/pass/bundles --answers /tmp/pass/answers --out /tmp/reader-items.json"
+make reading-pass ARGS="report --pilot-root P --cache /tmp/reader-items.json"
+```
+
+`merge` refuses to overwrite a cache without `--force`, writes a timestamped
+backup when forced, drops table-only and continuation-body items, and reports
+block/assigned line coverage. It never calls a model: the per-page answers stay
+a Reading Pass judgement.
+
 ## Agent Skill
 
 Cloud / bot VM entry: [skills/wsj-deep-read/SKILL.md](../skills/wsj-deep-read/SKILL.md). Same CLI as `make tracer-certify`.
