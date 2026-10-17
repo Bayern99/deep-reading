@@ -13,6 +13,12 @@ Reader input contract, per page:
 
 ``kind`` must be one of ``READER_KINDS``. Ad pages carry no items.
 
+An item on a continuation page may also carry ``continues``: the ``start_line`` of the
+story it carries on, which the pass can answer because the candidate stories are
+printed in the start page's jump markers, not because it matched the reprinted
+headline. That is what lets a continued story's regions on the later page be exact
+instead of inferred.
+
 Either ``lines`` or ``blocks`` may name what the item owns. ``blocks`` are MinerU
 middle-json block indices, which ask the pass for paragraphs rather than for every
 line: the reference issue has about 100 blocks against 525 lines on a dense front
@@ -69,6 +75,9 @@ def collect(reader_dir: str | Path) -> dict[str, list[dict[str, Any]]]:
                 "kind": kind,
                 "first_line": str(item.get("first_line") or "").strip(),
             }
+            continues = str(item.get("continues") or "").strip()
+            if continues:
+                entry["continues"] = continues
             raw_blocks = item.get("blocks")
             if raw_blocks is not None:
                 if not isinstance(raw_blocks, list):

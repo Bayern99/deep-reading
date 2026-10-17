@@ -533,6 +533,27 @@ class ReaderLineRegionTests(unittest.TestCase):
 
         self.assertEqual(regions[0]["bbox"][2], 200.0)
 
+    def test_a_split_line_fragment_does_not_create_a_column(self) -> None:
+        """A justified line split into style runs leaves fragments starting mid-measure.
+
+        Snapping one of those to the next column produced an inverted, empty
+        rectangle on page 20 ("woman / added. / Shares / fell").
+        """
+        from tracer.article_map import regions_from_lines
+
+        lines = [
+            self._line(f"c0-{i}", 40.0, 100.0 + 12 * i, 178.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [
+            self._line(f"c1-{i}", 188.0, 100.0 + 12 * i, 326.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [self._line("fragment", 164.0, 160.0, 326.0, 172.0)]
+        regions = regions_from_lines({7: self._page(lines)}, [l["id"] for l in lines])
+
+        self.assertEqual([r["column_origin"] for r in regions], [40.0, 188.0])
+        for region in regions:
+            self.assertLess(region["bbox"][0], region["bbox"][2])
+
     def test_lines_spanning_two_pages_yield_rectangles_on_both(self) -> None:
         from tracer.article_map import regions_from_lines
 
@@ -569,6 +590,14 @@ class ReaderCacheContractTests(unittest.TestCase):
     def test_lines_must_be_a_list(self) -> None:
         with self.assertRaisesRegex(ValueError, "lines must be a list"):
             self._collect({"start_line": "p7-l0001", "kind": "article", "lines": "p7-l0001"})
+
+    def test_continues_is_kept_for_a_continuation_page_item(self) -> None:
+        pages = self._collect(
+            {"start_line": "p20-l0821", "kind": "article", "continues": "p19-l0401",
+             "blocks": [14, 15, 16]}
+        )
+        self.assertEqual(pages["7"][0]["continues"], "p19-l0401")
+        self.assertEqual(pages["7"][0]["blocks"], [14, 15, 16])
 
     def test_absent_lines_leave_the_item_unchanged(self) -> None:
         pages = self._collect({"start_line": "p7-l0001", "kind": "article"})

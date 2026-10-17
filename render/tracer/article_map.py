@@ -802,6 +802,12 @@ def regions_from_lines(
         for line in lines:
             x0 = float(line["bbox"][0])
             best = min(range(len(columns)), key=lambda i: abs(x0 - columns[i]))
+            # Only lines set at a column edge define that column's box. A justified
+            # line split into style runs yields fragments starting mid-measure
+            # ("woman added. Shares fell"), and snapping one of those to the next
+            # column produces an inverted, empty rectangle.
+            if abs(x0 - columns[best]) > _COLUMN_EDGE_GAP / 5:
+                continue
             by_column[best].append(line)
         origins = list(columns)
         pitch = (
@@ -1004,8 +1010,25 @@ def _jump_headline_blocks(page_native: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
 
+def _answer_lines(
+    page_native: dict[str, Any],
+    item: dict[str, Any],
+    mineru_pages: dict[int, list[tuple[int, str, list[float]]]] | None,
+) -> list[str]:
+    """The lines a Reading Pass answer names, whether it answered lines or blocks."""
+    named = [str(x).strip() for x in (item.get("lines") or ()) if str(x).strip()]
+    if named:
+        return named
+    blocks = [int(x) for x in (item.get("blocks") or ())]
+    if blocks and mineru_pages:
+        page = int(page_native.get("page") or 0)
+        return lines_from_blocks(page_native, mineru_pages.get(page) or [], blocks)
+    return []
+
+
 def _attach_continuation_regions(records: list[dict[str, Any]],
-                                 natives: dict[int, dict[str, Any]]) -> None:
+                                 natives: dict[int, dict[str, Any]],
+                                 skip: set[str] | None = None) -> None:
     """Give each continued story its rectangles on the page it continues onto.
 
     Bands are paired with stories in start order. That holds wherever a jump page
@@ -1017,6 +1040,8 @@ def _attach_continuation_regions(records: list[dict[str, Any]],
     """
     by_target: dict[int, list[tuple[float, dict[str, Any]]]] = {}
     for record in records:
+        if record["id"] in (skip or set()):
+            continue
         if record.get("regions_source") == "reader_lines":
             continue
         for page in record["all_pages"][1:]:
@@ -1145,6 +1170,7 @@ def assemble(
     - a jump marker belongs to exactly one story (`_assign_markers`).
     """
     records: list[dict[str, Any]] = []
+    continuations: dict[str, list[str]] = {}
     used_ids: set[str] = set()
     folio_index = _folio_index(natives)
 
@@ -1171,6 +1197,14 @@ def assemble(
             if not first_line:
                 raise TracerCompilationError(f"page {page}: empty first_line for {line_id}")
             if _is_jump_headline(page_native, start_line):
+                # A reprinted headline may say which story it continues. The pass
+                # can answer that because the candidate stories are printed in the
+                # start page's jump markers, not because it guessed from the text.
+                origin = str(item.get("continues") or "").strip()
+                if origin:
+                    continuations.setdefault(origin, []).extend(
+                        _answer_lines(page_native, item, mineru_pages)
+                    )
                 continue
             if kind == "photo_caption" and not _is_standalone_caption(first_line):
                 continue
@@ -1257,15 +1291,10 @@ def assemble(
 
             kind = _type_from_section(section, kind)
             rec_id = _make_id(page, first_line, kind, used_ids)
-            reader_lines = [str(x).strip() for x in (item.get("lines") or ()) if str(x).strip()]
-            from_blocks = False
-            if not reader_lines:
-                block_indices = [int(x) for x in (item.get("blocks") or ())]
-                if block_indices and mineru_pages:
-                    reader_lines = lines_from_blocks(
-                        page_native, mineru_pages.get(page) or [], block_indices
-                    )
-                    from_blocks = bool(reader_lines)
+            reader_lines = _answer_lines(page_native, item, mineru_pages)
+            from_blocks = bool(reader_lines) and not any(
+                str(x).strip() for x in (item.get("lines") or ())
+            )
             if reader_lines:
                 regions = regions_from_lines(natives, reader_lines)
                 source = "reading_pass_blocks" if from_blocks else "reading_pass"
@@ -1296,7 +1325,16 @@ def assemble(
                 }
             )
 
-    _attach_continuation_regions(records, natives)
+    for record in records:
+        named = continuations.get(str(record["start_line_id"]))
+        if not named:
+            continue
+        record["regions"] = sorted(
+            record["regions"] + regions_from_lines(natives, named),
+            key=lambda r: (r["page"], r["bbox"][1], r["bbox"][0]),
+        )
+        record["regions_source"] = "reading_pass"
+    _attach_continuation_regions(records, natives, skip={r["id"] for r in records if r["regions_source"] != "geometry" and len({g["page"] for g in r["regions"]}) >= len(r["all_pages"])})
     return records
 
 
