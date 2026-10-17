@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from itertools import permutations
 from pathlib import Path
 from typing import Any
 
@@ -92,7 +93,9 @@ _RUBRIC_TO_SECTION: dict[str, str] = {}
 for _raw in SECTION_MAP:
     if " / " in _raw:
         _base, _rub = _raw.split(" / ", 1)
-        _RUBRIC_TO_SECTION[_norm_rubric(_rub)] = _raw
+        # A rubric that is also a top-level section keeps its own meaning:
+        # `Corrections` is a section, not only `Opinion / Corrections`.
+        _RUBRIC_TO_SECTION.setdefault(_norm_rubric(_rub), _raw)
     else:
         _RUBRIC_TO_SECTION[_norm_rubric(_raw)] = _raw
 
@@ -157,7 +160,14 @@ def _column_grid(page_native: dict[str, Any]) -> list[float]:
 
 
 def _section_head_text(page_native: dict[str, Any]) -> str | None:
-    best: tuple[float, str] | None = None
+    """The section banner printed at the top of the page, if any.
+
+    A banner can be extracted as several lines in a scrambled order — page 32
+    yields `HEARD`, `THESTREET`, `ON` — so the printed tokens are concatenated in
+    every order and matched against the canonical section vocabulary. A page that
+    prints no banner (the front page) returns ``None``.
+    """
+    tokens: list[str] = []
     for line in page_native.get("lines") or []:
         y = float((line.get("bbox") or [0, 9999])[1])
         if y > 120:
@@ -169,17 +179,17 @@ def _section_head_text(page_native: dict[str, Any]) -> str | None:
         if not text or len(text) > 80:
             continue
         key = _norm_rubric(text)
-        if key in _BASE_FROM_PRINT:
-            cand = (_BASE_FROM_PRINT[key], y)
-        elif key == "businessfinance":
-            cand = ("Business & Finance", y)
-        elif "heardonthestreet" in key:
-            cand = ("Heard on the Street", y)
-        else:
+        if not key or key in tokens:
             continue
-        if best is None or y < best[1]:
-            best = cand
-    return best[0] if best else None
+        tokens.append(key)
+    if not tokens:
+        return None
+    for r in range(1, min(len(tokens), 4) + 1):
+        for combo in permutations(tokens, r):
+            key = "".join(combo)
+            if key in _BASE_FROM_PRINT:
+                return _BASE_FROM_PRINT[key]
+    return None
 
 
 def _continuation_markers(page_native: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
@@ -249,7 +259,7 @@ def _line_by_id(page_native: dict[str, Any], line_id: str) -> dict[str, Any] | N
     return None
 
 
-def _x_overlap(a: list[float], b: list[float], pad: float = 25.0) -> bool:
+def _x_overlap(a: list[float], b: list[float], pad: float = 12.0) -> bool:
     return a[0] - pad <= b[2] and b[0] - pad <= a[2]
 
 
@@ -270,7 +280,20 @@ def _canonical_text(raw: str, base: str | None) -> str:
             return mapped.split(" / ", 1)[1]
         if mapped != base:
             return mapped
+    # A rubric may carry a suffix the paper adds: `CORRECTIONS & AMPLIFICATIONS`.
+    for known in sorted(_RUBRIC_TO_SECTION, key=len, reverse=True):
+        if len(known) >= 6 and key.startswith(known):
+            mapped = _RUBRIC_TO_SECTION[known]
+            if " / " in mapped:
+                return mapped.split(" / ", 1)[1]
+            if mapped != base:
+                return mapped
     return raw.strip()
+
+
+#: Arts reviews name their rubric inside the kicker: `MUSIC REVIEW | MARK RICHARDSON`
+#: and `TELEVISION REVIEW | JOHN ANDERSON` on the Arts in Review page.
+_REVIEW_KICKER_RE = re.compile(r"^([A-Z][A-Z &'\-]{2,}?)\s+REVIEW\b")
 
 
 def _detect_rubric(
@@ -278,26 +301,72 @@ def _detect_rubric(
     start_line: dict[str, Any],
     page_base: str | None,
 ) -> str | None:
+    own_text = (start_line.get("text") or "").strip()
+    own_key = _norm_rubric(own_text)
+    if own_key in _BASE_FROM_PRINT or own_key in _RUBRIC_TO_SECTION:
+        return _canonical_text(own_text, page_base)
+    # `CORRECTIONS & AMPLIFICATIONS` starts with a known rubric and adds a suffix.
+    if any(
+        len(k) >= 6 and (own_key.startswith(k) or k.startswith(own_key))
+        for k in _RUBRIC_TO_SECTION
+    ):
+        return _canonical_text(own_text, page_base)
     start_y = float(start_line["bbox"][1])
+    bottom = float(start_line["bbox"][3])
     best: tuple[float, str] | None = None
+    known_best: tuple[float, str] | None = None
+    kicker: tuple[float, str] | None = None
+    below: tuple[float, str] | None = None
     for line in page_native.get("lines") or []:
         y = float(line["bbox"][1])
-        if y >= start_y - 2 or y < 40:
+        if y < 40 or (start_y - 2 <= y <= bottom):
+            continue
+        is_below = y > bottom
+        if is_below and y - bottom > 260:
             continue
         if not _x_overlap(line["bbox"], start_line["bbox"]):
+            continue
+        text = (line.get("text") or "").strip()
+        if not text or len(text) > 80:
+            continue
+        m = _REVIEW_KICKER_RE.match(text)
+        if m and (kicker is None or y > kicker[0]):
+            kicker = (y, m.group(1).strip().title())
+        known = _norm_rubric(text)
+        # A rubric equal to the page's own banner is the base, not a sub-column.
+        if _canonical_text(text, page_base).strip() == (page_base or "").strip():
+            continue
+        if known in _RUBRIC_TO_SECTION or known in _BASE_FROM_PRINT or any(
+            len(k) >= 6 and known.startswith(k) for k in _RUBRIC_TO_SECTION
+        ):
+            if is_below:
+                if below is None or y < below[0]:
+                    below = (y, text)
+            elif known_best is None or y > known_best[0]:
+                known_best = (y, text)
             continue
         font, size = _dominant_char(line)
         if not _is_rubric_line(font, size) or size > _RUBRIC_MAX_SIZE:
             continue
-        text = (line.get("text") or "").strip()
         # Drop caps share the rubric faces at 40pt+ and are one or two letters.
-        if len(text) < 4 or len(text) > 80:
+        if len(text) < 4:
+            continue
+        if is_below:
+            # A kicker such as `ANALYSIS` is sometimes set just under the headline.
+            if below is None or y < below[0]:
+                below = (y, text)
             continue
         if best is None or y > best[0]:
             best = (y, text)
-    if not best:
-        return None
-    return _canonical_text(best[1], page_base)
+    if known_best:
+        return _canonical_text(known_best[1], page_base)
+    if kicker and (best is None or kicker[0] > best[0]):
+        return _canonical_text(kicker[1], page_base)
+    if best:
+        return _canonical_text(best[1], page_base)
+    if below:
+        return _canonical_text(below[1], page_base)
+    return None
 
 
 def _compose_section(
@@ -314,6 +383,10 @@ def _compose_section(
     hint = _canonical_text(rubric_hint, base) if (rubric_hint or "").strip() else ""
     rubric = hint or _detect_rubric(page_native, start_line, base)
 
+    if rubric:
+        full = _RUBRIC_TO_SECTION.get(_norm_rubric(rubric))
+        if full and " / " in full:
+            return full
     if rubric and rubric in SECTION_MAP:
         if " / " in rubric:
             return rubric
@@ -468,9 +541,20 @@ def assemble(
                 continue
 
             base = _section_head_text(page_native)
-            rubric = _detect_rubric(page_native, start_line, base)
+            supplied = str(item.get("section") or "").strip()
+            if supplied:
+                # The reader reads the page, including split rubric heads and
+                # running section changes the derivation cannot resolve. Its
+                # answer wins; the derivation below is the fallback.
+                canonical_section(supplied)
+                section = supplied
+                rubric = ""
+            else:
+                rubric = _detect_rubric(page_native, start_line, base)
+                section = ""
             try:
-                section = _compose_section(page_native, start_line, rubric)
+                if not section:
+                    section = _compose_section(page_native, start_line, rubric)
             except TracerCompilationError:
                 # The front page prints no section banner, and one story there can
                 # share a continuation page with a story from another section, so
