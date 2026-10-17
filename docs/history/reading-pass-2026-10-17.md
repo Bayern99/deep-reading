@@ -1,0 +1,61 @@
+# Reading Pass over the reference issue (2026-10-17)
+
+Ticket #14, reference-issue half. Every content page's reading items now answer
+which MinerU blocks they own. The second issue is untouched: it has no MinerU
+parse, so its pass cannot run yet.
+
+## What ran
+
+- 25 content pages, 100 reading items across the reference issue.
+- Each answer names block indices per item, including the reprinted headline of
+  every story that continues onto the page. Eight pages gained continuation
+  items (2, 4, 6, 10, 20, 22, 24, 25); page 20 had two enumerated items for one
+  reprinted headline and they were folded into one.
+- Every answer was validated before merging: indices exist in the page's MinerU
+  blocks, no index is assigned to two items, and no item is empty.
+- The cache now carries `blocks` for all 100 items:
+  `<pilot>/evidence/reader-items.json`. Pre-pass backup, outside every Git
+  repository:
+  `/Users/dmus/Documents/deep-reading/reader-items.pre-blocks-2026-10-17.json`.
+
+## Result
+
+- `derive_article_map` returns 86 records, **0 with `regions_source = geometry`**
+  (74 `reading_pass_blocks`, 12 `reading_pass` where a continuation answer was
+  merged into its origin record).
+- Every record has derived `paragraphs`: 86/86, 1,316 paragraphs.
+- Block boxes contain 96.6–100% of each page's text lines. Assignment coverage
+  (text lines inside an item's blocks) is 81–99% on pages that are mostly
+  editorial; it is low only where the page is mostly tables or ads (page 31
+  market tables, page 12 crossword, page 20 business index).
+- Paragraph boundaries against the reference inventory are unchanged by the
+  block answers: 1,086/1,097 predicted boundaries correct (99.0%),
+  1,086/1,106 recovered (98.2%).
+
+## Where the regions still differ from the golden map
+
+75 golden stories match a derived record. 19 have a per-page column-origin set
+that differs by more than the 2pt grid-rounding tolerance:
+
+- **Narrow columns merged by the grid.** Stories on pages 14, 15 and 17 own a
+  column narrower than the 100pt merge threshold in `column_grid`, so the draft
+  region cannot name it separately.
+- **A sub-story shares its parent's columns (page 8).** The golden map gives the
+  Taiwan story the columns its sub-story occupies as well; the block contract
+  assigns a block to one content owner. ADR 0004 records that this ownership is
+  editorial intent, not a printed fact.
+- **An alternate column system on one page (page 12).** The story's own band
+  grid recovers the five-column system, but one origin lands 12pt from the
+  golden value.
+
+These are draft-region differences. They are not compile inputs: the composer
+reads the page column grid (ADR 0004).
+
+## Acceptance against #14
+
+- Answers validate, and every item's blocks map onto native lines by
+  containment.
+- Reference issue: no record is geometric. The ticket's
+  `require_exact_regions=True` wording is stale; ADR 0004 removed that compile
+  gate, and the equivalent check is `regions_source != "geometry"`.
+- Second issue: not run. It needs a MinerU parse before the same pass can run.

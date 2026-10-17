@@ -858,6 +858,14 @@ _DROP_CAP_MIN_SIZE = 20.0
 #: A wrapped column moves its body edge mid-column, so the local edge has to come
 #: from the lines themselves rather than from the page grid.
 _PARAGRAPH_EDGE_WINDOW = 5
+#: Above body size and below display: a deck, rubric or label, not narrative.
+_BODY_MAX_SIZE_PT = 9.0
+#: Body faces. A 9.5pt lede is still body; a 12.6pt `RetinaLight` deck is not.
+_BODY_FONT_PREFIXES = ("Exchange", "DJ5", "RetinaBook")
+#: Rubric/label faces sit above a story or beside it; they are not subheads.
+_LABEL_FONT_PREFIX = "RetinaCondensed"
+_BYLINE_RE = re.compile(r"^BY\s+[A-Z]")
+_MARKER_RE = re.compile(r"^(?:Continuedfrom|Pleaseturn)", re.IGNORECASE)
 
 
 def _column_spans(grid: list[float], width: float | None) -> list[tuple[float, float]]:
@@ -1001,19 +1009,36 @@ def paragraphs_from_lines(
     printed = _printed_lines(natives, grids, lines_by_page)
 
     groups: list[list[dict[str, Any]]] = []
+    seen_body: dict[int, bool] = {}
+    last: dict[str, Any] | None = None
     for k, line in enumerate(printed):
         text = "".join(
             (part.get("text") or "").strip() for part in line["lines"]
         ).strip()
-        size = _dominant_char(line["lines"][0])[1]
+        font, size = _dominant_char(line["lines"][0])
+        # A Reading Pass block answer includes the item's headline, deck and
+        # byline; those are the item's title fields, not narrative paragraphs.
+        # Each page restarts the check, so a continuation page's reprinted
+        # headline is dropped too.
+        drop_cap = len(text) == 1 and text.isupper() and size > _DROP_CAP_MIN_SIZE
+        if size >= 15.0 and not drop_cap:
+            continue
+        if _BYLINE_RE.match(text) or _MARKER_RE.match(text):
+            continue
+        if font.startswith(_LABEL_FONT_PREFIX):
+            continue
+        if (
+            not seen_body.get(line["page"])
+            and size > _BODY_MAX_SIZE_PT
+            and not drop_cap
+            and not font.startswith(_BODY_FONT_PREFIXES)
+        ):
+            continue
+        seen_body[line["page"]] = True
         is_subhead = _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
-        drop_cap = (
-            len(text) == 1 and text.isupper() and size > _DROP_CAP_MIN_SIZE
-        )
-        starts = k == 0
-        if k and not starts:
-            previous = printed[k - 1]
-            previous_size = _dominant_char(previous["lines"][0])[1]
+        starts = last is None
+        if last is not None and not starts:
+            previous_size = _dominant_char(last["lines"][0])[1]
             previous_subhead = (
                 _SUBHEAD_SIZE_PT[0] <= previous_size <= _SUBHEAD_SIZE_PT[1]
             )
@@ -1029,6 +1054,7 @@ def paragraphs_from_lines(
         if starts:
             groups.append([])
         groups[-1].append(line)
+        last = line
 
     paragraphs: list[dict[str, Any]] = []
     for n, group in enumerate(groups, 1):
