@@ -606,6 +606,9 @@ def _type_from_section(section: str, judged: str) -> str:
 #: 28pt inter-line gap gives the best agreement (IoU median 0.82, 74 of 83
 #: rectangles above 0.5). See the reconciliation note in docs/history.
 _REGION_LINE_GAP = 28.0
+#: Left edges within this many points are the same printed column; indented first
+#: lines sit about 15pt right of the column origin.
+_COLUMN_EDGE_GAP = 40.0
 
 
 def _body_lines(page_native: dict[str, Any]) -> list[dict[str, Any]]:
@@ -762,56 +765,65 @@ def regions_from_lines(
             if line.get("id"):
                 index[str(line["id"])] = (number, native, line)
 
-    per_page: dict[int, list[tuple[dict[str, Any], dict[str, Any]]]] = {}
+    per_page: dict[int, tuple[dict[str, Any], list[dict[str, Any]]]] = {}
     for line_id in line_ids:
         hit = index.get(str(line_id))
         if hit is None:
             continue
-        per_page.setdefault(hit[0], []).append((hit[1], hit[2]))
+        per_page.setdefault(hit[0], (hit[1], []))[1].append(hit[2])
 
     regions: list[dict[str, Any]] = []
     for page in sorted(per_page):
-        entries = per_page[page]
-        grid = _column_grid(entries[0][0])
-        if not grid:
+        native, page_lines = per_page[page]
+        lines = [line for line in page_lines if (line.get("text") or "").strip()]
+        if not lines:
             continue
-        columns: dict[int, list[float]] = {}
-        band_top = float("inf")
-        band_bottom = float("-inf")
-        for _native, line in entries:
-            column = _column_index(grid, line["bbox"][0])
-            if column is None:
-                continue
-            # Only lines set at a column edge define that column's box; captions,
-            # pull quotes and inset labels start mid-measure and would otherwise
-            # widen one column across its neighbour.
-            if abs(float(line["bbox"][0]) - grid[column]) > 6.0:
-                band_top = min(band_top, float(line["bbox"][1]))
-                band_bottom = max(band_bottom, float(line["bbox"][3]))
-                continue
-            box = columns.setdefault(column, [float(line["bbox"][0]), float(line["bbox"][2])])
-            box[0] = min(box[0], float(line["bbox"][0]))
-            box[1] = max(box[1], float(line["bbox"][2]))
-            band_top = min(band_top, float(line["bbox"][1]))
-            band_bottom = max(band_bottom, float(line["bbox"][3]))
+        # The grid comes from the lines inside this story's band, not from the page:
+        # one page can carry two column systems (page 12 has a five-column story and
+        # a three-column one), and a page-wide grid merges them.
+        band_top = min(float(line["bbox"][1]) for line in lines)
+        band_bottom = max(float(line["bbox"][3]) for line in lines)
+        in_band = {
+            "page": page,
+            "width": native.get("width"),
+            "height": native.get("height"),
+            "lines": [
+                line
+                for line in (native.get("lines") or ())
+                if band_top - 2 <= float(line["bbox"][1]) <= band_bottom + 2
+            ],
+        }
+        # A short story's band may hold too few lines for the grid to recover; the
+        # page grid is the right answer there, because the band has only one layout.
+        columns = _column_grid(in_band) or _column_grid(native)
         if not columns:
             continue
-        pitch = (grid[1] - grid[0]) if len(grid) > 1 else 120.0
-        # A line that spans several columns is a rule or a caption, not body text;
-        # letting it set a column's right edge would swallow its neighbours.
-        for column, box in columns.items():
-            if column < len(grid) - 1:
-                box[1] = min(box[1], grid[column] + pitch + 12.0)
-        # The paper sets a story as one band across the columns it owns: every
-        # column shares the band's top and bottom, and each column's box is the
-        # measured extent of the text set in it.
-        for column in sorted(columns):
-            left, right = columns[column]
+        by_column: list[list[dict[str, Any]]] = [[] for _ in columns]
+        for line in lines:
+            x0 = float(line["bbox"][0])
+            best = min(range(len(columns)), key=lambda i: abs(x0 - columns[i]))
+            by_column[best].append(line)
+        origins = list(columns)
+        pitch = (
+            min(b - a for a, b in zip(origins, origins[1:]))
+            if len(origins) > 1
+            else 150.0
+        )
+        for column in sorted((i for i in range(len(columns)) if by_column[i]), key=lambda i: origins[i]):
+            members = by_column[column]
+            # The column origin is its own printed edge, not the leftmost member:
+            # a caption inset mid-measure joins this column without moving it.
+            left = origins[column]
+            right = max(float(line["bbox"][2]) for line in members)
+            if column < len(columns) - 1:
+                # A line spanning several columns is a rule or a caption; letting it
+                # set the right edge would swallow the next column.
+                right = min(right, left + pitch + 12.0)
             regions.append(
                 {
                     "page": page,
                     "bbox": [round(left, 2), round(band_top, 2), round(right, 2), round(band_bottom, 2)],
-                    "column_origin": round(grid[column], 2),
+                    "column_origin": round(origins[column], 2),
                 }
             )
     return regions
