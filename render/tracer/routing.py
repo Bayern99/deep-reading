@@ -49,6 +49,7 @@ SECTION_MAP: dict[str, str] = {
     "Eating & Drinking": "life",
     "Design & Decorating": "life",
     "Adventure & Travel": "life",
+    "Arts in Review": "life",
     "Arts in Review / Music": "life",
     "Arts in Review / Television": "life",
     "Opinion": "opinion",

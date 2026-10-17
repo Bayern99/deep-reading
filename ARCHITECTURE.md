@@ -48,6 +48,7 @@ Entry points: `render/tracer_pipeline.py` (`make tracer`, `make tracer-certify`)
 | `tracer/whatsnews.py` | What's News digest and 16 deep links into reading units. |
 | `tracer/shell.py` | Reader shell: 7-section nav, overview / immersive views, `中文 / EN / 双语`, Issue Artifact CSS/JS. Visual authority: [DESIGN](DESIGN.md). |
 | `tracer/gate.py` | LQA Funnel: Stage-1 five-invariant radar, Stage-2 spot-check; writes `gate-report.json` next to the artifact, never inside it. |
+| `tracer/reading_pass.py` | Reading Pass orchestration, out of band: page bundles, answer validation, cache merge, coverage and derivation report. Reached by `make reading-pass`, not by `tracer_pipeline`. |
 | `tracer/oracles.py` | Seven Certification Oracles over the compiled HTML; writes `oracle-certification.json` in the workspace. |
 | `tracer_pipeline.py` | CLI: `--mode full` / `tracer`, `--units`, `--fast`, `--gate-report`, `--certify`. |
 

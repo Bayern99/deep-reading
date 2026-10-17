@@ -4,10 +4,11 @@ TRACER_OUT ?= /tmp/wsj-2026-10-14.html
 TRACER_GATE ?= /tmp/gate-report.json
 TRACER_CERT ?= /tmp/oracle-certification.json
 
-.PHONY: help test check smoke hooks tracer tracer-certify
+.PHONY: help test check smoke hooks tracer tracer-certify reading-pass
 help:
 	@echo "make test | check | smoke"
 	@echo "make tracer | tracer-certify  2026-10-14 Issue Artifact (+ LQA / 7-Oracle)"
+	@echo "make reading-pass ARGS='...'  Reading Pass bundles / validate / merge / report"
 	@echo "make hooks  Install the tracked git hooks (data guard, pre-push check)"
 	@echo "Bootstrap: python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt"
 
@@ -30,3 +31,6 @@ tracer:
 
 tracer-certify:
 	$(TRACER_PYTHON) render/tracer_pipeline.py --mode full --output $(TRACER_OUT) --gate-report $(TRACER_GATE) --certify $(TRACER_CERT)
+
+reading-pass:
+	PYTHONPATH=$(CURDIR)/render $(PYTHON) -m tracer.reading_pass $(ARGS)

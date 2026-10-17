@@ -89,6 +89,17 @@ Known limits of this scale run, not defects in the deriver:
 The second issue's cache is
 `second-issue-pilot-2026-10-10/evidence/reader-items.json`.
 
+Both caches are reproducible with `render/tracer/reading_pass.py` (ticket #18):
+
+```bash
+make reading-pass ARGS="merge --pilot-root P --bundles DIR --answers DIR --out CACHE"
+```
+
+The script builds bundles, validates answers (unknown indices and repeated blocks
+are warnings; no answer, cross-item duplicates, unmapped sections are errors),
+drops table-only and continuation-body items, and reports coverage. It never
+calls a model.
+
 ## Acceptance against #14
 
 - Answers validate, and every item's blocks map onto native lines by
