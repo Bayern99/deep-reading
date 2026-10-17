@@ -323,6 +323,34 @@ class ReferenceParityTests(unittest.TestCase):
         with self.assertRaisesRegex(TracerCompilationError, "unreachable folio"):
             derive_article_map(perturbed, self.cache_path)
 
+    def test_reading_pass_supplies_every_reference_region(self) -> None:
+        """Block answers beside the cache are used without an explicit pilot_root.
+
+        The exactness diagnostic stays available and passes only when no record
+        fell back to geometry.
+        """
+        derived = derive_article_map(
+            self.natives, self.cache_path, require_exact_regions=True
+        )
+        self.assertEqual(
+            [r["id"] for r in derived if r["regions_source"] == "geometry"], []
+        )
+        self.assertTrue(all(r["regions"] for r in derived))
+
+    def test_inferred_regions_are_flagged_for_review(self) -> None:
+        """A geometry fallback names itself in needs_review (amended #13)."""
+        from tracer.article_map import assemble
+
+        item = {
+            "start_line": "p2-l0380",
+            "kind": "article",
+            "first_line": "Home Sales Rise for First Time Since May",
+            "section": "U.S. News",
+        }
+        record = assemble({2: [item]}, self.natives)[0]
+        self.assertEqual(record["regions_source"], "geometry")
+        self.assertIn("regions-inferred", record["needs_review"])
+
     def test_type_accuracy_beats_the_model_baseline(self) -> None:
         """Derived types beat the measured Jev baseline on the reference issue.
 
@@ -611,6 +639,45 @@ class ReaderLineRegionTests(unittest.TestCase):
 
     def _page(self, lines: list[dict]) -> dict:
         return {"page": 7, "height": 1600, "lines": lines}
+
+    def test_paragraph_split_follows_indent_and_subhead_size(self) -> None:
+        """Move the printed mark and the split follows (FOUNDATION invariant 12)."""
+        from tracer.article_map import paragraphs_from_lines
+
+        def line(index: int, x0: float) -> dict:
+            return {
+                "id": f"l{index}",
+                "bbox": [x0, 100.0 + 12 * index, x0 + 130.0, 110.0 + 12 * index],
+                "text": "ordinary body text",
+                "chars": [
+                    {
+                        "bbox": [x0, 100.0 + 12 * index, x0 + 130.0, 110.0 + 12 * index],
+                        "c": "o",
+                        "font": "ExchangeBook",
+                        "size": 8.4,
+                    }
+                ],
+            }
+
+        body = [line(i, 40.0) for i in range(6)]
+        page = {"page": 1, "height": 1600, "lines": body}
+        self.assertEqual(
+            len(paragraphs_from_lines({1: page}, [l["id"] for l in body])), 1
+        )
+
+        indented = [line(i, 40.0) for i in range(6)]
+        indented[2]["bbox"] = [50.0, 124.0, 180.0, 134.0]
+        page = {"page": 1, "height": 1600, "lines": indented}
+        self.assertEqual(
+            len(paragraphs_from_lines({1: page}, [l["id"] for l in indented])), 2
+        )
+
+        subhead = [line(i, 40.0) for i in range(6)]
+        subhead[2]["chars"] = [{"size": 12.5, "font": "RetinaBold"}]
+        page = {"page": 1, "height": 1600, "lines": subhead}
+        paragraphs = paragraphs_from_lines({1: page}, [l["id"] for l in subhead])
+        self.assertEqual(len(paragraphs), 3)
+        self.assertEqual(paragraphs[1]["type"], "subheading")
 
     def test_one_rectangle_per_column_sharing_the_band(self) -> None:
         from tracer.article_map import regions_from_lines

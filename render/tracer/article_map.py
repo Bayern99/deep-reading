@@ -788,6 +788,25 @@ def _line_index(
     return index
 
 
+def _item_box(
+    page: int, lines: list[dict[str, Any]], origin: float | None = None
+) -> dict[str, Any]:
+    """One placement box around a run of lines.
+
+    Used where no line defines a column (a table, a centred list) and where the
+    page has no recoverable grid; both still need a placement.
+    """
+    left = min(float(line["bbox"][0]) for line in lines)
+    top = min(float(line["bbox"][1]) for line in lines)
+    right = max(float(line["bbox"][2]) for line in lines)
+    bottom = max(float(line["bbox"][3]) for line in lines)
+    return {
+        "page": page,
+        "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
+        "column_origin": round(left if origin is None else origin, 2),
+    }
+
+
 def regions_from_lines(
     natives: dict[int, dict[str, Any]],
     line_ids: list[str],
@@ -835,17 +854,7 @@ def regions_from_lines(
         # page grid is the right answer there, because the band has only one layout.
         columns = column_grid(in_band) or column_grid(native)
         if not columns:
-            left = min(float(line["bbox"][0]) for line in lines)
-            top = min(float(line["bbox"][1]) for line in lines)
-            right = max(float(line["bbox"][2]) for line in lines)
-            bottom = max(float(line["bbox"][3]) for line in lines)
-            regions.append(
-                {
-                    "page": page,
-                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
-                    "column_origin": round(left, 2),
-                }
-            )
+            regions.append(_item_box(page, lines))
             continue
         by_column: list[list[dict[str, Any]]] = [[] for _ in columns]
         for line in lines:
@@ -887,17 +896,8 @@ def regions_from_lines(
             # defines no column. It is still an item; give it one box so the
             # map never carries a placement-less record.
             left = min(float(line["bbox"][0]) for line in lines)
-            top = min(float(line["bbox"][1]) for line in lines)
-            right = max(float(line["bbox"][2]) for line in lines)
-            bottom = max(float(line["bbox"][3]) for line in lines)
             origin = min(origins, key=lambda value: abs(value - left)) if origins else left
-            regions.append(
-                {
-                    "page": page,
-                    "bbox": [round(left, 2), round(top, 2), round(right, 2), round(bottom, 2)],
-                    "column_origin": round(origin, 2),
-                }
-            )
+            regions.append(_item_box(page, lines, origin))
     return regions
 
 
@@ -909,6 +909,12 @@ _PARAGRAPH_INDENT_PT = (6.0, 20.0)
 #: Subheads are set above body size (8.4pt on the reference issue) and below
 #: display size.
 _SUBHEAD_SIZE_PT = (10.0, 16.0)
+#: Display type: a headline, a deck above subhead size, or a drop cap.
+_DISPLAY_MIN_SIZE = 15.0
+
+
+def _is_subhead_size(size: float) -> bool:
+    return _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
 #: A single display-size letter is a drop cap, and it starts its paragraph.
 _DROP_CAP_MIN_SIZE = 20.0
 #: A wrapped column moves its body edge mid-column, so the local edge has to come
@@ -1077,7 +1083,7 @@ def paragraphs_from_lines(
         # Each page restarts the check, so a continuation page's reprinted
         # headline is dropped too.
         drop_cap = len(text) == 1 and text.isupper() and size > _DROP_CAP_MIN_SIZE
-        if size >= 15.0 and not drop_cap:
+        if size >= _DISPLAY_MIN_SIZE and not drop_cap:
             continue
         if _BYLINE_RE.match(text) or _MARKER_RE.match(text):
             continue
@@ -1091,13 +1097,11 @@ def paragraphs_from_lines(
         ):
             continue
         seen_body[line["page"]] = True
-        is_subhead = _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
+        is_subhead = _is_subhead_size(size)
         starts = last is None
         if last is not None and not starts:
             previous_size = _dominant_char(last["lines"][0])[1]
-            previous_subhead = (
-                _SUBHEAD_SIZE_PT[0] <= previous_size <= _SUBHEAD_SIZE_PT[1]
-            )
+            previous_subhead = _is_subhead_size(previous_size)
             # A subhead is its own block; the paragraph after it starts fresh
             # even when that first line is not indented.
             if is_subhead != previous_subhead:
@@ -1115,7 +1119,7 @@ def paragraphs_from_lines(
     paragraphs: list[dict[str, Any]] = []
     for n, group in enumerate(groups, 1):
         size = _dominant_char(group[0]["lines"][0])[1]
-        is_subhead = _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
+        is_subhead = _is_subhead_size(size)
         boxes: dict[tuple[int, int], dict[str, Any]] = {}
         native_regions: list[dict[str, Any]] = []
         for line in group:
@@ -1641,6 +1645,10 @@ def assemble(
                 )
                 source = "geometry"
             confidence, review = _type_evidence(section, kind, regions, all_pages)
+            if source == "geometry":
+                # The host needs to know which placement was guessed, not only
+                # which semantic label was uncertain (amended #13).
+                review = [*review, "regions-inferred"]
             records.append(
                 {
                     "id": rec_id,
@@ -1701,22 +1709,28 @@ def derive_article_map(
     *,
     pilot_root: str | Path | None = None,
     mineru_dir: str | Path | None = None,
+    require_exact_regions: bool = False,
 ) -> list[dict[str, Any]]:
     """Public seam: vector pages + cached reading-pass items -> ownership records.
 
     ``mineru_dir`` lets a Reading Pass answer in blocks instead of lines; the
-    blocks are mapped back onto native lines by containment. It is optional
-    input, and its absence changes nothing but which unit the pass is asked for.
+    blocks are mapped back onto native lines by containment. When it is not
+    given, the evidence directory beside the cache is used, so a block answer is
+    never silently ignored for lack of a path.
 
-    ``regions`` are a draft record (ADR 0004), never a compile input, so the
-    deriver does not gate on how exact they are.
+    ``require_exact_regions`` is a **diagnostic**, not a compile gate: production
+    does not set it. Passing it asks the deriver to raise if any record fell back
+    to geometric regions (ADR 0004 removed the gate from the pipeline).
     """
     if reader_cache is None:
         if pilot_root is None:
             raise TracerCompilationError("reader cache path required")
         reader_cache = default_reader_cache_path(pilot_root)
-    if mineru_dir is None and pilot_root is not None:
-        candidate = default_mineru_dir(pilot_root)
+    if mineru_dir is None:
+        if pilot_root is not None:
+            candidate = default_mineru_dir(pilot_root)
+        else:
+            candidate = default_mineru_dir(Path(reader_cache).resolve().parent.parent)
         mineru_dir = candidate if any(candidate.glob("p*-mineru.json")) else None
     if not Path(reader_cache).exists():
         # A missing pass is a missing input, not an empty issue: deriving from
@@ -1724,7 +1738,15 @@ def derive_article_map(
         raise TracerCompilationError(f"no Reading Pass cache at {reader_cache}")
     items = load_reader_cache(reader_cache)
     mineru_pages = load_mineru_blocks(mineru_dir) if mineru_dir else {}
-    return assemble(items, natives, mineru_pages)
+    records = assemble(items, natives, mineru_pages)
+    if require_exact_regions:
+        inferred = [r["id"] for r in records if r["regions_source"] == "geometry"]
+        if inferred:
+            raise TracerCompilationError(
+                f"{len(inferred)} stories have inferred regions; the Reading Pass must "
+                f"name their lines or blocks first: {', '.join(inferred[:5])}"
+            )
+    return records
 
 
 def load_natives_from_pilot(pilot_root: str | Path) -> dict[int, dict[str, Any]]:
