@@ -1,0 +1,562 @@
+"""Article map derivation: deterministic print facts + reader item assembly.
+
+Architecture (ADR 0003 / ticket #7):
+  native.json -> line_table + print_facts (deterministic)
+  reader cache -> per-page reading items (start line, kind, first line, rubric)
+  assemble(items, natives) -> ownership records (id, start_page, section, all_pages, …)
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+from .routing import SECTION_MAP, _folio, canonical_section, print_page_label
+from .verify import TracerCompilationError
+
+READER_KINDS = frozenset(
+    {
+        "analysis",
+        "article",
+        "brief",
+        "correction",
+        "editorial",
+        "letter",
+        "news_digest",
+        "opinion",
+        "photo_caption",
+        "review",
+        "sidebar",
+    }
+)
+#: The extractor emits two naming schemes for the same paper: `DJ5EscrowCond-Roman`
+#: on some pages and `EscrowBannerCondensed-Bo` on others, depending on the embedded
+#: font names. Both are Dow Jones faces; anything else (PalatinoLinotype, Abolition,
+#: TradeGothic, Didot) is advertising or stock imagery. Measured on the reference
+#: issue: pages 4 and 16 differ in scheme while both being editorial pages.
+_DJ_FONT_PREFIX = ("DJ5", "DJ4", "Retina", "Escrow", "Exchange")
+
+#: A page carrying no article text is an image-only advertisement. Derived, not
+#: listed: measured on the reference issue the eight advertisement pages carry
+#: 31–1,824 extracted characters while the lightest editorial page carries 5,147,
+#: so the gap is wide and no per-issue table is needed (FOUNDATION 12).
+_AD_PAGE_MAX_CHARS = 4000
+
+_SECTION_HEAD_MIN = 18.0
+#: Faces the paper uses for a rubric sub-column heading above a story, measured
+#: against every golden story that carries one. `EscrowBannerCompressed` is the
+#: same face as a section banner, so it only counts as a rubric when it is small.
+_RUBRIC_FONTS = (
+    "DJ5EscrowWide",
+    "EscrowWide",
+    "DJ5EscrowOutline",
+    "EscrowOutline",
+    "DJ5Escrow-Bold",
+    "Escrow-Bold",
+    "DJ5EscrowComp",
+    "EscrowComp",
+    "RetinaCondensedBold",
+    "DJ5EscrowCond-BoldItalic",
+    "EscrowCond-BoldItalic",
+)
+#: `EscrowBannerCompressed` sets both section banners (36–98pt) and small
+#: rubric heads such as `CORRECTIONS & AMPLIFICATIONS` (18pt).
+_BANNER_FONT = "EscrowBannerCompressed"
+_RUBRIC_BANNER_MAX = 24.0
+#: Drop caps reuse the rubric faces at 40pt+; nothing that large is a rubric.
+_RUBRIC_MAX_SIZE = 30.0
+
+_BASE_FROM_PRINT = {
+    "usnews": "U.S. News",
+    "businessfinance": "Business & Finance",
+    "worldnews": "World News",
+    "opinion": "Opinion",
+    "personaljournal": "Personal Journal",
+    "thepropertyreport": "The Property Report",
+    "sports": "Sports",
+    "moneyinvesting": "Money & Investing",
+    "businessnews": "Business News",
+    "businesstech": "Business & Tech",
+    "heardonthestreet": "Heard on the Street",
+    "corrections": "Corrections",
+    "artsinreview": "Arts in Review",
+    "whatsnews": "What's News",
+}
+def _norm_rubric(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
+
+
+_RUBRIC_TO_SECTION: dict[str, str] = {}
+for _raw in SECTION_MAP:
+    if " / " in _raw:
+        _base, _rub = _raw.split(" / ", 1)
+        _RUBRIC_TO_SECTION[_norm_rubric(_rub)] = _raw
+    else:
+        _RUBRIC_TO_SECTION[_norm_rubric(_raw)] = _raw
+
+def _norm_title(text: str) -> str:
+    text = (text or "").replace("\u2019", "'").replace("\u2014", "-")
+    return re.sub(r"[^a-z0-9]+", "", text.lower())
+
+
+
+
+def _dominant_char(line: dict[str, Any]) -> tuple[str, float]:
+    chars = line.get("chars") or []
+    if not chars:
+        return "", 0.0
+    counts: dict[str, int] = {}
+    for ch in chars:
+        font = str(ch.get("font") or "")
+        counts[font] = counts.get(font, 0) + 1
+    font = max(counts, key=counts.get)
+    size = max(float(ch.get("size") or 0.0) for ch in chars)
+    return font, size
+
+
+def _is_dj_font(font: str) -> bool:
+    return any(font.startswith(p) for p in _DJ_FONT_PREFIX)
+
+
+def line_table(page_native: dict[str, Any]) -> list[dict[str, Any]]:
+    """Deterministic export of every line for the strong-model reader."""
+    rows: list[dict[str, Any]] = []
+    for line in page_native.get("lines") or []:
+        font, size = _dominant_char(line)
+        bbox = line.get("bbox") or [0, 0, 0, 0]
+        rows.append(
+            {
+                "id": line.get("id"),
+                "y": float(bbox[1]),
+                "x": float(bbox[0]),
+                "size": round(size, 2),
+                "font": font,
+                "text": line.get("text") or "",
+                "bbox": bbox,
+            }
+        )
+    return rows
+
+
+def _column_grid(page_native: dict[str, Any]) -> list[float]:
+    buckets: dict[int, int] = {}
+    for line in page_native.get("lines") or []:
+        font, size = _dominant_char(line)
+        if not _is_dj_font(font) or size < 8.5:
+            continue
+        text = (line.get("text") or "").strip()
+        if len(text) < 10:
+            continue
+        x0 = float((line.get("bbox") or [0])[0])
+        key = int(round(x0 / 4.0) * 4)
+        buckets[key] = buckets.get(key, 0) + 1
+    cols = sorted(k for k, c in buckets.items() if c >= 5)
+    return [float(c) for c in cols]
+
+
+def _section_head_text(page_native: dict[str, Any]) -> str | None:
+    best: tuple[float, str] | None = None
+    for line in page_native.get("lines") or []:
+        y = float((line.get("bbox") or [0, 9999])[1])
+        if y > 120:
+            continue
+        font, size = _dominant_char(line)
+        if size < 14 and "Escrow" not in font:
+            continue
+        text = (line.get("text") or "").strip()
+        if not text or len(text) > 80:
+            continue
+        key = _norm_rubric(text)
+        if key in _BASE_FROM_PRINT:
+            cand = (_BASE_FROM_PRINT[key], y)
+        elif key == "businessfinance":
+            cand = ("Business & Finance", y)
+        elif "heardonthestreet" in key:
+            cand = ("Heard on the Street", y)
+        else:
+            continue
+        if best is None or y < best[1]:
+            best = cand
+    return best[0] if best else None
+
+
+def _continuation_markers(page_native: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+    forward: list[dict[str, Any]] = []
+    backward: list[dict[str, Any]] = []
+    for line in page_native.get("lines") or []:
+        raw = re.sub(r"\s+", "", (line.get("text") or "").lower())
+        m = re.search(r"pleaseturntopage([a-z]\d+|one)", raw)
+        if m:
+            forward.append({"line": line, "folio": m.group(1)})
+            continue
+        m = re.search(r"continuedfrompage([a-z]\d+|one)", raw)
+        if m:
+            backward.append({"line": line, "folio": m.group(1)})
+    return {"forward": forward, "backward": backward}
+
+
+def _parse_folio_token(token: str) -> tuple[str, int] | None:
+    token = (token or "").lower()
+    if token == "one":
+        return ("A", 1)
+    m = re.match(r"([a-z])(\d+)", token)
+    if not m:
+        return None
+    return m.group(1).upper(), int(m.group(2))
+
+
+def _folio_token_to_page(token: str) -> int | None:
+    parsed = _parse_folio_token(token)
+    if not parsed:
+        return None
+    stack, num = parsed
+    if stack == "A":
+        return num
+    if stack == "B":
+        return num + 18
+    return None
+
+
+def _is_ad_page(page_native: dict[str, Any]) -> bool:
+    """Whether a page carries no article text (an image-only advertisement)."""
+    chars = sum(len(line.get("chars") or ()) for line in page_native.get("lines") or ())
+    return chars < _AD_PAGE_MAX_CHARS
+
+
+def print_facts(page_native: dict[str, Any], natives: dict[int, dict] | None = None) -> dict[str, Any]:
+    """Deterministic print facts bundled for the reader."""
+    page = int(page_native.get("page") or 0)
+    folio = _folio(page, natives)
+    return {
+        "page": page,
+        "width": page_native.get("width"),
+        "height": page_native.get("height"),
+        "folio": {"stack": folio[0], "number": folio[1]} if folio else None,
+        "section_head": _section_head_text(page_native),
+        "column_grid": _column_grid(page_native),
+        "continuation": _continuation_markers(page_native),
+        "ad_page": _is_ad_page(page_native),
+        "lines": line_table(page_native),
+    }
+
+
+def _line_by_id(page_native: dict[str, Any], line_id: str) -> dict[str, Any] | None:
+    for line in page_native.get("lines") or []:
+        if line.get("id") == line_id:
+            return line
+    return None
+
+
+def _x_overlap(a: list[float], b: list[float], pad: float = 25.0) -> bool:
+    return a[0] - pad <= b[2] and b[0] - pad <= a[2]
+
+
+def _is_rubric_line(font: str, size: float) -> bool:
+    if any(font.startswith(p) for p in _RUBRIC_FONTS):
+        return True
+    return font.startswith(_BANNER_FONT) and size <= _RUBRIC_BANNER_MAX
+
+
+def _canonical_text(raw: str, base: str | None) -> str:
+    """Map a printed label to the section vocabulary, else keep it verbatim."""
+    key = _norm_rubric(raw)
+    if key in _BASE_FROM_PRINT:
+        return _BASE_FROM_PRINT[key]
+    if key in _RUBRIC_TO_SECTION:
+        mapped = _RUBRIC_TO_SECTION[key]
+        if " / " in mapped:
+            return mapped.split(" / ", 1)[1]
+        if mapped != base:
+            return mapped
+    return raw.strip()
+
+
+def _detect_rubric(
+    page_native: dict[str, Any],
+    start_line: dict[str, Any],
+    page_base: str | None,
+) -> str | None:
+    start_y = float(start_line["bbox"][1])
+    best: tuple[float, str] | None = None
+    for line in page_native.get("lines") or []:
+        y = float(line["bbox"][1])
+        if y >= start_y - 2 or y < 40:
+            continue
+        if not _x_overlap(line["bbox"], start_line["bbox"]):
+            continue
+        font, size = _dominant_char(line)
+        if not _is_rubric_line(font, size) or size > _RUBRIC_MAX_SIZE:
+            continue
+        text = (line.get("text") or "").strip()
+        # Drop caps share the rubric faces at 40pt+ and are one or two letters.
+        if len(text) < 4 or len(text) > 80:
+            continue
+        if best is None or y > best[0]:
+            best = (y, text)
+    if not best:
+        return None
+    return _canonical_text(best[1], page_base)
+
+
+def _compose_section(
+    page_native: dict[str, Any],
+    start_line: dict[str, Any],
+    rubric_hint: str | None,
+) -> str:
+    """The story's raw section string, from the page banner and its own rubric.
+
+    The front page prints no section banner; each story there carries its own
+    small italic label instead, so the rubric alone is the base.
+    """
+    base = _section_head_text(page_native)
+    hint = _canonical_text(rubric_hint, base) if (rubric_hint or "").strip() else ""
+    rubric = hint or _detect_rubric(page_native, start_line, base)
+
+    if rubric and rubric in SECTION_MAP:
+        if " / " in rubric:
+            return rubric
+        if base and base != rubric:
+            combo = f"{base} / {rubric}"
+            if combo in SECTION_MAP:
+                return combo
+        return rubric
+    if rubric and base:
+        combo = f"{base} / {rubric}"
+        if combo in SECTION_MAP:
+            return combo
+    if base:
+        return base
+    if rubric:
+        return rubric
+    raise TracerCompilationError(
+        f"page {page_native.get('page')}: no section head for line {start_line.get('id')}"
+    )
+
+
+def _forward_continuation_page(
+    page: int,
+    page_native: dict[str, Any],
+    start_line: dict[str, Any],
+) -> int | None:
+    sb = start_line["bbox"]
+    markers = []
+    for entry in _continuation_markers(page_native)["forward"]:
+        line = entry["line"]
+        tp = _folio_token_to_page(entry["folio"])
+        if tp is None:
+            continue
+        markers.append((line, tp))
+    if not markers:
+        return None
+    cand = [m for m in markers if _x_overlap(sb, m[0]["bbox"])]
+    if not cand:
+        cand = markers
+    line, target = max(cand, key=lambda m: m[0]["bbox"][1])
+    return target
+
+
+def _stable_topic_slug(first_line: str) -> str:
+    words = re.findall(r"[A-Za-z0-9]+", first_line or "")
+    if not words:
+        return "ITEM"
+    slug = "-".join(w.upper() for w in words[:4])
+    return slug[:40] or "ITEM"
+
+
+def _make_id(
+    start_page: int,
+    first_line: str,
+    kind: str,
+    used: set[str],
+) -> str:
+    folio = print_page_label(start_page)
+    topic = _stable_topic_slug(first_line)
+    prefix = "CASE" if folio in {"A11", "B1"} and kind == "brief" else "PILOT"
+    base = f"{prefix}-{folio}-{topic}"
+    if base not in used:
+        used.add(base)
+        return base
+    for i in range(2, 50):
+        cand = f"{base}-{i}"
+        if cand not in used:
+            used.add(cand)
+            return cand
+    raise TracerCompilationError(f"could not allocate stable id for {first_line!r}")
+
+
+def _is_jump_headline(page_native: dict[str, Any], start_line: dict[str, Any]) -> bool:
+    """Whether a line is a jump-page continuation headline.
+
+    Printed fact, measured on the reference issue: WSJ sets a story's reprinted
+    headline on its continuation page in a large *italic* display face, while a
+    story that starts on that page is set in bold. Page 4 carries two
+    `ContinuedfromPageOne` markers and exactly two large italic banner headlines
+    (`Guilfoyle Resigns as Ambassador`, `Condo Borrows From Buyers`), while its
+    one genuine start (`Paxton, on Dubai Trip,`) is bold. The italic-block count
+    equals the marker count on six of the seven pages that have markers.
+
+    Requires both signals to agree — an italic display headline *and* a backward
+    continuation marker on the page — so an italic headline on a page that
+    continues nothing is still treated as a start.
+    """
+    if not _continuation_markers(page_native)["backward"]:
+        return False
+    font, size = _dominant_char(start_line)
+    if size < 20.0:
+        return False
+    return "EscrowBanner" in font and "-It" in font
+
+
+#: A standalone photo caption carries a printed all-caps label (`STANDING TALL`).
+#: A caption without one belongs to the story beside it and is not its own item.
+_CAPTION_LABEL_RE = re.compile(r"^[A-Z][A-Z0-9'’\- ]{2,}:")
+
+
+def _is_standalone_caption(first_line: str) -> bool:
+    text = (first_line or "").strip()
+    if _CAPTION_LABEL_RE.match(text):
+        return True
+    letters = [c for c in text if c.isalpha()]
+    if len(letters) < 4:
+        return False
+    return sum(1 for c in letters if c.isupper()) / len(letters) >= 0.8
+
+
+def assemble(
+    reader_items_by_page: dict[int, list[dict[str, Any]]],
+    natives: dict[int, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Bind reader items to vector lines and emit map records.
+
+    The reader enumerates what it sees on the page. Three printed facts then
+    decide whether an enumerated item is a *new* reading item, so the reader is
+    never asked to know a newspaper convention it cannot see from one page:
+
+    - a jump-page continuation headline is not a new story (`_is_jump_headline`);
+    - a photo caption only stands alone with a printed label (`_is_standalone_caption`);
+    - an image-only page is not editorial (`_is_ad_page`).
+    """
+    records: list[dict[str, Any]] = []
+    used_ids: set[str] = set()
+
+    for page in sorted(reader_items_by_page):
+        page_native = natives.get(page)
+        if page_native is None:
+            raise TracerCompilationError(f"missing native page {page}")
+        if _is_ad_page(page_native):
+            if reader_items_by_page[page]:
+                raise TracerCompilationError(f"ad page {page} has reader items")
+            continue
+
+        for item in reader_items_by_page[page]:
+            kind = str(item.get("kind") or "").strip()
+            if kind not in READER_KINDS:
+                raise TracerCompilationError(f"page {page}: invalid reader kind {kind!r}")
+            line_id = str(item.get("start_line") or "").strip()
+            start_line = _line_by_id(page_native, line_id)
+            if start_line is None:
+                raise TracerCompilationError(f"page {page}: unbindable start_line {line_id!r}")
+            first_line = str(item.get("first_line") or start_line.get("text") or "").strip()
+            if not first_line:
+                raise TracerCompilationError(f"page {page}: empty first_line for {line_id}")
+
+            if _is_jump_headline(page_native, start_line):
+                continue
+            if kind == "photo_caption" and not _is_standalone_caption(first_line):
+                continue
+
+            base = _section_head_text(page_native)
+            rubric = _detect_rubric(page_native, start_line, base)
+            try:
+                section = _compose_section(page_native, start_line, rubric)
+            except TracerCompilationError:
+                # The front page prints no section banner, and one story there can
+                # share a continuation page with a story from another section, so
+                # the section is not derivable from print. The reader supplies it —
+                # the FOUNDATION 12 carve-out, same as `type`.
+                judged = str(item.get("section") or "").strip()
+                if not judged:
+                    raise
+                section = judged
+            canonical_section(section)
+            cont_page = _forward_continuation_page(page, page_native, start_line)
+            all_pages = sorted({page, *( [cont_page] if cont_page else [] )})
+
+            rec_id = _make_id(page, first_line, kind, used_ids)
+            records.append(
+                {
+                    "id": rec_id,
+                    "original_title": first_line,
+                    "start_page": page,
+                    "section": section,
+                    "type": kind,
+                    "all_pages": all_pages,
+                    "start_line_id": line_id,
+                }
+            )
+
+    return records
+
+
+def load_reader_cache(path: str | Path) -> dict[int, list[dict[str, Any]]]:
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    pages = data.get("pages") or {}
+    out: dict[int, list[dict[str, Any]]] = {}
+    for key, items in pages.items():
+        out[int(key)] = list(items)
+    return out
+
+
+def default_reader_cache_path(pilot_root: str | Path) -> Path:
+    return Path(pilot_root) / "evidence" / "reader-items.json"
+
+
+def derive_article_map(
+    natives: dict[int, dict[str, Any]],
+    reader_cache: str | Path | None = None,
+    *,
+    pilot_root: str | Path | None = None,
+) -> list[dict[str, Any]]:
+    """Public seam: vector pages + cached reader items -> ownership records."""
+    if reader_cache is None:
+        if pilot_root is None:
+            raise TracerCompilationError("reader cache path required")
+        reader_cache = default_reader_cache_path(pilot_root)
+    items = load_reader_cache(reader_cache)
+    return assemble(items, natives)
+
+
+def load_natives_from_pilot(pilot_root: str | Path) -> dict[int, dict[str, Any]]:
+    root = Path(pilot_root)
+    out: dict[int, dict[str, Any]] = {}
+    for path in sorted((root / "evidence").glob("p*-native.json")):
+        native = json.loads(path.read_text(encoding="utf-8"))
+        out[int(native["page"])] = native
+    return out
+
+
+def export_line_tables(natives: dict[int, dict[str, Any]], dest: str | Path) -> Path:
+    """Write all content-page line tables for reader orchestration."""
+    payload: dict[str, Any] = {"pages": {}}
+    for page, native in sorted(natives.items()):
+        if _is_ad_page(native):
+            continue
+        payload["pages"][str(page)] = {
+            "print_facts": print_facts(native, natives),
+        }
+    path = Path(dest)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return path
+
+
+def match_key(record: dict[str, Any]) -> tuple[int, str]:
+    title = record.get("original_title") or record.get("first_line") or ""
+    return int(record["start_page"]), _norm_title(title)
+
+
+def stable_run_fingerprint(records: list[dict[str, Any]]) -> str:
+    rows = sorted((r["id"], r["start_page"], r["section"], match_key(r)[1]) for r in records)
+    return hashlib.sha256(json.dumps(rows).encode("utf-8")).hexdigest()
