@@ -191,7 +191,16 @@ def is_section_front(page: int, natives: dict[int, dict] | None = None) -> bool:
 
 
 def is_flagship(article: dict, natives: dict[int, dict] | None = None) -> bool:
-    """ADR 0001 Tier 1, from print signals alone."""
+    """ADR 0001 Tier 1, from print signals alone.
+
+    The non-front-page branch is decided by the story's printed lead position —
+    it starts in the paper's leftmost column and in the top half of the front —
+    when the inventory carries that signal. `lead_position` is what a derived
+    issue map supplies; a hand-reviewed inventory may omit it, in which case the
+    body-length test below is used. On the reference issue the two agree on all
+    eight flagships, which is why the length test was originally preferred: it
+    was the one computable from the inventory at the time.
+    """
     pages = article.get("all_pages") or []
     if len(pages) < 2:
         return False
@@ -200,6 +209,9 @@ def is_flagship(article: dict, natives: dict[int, dict] | None = None) -> bool:
         return False
     if is_front_page(start, natives):
         return True
+    lead = article.get("lead_position")
+    if lead is not None:
+        return bool(lead)
     return _body_words(article) >= FLAGSHIP_MIN_BODY_WORDS
 
 # Tier 3 standalone items (compact functional format) beyond the composites.

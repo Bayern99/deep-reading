@@ -204,6 +204,23 @@ class ReferenceParityTests(unittest.TestCase):
                 self.assertEqual(len(entry["bbox_points"]), 4)
                 self.assertTrue(entry["raw"])
 
+    def test_flagship_set_from_derived_records(self) -> None:
+        """Tier 1 is reproducible from a derived map, with no paragraphs.
+
+        The non-front-page branch is decided by printed lead position (leftmost
+        column, top half) rather than body length, because a derived map has no
+        reconstructed paragraphs to count.
+        """
+        from tracer.routing import is_flagship
+
+        derived = derive_article_map(self.natives, self.cache_path)
+        flagships = [r for r in derived if is_flagship(r, self.natives)]
+        self.assertEqual(len(flagships), 8)
+        front = [r for r in flagships if r["start_page"] == 1]
+        business = [r for r in flagships if r["start_page"] == 19]
+        self.assertEqual(len(front), 6)
+        self.assertEqual(len(business), 2)
+
     def test_every_section_is_canonical(self) -> None:
         for record in derive_article_map(self.natives, self.cache_path):
             self.assertIn(record["section"], SECTION_MAP)

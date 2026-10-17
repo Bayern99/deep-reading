@@ -540,6 +540,25 @@ def _assign_markers(
     return best_pairs
 
 
+def _lead_position(page_native: dict[str, Any], start_line: dict[str, Any]) -> bool:
+    """Whether a story occupies the paper's lead position on its page.
+
+    A section front leads with the story in the leftmost column of the top half.
+    Measured on the reference issue: on the business front this selects exactly
+    the two flagships out of six multi-page stories, and agrees with the
+    body-length test on all eight. Unlike body length it needs no reconstructed
+    paragraphs, so it survives a derived inventory.
+    """
+    grid = _column_grid(page_native)
+    if not grid:
+        return False
+    column = min(range(len(grid)), key=lambda i: abs(grid[i] - float(start_line["bbox"][0])))
+    if abs(grid[column] - float(start_line["bbox"][0])) > 70 or column != 0:
+        return False
+    height = float(page_native.get("height") or 0.0)
+    return height > 0 and float(start_line["bbox"][1]) < height * 0.55
+
+
 def _stable_topic_slug(first_line: str) -> str:
     words = re.findall(r"[A-Za-z0-9]+", first_line or "")
     if not words:
@@ -736,6 +755,7 @@ def assemble(
                     "section": section,
                     "type": kind,
                     "all_pages": all_pages,
+                    "lead_position": _lead_position(page_native, start_line),
                     "continuation_evidence": evidence,
                     "start_line_id": start_line.get("id"),
                 }
