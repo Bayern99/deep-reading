@@ -267,6 +267,34 @@ class ReferenceParityTests(unittest.TestCase):
         self.assertEqual(mismatched, 0)
         self.assertEqual(sum(1 for r in routes if r.tier == 1), 8)
 
+    def test_perturbed_marker_changes_all_pages(self) -> None:
+        """Editing one printed jump marker must change the derived link.
+
+        The reader cache is untouched, so the only thing that can move a story's
+        continuation page is the rule reading the marker. A rule that had
+        memorised the reference issue would keep answering page 4.
+        """
+        import copy
+
+        baseline = derive_article_map(self.natives, self.cache_path)
+        before = sorted(tuple(r["all_pages"]) for r in baseline if len(r["all_pages"]) > 1)
+        self.assertEqual(before.count((1, 4)), 2, "expected two stories jumping to page 4")
+
+        perturbed = copy.deepcopy(self.natives)
+        page = perturbed[1]
+        target = next(
+            line for line in page["lines"] if line["text"].strip() == "PleaseturntopageA4"
+        )
+        target["text"] = "PleaseturntopageA12"
+
+        after = sorted(
+            tuple(r["all_pages"]) for r in derive_article_map(perturbed, self.cache_path)
+            if len(r["all_pages"]) > 1
+        )
+        self.assertEqual(after.count((1, 4)), 1)
+        self.assertEqual(after.count((1, 12)), 1)
+        self.assertNotEqual(before, after)
+
     def test_type_accuracy_beats_the_model_baseline(self) -> None:
         """Derived types beat the measured Jev baseline on the reference issue.
 
@@ -357,6 +385,58 @@ class FailLoudTests(unittest.TestCase):
         items = {1: [{"start_line": line["id"], "kind": "telegram", "first_line": line["text"]}]}
         with self.assertRaises(TracerCompilationError):
             assemble(items, natives)
+
+
+SECOND_ISSUE = Path("/Users/dmus/Documents/deep-reading/second-issue-pilot-2026-10-10")
+
+
+@unittest.skipUnless(
+    (SECOND_ISSUE / "evidence").is_dir(), "second issue pages not present"
+)
+class SecondIssueScaleTests(unittest.TestCase):
+    """Scale check on a larger, different issue — a smoke check, not parity.
+
+    There is no golden article map for this issue, so nothing here asserts item
+    counts. What it does assert is that the parts that must generalise do: the
+    folio index covers every page across five stacks, the jump markers pair up,
+    and the column grid recovers on editorial pages.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from tracer.article_map import load_natives_from_pilot
+
+        cls.natives = load_natives_from_pilot(SECOND_ISSUE)
+
+    def test_issue_is_larger_than_the_reference(self) -> None:
+        self.assertGreaterEqual(len(self.natives), 55)
+
+    def test_folio_index_covers_every_page_and_every_stack(self) -> None:
+        from tracer.article_map import _folio_index
+
+        index = _folio_index(self.natives)
+        self.assertEqual(len(index), len(self.natives))
+        stacks = {stack for stack, _folio_no in index}
+        self.assertEqual(stacks, {"A", "B", "C", "D", "R"})
+
+    def test_jump_markers_pair_up(self) -> None:
+        from tracer.article_map import _continuation_markers
+
+        forward = sum(len(_continuation_markers(p)["forward"]) for p in self.natives.values())
+        backward = sum(len(_continuation_markers(p)["backward"]) for p in self.natives.values())
+        self.assertEqual(forward, 11)
+        self.assertEqual(backward, 11)
+
+    def test_column_grid_recovers_on_editorial_pages(self) -> None:
+        from tracer.article_map import _column_grid, _is_ad_page
+
+        missing = [
+            page
+            for page, native in self.natives.items()
+            if not _column_grid(native) and not _is_ad_page(native)
+        ]
+        # One dense data page (commodities/ag tables) has no body-text columns.
+        self.assertLessEqual(len(missing), 1, f"pages without a grid: {missing}")
 
 
 if __name__ == "__main__":
