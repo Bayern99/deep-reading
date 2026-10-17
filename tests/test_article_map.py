@@ -383,6 +383,103 @@ class ReferenceParityTests(unittest.TestCase):
 
 
 @unittest.skipUnless(HAS_DATA, "pinned pilot dataset required")
+class DerivedParagraphTests(unittest.TestCase):
+    """Paragraph starts are printed: indent, subhead size, drop cap (ADR 0004)."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        from tracer.article_map import _line_index, load_natives_from_pilot
+
+        cls.natives = load_natives_from_pilot(PILOT_ROOT)
+        cls.line_index = _line_index(cls.natives)
+        inventory = json.loads((PILOT_ROOT / "inventory.json").read_text(encoding="utf-8"))
+        cls.articles = {a["id"]: a for a in inventory["articles"]}
+
+    def _line_ids(self, article_id: str) -> list[str]:
+        seen: set[str] = set()
+        ids: list[str] = []
+        for paragraph in self.articles[article_id].get("paragraphs") or []:
+            for line_id in paragraph.get("native_line_ids") or []:
+                if line_id not in seen:
+                    seen.add(line_id)
+                    ids.append(line_id)
+        return ids
+
+    def test_printed_indents_recover_the_reference_boundaries(self) -> None:
+        """A reader line set splits into the reference issue's paragraphs.
+
+        The reference inventory is the only anchor: it names each paragraph's
+        lines. Measured 2026-10-17: 1086 of 1097 boundaries correct (99.0%),
+        1086 of 1106 recovered (98.2%).
+        """
+        from tracer.article_map import paragraphs_from_lines
+
+        matched = wrong = missed = 0
+        for article in self.articles.values():
+            paragraphs = paragraphs_from_lines(
+                self.natives, self._line_ids(article["id"]), line_index=self.line_index
+            )
+            predicted = {
+                p["native_line_ids"][0] for p in paragraphs if p["native_line_ids"]
+            }
+            golden = {
+                (p.get("native_line_ids") or [None])[0]
+                for p in article.get("paragraphs") or []
+            }
+            golden.discard(None)
+            matched += len(predicted & golden)
+            wrong += len(predicted - golden)
+            missed += len(golden - predicted)
+        self.assertGreaterEqual(
+            matched / (matched + wrong), 0.985, f"{wrong} extra boundaries"
+        )
+        self.assertGreaterEqual(
+            matched / (matched + missed), 0.975, f"{missed} missed boundaries"
+        )
+
+    def test_a_figure_wrap_does_not_split_the_paragraph(self) -> None:
+        """A narrowed column's 10pt indent is measured from the wrap, not the page grid.
+
+        Page 10's last column is narrowed to x=566 by a chart; a paragraph inside
+        the wrap starts at 576.8, which the page grid reads as a 40pt inset.
+        """
+        from tracer.article_map import paragraphs_from_lines
+
+        paragraphs = paragraphs_from_lines(
+            self.natives,
+            self._line_ids("PILOT-A1-CHINA-YOUTH"),
+            line_index=self.line_index,
+        )
+        starts = {p["native_line_ids"][0] for p in paragraphs if p["native_line_ids"]}
+        self.assertNotIn("p10-l0438", starts)
+        wrapped = next(
+            p for p in paragraphs if "p10-l0438" in p["native_line_ids"]
+        )
+        self.assertIn("p10-l0437", wrapped["native_line_ids"])
+
+    def test_reading_pass_lines_become_paragraphs(self) -> None:
+        """The map carries paragraphs only when the pass names an item's lines."""
+        from tracer.article_map import assemble
+
+        article = self.articles["PILOT-A2-HOMES"]
+        first = article["paragraphs"][0]["native_line_ids"][0]
+        item = {
+            "start_line": first,
+            "kind": "article",
+            "first_line": article["paragraphs"][0]["text"][:30],
+            "lines": self._line_ids("PILOT-A2-HOMES"),
+            "section": "U.S. News",
+        }
+        records = assemble({2: [item]}, self.natives)
+        record = next(r for r in records if r["start_line_id"] == first)
+        self.assertEqual(record["regions_source"], "reading_pass")
+        self.assertEqual(len(record["paragraphs"]), len(article["paragraphs"]))
+        for paragraph in record["paragraphs"]:
+            self.assertTrue(paragraph["native_regions"])
+            self.assertTrue(paragraph["regions"])
+
+
+@unittest.skipUnless(HAS_DATA, "pinned pilot dataset required")
 class FailLoudTests(unittest.TestCase):
     def test_unknown_section_raises(self) -> None:
         natives = load_natives_from_pilot(PILOT_ROOT)

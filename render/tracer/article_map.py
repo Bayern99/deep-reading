@@ -748,8 +748,23 @@ def story_regions(
     return regions
 
 
+def _line_index(
+    natives: dict[int, dict[str, Any]],
+) -> dict[str, tuple[int, dict[str, Any], dict[str, Any]]]:
+    index: dict[str, tuple[int, dict[str, Any], dict[str, Any]]] = {}
+    for page_no, native in natives.items():
+        number = int(native.get("page") or page_no)
+        for line in native.get("lines") or ():
+            if line.get("id"):
+                index[str(line["id"])] = (number, native, line)
+    return index
+
+
 def regions_from_lines(
-    natives: dict[int, dict[str, Any]], line_ids: list[str]
+    natives: dict[int, dict[str, Any]],
+    line_ids: list[str],
+    *,
+    line_index: dict[str, tuple[int, dict[str, Any], dict[str, Any]]] | None = None,
 ) -> list[dict[str, Any]]:
     """Exact rectangles from the reader's line set.
 
@@ -758,12 +773,7 @@ def regions_from_lines(
     from where the printed text happens to stop. This covers every page the lines
     sit on, so continuation pages need no separate band construction.
     """
-    index: dict[str, tuple[int, dict[str, Any], dict[str, Any]]] = {}
-    for page_no, native in natives.items():
-        number = int(native.get("page") or page_no)
-        for line in native.get("lines") or ():
-            if line.get("id"):
-                index[str(line["id"])] = (number, native, line)
+    index = line_index if line_index is not None else _line_index(natives)
 
     per_page: dict[int, tuple[dict[str, Any], list[dict[str, Any]]]] = {}
     for line_id in line_ids:
@@ -835,9 +845,248 @@ def regions_from_lines(
     return regions
 
 
-#: Type confidence is not a model score: the Reading Pass answers a kind, and this
-#: checks it against what the page structurally shows. A printed rubric that decides
-#: the type is certain; a judged kind that contradicts the printed structure is not.
+# --- paragraphs from printed indents (ADR 0004) ------------------------------
+
+#: A paragraph's first line is indented about 10pt from the body edge; a larger
+#: offset is a figure wrap or a nested column, not a paragraph start.
+_PARAGRAPH_INDENT_PT = (6.0, 20.0)
+#: Subheads are set above body size (8.4pt on the reference issue) and below
+#: display size.
+_SUBHEAD_SIZE_PT = (10.0, 16.0)
+#: A single display-size letter is a drop cap, and it starts its paragraph.
+_DROP_CAP_MIN_SIZE = 20.0
+#: A wrapped column moves its body edge mid-column, so the local edge has to come
+#: from the lines themselves rather than from the page grid.
+_PARAGRAPH_EDGE_WINDOW = 5
+
+
+def _column_spans(grid: list[float], width: float | None) -> list[tuple[float, float]]:
+    """Printed content span per column.
+
+    The gutter is about 10pt; the last column ends at the page's right margin.
+    """
+    spans: list[tuple[float, float]] = []
+    for i, left in enumerate(grid):
+        right = grid[i + 1] - 10.0 if i + 1 < len(grid) else (width or left + 124.0) - 40.0
+        spans.append((left, right))
+    return spans
+
+
+def _span_column(x: float, grid: list[float], width: float | None) -> int:
+    """The column whose printed content contains ``x``.
+
+    Nearest-origin snaps a word fragment near the measure's right edge into the
+    next column — a 114pt measure on a 124pt pitch puts the measure's last 30pt
+    closer to the next origin — which turns one justified line into two.
+    """
+    if not grid:
+        return 0
+    for i, (left, right) in enumerate(_column_spans(grid, width)):
+        if left - 2.0 <= x <= right + 4.0:
+            return i
+    return min(range(len(grid)), key=lambda i: abs(x - grid[i]))
+
+
+def _story_page_grids(
+    natives: dict[int, dict[str, Any]],
+    lines_by_page: dict[int, list[dict[str, Any]]],
+) -> dict[int, list[float]]:
+    """Column grid per page from the story's own lines, falling back to the page.
+
+    One page can carry two column systems (page 12 has a five-column story and a
+    three-column one), and a page-wide grid merges them.
+    """
+    grids: dict[int, list[float]] = {}
+    for page, lines in lines_by_page.items():
+        band = {
+            "page": page,
+            "width": natives[page].get("width"),
+            "height": natives[page].get("height"),
+            "lines": lines,
+        }
+        grids[page] = column_grid(band) or column_grid(natives[page])
+    return grids
+
+
+def _printed_lines(
+    natives: dict[int, dict[str, Any]],
+    grids: dict[int, list[float]],
+    lines_by_page: dict[int, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    """The story's vector lines merged into printed lines, in reading order.
+
+    A justified line is split into style runs and word fragments; a paragraph is
+    made of printed lines, not fragments. Fragments sharing a baseline belong to
+    one printed line when they sit in the same printed column.
+    """
+    by_baseline: dict[tuple[int, float], list[dict[str, Any]]] = {}
+    for page, lines in lines_by_page.items():
+        for line in lines:
+            by_baseline.setdefault((page, round(float(line["bbox"][1]), 1)), []).append(line)
+
+    printed: list[dict[str, Any]] = []
+    for (page, _y), lines in by_baseline.items():
+        grid = grids.get(page) or []
+        width = natives[page].get("width")
+        lines.sort(key=lambda line: float(line["bbox"][0]))
+        run = [lines[0]]
+        for line in lines[1:]:
+            if _span_column(float(run[-1]["bbox"][0]), grid, width) != _span_column(
+                float(line["bbox"][0]), grid, width
+            ):
+                printed.append(_printed_line(page, grid, width, run))
+                run = [line]
+            else:
+                run.append(line)
+        printed.append(_printed_line(page, grid, width, run))
+    printed.sort(key=lambda r: (r["page"], r["column"], r["y"], r["x0"]))
+    return printed
+
+
+def _printed_line(
+    page: int, grid: list[float], width: float | None, lines: list[dict[str, Any]]
+) -> dict[str, Any]:
+    x0 = float(lines[0]["bbox"][0])
+    column = _span_column(x0, grid, width)
+    return {
+        "page": page,
+        "column": column,
+        "origin": grid[column] if column < len(grid) else x0,
+        "x0": x0,
+        "x1": max(float(line["bbox"][2]) for line in lines),
+        "y": round(float(lines[0]["bbox"][1]), 1),
+        "lines": lines,
+    }
+
+
+def _body_edge(printed: list[dict[str, Any]], k: int) -> float:
+    """Local unindented edge of the current column run."""
+    line = printed[k]
+    previous = [
+        p["x0"]
+        for p in printed[max(0, k - _PARAGRAPH_EDGE_WINDOW):k]
+        if p["page"] == line["page"] and p["column"] == line["column"]
+    ]
+    return min(previous) if previous else float(line["origin"])
+
+
+def paragraphs_from_lines(
+    natives: dict[int, dict[str, Any]],
+    line_ids: list[str],
+    *,
+    line_index: dict[str, tuple[int, dict[str, Any], dict[str, Any]]] | None = None,
+) -> list[dict[str, Any]]:
+    """Split a story's reader-named lines into paragraphs.
+
+    The boundaries are printed facts: a first-line indent, a subhead's type size,
+    or a drop cap (ADR 0004). Each paragraph carries its page, column and bbox, so
+    the composer can order paragraphs and anchor figures without the hand-made
+    inventory. Returns ``[]`` when the line set binds to nothing.
+
+    A figure wrap and a nested column move the body edge mid-column; measuring the
+    indent against the local edge keeps those lines in their paragraph instead of
+    splitting them. A paragraph runs longer than the edge window is the limit of
+    that local view.
+    """
+    index = line_index if line_index is not None else _line_index(natives)
+    lines_by_page: dict[int, list[dict[str, Any]]] = {}
+    for line_id in line_ids:
+        hit = index.get(str(line_id))
+        if hit is not None:
+            lines_by_page.setdefault(hit[0], []).append(hit[2])
+    if not lines_by_page:
+        return []
+
+    grids = _story_page_grids(natives, lines_by_page)
+    printed = _printed_lines(natives, grids, lines_by_page)
+
+    groups: list[list[dict[str, Any]]] = []
+    for k, line in enumerate(printed):
+        text = "".join(
+            (part.get("text") or "").strip() for part in line["lines"]
+        ).strip()
+        size = _dominant_char(line["lines"][0])[1]
+        is_subhead = _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
+        drop_cap = (
+            len(text) == 1 and text.isupper() and size > _DROP_CAP_MIN_SIZE
+        )
+        starts = k == 0
+        if k and not starts:
+            previous = printed[k - 1]
+            previous_size = _dominant_char(previous["lines"][0])[1]
+            previous_subhead = (
+                _SUBHEAD_SIZE_PT[0] <= previous_size <= _SUBHEAD_SIZE_PT[1]
+            )
+            # A subhead is its own block; the paragraph after it starts fresh
+            # even when that first line is not indented.
+            if is_subhead != previous_subhead:
+                starts = True
+            elif drop_cap:
+                starts = True
+            else:
+                indent = line["x0"] - _body_edge(printed, k)
+                starts = _PARAGRAPH_INDENT_PT[0] <= indent <= _PARAGRAPH_INDENT_PT[1]
+        if starts:
+            groups.append([])
+        groups[-1].append(line)
+
+    paragraphs: list[dict[str, Any]] = []
+    for n, group in enumerate(groups, 1):
+        size = _dominant_char(group[0]["lines"][0])[1]
+        is_subhead = _SUBHEAD_SIZE_PT[0] <= size <= _SUBHEAD_SIZE_PT[1]
+        boxes: dict[tuple[int, int], dict[str, Any]] = {}
+        native_regions: list[dict[str, Any]] = []
+        for line in group:
+            left = round(min(float(part["bbox"][0]) for part in line["lines"]), 2)
+            top = round(min(float(part["bbox"][1]) for part in line["lines"]), 2)
+            right = round(max(float(part["bbox"][2]) for part in line["lines"]), 2)
+            bottom = round(max(float(part["bbox"][3]) for part in line["lines"]), 2)
+            native_regions.append(
+                {
+                    "line_id": line["lines"][0].get("id"),
+                    "page": line["page"],
+                    "bbox_points_top_left": [left, top, right, bottom],
+                }
+            )
+            key = (line["page"], line["column"])
+            box = boxes.get(key)
+            if box is None:
+                boxes[key] = {
+                    "page": line["page"],
+                    "column_origin": round(float(line["origin"]), 2),
+                    "bbox": [left, top, right, bottom],
+                }
+            else:
+                box["bbox"] = [
+                    min(box["bbox"][0], left),
+                    min(box["bbox"][1], top),
+                    max(box["bbox"][2], right),
+                    max(box["bbox"][3], bottom),
+                ]
+        paragraphs.append(
+            {
+                "id": f"p{n}",
+                "type": "subheading" if is_subhead else "paragraph",
+                "text": " ".join(
+                    (part.get("text") or "").strip()
+                    for line in group
+                    for part in line["lines"]
+                    if (part.get("text") or "").strip()
+                ),
+                "native_line_ids": [
+                    part.get("id") for line in group for part in line["lines"]
+                ],
+                "native_regions": native_regions,
+                "regions": sorted(
+                    boxes.values(),
+                    key=lambda box: (box["page"], box["bbox"][1], box["bbox"][0]),
+                ),
+            }
+        )
+    return paragraphs
+
+
+
 TYPE_CONFIDENCE_PRINTED = 1.0
 TYPE_CONFIDENCE_JUDGED = 0.9
 TYPE_CONFIDENCE_FLAGGED = 0.5
@@ -1171,8 +1420,10 @@ def assemble(
     """
     records: list[dict[str, Any]] = []
     continuations: dict[str, list[str]] = {}
+    line_ids_by_record: dict[str, list[str]] = {}
     used_ids: set[str] = set()
     folio_index = _folio_index(natives)
+    line_index = _line_index(natives)
 
     for page in sorted(reader_items_by_page):
         page_native = natives.get(page)
@@ -1296,7 +1547,8 @@ def assemble(
                 str(x).strip() for x in (item.get("lines") or ())
             )
             if reader_lines:
-                regions = regions_from_lines(natives, reader_lines)
+                regions = regions_from_lines(natives, reader_lines, line_index=line_index)
+                line_ids_by_record[rec_id] = list(dict.fromkeys(reader_lines))
                 source = "reading_pass_blocks" if from_blocks else "reading_pass"
             else:
                 regions = story_regions(
@@ -1330,11 +1582,21 @@ def assemble(
         if not named:
             continue
         record["regions"] = sorted(
-            record["regions"] + regions_from_lines(natives, named),
+            record["regions"]
+            + regions_from_lines(natives, named, line_index=line_index),
             key=lambda r: (r["page"], r["bbox"][1], r["bbox"][0]),
+        )
+        line_ids_by_record[record["id"]] = list(
+            dict.fromkeys([*line_ids_by_record.get(record["id"], []), *named])
         )
         record["regions_source"] = "reading_pass"
     _attach_continuation_regions(records, natives, skip={r["id"] for r in records if r["regions_source"] != "geometry" and len({g["page"] for g in r["regions"]}) >= len(r["all_pages"])})
+    for record in records:
+        line_ids = line_ids_by_record.get(record["id"])
+        if line_ids:
+            record["paragraphs"] = paragraphs_from_lines(
+                natives, line_ids, line_index=line_index
+            )
     return records
 
 
