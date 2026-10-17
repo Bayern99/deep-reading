@@ -362,6 +362,18 @@ class ReferenceParityTests(unittest.TestCase):
         self.assertEqual(stable_run_fingerprint(first), stable_run_fingerprint(second))
 
 
+    def test_exact_regions_are_required_when_asked(self) -> None:
+        """The compile seam refuses an inferred column set rather than shipping it."""
+        with self.assertRaisesRegex(TracerCompilationError, "inferred regions"):
+            derive_article_map(self.natives, self.cache_path, require_exact_regions=True)
+
+    def test_a_missing_reading_pass_cache_raises(self) -> None:
+        """An issue with no pass is a missing input, not a zero-item issue."""
+        natives = load_natives_from_pilot(SECOND_ISSUE)
+        with self.assertRaisesRegex(TracerCompilationError, "no Reading Pass cache"):
+            derive_article_map(natives, pilot_root=SECOND_ISSUE)
+
+
 @unittest.skipUnless(HAS_DATA, "pinned pilot dataset required")
 class FailLoudTests(unittest.TestCase):
     def test_unknown_section_raises(self) -> None:
@@ -548,6 +560,76 @@ class ReaderCacheContractTests(unittest.TestCase):
     def test_absent_lines_leave_the_item_unchanged(self) -> None:
         pages = self._collect({"start_line": "p7-l0001", "kind": "article"})
         self.assertNotIn("lines", pages["7"][0])
+
+
+class TypeEvidenceTests(unittest.TestCase):
+    """A type is confident when the page agrees with it, not because a model said so."""
+
+    def test_printed_rubric_makes_the_type_certain(self) -> None:
+        from tracer.article_map import _type_evidence
+
+        confidence, reasons = _type_evidence("Markets / Stock Spotlight", "brief", [], [7])
+        self.assertEqual(confidence, 1.0)
+        self.assertEqual(reasons, [])
+
+    def test_rubric_contradicting_the_judged_kind_is_flagged(self) -> None:
+        from tracer.article_map import _type_evidence
+
+        confidence, reasons = _type_evidence("Markets / Stock Spotlight", "article", [{"page": 7, "bbox": [40.0, 100.0, 160.0, 900.0], "column_origin": 40.0}], [7])
+        self.assertEqual(confidence, 0.5)
+        self.assertEqual(reasons, ["rubric-disagrees"])
+
+    def test_article_with_a_tiny_printed_extent_is_flagged(self) -> None:
+        from tracer.article_map import _type_evidence
+
+        tiny = [{"page": 7, "bbox": [40.0, 100.0, 160.0, 108.0], "column_origin": 40.0}]
+        confidence, reasons = _type_evidence("U.S. News", "article", tiny, [7])
+        self.assertEqual(confidence, 0.5)
+        self.assertEqual(reasons, ["article-but-tiny"])
+
+    def test_brief_spanning_two_pages_is_flagged(self) -> None:
+        from tracer.article_map import _type_evidence
+
+        big = [{"page": 7, "bbox": [40.0, 100.0, 160.0, 900.0], "column_origin": 40.0}]
+        confidence, reasons = _type_evidence("U.S. News", "brief", big, [7, 9])
+        self.assertEqual(confidence, 0.5)
+        self.assertEqual(reasons, ["brief-but-multi-page"])
+
+    def test_a_judged_type_the_page_does_not_contradict_stands(self) -> None:
+        from tracer.article_map import _type_evidence
+
+        big = [{"page": 7, "bbox": [40.0, 100.0, 160.0, 900.0], "column_origin": 40.0}]
+        confidence, reasons = _type_evidence("U.S. News", "article", big, [7])
+        self.assertEqual(confidence, 0.9)
+        self.assertEqual(reasons, [])
+
+
+class BlockAnswerTests(unittest.TestCase):
+    """A Reading Pass may answer in blocks; the lines follow by containment."""
+
+    @staticmethod
+    def _page() -> dict:
+        def line(line_id: str, y: float) -> dict:
+            return {
+                "id": line_id,
+                "bbox": [100.0, y, 300.0, y + 12.0],
+                "text": "ordinary body text",
+                "chars": [{"bbox": [100.0, y, 300.0, y + 12.0], "c": "o", "font": "ExchangeBook", "size": 8.4}],
+            }
+
+        return {"page": 7, "width": 800.0, "height": 1000.0, "lines": [line("l1", 100.0), line("l2", 120.0)]}
+
+    def test_the_named_block_contributes_its_lines(self) -> None:
+        from tracer.article_map import lines_from_blocks
+
+        blocks = [(0, "doc_title", [90.0, 95.0, 310.0, 140.0])]
+        self.assertEqual(lines_from_blocks(self._page(), blocks, [0]), ["l1", "l2"])
+
+    def test_an_unnamed_block_contributes_nothing(self) -> None:
+        from tracer.article_map import lines_from_blocks
+
+        blocks = [(0, "doc_title", [90.0, 95.0, 310.0, 140.0])]
+        self.assertEqual(lines_from_blocks(self._page(), blocks, [9]), [])
 
 
 if __name__ == "__main__":

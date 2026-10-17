@@ -13,6 +13,11 @@ Reader input contract, per page:
 
 ``kind`` must be one of ``READER_KINDS``. Ad pages carry no items.
 
+Either ``lines`` or ``blocks`` may name what the item owns. ``blocks`` are MinerU
+middle-json block indices, which ask the pass for paragraphs rather than for every
+line: the reference issue has about 100 blocks against 525 lines on a dense front
+page. Give one or the other, never both.
+
 ``lines`` is optional but is the difference between exact and approximate
 placement: it names every line the item owns, on every page it runs on. Without
 it the map falls back to inferring rectangles from where the printed text stops,
@@ -64,6 +69,18 @@ def collect(reader_dir: str | Path) -> dict[str, list[dict[str, Any]]]:
                 "kind": kind,
                 "first_line": str(item.get("first_line") or "").strip(),
             }
+            raw_blocks = item.get("blocks")
+            if raw_blocks is not None:
+                if not isinstance(raw_blocks, list):
+                    raise ValueError(f"{path.name}: blocks must be a list")
+                blocks = [int(value) for value in raw_blocks]
+                if not blocks:
+                    raise ValueError(f"{path.name}: blocks must not be empty")
+                if item.get("lines"):
+                    raise ValueError(
+                        f"{path.name}: give lines or blocks for {line_id!r}, not both"
+                    )
+                entry["blocks"] = blocks
             raw_lines = item.get("lines")
             if raw_lines is not None:
                 if not isinstance(raw_lines, list):

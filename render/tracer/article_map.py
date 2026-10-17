@@ -817,6 +817,111 @@ def regions_from_lines(
     return regions
 
 
+#: Type confidence is not a model score: the Reading Pass answers a kind, and this
+#: checks it against what the page structurally shows. A printed rubric that decides
+#: the type is certain; a judged kind that contradicts the printed structure is not.
+TYPE_CONFIDENCE_PRINTED = 1.0
+TYPE_CONFIDENCE_JUDGED = 0.9
+TYPE_CONFIDENCE_FLAGGED = 0.5
+#: A story typed `article` whose printed extent on its pages is under this many
+#: points is contradicting its own type; the reference issue has three.
+_TINY_ARTICLE_POINTS = 120.0
+
+
+def _type_evidence(
+    section: str,
+    kind: str,
+    regions: list[dict[str, Any]],
+    all_pages: list[int],
+) -> tuple[float, list[str]]:
+    """Judge agreement between an item's type and what the page prints.
+
+    The Reading Pass answers `kind`; this does not re-ask it. It checks the answer
+    against printed structure, so a host reviews the items whose type contradicts
+    the page rather than the whole issue.
+    """
+    rubric = section.split(" / ")[-1] if " / " in section else section
+    printed = _TYPE_FROM_RUBRIC.get(_norm_rubric(rubric))
+    extent = sum(float(r["bbox"][3]) - float(r["bbox"][1]) for r in regions)
+    reasons: list[str] = []
+    if printed is not None and printed != kind:
+        reasons.append("rubric-disagrees")
+    if kind == "brief" and len(all_pages) > 1:
+        reasons.append("brief-but-multi-page")
+    if kind == "article" and extent < _TINY_ARTICLE_POINTS:
+        reasons.append("article-but-tiny")
+    if reasons:
+        return TYPE_CONFIDENCE_FLAGGED, reasons
+    if printed is not None:
+        return TYPE_CONFIDENCE_PRINTED, []
+    return TYPE_CONFIDENCE_JUDGED, []
+
+
+def default_mineru_dir(pilot_root: str | Path) -> Path:
+    """Where the MinerU middle-json pages sit beside an issue's other inputs."""
+    return Path(pilot_root) / "evidence"
+
+
+def load_mineru_blocks(root: str | Path) -> dict[int, list[tuple[int, str, list[float]]]]:
+    """Per page, MinerU's blocks in reading order: (index, type, bbox in points).
+
+    Optional input. The Reading Pass may answer `blocks` instead of `lines` when
+    these exist, which asks it for paragraphs rather than for every line.
+    """
+    out: dict[int, list[tuple[int, str, list[float]]]] = {}
+    for path in sorted(Path(root).glob("p*-mineru.json")):
+        match = re.search(r"(\d+)", path.stem)
+        if not match:
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        layout = (data.get("extensions") or {}).get("docvortex_layout") or {}
+        size = (layout.get("pages") or [{}])[0]
+        width = float(size.get("width_pt") or 0.0)
+        height = float(size.get("height_pt") or 0.0)
+        if not width or not height:
+            continue
+        blocks = []
+        for block in (data.get("pages") or [{}])[0].get("blocks") or ():
+            bbox = block.get("bbox") or []
+            if len(bbox) != 4:
+                continue
+            blocks.append(
+                (
+                    int(block.get("index") or 0),
+                    str(block.get("type") or ""),
+                    [bbox[0] * width, bbox[1] * height, bbox[2] * width, bbox[3] * height],
+                )
+            )
+        out[int(match.group(1))] = sorted(blocks)
+    return out
+
+
+def lines_from_blocks(
+    page_native: dict[str, Any],
+    blocks: list[tuple[int, str, list[float]]],
+    indices: list[int],
+) -> list[str]:
+    """The native lines inside the named blocks, by containment.
+
+    Measured on the reference issue: block boxes contain 97% of a page's text
+    lines, so this is how a Reading Pass answer in blocks becomes a line set.
+    """
+    wanted = [bbox for index, _type, bbox in blocks if index in set(indices)]
+    if not wanted:
+        return []
+    out: list[str] = []
+    for line in page_native.get("lines") or ():
+        if not (line.get("text") or "").strip():
+            continue
+        cx = (float(line["bbox"][0]) + float(line["bbox"][2])) / 2
+        cy = (float(line["bbox"][1]) + float(line["bbox"][3])) / 2
+        for x0, y0, x1, y1 in wanted:
+            if x0 - 1 <= cx <= x1 + 1 and y0 - 2 <= cy <= y1 + 2:
+                out.append(str(line.get("id")))
+                break
+    return out
+
+
 def continuation_regions(page_native: dict[str, Any], headline: dict[str, Any],
                          next_top: float | None) -> list[dict[str, Any]]:
     """The story's rectangles on a page it continues onto.
@@ -1014,6 +1119,7 @@ def _is_standalone_caption(first_line: str) -> bool:
 def assemble(
     reader_items_by_page: dict[int, list[dict[str, Any]]],
     natives: dict[int, dict[str, Any]],
+    mineru_pages: dict[int, list[tuple[int, str, list[float]]]] | None = None,
 ) -> list[dict[str, Any]]:
     """Bind reader items to vector lines and emit map records.
 
@@ -1140,6 +1246,26 @@ def assemble(
             kind = _type_from_section(section, kind)
             rec_id = _make_id(page, first_line, kind, used_ids)
             reader_lines = [str(x).strip() for x in (item.get("lines") or ()) if str(x).strip()]
+            from_blocks = False
+            if not reader_lines:
+                block_indices = [int(x) for x in (item.get("blocks") or ())]
+                if block_indices and mineru_pages:
+                    reader_lines = lines_from_blocks(
+                        page_native, mineru_pages.get(page) or [], block_indices
+                    )
+                    from_blocks = bool(reader_lines)
+            if reader_lines:
+                regions = regions_from_lines(natives, reader_lines)
+                source = "reading_pass_blocks" if from_blocks else "reading_pass"
+            else:
+                regions = story_regions(
+                    page_native,
+                    start_line,
+                    marker,
+                    [entry for entry in page_starts if entry[0] is not start_line],
+                )
+                source = "geometry"
+            confidence, review = _type_evidence(section, kind, regions, all_pages)
             records.append(
                 {
                     "id": rec_id,
@@ -1147,19 +1273,12 @@ def assemble(
                     "start_page": page,
                     "section": section,
                     "type": kind,
+                    "type_confidence": confidence,
+                    "needs_review": review,
                     "all_pages": all_pages,
                     "lead_position": _lead_position(page_native, start_line),
-                    "regions": (
-                        regions_from_lines(natives, reader_lines)
-                        if reader_lines
-                        else story_regions(
-                            page_native,
-                            start_line,
-                            marker,
-                            [entry for entry in page_starts if entry[0] is not start_line],
-                        )
-                    ),
-                    "regions_source": "reader_lines" if reader_lines else "geometry",
+                    "regions": regions,
+                    "regions_source": source,
                     "continuation_evidence": evidence,
                     "start_line_id": start_line.get("id"),
                 }
@@ -1187,14 +1306,42 @@ def derive_article_map(
     reader_cache: str | Path | None = None,
     *,
     pilot_root: str | Path | None = None,
+    mineru_dir: str | Path | None = None,
+    require_exact_regions: bool = False,
 ) -> list[dict[str, Any]]:
-    """Public seam: vector pages + cached reader items -> ownership records."""
+    """Public seam: vector pages + cached reading-pass items -> ownership records.
+
+    ``mineru_dir`` lets a Reading Pass answer in blocks instead of lines; the
+    blocks are mapped back onto native lines by containment. It is optional
+    input, and its absence changes nothing but which unit the pass is asked for.
+
+    ``require_exact_regions`` is the compile-time rule: a record whose regions
+    were inferred from text flow rather than read from the pass raises, because a
+    wrong column set reorders the printed page and the reader sees it. The deriver
+    itself defaults to permissive so a draft can be inspected and reported on.
+    """
     if reader_cache is None:
         if pilot_root is None:
             raise TracerCompilationError("reader cache path required")
         reader_cache = default_reader_cache_path(pilot_root)
+    if mineru_dir is None and pilot_root is not None:
+        candidate = default_mineru_dir(pilot_root)
+        mineru_dir = candidate if any(candidate.glob("p*-mineru.json")) else None
+    if not Path(reader_cache).exists():
+        # A missing pass is a missing input, not an empty issue: deriving from
+        # nothing would produce a zero-item map that looks like a real answer.
+        raise TracerCompilationError(f"no Reading Pass cache at {reader_cache}")
     items = load_reader_cache(reader_cache)
-    return assemble(items, natives)
+    mineru_pages = load_mineru_blocks(mineru_dir) if mineru_dir else {}
+    records = assemble(items, natives, mineru_pages)
+    if require_exact_regions:
+        inferred = [r["id"] for r in records if r["regions_source"] == "geometry"]
+        if inferred:
+            raise TracerCompilationError(
+                f"{len(inferred)} stories have inferred regions; the Reading Pass must "
+                f"name their lines or blocks first: {', '.join(inferred[:5])}"
+            )
+    return records
 
 
 def load_natives_from_pilot(pilot_root: str | Path) -> dict[int, dict[str, Any]]:
