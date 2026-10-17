@@ -208,6 +208,14 @@ def _continuation_markers(page_native: dict[str, Any]) -> dict[str, list[dict[st
     backward: list[dict[str, Any]] = []
     for line in page_native.get("lines") or []:
         raw = re.sub(r"\s+", "", (line.get("text") or "").lower())
+        m = re.search(r"pleaseturn(?:to)?(?:the)?nextpage", raw)
+        if m:
+            forward.append({"line": line, "folio": "next"})
+            continue
+        m = re.search(r"continuedfrom(?:the)?priorpage", raw)
+        if m:
+            backward.append({"line": line, "folio": "prior"})
+            continue
         m = re.search(r"pleaseturntopage([a-z]\d+|one)", raw)
         if m:
             forward.append({"line": line, "folio": m.group(1)})
@@ -422,7 +430,27 @@ def _folio_index(natives: dict[int, dict[str, Any]]) -> dict[tuple[str, int], in
     return index
 
 
-def _resolve_folio(token: str, index: dict[tuple[str, int], int]) -> int | None:
+def _resolve_folio(
+    token: str,
+    index: dict[tuple[str, int], int],
+    *,
+    page: int | None = None,
+    natives: dict[int, dict[str, Any]] | None = None,
+) -> int | None:
+    """Printed marker token -> PDF page.
+
+    ``next`` and ``prior`` are relative markers: the paper names the adjacent
+    page instead of a folio on some spreads. The PDF order is the printed order,
+    so the adjacent page is ``page ± 1``.
+    """
+    token = (token or "").lower()
+    if token in ("next", "prior"):
+        if page is None:
+            return None
+        target = page + 1 if token == "next" else page - 1
+        if natives is not None and target not in natives:
+            return None
+        return target
     parsed = _parse_folio_token(token)
     if not parsed:
         return None
@@ -446,7 +474,7 @@ def _continuation_evidence(
     sb = start_line["bbox"]
     forward: list[tuple[dict[str, Any], int]] = []
     for entry in _continuation_markers(page_native)["forward"]:
-        target = _resolve_folio(entry["folio"], index)
+        target = _resolve_folio(entry["folio"], index, page=page, natives=natives)
         if target is None:
             raise TracerCompilationError(
                 f"page {page}: continuation marker names an unreachable folio "
@@ -470,7 +498,7 @@ def _continuation_evidence(
     target_native = natives.get(target)
     if target_native is not None:
         for entry in _continuation_markers(target_native)["backward"]:
-            origin = _resolve_folio(entry["folio"], index)
+            origin = _resolve_folio(entry["folio"], index, page=target, natives=natives)
             if origin == page:
                 back = entry["line"]
                 evidence.append(
@@ -1518,7 +1546,7 @@ def assemble(
         # Jump markers on this page, resolved through the issue's folio index.
         markers: list[tuple[dict[str, Any], int]] = []
         for entry in _continuation_markers(page_native)["forward"]:
-            target = _resolve_folio(entry["folio"], folio_index)
+            target = _resolve_folio(entry["folio"], folio_index, page=page, natives=natives)
             if target is None:
                 raise TracerCompilationError(
                     f"page {page}: continuation marker names an unreachable folio "
@@ -1581,7 +1609,7 @@ def assemble(
                 target_native = natives.get(target)
                 if target_native is not None:
                     for entry in _continuation_markers(target_native)["backward"]:
-                        if _resolve_folio(entry["folio"], folio_index) == page:
+                        if _resolve_folio(entry["folio"], folio_index, page=target, natives=natives) == page:
                             back = entry["line"]
                             evidence.append(
                                 {

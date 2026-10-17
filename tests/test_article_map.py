@@ -79,6 +79,21 @@ class PrintedRulesTests(unittest.TestCase):
         self.assertTrue(_is_standalone_caption("STANDING TALL"))
         self.assertFalse(_is_standalone_caption("Texas Senate candidate Ken Paxton at the GOP midterm convention"))
 
+    def test_relative_continuation_markers_name_the_adjacent_page(self) -> None:
+        """A spread can print `turn to the next page` / `continued from the prior page`."""
+        from tracer.article_map import _continuation_markers, _resolve_folio
+
+        def line(text: str) -> dict:
+            return {"id": "p2-l1", "text": text, "bbox": [0, 0, 1, 1], "chars": []}
+
+        forward = _continuation_markers({"page": 1, "lines": [line("Pleaseturntothenextpage")]})
+        backward = _continuation_markers({"page": 2, "lines": [line("Continuedfromthepriorpage")]})
+        self.assertEqual(forward["forward"][0]["folio"], "next")
+        self.assertEqual(backward["backward"][0]["folio"], "prior")
+        natives = {1: {}, 2: {}}
+        self.assertEqual(_resolve_folio("next", {}, page=1, natives=natives), 2)
+        self.assertEqual(_resolve_folio("prior", {}, page=2, natives=natives), 1)
+
 
 @unittest.skipUnless(HAS_DATA, "pinned pilot dataset required")
 class ReferenceParityTests(unittest.TestCase):
@@ -541,14 +556,15 @@ class SecondIssueScaleTests(unittest.TestCase):
 
         forward = sum(len(_continuation_markers(p)["forward"]) for p in self.natives.values())
         backward = sum(len(_continuation_markers(p)["backward"]) for p in self.natives.values())
-        self.assertEqual(forward, 11)
-        self.assertEqual(backward, 11)
+        # 11 folio-named markers plus one relative pair (`next` / `prior`).
+        self.assertEqual(forward, 12)
+        self.assertEqual(backward, 12)
 
     def test_reading_pass_derives_the_issue(self) -> None:
         """The 10-10 pass completes: no geometric or placement-less item.
 
         There is no golden map for this issue; this is the scale check, not
-        parity. 48 content pages produced 140 items and 135 records.
+        parity. 48 content pages produced 138 items and 132 records.
         """
         cache = default_reader_cache_path(SECOND_ISSUE)
         if not cache.exists():

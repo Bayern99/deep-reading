@@ -58,11 +58,11 @@ The same pass was run on the held-out issue after parsing it.
 - **MinerU parse:** all 55 pages parsed with the pinned MinerU 4.0.7 local
   server (`structured_content`/middle schema 2.0), written beside the issue's
   other evidence. Seven ad pages were skipped by the pass.
-- **Reading Pass:** 48 content pages, 140 enumerated items. Reprinted
+- **Reading Pass:** 48 content pages, 138 enumerated items. Reprinted
   continuation headlines were left unassigned rather than enumerated as new
-  items.
-- **Derivation:** 135 records, **0 geometric** and **0 placement-less**, 133 with
-  derived paragraphs (1,591 paragraphs), 9 multi-page stories, 1 flagged.
+  items; market-data table sections were excluded.
+- **Derivation:** 132 records, **0 geometric** and **0 placement-less**, 130 with
+  derived paragraphs (1,536 paragraphs), 10 multi-page stories, 1 flagged.
 - **Section vocabulary:** the issue prints weekend sections the reference map
   did not: `Review`, `Fall Books`, `Style & Fashion`, `Wellness & Beauty`,
   `Eating & Drinking`, `Design & Decorating`, `Adventure & Travel`. All map to
@@ -75,11 +75,12 @@ The same pass was run on the held-out issue after parsing it.
 Known limits of this scale run, not defects in the deriver:
 
 - Market-data pages (21, 22) enumerate their table sections as `sidebar` items;
-  they derive a region but no paragraphs.
-- Two continuation markers read "Continued from the prior page" and name no
-  folio, so `_continuation_markers` cannot resolve them; those stories are
-  enumerated on the page where the reprint appears. Nine multi-page stories are
-  resolved against eleven printed markers.
+  those whose blocks are all `table`/`chart` are dropped before the cache is
+  written. Fifteen legitimate sidebars remain.
+- Two forward markers sit on ad pages (35, 45) that the pass does not read, so
+  10 multi-page stories are resolved against 11 printed markers. Relative
+  markers (`turn to the next page` / `continued from the prior page`) resolve to
+  the adjacent PDF page.
 - Continuation regions added by `_attach_continuation_regions` are still
   geometric; the record's `regions_source` reflects its start page.
 
@@ -93,5 +94,5 @@ The second issue's cache is
 - Reference issue: no record is geometric. The ticket's
   `require_exact_regions=True` wording is stale; ADR 0004 removed that compile
   gate, and the equivalent check is `regions_source != "geometry"`.
-- Second issue: the deriver completes and reports 135 items and 1 flagged
+- Second issue: the deriver completes and reports 132 items and 1 flagged
   record, which unblocks the scale check in #12.
