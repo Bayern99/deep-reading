@@ -439,5 +439,116 @@ class SecondIssueScaleTests(unittest.TestCase):
         self.assertLessEqual(len(missing), 1, f"pages without a grid: {missing}")
 
 
+class ReaderLineRegionTests(unittest.TestCase):
+    """Regions follow the reader's line set, not an inference from text flow.
+
+    A reader answers which lines an item owns. The rectangle then follows from the
+    column grid and those lines, which is the only exact route: which columns a
+    story occupies is not printed, and inferring it from where text stops
+    reproduced 39% of the reference issue's rectangles.
+    """
+
+    @staticmethod
+    def _line(line_id: str, x0: float, y0: float, x1: float, y1: float) -> dict:
+        return {
+            "id": line_id,
+            "bbox": [x0, y0, x1, y1],
+            "text": "ordinary body text",
+            "chars": [{"bbox": [x0, y0, x1, y1], "c": "o", "font": "ExchangeBook", "size": 8.4}],
+        }
+
+    def _page(self, lines: list[dict]) -> dict:
+        return {"page": 7, "height": 1600, "lines": lines}
+
+    def test_one_rectangle_per_column_sharing_the_band(self) -> None:
+        from tracer.article_map import regions_from_lines
+
+        lines = [
+            self._line(f"c0-{i}", 40.0, 100.0 + 12 * i, 178.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [
+            self._line(f"c1-{i}", 188.0, 100.0 + 12 * i, 326.0, 112.0 + 12 * i)
+            for i in range(6)
+        ]
+        regions = regions_from_lines({7: self._page(lines)}, [l["id"] for l in lines])
+
+        self.assertEqual(
+            [r["bbox"] for r in regions],
+            [[40.0, 100.0, 178.0, 172.0], [188.0, 100.0, 326.0, 172.0]],
+        )
+        self.assertEqual([r["column_origin"] for r in regions], [40.0, 188.0])
+
+    def test_line_starting_mid_measure_does_not_define_a_column(self) -> None:
+        from tracer.article_map import regions_from_lines
+
+        lines = [
+            self._line(f"c0-{i}", 40.0, 100.0 + 12 * i, 178.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [
+            self._line(f"c1-{i}", 188.0, 100.0 + 12 * i, 326.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [self._line("pull-quote", 136.0, 400.0, 300.0, 412.0)]
+        regions = regions_from_lines({7: self._page(lines)}, [l["id"] for l in lines])
+
+        self.assertEqual([r["bbox"][0] for r in regions], [40.0, 188.0])
+        # The pull quote still counts towards the band, which is what stretches it.
+        self.assertEqual(regions[0]["bbox"][3], 412.0)
+
+    def test_spanning_rule_does_not_widen_its_column(self) -> None:
+        from tracer.article_map import regions_from_lines
+
+        lines = [
+            self._line(f"c0-{i}", 40.0, 100.0 + 12 * i, 178.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [
+            self._line(f"c1-{i}", 188.0, 100.0 + 12 * i, 326.0, 112.0 + 12 * i)
+            for i in range(6)
+        ] + [self._line("rule", 40.0, 500.0, 900.0, 501.0)]
+        regions = regions_from_lines({7: self._page(lines)}, [l["id"] for l in lines])
+
+        self.assertEqual(regions[0]["bbox"][2], 200.0)
+
+    def test_lines_spanning_two_pages_yield_rectangles_on_both(self) -> None:
+        from tracer.article_map import regions_from_lines
+
+        first = self._page([self._line(f"p7-{i}", 40.0, 100.0 + 12 * i, 178.0, 112.0 + 12 * i) for i in range(6)])
+        second = dict(self._page([self._line(f"p9-{i}", 188.0, 300.0 + 12 * i, 326.0, 312.0 + 12 * i) for i in range(6)]), page=9)
+        ids = [l["id"] for l in first["lines"]] + [l["id"] for l in second["lines"]]
+        regions = regions_from_lines({7: first, 9: second}, ids)
+
+        self.assertEqual([r["page"] for r in regions], [7, 9])
+        self.assertEqual(regions[1]["bbox"], [188.0, 300.0, 326.0, 372.0])
+
+
+class ReaderCacheContractTests(unittest.TestCase):
+    """The reader may publish a line set; the cache validates it, never guesses."""
+
+    def _collect(self, item: dict) -> dict:
+        import tempfile
+        from tracer.build_reader_cache import collect
+
+        with tempfile.TemporaryDirectory() as tmp:
+            Path(tmp, "p7.json").write_text(json.dumps([item]), encoding="utf-8")
+            return collect(tmp)
+
+    def test_lines_are_kept_when_the_start_line_is_included(self) -> None:
+        pages = self._collect(
+            {"start_line": "p7-l0001", "kind": "article", "lines": ["p7-l0001", "p7-l0002", ""]}
+        )
+        self.assertEqual(pages["7"][0]["lines"], ["p7-l0001", "p7-l0002"])
+
+    def test_lines_missing_the_start_line_are_rejected(self) -> None:
+        with self.assertRaisesRegex(ValueError, "must include its start line"):
+            self._collect({"start_line": "p7-l0001", "kind": "article", "lines": ["p7-l0002"]})
+
+    def test_lines_must_be_a_list(self) -> None:
+        with self.assertRaisesRegex(ValueError, "lines must be a list"):
+            self._collect({"start_line": "p7-l0001", "kind": "article", "lines": "p7-l0001"})
+
+    def test_absent_lines_leave_the_item_unchanged(self) -> None:
+        pages = self._collect({"start_line": "p7-l0001", "kind": "article"})
+        self.assertNotIn("lines", pages["7"][0])
+
+
 if __name__ == "__main__":
     unittest.main()

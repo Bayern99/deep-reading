@@ -8,9 +8,16 @@ map, so the cache it writes is an independent input to ``derive_article_map``.
 
 Reader input contract, per page:
 
-    [{"start_line": "p16-l0215", "kind": "article", "first_line": "..."}]
+    [{"start_line": "p16-l0215", "kind": "article", "first_line": "...",
+      "lines": ["p16-l0215", "p16-l0216", ...]}]
 
 ``kind`` must be one of ``READER_KINDS``. Ad pages carry no items.
+
+``lines`` is optional but is the difference between exact and approximate
+placement: it names every line the item owns, on every page it runs on. Without
+it the map falls back to inferring rectangles from where the printed text stops,
+which reproduces about 39% of the reference issue's rectangles above IoU 0.5.
+With it the rectangle follows from the lines themselves.
 
 Usage:
     python -m tracer.build_reader_cache <reader-output-dir>
@@ -57,6 +64,16 @@ def collect(reader_dir: str | Path) -> dict[str, list[dict[str, Any]]]:
                 "kind": kind,
                 "first_line": str(item.get("first_line") or "").strip(),
             }
+            raw_lines = item.get("lines")
+            if raw_lines is not None:
+                if not isinstance(raw_lines, list):
+                    raise ValueError(f"{path.name}: lines must be a list")
+                lines = [str(value).strip() for value in raw_lines if str(value).strip()]
+                if line_id not in lines:
+                    raise ValueError(
+                        f"{path.name}: lines for {line_id!r} must include its start line"
+                    )
+                entry["lines"] = lines
             # The reader supplies `section` only where the page prints none
             # (the front page). It stays optional.
             section = str(item.get("section") or "").strip()

@@ -27,8 +27,17 @@ Two geometric models were measured against the golden rectangles.
 
 | model | rectangles ≥ IoU 0.5 | median per story |
 |---|---|---|
-| per-column text run, jump marker caps the last column | 39% | 0.38 |
+| per-column text run, gap-terminated, jump marker caps the last column | 39% | 0.38 |
 | every column × the story's horizontal band | 51% | 0.44 |
+| reading-order slice: lines from the story's start to the next item's start | 21% | 0.29 |
+| same, over all lines rather than body lines | 21% | 0.29 |
+| **reader line set → per-column box, uniform band** | **96%** | **0.92** |
+
+The first four infer membership from print geometry and plateau between 0.29 and
+0.44. The fifth does not infer it: the reader names each item's lines and the
+rectangle follows from them. Its 0.92 is a **ceiling**, measured by selecting the
+lines that fall inside the golden rectangles — it shows what the mechanism
+achieves given a correct answer, not what an unre-run reader would produce.
 
 Neither is exact, and the cause is structural rather than a tuning problem: **the
 paper does not print which columns a story owns.** A column can look nearly empty
@@ -53,12 +62,17 @@ Measured examples:
 |---|---|
 | what is missing | each story's own set of line ids |
 | how to get it | the reader already reads the page; add `lines: [line_id, …]` to its answer |
-| what it unlocks | exact `regions`, and `body_words` if it is ever wanted again |
-| why not more heuristics | five models measured; the best reaches 51%. The information is absent from the print, so more geometry cannot recover it |
+| status | **implemented** — the contract validates it, the map prefers it, geometry is only the fallback |
+| what it unlocks | `regions` at IoU median 0.92 against the hand-drawn set, and `body_words` if it is ever wanted again |
+| what remains | the reader pass itself has to be re-run over the 25 pages that carry items (~16k lines). The implementation is proven on the derivation side; the cache in the reference pilot predates `lines` |
 
 Everything that *is* printed is derived and reconciled: folio from each page's
 printed id, jump markers both directions, section banners and rubric heads, the
 column grid, body typefaces, image-only pages.
+
+`regions` now carry a `regions_source` field: `reader_lines` when the map used the
+reader's line set, `geometry` otherwise. That makes an approximate placement
+visible in the artifact instead of silently indistinguishable from an exact one.
 
 ## Why this is the right stopping point
 

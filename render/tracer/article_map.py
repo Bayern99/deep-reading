@@ -745,6 +745,78 @@ def story_regions(
     return regions
 
 
+def regions_from_lines(
+    natives: dict[int, dict[str, Any]], line_ids: list[str]
+) -> list[dict[str, Any]]:
+    """Exact rectangles from the reader's line set.
+
+    When the reader answers which lines belong to a story, the rectangle follows
+    from the column grid and those lines' own extents — nothing has to be inferred
+    from where the printed text happens to stop. This covers every page the lines
+    sit on, so continuation pages need no separate band construction.
+    """
+    index: dict[str, tuple[int, dict[str, Any], dict[str, Any]]] = {}
+    for page_no, native in natives.items():
+        number = int(native.get("page") or page_no)
+        for line in native.get("lines") or ():
+            if line.get("id"):
+                index[str(line["id"])] = (number, native, line)
+
+    per_page: dict[int, list[tuple[dict[str, Any], dict[str, Any]]]] = {}
+    for line_id in line_ids:
+        hit = index.get(str(line_id))
+        if hit is None:
+            continue
+        per_page.setdefault(hit[0], []).append((hit[1], hit[2]))
+
+    regions: list[dict[str, Any]] = []
+    for page in sorted(per_page):
+        entries = per_page[page]
+        grid = _column_grid(entries[0][0])
+        if not grid:
+            continue
+        columns: dict[int, list[float]] = {}
+        band_top = float("inf")
+        band_bottom = float("-inf")
+        for _native, line in entries:
+            column = _column_index(grid, line["bbox"][0])
+            if column is None:
+                continue
+            # Only lines set at a column edge define that column's box; captions,
+            # pull quotes and inset labels start mid-measure and would otherwise
+            # widen one column across its neighbour.
+            if abs(float(line["bbox"][0]) - grid[column]) > 6.0:
+                band_top = min(band_top, float(line["bbox"][1]))
+                band_bottom = max(band_bottom, float(line["bbox"][3]))
+                continue
+            box = columns.setdefault(column, [float(line["bbox"][0]), float(line["bbox"][2])])
+            box[0] = min(box[0], float(line["bbox"][0]))
+            box[1] = max(box[1], float(line["bbox"][2]))
+            band_top = min(band_top, float(line["bbox"][1]))
+            band_bottom = max(band_bottom, float(line["bbox"][3]))
+        if not columns:
+            continue
+        pitch = (grid[1] - grid[0]) if len(grid) > 1 else 120.0
+        # A line that spans several columns is a rule or a caption, not body text;
+        # letting it set a column's right edge would swallow its neighbours.
+        for column, box in columns.items():
+            if column < len(grid) - 1:
+                box[1] = min(box[1], grid[column] + pitch + 12.0)
+        # The paper sets a story as one band across the columns it owns: every
+        # column shares the band's top and bottom, and each column's box is the
+        # measured extent of the text set in it.
+        for column in sorted(columns):
+            left, right = columns[column]
+            regions.append(
+                {
+                    "page": page,
+                    "bbox": [round(left, 2), round(band_top, 2), round(right, 2), round(band_bottom, 2)],
+                    "column_origin": round(grid[column], 2),
+                }
+            )
+    return regions
+
+
 def continuation_regions(page_native: dict[str, Any], headline: dict[str, Any],
                          next_top: float | None) -> list[dict[str, Any]]:
     """The story's rectangles on a page it continues onto.
@@ -828,6 +900,8 @@ def _attach_continuation_regions(records: list[dict[str, Any]],
     """
     by_target: dict[int, list[tuple[float, dict[str, Any]]]] = {}
     for record in records:
+        if record.get("regions_source") == "reader_lines":
+            continue
         for page in record["all_pages"][1:]:
             forward = next(
                 (e for e in record["continuation_evidence"] if e["page"] != page), None
@@ -1065,6 +1139,7 @@ def assemble(
 
             kind = _type_from_section(section, kind)
             rec_id = _make_id(page, first_line, kind, used_ids)
+            reader_lines = [str(x).strip() for x in (item.get("lines") or ()) if str(x).strip()]
             records.append(
                 {
                     "id": rec_id,
@@ -1074,12 +1149,17 @@ def assemble(
                     "type": kind,
                     "all_pages": all_pages,
                     "lead_position": _lead_position(page_native, start_line),
-                    "regions": story_regions(
-                        page_native,
-                        start_line,
-                        marker,
-                        [entry for entry in page_starts if entry[0] is not start_line],
+                    "regions": (
+                        regions_from_lines(natives, reader_lines)
+                        if reader_lines
+                        else story_regions(
+                            page_native,
+                            start_line,
+                            marker,
+                            [entry for entry in page_starts if entry[0] is not start_line],
+                        )
                     ),
+                    "regions_source": "reader_lines" if reader_lines else "geometry",
                     "continuation_evidence": evidence,
                     "start_line_id": start_line.get("id"),
                 }
