@@ -56,6 +56,7 @@ Do not copy 2026-10-12 or 2026-10-14 story IDs into renderer code as if they wer
 9. **Mobile is the product.** 390px must read comfortably: 17px / 1.85 body, one 20px inset per side. Certification Oracle 7 probes 1440×900 and 390×844 in 中文 / EN / 双语. Zero overflow alone does not prove reading quality.
 10. **Primary Vector Signals over secondary crops.** Printed charts re-crop from the PDF union of the graphic and adjacent `Retina*` title/source lines. Do not prefer chopped PNG crops or OCR tables for chart labels.
 11. **Paragraph-scoped fidelity.** Every authored element's substantive numbers ground in its `data-src` paragraphs (plus `Retina*` text for Chart Companions). Cross-language magnitude must match (`$2.3 billion` ≡ 「23亿美元」). Fail the compile rather than silently drop a number or a tier.
+12. **Print over inference.** A fact printed on the page is read, never guessed. Fields carried by a printed mark — continuation markers, section heads, folio labels, body extent — are derived deterministically and audit back to a `line_id` or a bbox. A model is used only for what no printed mark carries, and only behind a confidence threshold that flags the rest for host review. One source per field: two sources for the same fact is both slower and wrong. Every derived signal carries an adversarial test that perturbs the printed mark and asserts the output follows, so the check proves the rule reads the paper rather than remembering an answer. Speed and quality are the same move here, because inference is both the slow path and the wrong one.
 
 ---
 

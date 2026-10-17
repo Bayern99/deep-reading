@@ -6,6 +6,8 @@ Everything dated lives here, so `docs/` above this directory holds only current 
 
 | Bundle | Use when |
 |---|---|
+| [Article map reconciliation](article-map-reconciliation-2026-10-17.md) | Checking a derived article map against the reference issue field by field, and reading the one field that does not reconcile |
+| [Article discovery record](article-discovery-2026-10-17.md) | Understanding the measurements behind ADR 0003: what transfers across issues, what was rejected, and where the chain breaks for a new issue |
 | [Claim provenance contract](claim-provenance.md) (superseded 2026-10-16) | Reading the Experiment 0 sidecar protocol ADR 0001/0002 rejected |
 | [Governance record](governance-2026-10-14.md), [browser evidence](browser-evidence-2026-10-14/) | Seeing what the Phase 5–7 governance pass changed, and its desktop/mobile captures |
 | [Pipeline continuity probe](pipeline-probe-2026-10-15.md) | Seeing which hops of the *old* PDF→Studio chain were proven, partial, blocked or untested. It does not describe the Issue Artifact vector path |

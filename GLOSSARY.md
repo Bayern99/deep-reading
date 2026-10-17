@@ -42,10 +42,16 @@ _Avoid_: Single-paragraph standalone article fragments.
 _Avoid_: Studio workbench, Editorial Artifact, whole-issue `dist/index.html`, raw evidence bundle.
 
 **Reader（阅读器）**: The reader-facing experience inside the Issue Artifact for browsing the edition and reading bilingual articles.
-_Avoid_: Operator console, pipeline inspector.
+_Avoid_: Operator console, pipeline inspector, the model pass that enumerates a page.
+
+**Reading Pass（阅读遍）**: The strong-model pass that enumerates a page's reading items and, when asked, names the lines or blocks each item owns. It runs out of band, one pass per page, because item ownership is a reading judgement rather than a printed fact. Artifacts and identifiers keep the `reader` name — `reader-items.json`, `reader_cache` — and refer to this pass, not to the Reader experience.
+_Avoid_: Bare "reader" when the model pass is meant; treating its cached cache as an issue's ground truth.
 
 **LQA Funnel（语言质量漏斗）**: The two-stage bilingual gate over every paragraph pair: a deterministic five-invariant radar, then spot-check of flagged paragraphs and every Tier 1 flagship. It records dispositions; it never rewrites narrative. The report stays in the workspace, not in the Issue Artifact.
 _Avoid_: Integrity Gate, claim-evidence sidecar.
 
 **Certification Oracle（认证神谕）**: One of the seven deterministic end-to-end checks over the compiled Issue Artifact (narrative conservation, numeric grounding, chart vectors, figure order, fault-injection recall, print hierarchy, geometry and payload). Reports stay in the workspace, not in the Issue Artifact.
 _Avoid_: Host evidence record, browser-metrics pending check.
+**Article Map（文章地图）**: The per-issue record of every source item's ownership and placement — `id`, `type`, `section`, `start_page`, `all_pages`, `regions`, `continuation_evidence`. Derived from print signals except `type`, which is judged and host-reviewed when low-confidence (ADR 0003).
+**Continuation Marker（续接标记）**: The printed cross-reference linking a story's parts across pages — `Pleaseturn...` on the start page (forward), `Continued...` on the continuation page (backward). The auditable basis of `all_pages`; not an inferred join.
+**Article Discovery（文章发现）**: Turning an issue's pages into its set of source items with ownership. The upstream step the pipeline lacked; closes the gap `delivery-report.json` recorded as "requires host page-by-page review".
