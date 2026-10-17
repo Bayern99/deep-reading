@@ -46,6 +46,32 @@ def _golden_records() -> list[dict]:
     return list(data["articles"])
 
 
+#: Derived column-origin sets that still differ from the hand-drawn map beyond
+#: the 2pt grid-rounding tolerance. ADR 0004 demoted per-story exactness, but a
+#: new difference must be explained here rather than joining the set silently.
+KNOWN_REGION_DIFFERENCES = {
+    "PILOT-A1-CHINA-YOUTH": "page-1 pass answer misses two continuation columns",
+    "PILOT-A8-TAIWAN": "golden includes the sub-story's two columns",
+    "PILOT-A8-SHIPBUILDER": "page-8 band origin rounds 296.8 to 288",
+    "PILOT-A8-SKOREA": "page-8 band grid adds the adjacent column",
+    "PILOT-A12-OIL": "page-12 alternate five-column system",
+    "PILOT-A14-NFL": "narrow column merged by the 100pt grid threshold",
+    "PILOT-A15-FRANK": "narrow column merged by the grid",
+    "PILOT-A15-NATIONALISM": "narrow column merged by the grid",
+    "PILOT-A15-EDGEWORTH": "narrow column merged by the grid",
+    "PILOT-A17-EXECUTION": "narrow column merged by the grid",
+    "PILOT-B1-PHANTOM": "page-24 continuation column missed by the pass answer",
+    "PILOT-B2-JNJ": "one column missed by the pass answer",
+    "PILOT-B3-STELLANTIS": "grid places the last column at 588, golden 534.4",
+    "PILOT-B13-INVEST": "band grid's five-column system differs from the page grid",
+    "PILOT-A1-WHATSNEWS": "composite digest; golden regions are not per-story",
+    "PILOT-B13-SPOTLIGHT-UNITEDHEALTH": "composite column; golden regions are not per-story",
+    "PILOT-B13-SPOTLIGHT-BP": "composite column; golden regions are not per-story",
+    "PILOT-B13-SPOTLIGHT-VISA": "composite column; golden regions are not per-story",
+    "PILOT-B13-SPOTLIGHT-JNJ": "composite column; golden regions are not per-story",
+}
+
+
 def _native(page: int) -> dict:
     return json.loads((PILOT_ROOT / "evidence" / f"p{page:02d}-native.json").read_text(encoding="utf-8"))
 
@@ -350,6 +376,56 @@ class ReferenceParityTests(unittest.TestCase):
         record = assemble({2: [item]}, self.natives)[0]
         self.assertEqual(record["regions_source"], "geometry")
         self.assertIn("regions-inferred", record["needs_review"])
+
+    def test_reference_region_differences_are_known(self) -> None:
+        """Every remaining column-set difference has a recorded reason.
+
+        ADR 0004 demoted per-story exactness; this keeps the draft honest by
+        failing when a new story joins the difference set.
+        """
+        from tracer.article_map import _norm_title
+
+        derived = derive_article_map(self.natives, self.cache_path)
+
+        def origins(record: dict) -> list[tuple[int, float]]:
+            return sorted({(r["page"], r["column_origin"]) for r in record["regions"]})
+
+        def snap(
+            found: list[tuple[int, float]], gold: list[tuple[int, float]]
+        ) -> list[tuple[int, float]]:
+            out = set()
+            for page, value in found:
+                same = [g for p, g in gold if p == page]
+                near = min(same, key=lambda g: abs(g - value)) if same else value
+                out.add((page, near if abs(near - value) <= 2.0 else value))
+            return sorted(out)
+
+        used: set[str] = set()
+        differences: set[str] = set()
+        for want in self.golden:
+            if not want.get("regions"):
+                continue
+            title = _norm_title(want.get("original_title") or "")
+            candidates = [
+                r
+                for r in derived
+                if r["start_page"] == want["start_page"]
+                and r["id"] not in used
+                and _norm_title(r["original_title"])
+                and (
+                    _norm_title(r["original_title"]) in title
+                    or title.startswith(_norm_title(r["original_title"]))
+                )
+            ]
+            candidates.sort(key=lambda r: -len(_norm_title(r["original_title"])))
+            if not candidates:
+                continue
+            record = candidates[0]
+            used.add(record["id"])
+            gold = origins(want)
+            if snap(origins(record), gold) != gold:
+                differences.add(want["id"])
+        self.assertEqual(sorted(differences), sorted(KNOWN_REGION_DIFFERENCES))
 
     def test_type_accuracy_beats_the_model_baseline(self) -> None:
         """Derived types beat the measured Jev baseline on the reference issue.

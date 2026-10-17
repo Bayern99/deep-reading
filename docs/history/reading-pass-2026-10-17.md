@@ -34,7 +34,7 @@ they own, for the reference issue (2026-10-14) and the held-out second issue
 
 ## Where the regions still differ from the golden map
 
-75 golden stories match a derived record. 19 have a per-page column-origin set
+75 golden stories match a derived record. 18 have a per-page column-origin set
 that differs by more than the 2pt grid-rounding tolerance:
 
 - **Narrow columns merged by the grid.** Stories on pages 14, 15 and 17 own a
@@ -49,7 +49,9 @@ that differs by more than the 2pt grid-rounding tolerance:
   golden value.
 
 These are draft-region differences. They are not compile inputs: the composer
-reads the page column grid (ADR 0004).
+reads the page column grid (ADR 0004). The 18 story ids and one reason each are
+recorded in `KNOWN_REGION_DIFFERENCES` in `tests/test_article_map.py`; the test
+fails if the set changes, so a new difference cannot join silently.
 
 ## Second issue: 2026-10-10
 
