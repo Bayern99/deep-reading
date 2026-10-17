@@ -143,7 +143,7 @@ def line_table(page_native: dict[str, Any]) -> list[dict[str, Any]]:
     return rows
 
 
-def _column_grid(page_native: dict[str, Any]) -> list[float]:
+def column_grid(page_native: dict[str, Any]) -> list[float]:
     buckets: dict[int, int] = {}
     for line in page_native.get("lines") or []:
         font, size = _dominant_char(line)
@@ -244,7 +244,7 @@ def print_facts(page_native: dict[str, Any], natives: dict[int, dict] | None = N
         "height": page_native.get("height"),
         "folio": {"stack": folio[0], "number": folio[1]} if folio else None,
         "section_head": _section_head_text(page_native),
-        "column_grid": _column_grid(page_native),
+        "column_grid": column_grid(page_native),
         "continuation": _continuation_markers(page_native),
         "ad_page": _is_ad_page(page_native),
         "lines": line_table(page_native),
@@ -667,7 +667,7 @@ def story_regions(
     owns it. Exact regions need the story's own line set from the reader — see
     the reconciliation note in docs/history.
     """
-    grid = _column_grid(page_native)
+    grid = column_grid(page_native)
     if not grid:
         return []
     start_column = _column_index(grid, start_line["bbox"][0])
@@ -795,7 +795,7 @@ def regions_from_lines(
         }
         # A short story's band may hold too few lines for the grid to recover; the
         # page grid is the right answer there, because the band has only one layout.
-        columns = _column_grid(in_band) or _column_grid(native)
+        columns = column_grid(in_band) or column_grid(native)
         if not columns:
             continue
         by_column: list[list[dict[str, Any]]] = [[] for _ in columns]
@@ -949,7 +949,7 @@ def continuation_regions(page_native: dict[str, Any], headline: dict[str, Any],
     the next reprinted headline. Verified on page 4: two bands, 806–1182 and
     1199–1505, each spanning all six columns.
     """
-    grid = _column_grid(page_native)
+    grid = column_grid(page_native)
     if not grid:
         return []
     pitch = (grid[1] - grid[0]) if len(grid) > 1 else 120.0
@@ -1076,7 +1076,7 @@ def _lead_position(page_native: dict[str, Any], start_line: dict[str, Any]) -> b
     body-length test on all eight. Unlike body length it needs no reconstructed
     paragraphs, so it survives a derived inventory.
     """
-    grid = _column_grid(page_native)
+    grid = column_grid(page_native)
     if not grid:
         return False
     column = min(range(len(grid)), key=lambda i: abs(grid[i] - float(start_line["bbox"][0])))
@@ -1230,7 +1230,7 @@ def assemble(
 
         # Pass 2: emit records. The column grid and each item's column are needed
         # by every item on the page, so they are computed once here.
-        page_grid = _column_grid(page_native)
+        page_grid = column_grid(page_native)
         page_starts = [
             (line, _column_index(page_grid, float(line["bbox"][0])))
             for _item, line, _first, _kind in kept
@@ -1357,7 +1357,6 @@ def derive_article_map(
     *,
     pilot_root: str | Path | None = None,
     mineru_dir: str | Path | None = None,
-    require_exact_regions: bool = False,
 ) -> list[dict[str, Any]]:
     """Public seam: vector pages + cached reading-pass items -> ownership records.
 
@@ -1365,10 +1364,8 @@ def derive_article_map(
     blocks are mapped back onto native lines by containment. It is optional
     input, and its absence changes nothing but which unit the pass is asked for.
 
-    ``require_exact_regions`` is the compile-time rule: a record whose regions
-    were inferred from text flow rather than read from the pass raises, because a
-    wrong column set reorders the printed page and the reader sees it. The deriver
-    itself defaults to permissive so a draft can be inspected and reported on.
+    ``regions`` are a draft record (ADR 0004), never a compile input, so the
+    deriver does not gate on how exact they are.
     """
     if reader_cache is None:
         if pilot_root is None:
@@ -1383,15 +1380,7 @@ def derive_article_map(
         raise TracerCompilationError(f"no Reading Pass cache at {reader_cache}")
     items = load_reader_cache(reader_cache)
     mineru_pages = load_mineru_blocks(mineru_dir) if mineru_dir else {}
-    records = assemble(items, natives, mineru_pages)
-    if require_exact_regions:
-        inferred = [r["id"] for r in records if r["regions_source"] == "geometry"]
-        if inferred:
-            raise TracerCompilationError(
-                f"{len(inferred)} stories have inferred regions; the Reading Pass must "
-                f"name their lines or blocks first: {', '.join(inferred[:5])}"
-            )
-    return records
+    return assemble(items, natives, mineru_pages)
 
 
 def load_natives_from_pilot(pilot_root: str | Path) -> dict[int, dict[str, Any]]:

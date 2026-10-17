@@ -65,6 +65,7 @@ import lxml.html
 from .compose import (
     PilotData,
     figure_print_key,
+    page_column_grids,
     paragraph_print_keys,
 )
 from .content import CHART_COMPANIONS
@@ -442,6 +443,9 @@ def _figure_anchor_sequence(unit: lxml.html.HtmlElement) -> list[tuple[str, str]
 
 def oracle_figure_monotonicity(root: lxml.html.HtmlElement, data: PilotData) -> OracleResult:
     failures: list[str] = []
+    page_widths = {pg: n["width"] for pg, n in data.natives.items()}
+    page_heights = {pg: n["height"] for pg, n in data.natives.items()}
+    column_grids = page_column_grids(data.natives)
     figure_ads = [r for r in root.xpath(".//figure/@data-ref") if r == "figure:p06-b60"]
     if figure_ads:
         failures.append("non-editorial print ad p06-b60 present as reader figure")
@@ -461,10 +465,8 @@ def oracle_figure_monotonicity(root: lxml.html.HtmlElement, data: PilotData) -> 
         # physical print order: anchor paragraph print key <= figure print key
         if aid and aid in data.articles:
             article = data.articles[aid]
-            page_widths = {pg: n["width"] for pg, n in data.natives.items()}
-            page_heights = {pg: n["height"] for pg, n in data.natives.items()}
             try:
-                pkeys = paragraph_print_keys(article, page_heights)
+                pkeys = paragraph_print_keys(article, page_heights, column_grids)
             except TracerCompilationError:
                 pkeys = {}
             media_by_id = {m["id"]: m for m in article.get("media") or []}
@@ -474,7 +476,7 @@ def oracle_figure_monotonicity(root: lxml.html.HtmlElement, data: PilotData) -> 
                 m = media_by_id.get(mid) if mid else None
                 if m is None or "page" not in m:
                     continue  # view-only print page / non-media figure
-                fkey = figure_print_key(m, article, page_widths)
+                fkey = figure_print_key(m, page_widths, column_grids)
                 anchor_key = pkeys.get(anchor_of(f, unit) or "")
                 if anchor_key and anchor_key > fkey:
                     failures.append(f"{uid}: figure {mid} before anchor in print order")

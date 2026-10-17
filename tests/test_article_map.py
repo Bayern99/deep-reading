@@ -375,11 +375,6 @@ class ReferenceParityTests(unittest.TestCase):
         self.assertEqual(stable_run_fingerprint(first), stable_run_fingerprint(second))
 
 
-    def test_exact_regions_are_required_when_asked(self) -> None:
-        """The compile seam refuses an inferred column set rather than shipping it."""
-        with self.assertRaisesRegex(TracerCompilationError, "inferred regions"):
-            derive_article_map(self.natives, self.cache_path, require_exact_regions=True)
-
     def test_a_missing_reading_pass_cache_raises(self) -> None:
         """An issue with no pass is a missing input, not a zero-item issue."""
         natives = load_natives_from_pilot(SECOND_ISSUE)
@@ -453,12 +448,12 @@ class SecondIssueScaleTests(unittest.TestCase):
         self.assertEqual(backward, 11)
 
     def test_column_grid_recovers_on_editorial_pages(self) -> None:
-        from tracer.article_map import _column_grid, _is_ad_page
+        from tracer.article_map import column_grid, _is_ad_page
 
         missing = [
             page
             for page, native in self.natives.items()
-            if not _column_grid(native) and not _is_ad_page(native)
+            if not column_grid(native) and not _is_ad_page(native)
         ]
         # One dense data page (commodities/ag tables) has no body-text columns.
         self.assertLessEqual(len(missing), 1, f"pages without a grid: {missing}")

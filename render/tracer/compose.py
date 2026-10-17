@@ -7,8 +7,9 @@ Figures anchor at their natural ``after pK`` narrative position following
 physical print reading order — paragraph print positions come from each
 paragraph's last ``native_line_ids`` region (page, column, y); figure print
 positions from their PDF page + normalized bbox.  Physical order on a page is
-column-major: column index from the story's printed column origins, then
-vertical position.
+column-major: column index from the page's printed column grid (ADR 0004), then
+vertical position.  Per-story ``regions`` are a draft record, never an input
+here.
 """
 from __future__ import annotations
 
@@ -21,6 +22,7 @@ from typing import Any
 
 import lxml.html
 
+from .article_map import column_grid
 from .verify import (
     TracerCompilationError,
     check_highlight_density,
@@ -119,12 +121,9 @@ def load_full_data(root: Path | str = PILOT_ROOT) -> PilotData:
 
 # --- physical print order ----------------------------------------------------
 
-def _column_origins(article: dict[str, Any]) -> dict[int, list[float]]:
-    """Printed column x-origins (points) per page, from the story's regions."""
-    origins: dict[int, set[float]] = {}
-    for r in article.get("regions", []):
-        origins.setdefault(int(r["page"]), set()).add(float(r["column_origin"]))
-    return {pg: sorted(v) for pg, v in origins.items()}
+def page_column_grids(natives: dict[int, dict[str, Any]] | None) -> dict[int, list[float]]:
+    """Printed column x-origins (points) per page, from the vector lines."""
+    return {int(pg): column_grid(native) for pg, native in (natives or {}).items()}
 
 
 def _col_index(x: float, origins: list[float]) -> int:
@@ -136,6 +135,7 @@ def _col_index(x: float, origins: list[float]) -> int:
 def paragraph_print_keys(
     article: dict[str, Any],
     page_heights: dict[int, float] | None = None,
+    column_grids: dict[int, list[float]] | None = None,
 ) -> dict[str, tuple[int, int, float]]:
     """Print-order key per paragraph: max over its native regions.
 
@@ -144,8 +144,8 @@ def paragraph_print_keys(
     page.  ``y`` is normalized to the page height so keys are comparable with
     figure bboxes (which are normalized in the inventory).
     """
-    origins = _column_origins(article)
     heights = page_heights or {}
+    grids = column_grids or {}
     keys: dict[str, tuple[int, int, float]] = {}
     for p in article["paragraphs"]:
         best: tuple[int, int, float] | None = None
@@ -156,7 +156,7 @@ def paragraph_print_keys(
             pg = int(r["page"])
             H = heights.get(pg)
             y_norm = float(b[1]) / H if H else float(b[1])
-            key = (pg, _col_index(float(b[0]), origins.get(pg, [])), y_norm)
+            key = (pg, _col_index(float(b[0]), grids.get(pg, [])), y_norm)
             if best is None or key > best:
                 best = key
         if best is None:
@@ -167,16 +167,16 @@ def paragraph_print_keys(
 
 def figure_print_key(
     media: dict[str, Any],
-    article: dict[str, Any],
     page_widths: dict[int, float] | None = None,
+    column_grids: dict[int, list[float]] | None = None,
 ) -> tuple[int, int, float]:
-    origins = _column_origins(article)
     pg = int(media["page"])
+    origins = (column_grids or {}).get(pg, [])
     x0, y0, x1, _ = [float(v) for v in media["bbox_normalized_top_left"]]
     W = (page_widths or {}).get(pg)
-    if W and origins.get(pg):
+    if W and origins:
         center_pt = (x0 + x1) / 2 * W
-        col = _col_index(center_pt, origins[pg])
+        col = _col_index(center_pt, origins)
     else:
         col = 0
     return (pg, col, y0)
@@ -233,12 +233,13 @@ def anchor_figures(
     may land before ``p2`` when a photo genuinely sits above the second
     paragraph on the printed page.
     """
-    pkeys = paragraph_print_keys(article, page_heights)
+    column_grids = page_column_grids(natives)
+    pkeys = paragraph_print_keys(article, page_heights, column_grids)
     pids = [p["id"] for p in article["paragraphs"]]
     out = []
     media = [m for m in (article.get("media") or []) if not is_print_ad(m, natives)]
     for m in sorted(media, key=lambda m: m["id"]):
-        fkey = figure_print_key(m, article, page_widths)
+        fkey = figure_print_key(m, page_widths, column_grids)
         anchor = None
         for pid in pids:
             if pkeys[pid] <= fkey:

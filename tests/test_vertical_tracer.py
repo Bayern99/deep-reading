@@ -162,7 +162,7 @@ class FigureNarrativeMonotonicityCheck(TracerDataTestCase):
 
     def test_chart_companions_anchor_in_print_order(self):
         banks = self.data.articles["PILOT-A1-BANKS"]
-        anchored = {m["id"]: m["anchor"] for m in anchor_figures(banks, self.page_widths, self.page_heights)}
+        anchored = {m["id"]: m["anchor"] for m in anchor_figures(banks, self.page_widths, self.page_heights, self.data.natives)}
         self.assertEqual(set(anchored), {"p02-b78", "p02-b83"})
         k78 = int(anchored["p02-b78"][1:])
         k83 = int(anchored["p02-b83"][1:])
