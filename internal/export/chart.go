@@ -22,6 +22,7 @@ type chartFrame struct {
 	labels       []string
 	rows         []*openuilang.Object
 	values       [][]float64
+	xValues      []float64
 	seriesLabels map[string]string
 }
 
@@ -30,8 +31,16 @@ func renderChart(el *openuilang.Element) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	if frame.kind != "bar" && frame.kind != "line" {
+	switch frame.kind {
+	case "bar", "line", "area", "pie", "donut", "scatter":
+	default:
 		return "", fmt.Errorf("Chart type %q is not supported", frame.kind)
+	}
+	if frame.kind == "pie" || frame.kind == "donut" {
+		return renderPieChart(frame)
+	}
+	if frame.kind == "scatter" {
+		return renderScatterChart(frame)
 	}
 
 	const width = 600.0
@@ -128,6 +137,11 @@ func readChartFrame(el *openuilang.Element) (*chartFrame, error) {
 			label = fmt.Sprint(value)
 		}
 		frame.labels = append(frame.labels, label)
+		xValue, ok := row.Values[frame.xKey].(float64)
+		if !ok || math.IsNaN(xValue) || math.IsInf(xValue, 0) {
+			xValue = float64(i)
+		}
+		frame.xValues = append(frame.xValues, xValue)
 	}
 	if rawSeries, ok := props.Values["series"].([]any); ok {
 		for _, rawName := range rawSeries {
@@ -247,7 +261,7 @@ func renderChartLegend(out *strings.Builder, frame *chartFrame, left float64) {
 		x := left + float64(i%3)*172
 		y := 13.0 + float64(i/3)*20
 		color := chartPalette[i%len(chartPalette)]
-		if frame.kind == "line" {
+		if frame.kind == "line" || frame.kind == "area" {
 			out.WriteString(`<line x1="` + chartNumber(x) + `" y1="` + chartNumber(y) + `" x2="` + chartNumber(x+15) + `" y2="` + chartNumber(y) + `" stroke="` + color + `" stroke-width="2.5"/>`)
 		} else {
 			out.WriteString(`<rect x="` + chartNumber(x) + `" y="` + chartNumber(y-5) + `" width="12" height="10" rx="1" fill="` + color + `"/>`)
@@ -315,6 +329,7 @@ func renderLines(out *strings.Builder, frame *chartFrame, left, groupWidth float
 	for series := range frame.series {
 		color := chartPalette[series%len(chartPalette)]
 		var path strings.Builder
+		var areaPoints strings.Builder
 		for row, value := range frame.values[series] {
 			x := left + (float64(row)+0.5)*groupWidth
 			pointY := y(value)
@@ -324,6 +339,12 @@ func renderLines(out *strings.Builder, frame *chartFrame, left, groupWidth float
 				path.WriteString(" L ")
 			}
 			path.WriteString(chartNumber(x) + " " + chartNumber(pointY))
+			areaPoints.WriteString(chartNumber(x) + "," + chartNumber(pointY) + " ")
+		}
+		if frame.kind == "area" && len(frame.values[series]) > 0 {
+			firstX := left + 0.5*groupWidth
+			lastX := left + (float64(len(frame.values[series]))-0.5)*groupWidth
+			out.WriteString(`<polygon points="` + areaPoints.String() + chartNumber(lastX) + "," + chartNumber(y(0)) + " " + chartNumber(firstX) + "," + chartNumber(y(0)) + `" fill="` + color + `" opacity=".16"/>`)
 		}
 		out.WriteString(`<path d="` + path.String() + `" fill="none" stroke="` + color + `" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>`)
 		for row, value := range frame.values[series] {
@@ -371,4 +392,97 @@ func formatChartValue(value float64, format string) string {
 
 func chartNumber(value float64) string {
 	return strconv.FormatFloat(value, 'f', 2, 64)
+}
+
+func renderPieChart(frame *chartFrame) (string, error) {
+	height := float64(frame.height)
+	var out strings.Builder
+	out.WriteString(`<figure class="dr-chart dr-chart-` + frame.kind + `"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 ` + strconv.Itoa(frame.height) + `" role="img" aria-label="` + frame.kind + ` chart"><title>` + frame.kind + ` chart</title>`)
+	if len(frame.series) == 0 || len(frame.values) == 0 {
+		out.WriteString(`<text x="300" y="100" text-anchor="middle" fill="#716c63">No data</text></svg></figure>`)
+		return out.String(), nil
+	}
+	values := frame.values[0]
+	total := 0.0
+	for _, value := range values {
+		total += math.Max(0, value)
+	}
+	cx, cy, radius := 300.0, height/2, math.Min(100, height/2-20)
+	start := -math.Pi / 2
+	for i, value := range values {
+		if value <= 0 || total <= 0 {
+			continue
+		}
+		angle := value / total * 2 * math.Pi
+		color := chartPalette[i%len(chartPalette)]
+		label := ""
+		if i < len(frame.labels) {
+			label = frame.labels[i]
+		}
+		formatted := formatChartValue(value, frame.format)
+		if frame.format == "percent" {
+			formatted = formatChartValue(value/total*100, frame.format)
+		}
+		if angle >= 2*math.Pi-1e-9 {
+			out.WriteString(`<circle cx="` + chartNumber(cx) + `" cy="` + chartNumber(cy) + `" r="` + chartNumber(radius) + `" fill="` + color + `"><title>` + html.EscapeString(label+": "+formatted) + `</title></circle>`)
+			continue
+		}
+		end := start + angle
+		x1, y1 := cx+radius*math.Cos(start), cy+radius*math.Sin(start)
+		x2, y2 := cx+radius*math.Cos(end), cy+radius*math.Sin(end)
+		large := 0
+		if angle > math.Pi {
+			large = 1
+		}
+		out.WriteString(`<path d="M ` + chartNumber(cx) + " " + chartNumber(cy) + " L " + chartNumber(x1) + " " + chartNumber(y1) + " A " + chartNumber(radius) + " " + chartNumber(radius) + " 0 " + strconv.Itoa(large) + " 1 " + chartNumber(x2) + " " + chartNumber(y2) + ` Z" fill="` + color + `"><title>` + html.EscapeString(label+": "+formatted) + `</title></path>`)
+		start = end
+	}
+	if frame.kind == "donut" {
+		out.WriteString(`<circle cx="` + chartNumber(cx) + `" cy="` + chartNumber(cy) + `" r="` + chartNumber(radius*0.56) + `" fill="#faf8f5"/>`)
+	}
+	out.WriteString(`</svg><figcaption class="dr-chart-legend">`)
+	for i, label := range frame.labels {
+		out.WriteString(`<span><i style="background:` + chartPalette[i%len(chartPalette)] + `"></i>` + html.EscapeString(label) + `</span>`)
+	}
+	out.WriteString(`</figcaption></figure>`)
+	return out.String(), nil
+}
+
+func renderScatterChart(frame *chartFrame) (string, error) {
+	const width = 600.0
+	height := float64(frame.height)
+	left, right, top, bottom := 58.0, 20.0, 46.0, 48.0
+	plotWidth, plotHeight := width-left-right, height-top-bottom
+	minY, maxY := chartDomain(frame)
+	ticks := chartTicks(minY, maxY)
+	minY, maxY = ticks[0], ticks[len(ticks)-1]
+	minX, maxX := 0.0, 1.0
+	if len(frame.xValues) > 0 {
+		minX, maxX = frame.xValues[0], frame.xValues[0]
+		for _, value := range frame.xValues {
+			minX, maxX = math.Min(minX, value), math.Max(maxX, value)
+		}
+	}
+	if minX == maxX {
+		maxX = minX + 1
+	}
+	x := func(value float64) float64 { return left + (value-minX)/(maxX-minX)*plotWidth }
+	y := func(value float64) float64 { return top + (maxY-value)/(maxY-minY)*plotHeight }
+	var out strings.Builder
+	out.WriteString(`<figure class="dr-chart dr-chart-scatter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 ` + strconv.Itoa(frame.height) + `" role="img" aria-label="scatter chart"><title>scatter chart</title>`)
+	renderChartLegend(&out, frame, left)
+	for _, tick := range ticks {
+		out.WriteString(`<line x1="` + chartNumber(left) + `" y1="` + chartNumber(y(tick)) + `" x2="` + chartNumber(width-right) + `" y2="` + chartNumber(y(tick)) + `" stroke="#e5e2dc"/><text x="` + chartNumber(left-8) + `" y="` + chartNumber(y(tick)+4) + `" text-anchor="end" fill="#716c63" font-size="11">` + html.EscapeString(formatChartValue(tick, frame.format)) + `</text>`)
+	}
+	for series := range frame.series {
+		for row, value := range frame.values[series] {
+			label := frame.series[series] + ": " + formatChartValue(value, frame.format)
+			out.WriteString(`<circle class="dr-chart-data" cx="` + chartNumber(x(frame.xValues[row])) + `" cy="` + chartNumber(y(value)) + `" r="4" fill="` + chartPalette[series%len(chartPalette)] + `" opacity=".85"><title>` + html.EscapeString(label) + `</title></circle>`)
+		}
+	}
+	for _, value := range []float64{minX, (minX + maxX) / 2, maxX} {
+		out.WriteString(`<text x="` + chartNumber(x(value)) + `" y="` + chartNumber(top+plotHeight+22) + `" text-anchor="middle" fill="#716c63" font-size="11">` + html.EscapeString(formatChartValue(value, "number")) + `</text>`)
+	}
+	out.WriteString(`</svg></figure>`)
+	return out.String(), nil
 }

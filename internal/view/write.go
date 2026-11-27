@@ -1,7 +1,9 @@
 package view
 
 import (
+	"errors"
 	"fmt"
+	"io/fs"
 	"os"
 	"strconv"
 	"strings"
@@ -14,6 +16,8 @@ import (
 type WriteOptions struct {
 	StatementsText string
 	Sources        map[string]SourceRef
+	Profile        string
+	Citations      bundle.CitationMap
 	Model          string
 	Request        string
 	Now            time.Time
@@ -60,17 +64,28 @@ func Write(docPath string, opts WriteOptions) (WriteResult, error) {
 		if err != nil {
 			return err
 		}
-		validated, err := ValidateStrict(string(docBytes), opts.StatementsText, opts.Sources)
+		manifest, hadManifest, err := bundle.LoadManifest(docPath, docBytes)
+		if err != nil {
+			return err
+		}
+		profile := opts.Profile
+		if profile == "" {
+			profile = bundle.ProfileCanvas
+		}
+		reader := manifest.Reader
+		targetLang, mode := "", ""
+		if reader != nil {
+			targetLang, mode = reader.TargetLang, reader.Mode
+		}
+		validated, err := ValidateWithOptions(docPath, docBytes, SplitStatementStrings(opts.StatementsText), opts.Sources, ValidateOptions{
+			Profile: profile, TargetLang: targetLang, Mode: mode, StrictEditorial: true,
+		})
 		if err != nil {
 			return err
 		}
 
-		manifest, _, err := bundle.LoadManifest(docPath, docBytes)
-		if err != nil {
-			return err
-		}
+		previousManifest := manifest
 		nextRev := manifest.Revision + 1
-
 		rawView, err := BuildCompactedEnvelope(validated.Statements, validated.Sources, opts.Model, opts.Request, opts.Now)
 		if err != nil {
 			return err
@@ -82,31 +97,86 @@ func Write(docPath string, opts WriteOptions) (WriteResult, error) {
 
 		manifest.Revision = nextRev
 		manifest.SourceDigest = bundle.SHA256Hex(docBytes)
+		manifest.Profile = profile
 		if err := bundle.SaveManifest(docPath, manifest); err != nil {
 			rollbackView()
 			return err
 		}
-
-		bindings := make([]bundle.ModuleBinding, 0, len(validated.Modules))
-		for _, m := range validated.Modules {
-			bindings = append(bindings, bundle.ModuleBinding{
-				Statement:  m.Statement,
-				SourceID:   m.SourceID,
-				Heading:    m.Section.Heading,
-				Occurrence: m.Section.Occurrence,
-				ShortCode:  fmt.Sprintf("%s·%s@r%d", manifest.BundleID, m.Statement, nextRev),
-			})
+		rollbackCitations := func() {}
+		if opts.Citations != nil {
+			rollbackCitations, err = saveCitationsWithRollback(docPath, opts.Citations)
+			if err != nil {
+				rollbackView()
+				restoreManifest(docPath, previousManifest, hadManifest)
+				return err
+			}
 		}
+		_ = rollbackCitations // no fallible operation follows a successful citation write
 
 		out = WriteResult{
 			BundleID:    manifest.BundleID,
 			ViewPath:    bundle.ViewPath(docPath),
 			Revision:    nextRev,
 			ViewHash:    bundle.SHA256Hex(rawView),
-			ModuleCount: len(bindings),
-			Modules:     bindings,
+			ModuleCount: len(validated.Modules),
+			Modules:     validatedModuleBindings(validated.Modules, validated.Sources, manifest.BundleID, nextRev),
 		}
 		return nil
 	})
 	return out, err
+}
+
+func validatedModuleBindings(modules []ValidatedModule, sources map[string]SourceRef, bundleID string, revision int) []bundle.ModuleBinding {
+	bindings := make([]bundle.ModuleBinding, 0, len(modules))
+	for _, module := range modules {
+		shortCode := fmt.Sprintf("%s·%s@r%d", bundleID, module.Statement, revision)
+		module.ShortCode = shortCode
+		sections := make([]bundle.SourceBinding, 0, len(module.Sections))
+		for _, ref := range module.Sections {
+			sections = append(sections, bundle.SourceBinding{
+				SourceID:   ref.SourceID,
+				Heading:    ref.Section.Heading,
+				Occurrence: ref.Section.Occurrence,
+				SourceHash: sources[ref.SourceID].Hash,
+			})
+		}
+		bindings = append(bindings, bundle.ModuleBinding{
+			Statement:  module.Statement,
+			SourceID:   module.SourceID,
+			Heading:    module.Section.Heading,
+			Occurrence: module.Section.Occurrence,
+			Sections:   sections,
+			ShortCode:  shortCode,
+		})
+	}
+	return bindings
+}
+
+// saveCitationsWithRollback persists citations only when the caller supplied a
+// map, and returns an exact-byte rollback for any later metadata failure.
+func saveCitationsWithRollback(docPath string, citations bundle.CitationMap) (func(), error) {
+	path := bundle.CitationsPath(docPath)
+	previous, err := os.ReadFile(path)
+	hadPrevious := err == nil
+	if err != nil && !errors.Is(err, fs.ErrNotExist) {
+		return nil, err
+	}
+	if err := bundle.SaveCitations(docPath, citations); err != nil {
+		return nil, err
+	}
+	return func() {
+		if hadPrevious {
+			_ = bundle.WriteFileAtomic(path, previous, 0o644)
+		} else {
+			_ = os.Remove(path)
+		}
+	}, nil
+}
+
+func restoreManifest(docPath string, manifest bundle.Manifest, existed bool) {
+	if existed {
+		_ = bundle.SaveManifest(docPath, manifest)
+	} else {
+		_ = os.Remove(bundle.ManifestPath(docPath))
+	}
 }

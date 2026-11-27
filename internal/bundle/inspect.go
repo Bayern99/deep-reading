@@ -64,28 +64,32 @@ type Excerpt struct {
 
 // InspectReport is the single structured read-state output of `deepread inspect`.
 type InspectReport struct {
-	BundleID           string           `json:"bundleId"`
-	DocPath            string           `json:"docPath"`
-	Revision           int              `json:"revision"`
-	ViewExists         bool             `json:"viewExists"`
-	ViewHash           string           `json:"viewHash,omitempty"`
-	LineCount          int              `json:"lineCount"`
-	Sections           []SectionSummary `json:"sections"`
-	Modules            []ModuleBinding  `json:"modules,omitempty"`
-	OpenNotes          []OpenNote       `json:"openNotes"`
-	StaleSources       []SourceIssue    `json:"staleSources"`
-	MissingSources     []SourceIssue    `json:"missingSources"`
-	AffectedStatements []string         `json:"affectedStatements"`
-	Excerpt            *Excerpt         `json:"excerpt,omitempty"`
+	BundleID           string             `json:"bundleId"`
+	DocPath            string             `json:"docPath"`
+	Revision           int                `json:"revision"`
+	Profile            string             `json:"profile,omitempty"`
+	Reader             *ReaderConfig      `json:"reader,omitempty"`
+	Translation        *TranslationStatus `json:"translation,omitempty"`
+	ViewExists         bool               `json:"viewExists"`
+	ViewHash           string             `json:"viewHash,omitempty"`
+	LineCount          int                `json:"lineCount"`
+	Sections           []SectionSummary   `json:"sections"`
+	Modules            []ModuleBinding    `json:"modules,omitempty"`
+	OpenNotes          []OpenNote         `json:"openNotes"`
+	StaleSources       []SourceIssue      `json:"staleSources"`
+	MissingSources     []SourceIssue      `json:"missingSources"`
+	AffectedStatements []string           `json:"affectedStatements"`
+	Excerpt            *Excerpt           `json:"excerpt,omitempty"`
 }
 
-// ModuleBinding maps a top-level Source statement in .genui.json to its target section.
+// ModuleBinding maps a Source statement in .genui.json to its target section(s).
 type ModuleBinding struct {
-	Statement  string `json:"statement"`
-	SourceID   string `json:"sourceId"`
-	Heading    string `json:"heading"`
-	Occurrence int    `json:"occurrence"`
-	ShortCode  string `json:"shortCode"`
+	Statement  string          `json:"statement"`
+	SourceID   string          `json:"sourceId"`
+	Heading    string          `json:"heading"`
+	Occurrence int             `json:"occurrence"`
+	Sections   []SourceBinding `json:"sections,omitempty"`
+	ShortCode  string          `json:"shortCode"`
 }
 
 // ViewPath returns the Mark Go Go-compatible sidecar path (.<base>.genui.json).
@@ -154,12 +158,24 @@ func inspectUnlocked(docPath string, opts InspectOptions) (InspectReport, error)
 		BundleID:           manifest.BundleID,
 		DocPath:            docPath,
 		Revision:           manifest.Revision,
+		Profile:            manifest.Profile,
+		Reader:             manifest.Reader,
 		LineCount:          len(strings.Split(strings.ReplaceAll(raw, "\r\n", "\n"), "\n")),
 		Sections:           secSummaries,
 		OpenNotes:          []OpenNote{},
 		StaleSources:       []SourceIssue{},
 		MissingSources:     []SourceIssue{},
 		AffectedStatements: []string{},
+	}
+
+	// Translation coverage is loaded under the same lock as the rest of the
+	// report so status never disagrees with the sections above.
+	if manifest.Reader != nil && strings.TrimSpace(manifest.Reader.TargetLang) != "" {
+		_, status, err := LoadTranslationUnlocked(docPath, manifest.Reader.TargetLang, rawBytes, manifest)
+		if err != nil {
+			return InspectReport{}, err
+		}
+		report.Translation = &status
 	}
 
 	// Inspect sidecar if present.
@@ -195,29 +211,55 @@ func inspectUnlocked(docPath string, opts InspectOptions) (InspectReport, error)
 					mergedText = openuilang.Overlay(mergedText, strings.Join(m.UpdateComponents.Components, "\n"))
 				}
 			}
+			// One ModuleBinding per Source statement; a multi-section
+			// Source(["s1", "s2"], [...]) call keeps every section in Sections
+			// while SourceID/Heading/Occurrence mirror the first section for
+			// backward compatibility with single-source consumers.
+			moduleIdx := map[string]int{}
+			rev := manifest.Revision
+			if rev < 1 {
+				rev = 1
+			}
 			for _, use := range openuilang.FirstArgumentStrings(mergedText, "Source") {
-				for _, sid := range use.Strings {
-					sourceToStmts[sid] = append(sourceToStmts[sid], use.Statement)
-					if src, ok := env.Sources[sid]; ok {
-						occ := src.Occurrence
-						if occ < 1 {
-							occ = 1
-						}
-						k := secKey{markdown.NormalizeHeadingText(src.Heading), occ}
-						secToStmts[k] = append(secToStmts[k], use.Statement)
-						rev := manifest.Revision
-						if rev < 1 {
-							rev = 1
-						}
-						report.Modules = append(report.Modules, ModuleBinding{
-							Statement:  use.Statement,
-							SourceID:   sid,
-							Heading:    src.Heading,
-							Occurrence: occ,
-							ShortCode:  fmt.Sprintf("%s·%s@r%d", manifest.BundleID, use.Statement, rev),
-						})
-					}
+				binding := ModuleBinding{
+					Statement: use.Statement,
+					ShortCode: fmt.Sprintf("%s·%s@r%d", manifest.BundleID, use.Statement, rev),
 				}
+				for _, sid := range use.Strings {
+					sid = strings.TrimSpace(sid)
+					if sid == "" {
+						continue
+					}
+					sourceToStmts[sid] = append(sourceToStmts[sid], use.Statement)
+					src, ok := env.Sources[sid]
+					if !ok {
+						continue
+					}
+					occ := src.Occurrence
+					if occ < 1 {
+						occ = 1
+					}
+					k := secKey{markdown.NormalizeHeadingText(src.Heading), occ}
+					secToStmts[k] = append(secToStmts[k], use.Statement)
+					binding.Sections = append(binding.Sections, SourceBinding{
+						SourceID:   sid,
+						Heading:    src.Heading,
+						Occurrence: occ,
+					})
+				}
+				if len(binding.Sections) == 0 {
+					continue
+				}
+				first := binding.Sections[0]
+				binding.SourceID = first.SourceID
+				binding.Heading = first.Heading
+				binding.Occurrence = first.Occurrence
+				if idx, ok := moduleIdx[use.Statement]; ok {
+					report.Modules[idx].Sections = append(report.Modules[idx].Sections, binding.Sections...)
+					continue
+				}
+				moduleIdx[use.Statement] = len(report.Modules)
+				report.Modules = append(report.Modules, binding)
 			}
 			// Sort source IDs deterministically.
 			sids := make([]string, 0, len(env.Sources))

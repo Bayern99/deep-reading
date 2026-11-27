@@ -191,7 +191,7 @@ func ingestEPUB(srcPath, outDir string, opts Options) (Result, error) {
 		if title == "" {
 			title = fmt.Sprintf("Chapter %d", len(drafts)+1)
 		}
-		markdown := ensureChapterTitle(converted.Markdown, title)
+		markdown := ensureChapterTitle(StripDownloaderBoilerplate(converted.Markdown), title)
 		drafts = append(drafts, chapterDraft{
 			info: ChapterInfo{
 				Title:      title,
@@ -238,6 +238,7 @@ func ingestEPUB(srcPath, outDir string, opts Options) (Result, error) {
 			}
 		}
 		usedBundleIDs[manifest.BundleID] = true
+		manifest.Reader = opts.readerConfig()
 		draft.manifest = manifest
 		draft.docPath = docPath
 		draft.info.Index = index
@@ -292,6 +293,7 @@ func ingestEPUB(srcPath, outDir string, opts Options) (Result, error) {
 		IndexPath: "index.md",
 		BookJSON:  "book.json",
 		Chapters:  make([]ChapterInfo, 0, len(drafts)),
+		Reader:    opts.readerConfig(),
 	}
 	if result.Title == "" {
 		result.Title = strings.TrimSuffix(filepath.Base(srcPath), filepath.Ext(srcPath))

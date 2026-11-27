@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"strings"
 
+	"deepread/internal/bundle"
 	"deepread/internal/genuikit"
 )
 
-// AllowedComponents is the deliberately narrowed v1 reading-primitive whitelist.
-// Dashboard/form components (Card, Grid, Badge, Box, Carousel, Input, etc.) are
-// excluded at both catalog and validator layers while remaining 100% valid Mark Go Go v3.
+// AllowedComponents is the deliberately narrowed v0.2 margin-reading whitelist.
+// Canvas validation instead derives its whitelist from genuikit's full catalog.
 var AllowedComponents = map[string]bool{
 	"Col":      true,
 	"Source":   true,
@@ -28,16 +28,74 @@ var allowedComponentOrder = []string{
 	"Col", "Source", "Title", "Text", "Caption", "Quote", "Table", "Chart", "List", "ListItem",
 }
 
-// AllowedChartTypes restricts v1 Chart rendering to crisp static bar and line charts.
+// AllowedChartTypes restricts the legacy margin profile to static bar and line charts.
 var AllowedChartTypes = map[string]bool{
 	"bar":  true,
 	"line": true,
 }
 
-// CatalogText builds the concise, anti-cliché OpenUI Lang specification shown to
-// host Agents via `deepread catalog`. It derives signatures directly from
-// genuikit's authoritative catalog.json and never exposes card/badge examples.
+// CatalogText returns the default full reading-canvas contract.
 func CatalogText() (string, error) {
+	return CatalogTextFor(bundle.ProfileCanvas)
+}
+
+// CatalogTextFor builds either the full v0.3 canvas catalog or the byte-compatible
+// v0.2 margin catalog. All component signatures come from genuikit's catalog.
+func CatalogTextFor(profile string) (string, error) {
+	if profile == "" {
+		profile = bundle.ProfileCanvas
+	}
+	switch profile {
+	case bundle.ProfileMargin:
+		return marginCatalogText()
+	case bundle.ProfileCanvas:
+		return canvasCatalogText(), nil
+	default:
+		return "", fmt.Errorf("unknown view profile %q (expected canvas or margin)", profile)
+	}
+}
+
+func canvasCatalogText() string {
+	var b strings.Builder
+	b.WriteString("# DeepRead OpenUI Lang Contract (Canvas Profile, Mark Go Go v3)\n\n")
+	b.WriteString("Build a **full-information structured reading canvas** — eliminate dense walls of prose WITHOUT losing the article's concrete reporting, actors, figures, counterpoints, or quotes. Never write a thin 3-card executive summary, never dump raw paragraphs into `Card([Text(...)])`, and never emit generic two-column key-value tables (`指标|数值`, `项目|事实`, `metric|value`).\n\n")
+	b.WriteString("How to structure an article Act-by-Act:\n")
+	b.WriteString("1. Put the article title, concise thesis subtitle, and terminology `Popover` outside `Source` in `head`.\n")
+	b.WriteString("2. Break the article into 3–6 sequential narrative Acts (`01 …`, `02 …`, …), preserving ~95%+ of the original facts, people, cases, numbers, and caveats.\n")
+	b.WriteString("3. Replace dense narrative blocks with pill-tagged scannable `List([ListItem(\"Bold lead-in\", \"1–2 line fact-dense detail\", \"Tag\")], \"none\")`, punchy verbatim `Quote`, and original source artwork/charts via `Image(\"assets/...\", \"caption\")`.\n")
+	b.WriteString("4. Weave bespoke `Svg` mechanism diagrams, comparative `Chart`s, multi-column `Table`s (real subject columns), dated `Timeline` lists, and bounded `$variable` + `Slider` / `SegmentedControl` reactive islands right at the Act where they clarify structure or math. Keep each interactive control in its own `Source` statement so the toggle/slider sits directly above its reactive chart/table.\n")
+	b.WriteString("5. Bind `--cite <stmt>:<srcId>=<blockId,...>` on every `Source` so the reader can jump straight to the verbatim translated/bilingual/original paragraphs behind the `原文` face.\n\n")
+	b.WriteString("## Three Full-Page Editorial Patterns\n\n")
+	b.WriteString("### Example 1: Act with Quote + pill-tagged scannable List + causal SVG mechanism\n")
+	b.WriteString("```openui\n")
+	b.WriteString("root = Col([head, act1_mechanism, act2_chart])\n")
+	b.WriteString("head = Col([Row([Title(\"Why grid queues delay electrification\", \"xl\"), Popover(Badge(\"Terms\", \"info\"), Text(\"Interconnection queue: projects waiting for grid hookup approval.\"))], 3), Text(\"Full-information structured read · every figure anchored to verbatim prose\", \"sm\")], 2)\n")
+	b.WriteString("act1_mechanism = Source([\"s1\"], [Title(\"01 The bottleneck and how speculative filings jam the line\", \"md\"), Quote(\"\\\"Projects wait five years just to learn what upgrades cost.\\\"\", \"Grid operator\"), List([ListItem(\"Queue surge\", \"Waiting capacity jumped from 750 GW in 2020 to 2,600 GW in 2024.\", \"Scale\"), ListItem(\"First-come trap\", \"Low refundable deposits let developers submit speculative studies that clog reviews.\", \"Cause\")], \"none\"), Svg([Rect(5, 10, 30, 20, \"surface\"), Path(\"M 35 20 L 60 20\", null, \"info\", 2), Circle(70, 20, 10, \"warning\"), SvgText(\"Queue\", 15, 25)], \"0 0 100 50\", \"Applications enter a constrained interconnection queue\")])\n")
+	b.WriteString("act2_chart = Source([\"s2\"], [Title(\"02 Queued capacity trajectory (GW)\", \"md\"), Chart(\"line\", queueData, \"year\", [\"gw\"], \"number\", false, 220, {gw: \"Queued capacity\"})])\n")
+	b.WriteString("queueData = [{year: \"2020\", gw: 750}, {year: \"2024\", gw: 2600}]\n")
+	b.WriteString("```\n\n")
+	b.WriteString("### Example 2: Dedicated reactive Source with bounded $variable + Slider\n")
+	b.WriteString("```openui\n")
+	b.WriteString("root = Col([Title(\"Storage migration scenario\", \"xl\"), scenario])\n")
+	b.WriteString("$months = 6\n")
+	b.WriteString("scenario = Source([\"s1\", \"s2\"], [Slider($months, 6, 12, 1, \"Months\"), Text(@Format($months * 900, \"currency\", 0), \"lg\"), Chart(\"bar\", @Each(@Range(1, $months + 1), \"m\", {month: \"M\" + m, disk: m * 2300, object: m * 1400}), \"month\", [\"disk\", \"object\"], null, null, null, {disk: \"Disk\", object: \"Object storage\"})])\n")
+	b.WriteString("```\n")
+	b.WriteString("The report supplies the 6–12 month range, the 6-month default, and both monthly prices; do not invent any of them.\n\n")
+	b.WriteString("### Example 3: Multi-subject Table + dated Timeline\n")
+	b.WriteString("```openui\n")
+	b.WriteString("root = Col([head, comparison, chronology])\n")
+	b.WriteString("head = Row([Title(\"Two deployment models\", \"xl\"), Spacer(), Popover(Badge(\"Capex\", \"info\"), Text(\"Capital expenditure: the terminology used by the source.\"))])\n")
+	b.WriteString("comparison = Source([\"s1\"], [Table([\"Subject\", \"Disclosure Basis\", \"Reported Figure\", \"Annualized Note\"], [[\"Firm A\", \"Single-year cash (2024)\", \"$18B\", \"One-year outlay\"], [\"Firm B\", \"3-year commitment (2024–2026)\", \"$42B\", \"~$14B/yr average\"]])])\n")
+	b.WriteString("chronology = Source([\"s2\"], [List([ListItem(\"Readiness review\", \"Land and financing evidence required.\", \"2023\"), ListItem(\"Network upgrade\", \"Construction begins after approval.\", \"2024\")], \"none\", true)])\n")
+	b.WriteString("```\n\n")
+	b.WriteString("## Complete OpenUI v3 Language and Layout Guidance\n\n")
+	b.WriteString(genuikit.Format())
+	b.WriteString("\n")
+	return b.String()
+}
+
+// marginCatalogText preserves the v0.2 ten-primitive output exactly.
+func marginCatalogText() (string, error) {
 	var raw struct {
 		Components map[string]struct {
 			Signature   string `json:"signature"`

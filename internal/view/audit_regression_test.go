@@ -24,6 +24,7 @@ func TestAuditRegressionsView(t *testing.T) {
 		w, err := Write(doc, WriteOptions{
 			StatementsText: stmts,
 			Sources:        map[string]SourceRef{"s1": {Heading: "§1 · Capital Surge", Occurrence: 1}},
+			Profile:        bundle.ProfileMargin,
 		})
 		if err != nil {
 			t.Fatal(err)
@@ -92,6 +93,7 @@ func TestAuditRegressionsView(t *testing.T) {
 		_, err := Write(doc, WriteOptions{
 			StatementsText: stmts,
 			Sources:        map[string]SourceRef{"s1": {Heading: "§1 · Capital Surge", Occurrence: 1}},
+			Profile:        bundle.ProfileMargin,
 		})
 		var ve *ValidationError
 		if !errors.As(err, &ve) || ve.Code != "TOP_LEVEL_MUST_BE_SOURCE" {
@@ -107,6 +109,7 @@ func TestAuditRegressionsView(t *testing.T) {
 		_, err = Write(doc, WriteOptions{
 			StatementsText: ternaryStmts,
 			Sources:        map[string]SourceRef{"s1": {Heading: "§1 · Capital Surge", Occurrence: 1}},
+			Profile:        bundle.ProfileMargin,
 		})
 		if !errors.As(err, &ve) || ve.Code != "TOP_LEVEL_MUST_BE_SOURCE" {
 			t.Fatalf("expected TOP_LEVEL_MUST_BE_SOURCE for ternary expression, got %v", err)
@@ -121,6 +124,7 @@ func TestAuditRegressionsView(t *testing.T) {
 		_, err = Write(doc, WriteOptions{
 			StatementsText: leadingSourceTernary,
 			Sources:        map[string]SourceRef{"s1": {Heading: "§1 · Capital Surge", Occurrence: 1}},
+			Profile:        bundle.ProfileMargin,
 		})
 		if !errors.As(err, &ve) || ve.Code != "TOP_LEVEL_MUST_BE_SOURCE" {
 			t.Fatalf("expected TOP_LEVEL_MUST_BE_SOURCE for leading-Source ternary expression, got %v", err)
@@ -138,6 +142,7 @@ func TestAuditRegressionsView(t *testing.T) {
 		_, err := Write(doc, WriteOptions{
 			StatementsText: "root = Col([q])\nq = Source([\"s1\"], [Quote(\"Firm A reported $18B.\", \"§1\")])",
 			Sources:        map[string]SourceRef{"s1": {Heading: "§1 · Capital Surge", Occurrence: 1}},
+			Profile:        bundle.ProfileMargin,
 		})
 		if err == nil {
 			t.Fatalf("expected Write to fail when history snapshot cannot be written")

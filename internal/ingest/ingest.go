@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"path/filepath"
 	"strings"
+
+	"deepread/internal/bundle"
 )
 
 const (
@@ -27,6 +29,11 @@ type Options struct {
 	MaxTotalBytes int64
 	MaxFileBytes  int64
 	MaxEntries    int
+
+	// Reading contract recorded in every produced bundle manifest.
+	SourceLang string
+	TargetLang string
+	Mode       string // original | translated | bilingual
 }
 
 // ChapterInfo describes one independently bundled EPUB chapter.
@@ -42,22 +49,66 @@ type ChapterInfo struct {
 
 // Result describes the document or book produced by Ingest.
 type Result struct {
-	Kind       string        `json:"kind"`
-	Title      string        `json:"title"`
-	Author     string        `json:"author,omitempty"`
-	OutDir     string        `json:"outDir"`
-	DocPath    string        `json:"docPath,omitempty"`
-	IndexPath  string        `json:"indexPath,omitempty"`
-	BookJSON   string        `json:"bookJson,omitempty"`
-	BundleID   string        `json:"bundleId,omitempty"`
-	ImageCount int           `json:"imageCount"`
-	Chapters   []ChapterInfo `json:"chapters,omitempty"`
+	Kind       string               `json:"kind"`
+	Title      string               `json:"title"`
+	Author     string               `json:"author,omitempty"`
+	OutDir     string               `json:"outDir"`
+	DocPath    string               `json:"docPath,omitempty"`
+	IndexPath  string               `json:"indexPath,omitempty"`
+	BookJSON   string               `json:"bookJson,omitempty"`
+	BundleID   string               `json:"bundleId,omitempty"`
+	ImageCount int                  `json:"imageCount"`
+	Reader     *bundle.ReaderConfig `json:"reader,omitempty"`
+	Chapters   []ChapterInfo        `json:"chapters,omitempty"`
+}
+
+// BookMetadata is the persisted shape of book.json for EPUB bundles. It is an
+// alias of Result because book.json is written from the ingest Result.
+type BookMetadata = Result
+
+// readerConfig returns the validated reading contract, or nil when none was
+// requested. Language tags are expected to be canonical already.
+func (o Options) readerConfig() *bundle.ReaderConfig {
+	if o.SourceLang == "" && o.TargetLang == "" && o.Mode == "" {
+		return nil
+	}
+	return &bundle.ReaderConfig{SourceLang: o.SourceLang, TargetLang: o.TargetLang, Mode: o.Mode}
+}
+
+// validateReadingContract canonicalizes language tags and rejects unknown
+// modes BEFORE any staging directory is created.
+func (o Options) validateReadingContract() (Options, error) {
+	if strings.TrimSpace(o.SourceLang) != "" {
+		canon, err := bundle.CanonicalLang(o.SourceLang)
+		if err != nil {
+			return o, err
+		}
+		o.SourceLang = canon
+	}
+	if strings.TrimSpace(o.TargetLang) != "" {
+		canon, err := bundle.CanonicalLang(o.TargetLang)
+		if err != nil {
+			return o, err
+		}
+		o.TargetLang = canon
+	}
+	mode := strings.TrimSpace(o.Mode)
+	if err := bundle.ValidateReadMode(mode); err != nil {
+		return o, err
+	}
+	o.Mode = mode
+	return o, nil
 }
 
 // Ingest imports a local Markdown or EPUB file. Format support is deliberately
 // limited to those two formats; no external converters or network fetches are used.
 func Ingest(srcPath, outDir string, opts Options) (Result, error) {
 	opts = opts.withDefaults()
+	validated, err := opts.validateReadingContract()
+	if err != nil {
+		return Result{}, err
+	}
+	opts = validated
 	switch strings.ToLower(filepath.Ext(srcPath)) {
 	case ".md", ".markdown":
 		return ingestMarkdown(srcPath, outDir, opts)

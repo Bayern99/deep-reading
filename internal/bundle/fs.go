@@ -53,6 +53,37 @@ func WithDocRLock(docPath string, fn func() error) error {
 	return fn()
 }
 
+// WithDocRLockInRoot acquires a shared advisory lock strictly inside root,
+// using non-blocking regular-file opens so lock access cannot escape root or block on a FIFO.
+func WithDocRLockInRoot(root *os.Root, relDocPath string, fn func() error) error {
+	relDir := filepath.ToSlash(filepath.Dir(relDocPath))
+	metaRel := ".deepread"
+	if relDir != "" && relDir != "." {
+		metaRel = relDir + "/.deepread"
+	}
+	info, err := root.Stat(metaRel)
+	if errors.Is(err, fs.ErrNotExist) {
+		return fn()
+	}
+	if err != nil {
+		return fmt.Errorf("stat bundle metadata dir: %w", err)
+	}
+	if !info.IsDir() {
+		return fmt.Errorf("bundle metadata path %q is not a directory", metaRel)
+	}
+	f, err := openRegularLockInRoot(root, metaRel+"/.lock")
+	if err != nil {
+		return fmt.Errorf("open bundle read lock: %w", err)
+	}
+	defer f.Close()
+	unlock, err := lockFileShared(f)
+	if err != nil {
+		return fmt.Errorf("acquire bundle read lock: %w", err)
+	}
+	defer unlock()
+	return fn()
+}
+
 // MetaDir returns the .deepread metadata directory alongside a document.
 func MetaDir(docPath string) string {
 	return filepath.Join(filepath.Dir(docPath), ".deepread")

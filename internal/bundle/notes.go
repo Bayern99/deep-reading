@@ -21,6 +21,7 @@ type AddNoteOptions struct {
 	Text       string // Required non-empty note text.
 	BaseRev    int    // Optional compare-and-swap revision.
 	MsgID      string // Optional external message ID for idempotent delivery.
+	SourceID   string // Optional source ID for a multi-section Source statement.
 	Now        time.Time
 }
 
@@ -86,7 +87,7 @@ func AddNote(docPath string, opts AddNoteOptions) (AddNoteResult, error) {
 			occurrence = 1
 		}
 		if node != "" {
-			heading, occurrence, err = noteTargetForNode(docPath, node)
+			heading, occurrence, err = noteTargetForNode(docPath, node, opts.SourceID)
 			if err != nil {
 				return err
 			}
@@ -192,7 +193,7 @@ func sanitizeNoteAttribute(value string) string {
 	return strings.ReplaceAll(value, `"`, "&quot;")
 }
 
-func noteTargetForNode(docPath, node string) (heading string, occurrence int, err error) {
+func noteTargetForNode(docPath, node, preferredSourceID string) (heading string, occurrence int, err error) {
 	raw, err := os.ReadFile(ViewPath(docPath))
 	if err != nil {
 		return "", 0, fmt.Errorf("resolve node %q: read view: %w", node, err)
@@ -226,21 +227,29 @@ func noteTargetForNode(docPath, node string) (heading string, occurrence int, er
 		}
 	}
 
-	var sourceID string
+	var sourceIDs []string
 	for _, call := range openuilang.FirstArgumentStrings(joined, "Source") {
 		if call.Statement != node {
 			continue
 		}
-		if !call.Literal || len(call.Strings) != 1 || strings.TrimSpace(call.Strings[0]) == "" {
-			return "", 0, fmt.Errorf("node %q must have exactly one literal Source ID", node)
+		if !call.Literal || len(call.Strings) == 0 {
+			return "", 0, fmt.Errorf("node %q must have at least one literal Source ID", node)
 		}
-		if sourceID != "" {
+		if len(sourceIDs) > 0 {
 			return "", 0, fmt.Errorf("node %q has multiple Source calls", node)
 		}
-		sourceID = call.Strings[0]
+		for _, raw := range call.Strings {
+			if id := strings.TrimSpace(raw); id != "" {
+				sourceIDs = append(sourceIDs, id)
+			}
+		}
 	}
-	if sourceID == "" {
+	if len(sourceIDs) == 0 {
 		return "", 0, fmt.Errorf("%w: node %q is not a Source statement in current view", ErrNotFound, node)
+	}
+	sourceID, err := selectSourceID(node, sourceIDs, strings.TrimSpace(preferredSourceID))
+	if err != nil {
+		return "", 0, err
 	}
 	source, ok := env.Sources[sourceID]
 	if !ok {
@@ -254,6 +263,25 @@ func noteTargetForNode(docPath, node string) (heading string, occurrence int, er
 		return "", 0, fmt.Errorf("node %q source %q has an empty heading", node, sourceID)
 	}
 	return source.Heading, occurrence, nil
+}
+
+// selectSourceID resolves which cited source a note belongs to. A single-source
+// Source(["s1"], ...) statement keeps working unchanged; a multi-section
+// statement requires an explicit, matching source ID.
+func selectSourceID(node string, sourceIDs []string, preferred string) (string, error) {
+	valid := strings.Join(sourceIDs, ", ")
+	if preferred != "" {
+		for _, id := range sourceIDs {
+			if id == preferred {
+				return id, nil
+			}
+		}
+		return "", fmt.Errorf("%w: node %q does not reference source %q (valid: %s)", ErrNotFound, node, preferred, valid)
+	}
+	if len(sourceIDs) == 1 {
+		return sourceIDs[0], nil
+	}
+	return "", fmt.Errorf("node %q references multiple sources (%s); pass --source with one of: %s", node, valid, valid)
 }
 
 func insertNoteComment(raw string, sections []markdown.Section, sectionIdx int, comment string) string {

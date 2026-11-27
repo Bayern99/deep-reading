@@ -11,14 +11,17 @@ import (
 	"deepread/internal/openuilang"
 )
 
-// PatchOptions configures a compare-and-swap update of selected Source modules.
+// PatchOptions configures a compare-and-swap update of selected Source modules
+// and (in canvas profile) state-variable declarations.
 type PatchOptions struct {
-	Replace            []string             // Top-level Source statement names to replace.
+	Replace            []string             // Existing Source statement or $variable names to replace.
 	ExpectHash         string               // Required SHA-256 of the current sidecar.
 	ExpectSourceHashes map[string]string    // Optional sourceId -> live fnv1a32 hash (required when target prose changed).
 	StatementsText     string               // Replacement statements and optional new helpers.
 	AddedSources       map[string]SourceRef // Optional additional source mappings.
 	ResolveNotes       []string             // Ledger note IDs to resolve upon commit.
+	Profile            string
+	Citations          bundle.CitationMap
 	Model              string
 	Request            string
 	Now                time.Time
@@ -35,12 +38,12 @@ type PatchResult struct {
 	Modules       []bundle.ModuleBinding `json:"modules"`
 }
 
-// Patch replaces explicitly selected top-level Source statements, validates the
-// merged program, and commits a single-createSurface sidecar under CAS.
+// Patch replaces explicitly selected Source statements or variables, validates
+// the merged program, and commits a single-createSurface sidecar under CAS.
 func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 	var out PatchResult
 	if len(opts.Replace) == 0 {
-		return out, &ValidationError{Code: "EMPTY_REPLACEMENT", Path: "/replace", Message: "replace must name at least one top-level Source statement"}
+		return out, &ValidationError{Code: "EMPTY_REPLACEMENT", Path: "/replace", Message: "replace must name at least one Source statement or $variable"}
 	}
 	expectHash := strings.ToLower(strings.TrimSpace(opts.ExpectHash))
 	if expectHash == "" {
@@ -63,9 +66,27 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 		if err != nil {
 			return err
 		}
-		rootRefs, err := patchRootReferences(current)
+		docBytes, err := os.ReadFile(docPath)
 		if err != nil {
 			return err
+		}
+		manifest, hadManifest, err := bundle.LoadManifest(docPath, docBytes)
+		if err != nil {
+			return err
+		}
+		profile := opts.Profile
+		if profile == "" {
+			profile = manifest.Profile
+		}
+		if profile == "" {
+			profile = bundle.ProfileCanvas
+		}
+		var rootRefs map[string]bool
+		if profile == bundle.ProfileMargin {
+			rootRefs, err = patchRootReferences(current)
+			if err != nil {
+				return err
+			}
 		}
 
 		sourceCalls := map[string]openuilang.CallStrings{}
@@ -88,12 +109,17 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 			}
 			_, exists := current[name]
 			_, isSource := sourceCalls[name]
-			if name == "root" || !exists || !rootRefs[name] || !isSource {
+			isVariable := strings.HasPrefix(name, "$")
+			invalid := name == "root" || !exists || (!isVariable && !isSource)
+			if profile == bundle.ProfileMargin {
+				invalid = invalid || isVariable || !rootRefs[name] || !isSource
+			}
+			if invalid {
 				return &ValidationError{
 					Code:      "INVALID_REPLACEMENT_TARGET",
 					Statement: name,
-					Message:   fmt.Sprintf("statement %q is not a top-level Source referenced by root", name),
-					Hint:      "Replace only existing root children; root itself and private helpers cannot be replacement targets.",
+					Message:   fmt.Sprintf("statement %q is not a replaceable Source statement or canvas $variable", name),
+					Hint:      "Replace an existing Source statement; canvas patches may also replace an existing $variable declaration.",
 				}
 			}
 			replaceSet[name] = true
@@ -134,26 +160,23 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 			if source.Occurrence < 1 {
 				source.Occurrence = 1
 			}
-			source.Hash = "" // Live validation, never caller input, stamps hashes.
+			source.Hash = ""
 			if existing, ok := mergedSources[id]; ok {
 				if !patchSameSourceSection(existing, source) {
-					return &ValidationError{
-						Code:    "SOURCE_CONFLICT",
-						Path:    "/sources/" + id,
-						Message: fmt.Sprintf("source %q is already mapped to a different section", id),
-						Hint:    "Use a new source ID or keep the existing heading and occurrence unchanged.",
-					}
+					return &ValidationError{Code: "SOURCE_CONFLICT", Path: "/sources/" + id, Message: fmt.Sprintf("source %q is already mapped to a different section", id), Hint: "Use a new source ID or keep the existing heading and occurrence unchanged."}
 				}
 				continue
 			}
 			mergedSources[id] = source
 		}
 
-		docBytes, err := os.ReadFile(docPath)
-		if err != nil {
-			return err
+		targetLang, mode := "", ""
+		if manifest.Reader != nil {
+			targetLang, mode = manifest.Reader.TargetLang, manifest.Reader.Mode
 		}
-		validated, err := ValidateStrict(string(docBytes), mergedText, mergedSources)
+		validated, err := ValidateWithOptions(docPath, docBytes, SplitStatementStrings(mergedText), mergedSources, ValidateOptions{
+			Profile: profile, TargetLang: targetLang, Mode: mode, StrictEditorial: true,
+		})
 		if err != nil {
 			return err
 		}
@@ -162,75 +185,103 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 			heading string
 			occ     int
 		}
+		keyFor := func(source SourceRef) sectionKey {
+			occurrence := source.Occurrence
+			if occurrence < 1 {
+				occurrence = 1
+			}
+			return sectionKey{markdown.NormalizeHeadingText(source.Heading), occurrence}
+		}
+		liveSections := map[sectionKey]markdown.Section{}
+		for _, section := range markdown.ExtractSections(string(docBytes)) {
+			liveSections[sectionKey{markdown.NormalizeHeadingText(section.Heading), section.Occurrence}] = section
+		}
 		replacedSections := map[sectionKey]bool{}
 		for _, name := range replaced {
-			call := sourceCalls[name]
-			if !call.Literal || len(call.Strings) != 1 {
+			call, isSource := sourceCalls[name]
+			if !isSource || !call.Literal {
 				continue
 			}
-			if source, ok := parsed.Envelope.Sources[call.Strings[0]]; ok {
-				occ := source.Occurrence
-				if occ < 1 {
-					occ = 1
+			for _, sourceID := range call.Strings {
+				if source, ok := parsed.Envelope.Sources[sourceID]; ok {
+					replacedSections[keyFor(source)] = true
 				}
-				replacedSections[sectionKey{markdown.NormalizeHeadingText(source.Heading), occ}] = true
 			}
 		}
 		for _, module := range validated.Modules {
 			if replaceSet[module.Statement] {
 				continue
 			}
-			key := sectionKey{markdown.NormalizeHeadingText(module.Section.Heading), module.Section.Occurrence}
-			if replacedSections[key] {
-				continue
-			}
-			if previous, ok := parsed.Envelope.Sources[module.SourceID]; ok && patchSameSourceSection(previous, validated.Sources[module.SourceID]) {
-				source := validated.Sources[module.SourceID]
-				source.Hash = previous.Hash
-				validated.Sources[module.SourceID] = source
+			for _, ref := range module.Sections {
+				key := sectionKey{markdown.NormalizeHeadingText(ref.Section.Heading), ref.Section.Occurrence}
+				if replacedSections[key] {
+					continue
+				}
+				if previous, ok := parsed.Envelope.Sources[ref.SourceID]; ok && patchSameSourceSection(previous, validated.Sources[ref.SourceID]) {
+					source := validated.Sources[ref.SourceID]
+					source.Hash = previous.Hash
+					validated.Sources[ref.SourceID] = source
+				}
 			}
 		}
 
-		// Guard against silently clearing a stale-source flag when target prose
-		// changed after the sidecar was written — checked by (heading, occurrence)
-		// across ALL previous sources so renaming a source ID (e.g. s1 -> fresh)
-		// cannot bypass staleness detection.
-		prevHashBySection := map[sectionKey]string{}
-		for _, prev := range parsed.Envelope.Sources {
-			if prev.Hash == "" {
+		previousHashBySection := map[sectionKey]string{}
+		for _, previous := range parsed.Envelope.Sources {
+			if previous.Hash != "" {
+				previousHashBySection[keyFor(previous)] = previous.Hash
+			}
+		}
+		checkLiveHash := func(sourceID string, source SourceRef, expected string, hasExpected bool) error {
+			key := keyFor(source)
+			section, found := liveSections[key]
+			if !found {
+				return fmt.Errorf("%w: target section %q (%s) no longer exists", ErrHashConflict, source.Heading, sourceID)
+			}
+			if hasExpected {
+				if !section.UnchangedSince(strings.TrimSpace(expected)) {
+					return fmt.Errorf("%w: target section %q (%s) changed since inspect (expected %s, live %s)", ErrHashConflict, section.Heading, sourceID, expected, section.Hash)
+				}
+				return nil
+			}
+			if previousHash := previousHashBySection[key]; previousHash != "" && !section.UnchangedSince(previousHash) {
+				return fmt.Errorf("%w: target section %q (%s) prose changed since sidecar (saved %s, live %s); inspect the updated section and pass --expect-source-hash %s=%s", ErrHashConflict, section.Heading, sourceID, previousHash, section.Hash, sourceID, section.Hash)
+			}
+			return nil
+		}
+
+		// Every old section referenced by a replaced multi-source statement is
+		// checked, even when the replacement drops that citation.
+		for _, name := range replaced {
+			call, isSource := sourceCalls[name]
+			if !isSource || !call.Literal {
 				continue
 			}
-			occ := prev.Occurrence
-			if occ < 1 {
-				occ = 1
+			for _, sourceID := range call.Strings {
+				source, ok := parsed.Envelope.Sources[sourceID]
+				if !ok {
+					continue
+				}
+				expected, hasExpected := opts.ExpectSourceHashes[sourceID]
+				if err := checkLiveHash(sourceID, source, expected, hasExpected); err != nil {
+					return err
+				}
 			}
-			k := sectionKey{markdown.NormalizeHeadingText(prev.Heading), occ}
-			prevHashBySection[k] = prev.Hash
 		}
+		// Newly referenced sections are checked too, including source-ID renames.
 		for _, module := range validated.Modules {
 			if !replaceSet[module.Statement] {
 				continue
 			}
-			expected, hasExpected := opts.ExpectSourceHashes[module.SourceID]
-			if hasExpected {
-				if !module.Section.UnchangedSince(strings.TrimSpace(expected)) {
-					return fmt.Errorf("%w: target section %q (%s) changed since inspect (expected %s, live %s)", ErrHashConflict, module.Section.Heading, module.SourceID, expected, module.Section.Hash)
-				}
-				continue
-			}
-			k := sectionKey{markdown.NormalizeHeadingText(module.Section.Heading), module.Section.Occurrence}
-			if prevHash, existed := prevHashBySection[k]; existed && prevHash != "" {
-				if !module.Section.UnchangedSince(prevHash) {
-					return fmt.Errorf("%w: target section %q (%s) prose changed since sidecar (saved %s, live %s); inspect the updated section and pass --expect-source-hash %s=%s", ErrHashConflict, module.Section.Heading, module.SourceID, prevHash, module.Section.Hash, module.SourceID, module.Section.Hash)
+			for _, ref := range module.Sections {
+				expected, hasExpected := opts.ExpectSourceHashes[ref.SourceID]
+				source := validated.Sources[ref.SourceID]
+				if err := checkLiveHash(ref.SourceID, source, expected, hasExpected); err != nil {
+					return err
 				}
 			}
 		}
 
-		manifest, hadManifest, err := bundle.LoadManifest(docPath, docBytes)
-		if err != nil {
-			return err
-		}
-		prevManifest := manifest
+		previousManifest := manifest
 		nextRev := manifest.Revision + 1
 		now := opts.Now
 		if now.IsZero() {
@@ -243,8 +294,6 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 			if err != nil {
 				return err
 			}
-			// Resolve in memory before committing so an unknown note ID cannot
-			// leave a partially committed view or manifest behind.
 			for _, noteID := range opts.ResolveNotes {
 				if err := ledger.Resolve(noteID, now); err != nil {
 					return fmt.Errorf("%w: %v", bundle.ErrNotFound, err)
@@ -262,30 +311,29 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 		}
 		manifest.Revision = nextRev
 		manifest.SourceDigest = bundle.SHA256Hex(docBytes)
+		manifest.Profile = profile
 		if err := bundle.SaveManifest(docPath, manifest); err != nil {
 			rollbackView()
 			return err
 		}
+		rollbackCitations := func() {}
+		if opts.Citations != nil {
+			rollbackCitations, err = saveCitationsWithRollback(docPath, opts.Citations)
+			if err != nil {
+				rollbackView()
+				restoreManifest(docPath, previousManifest, hadManifest)
+				return err
+			}
+		}
 		if len(opts.ResolveNotes) > 0 {
 			if err := bundle.SaveLedger(docPath, ledger); err != nil {
 				rollbackView()
-				if hadManifest {
-					_ = bundle.SaveManifest(docPath, prevManifest)
-				}
+				restoreManifest(docPath, previousManifest, hadManifest)
+				rollbackCitations()
 				return err
 			}
 		}
 
-		modules := make([]bundle.ModuleBinding, 0, len(validated.Modules))
-		for _, module := range validated.Modules {
-			modules = append(modules, bundle.ModuleBinding{
-				Statement:  module.Statement,
-				SourceID:   module.SourceID,
-				Heading:    module.Section.Heading,
-				Occurrence: module.Section.Occurrence,
-				ShortCode:  fmt.Sprintf("%s·%s@r%d", manifest.BundleID, module.Statement, nextRev),
-			})
-		}
 		out = PatchResult{
 			BundleID:      manifest.BundleID,
 			ViewPath:      bundle.ViewPath(docPath),
@@ -293,7 +341,7 @@ func Patch(docPath string, opts PatchOptions) (PatchResult, error) {
 			ViewHash:      bundle.SHA256Hex(compacted),
 			Replaced:      append([]string(nil), replaced...),
 			ResolvedNotes: append([]string(nil), opts.ResolveNotes...),
-			Modules:       modules,
+			Modules:       validatedModuleBindings(validated.Modules, validated.Sources, manifest.BundleID, nextRev),
 		}
 		return nil
 	})
@@ -305,12 +353,7 @@ func patchStatementsByName(statements []string) (map[string]string, error) {
 	for _, statement := range statements {
 		names := openuilang.Names(statement)
 		if len(names) != 1 || strings.TrimSpace(names[0]) == "" {
-			return nil, &ValidationError{
-				Code:    "INVALID_STATEMENT",
-				Path:    "/statements",
-				Message: fmt.Sprintf("invalid statement: %q", statement),
-				Hint:    "Write exactly one named assignment per statement.",
-			}
+			return nil, &ValidationError{Code: "INVALID_STATEMENT", Path: "/statements", Message: fmt.Sprintf("invalid statement: %q", statement), Hint: "Write exactly one named assignment per statement."}
 		}
 		name := names[0]
 		if _, exists := out[name]; exists {

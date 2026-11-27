@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"deepread/internal/bundle"
+	"deepread/internal/view"
 )
 
 func TestAuditRegressionsExport(t *testing.T) {
@@ -29,6 +30,8 @@ func TestAuditRegressionsExport(t *testing.T) {
 			bundle.ManifestPath(doc),
 			bundle.LedgerPath(doc),
 			filepath.Join(bundle.MetaDir(doc), "history", "r1.html"),
+			filepath.Join(bundle.MetaDir(doc), "translations", "zh-CN.json"),
+			bundle.CitationsPath(doc),
 			filepath.Join(bundle.MetaDir(doc), "HISTORY", "probe.html"),
 			filepath.Join(bundle.MetaDir(doc), "hi\u017ftory", "probe.html"),
 		} {
@@ -85,6 +88,101 @@ func TestAuditRegressionsExport(t *testing.T) {
 		}
 		if !strings.Contains(rendered, `href="https://example.com"`) {
 			t.Fatalf("safe https link was stripped:\n%s", rendered)
+		}
+	})
+
+	t.Run("v0.3 Codex P1 regressions: book root .deepread protection, explicit external max-bytes, independent button actions, and exact 128 KiB island cap", func(t *testing.T) {
+		// 1. Book root .deepread/ protection & explicit --external-assets --max-bytes enforcement.
+		bookDir := t.TempDir()
+		chDir := filepath.Join(bookDir, "chapters", "01-intro")
+		if err := os.MkdirAll(filepath.Join(chDir, "assets"), 0o755); err != nil {
+			t.Fatal(err)
+		}
+		pngBytes := []byte{
+			0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
+			0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
+			0x08, 0x06, 0x00, 0x00, 0x00, 0x1f, 0x15, 0xc4, 0x89, 0x00, 0x00, 0x00,
+			0x0a, 0x49, 0x44, 0x41, 0x54, 0x78, 0x9c, 0x63, 0x00, 0x01, 0x00, 0x00,
+			0x05, 0x00, 0x01, 0x0d, 0x0a, 0x2d, 0xb4, 0x00, 0x00, 0x00, 0x00, 0x49,
+			0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82,
+		}
+		if err := os.WriteFile(filepath.Join(chDir, "assets", "p.png"), pngBytes, 0o644); err != nil {
+			t.Fatal(err)
+		}
+		chDoc := filepath.Join(chDir, "chapter.md")
+		if err := os.WriteFile(chDoc, []byte("# Intro\n\n## Sec\n\n![P](assets/p.png)\n\nProse line.\n"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		bookJSON := `{"title":"Book","chapters":[{"index":1,"slug":"intro","title":"Intro","docPath":"chapters/01-intro/chapter.md"}]}`
+		if err := os.WriteFile(filepath.Join(bookDir, "book.json"), []byte(bookJSON), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		// Refuses overwriting book root .deepread/ subpaths.
+		for _, bad := range []string{
+			filepath.Join(bookDir, ".deepread", "translations", "zh-CN.json"),
+			filepath.Join(bookDir, ".deepread", "citations.json"),
+		} {
+			if _, err := ExportBook(bookDir, nil, bad, ExportOptions{}); err == nil {
+				t.Fatalf("expected ExportBook to refuse overwriting book root metadata %q", bad)
+			}
+		}
+		// Explicit --max-bytes must be enforced even with --external-assets.
+		outDir := t.TempDir()
+		outHTML := filepath.Join(outDir, "small.html")
+		if _, err := ExportBook(bookDir, nil, outHTML, ExportOptions{ExternalAssets: true, MaxHTMLBytes: 512}); !errors.Is(err, ErrAssetBudgetExceeded) {
+			t.Fatalf("expected ErrAssetBudgetExceeded for --external-assets --max-bytes 512, got %v", err)
+		}
+		if _, err := os.Stat(outHTML); err == nil {
+			t.Fatalf("failed budget export should not create %q", outHTML)
+		}
+
+		// 2. Two independent action buttons from (0,0) must produce (1,0) and (0,1), not (1,1).
+		docDir := t.TempDir()
+		doc := filepath.Join(docDir, "actions.md")
+		if err := os.WriteFile(doc, []byte("# Actions\n\n## Model\n\nTwo independent switches.\n"), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		stmts := strings.Join([]string{
+			`$x = 0`,
+			`$y = 0`,
+			`root = Col([mod])`,
+			`mod = Source(["s1"], [Row([Button("Set X", @Set($x, 1)), Button("Set Y", @Set($y, 1))]), Text("X=" + $x + ", Y=" + $y)])`,
+		}, "\n")
+		if _, err := view.Write(doc, view.WriteOptions{
+			StatementsText: stmts,
+			Sources:        map[string]view.SourceRef{"s1": {Heading: "Model", Occurrence: 1}},
+			Profile:        bundle.ProfileCanvas,
+		}); err != nil {
+			t.Fatalf("view.Write failed: %v", err)
+		}
+		actHTML := filepath.Join(docDir, "actions.html")
+		if _, err := Export(doc, actHTML, ExportOptions{}); err != nil {
+			t.Fatalf("Export failed: %v", err)
+		}
+		raw, err := os.ReadFile(actHTML)
+		if err != nil {
+			t.Fatal(err)
+		}
+		htmlStr := string(raw)
+		if !strings.Contains(htmlStr, `data-action="a0" data-from="0.0" data-to="1.0"`) {
+			t.Fatalf("button a0 transition from 0.0 should target 1.0:\n%s", htmlStr)
+		}
+		if !strings.Contains(htmlStr, `data-action="a1" data-from="0.0" data-to="0.1"`) {
+			t.Fatalf("button a1 transition from 0.0 should target 0.1 (must not inherit a0 mutation):\n%s", htmlStr)
+		}
+
+		// 3. Semantic OpenUI SVG color tokens (surface, border, ink, chart1) must map to real CSS/hex paints.
+		if got, ok := safeSVGColor("surface"); !ok || got != "var(--surface)" {
+			t.Fatalf("safeSVGColor(surface) = (%q, %v), want (var(--surface), true)", got, ok)
+		}
+		if got, ok := safeSVGColor("border"); !ok || got != "var(--rule)" {
+			t.Fatalf("safeSVGColor(border) = (%q, %v), want (var(--rule), true)", got, ok)
+		}
+		if got, ok := safeSVGColor("ink"); !ok || got != "var(--ink)" {
+			t.Fatalf("safeSVGColor(ink) = (%q, %v), want (var(--ink), true)", got, ok)
+		}
+		if got, ok := safeSVGColor("chart2"); !ok || got != "#3b6978" {
+			t.Fatalf("safeSVGColor(chart2) = (%q, %v), want (#3b6978, true)", got, ok)
 		}
 	})
 }

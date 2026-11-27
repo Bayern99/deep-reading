@@ -1,10 +1,10 @@
 # DeepRead（`deepread`）
 
-[English README](README.md) · [宿主 Agent 手册（`SKILL.md`）](SKILL.md) · [ADR 0006](docs/adr/0006-headless-go-deepread-engine.zh-CN.md)
+[English README](README.md) · [宿主 Agent 手册（`SKILL.md`）](SKILL.md) · [ADR 0006](docs/adr/0006-headless-go-deepread-engine.zh-CN.md) · [ADR 0007](docs/adr/0007-dual-face-genui-and-translation-layer.zh-CN.md)
 
-一套无头、纯 Go 单二进制的长文深读能力层与 Agent 技能，面向 Markdown 与 EPUB 长文。专为由 AI Agent（云电脑、Muse、群机器人、Claude Code、Codex、Pi、Antigravity 等）自主安装与调用而设计：输出零 JS、390px 优先的杂志级手机 HTML，同时保持与 `Mark Go Go` v3 磁盘格式的单向兼容。
+一套无头、纯 Go 单二进制的长文深读能力层与 Agent 技能，面向 Markdown 与 EPUB 长文。专为由 AI Agent（云电脑、Muse、群机器人、Claude Code、Codex、Pi、Antigravity 等）自主安装与调用而设计：交付**一份**离线 HTML 阅读器——正面默认是**去文字墙、全信息量结构化精读画布**（`dual` 默认，保留约 95%+ 原文事实、人物案例、原声金句与原刊图表，结合胶囊标签要点、因果 SVG、可交互滑块/切换、对比表与时间线），背面是逐字节不可变的完整原文与并行翻译层（`中文 / EN / 双语` 一键切换，每幕支持 `查看原文 ↗` / `预览`）；同时提供 `--face inline`（段落级交错互动长文）与 `--face hybrid`（篇首导览画布 + 段落级伴读），保持与 `Mark Go Go` v3 磁盘格式的单向兼容。
 
-> 本仓库自 `v0.2.0` 起采用全新的纯 Go 架构实现，取代早期已退役的 Python 原型。
+> 本仓库自 `v0.2.0` 起采用全新的纯 Go 架构实现，取代早期已退役的 Python 原型；`v0.3.0` 增加翻译层、canvas 画布与整书单文件导出。
 
 ---
 
@@ -148,21 +148,25 @@ rm -rf "$TMP_SMOKE"
 
 在承接第一篇真实深读任务前，请完整阅读 [SKILL.md](SKILL.md)。核心红线：
 
+- **第 0 步阅读契约先行**：动手前先定下 `targetLang`、`mode`、`scope` 与交付形态（**一份**统一离线 HTML）。用户已经说明语言就立即采用，不得重复询问。
 - **一目录一文档**：每篇文章或 EPUB 章节独占一个工作目录（`<doc>.md`、`assets/`、`.deepread/`），严禁混放两篇主文章。
-- **Prose-by-Reference（正文永不进 GenUI）**：原文段落一字不改；认知支架保存在 `.<doc>.genui.json`（仅开放 10 个静态阅读原语，0–4 个稀疏模块，确定性拒绝纯文字摘要与卡片仪表盘）。
-- **EPUB 两阶段按需深读**：`deepread ingest book.epub -o <dir>` 纯 Go 安全拆出 `index.md`、`book.json` 与每章独立的 `chapters/<NN>-<slug>/chapter.md`，按需逐章深读。
-- **双模式 390px 手机 HTML**：默认单文件模式按硬预算内联真实光栅图（单图 512 KiB / 整页 1.5 MiB）；`--external-assets` 拷贝图片至输出目录旁以支持 HTTPS 目录托管。
+- **Prose-by-Reference（正文永不改写/永不就地翻译）**：原文段落一字不改；认知支架保存在 `.<doc>.genui.json`（默认 50 组件 canvas，`--profile margin` 回落旧 10 原语），译文保存在 `.deepread/translations/<lang>.json`。
+- **并行翻译层**：`deepread blocks` 列出实时可译单元，`deepread translate` 接收 JSON、`{"entries":[…]}` 或 JSONL 的 `{id, sourceHash, text}` 批次，`inspect` 回报 `coveragePct`/`staleBlocks`；覆盖率未达 100% 或有过期块时，`export` 拒绝输出 translated/bilingual 页面。
+- **EPUB 两阶段 + 单一 HTML**：`deepread ingest book.epub -o <dir>` 纯 Go 安全拆出 `index.md`、`book.json` 与每章独立的 `chapters/<NN>-<slug>/chapter.md`；交付用 `deepread export --book <dir> --chapters <spec> -o <one>.html`，**绝不**给用户一堆 `chapter.html`。
+- **离线双面阅读器**：`深读 ↔ 原文` 同页切换、`--cite` 生成的 `查看原文 ↗` 段落锚点、Go 预渲染的响应式孤岛，以及由 SHA-256 CSP 哈希锁定的唯一常量运行时脚本（`--no-js` 可产出静态页）。图片按硬预算内联（单图 512 KiB / 整页 1.5 MiB），或用 `--external-assets` 拷贝到 HTML 旁。
 - **短码批注闭环**：每个模块展示始终可见的可选中短码（`<bundleId>·<statement>@r<rev>`），群聊回复即可驱动幂等 `note add` + 压实 CAS `patch` 局部重生成。
 
 ```bash
-deepread ingest  <article.md|book.epub> -o <bundle-dir>
-deepread inspect <doc.md> [--heading <h> [--occurrence <n>] | --lines <a:b>]
-deepread prepare <doc.md> --breaks <file|->
-deepread catalog
-deepread write   <doc.md> --statements <file|-> --source <id>="<Heading>"#<occ>
-deepread export  <doc.md> -o <out.html> [--external-assets] [--max-bytes <n>]
-deepread note add <doc.md> (--node <stmt> | --heading <h>) --text "<note>" [--rev <r>] [--msg-id <id>]
-deepread patch   <doc.md> --replace <stmt> --expect-hash <sha256> --statements <file|-> [--resolve-note <id>]
+deepread ingest    <article.md|book.epub> -o <bundle-dir> [--lang <bcp47>] [--source-lang <bcp47>] [--mode original|translated|bilingual]
+deepread inspect   <doc.md> [--heading <h> [--occurrence <n>] | --lines <a:b>]
+deepread prepare   <doc.md> --breaks <file|->
+deepread catalog   [--profile canvas|margin]
+deepread blocks    <doc.md>
+deepread write     <doc.md> --statements <file|-> --source <id>="<Heading>"[#<occ>] [--cite <stmt>:<srcId>=<blockId>] [--profile canvas|margin]
+deepread translate <doc.md> --lang <bcp47> --input <file|-> [--mode translated|bilingual]
+deepread note add  <doc.md> (--node <stmt> [--source <srcId>] | --heading <h>) --text "<note>" [--rev <r>] [--msg-id <id>]
+deepread patch     <doc.md> --replace <stmt> --expect-hash <sha256> --statements <file|-> [--resolve-note <id>]
+deepread export    <doc.md> -o <out.html>                     # 或：<doc1.md> <doc2.md> … / --book <dir> --chapters <spec>
 ```
 
 ## 开发与验证
@@ -172,4 +176,4 @@ make check        # CGO_ENABLED=0 vet、单元测试、竞态检测与暂存分�
 make cross-build  # 构建 darwin/arm64、linux/amd64、linux/arm64、windows/amd64 静态二进制
 ```
 
-维护者工程红线见 [AGENTS.md](AGENTS.md)，完整宿主 Agent 协议与退出码（`0`–`5`）见 [SKILL.md](SKILL.md)，上游 `Mark Go Go`（`f203c83`）归属说明见 [UPSTREAM.md](UPSTREAM.md)。
+维护者工程红线见 [AGENTS.md](AGENTS.md)，完整宿主 Agent 协议与退出码（`0`–`5`）见 [SKILL.md](SKILL.md)，双面 GenUI 与翻译层决策见 [ADR 0007](docs/adr/0007-dual-face-genui-and-translation-layer.zh-CN.md)，上游 `Mark Go Go`（`f203c83`）归属说明见 [UPSTREAM.md](UPSTREAM.md)。

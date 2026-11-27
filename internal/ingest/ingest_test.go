@@ -431,3 +431,166 @@ func mustReadFile(t *testing.T, path string) []byte {
 	}
 	return data
 }
+
+func TestStripDownloaderBoilerplate(t *testing.T) {
+	cases := []struct {
+		name string
+		in   string
+		want string
+	}{
+		{
+			name: "zlibrary footer with markdown link",
+			in:   "Real prose about tariffs.\n\nThis article was downloaded by [zlibrary](https://z-lib.org) from https://wsj.com/articles/tariffs\n",
+			want: "Real prose about tariffs.\n",
+		},
+		{
+			name: "plain download footer",
+			in:   "Real prose about tariffs.\r\n\r\nThis article was downloaded by zlibrary from https://wsj.com/x\r\n",
+			want: "Real prose about tariffs.\r\n",
+		},
+		{
+			name: "downloaded from trailing url",
+			in:   "Real prose.\n\nDownloaded from https://example.com/article\n\n\n",
+			want: "Real prose.\n",
+		},
+		{
+			name: "stacked footers",
+			in:   "Real prose.\n\nDownloaded from https://example.com/a\n\nThis article was downloaded by zlibrary from https://example.com/a\n",
+			want: "Real prose.\n",
+		},
+		{
+			name: "real prose ending keeps everything",
+			in:   "Real prose.\n\nDownloaded from the archives, the documents reveal a much longer story.\n",
+			want: "Real prose.\n\nDownloaded from the archives, the documents reveal a much longer story.\n",
+		},
+		{
+			name: "download mentioned mid-document is untouched",
+			in:   "Downloaded from https://example.com/a\n\nThis is the body of the article.\n",
+			want: "Downloaded from https://example.com/a\n\nThis is the body of the article.\n",
+		},
+		{
+			name: "no trailing newline",
+			in:   "Real prose.\n\nDownloaded from https://example.com/a",
+			want: "Real prose.\n",
+		},
+	}
+	for _, tc := range cases {
+		t.Run(tc.name, func(t *testing.T) {
+			if got := StripDownloaderBoilerplate(tc.in); got != tc.want {
+				t.Fatalf("StripDownloaderBoilerplate mismatch:\ngot:  %q\nwant: %q", got, tc.want)
+			}
+		})
+	}
+}
+
+func TestMarkdownIngestStripsWatermarkAndRecordsReaderContract(t *testing.T) {
+	srcDir := t.TempDir()
+	src := filepath.Join(srcDir, "article.md")
+	body := "# Grid Report\n\nExact figures stay: $42.5B in 2024.\n\nThis article was downloaded by [zlibrary](https://z-lib.org) from https://wsj.com/articles/grid\n"
+	if err := os.WriteFile(src, []byte(body), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	out := t.TempDir()
+	res, err := Ingest(src, out, Options{SourceLang: "en-us", TargetLang: "zh-cn", Mode: bundle.ReadModeBilingual})
+	if err != nil {
+		t.Fatalf("Ingest: %v", err)
+	}
+	docPath := filepath.Join(out, filepath.Base(src))
+	got := string(mustReadFile(t, docPath))
+	if strings.Contains(got, "zlibrary") || strings.Contains(got, "This article was downloaded") {
+		t.Fatalf("downloader watermark survived ingest:\n%s", got)
+	}
+	if !strings.Contains(got, "Exact figures stay: $42.5B in 2024.") {
+		t.Fatalf("real prose was altered:\n%s", got)
+	}
+	if res.Reader == nil || res.Reader.SourceLang != "en-US" || res.Reader.TargetLang != "zh-CN" || res.Reader.Mode != bundle.ReadModeBilingual {
+		t.Fatalf("result reader contract = %#v", res.Reader)
+	}
+	manifest, found, err := bundle.LoadManifest(docPath, mustReadFile(t, docPath))
+	if err != nil || !found {
+		t.Fatalf("manifest: found=%v err=%v", found, err)
+	}
+	if manifest.Reader == nil || manifest.Reader.TargetLang != "zh-CN" || manifest.Reader.SourceLang != "en-US" {
+		t.Fatalf("manifest reader contract = %#v", manifest.Reader)
+	}
+	blocks := bundle.ExtractBlocks(mustReadFile(t, docPath), manifest)
+	for _, b := range blocks {
+		if strings.Contains(b.Text, "zlibrary") {
+			t.Fatalf("watermark leaked into translatable blocks: %#v", b)
+		}
+	}
+	// toolchain: the reader contract must be inspectable without re-reading options.
+	report, err := bundle.Inspect(docPath, bundle.InspectOptions{})
+	if err != nil {
+		t.Fatalf("Inspect: %v", err)
+	}
+	if report.Reader == nil || report.Reader.Mode != bundle.ReadModeBilingual {
+		t.Fatalf("inspect did not report the reader contract: %#v", report.Reader)
+	}
+	if report.Translation == nil || report.Translation.Lang != "zh-CN" || report.Translation.TotalBlocks != len(blocks) {
+		t.Fatalf("inspect translation status = %#v", report.Translation)
+	}
+}
+
+func TestIngestRejectsInvalidReaderContractBeforeStaging(t *testing.T) {
+	srcDir := t.TempDir()
+	src := filepath.Join(srcDir, "article.md")
+	if err := os.WriteFile(src, []byte("# Title\n\nProse.\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(t.TempDir(), "bundle")
+	if _, err := Ingest(src, out, Options{TargetLang: "../evil"}); !errors.Is(err, bundle.ErrInvalidLang) {
+		t.Fatalf("traversal lang error = %v, want ErrInvalidLang", err)
+	}
+	if _, err := Ingest(src, out, Options{SourceLang: "zh/CN"}); !errors.Is(err, bundle.ErrInvalidLang) {
+		t.Fatalf("slash lang error = %v, want ErrInvalidLang", err)
+	}
+	if _, err := Ingest(src, out, Options{Mode: "half"}); err == nil {
+		t.Fatal("invalid read mode accepted")
+	}
+	if _, err := os.Stat(out); !os.IsNotExist(err) {
+		t.Fatalf("invalid options created an output directory: %v", err)
+	}
+}
+
+func TestEPUBIngestStripsWatermarkAndRecordsReaderContract(t *testing.T) {
+	book := makeEPUB(t, epubOptions{
+		epub3: true,
+		title: "Watermarked Book",
+		files: map[string]string{
+			"OEBPS/ch1.xhtml": `<html xmlns="http://www.w3.org/1999/xhtml"><body><h1>Markets</h1><p>This chapter keeps enough real prose words to survive the short chapter filter.</p><p>This article was downloaded by [zlibrary](https://z-lib.org) from https://wsj.com/articles/markets</p></body></html>`,
+			"OEBPS/nav.xhtml": `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops"><body><nav epub:type="toc"><ol><li><a href="ch1.xhtml">Markets</a></li></ol></nav></body></html>`,
+		},
+		spine: []string{"ch1"},
+	})
+	out := t.TempDir()
+	res, err := Ingest(book, out, Options{SourceLang: "en", TargetLang: "zh-Hans", Mode: bundle.ReadModeTranslated})
+	if err != nil {
+		t.Fatalf("Ingest EPUB: %v", err)
+	}
+	if res.Reader == nil || res.Reader.TargetLang != "zh-Hans" {
+		t.Fatalf("result reader = %#v", res.Reader)
+	}
+	if len(res.Chapters) != 1 {
+		t.Fatalf("unexpected chapters: %#v", res.Chapters)
+	}
+	docPath := filepath.Join(out, filepath.FromSlash(res.Chapters[0].DocPath))
+	chapter := string(mustReadFile(t, docPath))
+	if strings.Contains(chapter, "zlibrary") || strings.Contains(chapter, "was downloaded by") {
+		t.Fatalf("watermark survived EPUB ingest:\n%s", chapter)
+	}
+	manifest, _, err := bundle.LoadManifest(docPath, mustReadFile(t, docPath))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if manifest.Reader == nil || manifest.Reader.Mode != bundle.ReadModeTranslated || manifest.Reader.TargetLang != "zh-Hans" {
+		t.Fatalf("chapter manifest reader = %#v", manifest.Reader)
+	}
+	var persisted BookMetadata
+	if err := json.Unmarshal(mustReadFile(t, filepath.Join(out, "book.json")), &persisted); err != nil {
+		t.Fatalf("book.json: %v", err)
+	}
+	if persisted.Reader == nil || persisted.Reader.TargetLang != "zh-Hans" {
+		t.Fatalf("book.json reader = %#v", persisted.Reader)
+	}
+}

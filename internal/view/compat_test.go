@@ -217,7 +217,8 @@ func TestCompatReadsUpstreamMarkGoGoViews(t *testing.T) {
 				"s1": {Heading: "第一节 · 并网排队", Occurrence: 1},
 				"s2": {Heading: "第二节 · 资本开支口径", Occurrence: 1},
 			},
-			Now: now,
+			Now:     now,
+			Profile: bundle.ProfileMargin,
 		})
 		if err != nil {
 			t.Fatalf("Write rejected CJK/CRLF view: %v", err)
@@ -308,7 +309,7 @@ func TestCompatReadsUpstreamMarkGoGoViews(t *testing.T) {
 		}
 
 		// Second write must leave Mark Go Go's exact undo backup beside the sidecar.
-		if _, err := Write(doc, WriteOptions{StatementsText: `root = Col([])`, Sources: map[string]SourceRef{}, Now: now}); err != nil {
+		if _, err := Write(doc, WriteOptions{StatementsText: `root = Col([])`, Sources: map[string]SourceRef{}, Now: now, Profile: bundle.ProfileMargin}); err != nil {
 			t.Fatalf("Write r2 failed: %v", err)
 		}
 		prevPath := bundle.PrevViewPath(viewPath)
@@ -326,6 +327,28 @@ func TestCompatReadsUpstreamMarkGoGoViews(t *testing.T) {
 			t.Fatalf("prev backup is not a readable v3 view: %v", err)
 		}
 	})
+}
+
+func TestCompatValidateForExportAcceptsUpstreamFullCanvas(t *testing.T) {
+	docRaw := "# Grid\n\n## Grid Queues\n\nQueues rose to 2,600 GW.\n\n## Interconnection by region\n\nFirst regional table.\n\n## Interconnection by region\n\nSecond regional table.\n"
+	// Extend the streamed fixture with a full-canvas header and nested components.
+	raw := strings.Replace(upstreamStreamedView, `"root = Col([hero, ledger_mod])"`, `"root = Col([header, hero, ledger_mod, details, extras])", "header = Row([Title(\"Grid mechanisms\", \"xl\"), Spacer(), Badge(\"LIVE\")])", "details = Grid([Card([Box([List([ListItem(\"Step\")]), Markdown(\"**Grounded**\")])]), Popover(Badge(\"Term\"), Text(\"Definition\"))])", "extras = Source([\"sec1\"], [Quote(\"Quoted prose\"), Code(\"queue.push(job)\", \"go\"), Link(\"Reference\", \"https://example.com\")])"`, 1)
+	parsed, err := ReadView([]byte(raw))
+	if err != nil {
+		t.Fatalf("ReadView rejected full-canvas upstream fixture: %v\n%s", err, raw)
+	}
+	if _, err := ValidateForExport("trip.md", []byte(docRaw), parsed.Statements, parsed.Envelope.Sources, bundle.ProfileCanvas); err != nil {
+		t.Fatalf("ValidateForExport rejected upstream createSurface + updateComponents: %v", err)
+	}
+
+	marginDoc := "# Report\n\n## Alpha\n\nOriginal prose.\n"
+	margin := `root = Col([m])` + "\n" + `m = Source(["s1"], [Title("Key Takeaways", "md"), Text("A prose-only legacy margin view")])`
+	if _, err := ValidateStrict(marginDoc, margin, map[string]SourceRef{"s1": {Heading: "Alpha", Occurrence: 1}}); err == nil {
+		t.Fatal("strict margin unexpectedly accepted prose-only cliché view")
+	}
+	if _, err := ValidateForExport("margin.md", []byte(marginDoc), SplitStatementStrings(margin), map[string]SourceRef{"s1": {Heading: "Alpha", Occurrence: 1}}, bundle.ProfileMargin); err != nil {
+		t.Fatalf("export enforced margin editorial heuristics: %v", err)
+	}
 }
 
 func TestCompatRejectsCorruptOrOversizedView(t *testing.T) {

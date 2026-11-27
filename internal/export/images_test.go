@@ -2,6 +2,7 @@ package export
 
 import (
 	"encoding/base64"
+	"encoding/json"
 	"errors"
 	"os"
 	"path/filepath"
@@ -42,7 +43,7 @@ func TestExportInlineImageEmbedding(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	result, err := Export(docPath, outPath, ExportOptions{})
+	result, err := Export(docPath, outPath, ExportOptions{NoJS: true})
 	if err != nil {
 		t.Fatalf("Export failed: %v", err)
 	}
@@ -171,7 +172,7 @@ func TestExportInlineImageRejectsUnsafePathsAndInvalidContent(t *testing.T) {
 			if err := os.WriteFile(docPath, []byte(raw), 0o644); err != nil {
 				t.Fatal(err)
 			}
-			_, err := Export(docPath, outPath, ExportOptions{})
+			_, err := Export(docPath, outPath, ExportOptions{NoJS: true})
 			if err == nil {
 				t.Fatal("unsafe image was exported")
 			}
@@ -224,6 +225,142 @@ func TestExportInlineImageNeutralizesUnsafeSchemesAndPreservesLinksSecurity(t *t
 	}
 }
 
+func writeImageBookFixture(t *testing.T) (string, []string, string) {
+	t.Helper()
+	bookDir := filepath.Join(t.TempDir(), "book")
+	other, err := base64.StdEncoding.DecodeString("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==")
+	if err != nil {
+		t.Fatal(err)
+	}
+	type chapter struct {
+		Index   int    `json:"index"`
+		Slug    string `json:"slug"`
+		Title   string `json:"title"`
+		DocPath string `json:"docPath"`
+	}
+	metadata := struct {
+		Title    string    `json:"title"`
+		Chapters []chapter `json:"chapters"`
+	}{Title: "Image Book", Chapters: []chapter{{Index: 1, Slug: "one", Title: "One", DocPath: "chapters/one/chapter.md"}, {Index: 2, Slug: "two", Title: "Two", DocPath: "chapters/two/chapter.md"}, {Index: 3, Slug: "three", Title: "Three", DocPath: "chapters/three/chapter.md"}}}
+	paths := make([]string, 3)
+	for i, chapter := range metadata.Chapters {
+		doc := filepath.Join(bookDir, filepath.FromSlash(chapter.DocPath))
+		paths[i] = doc
+		if err := os.MkdirAll(filepath.Dir(doc), 0o755); err != nil {
+			t.Fatal(err)
+		}
+		imageName := "assets/fig1.png"
+		data := testPixelPNG(t)
+		if i == 1 {
+			data = other
+		}
+		if i == 2 {
+			imageName = "assets/different-name.png"
+		}
+		writeImageFixture(t, doc, imageName, data)
+		raw := "# " + chapter.Title + "\n\n![Figure](" + imageName + ")\n"
+		if err := os.WriteFile(doc, []byte(raw), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	raw, err := json.Marshal(metadata)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(filepath.Join(bookDir, "book.json"), raw, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	return bookDir, paths, base64.StdEncoding.EncodeToString(other)
+}
+
+func TestExportBookDeduplicatesImagesAcrossChapters(t *testing.T) {
+	bookDir, _, otherBase64 := writeImageBookFixture(t)
+	out := filepath.Join(filepath.Dir(bookDir), "book.html")
+	result, err := ExportBook(bookDir, nil, out, ExportOptions{NoJS: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.ChapterCount != 3 || result.ImageCount != 2 {
+		t.Fatalf("unexpected book result: %+v", result)
+	}
+	data, _ := os.ReadFile(out)
+	html := string(data)
+	if got := strings.Count(html, testPixelPNGBase64); got != 1 {
+		t.Fatalf("shared image payload occurs %d times, want once", got)
+	}
+	if got := strings.Count(html, otherBase64); got != 1 {
+		t.Fatalf("distinct image payload occurs %d times, want once", got)
+	}
+	if !strings.Contains(html, "background-image:url(\"") || !strings.Contains(html, `role="img"`) || !strings.Contains(html, "aspect-ratio:") {
+		t.Fatalf("shared accessible image CSS missing")
+	}
+}
+
+func TestExportBookExternalHashAssetsAndSelection(t *testing.T) {
+	bookDir, _, _ := writeImageBookFixture(t)
+	outDir := filepath.Join(filepath.Dir(bookDir), "published")
+	out := filepath.Join(outDir, "book.html")
+	result, err := ExportBook(bookDir, []string{"2-3"}, out, ExportOptions{ExternalAssets: true, NoJS: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.ChapterCount != 2 || result.ImageCount != 2 {
+		t.Fatalf("unexpected selected book result: %+v", result)
+	}
+	assets, err := os.ReadDir(filepath.Join(outDir, "assets"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(assets) != 2 {
+		t.Fatalf("external asset count = %d, want 2", len(assets))
+	}
+	data, _ := os.ReadFile(out)
+	if !strings.Contains(string(data), `src="assets/`) || !strings.Contains(string(data), `data-chapter="c02"`) {
+		t.Fatalf("hashed external image/chapter output missing")
+	}
+}
+
+func TestExportBookRejectsEscapesUnselectedCollisionsAndBudgetOverflow(t *testing.T) {
+	bookDir, paths, _ := writeImageBookFixture(t)
+	if _, err := ExportBook(bookDir, []string{"1"}, paths[1], ExportOptions{NoJS: true}); err == nil {
+		t.Fatal("unselected chapter collision was accepted")
+	}
+	bookJSON := filepath.Join(bookDir, "book.json")
+	original, _ := os.ReadFile(bookJSON)
+	var metadata map[string]any
+	if err := json.Unmarshal(original, &metadata); err != nil {
+		t.Fatal(err)
+	}
+	chapters := metadata["chapters"].([]any)
+	chapters[0].(map[string]any)["docPath"] = "../outside.md"
+	malicious, _ := json.Marshal(metadata)
+	if err := os.WriteFile(bookJSON, malicious, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := ExportBook(bookDir, nil, filepath.Join(filepath.Dir(bookDir), "escape.html"), ExportOptions{NoJS: true}); !errors.Is(err, ErrUnsafeAssetPath) {
+		t.Fatalf("path escape error = %v", err)
+	}
+	if err := os.WriteFile(bookJSON, original, 0o644); err != nil {
+		t.Fatal(err)
+	}
+	out := filepath.Join(filepath.Dir(bookDir), "budget.html")
+	result, err := ExportBook(bookDir, []string{"1"}, out, ExportOptions{NoJS: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := ExportBook(bookDir, []string{"1"}, out, ExportOptions{NoJS: true, MaxHTMLBytes: result.Bytes}); err != nil {
+		t.Fatalf("exact budget failed: %v", err)
+	}
+	before, _ := os.ReadFile(out)
+	if _, err := ExportBook(bookDir, []string{"1"}, out, ExportOptions{NoJS: true, MaxHTMLBytes: result.Bytes - 1}); !errors.Is(err, ErrAssetBudgetExceeded) {
+		t.Fatalf("budget overflow error = %v", err)
+	}
+	after, _ := os.ReadFile(out)
+	if string(before) != string(after) {
+		t.Fatal("budget failure modified previous output")
+	}
+}
+
 func TestExportExternalImagesCopiesAssets(t *testing.T) {
 	dir := t.TempDir()
 	docPath := filepath.Join(dir, "source", "article.md")
@@ -238,7 +375,7 @@ func TestExportExternalImagesCopiesAssets(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	result, err := Export(docPath, outPath, ExportOptions{ExternalAssets: true})
+	result, err := Export(docPath, outPath, ExportOptions{ExternalAssets: true, NoJS: true})
 	if err != nil {
 		t.Fatalf("Export failed: %v", err)
 	}

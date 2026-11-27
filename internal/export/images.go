@@ -1,10 +1,16 @@
 package export
 
 import (
+	"bytes"
+	"crypto/sha256"
 	"encoding/base64"
 	"errors"
 	"fmt"
 	stdhtml "html"
+	"image"
+	_ "image/gif"
+	_ "image/jpeg"
+	_ "image/png"
 	"io"
 	"io/fs"
 	"net/http"
@@ -12,6 +18,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"unicode"
 
@@ -25,17 +32,33 @@ import (
 const externalMaxImageBytes = 16 << 10 << 10
 
 type imageOptions struct {
-	docPath       string
-	docDir        string
-	external      bool
-	maxImageBytes int
-	maxHTMLBytes  int
+	docPath        string
+	docDir         string
+	external       bool
+	maxImageBytes  int
+	maxHTMLBytes   int
+	shared         *sharedImageStore
+	protectedDocs  []string
+	protectedPaths []string
 }
 
 type imageAsset struct {
 	source       string
 	relativePath string
 	data         []byte
+	hash         string
+	mime         string
+	inlineURI    string
+	refs         int
+	width        int
+	height       int
+}
+
+type sharedImageStore struct {
+	external              bool
+	preserveExternalNames bool
+	assets                map[string]*imageAsset
+	order                 []string
 }
 
 type imageTransformer struct {
@@ -47,6 +70,9 @@ type imageTransformer struct {
 	totalInlineBytes int
 	count            int
 	assets           []imageAsset
+	shared           *sharedImageStore
+	protectedDocs    []string
+	protectedPaths   []string
 	err              error
 }
 
@@ -57,12 +83,18 @@ func newImageTransformer(opts imageOptions) *imageTransformer {
 	if opts.maxHTMLBytes <= 0 {
 		opts.maxHTMLBytes = DefaultMaxHTMLBytes
 	}
+	if opts.shared != nil {
+		opts.maxHTMLBytes = 0 // the shared budgetWriter owns the aggregate ceiling
+	}
 	return &imageTransformer{
-		docPath:       opts.docPath,
-		docDir:        opts.docDir,
-		external:      opts.external,
-		maxImageBytes: opts.maxImageBytes,
-		maxHTMLBytes:  opts.maxHTMLBytes,
+		docPath:        opts.docPath,
+		docDir:         opts.docDir,
+		external:       opts.external,
+		maxImageBytes:  opts.maxImageBytes,
+		maxHTMLBytes:   opts.maxHTMLBytes,
+		shared:         opts.shared,
+		protectedDocs:  opts.protectedDocs,
+		protectedPaths: opts.protectedPaths,
 	}
 }
 
@@ -103,6 +135,24 @@ func (t *imageTransformer) transformImage(image *ast.Image) error {
 		if err := t.validateInlineDataImage(destination); err != nil {
 			return err
 		}
+		if t.shared != nil {
+			comma := strings.IndexByte(destination, ',')
+			payload := strings.Map(func(r rune) rune {
+				if unicode.IsSpace(r) {
+					return -1
+				}
+				return r
+			}, destination[comma+1:])
+			data, err := base64.StdEncoding.DecodeString(payload)
+			if err != nil {
+				data, err = base64.RawStdEncoding.DecodeString(payload)
+			}
+			if err != nil {
+				return fmt.Errorf("%w: invalid base64 in data: image URI", ErrUnsafeAssetPath)
+			}
+			mime := sniffRasterMIME(data)
+			return t.shared.resolve(t, "", data, mime, image)
+		}
 		t.count++
 		return nil
 	case hasURIScheme(probe):
@@ -129,6 +179,10 @@ func (t *imageTransformer) transformImage(image *ast.Image) error {
 	data, mime, err := t.readRasterImage(source, destination)
 	if err != nil {
 		return err
+	}
+
+	if t.shared != nil {
+		return t.shared.resolve(t, rel, data, mime, image)
 	}
 
 	t.count++
@@ -194,7 +248,7 @@ func (t *imageTransformer) validateInlineDataImage(destination string) error {
 	if actualMIME != declaredMIME {
 		return fmt.Errorf("%w: inline data: image declared %q but sniffed %q", ErrUnsafeAssetPath, declaredMIME, actualMIME)
 	}
-	if !t.external {
+	if !t.external && t.shared == nil {
 		t.totalInlineBytes += len(destination)
 		if t.maxHTMLBytes > 0 && t.totalInlineBytes > t.maxHTMLBytes {
 			return fmt.Errorf("%w: cumulative inline images exceed total HTML budget (%d bytes); re-run with --external-assets or compress images", ErrAssetBudgetExceeded, t.maxHTMLBytes)
@@ -361,6 +415,95 @@ func strictPathWithin(candidate, root string) bool {
 	}
 }
 
+func (t *imageTransformer) resolveDestination(destination string) (string, error) {
+	link := ast.NewLink()
+	link.Destination = []byte(destination)
+	image := ast.NewImage(link)
+	if err := t.transformImage(image); err != nil {
+		return "", err
+	}
+	return string(image.Destination), nil
+}
+
+func (s *sharedImageStore) resolve(t *imageTransformer, rel string, data []byte, mime string, node *ast.Image) error {
+	sum := sha256.Sum256(data)
+	hash := fmt.Sprintf("%x", sum[:])
+	asset, exists := s.assets[hash]
+	if !exists {
+		ext := map[string]string{"image/png": ".png", "image/jpeg": ".jpg", "image/gif": ".gif", "image/webp": ".webp", "image/avif": ".avif"}[mime]
+		relativePath := "assets/" + hash[:16] + ext
+		if s.external && s.preserveExternalNames && rel != "" {
+			relativePath = rel
+		}
+		asset = &imageAsset{source: rel, relativePath: relativePath, data: append([]byte(nil), data...), hash: hash, mime: mime}
+		asset.inlineURI = "data:" + mime + ";base64," + base64.StdEncoding.EncodeToString(data)
+		if config, _, err := image.DecodeConfig(bytes.NewReader(data)); err == nil {
+			asset.width, asset.height = config.Width, config.Height
+		}
+		s.assets[hash] = asset
+		s.order = append(s.order, hash)
+	}
+	asset.refs++
+	t.count++
+	if s.external {
+		node.Destination = []byte(asset.relativePath)
+	} else {
+		node.Destination = []byte(asset.inlineURI)
+	}
+	return nil
+}
+
+func (s *sharedImageStore) uniqueCount() int { return len(s.assets) }
+
+func (s *sharedImageStore) inlineCSS() string {
+	if s == nil || s.external {
+		return ""
+	}
+	var out strings.Builder
+	for _, hash := range s.order {
+		asset := s.assets[hash]
+		if asset.refs < 2 {
+			continue
+		}
+		width, height := asset.width, asset.height
+		if width <= 0 || height <= 0 {
+			width, height = 16, 9
+		}
+		fmt.Fprintf(&out, ".dr-img-%s{display:block;width:100%%;max-width:100%%;aspect-ratio:%d / %d;background-image:url(\"%s\");background-size:contain;background-repeat:no-repeat;background-position:center;margin:1.5rem auto}", hash[:12], width, height, asset.inlineURI)
+	}
+	return out.String()
+}
+
+func (s *sharedImageStore) finalizeInlineHTML(rendered string) string {
+	if s == nil || s.external {
+		return rendered
+	}
+	for _, hash := range s.order {
+		asset := s.assets[hash]
+		if asset.refs < 2 {
+			continue
+		}
+		uri := stdhtml.EscapeString(asset.inlineURI)
+		pattern := regexp.MustCompile(`<img\b[^>]*src="` + regexp.QuoteMeta(uri) + `"[^>]*>`)
+		rendered = pattern.ReplaceAllStringFunc(rendered, func(tag string) string {
+			alt := ""
+			if match := regexp.MustCompile(`alt="([^"]*)"`).FindStringSubmatch(tag); len(match) == 2 {
+				alt = match[1]
+			}
+			return `<span class="dr-image dr-img-` + hash[:12] + `" role="img" aria-label="` + alt + `"></span>`
+		})
+	}
+	return rendered
+}
+
+func (s *sharedImageStore) allAssets() []imageAsset {
+	out := make([]imageAsset, 0, len(s.order))
+	for _, hash := range s.order {
+		out = append(out, *s.assets[hash])
+	}
+	return out
+}
+
 func (t *imageTransformer) readRasterImage(source, original string) ([]byte, string, error) {
 	file, err := os.Open(source)
 	if err != nil {
@@ -414,57 +557,77 @@ func sniffRasterMIME(data []byte) string {
 	return mime
 }
 
-func (t *imageTransformer) copyExternalAssets(outPath string) error {
-	if !t.external || len(t.assets) == 0 {
-		return nil
+func (t *imageTransformer) commitExternalAssets(outPath string) (func(), error) {
+	noop := func() {}
+	assets := t.assets
+	if t.shared != nil {
+		assets = t.shared.allAssets()
+	}
+	if !t.external || len(assets) == 0 {
+		return noop, nil
 	}
 	outDir := filepath.Dir(outPath)
 	same, err := sameDirectory(t.docDir, outDir)
 	if err != nil {
-		return fmt.Errorf("resolve external asset output directory: %w", err)
+		return nil, fmt.Errorf("resolve external asset output directory: %w", err)
 	}
-	if same {
-		return nil
+	if same && t.shared == nil {
+		return noop, nil
 	}
 	if err := os.MkdirAll(outDir, 0o755); err != nil {
-		return fmt.Errorf("create external asset output directory: %w", err)
+		return nil, fmt.Errorf("create external asset output directory: %w", err)
 	}
 	outRoot, err := filepath.EvalSymlinks(outDir)
 	if err != nil {
-		return fmt.Errorf("resolve external asset output directory: %w", err)
+		return nil, fmt.Errorf("resolve external asset output directory: %w", err)
 	}
 	outRootInfo, err := os.Stat(outRoot)
 	if err != nil || !outRootInfo.IsDir() {
-		return fmt.Errorf("external asset output %q is not a directory", outDir)
+		return nil, fmt.Errorf("external asset output %q is not a directory", outDir)
 	}
 
 	type copyPlan struct {
 		destination string
 		data        []byte
 	}
-	plans := make([]copyPlan, 0, len(t.assets))
+	plans := make([]copyPlan, 0, len(assets))
 	seen := map[string]struct{}{}
 	outCanon, err := canonicalProspectivePath(outPath)
 	if err != nil {
-		return fmt.Errorf("resolve export output path: %w", err)
+		return nil, fmt.Errorf("resolve export output path: %w", err)
 	}
-	for _, asset := range t.assets {
+	for _, asset := range assets {
 		destination, err := canonicalProspectivePath(filepath.Join(outRoot, filepath.FromSlash(asset.relativePath)))
 		if err != nil {
-			return fmt.Errorf("resolve external image destination %q: %w", asset.relativePath, err)
+			return nil, fmt.Errorf("resolve external image destination %q: %w", asset.relativePath, err)
 		}
 		if !strictPathWithin(destination, outRoot) {
-			return fmt.Errorf("%w: external image destination %q escapes the output directory", ErrUnsafeAssetPath, asset.relativePath)
+			return nil, fmt.Errorf("%w: external image destination %q escapes the output directory", ErrUnsafeAssetPath, asset.relativePath)
 		}
 		if strings.EqualFold(destination, outCanon) {
-			return fmt.Errorf("%w: external image %q collides with the HTML output", ErrUnsafeAssetPath, asset.relativePath)
+			return nil, fmt.Errorf("%w: external image %q collides with the HTML output", ErrUnsafeAssetPath, asset.relativePath)
 		}
-		if err := ensureSafeExportPath(t.docPath, destination); err != nil {
-			return fmt.Errorf("%w: external image destination %q collides with protected bundle data: %v", ErrUnsafeAssetPath, asset.relativePath, err)
+		docs := t.protectedDocs
+		if len(docs) == 0 {
+			docs = []string{t.docPath}
+		}
+		for _, docPath := range docs {
+			if err := ensureSafeExportPath(docPath, destination); err != nil {
+				return nil, fmt.Errorf("%w: external image destination %q collides with protected bundle data: %v", ErrUnsafeAssetPath, asset.relativePath, err)
+			}
+		}
+		for _, protected := range t.protectedPaths {
+			same, err := canonicalProspectivePath(protected)
+			if err != nil {
+				continue
+			}
+			if strings.EqualFold(same, destination) || pathWithinOrEqual(destination, same) {
+				return nil, fmt.Errorf("%w: external image destination %q collides with protected book data", ErrUnsafeAssetPath, asset.relativePath)
+			}
 		}
 		metadataRoot, metadataErr := canonicalProspectivePath(bundle.MetaDir(t.docPath))
 		if metadataErr == nil && pathWithinOrEqual(destination, metadataRoot) {
-			return fmt.Errorf("%w: external image destination %q collides with protected bundle metadata", ErrUnsafeAssetPath, asset.relativePath)
+			return nil, fmt.Errorf("%w: external image destination %q collides with protected bundle metadata", ErrUnsafeAssetPath, asset.relativePath)
 		}
 		if _, ok := seen[destination]; ok {
 			continue
@@ -472,12 +635,47 @@ func (t *imageTransformer) copyExternalAssets(outPath string) error {
 		seen[destination] = struct{}{}
 		plans = append(plans, copyPlan{destination: destination, data: asset.data})
 	}
-	for _, plan := range plans {
-		if err := bundle.WriteFileAtomic(plan.destination, plan.data, 0o644); err != nil {
-			return fmt.Errorf("copy external image %q: %w", plan.destination, err)
+	type rollbackEntry struct {
+		path    string
+		existed bool
+		prev    []byte
+		mode    os.FileMode
+	}
+	committed := make([]rollbackEntry, 0, len(plans))
+	rollback := func() {
+		for i := len(committed) - 1; i >= 0; i-- {
+			entry := committed[i]
+			if entry.existed {
+				_ = bundle.WriteFileAtomic(entry.path, entry.prev, entry.mode)
+			} else {
+				_ = os.Remove(entry.path)
+			}
 		}
 	}
-	return nil
+	for _, plan := range plans {
+		rec := rollbackEntry{path: plan.destination, mode: 0o644}
+		if info, err := os.Stat(plan.destination); err == nil && info.Mode().IsRegular() {
+			prev, readErr := os.ReadFile(plan.destination)
+			if readErr != nil {
+				rollback()
+				return nil, fmt.Errorf("snapshot existing external image %q: %w", plan.destination, readErr)
+			}
+			rec.existed = true
+			rec.prev = prev
+			rec.mode = info.Mode().Perm()
+		}
+		if err := bundle.WriteFileAtomic(plan.destination, plan.data, 0o644); err != nil {
+			rollback()
+			return nil, fmt.Errorf("copy external image %q: %w", plan.destination, err)
+		}
+		committed = append(committed, rec)
+	}
+	return rollback, nil
+}
+
+func (t *imageTransformer) copyExternalAssets(outPath string) error {
+	_, err := t.commitExternalAssets(outPath)
+	return err
 }
 
 func sameDirectory(a, b string) (bool, error) {

@@ -67,6 +67,7 @@ func ingestMarkdown(srcPath, outDir string, opts Options) (Result, error) {
 	if err != nil {
 		return Result{}, err
 	}
+	rewritten = []byte(StripDownloaderBoilerplate(string(rewritten)))
 
 	parentDir := filepath.Dir(absOutDir)
 	if err := os.MkdirAll(parentDir, 0o755); err != nil {
@@ -98,6 +99,7 @@ func ingestMarkdown(srcPath, outDir string, opts Options) (Result, error) {
 		DocID:         filepath.Base(srcPath),
 		Revision:      0,
 		SourceDigest:  bundle.SHA256Hex(rewritten),
+		Reader:        opts.readerConfig(),
 	}
 	if err := bundle.SaveManifest(stageDocPath, manifest); err != nil {
 		return Result{}, fmt.Errorf("save bundle manifest: %w", err)
@@ -123,6 +125,7 @@ func ingestMarkdown(srcPath, outDir string, opts Options) (Result, error) {
 		DocPath:    filepath.Base(srcPath),
 		BundleID:   manifest.BundleID,
 		ImageCount: len(images),
+		Reader:     manifest.Reader,
 	}, nil
 }
 

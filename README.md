@@ -1,10 +1,10 @@
 # DeepRead (`deepread`)
 
-[中文说明](README.zh-CN.md) · [Host Agent Manual (`SKILL.md`)](SKILL.md) · [ADR 0006](docs/adr/0006-headless-go-deepread-engine.md)
+[中文说明](README.zh-CN.md) · [Host Agent Manual (`SKILL.md`)](SKILL.md) · [ADR 0006](docs/adr/0006-headless-go-deepread-engine.md) · [ADR 0007](docs/adr/0007-dual-face-genui-and-translation-layer.md)
 
-A headless, single-binary Go deep-reading engine and agent skill for Markdown and EPUB long-form texts. Designed to be installed and operated directly by AI agents (cloud computers, Muse, group bots, Claude Code, Codex, Pi, Antigravity) to deliver zero-JS, 390px-first magazine HTML with one-way `Mark Go Go` v3 compatibility.
+A headless, single-binary Go deep-reading engine and agent skill for Markdown and EPUB long-form texts. Designed to be installed and operated directly by AI agents (cloud computers, Muse, group bots, Claude Code, Codex, Pi, Antigravity) to deliver **one** offline HTML reader: a **full-information structured reading canvas** (`dual` default — zero dense walls of prose while preserving ~95%+ of facts, actors, quotes, original charts, causal SVGs, interactive sliders/toggles, tables, and timelines) paired with the immutable verbatim prose + parallel translation layer (`中文 / EN / 双语`), plus optional `--face inline` (paragraph-interleaved prose) and `--face hybrid` (masthead hero + paragraph-interleaved prose), with one-way `Mark Go Go` v3 compatibility.
 
-> Built as a clean-slate pure-Go rewrite (`v0.2.0`), replacing an earlier retired Python prototype.
+> Built as a clean-slate pure-Go rewrite (`v0.2.0`), replacing an earlier retired Python prototype; `v0.3.0` adds the translation layer, the canvas profile, and multi-chapter book export.
 
 ---
 
@@ -150,21 +150,25 @@ Reply concisely with:
 
 Read [SKILL.md](SKILL.md) in full before running your first real deep-reading task. Core invariants:
 
+- **Step 0 reading contract**: decide `targetLang`, `mode`, `scope`, and delivery (**one** unified offline HTML) before writing anything. If the user already named a language, adopt it immediately and do not ask again.
 - **One document per bundle directory**: Every article or EPUB chapter owns its own directory (`<doc>.md`, `assets/`, `.deepread/`). Never mix two documents in one directory.
-- **Prose-by-Reference**: Original prose paragraphs are never rewritten into GenUI. GenUI scaffolds live in `.<doc>.genui.json` (10 static reading primitives, 0–4 sparse modules, deterministic anti-cliché guardrails).
-- **Two-phase EPUB**: `deepread ingest book.epub -o <dir>` extracts `index.md`, `book.json`, and isolated chapter bundles under `chapters/<NN>-<slug>/chapter.md`; deep-read chapters on demand.
-- **Dual-mode 390px HTML**: Default single-file mode embeds verified raster images inline under hard byte budgets (512 KiB/image, 1.5 MiB total); `--external-assets` copies images beside the HTML for HTTPS directory hosting.
+- **Prose-by-Reference**: Original prose paragraphs are never rewritten, and translations never overwrite them; GenUI scaffolds live in `.<doc>.genui.json` (full 50-component canvas by default, `--profile margin` for the legacy 10 primitives) and translations live in `.deepread/translations/<lang>.json`.
+- **Parallel translation layer**: `deepread blocks` lists the live units, `deepread translate` stores `{id, sourceHash, text}` batches from JSON, `{"entries":[…]}` or JSONL, and `inspect` reports `coveragePct`/`staleBlocks`. Export refuses translated/bilingual output until coverage is 100% with zero stale blocks.
+- **Two-phase EPUB, one unified HTML**: `deepread ingest book.epub -o <dir>` extracts `index.md`, `book.json`, and isolated chapter bundles under `chapters/<NN>-<slug>/chapter.md`; deliver with `deepread export --book <dir> --chapters <spec> -o <one>.html`.
+- **Dual-face offline reader**: `深读 ↔ 原文` switching, `查看原文 ↗` paragraph anchors from `--cite`, reactive islands pre-rendered by Go, and a single constant runtime script pinned by a SHA-256 CSP hash (`--no-js` for a static page). Images inline under hard byte budgets (512 KiB/image, 1.5 MiB page) or ship beside the HTML with `--external-assets`.
 - **Short-code feedback loop**: Every module shows `<bundleId>·<statement>@r<rev>` so readers can reply in chat and trigger idempotent `note add` + compacted CAS `patch`.
 
 ```bash
-deepread ingest  <article.md|book.epub> -o <bundle-dir>
-deepread inspect <doc.md> [--heading <h> [--occurrence <n>] | --lines <a:b>]
-deepread prepare <doc.md> --breaks <file|->
-deepread catalog
-deepread write   <doc.md> --statements <file|-> --source <id>="<Heading>"#<occ>
-deepread export  <doc.md> -o <out.html> [--external-assets] [--max-bytes <n>]
-deepread note add <doc.md> (--node <stmt> | --heading <h>) --text "<note>" [--rev <r>] [--msg-id <id>]
-deepread patch   <doc.md> --replace <stmt> --expect-hash <sha256> --statements <file|-> [--resolve-note <id>]
+deepread ingest    <article.md|book.epub> -o <bundle-dir> [--lang <bcp47>] [--source-lang <bcp47>] [--mode original|translated|bilingual]
+deepread inspect   <doc.md> [--heading <h> [--occurrence <n>] | --lines <a:b>]
+deepread prepare   <doc.md> --breaks <file|->
+deepread catalog   [--profile canvas|margin]
+deepread blocks    <doc.md>
+deepread write     <doc.md> --statements <file|-> --source <id>="<Heading>"[#<occ>] [--cite <stmt>:<srcId>=<blockId>] [--profile canvas|margin]
+deepread translate <doc.md> --lang <bcp47> --input <file|-> [--mode translated|bilingual]
+deepread note add  <doc.md> (--node <stmt> [--source <srcId>] | --heading <h>) --text "<note>" [--rev <r>] [--msg-id <id>]
+deepread patch     <doc.md> --replace <stmt> --expect-hash <sha256> --statements <file|-> [--resolve-note <id>]
+deepread export    <doc.md> -o <out.html>                     # or: <doc1.md> <doc2.md> … / --book <dir> --chapters <spec>
 ```
 
 ## Development & Verification
@@ -174,4 +178,4 @@ make check        # CGO_ENABLED=0 vet, test, -race, and staged distribution chec
 make cross-build  # Static binaries for darwin/arm64, linux/amd64, linux/arm64, windows/amd64
 ```
 
-See [AGENTS.md](AGENTS.md) for contributor invariants, [SKILL.md](SKILL.md) for the complete host-agent manual and exit codes (`0`–`5`), and [UPSTREAM.md](UPSTREAM.md) for `Mark Go Go` (`f203c83`) attribution.
+See [AGENTS.md](AGENTS.md) for contributor invariants, [SKILL.md](SKILL.md) for the complete host-agent manual and exit codes (`0`–`5`), [ADR 0007](docs/adr/0007-dual-face-genui-and-translation-layer.md) for the dual-face/translation decisions, and [UPSTREAM.md](UPSTREAM.md) for `Mark Go Go` (`f203c83`) attribution.

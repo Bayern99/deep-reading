@@ -202,3 +202,110 @@ func TestAddNoteResolvesNodeThroughCurrentView(t *testing.T) {
 		t.Fatalf("missing node attribute in inline note: %q", after)
 	}
 }
+
+func writeMultiSourceView(t *testing.T, doc string) {
+	t.Helper()
+	viewJSON := `{
+  "version": 3,
+  "language": "openui-lang/1.0",
+  "generatedAt": "2026-11-26T00:00:00Z",
+  "sources": {
+    "s1": {"heading": "Alpha", "occurrence": 1},
+    "s2": {"heading": "Beta", "occurrence": 1}
+  },
+  "a2ui": [{
+    "version": "1.0",
+    "createSurface": {
+      "surfaceId": "view",
+      "catalogId": "markgogo.dev:genui/v3",
+      "components": ["root = Col([both])", "both = Source([\"s1\", \"s2\"], [Quote(\"A\", \"Alpha\"), Quote(\"B\", \"Beta\")])"]
+    }
+  }]
+}
+`
+	if err := os.WriteFile(ViewPath(doc), []byte(viewJSON), 0o644); err != nil {
+		t.Fatal(err)
+	}
+}
+
+func TestAddNoteMultiSourceNodeRequiresSourceID(t *testing.T) {
+	dir := t.TempDir()
+	doc := filepath.Join(dir, "article.md")
+	raw := "## Alpha\n\nAlpha prose.\n\n## Beta\n\nBeta prose.\n"
+	if err := os.WriteFile(doc, []byte(raw), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	writeMultiSourceView(t, doc)
+
+	_, err := AddNote(doc, AddNoteOptions{Node: "both", Text: "Missing source"})
+	if err == nil {
+		t.Fatal("multi-source node without SourceID was accepted")
+	}
+	for _, want := range []string{"--source", "s1", "s2", "both"} {
+		if !strings.Contains(err.Error(), want) {
+			t.Fatalf("error %q does not mention %q", err, want)
+		}
+	}
+	after, _ := os.ReadFile(doc)
+	if string(after) != raw {
+		t.Fatalf("ambiguous multi-source note mutated the document")
+	}
+
+	_, err = AddNote(doc, AddNoteOptions{Node: "both", SourceID: "s3", Text: "Unknown source"})
+	if err == nil || !strings.Contains(err.Error(), "s2") {
+		t.Fatalf("unknown SourceID error = %v, want a message listing valid ids", err)
+	}
+
+	res, err := AddNote(doc, AddNoteOptions{Node: "both", SourceID: "s2", Text: "Beta note", MsgID: "multi-1"})
+	if err != nil {
+		t.Fatalf("AddNote with SourceID failed: %v", err)
+	}
+	if res.Node != "both" || res.SectionHeading != "Beta" || res.SectionOccurrence != 1 {
+		t.Fatalf("SourceID did not select the Beta section: %#v", res)
+	}
+	updated, _ := os.ReadFile(doc)
+	if strings.Index(string(updated), "Beta note") < strings.Index(string(updated), "## Beta") {
+		t.Fatalf("note inserted before the Beta heading: %q", updated)
+	}
+}
+
+func TestAddNoteSingleSourceAcceptsMatchingSourceID(t *testing.T) {
+	dir := t.TempDir()
+	doc := filepath.Join(dir, "article.md")
+	raw := "## Alpha\n\nAlpha prose.\n\n## Beta\n\nBeta prose.\n"
+	if err := os.WriteFile(doc, []byte(raw), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	writeMultiSourceView(t, doc)
+
+	res, err := AddNote(doc, AddNoteOptions{Node: "both", SourceID: "s1", Text: "Alpha note"})
+	if err != nil {
+		t.Fatalf("AddNote failed: %v", err)
+	}
+	if res.SectionHeading != "Alpha" {
+		t.Fatalf("unexpected section: %#v", res)
+	}
+
+	viewJSON := `{
+  "version": 3,
+  "sources": {"s1": {"heading": "Alpha", "occurrence": 1}},
+  "a2ui": [{"createSurface": {"surfaceId": "view", "catalogId": "markgogo.dev:genui/v3",
+    "components": ["root = Col([single])", "single = Source([\"s1\"], [Quote(\"A\", \"Alpha\")])"]}}]
+}
+`
+	if err := os.WriteFile(ViewPath(doc), []byte(viewJSON), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	// A single-source statement keeps working exactly as before when --source is omitted.
+	res, err = AddNote(doc, AddNoteOptions{Node: "single", Text: "Implicit source"})
+	if err != nil {
+		t.Fatalf("single-source node without SourceID failed: %v", err)
+	}
+	if res.SectionHeading != "Alpha" {
+		t.Fatalf("unexpected section: %#v", res)
+	}
+	// A mismatched explicit source is a clear error, not a silent mis-target.
+	if _, err := AddNote(doc, AddNoteOptions{Node: "single", SourceID: "s2", Text: "Wrong source"}); err == nil {
+		t.Fatal("mismatched SourceID accepted for a single-source node")
+	}
+}

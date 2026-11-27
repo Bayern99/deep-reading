@@ -20,14 +20,17 @@ type Manifest struct {
 	DocID             string             `json:"docId"`
 	Revision          int                `json:"revision"`
 	SourceDigest      string             `json:"sourceDigest,omitempty"`
+	Profile           string             `json:"profile,omitempty"`
+	Reader            *ReaderConfig      `json:"reader,omitempty"`
 	SyntheticSections []SyntheticSection `json:"syntheticSections,omitempty"`
 }
 
 // SyntheticSection marks an H2 inserted by `deepread prepare` so `export`
 // can render it as a subtle editorial break rather than a heavy author heading.
 type SyntheticSection struct {
-	Heading    string `json:"heading"`
-	Occurrence int    `json:"occurrence"`
+	Heading           string `json:"heading"`
+	Occurrence        int    `json:"occurrence"`
+	TranslatedHeading string `json:"translatedHeading,omitempty"`
 }
 
 // ManifestPath returns the path to .deepread/manifest.json for docPath.

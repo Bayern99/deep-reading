@@ -40,7 +40,8 @@ func writePatchTestBundle(t *testing.T) (doc string, initial []byte) {
 			"s1": {Heading: "Alpha", Occurrence: 1},
 			"s2": {Heading: "Beta", Occurrence: 1},
 		},
-		Now: time.Date(2026, 11, 26, 8, 0, 0, 0, time.UTC),
+		Now:     time.Date(2026, 11, 26, 8, 0, 0, 0, time.UTC),
+		Profile: bundle.ProfileMargin,
 	}); err != nil {
 		t.Fatalf("Write seed failed: %v", err)
 	}
@@ -214,6 +215,81 @@ func TestPatchRejectsStaleHashWithoutDiskMutation(t *testing.T) {
 	}
 	if history := patchTestFileBytes(t, filepath.Join(bundle.MetaDir(doc), "history", "r2.genui.json")); history != nil {
 		t.Fatalf("stale hash created r2 history")
+	}
+}
+
+func TestPatchCanvasMultiSourceAndVariableCompactsWithCitations(t *testing.T) {
+	dir := t.TempDir()
+	doc := filepath.Join(dir, "article.md")
+	if err := os.WriteFile(doc, []byte(sampleDoc), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	initialStatements := strings.Join([]string{
+		`root = Col([Title("资本与队列", "xl"), synthesis])`,
+		`$months = 6`,
+		`synthesis = Source(["s1", "s2"], [Card([Slider($months, 6, 12, 1, "Months"), Chart("line", data, "year", ["gw"])])])`,
+		`data = [{year: "2020", gw: 750}, {year: "2024", gw: 2600}]`,
+	}, "\n")
+	written, err := Write(doc, WriteOptions{
+		StatementsText: initialStatements,
+		Sources: map[string]SourceRef{
+			"s1": {Heading: "§1 · Capital Surge", Occurrence: 1},
+			"s2": {Heading: "§2 · Grid Queues", Occurrence: 1},
+		},
+		Citations: bundle.CitationMap{"synthesis": {"s1": {"b1"}, "s2": {"b2"}}},
+	})
+	if err != nil {
+		t.Fatalf("canvas Write failed: %v", err)
+	}
+	if len(written.Modules) != 1 || len(written.Modules[0].Sections) != 2 || written.Modules[0].ShortCode == "" {
+		t.Fatalf("multi-source write bindings = %#v", written.Modules)
+	}
+	manifest, _, err := bundle.LoadManifest(doc, []byte(sampleDoc))
+	if err != nil || manifest.Profile != bundle.ProfileCanvas {
+		t.Fatalf("manifest profile = %q, err=%v", manifest.Profile, err)
+	}
+	citations, err := bundle.LoadCitations(doc)
+	if err != nil || len(citations["synthesis"]["s2"]) != 1 {
+		t.Fatalf("citations not persisted: %#v, err=%v", citations, err)
+	}
+	rawInitial, err := os.ReadFile(bundle.ViewPath(doc))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if strings.Contains(string(rawInitial), `"profile"`) {
+		t.Fatal("DeepRead profile leaked into the Mark Go Go v3 envelope")
+	}
+
+	patched, err := Patch(doc, PatchOptions{
+		Replace:        []string{"synthesis", "$months"},
+		ExpectHash:     written.ViewHash,
+		StatementsText: "$months = 12\nsynthesis = Source([\"s1\", \"s2\"], [Grid([Card([Slider($months, 6, 12, 1, \"Months\")]), Popover(Badge(\"GW\"), Text(\"Queued capacity\"))])])",
+		Citations:      bundle.CitationMap{"synthesis": {"s1": {"b1-new"}, "s2": {"b2-new"}}},
+	})
+	if err != nil {
+		t.Fatalf("multi-source + variable Patch failed: %v", err)
+	}
+	if patched.Revision != 2 || len(patched.Replaced) != 2 || len(patched.Modules[0].Sections) != 2 {
+		t.Fatalf("unexpected canvas patch result: %#v", patched)
+	}
+	rawPatched, err := os.ReadFile(bundle.ViewPath(doc))
+	if err != nil {
+		t.Fatal(err)
+	}
+	parsed, err := ReadView(rawPatched)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(parsed.Envelope.A2UI) != 1 || parsed.Envelope.A2UI[0].CreateSurface == nil || !strings.Contains(parsed.JoinedText, "$months = 12") {
+		t.Fatalf("patch did not compact variable update: %#v\n%s", parsed.Envelope.A2UI, parsed.JoinedText)
+	}
+	previous, err := os.ReadFile(bundle.PrevViewPath(bundle.ViewPath(doc)))
+	if err != nil || string(previous) != string(rawInitial) {
+		t.Fatalf("undo backup mismatch: err=%v", err)
+	}
+	citations, err = bundle.LoadCitations(doc)
+	if err != nil || citations["synthesis"]["s1"][0] != "b1-new" {
+		t.Fatalf("patched citations not persisted: %#v, err=%v", citations, err)
 	}
 }
 
