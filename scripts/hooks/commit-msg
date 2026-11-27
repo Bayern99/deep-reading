@@ -1,0 +1,4 @@
+#!/bin/sh
+# Keep issue workspaces and unclassified assets out of the tool tree.
+set -eu
+python3 scripts/check_distribution.py --staged

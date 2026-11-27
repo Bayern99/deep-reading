@@ -1,0 +1,141 @@
+{
+  "description": "Shared section/hash vectors. Each section text runs from its heading to the next heading of the same or higher level, or EOF; start/end are UTF-16 offsets into document; hash is fnv1a32 over the UTF-8 bytes of that text, where a section that runs to EOF ends in one line break whatever blank space the file ends with (CRLF when the document uses it); hashAsWritten, given where it differs from hash, is the hash under the earlier rule, over textAsWritten, the section as the file ends it, and a view saved with it still counts as unchanged; key is the heading text normalized for matching (whitespace runs to one space, trimmed, lower case). Expected values computed independently (Python). Read by the web tests and the Go host tests.",
+  "hashes": [
+    {
+      "text": "",
+      "hash": "fnv1a32:811c9dc5"
+    },
+    {
+      "text": "a",
+      "hash": "fnv1a32:e40c292c"
+    },
+    {
+      "text": "café 概要 🚀\r\n",
+      "hash": "fnv1a32:8ae747d8"
+    }
+  ],
+  "normalize": [
+    {
+      "text": "  Q3   Results ",
+      "key": "q3 results"
+    },
+    {
+      "text": "Überblick 概要 🚀",
+      "key": "überblick 概要 🚀"
+    },
+    {
+      "text": "Tab\tand\nnewline",
+      "key": "tab and newline"
+    },
+    {
+      "text": "",
+      "key": ""
+    }
+  ],
+  "document": "Intro text before any heading.\n\n# Report\n\nOpening paragraph.\n\n## Überblick 概要 🚀\n\nBody with an emoji 🎉 and café.\n\n### Detail\n\nNested text.\n\n## Überblick 概要 🚀\n\nSecond occurrence.\n\nSetext Title\n------------\n\nUnder the setext heading.\n\n```md\n# Not a heading\n```\n\n# Appendix\n\nLast line.\n",
+  "sections": [
+    {
+      "heading": "Report",
+      "occurrence": 1,
+      "start": 32,
+      "end": 262,
+      "text": "# Report\n\nOpening paragraph.\n\n## Überblick 概要 🚀\n\nBody with an emoji 🎉 and café.\n\n### Detail\n\nNested text.\n\n## Überblick 概要 🚀\n\nSecond occurrence.\n\nSetext Title\n------------\n\nUnder the setext heading.\n\n```md\n# Not a heading\n```\n\n",
+      "hash": "fnv1a32:d04be74a"
+    },
+    {
+      "heading": "Überblick 概要 🚀",
+      "occurrence": 1,
+      "start": 62,
+      "end": 141,
+      "text": "## Überblick 概要 🚀\n\nBody with an emoji 🎉 and café.\n\n### Detail\n\nNested text.\n\n",
+      "hash": "fnv1a32:ee7a184a"
+    },
+    {
+      "heading": "Detail",
+      "occurrence": 1,
+      "start": 115,
+      "end": 141,
+      "text": "### Detail\n\nNested text.\n\n",
+      "hash": "fnv1a32:99d21f4d"
+    },
+    {
+      "heading": "Überblick 概要 🚀",
+      "occurrence": 2,
+      "start": 141,
+      "end": 181,
+      "text": "## Überblick 概要 🚀\n\nSecond occurrence.\n\n",
+      "hash": "fnv1a32:9da8db51"
+    },
+    {
+      "heading": "Setext Title",
+      "occurrence": 1,
+      "start": 181,
+      "end": 262,
+      "text": "Setext Title\n------------\n\nUnder the setext heading.\n\n```md\n# Not a heading\n```\n\n",
+      "hash": "fnv1a32:b7b4be86"
+    },
+    {
+      "heading": "Appendix",
+      "occurrence": 1,
+      "start": 262,
+      "end": 285,
+      "text": "# Appendix\n\nLast line.\n",
+      "hash": "fnv1a32:c6896bcf"
+    }
+  ],
+  "notes": {
+    "description": "The same rules with notes in the document: each section lists the ranges its hash leaves out (a note and the gap before it), and text is what is hashed. A comment in a code fence is not a note. textWithoutNotes is the document before its notes were added; the sections of the two hash the same.",
+    "document": "# 概要 🚀\n\nBody.\n\n<!-- note: 第一条 🎉 -->\n\n```md\n<!-- note: in a fence -->\n```\n\n## Detail\n\nMore.\n\n<!-- note author=\"jerry\" x=\"1\": 第二条 --\\> end -->\n\n# End\n\nLast.\n\n<!-- note: last -->",
+    "textWithoutNotes": "# 概要 🚀\n\nBody.\n\n```md\n<!-- note: in a fence -->\n```\n\n## Detail\n\nMore.\n\n# End\n\nLast.",
+    "sections": [
+      {
+        "heading": "概要 🚀",
+        "occurrence": 1,
+        "start": 0,
+        "end": 144,
+        "exclude": [
+          {
+            "start": 14,
+            "end": 37
+          },
+          {
+            "start": 92,
+            "end": 142
+          }
+        ],
+        "text": "# 概要 🚀\n\nBody.\n\n```md\n<!-- note: in a fence -->\n```\n\n## Detail\n\nMore.\n\n",
+        "hash": "fnv1a32:73402e3f"
+      },
+      {
+        "heading": "Detail",
+        "occurrence": 1,
+        "start": 76,
+        "end": 144,
+        "exclude": [
+          {
+            "start": 92,
+            "end": 142
+          }
+        ],
+        "text": "## Detail\n\nMore.\n\n",
+        "hash": "fnv1a32:f9dc3959"
+      },
+      {
+        "heading": "End",
+        "occurrence": 1,
+        "start": 144,
+        "end": 177,
+        "exclude": [
+          {
+            "start": 156,
+            "end": 177
+          }
+        ],
+        "text": "# End\n\nLast.\n",
+        "hash": "fnv1a32:69d85dc7",
+        "textAsWritten": "# End\n\nLast.",
+        "hashAsWritten": "fnv1a32:e72da377"
+      }
+    ]
+  }
+}

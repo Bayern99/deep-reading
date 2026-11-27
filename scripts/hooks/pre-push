@@ -1,0 +1,4 @@
+#!/bin/sh
+# A source release is independent of the maintainer's private newspaper inputs.
+set -eu
+python3 scripts/check_distribution.py

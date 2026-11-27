@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify
+        run: |
+          CGO_ENABLED=0 go vet ./...
+          CGO_ENABLED=0 go test -count=1 ./...
+          go test -race -count=1 ./...
+          python3 scripts/check_distribution.py
+
+      - name: Build static binaries and checksums
+        run: |
+          make cross-build
+          cp SKILL.md dist/SKILL.md
+          (
+            cd dist
+            sha256sum \
+              deepread-darwin-arm64 \
+              deepread-linux-amd64 \
+              deepread-linux-arm64 \
+              deepread-windows-amd64.exe \
+              SKILL.md > SHA256SUMS.txt
+          )
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            dist/deepread-darwin-arm64 \
+            dist/deepread-linux-amd64 \
+            dist/deepread-linux-arm64 \
+            dist/deepread-windows-amd64.exe \
+            dist/SKILL.md \
+            dist/SHA256SUMS.txt \
+            --title "deepread ${GITHUB_REF_NAME}" \
+            --generate-notes
